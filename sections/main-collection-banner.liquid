@@ -1,0 +1,73 @@
+{%- liquid
+
+  assign featured_image = blank
+  assign full_width = false
+
+  if collection.image
+    assign featured_image = collection.image
+  endif
+  if section.settings.image
+    assign featured_image = section.settings.image
+  endif
+
+  if section.settings.display_wide
+   assign full_width = true
+  endif
+
+-%}
+
+{%- if featured_image != blank -%}
+  <section class="collection__section--banner fff collection__banner-{{ section.id }} {% unless full_width %}row{% endunless %}"
+  data-aos="fade"
+  data-section-id="{{ section.id }}" >
+      <div class="collection__banner-image desktop-image {% unless full_width %}desktop-12 tablet-6 mobile-3{% endunless %}">
+        {%
+          render 'basic-responsive-image',
+          type: featured_image,
+          width: 2000
+        %}
+    </div>
+    {% if section.settings.image_mobile != blank %}
+    <div class="collection__banner-image mobile-image {% unless full_width %}desktop-12 tablet-6 mobile-3{% endunless %}">
+          <div class=" lazyload " >
+           <img src="{{ section.settings.image_mobile | image_url }}" height="" width="">
+          </div>
+          <noscript>{{ section.settings.image_mobile | image_url: width: width | image_tag: alt: type.alt }}</noscript>
+    </div>
+      {% else %}
+      <div class="collection__banner-image sss mobile-image {% unless full_width %}desktop-12 tablet-6 mobile-3{% endunless %}">
+        {% render 'basic-responsive-image', type: featured_image,  width: 2000 %}
+      </div>
+    {%- endif -%}
+  </section>
+  <div class="clear"></div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "settings": [{
+      "type": "paragraph",
+      "content": "Shows the collection featured image as a banner above products. Override this by selecting a specific banner image for all collections or select a collection image metafield for a unique collection image."
+    },
+    {
+      "type": "checkbox",
+      "id": "display_wide",
+      "label": "Enable full width",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image",
+      "info": "1920px x 600px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background image",
+      "info": "720px x 960px recommended"
+    }
+  ]
+}
+{% endschema %}

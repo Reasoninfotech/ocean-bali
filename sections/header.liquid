@@ -1,0 +1,436 @@
+{%- liquid
+
+  assign nav_full = false
+  assign nav_inline = false
+
+  case section.settings.nav_style
+    when 'full'
+      assign nav_full = true
+    when 'inline'
+      assign nav_inline = true
+    when 'inline-center'
+      assign nav_inline_center = true
+  endcase
+
+-%}
+
+{% capture logo %}
+<div id="logo" class="shop__logo{% if nav_full %} a-center{% elsif nav_inline %} a-left{% elsif nav_inline_center %} a-center{% endif %}">
+  {% if section.settings.logo != blank %}
+    <a href="{{ routes.root_url }}">
+      {% assign alt_value = section.settings.logo.alt | default: shop.name %}
+      {{ section.settings.logo | image_url: width: 1200 | image_tag: itemprop: "logo", alt: alt_value }}
+    </a>
+  {% else %}
+    <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+  {% endif %}
+</div>
+{% endcapture %}
+
+{% capture header_links %}
+<ul class="shopping__cart-links">
+  <li class="seeks">
+      <button class="slideout__trigger-search js-slideout-open button-as-link"
+        data-wau-slideout-target="search-sidebar"
+        data-slideout-direction="right"
+        aria-label="Open Search"
+        tabindex="0"
+        type="button"
+        name="button">
+        {% render 'snip-icons',
+           wrapper: '.search__toggle',
+           type: 'testament-theme',
+           icon: 'search',
+           size: '18px',
+           fill: 'var(--header-link-color)',
+           hover: 'var(--header-link-color)' %}
+      </button>
+  </li>
+  {% if shop.customer_accounts_enabled %}
+    {% if customer  %}
+      <li class="cart-links__link-account cust device-hide">
+        <a href="{{ routes.account_url }}">
+          <span class="visually-hidden-span">Account</span>
+          {% render 'snip-icons',
+             wrapper: '.cart-links__link-account',
+             type: 'testament-theme',
+             icon: 'user',
+             classes: 'cart-links__link-account--icon',
+             size: '18px',
+             fill: 'var(--header-link-color)',
+             hover: 'var(--header-link-color)' %}
+        </a>
+      </li>
+      <li class="cart-links__link-logout cust device-hide">
+        <a href="{{ routes.account_logout_url }}">
+          {% render 'snip-icons',
+             wrapper: '.cart-links__link-logout',
+             type: 'testament-theme',
+             icon: 'user-logout',
+             classes: 'cart-links__link-logout--icon',
+             size: '18px',
+             fill: 'var(--header-link-color)',
+             hover: 'var(--header-link-color)' %}
+        </a>
+        </li>
+    {% else %}
+      <li class="cart-links__link-account cust device-hide">
+        <a href="{{ routes.account_login_url }}">
+          <span class="visually-hidden-span">Account</span>
+          {% render 'snip-icons',
+             wrapper: '.cart-links__link-account',
+             type: 'testament-theme',
+             icon: 'user',
+             classes: 'cart-links__link-account--icon',
+             size: '18px',
+             fill: 'var(--header-link-color)',
+             hover: 'var(--header-link-color)' %}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
+
+  {%- liquid
+
+    if section.settings.cart_icon == 'cart'
+      assign cart_icon = 'cart'
+    else
+      assign cart_icon = 'bag'
+    endif
+
+  -%}
+  <li class="cart-links__link-cart my-cart-link-container">
+    {% if settings.cart_type == 'page_only' %}
+      <a href="{{ routes.cart_url }}">
+        <span class="my-cart-text hide">{{ 'general.header.my_cart' | t }}&nbsp; </span>
+        {% render 'snip-icons',
+           wrapper: '.cart-links__link-cart',
+           type: 'testament-theme',
+           icon: cart_icon,
+           classes: 'cart-links__link-cart--icon',
+           size: '18px',
+           fill: 'var(--header-link-color)',
+           hover: 'var(--header-link-color)' %}
+        <span class="js-cart-count">{{ cart.item_count }}</span>
+      </a>
+    {% else %}
+      {%- if settings.cart_type == 'drawer' -%}
+        {% assign cart_classes = 'js-slideout-open' %}
+        {% assign cart_settings = 'data-wau-slideout-target="ajax-cart" data-slideout-direction="right"' %}
+      {% elsif settings.cart_type == 'modal_cart' %}
+        {% assign cart_classes = 'js-modal-open' %}
+        {% assign cart_settings = 'data-wau-modal-target="ajax-cart"' %}
+      {%- endif -%}
+      <a class="slideout__trigger--open" href="{{ routes.cart_url }}" tabindex="-1">
+        <button class="slideout__trigger-mobile-menu js-mini-cart-trigger {{ cart_classes }}" {{ cart_settings }} aria-label="Open cart" tabindex="0" type="button" name="button">
+          <span class="my-cart-text hide">{{ 'general.header.my_cart' | t }}&nbsp; </span>
+          {% render 'snip-icons',
+             wrapper: '.cart-links__link-cart',
+             type: 'testament-theme',
+             icon: cart_icon,
+             classes: 'cart-links__link-cart--icon',
+             size: '18px',
+             fill: 'var(--header-link-color)',
+             hover: 'var(--header-link-color)' %}
+          <span class="js-cart-count">{{ cart.item_count }}</span>
+        </button>
+      </a>
+    {% endif %}
+  </li>
+</ul>
+{% endcapture %}
+
+{% capture mobile_nav_trigger %}
+<div class="mobile-menu__trigger v-center desktop-hide">
+  <div class="slideout__trigger--open text-left">
+    <button class="slideout__trigger-mobile-menu js-slideout-open" data-wau-slideout-target="mobile-navigation" data-slideout-direction="left" aria-label="Open navigation" tabindex="0" type="button" name="button">
+      {% render 'snip-icons',
+         wrapper: '.slideout__trigger-mobile-menu',
+         type: 'testament-theme',
+         icon: 'menu-bars',
+         classes: 'slideout__trigger-mobile-menu--icon',
+         size: '18px',
+         fill: 'var(--header-link-color)',
+         hover: 'var(--header-link-color)' %}
+    </button>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture navigation %}
+<ul role="menubar" aria-label="Primary Navigation" id="main-nav" class="navigation__menu tablet-hide sm-hide">
+  {% assign menu = linklists[section.settings.main_nav] %}
+  {% for link in menu.links %}
+    {% render 'navigation', link: link, menu: menu %}
+  {% endfor %}
+</ul>
+{% endcapture %}
+
+<div class="header-section js-header" data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div class="js-header-wrapper header-wrapper {% if nav_full %}nav__option-full{% else %}nav__option-inline{% endif %}">
+
+    <nav aria-label="Primary Navigation" class="navigation js-navigation" data-sticky-class="navigation--sticky">
+      {% if nav_full %}
+        <div class="row grid__wrapper nav-container">
+          {{ mobile_nav_trigger }}
+          <div class="spacer sm-hide tablet-hide"></div>
+          {{ logo }}
+          {{ header_links }}
+        </div>
+        {{ navigation }}
+      {% else %}
+        <div class="row grid__wrapper nav-container">
+          {% if nav_inline %}
+            {{ mobile_nav_trigger }}
+            {{ logo }}
+            {{ navigation }}
+            {{ header_links }}
+          {% endif %}
+
+          {% if nav_inline_center %}
+            {{ mobile_nav_trigger }}
+            {{ navigation }}
+            {{ logo }}
+            {{ header_links }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </nav>
+
+    <div class="clear header-spacer"></div>
+  </div>
+
+  <style>
+    {% if nav_full %}
+    .nav-container {grid-template-columns: 3fr 6fr 3fr !important;}
+
+    @media screen and (min-width: 981px) {
+      .navigation--sticky.navigation {
+        transform: translateY(var(--nav-height));
+        transition: all .5s;
+      }
+      .navigation--sticky.navigation .nav-container {
+        display: none;
+      }
+    }
+
+    {% elsif nav_inline %}
+    .nav-container {grid-template-columns: 2fr 8fr 2fr !important;}
+    {% elsif nav_inline_center %}
+    .nav-container {grid-template-columns: 5fr 2fr 5fr !important;}
+    {% endif %}
+    @media screen and (max-width: 980px) {
+      .nav-container {grid-template-columns: 3fr 6fr 3fr !important;}
+      .shop__logo.a-left {text-align: center;}
+    }
+    .navigation--sticky.navigation + .header-spacer {
+      margin-top: var(--header-height);
+    }
+    {% unless nav_full %}
+      .header-section .nav__option-inline .navigation li a.navigation__menulink {
+        color: var(--header-link-color) !important;
+      }
+      .header-section .nav__option-inline .navigation li a.navigation__menulink:hover {
+        color: var(--nav-hover-link-color) !important;
+      }
+      .header-section .nav__option-inline .navigation li a.navigation__menulink svg g {
+        fill: var(--header-link-color) !important;
+      }
+      .header-section .nav__option-inline .navigation li a.navigation__menulink:hover svg g {
+        fill: var(--nav-hover-link-color) !important;
+      }
+    {% endunless %}
+    .navigation {
+      border-top: {{ section.settings.nav_top_border_height }}px solid var(--nav-border-color);
+      border-bottom: {{ section.settings.nav_bottom_border_height }}px solid var(--nav-border-color);
+    }
+    .navigation__menuitem {
+      line-height: {{ section.settings.nav_height }}px;
+    }
+
+    {% if section.settings.logo != blank %}
+      @media screen and ( min-width: 741px ) {
+        #logo img {
+          max-width: {{ section.settings.logo_max_width }}%;
+        }
+      }
+      @media screen and ( max-width: 740px ) {
+        #logo img {
+          max-width: {{ section.settings.mobile_logo_max_width }}%;
+        }
+      }
+    {% endif %}
+
+    {%- if section.settings.cart_icon == 'bag' -%}
+      .mobile-menu__cart-icon .cart--icon,
+      .mobile-menu__cart-link .cart--icon {
+        display: none;
+      }
+    {%- else -%}
+      .mobile-menu__cart-icon .bag--icon,
+      .mobile-menu__cart-link .bag--icon {
+        display: none;
+      }
+    {%- endif -%}
+
+    {% if nav_full %}
+      .navigation__menu {
+        background: var(--nav-background-color);
+      }
+    {% endif %}
+  </style>
+
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "select",
+      "id": "nav_style",
+      "label": "Header layout",
+      "options": [
+        {
+          "value": "full",
+          "label": "Logo above menu"
+        },
+        {
+          "value": "inline",
+          "label": "Logo left, menu centered"
+        },
+        {
+          "value": "inline-center",
+          "label": "Center logo, menu left"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Logo image width",
+      "default": 50,
+      "info": "Logo size within its container"
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_max_width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Mobile logo image width",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Shopping cart"
+    },
+    {
+      "type": "select",
+      "id": "cart_icon",
+      "label": "Cart icon",
+      "default":"bag",
+      "options": [
+        {
+          "value": "bag",
+          "label": "Bag"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "main_nav",
+      "label": "Choose main menu",
+      "default": "main-menu",
+      "info": "It is best practice to select the same menu used in the Mobile Nav. [Learn More](https://developers.google.com/search/mobile-sites/mobile-first-indexing)"
+    },
+    {
+      "type": "range",
+      "id": "nav_height",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Height",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "nav_top_border_height",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Top border size",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "nav_bottom_border_height",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Bottom border size",
+      "default": 1
+    },
+    {
+      "type": "paragraph",
+      "content": "Navigation border colors are inherited from the border color in the theme color settings."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Menu item",
+          "info": "Enter navigation item to apply a mega dropdown"
+        },
+        {
+          "type": "image_picker",
+          "id": "nav_image",
+          "label": "Featured image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type":"checkbox",
+          "id":"show_images",
+          "label":"Show images",
+          "default":true,
+          "info":"Show collection images if megamenu item link points to a collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

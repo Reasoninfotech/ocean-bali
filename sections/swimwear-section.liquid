@@ -1,0 +1,183 @@
+{% style %}
+
+.section-title h2 {padding: 0px !important;font-size: 24px;font-weight: normal;color: #606060;}
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+.layout-container {display: flex;flex-direction: column;gap: 20px;max-width: 1200px;margin: 10px auto;padding: 0 10px 10px;}
+
+.category-container {display: flex;flex-direction: column;align-items: center;text-align: center;gap: 10px;flex: 1;}
+.group-container {display: flex;gap: 20px;justify-content: space-between;flex-wrap: wrap;}
+
+.image-link-block {position: relative;width: 100%;aspect-ratio: 4 / 5;overflow: hidden;}
+
+.image-link-block--wide {position: relative;width: 100%;aspect-ratio: 12 / 5;overflow: hidden;}
+
+.image-link__image {width: 100%;height: 100%;object-fit: cover;}
+                     
+.image-overlay {position: absolute;bottom: 0;left: 0;width: 100%;background-color: rgba(0, 0, 0, 0.6);padding: 10px 0;text-align: center;}
+
+.image-link__title {color: #fff;font-family: 'Montserrat', sans-serif;font-weight: bold;font-size: 1rem;margin: 0;}
+
+.link-bar-column {display: flex;flex-direction: column;gap: 10px;width: 100%;}
+
+.link-bar-column a {text-decoration: none;text-align: center;color: #606060;font-size: 14px;font-family: 'Montserrat', sans-serif;padding: 8px 12px;background-color: #f9f9f9;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);transition: all 0.3s ease;}
+
+.link-bar-column a:hover {background-color: #606060;color: #fff;}
+
+                     
+
+@media (max-width: 768px) {
+ .layout-container {gap: 10px;}
+  
+ .group-container {gap: 10px;}
+  
+ .category-container {width: 48%;}
+  
+ .image-link__title {font-size: 0.85rem;}
+  
+ .link-bar-column a {font-size: 12px;padding: 6px 10px;}
+}
+
+@media (max-width: 480px) {
+
+ .category-container {width: 100%;}
+ .group-container {gap: 6px;}
+
+ .image-link-block--wide {aspect-ratio: 16 / 9 !important;}
+
+ .image-link__title {font-size: 0.6rem;}
+  
+ .link-bar-column a {font-size: 8px;padding: 3px;}
+}
+  
+  
+  
+{% endstyle %}
+
+
+
+{% if section.settings.heading != blank %}
+  <div class="grid__wrapper row rg0">
+     <div class="section-title lines span-12 auto">
+       <h2>{{ section.settings.heading }}</h2>
+     </div>
+  </div>
+{% endif %}
+
+<div class="section section-blends section-full">
+ <div class="section-stack">
+ <div class="floating-controls-container design_2">
+ <div class="layout-container">
+
+
+ <div class="group-container">
+
+{% for block in section.blocks %}
+   <div class="category-container">
+     {% if block.settings.image_link != blank %}
+     <div class="image-link-block">
+       <a href="{{ block.settings.image_link }}" class="image-link">
+         <img src="{{ block.settings.image | img_url : 'master' }}" alt="{{ block.settings.image.alt | escape }}" width="" height="" class="image-link__image" loading="lazy" >
+        <div class="image-overlay">
+          <p class="image-link__title">{{ block.settings.image_text }}</p>
+        </div>
+       </a>
+     </div>
+     {% endif %} 
+     <div class="link-bar-column">
+       {% for i in (1..3) %}
+
+       {% assign collTitle = 'coll_title' | append : i %}
+       {% assign CollectionTitle = block.settings[collTitle] %}
+          
+        {% assign collectionURL = 'collection_url' | append : i %}
+        {% assign CollectionURL = block.settings[collectionURL] %}
+        {% if block.settings[collectionURL] != blank %} 
+         <a href="{{ CollectionURL }}">{{ CollectionTitle }}</a>
+       {% endif %} 
+      {% endfor %} 
+     </div>
+   </div>
+{% endfor %}
+ 
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Swimwear Section",
+    "settings": [
+      { 
+        "type": "text",
+        "id": "heading",
+         "label": "Heading",
+        "default": "SWIMWEAR"
+      }
+    ],
+     "blocks": [
+       {
+        "type": "image",
+        "name": "Collection Block",
+        "settings": [
+          {
+           "type":"image_picker",
+           "id":"image",
+           "label":"Image"
+          },
+          {
+           "type": "text",
+           "id": "image_text",
+           "label": "Image Text",
+            "default": "ONE PIECES"
+          },
+          {
+           "type":"url",
+           "id":"image_link",
+           "label":"Image Link"
+          },
+          {
+           "type":"text",
+            "id":"coll_title1",
+            "label":"Collection Title 1"
+          },
+          {
+            "type":"url",
+            "id":"collection_url1",
+            "label":"Collection url 1"
+          },
+          {
+           "type":"text",
+            "id":"coll_title2",
+            "label":"Collection Title 2"
+          },
+          {
+            "type":"url",
+            "id":"collection_url2",
+            "label":"Collection url 2"
+          },
+          {
+           "type":"text",
+            "id":"coll_title3",
+            "label":"Collection Title 3"
+          },
+          {
+            "type":"url",
+            "id":"collection_url3",
+            "label":"Collection url 3"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Swimwear Section"
+      }
+    ]
+  }
+{% endschema %}

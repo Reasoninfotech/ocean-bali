@@ -1,0 +1,20 @@
+<div class="product-text__block estimated_delivery" style="margin: 10px 0 20px;text-align: center;">
+    <div class="product-text__block-icon" style="margin: 0;">
+      <span>✅</span>
+    </div>
+    <div class="product-text__block-content display" style="display:inline-block;">
+      {% assign days = "Fri,Sat,Sun" | split:"," %}
+      {% assign day = "now" | date: '%a' %}
+      {% assign hr = "now" | date: '%H' | plus: 0 %}
+        
+      {% if days contains day %}
+        {% if day == 'Fri' and hr < 15 %}
+          Ships in 24 hours.
+        {% else %}
+          Ships next business day
+        {% endif %}
+      {% else %}
+        Ships in 24 hours.
+      {% endif %}
+    </div>
+</div>

@@ -1,0 +1,222 @@
+
+{% if section.settings.text != blank %}
+{% style %}
+
+#rebuy_shipping_popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999999999;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: auto;
+}
+
+#rebuy_shipping_popup .page-width{
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#rebuy_shipping_popup .rebuy_contentwrp{
+  position: relative;
+  background: #ffff;
+  padding: 30px 25px;
+  border-radius: 6px;  
+  width: 100%;
+}
+
+#rebuy_shipping_popup .popup-cl-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background: #2e6688;
+    align-items: center;
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#rebuy_shipping_popup .rebuy_content_blcok p:last-child{
+    margin: 0; 
+}
+
+#rebuy_shipping_checkout {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.rebuy-popup-open {
+  overflow: hidden;
+}
+
+{% endstyle %}
+
+<div id="rebuy_shipping_popup" class="rebuy_shipping_block">
+  <div class="page-width">
+     <div class="rebuy_contentwrp">
+        <div class="popup-cl-btn"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="30px" viewBox="0 0 24 24" fill="none">
+                <path d="M6 6L18 18M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+        <div class="rebuy_content_blcok">
+          {{ section.settings.text }}
+        </div>
+
+     </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Rebuy Shpping Block",
+    "settings": [
+        {
+          "type": "html",
+          "id": "text",
+          "label": "Text"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Rebuy Shpping Block"
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% comment %} <script>    
+ $(document).on('click', '#rebuy_shipping_checkout', function (e) {
+    e.preventDefault();
+    $('#rebuy_shipping_popup').fadeIn(300);
+    $('body').addClass('rebuy-popup-open');
+  });
+  $(document).on('click', '#rebuy_shipping_popup .popup-cl-btn', function () {
+    $('#rebuy_shipping_popup').fadeOut(300);
+    $('body').removeClass('rebuy-popup-open');
+  });
+  $(document).on('click', '#rebuy_shipping_popup', function (e) {
+    if ($(e.target).is('#rebuy_shipping_popup')) {
+      $('#rebuy_shipping_popup').fadeOut(300);
+      $('body').removeClass('rebuy-popup-open');
+    }
+  });
+</script> {% endcomment %}
+
+
+{% comment %} <script>
+(function ($) {
+  // OPEN POPUP
+  $(document).on('click touchstart', '#rebuy_shipping_checkout', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $('#rebuy_shipping_popup').fadeIn(300);
+    $('body').addClass('rebuy-popup-open');
+  });
+
+  // CLOSE POPUP - close button
+  $(document).on('click touchstart', '#rebuy_shipping_popup .popup-cl-btn', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $('#rebuy_shipping_popup').fadeOut(300);
+    $('body').removeClass('rebuy-popup-open');
+  });
+
+  // CLOSE POPUP - background click
+  $(document).on('click touchstart', '#rebuy_shipping_popup', function (e) {
+    if (e.target === this) {
+      $('#rebuy_shipping_popup').fadeOut(300);
+      $('body').removeClass('rebuy-popup-open');
+    }
+  });
+})(jQuery);
+</script> {% endcomment %}
+
+
+<script>
+(function () {
+  var popup = null;
+  var body = document.body;
+
+  function openPopup(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    popup = document.getElementById('rebuy_shipping_popup');
+    if (!popup) return;
+
+    popup.style.display = 'block';
+    popup.classList.add('active');
+    body.classList.add('rebuy-popup-open');
+  }
+
+  function closePopup() {
+    popup = document.getElementById('rebuy_shipping_popup');
+    if (!popup) return;
+
+    popup.classList.remove('active');
+    popup.style.display = 'none';
+    body.classList.remove('rebuy-popup-open');
+  }
+
+  function bindEvents() {
+    document.removeEventListener('touchstart', handleTouch, true);
+    document.removeEventListener('click', handleClick, true);
+
+    document.addEventListener('touchstart', handleTouch, true);
+    document.addEventListener('click', handleClick, true);
+  }
+
+  function handleTouch(e) {
+    var openBtn = e.target.closest('#rebuy_shipping_checkout');
+    var closeBtn = e.target.closest('#rebuy_shipping_popup .popup-cl-btn');
+    var popupBg = e.target.closest('#rebuy_shipping_popup');
+
+    if (openBtn) {
+      openPopup(e);
+    } else if (closeBtn) {
+      closePopup();
+    } else if (popupBg && e.target === popupBg) {
+      closePopup();
+    }
+  }
+
+  function handleClick(e) {
+    // fallback for non-touch browsers
+    handleTouch(e);
+  }
+
+  // Bind immediately
+  bindEvents();
+
+  // Rebind after Rebuy updates cart
+  document.addEventListener('rebuy:cart.change', function () {
+    bindEvents();
+  });
+
+  // Extra safety: rebinding after DOM load
+  window.addEventListener('load', function () {
+    bindEvents();
+  });
+})();
+</script>

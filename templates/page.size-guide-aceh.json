@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "6850a021-b136-4a59-b8bd-c6d23b0aaa98": {
+      "type": "slideshow",
+      "blocks": {
+        "template--14915046965337__6850a021-b136-4a59-b8bd-c6d23b0aaa98-1686037373700dffed-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mentawai-one-piece-suit.jpg",
+            "overlay": false,
+            "text_align": "center",
+            "caption_horizontal": 50,
+            "caption_vertical": 50,
+            "mobile_image": "shopify://shop_images/mentawai-one-piece-suit.jpg",
+            "hide_caption_background": false,
+            "caption_below": false,
+            "heading": "",
+            "subheading": "",
+            "link": "",
+            "button_text": "Button",
+            "second_link": "",
+            "second_button_text": "Button 2",
+            "slide_text_color": "#000000",
+            "cta_color": "#ffffff",
+            "cta_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)",
+            "caption_background_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046965337__6850a021-b136-4a59-b8bd-c6d23b0aaa98-1686037373700dffed-0"
+      ],
+      "settings": {
+        "display_wide": true,
+        "no_autoplay": false,
+        "slider_speed": 5,
+        "pager": "dots",
+        "slideshow_size": "natural",
+        "desktop_height": 700,
+        "mobile_height": 500,
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "cta_size": 14,
+        "section_space": "none"
+      }
+    }
+  },
+  "order": [
+    "6850a021-b136-4a59-b8bd-c6d23b0aaa98"
+  ]
+}

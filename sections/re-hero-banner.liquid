@@ -1,0 +1,635 @@
+<div class="hero_banner">
+  <div class="hero_banner_row">
+    {%- if section.settings.desktop_img -%}
+<link 
+  rel="preload" 
+  as="image" 
+  href="{{ section.settings.desktop_img | image_url: width: 1920, format: 'webp' }}"
+  fetchpriority="high"
+/>
+{%- endif -%}
+    <div
+      class="hero_banner_img"
+      {% if section.settings.desktop_img != blank %}
+        style="background-image:url({{ section.settings.desktop_img | image_url: width: 1920, format: 'webp' }})"        
+      {% endif %}
+    >
+      {%- if section.settings.Mobile_img -%}
+<link 
+  rel="preload" 
+  as="image" 
+  href="{{ section.settings.Mobile_img | image_url: width: 768, format: 'webp' }}"
+  fetchpriority="high"
+/>
+{%- endif -%}
+      <div
+        class="hero_banner_mob_img"
+        {% if section.settings.Mobile_img != blank %}
+          style="background-image:url({{ section.settings.Mobile_img | image_url: width: 768, format: 'webp' }})"         
+        {% endif %}
+      >
+        <div class="container">
+          <div class="hero_banner_col">
+            {% if section.settings.title != blank %}
+              <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.dis != blank %}
+              <div class="hero_banner_dis">{{ section.settings.dis }}</div>
+            {% endif %}
+            {% if section.settings.btn_url != blank %}
+              <a style="background-color: {{ section.settings.bg-color-name }};color: {{ section.settings.text-color-name }};" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+            {% endif %}
+            <div class="hero_banner_icon">
+              {% for block in section.blocks %}
+                <div class="hero_banner_icon_row">
+                  <div class="hero_banner_svg">
+                    {% if block.settings.icon != blank %}
+                      <span>{{ block.settings.icon }}</span>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.text != blank %}
+                    <p>{{ block.settings.text }}</p>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type":"image_picker",
+      "id":"desktop_img",
+      "label":"Select Desktop Image"
+    },
+    {
+      "type":"image_picker",
+      "id":"Mobile_img",
+      "label":"Select Mobile Image"
+    },
+    {
+      "type":"text",
+      "id":"title",
+      "label":"Title"
+    },
+    {
+      "type": "color",
+      "id": "desktop_title_color",
+      "label": "Desktop Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_title_color",
+      "label": "Mobile Title Color",
+      "default": "#fff"
+    },
+    {
+      "type":"richtext",
+      "id":"dis",
+      "label":"Description"
+    },
+    {
+      "type": "color",
+      "id": "dis_deskop_color",
+      "label": "Description Desktop Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "dis_mobile_color",
+      "label": "Description Mobile Color",
+      "default": "#fff"
+    },
+    {
+      "type":"color",
+      "id":"bg-color-name",
+      "label":"Button BG-Color",
+      "default":"#000000"
+    },
+    {
+      "type":"color",
+      "id":"text-color-name",
+      "label":"Button TEXT-Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"color",
+      "id":"icon-svg-color",
+      "label":"icon Desktop Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"color",
+      "id":"icon-svg-mobile-color",
+      "label":"icon Mobile Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"color",
+      "id":"icon-text-color",
+      "label":"Desktop icon text Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"color",
+      "id":"icon-text-mobile-color",
+      "label":"Mobile icon text Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"text",
+      "id":"btn_text",
+      "label":"Button Text"
+    },
+    {
+      "type":"url",
+      "id":"btn_url",
+      "label":"Button URL"
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_align",
+      "label": "Desktop Text Align",
+      "default": "center",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Mobile Text Align",
+      "default": "center",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Description Margin Bottom"
+    },
+    {
+      "type": "range",
+      "id": "desktop_dis_margin_bottom",
+      "label": "Desktop Description Margin Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 45,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tablet_dis_margin_bottom",
+      "label": "Tablet Description Margin Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_dis_margin_bottom",
+      "label": "Mobile Description Margin Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "label": "Desktop Content Position",
+      "default": "center_left",
+      "options": [
+        { "value": "top_left",      "label": "Top Left" },
+        { "value": "top_center",    "label": "Top Center" },
+        { "value": "top_right",     "label": "Top Right" },
+        { "value": "center_left",   "label": "Center Left" },
+        { "value": "center_center", "label": "Center Center" },
+        { "value": "center_right",  "label": "Center Right" },
+        { "value": "bottom_left",   "label": "Bottom Left" },
+        { "value": "bottom_center", "label": "Bottom Center" },
+        { "value": "bottom_right",  "label": "Bottom Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_position",
+      "label": "Mobile Content Position",
+      "default": "top_center",
+      "options": [
+        { "value": "top_left",      "label": "Top Left" },
+        { "value": "top_center",    "label": "Top Center" },
+        { "value": "top_right",     "label": "Top Right" },
+        { "value": "center_left",   "label": "Center Left" },
+        { "value": "center_center", "label": "Center Center" },
+        { "value": "center_right",  "label": "Center Right" },
+        { "value": "bottom_left",   "label": "Bottom Left" },
+        { "value": "bottom_center", "label": "Bottom Center" },
+        { "value": "bottom_right",  "label": "Bottom Right" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding (Above 1024px)"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "default": 150,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Tablet Padding (768px - 1024px)"
+    },
+    {
+      "type": "range",
+      "id": "tablet_padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 250,
+      "step": 5,
+      "default": 90,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tablet_padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 250,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding (Below 767px)"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name":"Shipping",
+      "type":"text",
+      "settings": [
+        {
+          "type":"textarea",
+          "id":"icon",
+          "label":"Icon SVG"
+        },
+        {
+          "type":"textarea",
+          "id":"text",
+          "label":"Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Hero Banner"
+    }
+  ]
+}
+{% endschema %}
+{% comment %} Desktop Position {% endcomment %}
+{% assign d_pos = section.settings.desktop_content_position %}
+{% if d_pos == 'top_left' %}{% assign d_valign = 'flex-start' %}{% assign d_halign = 'flex-start' %}
+{% elsif d_pos == 'top_center' %}{% assign d_valign = 'flex-start' %}{% assign d_halign = 'center' %}
+{% elsif d_pos == 'top_right' %}{% assign d_valign = 'flex-start' %}{% assign d_halign = 'flex-end' %}
+{% elsif d_pos == 'center_left' %}{% assign d_valign = 'center' %}{% assign d_halign = 'flex-start' %}
+{% elsif d_pos == 'center_center' %}{% assign d_valign = 'center' %}{% assign d_halign = 'center' %}
+{% elsif d_pos == 'center_right' %}{% assign d_valign = 'center' %}{% assign d_halign = 'flex-end' %}
+{% elsif d_pos == 'bottom_left' %}{% assign d_valign = 'flex-end' %}{% assign d_halign = 'flex-start' %}
+{% elsif d_pos == 'bottom_center' %}{% assign d_valign = 'flex-end' %}{% assign d_halign = 'center' %}
+{% elsif d_pos == 'bottom_right' %}{% assign d_valign = 'flex-end' %}{% assign d_halign = 'flex-end' %}
+{% else %}{% assign d_valign = 'center' %}{% assign d_halign = 'flex-start' %}
+{% endif %}
+{% comment %} Mobile Position {% endcomment %}
+{% assign m_pos = section.settings.mobile_content_position %}
+{% if m_pos == 'top_left' %}{% assign m_valign = 'flex-start' %}{% assign m_halign = 'flex-start' %}
+{% elsif m_pos == 'top_center' %}{% assign m_valign = 'flex-start' %}{% assign m_halign = 'center' %}
+{% elsif m_pos == 'top_right' %}{% assign m_valign = 'flex-start' %}{% assign m_halign = 'flex-end' %}
+{% elsif m_pos == 'center_left' %}{% assign m_valign = 'center' %}{% assign m_halign = 'flex-start' %}
+{% elsif m_pos == 'center_center' %}{% assign m_valign = 'center' %}{% assign m_halign = 'center' %}
+{% elsif m_pos == 'center_right' %}{% assign m_valign = 'center' %}{% assign m_halign = 'flex-end' %}
+{% elsif m_pos == 'bottom_left' %}{% assign m_valign = 'flex-end' %}{% assign m_halign = 'flex-start' %}
+{% elsif m_pos == 'bottom_center' %}{% assign m_valign = 'flex-end' %}{% assign m_halign = 'center' %}
+{% elsif m_pos == 'bottom_right' %}{% assign m_valign = 'flex-end' %}{% assign m_halign = 'flex-end' %}
+{% else %}{% assign m_valign = 'flex-start' %}{% assign m_halign = 'center' %}
+{% endif %}
+{% comment %} Desktop Description Margin Logic {% endcomment %}
+{% if section.settings.desktop_text_align == 'center' %}
+  {% assign d_dis_margin_left = 'auto' %}
+  {% assign d_dis_margin_right = 'auto' %}
+{% elsif section.settings.desktop_text_align == 'right' %}
+  {% assign d_dis_margin_left = 'auto' %}
+  {% assign d_dis_margin_right = '0' %}
+{% else %}
+  {% assign d_dis_margin_left = '0' %}
+  {% assign d_dis_margin_right = '0' %}
+{% endif %}
+{% comment %} Mobile Description Margin Logic {% endcomment %}
+{% if section.settings.mobile_text_align == 'center' %}
+  {% assign m_dis_margin_left = 'auto' %}
+  {% assign m_dis_margin_right = 'auto' %}
+{% elsif section.settings.mobile_text_align == 'right' %}
+  {% assign m_dis_margin_left = 'auto' %}
+  {% assign m_dis_margin_right = '0' %}
+{% else %}
+  {% assign m_dis_margin_left = '0' %}
+  {% assign m_dis_margin_right = '0' %}
+{% endif %}
+<style>
+  .hero_banner_img span svg path {
+      fill: {{ section.settings.icon-svg-color }};
+  }
+  .hero_banner_img svg {
+      height: 70px;
+      width: 70px;
+  }
+  .hero_banner_col h2 {
+      font-size: 48px;
+      color: {{ section.settings.desktop_title_color }};
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      text-transform: uppercase;
+  }
+  .hero_banner_img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+  .hero_banner_col .hero_banner_dis p {
+      font-size: 28px;
+      color: {{ section.settings.dis_deskop_color }};
+      margin: 0;
+      line-height: 1.2;
+  }
+  .hero_banner_col a {
+      font-size: 24px;
+      color: #ffff;
+      font-weight: 500;
+      max-width: 90%;
+      width: 100%;
+      padding: 15px;
+      background: #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      transition: .4s;
+      text-transform: uppercase;
+  }
+  .hero_banner_col {
+      max-width: 636px;
+      text-align: {{ section.settings.desktop_text_align }};
+      margin-left: 0;
+  }
+  .hero_banner_col .hero_banner_dis p {
+      max-width: 454px;
+      margin-left: {{ d_dis_margin_left }};
+      margin-right: {{ d_dis_margin_right }};
+      margin-bottom: {{ section.settings.desktop_dis_margin_bottom }}px;
+  }
+  .hero_banner_icon {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .hero_banner_icon > div {
+      width: 50%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+  .hero_banner_col a:hover {
+      background: #000;
+      color: #fff;
+  }
+  .hero_banner_icon_row p {
+      margin: 0;
+      color: {{ section.settings.icon-text-color }};
+      line-height: 1.4;
+      font-size: 16px;
+  }
+  .hero_banner_svg span {
+      display: flex;
+      align-items: center;
+  }
+  .container {
+      max-width: 1600px;
+      width: 100%;
+      margin: auto;
+      padding: 150px 15px 100px 15px;
+      min-height: 750px;
+      display: flex;
+      align-items: center;
+  }
+  /* ── Desktop Content Position + Padding ── */
+  .hero_banner_mob_img .container {
+      align-items: {{ d_valign }};
+      justify-content: {{ d_halign }};
+      padding-top: {{ section.settings.desktop_padding_top }}px;
+      padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+  }
+  @media(min-width:768px) {
+    .hero_banner_mob_img {
+      background-image: none !important;
+    }
+  }
+  @media (max-width:1600px) {
+    .container {
+      max-width: 94%;
+      min-height: 700px;
+    }
+  }
+  @media (max-width:1400px) {
+    .hero_banner_col h2 {
+      font-size: 44px;
+    }
+    .hero_banner_col .hero_banner_dis p {
+      max-width: 404px;
+      margin-bottom: {{ section.settings.tablet_dis_margin_bottom }}px;
+      font-size: 24px;
+    }
+    .container {
+      min-height: 100%;
+    }
+    .hero_banner_col {
+      max-width: 576px;
+    }
+    .hero_banner_col a {
+      font-size: 22px;
+    }
+  }
+  @media (max-width:1199px) {
+    .container {
+      min-height: 100%;
+      padding: 90px 15px 60px 15px;
+    }
+    .hero_banner_col h2 {
+      font-size: 38px;
+    }
+    .hero_banner_col .hero_banner_dis p {
+      max-width: 370px;
+      font-size: 22px;
+    }
+    .hero_banner_col a {
+      font-size: 20px;
+    }
+    .hero_banner_col {
+      max-width: 515px;
+    }
+    .hero_banner_icon_row p {
+      font-size: 14px;
+    }
+    .hero_banner_icon > div {
+      gap: 10px;
+    }
+  }
+  @media (max-width:991px) {
+    .container {
+      min-height: 100%;
+      padding: 70px 15px 50px 15px;
+      justify-content: center;
+    }
+  }
+  /* ── Tablet Padding (768px - 1024px) ── */
+  @media (min-width:768px) and (max-width:1024px) {
+    .hero_banner_mob_img .container {
+      padding-top: {{ section.settings.tablet_padding_top }}px;
+      padding-bottom: {{ section.settings.tablet_padding_bottom }}px;
+    }
+  }
+  /* ── Mobile ── */
+  @media (max-width:767px) {
+    .hero_banner_mob_img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      min-height: 700px;
+      align-items: flex-start;
+    }
+    /* Mobile Content Position + Padding */
+    .hero_banner_mob_img .container {
+      align-items: {{ m_valign }};
+      justify-content: {{ m_halign }};
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    .hero_banner_col {
+      text-align: {{ section.settings.mobile_text_align }};
+    }
+    .hero_banner_col .hero_banner_dis p {
+      max-width: 360px;
+      margin-left: {{ m_dis_margin_left }};
+      margin-right: {{ m_dis_margin_right }};
+      margin-bottom: {{ section.settings.mobile_dis_margin_bottom }}px;
+      font-size: 20px;
+      color: {{ section.settings.dis_mobile_color }};
+    }
+    .hero_banner_col h2 {
+      font-size: 36px;
+      color: {{ section.settings.mobile_title_color }};
+    }
+    .hero_banner_col a {
+      font-size: 18px;
+      padding: 13px;
+      background: #2E6688;
+      color: #fff !important;
+    }
+    .hero_banner_col a:hover {
+      background: #fff;
+      color: #000;
+    }
+    .hero_banner_img {
+      background-image: none !important;
+    }
+    .hero_banner_img svg {
+      height: 55px;
+      width: 55px;
+    }
+    .hero_banner_img span svg path {
+      fill: {{ section.settings.icon-svg-mobile-color }};
+    }
+    .hero_banner_icon_row p {
+      color: {{section.settings.icon-text-mobile-color}};
+    }
+  }
+  @media (max-width:575px) {
+    .hero_banner_col h2 {
+      font-size: 26px;
+    }
+    .hero_banner_col .hero_banner_dis p {
+      max-width: 280px;
+      font-size: 17px;
+    }
+    .container {
+      max-width: 100%;
+    }
+    .hero_banner_icon_row p {
+      font-size: 12px;
+    }
+    .hero_banner_col a {
+      font-size: 16px;
+    }
+    .hero_banner_img svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
+</style>

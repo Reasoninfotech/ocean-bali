@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-3" style="padding-left: 50px;">
+        <h2 style="font-size: 24px; font-weight: bold;">Collections</h2>
+        <ul>
+            {% for c in collections %}
+            <li>
+                <a href="{{ c.url }}">{{ c.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3" style="padding-left: 50px;">
+        <h2 style="font-size: 24px; font-weight: bold;">Products</h2>
+        <ul>
+            {% for product in collections.all.products %}
+            <li>
+                <a href="{{ product.url }}">{{ product.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3" style="padding-left: 50px;">
+        <h2 style="font-size: 24px; font-weight: bold;">Pages</h2>
+        <ul>
+            {% for page in pages %}
+            <li>
+                <a href="{{ page.url }}">{{ page.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

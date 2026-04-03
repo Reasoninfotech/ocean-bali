@@ -1,0 +1,132 @@
+{% style %}
+  
+
+ .marquee_logo {
+   padding: 8px 0;
+  }
+
+ .marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.marquee_logo .marquee__inner {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    width: max-content;
+    animation: marquee 150s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee_logo .marquee__inner:hover {
+    animation-play-state: paused;
+}
+
+.marquee__inner .image_bar__link_svg {
+    line-height: normal;
+    margin: 0;
+    display: flex;
+    gap: 35px;
+}
+
+.marquee__inner img {
+    width: 100%;
+    max-width: 16px;
+    height: auto;
+    object-fit: cover;
+}
+
+.announcement_text{
+    display: block;
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 575px){
+  .announcement_text{
+    font-size: 10px;
+  } 
+}
+
+/* end our brand */
+
+
+{% endstyle %}
+
+<section class="marquee_logo" style="background: {{ section.settings.body_background }};">
+  <div class="marquee">
+    <div class="marquee__inner-wrap">
+      <div class="marquee__inner">
+        {% for block in section.blocks %}
+         {% if block.settings.logos != blank %}
+            {% for i in (1..10) %}
+             <div class="image_bar__link_svg">
+                 <div class="img_block">
+                     <img decoding="async" src="{{ block.settings.logos | img_url }}"  alt="{{ block.settings.logos.alt }}" loading="lazy" >
+                    </div>
+                    <span class="announcement_text" style="color: {{ section.settings.body_text }}">{{ block.settings.title }}</span>
+                </div>
+              {% endfor %}  
+         {% endif %} 
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "New Announment",
+  "settings": [
+    {
+    "type": "color",
+    "id": "body_background",
+    "label": "Body Background",
+    "default": "#77a5c8"
+    },
+    {
+    "type": "color",
+    "id": "body_text",
+    "label": "Body text",
+    "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "text",
+        "name": "Icon With Text",
+        "settings": [
+           {
+             "type": "image_picker",
+             "id": "logos",
+             "label": "Logos"
+           },
+           {
+             "type": "text",
+             "id": "title",
+             "label": "Title"
+           }  
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "New Announment"
+    }
+  ]
+}
+{% endschema %}
