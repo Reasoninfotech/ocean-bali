@@ -9220,7 +9220,7 @@ https://flickity.metafizzy.co
     margin-bottom: -20%;
   }
   .thumb-slider.vertical-carousel {
-    height: 400px;
+    height: auto;
     margin-bottom: 5px;
   }
 }
