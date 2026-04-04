@@ -10723,6 +10723,11 @@ p.store-availability-information__title svg {
 
 }
 
+@media (max-width: 767px) {
+  .social-icons__list {
+    display: none;
+  }
+}
 /* Social Icons */
 .social-icons__list {
   list-style: none;
