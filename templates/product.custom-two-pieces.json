@@ -264,7 +264,7 @@
         "form_left": true,
         "show_tax_notice": false,
         "media_size": "medium",
-        "thumbnail_position": "bottom",
+        "thumbnail_position": "left",
         "click_to_enlarge": true,
         "sticky_images": true,
         "enable_video_looping": true,

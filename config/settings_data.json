@@ -1157,7 +1157,7 @@
           "announcement_rrATLm": {
             "type": "announcement",
             "settings": {
-              "text": "Flash Sale: 20% Off All Items!",
+              "text": "🥳Flash Sale: 20% Off All Items!",
               "link": ""
             }
           }
@@ -1171,7 +1171,7 @@
         "settings": {
           "full_width_header": true,
           "enable_scrolling": true,
-          "scrolling_speed": 60,
+          "scrolling_speed": 10,
           "announcement_text": "<p>FREE EXPRESS SHIPPING $250 AUD+</p>",
           "announcement_text_size": 13,
           "target_1_amount": 250,
