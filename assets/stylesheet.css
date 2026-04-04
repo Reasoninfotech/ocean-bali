@@ -9219,6 +9219,9 @@ https://flickity.metafizzy.co
   .product__section-images {
     margin-bottom: -20%;
   }
+  .thumb-slider.vertical-carousel {
+    height: 400px;
+  }
 }
 
 .product__section-images .carousel-container {
