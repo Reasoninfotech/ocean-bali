@@ -9221,6 +9221,7 @@ https://flickity.metafizzy.co
   }
   .thumb-slider.vertical-carousel {
     height: 400px;
+    margin-bottom: 5px;
   }
 }
 
