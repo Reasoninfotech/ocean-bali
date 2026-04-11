@@ -1,0 +1,782 @@
+{% comment %}
+  OSB - Hero Section
+  Section: osb-hero.liquid
+  Supports: Mobile / Tablet / Desktop customization
+{% endcomment %}
+
+<style>
+  .osb-hero-wrap-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-hero-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top_mobile }}px 5% {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .osb-hero-{{ section.id }} .osb-stars-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+  }
+
+  .osb-hero-{{ section.id }} .osb-stars {
+    color: {{ section.settings.accent_color }};
+    font-size: {{ section.settings.stars_size_mobile }}px;
+    letter-spacing: 2px;
+  }
+
+  .osb-hero-{{ section.id }} .osb-rc {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #909090;
+  }
+
+  .osb-hero-{{ section.id }} .osb-h1 {
+    font-size: {{ section.settings.h1_size_mobile }}px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .osb-hero-{{ section.id }} .osb-sub {
+    font-size: {{ section.settings.body_font_size_mobile }}px;
+    font-weight: 400;
+    color: #606060;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .osb-hero-{{ section.id }} .osb-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0;
+  }
+
+  .osb-hero-{{ section.id }} .osb-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #606060;
+    line-height: 1.5;
+  }
+
+  .osb-hero-{{ section.id }} .osb-check {
+    width: 18px;
+    height: 18px;
+    background: {{ section.settings.accent_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .osb-hero-{{ section.id }} .osb-check svg {
+    width: 10px;
+    height: 10px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  .osb-hero-{{ section.id }} .osb-btn {
+    display: inline-block;
+    background: {{ section.settings.btn_color }};
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: {{ section.settings.btn_padding_v }}px {{ section.settings.btn_padding_h }}px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .osb-hero-{{ section.id }} .osb-btn:hover {
+    background: #245578;
+  }
+
+  .osb-hero-{{ section.id }} .osb-code {
+    font-size: 11px;
+    color: #909090;
+    text-align: center;
+    margin-top: 0.6rem;
+    max-width: 340px;
+    border: 1px dashed #c5dcea;
+    padding: 7px 14px;
+    border-radius: 3px;
+  }
+
+  .osb-hero-{{ section.id }} .osb-usps {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  .osb-hero-{{ section.id }} .osb-usp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .osb-hero-{{ section.id }} .osb-usp-icon {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #c5dcea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f8fb;
+    overflow: hidden;
+  }
+
+  /* SVG inline - stroke color apply via CSS */
+  .osb-hero-{{ section.id }} .osb-usp-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: {{ section.settings.btn_color }};
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  /* Image inside icon circle */
+  .osb-hero-{{ section.id }} .osb-usp-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .osb-hero-{{ section.id }} .osb-usp-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #909090;
+    text-align: center;
+  }
+
+  .osb-hero-{{ section.id }} .osb-media {
+    display: none;
+    background: #eaf2f8;
+    aspect-ratio: {{ section.settings.image_ratio }};
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .osb-hero-{{ section.id }} .osb-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+   .osb-hero-{{ section.id }} .osb_image_mobile{
+      margin-bottom: 1.5rem;
+    }
+
+
+
+  @media (min-width: 768px) {
+    .osb-hero-{{ section.id }} {
+      padding: {{ section.settings.padding_top_tablet }}px 5% {{ section.settings.padding_bottom_tablet }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-h1 {
+      font-size: {{ section.settings.h1_size_tablet }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-stars {
+      font-size: {{ section.settings.stars_size_tablet }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-sub {
+      font-size: {{ section.settings.body_font_size_tablet }}px;
+    }
+
+    .osb-hero-{{ section.id }} .osb-media {
+      display: flex;
+    }
+
+    .osb-hero-{{ section.id }} .osb_image_mobile{
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .osb-hero-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: {{ section.settings.padding_top_desktop }}px 5% {{ section.settings.padding_bottom_desktop }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-h1 {
+      font-size: {{ section.settings.h1_size_desktop }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-stars {
+      font-size: {{ section.settings.stars_size_desktop }}px;
+    }
+    .osb-hero-{{ section.id }} .osb-sub {
+      font-size: {{ section.settings.body_font_size_desktop }}px;
+    }
+
+    .osb-hero-{{ section.id }} .osb_image_mobile{
+      display: none;
+    }
+
+  }
+</style>
+
+{% comment %} ─── USP Icon Render Snippet (inline) ───
+  Logic: SVG textarea first priority → Image picker fallback → Default SVG
+{% endcomment %}
+
+{% if section.settings.show_section %}
+<div class="osb-hero-wrap-{{ section.id }}">
+  <div class="osb-hero-{{ section.id }}">
+    <div>
+      {% if section.settings.show_stars %}
+      <div class="osb-stars-row">
+        <span class="osb-stars">★★★★★</span>
+        <span class="osb-rc">{{ section.settings.review_count }}</span>
+      </div>
+      {% endif %}
+
+      <h1 class="osb-h1">{{ section.settings.heading }}</h1>
+      <p class="osb-sub">{{ section.settings.subheading }}</p>
+
+      <div class="osb_image_mobile">
+        {% if section.settings.hero_image != blank %}
+          {{ section.settings.hero_image | image_url: width: 900 | image_tag: loading: 'eager', alt: section.settings.hero_image.alt }}
+        {% else %}
+          <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
+        {% endif %}
+      </div>
+
+
+
+
+      {% if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank %}
+      <ul class="osb-list">
+        {% if section.settings.bullet_1 != blank %}
+        <li>
+          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
+          {{ section.settings.bullet_1 }}
+        </li>
+        {% endif %}
+        {% if section.settings.bullet_2 != blank %}
+        <li>
+          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
+          {{ section.settings.bullet_2 }}
+        </li>
+        {% endif %}
+        {% if section.settings.bullet_3 != blank %}
+        <li>
+          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
+          {{ section.settings.bullet_3 }}
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+
+      <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
+
+      {% if section.settings.show_discount_code %}
+      <p class="osb-code">{{ section.settings.discount_text }}</p>
+      {% endif %}
+
+      {% if section.settings.show_usps %}
+      <div class="osb-usps">
+
+        {% comment %} ── USP 1 ── {% endcomment %}
+        {% if section.settings.usp_1_label != blank %}
+        <div class="osb-usp">
+          <div class="osb-usp-icon">
+            {% if section.settings.usp_1_svg != blank %}
+              {{ section.settings.usp_1_svg }}
+            {% elsif section.settings.usp_1_image != blank %}
+              {{ section.settings.usp_1_image | image_url: width: 48 | image_tag: loading: 'lazy', alt: section.settings.usp_1_label }}
+            {% else %}
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            {% endif %}
+          </div>
+          <span class="osb-usp-lbl">{{ section.settings.usp_1_label }}</span>
+        </div>
+        {% endif %}
+
+        {% comment %} ── USP 2 ── {% endcomment %}
+        {% if section.settings.usp_2_label != blank %}
+        <div class="osb-usp">
+          <div class="osb-usp-icon">
+            {% if section.settings.usp_2_svg != blank %}
+              {{ section.settings.usp_2_svg }}
+            {% elsif section.settings.usp_2_image != blank %}
+              {{ section.settings.usp_2_image | image_url: width: 48 | image_tag: loading: 'lazy', alt: section.settings.usp_2_label }}
+            {% else %}
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            {% endif %}
+          </div>
+          <span class="osb-usp-lbl">{{ section.settings.usp_2_label }}</span>
+        </div>
+        {% endif %}
+
+        {% comment %} ── USP 3 ── {% endcomment %}
+        {% if section.settings.usp_3_label != blank %}
+        <div class="osb-usp">
+          <div class="osb-usp-icon">
+            {% if section.settings.usp_3_svg != blank %}
+              {{ section.settings.usp_3_svg }}
+            {% elsif section.settings.usp_3_image != blank %}
+              {{ section.settings.usp_3_image | image_url: width: 48 | image_tag: loading: 'lazy', alt: section.settings.usp_3_label }}
+            {% else %}
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            {% endif %}
+          </div>
+          <span class="osb-usp-lbl">{{ section.settings.usp_3_label }}</span>
+        </div>
+        {% endif %}
+
+      </div>
+      {% endif %}
+    </div>
+
+
+
+    <div class="osb-media">
+      {% if section.settings.hero_image != blank %}
+        {{ section.settings.hero_image | image_url: width: 900 | image_tag: loading: 'eager', alt: section.settings.hero_image.alt }}
+      {% else %}
+        <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
+      {% endif %}
+    </div>
+
+
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OSB Hero Section",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Finally - a swimsuit that actually stays on in the ocean."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "No adjusting. No pulling. No second-guessing. The Sulawesi is built for movement - from duck dives to long swims - so you can focus on the water, not your suit."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Show Star Rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count Text",
+      "default": "800+ Five-Star Reviews"
+    },
+    {
+      "type": "text",
+      "id": "bullet_1",
+      "label": "Bullet Point 1",
+      "default": "Stays secure through surf, dives, and waves"
+    },
+    {
+      "type": "text",
+      "id": "bullet_2",
+      "label": "Bullet Point 2",
+      "default": "Sculpting fit that holds you in (without digging in)"
+    },
+    {
+      "type": "text",
+      "id": "bullet_3",
+      "label": "Bullet Point 3",
+      "default": "Designed for real movement - not just how it looks"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop The Sulawesi →"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Discount Code"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_code",
+      "label": "Show Discount Code",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "discount_text",
+      "label": "Discount Text",
+      "default": "Get $20 off your first order with code FB20"
+    },
+    {
+      "type": "header",
+      "content": "USP Icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_usps",
+      "label": "Show USP Icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "USP 1"
+    },
+    {
+      "type": "text",
+      "id": "usp_1_label",
+      "label": "USP 1 Label",
+      "default": "UPF 50+"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_1_svg",
+      "label": "USP 1 — Custom SVG Code (Priority 1)",
+      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon.",
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_1_image",
+      "label": "USP 1 — Icon Image (Priority 2)",
+      "info": "Used only if SVG above is empty. PNG/SVG with transparent background recommended."
+    },
+    {
+      "type": "header",
+      "content": "USP 2"
+    },
+    {
+      "type": "text",
+      "id": "usp_2_label",
+      "label": "USP 2 Label",
+      "default": "Ethically Made"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_2_svg",
+      "label": "USP 2 — Custom SVG Code (Priority 1)",
+      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon.",
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_2_image",
+      "label": "USP 2 — Icon Image (Priority 2)",
+      "info": "Used only if SVG above is empty. PNG/SVG with transparent background recommended."
+    },
+    {
+      "type": "header",
+      "content": "USP 3"
+    },
+    {
+      "type": "text",
+      "id": "usp_3_label",
+      "label": "USP 3 Label",
+      "default": "Eco Fabric"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_3_svg",
+      "label": "USP 3 — Custom SVG Code (Priority 1)",
+      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon."
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_3_image",
+      "label": "USP 3 — Icon Image (Priority 2)",
+      "info": "Used only if SVG above is empty. PNG/SVG with transparent background recommended."
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "4/5", "label": "Portrait (4:5)" },
+        { "value": "1/1", "label": "Square (1:1)" },
+        { "value": "3/4", "label": "Tall (3:4)" },
+        { "value": "16/9", "label": "Landscape (16:9)" }
+      ],
+      "default": "4/5"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#77A5C8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent / Check Color",
+      "default": "#77A5C8"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 900,
+      "max": 1400,
+      "step": 50,
+      "label": "Max Content Width (px)",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "btn_padding_v",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "label": "Button Vertical Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "btn_padding_h",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "label": "Button Horizontal Padding",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "📱 Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "h1_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "label": "Heading Size (Mobile)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "stars_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "label": "Stars Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "📲 Tablet Settings"
+    },
+    {
+      "type": "range",
+      "id": "h1_size_tablet",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "label": "Heading Size (Tablet)",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "stars_size_tablet",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "label": "Stars Size (Tablet)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_font_size_tablet",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Tablet)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Tablet)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Tablet)",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "🖥️ Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "h1_size_desktop",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "label": "Heading Size (Desktop)",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "stars_size_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "label": "Stars Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_font_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Top Padding (Desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Bottom Padding (Desktop)",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "OSB Hero Section"
+    }
+  ]
+}
+{% endschema %}

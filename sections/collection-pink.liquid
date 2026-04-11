@@ -1,0 +1,103 @@
+{%- liquid
+  assign collection_link = ''
+
+  if collection.handle
+    assign collection_link = '/collections/' | append: collection.handle
+  endif
+
+  assign number = section.settings.products_per_page
+
+  case section.settings.products_per_row
+    when 2
+      assign prod_grid = 'span-6'
+    when 3
+      assign prod_grid = 'span-4'
+    when 4
+      assign prod_grid = 'span-3'
+    when 5
+      assign prod_grid = 'span-one-fifth'
+    when 6
+      assign prod_grid = 'span-2'
+  endcase
+-%}
+
+<section class="collection__page main__section" data-section-id="{{ section.id }}" data-section-type="collection-section" data-collection-link="{{ collection_link }}">
+  <form id="main-collection-form">
+    {% paginate collection.products by number %}
+      <div id="CollectionProductGrid">
+        <div class="row grid__wrapper rg0">
+          <div class="span-12 auto">
+            <h1 class="collection__page-title page-title">{{ collection.title }}</h1>
+          </div>
+        </div>
+
+        <div class="grid__wrapper row">
+          <div class="span-12 md-span-12 sm-span-12 auto">
+            {%- if collection.products.size >= 1 -%}
+              <div id="main-collection-product-grid"
+                class="collection__page-products product-loop grid__wrapper grid__wrapper-nest edge"
+                data-id="{{ section.id }}">
+
+                {% for product in collection.products %}
+                  {% assign displayed_variant = null %}
+
+                  {% for variant in product.variants %}
+                    {% if variant.option1 contains 'Pink' or variant.option2 contains 'Pink' or variant.option3 contains 'Pink' %}
+                      {% assign displayed_variant = variant %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if displayed_variant %}
+                    <div id="product-listing-{{ product.id }}" class="collection__page-product product-index {{ prod_grid }} sm-span-6 auto js-product-listing">
+                      <a href="{{ displayed_variant.url }}">
+                        <img src="{{ displayed_variant.image | img_url: 'medium' }}" alt="{{ displayed_variant.title }}">
+                        <p>{{ product.title }}</p>
+                      </a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {%- else -%}
+              <div id="main-collection-product-grid"
+                class="collection collection--empty"
+                data-id="{{ section.id }}">
+                {{ 'collections.filters.use_fewer_filters_html' | t: link: collection.url, class: "underline" }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {% render 'pagination', paginate: paginate %}
+      </div>
+    {% endpaginate %}
+  </form>
+</section>
+
+{% schema %}
+{
+  "name": "Pink Collection Page",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "label": "Products per page",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Products per row",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}
+
+

@@ -1,0 +1,117 @@
+<!-- navidium script start -->
+<style>
+  ul.item_41295532327001.ajax-cart__cart-item.grid__wrapper.edge:has([href*="navidium"]) {
+    display: none;
+}
+</style>
+ <script>
+    const nvdShop = 'ocean-soul-bali.myshopify.com';
+    const nvdShopCurrency = '{{ shop.money_format | strip_html }}';
+    const nvdControls = {
+      subtotal_item: '.js-cart-subtotal,.cart-original-total,.rebuy-cart__flyout-subtotal-amount span:last-child',
+      CheckoutBtns: '[name="checkout"],.rebuy-cart__checkout-button',
+      clickTriggers: '[name="button"],[name="button"] *,.ajax-cart__item-quantity button,.ajax-cart__item-quantity button *,.ajax-cart__item-remove,.ajax-cart__item-remove *,.rebuy-cart__flyout-item-quantity-widget-button,.rebuy-cart__flyout-item-quantity-widget-button *,.rebuy-cart__flyout-item-remove,.rebuy-cart__flyout-item-remove *,[href="/cart"],[href="/cart"] *',
+      changeTrigger: '.ajax-cart__qty-input ',
+	    cursorControl: '.nvd-mini',
+      showConsoleMessage: false,
+      iosDeviceListener:'click',
+      trackWidget: false,
+      forceClick: true,
+      forceCheckout: false,
+      redirectCheckout: {
+        upsaleOff: true,
+        noProtection: false
+      },
+		  nvdInject:{
+        status:false, // Inject nvd-mini div
+        parent:'parent_class', // parent class for nvd-mini div
+        container:'checkout_button_div' // nvd-mini will added before this div/button
+      }
+    }
+  </script>
+ <script  src="https://d10pwglna6up6p.cloudfront.net/navidium-widgets/js/nvd-js-asset.js"></script> 
+<script src="{{ 'navidium-custom.js' | asset_url }}" defer></script>
+<!-- navidium script end -->
+<script>
+  window.addEventListener("popstate", (event) => {
+  console.log(`location: ${document.location}, state: ${JSON.stringify(event.state)}`);
+});
+
+history.pushState({ page: 1 }, "");
+history.pushState({ page: 2 }, "");
+history.replaceState({ page: 3 }, "");
+history.back();
+history.back();
+history.go(2);
+</script>
+{% comment %}
+<!-- Navidium script start -->
+<style>
+  ul.item_41295532327001.ajax-cart__cart-item.grid__wrapper.edge:has([href*="navidium"]) {
+    display: none;
+}
+</style>
+    <script>
+      const nvdShop = 'ocean-soul-bali.myshopify.com';
+      const nvdShopCurrency = '{{ shop.money_format | strip_html }}';
+      const nvdControls = {
+        cartCounter: '.js-cart-count', //cart item count
+        subtotal: '.js-cart-subtotal', // cart subtotal amount
+        lineAttribute: 'data-index', // cart item line
+        cartItemNodes: 'cart_nodes', // Cart items loop
+        quantityMinus: 'qty_minus', // Quantity decrase button
+        quantityPlus: 'qty_plus', // Quantity incrase button
+        removeItem: 'cart_remove_class', // Cart item remove btn class
+        qtybtnAttribute: 'data-href', // Cart item btn line update
+        qtyrmvAttribute: 'href', // Cart item remove line update
+        clickTriggers: '[name="button"],[name="button"] *,.ajax-cart__item-quantity button,.ajax-cart__item-quantity button *,.ajax-cart__item-remove,.ajax-cart__item-remove *', // Onclick widget update
+        changeTrigger: '.ajax-cart__qty-input', // Onchange widget update
+  	    cursorControl: '.nvd-mini', // Disabled/Enabled cursor pointer event
+        onLoadTrigger: false, // window.onload nvd_init function call
+        cartReload: true, // Cart reload for /cart page
+        showConsoleMessage:false, // Console message show/hide
+        trackWidget:false, // Track widget on realtime
+        forceClick: true, // forceclick for onclickTrigger event
+        autoHide: false, // Hide by JS according to cartItemNodes
+        initiateTime: 2000, //milisecond
+        nvdInject:{
+          status:false, // Inject nvd-mini div
+          parent:'parent_class', // parent class for nvd-mini div
+          container:'checkout_button_div' // nvd-mini will added before this div/button
+        }
+      }      
+    </script>
+   <script src="https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/js/nvd-widget-stable-1.js" defer></script>
+  <!-- End of Navidium script -->
+  {% endcomment %}
+
+  <script>
+document.addEventListener('rebuy:smartcart.ready', (event) => {
+    setTimeout(nvd_init,300)
+});
+document.addEventListener('rebuy:smartcart.show', (event) => {
+    setTimeout(nvd_init,300)
+});
+</script>
+
+<style>
+  .d-flexCstm-ld {
+    margin: 0 auto;
+}
+</style>
+
+
+
+
+<style>
+  strong.shipping-protection-price-ld {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    font-weight: 600 !important;
+}
+
+.flex-grow-1Cstm-ld.ms-3Cstm-ld {
+    position: relative;
+}
+</style>

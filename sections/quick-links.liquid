@@ -1,0 +1,165 @@
+{%- liquid
+
+  assign section_space = section.settings.section_space
+  assign section_space_class = ''
+
+  if section_space == 'top'
+    assign section_space_class = ' pb0'
+  elsif section_space == 'bottom'
+    assign section_space_class = ' mt0'
+  elsif section_space == 'none'
+    assign section_space_class = ' mt0 pb0'
+  endif
+
+  assign grid = section.settings.grid
+  assign menu = linklists[section.settings.quick_links_list]
+
+-%}
+
+<section class="quick__links-section section-{{ section.id }} global__section{{ section_space_class }}" data-section-id="{{ section.id }}">
+
+  <div class="row grid__wrapper quick__link-container">
+    {% if menu == blank %}
+      {% for n in (1..grid) %}
+      {% assign menu_size = 6 %}
+      {% assign link = "link " | append: n %}
+        <div class="quick__link center">
+          <a href="#">{{ link }}</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for link in menu.links %}
+      {% assign menu_size = menu.links.size %}
+        <div class="quick__link center">
+           <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title | escape }}</a>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+</section>
+
+<style>
+
+  .quick__links-section.section-{{ section.id }} .quick__link-container {
+    grid-column-gap: 10px;
+    place-content: center;
+    grid-template-columns: repeat({{ grid }}, 1fr);
+    {% if menu_size > grid %}
+      grid-row-gap: 10px;
+    {% else %}
+      grid-row-gap: 0;
+    {% endif %}
+  }
+  @media screen and (max-width: 740px) {
+    .quick__links-section.section-{{ section.id }} .quick__link-container {
+      grid-template-columns: repeat(3, 1fr);
+      {% if menu_size > 3 %}
+        grid-row-gap: 10px;
+      {% else %}
+        grid-row-gap: 0;
+      {% endif %}
+    }
+  }
+  .quick__links-section.section-{{ section.id }} .quick__link a {
+    display: block;
+    color: {{ section.settings.link_color }};
+  }
+  .quick__links-section.section-{{ section.id }} .quick__link a:hover {
+    text-decoration: underline;
+  }
+  .quick__links-section.section-{{ section.id }} .quick__link {
+    background: {{ section.settings.link_background }};
+    color: {{ section.settings.link_color }};
+    padding: 10px;
+    display: grid;
+    align-items: center;
+  }
+  {% if section.settings.item_border %}
+    .quick__links-section.section-{{ section.id }} .quick__link {
+      border: 1px solid var(--dotted-color);
+    }
+  {% endif %}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Quick links",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "quick_links_list",
+      "label": "Choose link menu",
+      "info":"Display links from an existing navigation menu. Nested menu items will not be shown"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "label": "Links per row",
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color"
+    },
+    {
+      "type": "color",
+      "id": "link_background",
+      "label": "Link background"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_border",
+      "label": "Border links",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_space",
+      "label": "Section spacing",
+      "default": "top_and_bottom",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "top_and_bottom",
+          "label": "Top and bottom"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick links"
+    }
+  ],
+  "templates": [
+    "404",
+    "article",
+    "blog",
+    "cart",
+    "collection",
+    "list-collections",
+    "index",
+    "page",
+    "product",
+    "search"
+  ]
+}
+{% endschema %}

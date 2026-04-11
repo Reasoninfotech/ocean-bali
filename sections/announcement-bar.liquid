@@ -1,0 +1,724 @@
+{%- liquid
+  assign hd_locale_selector = false
+  assign hd_currency_selector = false
+
+  if section.settings.show_country_selector and localization.available_countries.size > 1
+    assign hd_currency_selector = true
+  endif
+
+  if section.settings.show_locale_selector and localization.available_languages.size > 1
+    assign hd_locale_selector = true
+  endif
+
+  if section.settings.announcement_text != blank
+    assign announcement = true
+  endif
+
+  if section.settings.full_width_header
+    assign is_full_width = true
+  endif
+-%}
+
+{% if hd_locale_selector or hd_currency_selector %}
+  {{ 'component-header-disclosures.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<header
+  class="announcement__bar-section js-top-bar"
+  data-section-id="{{ section.id }}"
+  data-section-type="announcement-bar-section"
+>
+  {% if is_full_width %}
+    <div class="gridlock-fluid">
+  {% endif %}
+  <div class="row grid__wrapper" id="upper-content">
+    {%- liquid
+      if announcement
+        assign social_grid = 'span-4 auto sm-hide v-center'
+      else
+        assign social_grid = 'span-6 auto sm-hide v-center'
+      endif
+    -%}
+    {% render 'social-icons',
+      wrapper: '.announcement__bar-section',
+      fill_color: 'var(--announcement-text)',
+      hover_color: 'var(--announcement-text)',
+      social_grid: social_grid
+    %}
+
+    {% if announcement %}
+      <div
+        id="hello"
+        class="span-4 auto sm-span-12 v-center"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
+      >
+        <div id="announcement-bar" style="text-align: center; width: 100%; padding-bottom: 5px;">
+          {% assign base_target_1 = section.settings.target_1_amount | default: 100 %}
+          {% assign target_1_amount = base_target_1 | times: 100 %}
+
+          {% assign tier_1_default = 'FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!' %}
+          {% assign tier_1_text = section.settings.tier_1_text | default: tier_1_default %}
+          {% assign current_currency = localization.country.currency.iso_code | default: 'AUD' %}
+
+          <div id="announcement-text-container">
+            <p
+              style="margin: 0; font-size: var(--announcement-text-size); line-height: 1.5; letter-spacing: 0.5px; min-height: 1.5em; display: flex; align-items: center; justify-content: center;"
+            >
+              {% if cart.item_count > 0 or current_currency != 'AUD' %}
+                <span class="wave-loader"><span></span><span></span><span></span></span>
+              {% else %}
+                {% capture formatted_target_1 %}
+                            <span class="format-money" data-amount="{{ target_1_amount }}">{{ target_1_amount | money
+                                }}</span>
+                            {% endcapture %}
+                {{
+                  tier_1_text
+                  | replace: '[target_1]', formatted_target_1
+                  | replace: '[TARGET_1]', formatted_target_1
+                  | replace: '[amount]', formatted_target_1
+                  | replace: '[AMOUNT]', formatted_target_1
+                }}
+              {% endif %}
+            </p>
+          </div>
+
+          <div
+            class="progress-bar-container"
+            style="background-color: #ededed; border-radius: 10px; height: 8px; max-width: 300px; margin: 8px auto 0; overflow: hidden;"
+          >
+            <div
+              id="announcement-progress-fill"
+              style="width: 0%; background-color: #2e6688; height: 100%; transition: width 0.3s ease;"
+            ></div>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Dynamic parameters from Theme Customizer
+              let target1Set = {{ section.settings.target_1_amount | default: 100 | json
+          }};
+          let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
+          let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
+
+          const baseTarget1Amount = (isNaN(target1Set) || target1Set <= 0 ? 100 : target1Set) * 100;
+          const baseTarget2Amount = (isNaN(target2Set) || target2Set <= 0 ? 150 : target2Set) * 100;
+          const baseTarget3Amount = (isNaN(target3Set) || target3Set <= 0 ? 250 : target3Set) * 100;
+
+          let activeTarget1Amount = baseTarget1Amount;
+          let activeTarget2Amount = baseTarget2Amount;
+          let activeTarget3Amount = baseTarget3Amount;
+
+          const textTier1 = {{ section.settings.tier_1_text | default: "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!" | json }};
+          const textTier2 = {{ section.settings.tier_2_text | default: "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!" | json }};
+          const textTier3 = {{ section.settings.tier_3_text | default: "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!" | json }};
+          const textTier4 = {{ section.settings.tier_4_text | default: "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!" | json }};
+          const textTier5 = {{ section.settings.tier_5_text | default: "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!" | json }};
+
+          // Identify the active currency
+          let activeCurrency = 'AUD';
+          if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) {
+              activeCurrency = window.Shopify.currency.active;
+          }
+
+          function formatMoneyElements() {
+              const elements = document.querySelectorAll(".format-money");
+              elements.forEach(function (el) {
+                  let amountInCents = parseInt(el.dataset.amount);
+                  if (!isNaN(amountInCents)) {
+                      try {
+                          // Use native browser currency formatter based on the active currency (e.g. 'EUR')
+                          // currencyDisplay: 'narrowSymbol' ensures standard $ and € symbols instead of US$ or EUR
+                          const formatter = new Intl.NumberFormat(undefined, {
+                              style: 'currency',
+                              currency: activeCurrency,
+                              currencyDisplay: 'narrowSymbol',
+                              minimumFractionDigits: 2
+                          });
+                          el.innerText = formatter.format(amountInCents / 100);
+                      } catch (e) {
+                          // Fallback if browser doesn't support Intl for some reason
+                          if (window.Shopify && window.Shopify.formatMoney) {
+                              el.innerText = window.Shopify.formatMoney(amountInCents);
+                          } else {
+                              el.innerText = '$' + (amountInCents / 100).toFixed(2);
+                          }
+                      }
+                  }
+              });
+          }
+
+          function updateAnnouncementBar(cartTotalCents) {
+              const container = document.getElementById("announcement-text-container");
+              const fillBar = document.getElementById("announcement-progress-fill");
+              if (!container || !fillBar) return;
+
+              let progress = (cartTotalCents / activeTarget3Amount) * 100;
+              if (progress > 100) progress = 100;
+              fillBar.style.width = progress + '%';
+
+              let html = '';
+              let fTarget1 = '<span class="format-money" data-amount="' + activeTarget1Amount + '"></span>';
+              let fTarget2 = '<span class="format-money" data-amount="' + activeTarget2Amount + '"></span>';
+              let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>';
+
+              let template = '<p style="margin: 0; font-size: var(--announcement-text-size); line-height: 1.5; letter-spacing: 0.5px;">';
+
+              if (cartTotalCents === 0) {
+                  html = template + textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1) + '</p>';
+              } else if (cartTotalCents < activeTarget1Amount) {
+                  let remaining = activeTarget1Amount - cartTotalCents;
+                  let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                  html = template + textTier2.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1).replace(/\[remaining_1\]/gi, fRemaining).replace(/\[remaining\]/gi, fRemaining) + '</p>';
+              } else if (cartTotalCents < activeTarget2Amount) {
+                  let remaining = activeTarget2Amount - cartTotalCents;
+                  let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                  html = template + textTier3.replace(/\[target_2\]/gi, fTarget2).replace(/\[remaining_2\]/gi, fRemaining) + '</p>';
+              } else if (cartTotalCents < activeTarget3Amount) {
+                  let remaining = activeTarget3Amount - cartTotalCents;
+                  let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                  html = template + textTier4.replace(/\[target_3\]/gi, fTarget3).replace(/\[remaining_3\]/gi, fRemaining) + '</p>';
+              } else {
+                  html = template + textTier5 + '</p>';
+              }
+
+              container.innerHTML = html;
+              formatMoneyElements();
+          }
+
+          function loadCartAndUpdate() {
+              fetch('/cart.js', { cache: 'no-store' })
+                  .then(response => response.json())
+                  .then(cart => {
+                      updateAnnouncementBar(cart.total_price);
+                  })
+                  .catch(e => console.error("Error fetching cart data:", e));
+          }
+
+          // Determine exchange rate and initialize
+          function initialize() {
+              if (activeCurrency === 'AUD') {
+                  loadCartAndUpdate();
+              } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
+                  activeTarget1Amount = Math.round(baseTarget1Amount * window.Shopify.currency.rate);
+                  activeTarget2Amount = Math.round(baseTarget2Amount * window.Shopify.currency.rate);
+                  activeTarget3Amount = Math.round(baseTarget3Amount * window.Shopify.currency.rate);
+                  loadCartAndUpdate();
+              } else if (typeof Currency !== 'undefined' && typeof Currency.convert === 'function') {
+                  activeTarget1Amount = Math.round(baseTarget1Amount * Currency.convert(1, 'AUD', activeCurrency));
+                  activeTarget2Amount = Math.round(baseTarget2Amount * Currency.convert(1, 'AUD', activeCurrency));
+                  activeTarget3Amount = Math.round(baseTarget3Amount * Currency.convert(1, 'AUD', activeCurrency));
+                  loadCartAndUpdate();
+              } else {
+                  // Fallback to free public API for Shopify Markets which hides exchange rates
+                  fetch('https://open.er-api.com/v6/latest/AUD')
+                      .then(res => res.json())
+                      .then(data => {
+                          if (data && data.rates && data.rates[activeCurrency]) {
+                              activeTarget1Amount = Math.round(baseTarget1Amount * data.rates[activeCurrency]);
+                              activeTarget2Amount = Math.round(baseTarget2Amount * data.rates[activeCurrency]);
+                              activeTarget3Amount = Math.round(baseTarget3Amount * data.rates[activeCurrency]);
+                          }
+                          loadCartAndUpdate();
+                      })
+                      .catch(e => {
+                          console.error("Exchange rate fetch failed, falling back to base amount", e);
+                          loadCartAndUpdate(); // Fallback anyway
+                      });
+              }
+          }
+
+          initialize();
+
+          // System Interceptors for AJAX Carts
+          const originalFetch = window.fetch;
+          window.fetch = function () {
+              return originalFetch.apply(this, arguments).then(function (res) {
+                  const url = res.url || "";
+                  if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
+                      setTimeout(loadCartAndUpdate, 400);
+                  }
+                  return res;
+              });
+          };
+
+          const originalXHR = window.XMLHttpRequest.prototype.open;
+          window.XMLHttpRequest.prototype.open = function () {
+              this.addEventListener('load', function () {
+                  const url = this.responseURL || "";
+                  if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
+                      setTimeout(loadCartAndUpdate, 400);
+                  }
+              });
+              originalXHR.apply(this, arguments);
+          };
+
+          document.addEventListener('cart:updated', loadCartAndUpdate);
+          document.addEventListener('cart:refresh', loadCartAndUpdate);
+          });
+        </script>
+      </div>
+    {% endif %}
+    <ul
+      class="cart-links__wrapper {% if announcement %}span-4 {% else %}span-6{% endif %} auto sm-hide v-center a-right"
+    >
+      {%- if hd_locale_selector -%}
+        <li class="lang-selector">
+          <div class="selectors-form__item">
+            <noscript>
+              {%- form 'localization',
+                id: 'HeaderLanguageFormNoScript',
+                class: 'localization-form selectors-form',
+                data-disclosure-form: ''
+              -%}
+                <h2 class="visually-hidden" id="HeaderLanguageLabelNoScript">
+                  {{ 'general.currency.dropdown_label' | t }}
+                </h2>
+                <div class="selectors-form__select">
+                  <select
+                    name="locale_code"
+                    class="localization-selector button"
+                    aria-labelledby="HeaderLanguageLabelNoScript"
+                  >
+                    <option value="" disabled>{{ 'general.language.dropdown_label' | t }}</option>
+                    {%- for language in localization.available_languages -%}
+                      <option
+                        value="{{ language.iso_code }}"
+                        lang="{{ language.iso_code }}"
+                        {%- if language.iso_code == localization.language.iso_code %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ language.endonym_name | capitalize }}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {% render 'snip-icons',
+                    type: 'apollo',
+                    icon: 'down-carrot',
+                    size: '8px',
+                    fill: 'var(--announcement-text)',
+                    hover: 'var(--announcement-background)'
+                  %}
+                </div>
+                <!-- /.selectors-form__select -->
+                <button class="localization-form__noscript-btn">
+                  {% render 'snip-icons',
+                    type: 'apollo',
+                    icon: 'checkmark',
+                    size: '12px',
+                    fill: 'var(--announcement-text)',
+                    hover: 'var(--announcement-background)'
+                  %}
+                </button>
+              {%- endform -%}
+            </noscript>
+            {%- form 'localization',
+              id: 'HeaderLanguageForm',
+              class: 'localization-form selectors-form',
+              data-disclosure-form: ''
+            -%}
+              <div class="disclosure" data-disclosure-locale>
+                <div class="no-js-hidden">
+                  <h2 class="visually-hidden" id="HeaderLanguageLabel">
+                    {{ 'general.language.dropdown_label' | t }}
+                  </h2>
+                  <button
+                    type="button"
+                    class="disclosure__toggle"
+                    aria-expanded="false"
+                    aria-controls="HeaderLanguageList"
+                    aria-describedby="HeaderLanguageLabel"
+                    data-disclosure-toggle
+                  >
+                    {{ localization.language.endonym_name | capitalize }}
+                    {% render 'snip-icons',
+                      type: 'apollo',
+                      icon: 'down-carrot',
+                      size: '8px',
+                      fill: 'var(--announcement-text)',
+                      hover: 'var(--announcement-background)'
+                    %}
+                  </button>
+                  <ul id="HeaderLanguageList" class="disclosure-list" data-disclosure-list>
+                    {%- for language in localization.available_languages -%}
+                      <li
+                        class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}"
+                      >
+                        <a
+                          class="disclosure-list__option"
+                          href="#"
+                          title="{{ locale.endonym_name }}"
+                          lang="{{ locale.iso_code }}"
+                          {% if language.iso_code == localization.language.iso_code %}
+                            aria-current="true"
+                          {% endif %}
+                          data-value="{{ language.iso_code | capitalize }}"
+                          data-disclosure-option
+                        >
+                          {{ language.endonym_name | capitalize }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  <input
+                    type="hidden"
+                    name="locale_code"
+                    id="LocaleSelector"
+                    value="{{ localization.language.iso_code }}"
+                    data-disclosure-input
+                  >
+                </div>
+                <!-- /.no-js-hidden -->
+              </div>
+              <!-- /.disclosure -->
+            {%- endform -%}
+          </div>
+          <!-- /.selectors-form__item -->
+        </li>
+      {%- endif -%}
+      {%- if hd_currency_selector -%}
+        <li class="curr-selector">
+          <div class="selectors-form__item">
+            <noscript>
+              {%- form 'localization',
+                id: 'HeaderCountryFormNoScript',
+                class: 'localization-form selectors-form',
+                data-disclosure-form: ''
+              -%}
+                <h2 class="visually-hidden" id="HeaderCountryLabelNoScript">
+                  {{ 'general.currency.dropdown_label' | t }}
+                </h2>
+                <div class="selectors-form__select">
+                  <select
+                    class="localization-selector button"
+                    name="country_code"
+                    aria-labelledby="HeaderCountryLabelNoScript"
+                  >
+                    <option value="" disabled>{{ 'general.currency.dropdown_label' | t }}</option>
+                    {%- for country in localization.available_countries -%}
+                      <option
+                        value="{{ country.iso_code }}"
+                        {%- if country.iso_code == localization.country.iso_code %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ country.name }} ({{ country.currency.iso_code }}
+                        {{ country.currency.symbol }})
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {% render 'snip-icons',
+                    type: 'apollo',
+                    icon: 'down-carrot',
+                    size: '8px',
+                    fill: 'var(--announcement-text)',
+                    hover: 'var(--announcement-text)'
+                  %}
+                </div>
+                <!-- /.selectors-form__select -->
+                <button class="localization-form__noscript-btn">
+                  {% render 'snip-icons',
+                    type: 'apollo',
+                    icon: 'checkmark',
+                    size: '12px',
+                    fill: 'var(--announcement-text)',
+                    hover: 'var(--announcement-background)'
+                  %}
+                </button>
+              {% endform %}
+            </noscript>
+            {%- form 'localization',
+              id: 'HeaderCountryForm',
+              class: 'localization-form selectors-form',
+              data-disclosure-form: ''
+            -%}
+              <div class="disclosure" data-disclosure-country>
+                <div class="no-js-hidden">
+                  <h2 class="visually-hidden" id="HeaderCountryLabel">
+                    {{ 'general.currency.dropdown_label' | t }}
+                  </h2>
+                  <button
+                    type="button"
+                    class="disclosure__toggle"
+                    aria-expanded="false"
+                    aria-controls="HeaderCountryList"
+                    aria-describedby="HeaderCountryLabel"
+                    data-disclosure-toggle
+                  >
+                    {% comment %}{{ localization.country.name }} {% endcomment %} (
+                    {{- localization.country.currency.iso_code }}
+                    {{ localization.country.currency.symbol }})
+                    {% render 'snip-icons',
+                      type: 'apollo',
+                      icon: 'down-carrot',
+                      size: '8px',
+                      fill: 'var(--announcement-text)',
+                      hover: 'var(--announcement-text)'
+                    %}
+                  </button>
+                  <ul id="HeaderCountryList" class="disclosure-list" data-disclosure-list>
+                    {% comment %}
+                      {% for country in localization.available_countries %}
+                      <li
+                          class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                          <a class="disclosure-list__option" href="#" title="{{ country.iso_code }}" {% if
+                              country.iso_code==localization.country.iso_code %} aria-current="true" {%
+                              endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
+                              {{ country.name }} <span class="localization-form__currency">{{
+                                  country.currency.iso_code }} {{ country.currency.symbol }}</span>
+                          </a>
+                      </li>
+                      {%- endfor -%}
+                    {% endcomment %}
+                    {% assign printed_currencies = '' %}
+                    {% for country in localization.available_countries %}
+                      {% assign currency_info = country.currency.iso_code
+                        | append: ' '
+                        | append: country.currency.symbol
+                      %}
+
+                      {% if printed_currencies contains currency_info %}
+                        {% continue %}
+                      {% endif %}
+
+                      {% assign printed_currencies = printed_currencies | append: ',' | append: currency_info %}
+
+                      <li
+                        class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}"
+                      >
+                        <a
+                          class="disclosure-list__option"
+                          href="#"
+                          title="{{ country.iso_code }}"
+                          {% if country.iso_code == localization.country.iso_code %}
+                            aria-current="true"
+                          {% endif %}
+                          data-value="{{ country.iso_code }}"
+                          data-disclosure-option
+                        >
+                          <span class="localization-form__currency">
+                            {{- country.currency.iso_code }}
+                            {{ country.currency.symbol -}}
+                          </span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                  <input
+                    type="hidden"
+                    name="country_code"
+                    value="{{ localization.country.iso_code }}"
+                    data-disclosure-input
+                  >
+                </div>
+                <!-- /.no-js-hidden -->
+              </div>
+              <!-- /.disclosure -->
+            {%- endform -%}
+          </div>
+          <!-- /.selectors-form__item -->
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+  {% if is_full_width %}
+    </div>
+  {% endif %}
+
+  <style>
+    #announcement-text-container p {
+        color: rgb(46, 102, 136);
+    }
+
+    #announcement-text-container .format-money {
+        color: rgb(46, 102, 136);
+    }
+            :root {
+                --announcement-text-size: {
+                        {
+                        section.settings.announcement_text_size
+                    }
+                }
+
+                px;
+            }
+
+            .wave-loader {
+                display: inline-flex;
+                align-items: center;
+                gap: 3px;
+            }
+
+            .wave-loader span {
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: var(--announcement-text, currentColor);
+                border-radius: 50%;
+                animation: wave-bounce 1.4s infinite ease-in-out both;
+            }
+
+            .wave-loader span:nth-child(1) {
+                animation-delay: -0.32s;
+            }
+
+            .wave-loader span:nth-child(2) {
+                animation-delay: -0.16s;
+            }
+
+            @keyframes wave-bounce {
+
+                0%,
+                80%,
+                100% {
+                    transform: scale(0);
+                }
+
+                40% {
+                    transform: scale(1);
+                }
+            }
+
+            .announcement__bar-section .gridlock-fluid .grid__wrapper {
+                max-width: 100%;
+            }
+
+            .announcement__bar-section button,
+            .announcement__bar-section .disclosure-list__option {
+                font-size: {
+                        {
+                        section.settings.announcement_text_size
+                    }
+                }
+
+                px;
+                display: block;
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 740px) {
+                :root {
+                    --announcement-text-size: calc({
+                            {
+                            section.settings.announcement_text_size
+                        }
+                    }
+
+                    px - ({
+                            {
+                            section.settings.announcement_text_size
+                        }
+                    }
+
+                    px * 0.15));
+            }
+            }
+  </style>
+</header>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width_header",
+      "label": "Full width"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Bar"
+    },
+    {
+      "type": "richtext",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "<p>Share a shop announcement or message</p>"
+    },
+    {
+      "type": "range",
+      "id": "announcement_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Dynamic Goal Bar Targets"
+    },
+    {
+      "type": "number",
+      "id": "target_1_amount",
+      "label": "Target 1 (Free Delivery)",
+      "default": 100
+    },
+    {
+      "type": "number",
+      "id": "target_2_amount",
+      "label": "Target 2 (+ Visor)",
+      "default": 150
+    },
+    {
+      "type": "number",
+      "id": "target_3_amount",
+      "label": "Target 3 (+ Sarong)",
+      "default": 250
+    },
+    {
+      "type": "header",
+      "content": "Dynamic Goal Bar Texts"
+    },
+    {
+      "type": "textarea",
+      "id": "tier_1_text",
+      "label": "Tier 1 Text (Cart Empty)",
+      "default": "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!",
+      "info": "Use [target_1] to show the 100$ equivalent."
+    },
+    {
+      "type": "textarea",
+      "id": "tier_2_text",
+      "label": "Tier 2 Text (Cart < Target 1)",
+      "default": "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!",
+      "info": "Use [remaining_1] to show the amount left to 100$."
+    },
+    {
+      "type": "textarea",
+      "id": "tier_3_text",
+      "label": "Tier 3 Text (Cart >= Target 1)",
+      "default": "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!",
+      "info": "Use [remaining_2] to show the amount left to 150$."
+    },
+    {
+      "type": "textarea",
+      "id": "tier_4_text",
+      "label": "Tier 4 Text (Cart >= Target 2)",
+      "default": "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!",
+      "info": "Use [remaining_3] to show the amount left to 250$."
+    },
+    {
+      "type": "textarea",
+      "id": "tier_5_text",
+      "label": "Tier 5 Text (Cart >= Target 3)",
+      "default": "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!"
+    },
+    {
+      "type": "header",
+      "content": "Language Selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    { "type": "checkbox", "id": "show_locale_selector", "label": "Show language selector", "default": true },
+    {
+      "type": "header",
+      "content": "Country/Region Selector",
+      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+    },
+    { "type": "checkbox", "id": "show_country_selector", "label": "Show country/region selector", "default": true }
+  ],
+  "blocks": []
+}
+{% endschema %}

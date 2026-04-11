@@ -1,0 +1,94 @@
+
+  {%- liquid
+    assign grid = section.settings.per_row
+  -%}
+    {%- if recommendations.performed -%}
+      {%- if recommendations.products_count > 0 -%}
+
+        <div class="product-recommendations row" data-product-id="{{ product.id }}">
+
+            <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %} desktop-12 tablet-6 mobile-3">
+              <h2>{{ section.settings.product_recommendations_heading }}</h2>
+            </div>
+
+          <div class="product-loop">
+
+            {%- for product in recommendations.products limit: section.settings.limit -%}
+              {% unless product.handle contains 'navidium' %}
+              <div class="product product-index js-product-listing">
+                {% render 'product-listing', template: 'product', product: product %}
+              </div>
+                {% endunless %}
+            {%- endfor -%}
+          </div>
+
+        </div>
+      {%- endif -%}
+    {%- else  -%}
+      <div class="js-product-rec-wrapper"
+        data-base-url="{{ routes.product_recommendations_url }}"
+        data-product-id="{{ product.id }}"
+        data-section-id="{{ section.id }}"
+        data-section-type="product-recommendations"
+        data-intent="related">
+      </div>
+    {%- endif -%}
+
+
+<style>
+  .product-recommendations .product-loop {
+    margin: 20px auto;
+    display: grid;
+    width: 100%;
+    margin-left: 1.04166667%;
+    margin-right: 1.04166667%;
+    grid-template-columns: repeat({{ grid }}, 1fr);
+    grid-row-gap: 25px;
+    grid-column-gap: 40px;
+  }
+  @media screen and (min-width: 741px) and (max-width: 980px){
+    .product-recommendations .product-loop {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+  }
+  @media screen and (max-width: 740px){
+    .product-recommendations .product-loop {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type":      "range",
+      "id":        "per_row",
+      "min":       2,
+      "max":       5,
+      "step":      1,
+      "label":     "Products per row",
+      "default":   5
+    },
+    {
+      "type":      "range",
+      "id":        "limit",
+      "min":       2,
+      "max":       12,
+      "step":      1,
+      "label":     "Products shown",
+      "default":   5
+    }
+  ]
+}
+{% endschema %}

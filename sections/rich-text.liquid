@@ -1,0 +1,372 @@
+<section class="global__section rich__text-section--{{ section.id }} mt0" data-section-id="{{ section.id }}" {% if section.settings.comman_data_id != blank %} data-section-scroll="{{ section.settings.comman_data_id }}" {% endif %} >
+  <div class="row">
+    <div class="rich__text-container desktop-12 tablet-6 mobile-3 padded">
+      <div class="rich__text-content">
+        {% for block in section.blocks %}
+          {% assign page = pages[block.settings.page] %}
+          <div class="rich__text-column{% if block.settings.center %} center{% endif %} block-{{ block.id }}">
+            
+            {% if block.settings.accordion_enabled %}
+              <!-- Accordion Toggle Header -->
+              <div class="accordion-header" data-accordion-id="{{ block.id }}">
+                {% if block.settings.title != blank %}
+                  {% if block.settings.title_heading %}
+                    <h1 class="accordion-trigger">
+                      {{ block.settings.title | escape }}
+                      <span class="accordion-icon">
+                        {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 7.50828C23.0017 7.21043 22.9147 6.91881 22.75 6.67061C22.5854 6.4224 22.3506 6.22885 22.0755 6.11463C21.8004 6.00042 21.4975 5.97071 21.2055 6.0293C20.9134 6.08788 20.6455 6.23211 20.4357 6.44359L12.5031 14.3913L4.57038 6.44359C4.28801 6.16122 3.90503 6.00259 3.5057 6.00259C3.30797 6.00259 3.11217 6.04153 2.92949 6.1172C2.74681 6.19287 2.58082 6.30378 2.44101 6.44359C2.30119 6.58341 2.19028 6.7494 2.11461 6.93208C2.03895 7.11475 2 7.31055 2 7.50828C2 7.90762 2.15864 8.2906 2.44101 8.57297L11.4384 17.5703C11.7193 17.8496 12.0994 18.0064 12.4956 18.0064C12.8917 18.0064 13.2718 17.8496 13.5527 17.5703L22.5501 8.57297C22.6918 8.43409 22.8045 8.26847 22.8817 8.08571C22.959 7.90295 22.9992 7.70668 23 7.50828Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
+
+                        {% comment %} <svg class="minus-icon" style="display:none;" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 16.4986C23.0017 16.7964 22.9147 17.088 22.75 17.3362C22.5854 17.5844 22.3506 17.778 22.0755 17.8922C21.8004 18.0064 21.4975 18.0361 21.2055 17.9775C20.9134 17.919 20.6455 17.7747 20.4357 17.5632L12.5031 9.61558L4.57038 17.5632C4.28801 17.8456 3.90503 18.0043 3.5057 18.0043C3.30797 18.0043 3.11217 17.9653 2.92949 17.8896C2.74681 17.814 2.58082 17.7031 2.44101 17.5632C2.30119 17.4234 2.19028 17.2574 2.11461 17.0748C2.03895 16.8921 2 16.6963 2 16.4986C2 16.0992 2.15864 15.7162 2.44101 15.4339L11.4384 6.43651C11.7193 6.15721 12.0994 6.00045 12.4956 6.00045C12.8917 6.00045 13.2718 6.15721 13.5527 6.43651L22.5501 15.4339C22.6918 15.5727 22.8045 15.7384 22.8817 15.9211C22.959 16.1039 22.9992 16.3002 23 16.4986Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
+                      </span>
+                    </h1>
+                  {% else %}
+                    <h3 class="accordion-trigger">
+                      {{ block.settings.title | escape }}
+                      <span class="accordion-icon">
+                        {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 7.50828C23.0017 7.21043 22.9147 6.91881 22.75 6.67061C22.5854 6.4224 22.3506 6.22885 22.0755 6.11463C21.8004 6.00042 21.4975 5.97071 21.2055 6.0293C20.9134 6.08788 20.6455 6.23211 20.4357 6.44359L12.5031 14.3913L4.57038 6.44359C4.28801 6.16122 3.90503 6.00259 3.5057 6.00259C3.30797 6.00259 3.11217 6.04153 2.92949 6.1172C2.74681 6.19287 2.58082 6.30378 2.44101 6.44359C2.30119 6.58341 2.19028 6.7494 2.11461 6.93208C2.03895 7.11475 2 7.31055 2 7.50828C2 7.90762 2.15864 8.2906 2.44101 8.57297L11.4384 17.5703C11.7193 17.8496 12.0994 18.0064 12.4956 18.0064C12.8917 18.0064 13.2718 17.8496 13.5527 17.5703L22.5501 8.57297C22.6918 8.43409 22.8045 8.26847 22.8817 8.08571C22.959 7.90295 22.9992 7.70668 23 7.50828Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
+
+                        {% comment %} <svg class="minus-icon" style="display:none;" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 16.4986C23.0017 16.7964 22.9147 17.088 22.75 17.3362C22.5854 17.5844 22.3506 17.778 22.0755 17.8922C21.8004 18.0064 21.4975 18.0361 21.2055 17.9775C20.9134 17.919 20.6455 17.7747 20.4357 17.5632L12.5031 9.61558L4.57038 17.5632C4.28801 17.8456 3.90503 18.0043 3.5057 18.0043C3.30797 18.0043 3.11217 17.9653 2.92949 17.8896C2.74681 17.814 2.58082 17.7031 2.44101 17.5632C2.30119 17.4234 2.19028 17.2574 2.11461 17.0748C2.03895 16.8921 2 16.6963 2 16.4986C2 16.0992 2.15864 15.7162 2.44101 15.4339L11.4384 6.43651C11.7193 6.15721 12.0994 6.00045 12.4956 6.00045C12.8917 6.00045 13.2718 6.15721 13.5527 6.43651L22.5501 15.4339C22.6918 15.5727 22.8045 15.7384 22.8817 15.9211C22.959 16.1039 22.9992 16.3002 23 16.4986Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
+                      </span>
+                    </h3>
+                  {% endif %}
+                {% endif %}
+                <div class="clear"></div>
+              </div>
+
+              <!-- Accordion Content -->
+              <div class="accordion-content" data-accordion-id="{{ block.id }}">
+                {% if page != blank %}
+                  {{ page.content }}
+                {% else %}
+                <div class="rte">
+                  {{ block.settings.text }}
+                </div>
+                {% endif %}
+              </div>
+            {% else %}
+              <!-- Normal Content (No Accordion) -->
+              {% if block.settings.title != blank %}
+                {% if block.settings.title_heading %}
+                  <h1>{{ block.settings.title | escape }}</h1>
+                {% else %}
+                  <h3>{{ block.settings.title | escape }}</h3>
+                {% endif %}
+                <div class="clear"></div>
+              {% endif %}
+              {% if page != blank %}
+                {{ page.content }}
+              {% else %}
+              <div class="rte">
+                {{ block.settings.text }}
+              </div>
+              {% endif %}
+            {% endif %}
+
+            {%- liquid
+
+              assign width = block.settings.block_width
+              case block.settings.block_width
+                when 25
+                  assign span = 'span_1'
+                when 50
+                  assign span = 'span_2'
+                when 75
+                  assign span = 'span_3'
+                when 100
+                  assign span = 'span_4'
+              endcase
+
+            -%}
+
+            <style>
+              .rich__text-column.block-{{ block.id }} {
+                {% if section.blocks.size == 1 %}
+                width: {{ width }}%;
+                justify-self: center;
+                {% else %}
+                grid-column: auto / {{ span | replace: '_', ' ' }};
+                {% endif %}
+              }
+            </style>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    {% if section.blocks.size > 1 %}
+    .rich__text-section--{{ section.id }} .rich__text-content {
+      grid-template-columns:repeat(4, 1fr);
+      justify-content: center;
+    }
+    {% endif %}
+    
+    .rich__text-section--{{ section.id }} {
+      padding: {{ section.settings.padding }}px 0;
+    }
+    
+    .rich__text-section--{{ section.id }} {
+      background: {{ section.settings.background_color }};
+    }
+    
+    .rich__text-section--{{ section.id }} h3,
+    .rich__text-section--{{ section.id }} p,
+    .rich__text-section--{{ section.id }} a {
+      color: {{ section.settings.text_color }};
+    }
+
+    /* Accordion Styles */
+    .accordion-header {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .accordion-trigger {
+      display: flex;
+      align-items: flex-end;
+      gap: 0px;
+      cursor: pointer;
+      margin: 0 auto;
+      justify-content: center;
+      width: fit-content;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 25px;
+      position: relative;
+      width: fit-content;
+    }
+
+    .accordion-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      width: {{ block.settings.accordion_icon_size }}px;
+      height: {{ block.settings.accordion_icon_size }}px;
+      flex-shrink: 0;
+      color: {{ block.settings.accordion_icon_color }};  
+      position: absolute;
+      right: 0;
+      bottom: -13px;
+      background: #fff;
+      padding-left: 20px;
+    }
+
+    .accordion-icon svg {
+         width: 30px;
+    height: 30px;
+      color: {{ block.settings.accordion_icon_color }};
+    }
+
+    .accordion-icon svg line {
+      stroke: {{ block.settings.accordion_icon_color }};
+    }
+
+    /* Icon rotation when active */
+    .accordion-icon .plus-icon {
+      transition: opacity 0.3s ease;
+    }
+
+    .accordion-icon .minus-icon {
+      transition: opacity 0.3s ease;
+    }
+
+    .accordion-content {
+      {% comment %} max-height: 0; {% endcomment %}
+      {% comment %} overflow: hidden; {% endcomment %}
+      {% comment %} transition: max-height 0.3s ease; {% endcomment %}
+      {% comment %} opacity: 0; {% endcomment %}
+      display:none;
+    }
+
+    .accordion-content.active {
+      {% comment %} max-height: 2000px; {% endcomment %}
+      {% comment %} opacity: 1; {% endcomment %}
+    display:block;
+    }
+
+    .accordion-content.active .rte {
+      padding: 15px 0;
+    }
+    @media screen and (max-width: 768px) {
+    .accordion-trigger {
+      gap:10px;
+    }
+  }
+  </style>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const headers = document.querySelectorAll('.accordion-header');
+      
+      headers.forEach(header => {
+        const accordionId = header.getAttribute('data-accordion-id');
+        const trigger = header.querySelector('.accordion-trigger');
+        const icon = header.querySelector('.accordion-icon');
+        const plusIcon = icon.querySelector('.plus-icon');
+        const minusIcon = icon.querySelector('.minus-icon');
+        const content = document.querySelector(`.accordion-content[data-accordion-id="${accordionId}"]`);
+
+        if (trigger && content) {
+          trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle active state
+            content.classList.toggle('active');
+            
+            // Toggle icons
+            if (content.classList.contains('active')) {
+              plusIcon.style.display = 'none';
+              minusIcon.style.display = 'block';
+            } else {
+              plusIcon.style.display = 'block';
+              minusIcon.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+  </script>
+</section>
+
+
+{% schema %}
+{
+  "name": "Rich text",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 30,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "comman_data_id",
+      "label": "Comman Data Id",
+      "info": "Do not remove that"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Welcome"
+        },
+        {
+          "type": "checkbox",
+          "id": "title_heading",
+          "label": "H1 Header"
+        },
+        {
+          "type": "checkbox",
+          "id": "accordion_enabled",
+          "label": "Enable Accordion",
+          "default": false,
+          "info": "Check this to show accordion with toggle icon"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add some text blocks to your page with editable widths for a single or multi-column display</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Show content from a page",
+          "info": "Overrides any text entered"
+        },
+        {
+          "type": "checkbox",
+          "id": "center",
+          "label": "Center align"
+        },
+        {
+          "type": "range",
+          "id": "block_width",
+          "min": 25,
+          "max": 100,
+          "step": 25,
+          "unit": "%",
+          "label": "Block width",
+          "default": 100
+        },
+        {
+          "type": "color",
+          "id": "accordion_icon_color",
+          "label": "Accordion Icon Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "accordion_icon_size",
+          "min": 10,
+          "max": 40,
+          "step": 5,
+          "unit": "px",
+          "label": "Accordion Icon Size",
+          "default": 20
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text",
+      "blocks": [
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "404",
+    "article",
+    "blog",
+    "cart",
+    "collection",
+    "list-collections",
+    "index",
+    "page",
+    "product",
+    "search",
+    "customers/account"
+  ]
+}
+{% endschema %}
