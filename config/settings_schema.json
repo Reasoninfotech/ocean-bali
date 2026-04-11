@@ -7,6 +7,17 @@
     "theme_support_url": "https:\/\/www.weareunderground.com\/blogs\/theme-support"
   },
   {
+    "name": "Header And Footer",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "page_handle",
+        "label": "Add Handle",
+        "info": "Add page, product or collection handle separated by comma. Ex: sulawesi-v3, returns, bikini, swimwear"
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
@@ -236,7 +247,7 @@
         "default": "#ffffff"
       }
     ]
-    },
+  },
   {
     "name": "Typography",
     "settings": [

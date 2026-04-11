@@ -60,9 +60,6 @@
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-      async
     ></script>
 
     {%- liquid
@@ -190,15 +187,56 @@
         {% comment %}
         {% section 'new-announcement' %}
         {% endcomment %}
-        {% section 'announcement-bar' %}
-        {% section 'header' %}
+
+        
+  {% assign allowed_handles = settings.page_handle | split: ', ' %}
+
+  {% assign current_handle = '' %}
+
+    {% if request.page_type == 'page' %}
+      {% assign current_handle = page.handle %}
+    {% elsif request.page_type == 'product' %}
+      {% assign current_handle = product.handle %}
+    {% elsif request.page_type == 'collection' %}
+      {% assign current_handle = collection.handle %}
+    {% endif %}
+
+    {% unless allowed_handles contains current_handle  %}
+
+      {% section 'announcement-bar' %}
+      {% section 'header' %}
+
+    {% endunless %} 
+
+
+
 
         <main class="content-wrapper" role="main">
           {{ content_for_layout }}
         </main>
       </div>
       {% section 'rebuy-shipping-popup' %}
-      {% section 'footer' %}
+
+              
+      {% assign allowed_handles = settings.page_handle | split: ', ' %}
+
+      {% assign current_handle = '' %}
+
+        {% if request.page_type == 'page' %}
+          {% assign current_handle = page.handle %}
+        {% elsif request.page_type == 'product' %}
+          {% assign current_handle = product.handle %}
+        {% elsif request.page_type == 'collection' %}
+          {% assign current_handle = collection.handle %}
+        {% endif %}
+
+        {% unless allowed_handles contains current_handle  %}
+
+          {% section 'footer' %}
+
+        {% endunless %} 
+
+
 
       <a href="#" class="scrollup" aria-label="Scroll to top">
         {% render 'snip-icons',

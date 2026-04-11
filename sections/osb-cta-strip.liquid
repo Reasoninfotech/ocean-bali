@@ -1,0 +1,321 @@
+{% comment %}
+  OSB - Final CTA Strip
+  Section: osb-cta-strip.liquid
+  Supports: Mobile / Tablet / Desktop customization
+{% endcomment %}
+
+<style>
+  .osb-cta-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top_mobile }}px 5% {{ section.settings.padding_bottom_mobile }}px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-cta-{{ section.id }} .osb-cta-h {
+    font-size: {{ section.settings.heading_size_mobile }}px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .osb-cta-{{ section.id }} .osb-cta-sub {
+    font-size: {{ section.settings.sub_size }}px;
+    font-weight: 400;
+    color: {{ section.settings.sub_color }};
+    margin-bottom: 2rem;
+  }
+
+  .osb-cta-{{ section.id }} .osb-btn-wht {
+    display: inline-block;
+    background: {{ section.settings.btn_bg }};
+    color: {{ section.settings.btn_text_color }};
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: {{ section.settings.btn_padding_v }}px {{ section.settings.btn_padding_h }}px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .osb-cta-{{ section.id }} .osb-btn-wht:hover {
+    opacity: 0.9;
+  }
+
+  .osb-cta-{{ section.id }} .osb-ship {
+    font-size: {{ section.settings.footnote_size }}px;
+    color: {{ section.settings.footnote_color }};
+    margin-top: 1.2rem;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .osb-cta-{{ section.id }} {
+      padding: {{ section.settings.padding_top_tablet }}px 5% {{ section.settings.padding_bottom_tablet }}px;
+    }
+    .osb-cta-{{ section.id }} .osb-cta-h {
+      font-size: {{ section.settings.heading_size_tablet }}px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .osb-cta-{{ section.id }} {
+      padding: {{ section.settings.padding_top_desktop }}px 5% {{ section.settings.padding_bottom_desktop }}px;
+    }
+    .osb-cta-{{ section.id }} .osb-cta-h {
+      font-size: {{ section.settings.heading_size_desktop }}px;
+    }
+  }
+</style>
+
+{% if section.settings.show_section %}
+<section class="osb-cta-{{ section.id }}">
+  <h2 class="osb-cta-h">{{ section.settings.heading }}</h2>
+  {% if section.settings.sub_text != blank %}
+  <p class="osb-cta-sub">{{ section.settings.sub_text }}</p>
+  {% endif %}
+  <a href="{{ section.settings.btn_url }}" class="osb-btn-wht">{{ section.settings.btn_text }}</a>
+  {% if section.settings.footnote != blank %}
+  <span class="osb-ship">{{ section.settings.footnote }}</span>
+  {% endif %}
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OSB Final CTA Strip",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stop adjusting your swimsuit. Start enjoying the ocean."
+    },
+    {
+      "type": "text",
+      "id": "sub_text",
+      "label": "Sub Text",
+      "default": "Shop The Sulawesi - $20 off your first order, limited time."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop The Sulawesi →"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote Text",
+      "default": "Free express shipping on orders $270+ AUD - 12-month warranty - Easy returns"
+    },
+    {
+      "type": "header",
+      "content": "Button Sizing"
+    },
+    {
+      "type": "range",
+      "id": "btn_padding_v",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "label": "Button Vertical Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "btn_padding_h",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "label": "Button Horizontal Padding",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Font Sizes"
+    },
+    {
+      "type": "range",
+      "id": "sub_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Sub Text Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "footnote_size",
+      "min": 10,
+      "max": 14,
+      "step": 1,
+      "label": "Footnote Size",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "sub_color",
+      "label": "Sub Text Color",
+      "default": "#b3ccdd"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Button Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "color",
+      "id": "footnote_color",
+      "label": "Footnote Color",
+      "default": "#6699bb"
+    },
+    {
+      "type": "header",
+      "content": "📱 Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 1,
+      "label": "Heading Size (Mobile)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 32,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Mobile)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 32,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Mobile)",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "📲 Tablet Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "label": "Heading Size (Tablet)",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 40,
+      "max": 100,
+      "step": 4,
+      "label": "Top Padding (Tablet)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 40,
+      "max": 100,
+      "step": 4,
+      "label": "Bottom Padding (Tablet)",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "🖥️ Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "label": "Heading Size (Desktop)",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 48,
+      "max": 120,
+      "step": 4,
+      "label": "Top Padding (Desktop)",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 48,
+      "max": 120,
+      "step": 4,
+      "label": "Bottom Padding (Desktop)",
+      "default": 72
+    }
+  ],
+  "presets": [
+    {
+      "name": "OSB Final CTA Strip"
+    }
+  ]
+}
+{% endschema %}

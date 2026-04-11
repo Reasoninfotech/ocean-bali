@@ -1,0 +1,489 @@
+{% comment %}
+  OSB - Two Column Content Section (Reusable for Problem, Answer, Feature)
+  Section: osb-two-col.liquid
+  Supports: Mobile / Tablet / Desktop customization
+  Use this section multiple times on the page for Problem, Answer, etc.
+{% endcomment %}
+
+<style>
+  .osb-2col-wrap-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    border-top: 1px solid #d6e6f0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-2col-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top_mobile }}px 5% {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .osb-2col-{{ section.id }} .osb-sec-h {
+    font-size: {{ section.settings.h2_size_mobile }}px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .osb-2col-{{ section.id }} .osb-sec-p {
+    font-size: {{ section.settings.body_size_mobile }}px;
+    color: #606060;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+
+  .osb-2col-{{ section.id }} .osb-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0;
+  }
+
+  .osb-2col-{{ section.id }} .osb-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #606060;
+    line-height: 1.5;
+  }
+
+  .osb-2col-{{ section.id }} .osb-check {
+    width: 18px;
+    height: 18px;
+    background: {{ section.settings.accent_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .osb-2col-{{ section.id }} .osb-check svg {
+    width: 10px;
+    height: 10px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  .osb-2col-{{ section.id }} .osb-btn {
+    display: inline-block;
+    background: {{ section.settings.btn_color }};
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s;
+    max-width: 280px;
+    display: {{ section.settings.show_button | ternary: 'inline-block', 'none' }};
+  }
+
+  .osb-2col-{{ section.id }} .osb-btn:hover {
+    background: #245578;
+  }
+
+  .osb-2col-{{ section.id }} .osb-media {
+    background: #eaf2f8;
+    aspect-ratio: {{ section.settings.image_ratio }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+    {% if section.settings.flip_on_desktop %}order: {% if section.settings.flip_on_desktop %}-1{% else %}0{% endif %};{% endif %}
+  }
+
+  .osb-2col-{{ section.id }} .osb-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .osb-2col-{{ section.id }} .osb-italic-note {
+    font-style: italic;
+    color: {{ section.settings.italic_color }};
+    font-weight: {% if section.settings.italic_bold %}500{% else %}400{% endif %};
+    margin-top: 1rem;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  @media (min-width: 768px) {
+    .osb-2col-{{ section.id }} {
+      padding: {{ section.settings.padding_top_tablet }}px 5% {{ section.settings.padding_bottom_tablet }}px;
+    }
+    .osb-2col-{{ section.id }} .osb-sec-h {
+      font-size: {{ section.settings.h2_size_tablet }}px;
+    }
+    .osb-2col-{{ section.id }} .osb-sec-p {
+      font-size: {{ section.settings.body_size_tablet }}px;
+    }
+    .osb-2col-{{ section.id }} .osb-media {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .osb-2col-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: {{ section.settings.padding_top_desktop }}px 5% {{ section.settings.padding_bottom_desktop }}px;
+    }
+    .osb-2col-{{ section.id }} .osb-sec-h {
+      font-size: {{ section.settings.h2_size_desktop }}px;
+    }
+    .osb-2col-{{ section.id }} .osb-sec-p {
+      font-size: {{ section.settings.body_size_desktop }}px;
+    }
+    {% if section.settings.flip_on_desktop %}
+    .osb-2col-{{ section.id }} .osb-media {
+      order: -1;
+    }
+    {% endif %}
+  }
+</style>
+
+{% if section.settings.show_section %}
+<div class="osb-2col-wrap-{{ section.id }}">
+  <div class="osb-2col-{{ section.id }}">
+    <div>
+      <h2 class="osb-sec-h">{{ section.settings.heading }}</h2>
+
+      {% if section.settings.body_1 != blank %}
+       <div class="osb-sec-p"> 
+        {{ section.settings.body_1 }}
+       </div>
+      {% endif %}
+
+
+      {% if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank or section.settings.bullet_4 != blank %}
+      <ul class="osb-list">
+        {% if section.settings.bullet_1 != blank %}
+        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_1 }}</li>
+        {% endif %}
+        {% if section.settings.bullet_2 != blank %}
+        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_2 }}</li>
+        {% endif %}
+        {% if section.settings.bullet_3 != blank %}
+        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_3 }}</li>
+        {% endif %}
+        {% if section.settings.bullet_4 != blank %}
+        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_4 }}</li>
+        {% endif %}
+      </ul>
+      {% endif %}
+
+      {% if section.settings.italic_note != blank %}
+      <p class="osb-italic-note">{{ section.settings.italic_note }}</p>
+      {% endif %}
+
+      {% if section.settings.show_button and section.settings.btn_text != blank %}
+      <br>
+      <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
+      {% endif %}
+    </div>
+
+    <div class="osb-media">
+      {% if section.settings.section_image != blank %}
+        {{ section.settings.section_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.section_image.alt }}
+      {% else %}
+        <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload section image or video</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OSB Two Column Section",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Section Heading Goes Here"
+    },
+    {
+      "type": "richtext",
+      "id": "body_1",
+      "label": "Body Text 1",
+      "default": "<p>You finally find one that looks good... Then you hit the ocean - and everything changes.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bullet_1",
+      "label": "Bullet Point 1",
+      "default": "Constant pulling and readjusting mid-swim"
+    },
+    {
+      "type": "text",
+      "id": "bullet_2",
+      "label": "Bullet Point 2",
+      "default": "Bottoms riding up or fabric loosening in waves"
+    },
+    {
+      "type": "text",
+      "id": "bullet_3",
+      "label": "Bullet Point 3",
+      "default": "Support disappearing the moment you dive under"
+    },
+    {
+      "type": "text",
+      "id": "bullet_4",
+      "label": "Bullet Point 4",
+      "default": "Feeling exposed instead of confident"
+    },
+    {
+      "type": "textarea",
+      "id": "italic_note",
+      "label": "Italic Note (optional)",
+      "default": "You stop being present - and start being self-conscious."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop The Sulawesi →"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "4/5", "label": "Portrait (4:5)" },
+        { "value": "1/1", "label": "Square (1:1)" },
+        { "value": "3/4", "label": "Tall (3:4)" },
+        { "value": "16/9", "label": "Landscape (16:9)" }
+      ],
+      "default": "4/5"
+    },
+    {
+      "type": "checkbox",
+      "id": "flip_on_desktop",
+      "label": "Flip: Image on Left (Desktop)",
+      "default": false,
+      "info": "On mobile, image always appears below text"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#77A5C8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Check / Accent Color",
+      "default": "#77A5C8"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "color",
+      "id": "italic_color",
+      "label": "Italic Note Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "checkbox",
+      "id": "italic_bold",
+      "label": "Make Italic Note Bold",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "📱 Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "h2_size_mobile",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "label": "Heading Size (Mobile)",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Mobile)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "📲 Tablet Settings"
+    },
+    {
+      "type": "range",
+      "id": "h2_size_tablet",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "label": "Heading Size (Tablet)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "body_size_tablet",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Tablet)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Tablet)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Tablet)",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "🖥️ Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "h2_size_desktop",
+      "min": 22,
+      "max": 48,
+      "step": 1,
+      "label": "Heading Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Body Font Size (Desktop)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Top Padding (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Bottom Padding (Desktop)",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "OSB Two Column Section"
+    }
+  ]
+}
+{% endschema %}

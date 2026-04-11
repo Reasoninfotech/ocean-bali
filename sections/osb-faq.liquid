@@ -1,0 +1,387 @@
+{% comment %}
+  OSB - FAQ Section
+  Section: osb-faq.liquid
+  Supports: Mobile / Tablet / Desktop customization
+{% endcomment %}
+
+<style>
+  .osb-faq-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top_mobile }}px 5% {{ section.settings.padding_bottom_mobile }}px;
+    border-top: 1px solid #d6e6f0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-h {
+    font-size: {{ section.settings.heading_size_mobile }}px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-item {
+    border-bottom: 1px solid #d6e6f0;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-q {
+    font-size: {{ section.settings.question_size }}px;
+    font-weight: 600;
+    color: #2a2a2a;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-ico {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid {{ section.settings.accent_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.25s;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-ico svg {
+    width: 12px;
+    height: 12px;
+    stroke: {{ section.settings.accent_color }};
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-item.open .osb-faq-ico {
+    background: {{ section.settings.accent_color }};
+    transform: rotate(45deg);
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-item.open .osb-faq-ico svg {
+    stroke: white;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-ans {
+    display: none;
+    padding: 0 0 1.2rem;
+    font-size: {{ section.settings.answer_size }}px;
+    color: #606060;
+    line-height: 1.85;
+  }
+
+  .osb-faq-{{ section.id }} .osb-faq-item.open .osb-faq-ans {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .osb-faq-{{ section.id }} {
+      padding: {{ section.settings.padding_top_tablet }}px 5% {{ section.settings.padding_bottom_tablet }}px;
+    }
+    .osb-faq-{{ section.id }} .osb-faq-h {
+      font-size: {{ section.settings.heading_size_tablet }}px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .osb-faq-{{ section.id }} {
+      padding: {{ section.settings.padding_top_desktop }}px 5% {{ section.settings.padding_bottom_desktop }}px;
+    }
+    .osb-faq-{{ section.id }} .osb-faq-h {
+      font-size: {{ section.settings.heading_size_desktop }}px;
+    }
+  }
+</style>
+
+{% if section.settings.show_section %}
+<section class="osb-faq-{{ section.id }}">
+  <div class="osb-faq-inner">
+    <h2 class="osb-faq-h">{{ section.settings.heading }}</h2>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'faq' %}
+      <div class="osb-faq-item{% if forloop.first %} open{% endif %}" {{ block.shopify_attributes }}>
+        <button class="osb-faq-btn">
+          <span class="osb-faq-q">{{ block.settings.question }}</span>
+          <span class="osb-faq-ico">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="osb-faq-ans">{{ block.settings.answer }}</div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.osb-faq-{{ section.id }} .osb-faq-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.osb-faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.osb-faq-{{ section.id }} .osb-faq-item').forEach(function(x){ x.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OSB FAQ",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1000,
+      "step": 20,
+      "label": "Content Max Width (px)",
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Question Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "label": "Answer Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f4f8fb"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Icon / Accent Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "header",
+      "content": "📱 Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "label": "Heading Size (Mobile)",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "📲 Tablet Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 20,
+      "max": 36,
+      "step": 1,
+      "label": "Heading Size (Tablet)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Tablet)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Tablet)",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "🖥️ Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 22,
+      "max": 42,
+      "step": 1,
+      "label": "Heading Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Top Padding (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Bottom Padding (Desktop)",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the fit like?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Designed as a firm, sculpting fit - like shapewear for the ocean."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OSB FAQ",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What is the fit like on the Sulawesi?",
+            "answer": "Designed as a firm, sculpting fit - like shapewear for the ocean. If you prefer a more relaxed feel, size up one. Buying Midnight? Size up two as the dark dye makes the fabric slightly less stretchy."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Which colourway gives the most UV protection?",
+            "answer": "Midnight (black) provides the most UPF block-out. All colourways are UPF 50+ rated. Apply SPF to the side mesh panels for complete coverage."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my Sulawesi?",
+            "answer": "Hand wash separately in cool water after each wear. Rinse thoroughly after chlorine or salt water. Lay flat to dry in the shade. Avoid direct sunlight, tumble drying, and wringing."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What is your returns policy?",
+            "answer": "Exchanges or returns for store credit on full-price items within 30 days of dispatch. Sale items cannot be refunded. 12-month warranty on manufacturing defects."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "International Express via DHL - 2 to 4 business days from dispatch. Australian and Indonesian orders arrive in 1 to 3 days. Free express shipping on Australian orders over $270 AUD."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Snow colourway see-through when wet?",
+            "answer": "No - the Snow Sulawesi is double-lined with a nude beige ECONYL® layer to prevent transparency when wet. Wear it with complete confidence."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

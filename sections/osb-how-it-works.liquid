@@ -1,0 +1,685 @@
+{% comment %}
+  OSB - How It Works (Video + Steps)
+  Section: osb-how-it-works.liquid
+  Video sources: Shopify CDN (.mp4 URL) · YouTube · Vimeo · Shopify Hosted (video picker)
+  - Custom play/pause button always centered
+  - Thumbnail hides on play for ALL video types
+  - Browser native controls removed for all types
+{% endcomment %}
+
+<style>
+  .osb-how-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top_mobile }}px 5% {{ section.settings.padding_bottom_mobile }}px;
+    border-top: 1px solid #d6e6f0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .osb-how-{{ section.id }} .osb-sec-title {
+    text-align: center;
+    font-size: {{ section.settings.heading_size_mobile }}px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── VIDEO WRAPPER ── */
+  .osb-how-{{ section.id }} .osb-vid {
+    background: #000;
+    max-width: {{ section.settings.video_max_width }}px;
+    margin: 0 auto 3rem;
+    aspect-ratio: 16/9;
+    display: {{ section.settings.show_video | ternary: 'block', 'none' }};
+    border-radius: 6px;
+    border: 1px solid #d6e6f0;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* ── Thumbnail — z-index 3, fades out on play ── */
+  .osb-how-{{ section.id }} .osb-vid-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    display: block;
+    transition: opacity 0.35s ease;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .osb-how-{{ section.id }} .osb-vid.is-playing .osb-vid-thumb {
+    opacity: 0;
+  }
+
+  /* ── iframe (YouTube / Vimeo) ── */
+  .osb-how-{{ section.id }} .osb-vid iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: 1;
+  }
+
+  /* ── Native <video> — no controls, pointer-events none so overlay works ── */
+  .osb-how-{{ section.id }} .osb-vid video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .osb-how-{{ section.id }} .osb-vid video::-webkit-media-controls,
+  .osb-how-{{ section.id }} .osb-vid video::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+
+  /* ── PLAY / PAUSE OVERLAY — always centered, z-index 10 ── */
+  .osb-how-{{ section.id }} .osb-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .osb-how-{{ section.id }} .osb-play-btn {
+    width: 68px;
+    height: 68px;
+    border: 2px solid {{ section.settings.accent_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.90);
+    backdrop-filter: blur(4px);
+    transition: background 0.2s, transform 0.15s;
+    pointer-events: all;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .osb-how-{{ section.id }} .osb-play-btn:hover {
+    background: {{ section.settings.accent_color }};
+    transform: scale(1.08);
+  }
+  .osb-how-{{ section.id }} .osb-play-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: {{ section.settings.accent_color }};
+    stroke: none;
+  }
+  .osb-how-{{ section.id }} .osb-play-btn:hover svg {
+    fill: #fff;
+  }
+
+  /* hide overlay while playing; show on hover */
+  .osb-how-{{ section.id }} .osb-vid.is-playing .osb-play-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .osb-how-{{ section.id }} .osb-vid.is-playing:hover .osb-play-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* icon swap */
+  .osb-how-{{ section.id }} .icon-pause { display: none; }
+  .osb-how-{{ section.id }} .osb-vid.is-playing .icon-play  { display: none; }
+  .osb-how-{{ section.id }} .osb-vid.is-playing .icon-pause { display: block; }
+
+  /* ── STEPS ── */
+  .osb-how-{{ section.id }} .osb-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .osb-how-{{ section.id }} .osb-step {
+    background: {{ section.settings.card_bg }};
+    border: 1px solid #d6e6f0;
+    overflow: hidden;
+    border-radius: {{ section.settings.card_radius }}px;
+  }
+  .osb-how-{{ section.id }} .osb-step-img {
+    background: #eaf2f8;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+  .osb-how-{{ section.id }} .osb-step-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .osb-how-{{ section.id }} .osb-step-body { padding: 1.2rem 1.4rem 1.6rem; }
+  .osb-how-{{ section.id }} .osb-step-n {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 0.35rem;
+  }
+  .osb-how-{{ section.id }} .osb-step-t {
+    font-size: {{ section.settings.step_title_size }}px;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;
+  }
+  .osb-how-{{ section.id }} .osb-step-d { font-size: 13px; color: #606060; line-height: 1.7; }
+
+  @media (min-width: 768px) {
+    .osb-how-{{ section.id }} { padding: {{ section.settings.padding_top_tablet }}px 5% {{ section.settings.padding_bottom_tablet }}px; }
+    .osb-how-{{ section.id }} .osb-sec-title { font-size: {{ section.settings.heading_size_tablet }}px; }
+    .osb-how-{{ section.id }} .osb-steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .osb-how-{{ section.id }} { padding: {{ section.settings.padding_top_desktop }}px 5% {{ section.settings.padding_bottom_desktop }}px; }
+    .osb-how-{{ section.id }} .osb-sec-title { font-size: {{ section.settings.heading_size_desktop }}px; }
+    .osb-how-{{ section.id }} .osb-steps { grid-template-columns: repeat({{ section.settings.cols_desktop }}, 1fr); }
+  }
+</style>
+
+{% if section.settings.show_section %}
+<section class="osb-how-{{ section.id }}">
+  <h2 class="osb-sec-title">{{ section.settings.heading }}</h2>
+
+  {% if section.settings.show_video %}
+  {%- assign vtype = section.settings.video_type -%}
+
+  <div class="osb-vid"
+       id="osb-vid-{{ section.id }}"
+       data-vtype="{{ vtype }}"
+       data-cdn-url="{{ section.settings.cdn_video_url | escape }}"
+       data-yt-url="{{ section.settings.youtube_url | escape }}"
+       data-vm-url="{{ section.settings.vimeo_url | escape }}">
+
+    {%- comment -%} 1. Shopify CDN — plain <video> no controls {%- endcomment -%}
+    {% if vtype == 'cdn' and section.settings.cdn_video_url != blank %}
+      <video id="osb-native-{{ section.id }}" preload="metadata" playsinline webkit-playsinline>
+        <source src="{{ section.settings.cdn_video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+
+    {%- comment -%} 2. Shopify Hosted — video_tag, controls:false {%- endcomment -%}
+    {% if vtype == 'shopify' and section.settings.shopify_video != blank %}
+      {{- section.settings.shopify_video | video_tag:
+          id: 'osb-native-' | append: section.id,
+          autoplay: false,
+          loop: false,
+          muted: false,
+          controls: false,
+          preload: 'metadata',
+          playsinline: true -}}
+    {% endif %}
+
+    {%- comment -%} Thumbnail — z-index 3, covers video until play {%- endcomment -%}
+    {% if section.settings.video_thumbnail != blank %}
+      {{- section.settings.video_thumbnail
+          | image_url: width: 1200
+          | image_tag:
+              class: 'osb-vid-thumb',
+              loading: 'lazy',
+              alt: 'Video thumbnail',
+              id: 'osb-thumb-' | append: section.id -}}
+    {% endif %}
+
+    {%- comment -%} Play / Pause overlay — z-index 10 {%- endcomment -%}
+    <div class="osb-play-overlay">
+      <button class="osb-play-btn" id="osb-btn-{{ section.id }}" aria-label="Play video" type="button">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var ID     = '{{ section.id }}';
+    var wrap   = document.getElementById('osb-vid-'    + ID);
+    var btn    = document.getElementById('osb-btn-'    + ID);
+    var thumb  = document.getElementById('osb-thumb-'  + ID);
+    var native = document.getElementById('osb-native-' + ID);
+    if (!wrap || !btn) return;
+
+    var vtype  = wrap.dataset.vtype;
+    var cdnUrl = wrap.dataset.cdnUrl;
+    var ytUrl  = wrap.dataset.ytUrl;
+    var vmUrl  = wrap.dataset.vmUrl;
+
+    var playing = false;
+    var iframe  = null;
+
+    /* ── Helpers ── */
+    function setPlaying(s) {
+      playing = s;
+      wrap.classList.toggle('is-playing', s);
+      btn.setAttribute('aria-label', s ? 'Pause video' : 'Play video');
+    }
+    function hideThumb() { if (thumb) thumb.style.opacity = '0'; }
+    function showThumb() { if (thumb) thumb.style.opacity = '1'; }
+
+    /* ── YouTube ── */
+    function ytSrc(url, ap) {
+      var id = '', m;
+      if ((m = url.match(/[?&]v=([^&]+)/)))       id = m[1];
+      else if ((m = url.match(/youtu\.be\/([^?]+)/))) id = m[1];
+      else if ((m = url.match(/embed\/([^?]+)/)))  id = m[1];
+      else id = url;
+      return 'https://www.youtube.com/embed/' + id + '?autoplay=' + (ap?1:0) + '&rel=0&enablejsapi=1';
+    }
+    function ytMsg(cmd) {
+      if (iframe) iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:cmd,args:[]}), '*');
+    }
+
+    /* ── Vimeo ── */
+    function vmSrc(url, ap) {
+      var id = '', m;
+      if ((m = url.match(/vimeo\.com\/(\d+)/))) id = m[1]; else id = url;
+      return 'https://player.vimeo.com/video/' + id + '?autoplay=' + (ap?1:0);
+    }
+    function vmMsg(method) {
+      if (iframe) iframe.contentWindow.postMessage(JSON.stringify({method:method}), '*');
+    }
+
+    /* ── Create iframe ── */
+    function makeIframe(src) {
+      iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allowFullscreen = true;
+      wrap.insertBefore(iframe, wrap.firstChild);
+    }
+
+    /* ── Toggle functions ── */
+    function toggleNative() {
+      if (!native) return;
+      if (!playing) {
+        hideThumb();
+        native.play();
+        setPlaying(true);
+        native.addEventListener('ended', function() { setPlaying(false); showThumb(); }, {once:true});
+      } else {
+        native.pause();
+        setPlaying(false);
+      }
+    }
+
+    function toggleYT() {
+      if (!playing) {
+        hideThumb();
+        if (!iframe) makeIframe(ytSrc(ytUrl, true));
+        else ytMsg('playVideo');
+        setPlaying(true);
+      } else {
+        ytMsg('pauseVideo');
+        setPlaying(false);
+      }
+    }
+
+    function toggleVM() {
+      if (!playing) {
+        hideThumb();
+        if (!iframe) makeIframe(vmSrc(vmUrl, true));
+        else vmMsg('play');
+        setPlaying(true);
+      } else {
+        vmMsg('pause');
+        setPlaying(false);
+      }
+    }
+
+    function toggle() {
+      if      (vtype === 'cdn' || vtype === 'shopify') toggleNative();
+      else if (vtype === 'youtube') toggleYT();
+      else if (vtype === 'vimeo')   toggleVM();
+    }
+
+    /* ── Event listeners ── */
+    btn.addEventListener('click', function(e) { e.stopPropagation(); toggle(); });
+    wrap.addEventListener('click', function(e) { if (!btn.contains(e.target)) toggle(); });
+
+    /* ── Strip browser controls from native video (safety net) ── */
+    if (native) { native.removeAttribute('controls'); native.controls = false; }
+
+  })();
+  </script>
+  {% endif %}
+
+  <div class="osb-steps">
+    {% for block in section.blocks %}
+      {% if block.type == 'step' %}
+      <div class="osb-step" {{ block.shopify_attributes }}>
+        <div class="osb-step-img">
+          {% if block.settings.step_image != blank %}
+            {{ block.settings.step_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.step_title }}
+          {% endif %}
+        </div>
+        <div class="osb-step-body">
+          <p class="osb-step-n">{{ block.settings.step_number }}</p>
+          <h3 class="osb-step-t">{{ block.settings.step_title }}</h3>
+          <p class="osb-step-d">{{ block.settings.step_desc }}</p>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OSB How It Works",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "How It Works"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video",
+      "label": "Show Video",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "video_type",
+      "label": "Video Source",
+      "options": [
+        { "value": "cdn",     "label": "🔗 Shopify CDN (.mp4 URL)" },
+        { "value": "youtube", "label": "▶️  YouTube" },
+        { "value": "vimeo",   "label": "🎬 Vimeo" },
+        { "value": "shopify", "label": "☁️  Shopify Hosted (File Upload)" }
+      ],
+      "default": "cdn",
+      "info": "Select your video source, then fill in the matching field below."
+    },
+    {
+      "type": "text",
+      "id": "cdn_video_url",
+      "label": "🔗 Shopify CDN Video URL (.mp4)",
+      "info": "Paste the full Shopify CDN .mp4 URL — e.g. https://cdn.shopify.com/videos/c/o/v/abc123.mp4"
+    },
+    {
+      "type": "text",
+      "id": "youtube_url",
+      "label": "▶️  YouTube URL",
+      "info": "Paste a regular YouTube URL — e.g. https://www.youtube.com/watch?v=VIDEO_ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_url",
+      "label": "🎬 Vimeo URL",
+      "info": "Paste a regular Vimeo URL — e.g. https://vimeo.com/VIDEO_ID"
+    },
+    {
+      "type": "video",
+      "id": "shopify_video",
+      "label": "☁️  Shopify Hosted Video",
+      "info": "Upload or pick a video from the Shopify Files library. Used only when source is set to 'Shopify Hosted'."
+    },
+    {
+      "type": "image_picker",
+      "id": "video_thumbnail",
+      "label": "Video Thumbnail Image",
+      "info": "Shown before the video plays for ALL source types. Hides automatically when play is pressed."
+    },
+    {
+      "type": "range",
+      "id": "video_max_width",
+      "min": 500,
+      "max": 1100,
+      "step": 50,
+      "label": "Video Max Width (px)",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "label": "Step Title Font Size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 16,
+      "step": 1,
+      "label": "Card Border Radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f4f8fb"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#77A5C8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Play Button Color",
+      "default": "#2E6688"
+    },
+    {
+      "type": "header",
+      "content": "📱 Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "label": "Heading Size (Mobile)",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "📲 Tablet Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "label": "Heading Size (Tablet)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Top Padding (Tablet)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "label": "Bottom Padding (Tablet)",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "🖥️ Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "cols_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Step Columns (Desktop)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 22,
+      "max": 42,
+      "step": 1,
+      "label": "Heading Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Top Padding (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "label": "Bottom Padding (Desktop)",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number Label",
+          "default": "Step 01"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Choose your colourway"
+        },
+        {
+          "type": "textarea",
+          "id": "step_desc",
+          "label": "Step Description",
+          "default": "From deep Midnight to breezy Celestial Blue - each shade is finished to resist fading through salt, sun, and chlorine."
+        },
+        {
+          "type": "image_picker",
+          "id": "step_image",
+          "label": "Step Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OSB How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 01",
+            "step_title": "Choose your colourway",
+            "step_desc": "From deep Midnight to breezy Celestial Blue - each shade is finished to resist fading through salt, sun, and chlorine."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 02",
+            "step_title": "Get your perfect fit",
+            "step_desc": "Use our size guide - the Sulawesi is a firm, sculpting fit. Prefer more relaxed coverage? Size up one."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 03",
+            "step_title": "Wear it everywhere",
+            "step_desc": "Surf, swim, paddle, lounge - the Sulawesi transitions from the break to the beach bar. No adjusting, ever."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
