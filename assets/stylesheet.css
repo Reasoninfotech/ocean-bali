@@ -7313,9 +7313,13 @@ https://flickity.metafizzy.co
 }
 
 @media screen and (max-width: 740px) {
-.product__section-images {
-  margin-bottom: -20%;
-}
+  .product__section-images {
+    margin-bottom: -20%;
+  }
+  .thumb-slider.vertical-carousel {
+    height: auto;
+    margin-bottom: 5px;
+  }
 }
 
 .product__section-images .carousel-container {
@@ -8683,6 +8687,11 @@ ul.megamenu__ulcontainer {
 
 }
 
+@media (max-width: 767px) {
+  .social-icons__list {
+    display: none;
+  }
+}
 /* Social Icons */
 .social-icons__list {
   list-style: none;
