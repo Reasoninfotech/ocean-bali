@@ -1160,7 +1160,7 @@
             "settings": {
               "image_before": "shopify://shop_images/cherry-blossom_1f338.webp",
               "image_max_width_before": 20,
-              "text": "Flash Sale: 20% Off All Items!",
+              "text": "",
               "image_after": "shopify://shop_images/cherry-blossom_1f338.webp",
               "image_max_width_after": 20,
               "link": ""
