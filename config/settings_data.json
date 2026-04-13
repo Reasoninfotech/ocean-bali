@@ -1156,6 +1156,7 @@
         "blocks": {
           "announcement_rrATLm": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "image_before": "shopify://shop_images/cherry-blossom_1f338.webp",
               "image_max_width_before": 20,
@@ -1347,11 +1348,6 @@
       "10431957531522714341": {
         "type": "shopify://apps/seowill-image/blocks/pagespeed-preloading/b6edaf80-ee08-4404-951c-d8f577b5c1b1",
         "disabled": true,
-        "settings": {}
-      },
-      "11349500561483629931": {
-        "type": "shopify://apps/notify-me/blocks/app-embed/b399b727-6c85-44fc-9e21-63114bd72054",
-        "disabled": false,
         "settings": {}
       },
       "2200952712151285029": {
