@@ -368,13 +368,13 @@ assign size_popup = false
                           <li class="varint-loop" data-id="{{ variant.id }}" data-inventory="{{ variant.inventory_quantity }}" meta-tag="{{ variant.metafields.custom.pre_order_on }}" ></li>
                        {% endfor %}
                     </ul>
-                    
+                     <div class="product__section-stockLevels" {{ block.shopify_attributes }}>
                     <div class="product_btn_cart">
                       <div class="items_left_main ">
-              <span></span>
-              <h4 class="items_left_text"></h4>
-              <span> - {{ 'cout_text.text' | t }}</span>
-            </div>
+                        <span></span>
+                        <h4 class="items_left_text"></h4>
+                        <span> - {{ 'cout_text.text' | t }}</span>
+                    </div>
                   {% if block.settings.threshold > 0 %}
                     {%- liquid
                       assign show_hidden_class = false
@@ -409,9 +409,8 @@ assign size_popup = false
                     </div><!-- /#variant-stock-levels -->
                   {% endif %}
                       <div class="items_left_pre_order" style="display:none">
-                        <h4 class="items_left_pre">Ships as soon as delivery is received.</h4>
+                        <h4 class="items_left_pre">Ships as soon as delivery is received.</h4></div>
                       </div>
-                      
                
                 <div class="clear"></div>  
                       <button id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="" {% unless current_variant.available %}disabled{% endunless %}>
