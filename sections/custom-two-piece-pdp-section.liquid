@@ -1315,11 +1315,27 @@ const checkCondition = setInterval(() => {
       "limit": 1,
       "settings": []
     },
-    {
+   {
       "type": "product_buttons",
       "name": "Buy buttons",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "type": "range",
+          "id": "threshold",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "Threshold",
+          "info": "Increase buyer urgency if inventory below selected number, set to 0 to disable.",
+          "default": 100
+        },
+        {
+            "type": "text",
+            "id": "threshold_text",
+            "label": "Count Text"
+        }
+      ]
     },
     {
       "type": "product_description",
