@@ -38,7 +38,7 @@
           }
         },
         "tolstoy_shoppable_video_quiz_see_it_on_you_UVV4Fg": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {}
         },
         "5a0481c6-7b6b-45dc-99cf-3aca7980daa4": {
@@ -145,7 +145,7 @@
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_EGfenY": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "l35reajum8gvz"
           }
@@ -673,7 +673,7 @@
     "featured_blog_VQ4kXx": {
       "type": "featured-blog",
       "settings": {
-        "title": "From the journal",
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
