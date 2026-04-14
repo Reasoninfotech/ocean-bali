@@ -26,10 +26,6 @@
           "disabled": true,
           "settings": {}
         },
-        "tolstoy_shoppable_video_quiz_see_it_on_you_UVV4Fg": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {}
-        },
         "7379bc57-037b-40b3-868d-fc67c36f3a14": {
           "type": "popup",
           "settings": {
@@ -41,12 +37,8 @@
             "show_footer_text": false
           }
         },
-        "7083fa5a-a988-498e-ac51-81c70cca09d2": {
-          "type": "rating",
-          "settings": {}
-        },
-        "onyou_onyou_popup_V3HmkM": {
-          "type": "shopify://apps/onyou-by-tolstoy/blocks/onyou-popup/3379e12f-b2ef-4ba9-a9e9-5ea9425840ef",
+        "tolstoy_shoppable_video_quiz_see_it_on_you_UVV4Fg": {
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {}
         },
         "5a0481c6-7b6b-45dc-99cf-3aca7980daa4": {
@@ -54,6 +46,14 @@
           "settings": {
             "threshold": 100
           }
+        },
+        "7083fa5a-a988-498e-ac51-81c70cca09d2": {
+          "type": "rating",
+          "settings": {}
+        },
+        "onyou_onyou_popup_V3HmkM": {
+          "type": "shopify://apps/onyou-by-tolstoy/blocks/onyou-popup/3379e12f-b2ef-4ba9-a9e9-5ea9425840ef",
+          "settings": {}
         },
         "product_buttons": {
           "type": "product_buttons",
@@ -216,11 +216,11 @@
       "block_order": [
         "product_variants",
         "product_quantity",
-        "tolstoy_shoppable_video_quiz_see_it_on_you_UVV4Fg",
         "7379bc57-037b-40b3-868d-fc67c36f3a14",
+        "tolstoy_shoppable_video_quiz_see_it_on_you_UVV4Fg",
+        "5a0481c6-7b6b-45dc-99cf-3aca7980daa4",
         "7083fa5a-a988-498e-ac51-81c70cca09d2",
         "onyou_onyou_popup_V3HmkM",
-        "5a0481c6-7b6b-45dc-99cf-3aca7980daa4",
         "product_buttons",
         "6c42fe2b-f19f-474f-b346-a6fd75fe5693",
         "text_with_icon_DqkfcN",
