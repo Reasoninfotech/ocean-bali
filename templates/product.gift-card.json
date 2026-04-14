@@ -647,6 +647,41 @@
         "show_button": true,
         "section_space": "top_and_bottom"
       }
+    },
+    "collection_list_g944FX": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_AWgWbB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "seamless-bikinis"
+          }
+        },
+        "featured_collection_4xjtij": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "one-piece-swimsuit"
+          }
+        },
+        "featured_collection_R7wrkj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-resort-wear"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_AWgWbB",
+        "featured_collection_4xjtij",
+        "featured_collection_R7wrkj"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Shop our collections",
+        "grid": 3,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
     }
   },
   "order": [
@@ -661,6 +696,7 @@
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "accordion_jHgV7B",
     "product-content",
-    "featured_blog_UXAnGY"
+    "featured_blog_UXAnGY",
+    "collection_list_g944FX"
   ]
 }
