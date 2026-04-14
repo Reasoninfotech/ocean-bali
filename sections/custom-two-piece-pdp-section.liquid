@@ -33,6 +33,15 @@ endif
 assign size_popup = false
 
 -%}
+{% style %}
+.template-product-new-custom-one-piece p.swatches__option-name.h5.Size strong{
+    display: block!important;
+}
+
+.template-product-new-custom-one-piece .product__variants-swatches .click_function_value .swatches__option-name .size-guide-trigger{
+  display: none!important;
+}
+{% endstyle %}
 
 <section
   id="product-{{ product.id }}"
