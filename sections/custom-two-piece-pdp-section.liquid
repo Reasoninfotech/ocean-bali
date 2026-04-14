@@ -45,7 +45,7 @@ assign size_popup = false
 
 .template-product-cust-sleeveless-one-piec  .new_cus_size_guide_trigger{margin-top: 10px;}
 
-.template-product-cust-sleeveless-one-piec  .price_after_main_block{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 10px;gap: 10px;}
+.template-product-cust-sleeveless-one-piec  .{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 10px;gap: 10px;}
 
 .template-product-cust-sleeveless-one-piec  .price__pricing-group{margin-bottom: 0;}
 
@@ -268,6 +268,8 @@ assign size_popup = false
                 <div class="clear"></div>
 
 	            {% when 'stock_levels' %}
+                <div class="price_after_main_block"> 
+                     {% render 'product-price', variant: current_variant, product: product %}
                 <div class="product__section-stockLevels" {{ block.shopify_attributes }}>
                   <div class="stocke_lavel_aftre_pay">
                    <div class="after_pay_row">
@@ -317,7 +319,7 @@ assign size_popup = false
                     </span>
                   </div>
                 </div>
-                
+                    </div>
               </div>
               <div class="items_left_main ">
                 <span></span>
@@ -749,7 +751,7 @@ assign size_popup = false
                       assign size_popup = true
                   -%}
                   {% comment %} <div class="see_it_on_you_btn">See it on you</div> {% endcomment %}
-                  {% render 'product-price', variant: current_variant, product: product %}
+                  {% comment %} {% render 'product-price', variant: current_variant, product: product %} {% endcomment %}
                   <span class="popup_content_link {{ block.settings.section_class }} first-trigger">
                     <span class="size_chat_icon"> <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 945.9 945.9" xml:space="preserve"> <g>
                   	<g>
