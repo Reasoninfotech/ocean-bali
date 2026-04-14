@@ -411,7 +411,7 @@ assign size_popup = false
                        {% endfor %}
                     </ul>
                     
-                    <div class="product_btn_cart">
+                    {% comment %} <div class="product_btn_cart">
                       <button id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="" {% unless current_variant.available %}disabled{% endunless %}>
 
                         {% comment %}
@@ -425,7 +425,7 @@ assign size_popup = false
                         
                         <span>- {{ product.price | money }}</span>
                     </button>
-                    </div>
+                    </div> {% endcomment %}
 
                     
                     <div class="klaviyo-btn_wrp {% if product.handle == 'sulawesi-midnight-t' %}notshow_notify{% endif %}" style="margin-bottom:5px;">
