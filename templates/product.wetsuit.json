@@ -534,6 +534,41 @@
         "section_space": "top_and_bottom"
       }
     },
+    "collection_list_eEGjBM": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_4LaNmx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "surfing-swimsuits"
+          }
+        },
+        "featured_collection_cymfDQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "seamless-bikinis"
+          }
+        },
+        "featured_collection_fgEnem": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_4LaNmx",
+        "featured_collection_cymfDQ",
+        "featured_collection_fgEnem"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Shop our Collections",
+        "grid": 3,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -585,6 +620,7 @@
     "product-content",
     "17428985465eafccf0",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
+    "collection_list_eEGjBM",
     "product-recommendations",
     "featured_blog_iXeeCJ",
     "featured_collection_UhimpR"
