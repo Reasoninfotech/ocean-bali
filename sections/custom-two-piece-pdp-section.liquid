@@ -410,7 +410,21 @@ assign size_popup = false
                           <li class="varint-loop" data-id="{{ variant.id }}" data-inventory="{{ variant.inventory_quantity }}" meta-tag="{{ variant.metafields.custom.pre_order_on }}" ></li>
                        {% endfor %}
                     </ul>
-                    
+                        <div class="product_btn_cart">
+                      <button id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="" {% unless current_variant.available %}disabled{% endunless %}>
+
+                        {% comment %}
+                        <ul style="display:none;">
+                         {% for variant in product.variants %}
+                            <li class="varint-loop"></li>
+                          {% endfor %}
+                        </ul>
+                        {% endcomment %}
+                        <span class="add_to_cart_text">{{ call_to_action }} </span>
+                        
+                        <span>- {{ product.price | money }}</span>
+                    </button>
+                    </div>
                     {% comment %} <div class="product_btn_cart">
                       <button id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="" {% unless current_variant.available %}disabled{% endunless %}>
 
