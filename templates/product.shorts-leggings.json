@@ -101,7 +101,7 @@
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "l35reajum8gvz"
           }
@@ -441,6 +441,7 @@
       "block_order": [
         "judge_me_reviews_ugc_media_grid_c8H4jL"
       ],
+      "disabled": true,
       "settings": {
         "display_wide": false
       }
@@ -480,7 +481,7 @@
     "featured_collection_zg3BAr": {
       "type": "featured-collection",
       "settings": {
-        "title": "Related products",
+        "title": "Shop our swimwear",
         "collection": "seamless-bikinis",
         "limit": 3,
         "grid": 3,
@@ -505,6 +506,7 @@
       "block_order": [
         "accordion_pane_Jcm8A8"
       ],
+      "disabled": true,
       "settings": {
         "title": "FAQS",
         "max_width": 100,
@@ -622,7 +624,7 @@
     "featured_blog_N3J3zA": {
       "type": "featured-blog",
       "settings": {
-        "title": "Blog posts",
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
