@@ -13268,3 +13268,7 @@ div#shopify-section-template--15771516862553__rich_text_qzWNxe section:before,di
 .template-product-cust-sleeveless-one-piec #product-price{margin-top: 15px;}
 .template-product-cust-sleeveless-one-piec #product-price .price__pricing-group{margin: 0;}
 .template-product-cust-sleeveless-one-piec #product-price .price-item.price-item--regular{font-size: 20px;}
+
+@media (max-width: 475px){
+  
+}
