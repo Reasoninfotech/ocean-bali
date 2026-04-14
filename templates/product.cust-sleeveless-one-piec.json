@@ -57,7 +57,10 @@
         },
         "product_buttons": {
           "type": "product_buttons",
-          "settings": {}
+          "settings": {
+            "threshold": 100,
+            "threshold_text": "Ships in 24hr - Delivered in 2 - 4 Days"
+          }
         },
         "6c42fe2b-f19f-474f-b346-a6fd75fe5693": {
           "type": "liquid_content",
