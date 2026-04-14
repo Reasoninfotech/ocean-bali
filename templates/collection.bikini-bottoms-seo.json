@@ -1,1 +1,618 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"display_wide":true,"image":"shopify:\/\/shop_images\/The_Bali_Bikini_seamless_swimwear_ocean_soul_bali.jpg"}},"custom_liquid_bhWrPF":{"type":"custom-liquid","settings":{"liquid":"<style>\n  \/* Import Montserrat Font *\/\n  @import url('https:\/\/fonts.googleapis.com\/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; \/* Optional border *\/\n    overflow-x: auto; \/* Enables horizontal scrolling *\/\n    white-space: nowrap; \/* Prevents wrapping of text *\/\n    scrollbar-width: none; \/* Hides scrollbar for Firefox *\/\n    font-family: 'Montserrat', sans-serif; \/* Apply Montserrat Regular *\/\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; \/* Hides scrollbar for Webkit browsers *\/\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; \/* Updated text color *\/\n    font-size: 16px;\n    font-weight: 400; \/* Regular weight *\/\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; \/* Prevents text wrapping *\/\n    flex-shrink: 0; \/* Ensures links don’t shrink *\/\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; \/* Hover effect with consistent color scheme *\/\n    border-radius: 5px;\n  }\n\n  \/* Desktop styles (optional, ensures links stay centered) *\/\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; \/* Removes horizontal scrolling on desktop *\/\n      margin-bottom: 0; \/* No extra margin below on desktop *\/\n    }\n  }\n\n  \/* Mobile-specific styles *\/\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; \/* Adds extra margin below for mobile screens *\/\n    }\n  }\n<\/style>\n\n<div class=\"link-bar\">\n  <a href=\"\/collections\/womens-bikinis\">Women's Bikinis<\/a>\n  <a href=\"\/collections\/bikini-tops\">Bikini Tops<\/a>\n  <a href=\"\/collections\/bikini-bottoms\">Bikini Bottoms<\/a>\n  <a href=\"\/collections\/seamless-bikinis\">Seamless Bikinis<\/a>\n<\/div>","display_wide":true}},"rich_text_q4ed7V":{"type":"rich-text","blocks":{"text_block_YrcCYz":{"type":"text_block","settings":{"title":"Flattering Bikini Bottoms for Every Body and Every Occassion","title_heading":true,"accordion_enabled":true,"text":"<p>Finding the perfect bikini bottom is about more than coverage — it’s about confidence. Our collection brings together sleek high waisted bikini bottoms, playful low rise bikini bottoms, and ultra-soft seamless bikini bottoms, all crafted from luxurious Italian recycled fabric that feels as good as it looks.<\/p><p>Every pair is thoughtfully cut to flatter the female form while staying secure through surf, swim, and sun. Designed for women who live for the water, these sustainable bikini bottoms combine style and substance in equal measure.<\/p><p>Our signature fabrics offer UPF 50+ sun protection, chlorine and salt resistance, and a sculpting stretch that smooths and supports without digging in. Whether you choose the sleek lines of a seamless bikini bottom, the retro vibe of a high waisted cut, or the barely-there freedom of a string bikini bottom, you’ll feel comfortable, confident, and completely yourself.<\/p>","page":"","center":true,"block_width":100,"accordion_icon_color":"#000000","accordion_icon_size":20}}},"block_order":["text_block_YrcCYz"],"custom_css":[".global__section {padding-bottom: 0;}"],"settings":{"padding":30,"text_color":"#606060","background_color":"#ffffff","comman_data_id":""}},"slideshow_z6HQEX":{"type":"slideshow","blocks":{"image_WjWP6L":{"type":"image","settings":{"overlay":false,"text_align":"left","caption_horizontal":50,"caption_vertical":50,"hide_caption_background":false,"caption_below":false,"heading":"","subheading":"","link":"","button_text":"Button","second_link":"","second_button_text":"Button 2","slide_text_color":"#000000","cta_color":"#ffffff","cta_background":"#000000","caption_background":"rgba(0,0,0,0)","caption_background_opacity":20}}},"block_order":["image_WjWP6L"],"disabled":true,"name":"Slideshow","settings":{"display_wide":true,"no_autoplay":false,"slider_speed":5,"pager":"arrows","slideshow_size":"natural","desktop_height":200,"mobile_height":200,"slide_heading_size":22,"subheading_size":14,"cta_size":14,"section_space":"bottom"}},"main":{"type":"main-collection","custom_css":["h1,h2,h3,h4,p {text-align: center;}","a:hover {color: #8eb6d1;}","p.mb0 {display: none;}","span.count {display: none;}"],"settings":{"products_per_page":50,"products_per_row":4,"mobile_1pr":false,"sort_by":false,"show_image":false,"description_position":"top"}},"rich_text_dzx9YL":{"type":"rich-text","blocks":{"text_block_MdPQCM":{"type":"text_block","settings":{"title":"","title_heading":false,"accordion_enabled":false,"text":"<p>Each piece is ethically handmade in Bali, crafted in small batches to support local artisans and minimise waste. Because true sustainability isn’t a trend — it’s a commitment to quality and longevity.<\/p><p>Pair your favourite bottoms with our triangle bikini tops, surf bikini tops, or one shoulder styles for a look that moves with you from the ocean to everyday life.<\/p>","page":"","center":true,"block_width":100,"accordion_icon_color":"#000000","accordion_icon_size":20}}},"block_order":["text_block_MdPQCM"],"name":"Rich text","settings":{"padding":30,"text_color":"#606060","background_color":"#ffffff","comman_data_id":""}},"website_logos_Fdgq3w":{"type":"website-logos","blocks":{"text_block_rgYDwn":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/british_vogue.png","link":"","text":"","button_text":"Button"}},"text_block_zEzYRq":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/PngItem_171373.png","link":"","text":"","button_text":"Button"}},"text_block_7M4D6a":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Herald_Sun_logo_logotype.png","link":"","text":"","button_text":"Button"}},"text_block_FbREtW":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png","link":"","text":"","button_text":"Button"}},"text_block_69KCeK":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/The_Daily_Telegraph_Australien_logo.png","link":"","text":"","button_text":"Button"}},"text_block_LJJwcM":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/georgina_monti.png","link":"","text":"","button_text":"Button"}},"text_block_ymMRPp":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/honeycombers.svg","link":"","text":"","button_text":"Button"}},"text_block_r4jTA4":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/acc.png","link":"","text":"","button_text":"Button"}}},"block_order":["text_block_rgYDwn","text_block_zEzYRq","text_block_7M4D6a","text_block_FbREtW","text_block_69KCeK","text_block_LJJwcM","text_block_ymMRPp","text_block_r4jTA4"],"settings":{"title":"As seen in","center_align":false,"show_description":true,"image_height":"none","desktop_fixed_height":500,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"1711706852d17457ff":{"type":"apps","blocks":{"judge_me_reviews_all_reviews_text_3pLhrc":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}}},"block_order":["judge_me_reviews_all_reviews_text_3pLhrc"],"settings":{"display_wide":false}},"9326baf0-7c60-406b-a886-d60675c97f4f":{"type":"testimonials","blocks":{"template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1":{"type":"product","settings":{"product":"high-waisted-bikini-bottoms-the-sumba","show_second_image":true,"rating":5,"title":"Great for surfing","text":"<p>'Love that they actually stay on when I’m surfing and I can wear them when I’m on the beach as a normal bikini.'<\/p>","author":"Naia","show_product_title":true,"button_text":"View product"}}},"block_order":["template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1"],"settings":{"image_position":"left","text_color":"#606060","star_color":"#dbaf59","background_color":"#f7f7f7"}},"text_with_icons_DVrqRk":{"type":"text-with-icons","blocks":{"block_C4xmX6":{"type":"block","settings":{"icon":"bag","image":"shopify:\/\/shop_images\/warranty.jpg","text":"12 month warranty","link":""}},"block_8NcnXm":{"type":"block","settings":{"icon":"messages","image":"shopify:\/\/shop_images\/Sustainable.jpg","text":"SUSTAINABLE","link":""}},"block_cV4Qrb":{"type":"block","settings":{"icon":"secure","image":"shopify:\/\/shop_images\/Asset_7_4x_c57ef1a0-8e0a-4bc8-831f-8df380350473.jpg","text":"UPF PROTECTION","link":""}},"block_kdxbrb":{"type":"block","settings":{"icon":"shipping_outline","image":"shopify:\/\/shop_images\/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg","text":"DURABLE","link":""}}},"block_order":["block_C4xmX6","block_8NcnXm","block_cV4Qrb","block_kdxbrb"],"name":"Text with icons","settings":{"color":"","background":"","section_space":"top_and_bottom"}},"image_with_text_overlay_gtkAzN":{"type":"image-with-text-overlay","name":"Image with text overlay","settings":{"full_width":true,"image":"shopify:\/\/shop_images\/nicki_antognini_-_Bali_Bikini_Midnight-1.jpg","overlay":false,"background_attachment":"fixed","height":400,"mobile_height":400,"text_align":"center","caption_vertical":50,"caption_horizontal":50,"heading":"Built for Confidence, Designed for Movement","subheading_text":"<p>Ocean Soul bikini bottoms are crafted for women who love the water and expect more from their swimwear: more comfort, more support, and more longevity. Each cut has been refined over years to fit beautifully and stay in place no matter how you move.<\/p><p>Experience the difference of <strong>eco-luxury swimwear<\/strong> that celebrates your shape and protects the ocean you love.<\/p>","button_text":"Button","link":"","heading_font_size":30,"subheading_font_size":16,"text_color":"#ffffff","button_text_color":"#ffffff","button_color":"#000000","section_space":"top_and_bottom"}},"image_with_text_4MJHr7":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/women-rash-guard-the-sumba-crop-rash-vest-ocean-soul-bali-6.webp","image_position":"left","image_size":"medium","image_height":"fixed","desktop_image_height":450,"mobile_image_height":450,"title":"Find Your Perfect Fit","text":"<h4><strong>High Waisted Bikini Bottoms<\/strong><\/h4><p>Our <a href=\"\/collections\/high-waisted-bikini\" title=\"High Waisted Bikini\">high waisted bikini bottoms<\/a> are a customer favourite for a reason. They sculpt and smooth the waist, offer extra tummy support, and create a timeless hourglass shape. The higher cut elongates the legs while offering secure coverage — ideal for active days in the water or poolside lounging.<\/p><p>Sculpting panels that flatter without feeling restrictive<br\/><\/p><p>Double-lined for support and opacity<br\/><\/p><p>Designed to stay put through every wave<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_XmjLmY":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/low-rise-bikini-bottom-the-banyak-bikini-bottom-ocean-soul-bali-9.webp","image_position":"right","image_size":"medium","image_height":"fixed","desktop_image_height":450,"mobile_image_height":450,"title":"Low Rise Bikini Bottoms","text":"<p>Prefer a minimalist fit? Our <a href=\"\/collections\/low-rise-bikini\" target=\"_blank\" title=\"Low Rise Bikini\">low rise bikini bottoms<\/a> sit comfortably on the hips for a modern, effortless look. Perfect for tanning and light surf, they offer freedom of movement without compromising style.<\/p><p>Soft, stretchy fabric that moves with you<br\/><\/p><p>Clean, contoured lines for a flattering fit<br\/><\/p><p>Minimal coverage with maximum confidence<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_qmMtBN":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/Aceh_bikini_bottom_Bali_bikini_top_green.jpg","image_position":"left","image_size":"medium","image_height":"fixed","desktop_image_height":450,"mobile_image_height":450,"title":"Seamless Bikini Bottoms","text":"<p>If comfort is key, our <a href=\"\/collections\/seamless-bikinis\" target=\"_blank\" title=\"Seamless Bikinis & Two Pieces\">seamless bikini bottoms<\/a> are a dream. No stitching, no pinching — just a smooth, second-skin feel that sculpts beautifully. Ideal for long beach days or layering under a wetsuit, they embody our commitment to luxury you can feel.<\/p><p>Seamless construction for all-day comfort<br\/><\/p><p>Soft, recycled Italian fabric that lasts<br\/><\/p><p>UPF 50+ protection and fade resistance<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_zATp6G":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/Triangle_string_bikini_green.png","image_position":"right","image_size":"medium","image_height":"fixed","desktop_image_height":450,"mobile_image_height":450,"title":"String Bikini Bottoms","text":"<p>For those who love adjustability and freedom, our <a href=\"\/collections\/string-bikini\" target=\"_blank\" title=\"String Bikini\">string bikini bottoms<\/a> feature tie sides for a custom fit that flatters every shape. These are made for sun-seekers who like a little less coverage and a lot of style.<\/p><p>Adjustable ties for the perfect fit<br\/><\/p><p>Double-lined for confidence and comfort<br\/><\/p><p>Minimal design that pairs effortlessly with any top<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_9UUUgf":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/Ocean-Soul-3_merry_amber_copy.jpg","image_position":"left","image_size":"medium","image_height":"fixed","desktop_image_height":450,"mobile_image_height":450,"title":"How to Style Your Bikini Bottoms","text":"<p>Mix and match across our collections to create your perfect set:<\/p><p>Pair a high waisted bottom with a triangle bikini top for classic balance.<br\/><\/p><p>Team a low rise bikini bottom with a surf bikini top for athletic appeal.<br\/><\/p><p>Style a string bikini bottom with a one shoulder bikini top for modern femininity.<br\/><\/p><p>Layer your seamless bikini bottoms under a long sleeve rashguard for extra sun protection.<br\/><\/p><p>Add a resort sarong, wide-leg lounge pants, or bamboo clutch for an easy beach-to-brunch transition.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_overlay_7KAEbV":{"type":"image-with-text-overlay","name":"Image with text overlay","settings":{"full_width":true,"image":"shopify:\/\/shop_images\/DSC00574_agnesnicolee_1.jpg","overlay":false,"background_attachment":"fixed","height":400,"mobile_height":400,"text_align":"center","caption_vertical":50,"caption_horizontal":50,"heading":"Consciously Made to Last","subheading_text":"<p>All Ocean Soul bikini bottoms are made from Econyl® regenerated nylon, a premium fabric derived from recycled ocean waste such as discarded fishing nets and industrial plastics. Each piece is crafted by hand in Bali, supporting fair work conditions and responsible production.<\/p><p>Ethical manufacturing with fair wages<br\/><\/p><p>Small-batch production to reduce waste<br\/><\/p><p>Durable construction that holds shape season after season<\/p>","button_text":"Button","link":"","heading_font_size":30,"subheading_font_size":16,"text_color":"#ffffff","button_text_color":"#ffffff","button_color":"#000000","section_space":"top_and_bottom"}},"jdgm_widget_code_7gaEfN":{"type":"jdgm-widget-code","name":"UGC code","settings":{}},"rich_text_hUJEjy":{"type":"rich-text","blocks":{"text_block_KrmaQj":{"type":"text_block","settings":{"title":"Shop the Collection","title_heading":true,"accordion_enabled":false,"text":"<h3><\/h3><p>Explore our range of:<\/p><p><a href=\"\/collections\/high-waisted-bikini\" target=\"_blank\" title=\"High Waisted Bikini\"><strong>High Waisted Bikini Bottoms<\/strong><\/a> — sculpting and supportive.<br\/><\/p><p><a href=\"\/collections\/low-rise-bikini\" target=\"_blank\" title=\"Low Rise Bikini\"><strong>Low Rise Bikini Bottom<\/strong><\/a><strong>s<\/strong> — minimal and modern.<br\/><\/p><p><a href=\"https:\/\/oceansoulbali.com\/collections\/seamless-bikinis\" target=\"_blank\" title=\"https:\/\/oceansoulbali.com\/collections\/seamless-bikinis\"><strong>Seamless Bikini Bottoms<\/strong><\/a> — soft and smoothing.<br\/><\/p><p><a href=\"https:\/\/oceansoulbali.com\/collections\/bikini-bottoms\/products\/string-bikini-bottoms-the-gili\" title=\"https:\/\/oceansoulbali.com\/collections\/bikini-bottoms\/products\/string-bikini-bottoms-the-gili\"><strong>String Bikini Bottoms<\/strong><\/a> — adjustable and timeless.<br\/><\/p><p>Every style is crafted with precision and purpose — because the perfect fit should never cost the planet.<\/p><p>Ocean Soul Swimwear — Luxury Swimwear That Lasts Beyond the Season.<\/p>","page":"","center":true,"block_width":100,"accordion_icon_color":"#000000","accordion_icon_size":20}}},"block_order":["text_block_KrmaQj"],"name":"Rich text","settings":{"padding":60,"text_color":"#606060","background_color":"#ffffff","comman_data_id":""}},"f26cc161-299a-4e72-b685-5f171aefa332":{"type":"collection-list","blocks":{"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1":{"type":"featured_collection","settings":{"collection":"high-waisted-bikini"}},"0f2747bb-2657-4f85-bf78-ad91229e7931":{"type":"featured_collection","settings":{"collection":"seamless-bikinis"}},"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2":{"type":"featured_collection","settings":{"collection":"low-rise-bikini"}},"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0":{"type":"featured_collection","settings":{"collection":"string-bikini"}}},"block_order":["template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1","0f2747bb-2657-4f85-bf78-ad91229e7931","template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2","template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0"],"settings":{"title":"","grid":4,"mobile_1pr":false,"section_space":"top_and_bottom"}},"newsletter_zqettP":{"type":"newsletter","name":"Newsletter","settings":{"heading":"Join us","newsletter_subheading":"<p>Be the first to hear about all our news and VIP offers<\/p>","newsletter_gdpr_text":"*By completing this form you're signing up to receive our emails and can unsubscribe at any time","color":"#606060","background_color":"#f7f7f7","section_space":"top_and_bottom","show_name_fields":true}},"featured_blog_fjgiz7":{"type":"featured-blog","name":"Blog posts","settings":{"title":"Swimwear, Ocean Lifestyle & Bali Journal","blog":"news","grid":3,"post_limit":3,"show_date":false,"show_author":false,"show_tags":false,"show_button":true,"section_space":"top_and_bottom"}},"breadcrumbs":{"type":"breadcrumbs","settings":{}}},"order":["banner","custom_liquid_bhWrPF","rich_text_q4ed7V","slideshow_z6HQEX","main","rich_text_dzx9YL","website_logos_Fdgq3w","1711706852d17457ff","9326baf0-7c60-406b-a886-d60675c97f4f","text_with_icons_DVrqRk","image_with_text_overlay_gtkAzN","image_with_text_4MJHr7","image_with_text_XmjLmY","image_with_text_qmMtBN","image_with_text_zATp6G","image_with_text_9UUUgf","image_with_text_overlay_7KAEbV","jdgm_widget_code_7gaEfN","rich_text_hUJEjy","f26cc161-299a-4e72-b685-5f171aefa332","newsletter_zqettP","featured_blog_fjgiz7","breadcrumbs"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "display_wide": true,
+        "image": "shopify://shop_images/The_Bali_Bikini_seamless_swimwear_ocean_soul_bali.jpg"
+      }
+    },
+    "custom_liquid_bhWrPF": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<style>\n  /* Import Montserrat Font */\n  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; /* Optional border */\n    overflow-x: auto; /* Enables horizontal scrolling */\n    white-space: nowrap; /* Prevents wrapping of text */\n    scrollbar-width: none; /* Hides scrollbar for Firefox */\n    font-family: 'Montserrat', sans-serif; /* Apply Montserrat Regular */\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; /* Hides scrollbar for Webkit browsers */\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; /* Updated text color */\n    font-size: 16px;\n    font-weight: 400; /* Regular weight */\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; /* Prevents text wrapping */\n    flex-shrink: 0; /* Ensures links don’t shrink */\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; /* Hover effect with consistent color scheme */\n    border-radius: 5px;\n  }\n\n  /* Desktop styles (optional, ensures links stay centered) */\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; /* Removes horizontal scrolling on desktop */\n      margin-bottom: 0; /* No extra margin below on desktop */\n    }\n  }\n\n  /* Mobile-specific styles */\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; /* Adds extra margin below for mobile screens */\n    }\n  }\n</style>\n\n<div class=\"link-bar\">\n  <a href=\"/collections/womens-bikinis\">Women's Bikinis</a>\n  <a href=\"/collections/bikini-tops\">Bikini Tops</a>\n  <a href=\"/collections/bikini-bottoms\">Bikini Bottoms</a>\n  <a href=\"/collections/seamless-bikinis\">Seamless Bikinis</a>\n</div>",
+        "display_wide": true
+      }
+    },
+    "rich_text_q4ed7V": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_YrcCYz": {
+          "type": "text_block",
+          "settings": {
+            "title": "Flattering Bikini Bottoms for Every Body and Every Occassion",
+            "title_heading": true,
+            "accordion_enabled": true,
+            "text": "<p>Finding the perfect bikini bottom is about more than coverage — it’s about confidence. Our collection brings together sleek high waisted bikini bottoms, playful low rise bikini bottoms, and ultra-soft seamless bikini bottoms, all crafted from luxurious Italian recycled fabric that feels as good as it looks.</p><p>Every pair is thoughtfully cut to flatter the female form while staying secure through surf, swim, and sun. Designed for women who live for the water, these sustainable bikini bottoms combine style and substance in equal measure.</p><p>Our signature fabrics offer UPF 50+ sun protection, chlorine and salt resistance, and a sculpting stretch that smooths and supports without digging in. Whether you choose the sleek lines of a seamless bikini bottom, the retro vibe of a high waisted cut, or the barely-there freedom of a string bikini bottom, you’ll feel comfortable, confident, and completely yourself.</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_YrcCYz"
+      ],
+      "custom_css": [
+        ".global__section {padding-bottom: 0;}"
+      ],
+      "settings": {
+        "padding": 30,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "slideshow_z6HQEX": {
+      "type": "slideshow",
+      "blocks": {
+        "image_WjWP6L": {
+          "type": "image",
+          "settings": {
+            "overlay": false,
+            "text_align": "left",
+            "caption_horizontal": 50,
+            "caption_vertical": 50,
+            "hide_caption_background": false,
+            "caption_below": false,
+            "heading": "",
+            "subheading": "",
+            "link": "",
+            "button_text": "Button",
+            "second_link": "",
+            "second_button_text": "Button 2",
+            "slide_text_color": "#000000",
+            "cta_color": "#ffffff",
+            "cta_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)",
+            "caption_background_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "image_WjWP6L"
+      ],
+      "disabled": true,
+      "name": "Slideshow",
+      "settings": {
+        "display_wide": true,
+        "no_autoplay": false,
+        "slider_speed": 5,
+        "pager": "arrows",
+        "slideshow_size": "natural",
+        "desktop_height": 200,
+        "mobile_height": 200,
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "cta_size": 14,
+        "section_space": "bottom"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        "h1,h2,h3,h4,p {text-align: center;}",
+        "a:hover {color: #8eb6d1;}",
+        "p.mb0 {display: none;}",
+        "span.count {display: none;}"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row": 4,
+        "mobile_1pr": false,
+        "sort_by": false,
+        "show_image": false,
+        "description_position": "top"
+      }
+    },
+    "rich_text_dzx9YL": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_MdPQCM": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "title_heading": false,
+            "accordion_enabled": false,
+            "text": "<p>Each piece is ethically handmade in Bali, crafted in small batches to support local artisans and minimise waste. Because true sustainability isn’t a trend — it’s a commitment to quality and longevity.</p><p>Pair your favourite bottoms with our triangle bikini tops, surf bikini tops, or one shoulder styles for a look that moves with you from the ocean to everyday life.</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_MdPQCM"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "padding": 30,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "website_logos_Fdgq3w": {
+      "type": "website-logos",
+      "blocks": {
+        "text_block_rgYDwn": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/british_vogue.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_zEzYRq": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/PngItem_171373.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_7M4D6a": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Herald_Sun_logo_logotype.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_FbREtW": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_69KCeK": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/The_Daily_Telegraph_Australien_logo.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_LJJwcM": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/georgina_monti.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_ymMRPp": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/honeycombers.svg",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_r4jTA4": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/acc.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_rgYDwn",
+        "text_block_zEzYRq",
+        "text_block_7M4D6a",
+        "text_block_FbREtW",
+        "text_block_69KCeK",
+        "text_block_LJJwcM",
+        "text_block_ymMRPp",
+        "text_block_r4jTA4"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "center_align": false,
+        "show_description": true,
+        "image_height": "none",
+        "desktop_fixed_height": 500,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "1711706852d17457ff": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_3pLhrc": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_3pLhrc"
+      ],
+      "settings": {
+        "display_wide": false
+      }
+    },
+    "9326baf0-7c60-406b-a886-d60675c97f4f": {
+      "type": "testimonials",
+      "blocks": {
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1": {
+          "type": "product",
+          "settings": {
+            "product": "high-waisted-bikini-bottoms-the-sumba",
+            "show_second_image": true,
+            "rating": 5,
+            "title": "Great for surfing",
+            "text": "<p>'Love that they actually stay on when I’m surfing and I can wear them when I’m on the beach as a normal bikini.'</p>",
+            "author": "Naia",
+            "show_product_title": true,
+            "button_text": "View product"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_color": "#606060",
+        "star_color": "#dbaf59",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "text_with_icons_DVrqRk": {
+      "type": "text-with-icons",
+      "blocks": {
+        "block_C4xmX6": {
+          "type": "block",
+          "settings": {
+            "icon": "bag",
+            "image": "shopify://shop_images/warranty.jpg",
+            "text": "12 month warranty",
+            "link": ""
+          }
+        },
+        "block_8NcnXm": {
+          "type": "block",
+          "settings": {
+            "icon": "messages",
+            "image": "shopify://shop_images/Sustainable.jpg",
+            "text": "SUSTAINABLE",
+            "link": ""
+          }
+        },
+        "block_cV4Qrb": {
+          "type": "block",
+          "settings": {
+            "icon": "secure",
+            "image": "shopify://shop_images/UPF_UV_Asset.jpg",
+            "text": "UPF PROTECTION",
+            "link": ""
+          }
+        },
+        "block_kdxbrb": {
+          "type": "block",
+          "settings": {
+            "icon": "shipping_outline",
+            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
+            "text": "DURABLE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_C4xmX6",
+        "block_8NcnXm",
+        "block_cV4Qrb",
+        "block_kdxbrb"
+      ],
+      "name": "Text with icons",
+      "settings": {
+        "color": "",
+        "background": "",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "image_with_text_overlay_gtkAzN": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/nicki_antognini_-_Bali_Bikini_Midnight-1.jpg",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 400,
+        "mobile_height": 400,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "Built for Confidence, Designed for Movement",
+        "subheading_text": "<p>Ocean Soul bikini bottoms are crafted for women who love the water and expect more from their swimwear: more comfort, more support, and more longevity. Each cut has been refined over years to fit beautifully and stay in place no matter how you move.</p><p>Experience the difference of <strong>eco-luxury swimwear</strong> that celebrates your shape and protects the ocean you love.</p>",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_color": "#000000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "image_with_text_4MJHr7": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/women-rash-guard-the-sumba-crop-rash-vest-ocean-soul-bali-6.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "Find Your Perfect Fit",
+        "text": "<h4><strong>High Waisted Bikini Bottoms</strong></h4><p>Our <a href=\"/collections/high-waisted-bikini\" title=\"High Waisted Bikini\">high waisted bikini bottoms</a> are a customer favourite for a reason. They sculpt and smooth the waist, offer extra tummy support, and create a timeless hourglass shape. The higher cut elongates the legs while offering secure coverage — ideal for active days in the water or poolside lounging.</p><p>Sculpting panels that flatter without feeling restrictive<br/></p><p>Double-lined for support and opacity<br/></p><p>Designed to stay put through every wave</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_XmjLmY": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/low-rise-bikini-bottom-the-banyak-bikini-bottom-ocean-soul-bali-9.webp",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "Low Rise Bikini Bottoms",
+        "text": "<p>Prefer a minimalist fit? Our <a href=\"/collections/low-rise-bikini\" target=\"_blank\" title=\"Low Rise Bikini\">low rise bikini bottoms</a> sit comfortably on the hips for a modern, effortless look. Perfect for tanning and light surf, they offer freedom of movement without compromising style.</p><p>Soft, stretchy fabric that moves with you<br/></p><p>Clean, contoured lines for a flattering fit<br/></p><p>Minimal coverage with maximum confidence</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_qmMtBN": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Aceh_bikini_bottom_Bali_bikini_top_green.jpg",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "Seamless Bikini Bottoms",
+        "text": "<p>If comfort is key, our <a href=\"/collections/seamless-bikinis\" target=\"_blank\" title=\"Seamless Bikinis & Two Pieces\">seamless bikini bottoms</a> are a dream. No stitching, no pinching — just a smooth, second-skin feel that sculpts beautifully. Ideal for long beach days or layering under a wetsuit, they embody our commitment to luxury you can feel.</p><p>Seamless construction for all-day comfort<br/></p><p>Soft, recycled Italian fabric that lasts<br/></p><p>UPF 50+ protection and fade resistance</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_zATp6G": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Triangle_string_bikini_green.png",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "String Bikini Bottoms",
+        "text": "<p>For those who love adjustability and freedom, our <a href=\"/collections/string-bikini\" target=\"_blank\" title=\"String Bikini\">string bikini bottoms</a> feature tie sides for a custom fit that flatters every shape. These are made for sun-seekers who like a little less coverage and a lot of style.</p><p>Adjustable ties for the perfect fit<br/></p><p>Double-lined for confidence and comfort<br/></p><p>Minimal design that pairs effortlessly with any top</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_9UUUgf": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Ocean-Soul-3_merry_amber_copy.jpg",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "How to Style Your Bikini Bottoms",
+        "text": "<p>Mix and match across our collections to create your perfect set:</p><p>Pair a high waisted bottom with a triangle bikini top for classic balance.<br/></p><p>Team a low rise bikini bottom with a surf bikini top for athletic appeal.<br/></p><p>Style a string bikini bottom with a one shoulder bikini top for modern femininity.<br/></p><p>Layer your seamless bikini bottoms under a long sleeve rashguard for extra sun protection.<br/></p><p>Add a resort sarong, wide-leg lounge pants, or bamboo clutch for an easy beach-to-brunch transition.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_overlay_7KAEbV": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/DSC00574_agnesnicolee_1.jpg",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 400,
+        "mobile_height": 400,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "Consciously Made to Last",
+        "subheading_text": "<p>All Ocean Soul bikini bottoms are made from Econyl® regenerated nylon, a premium fabric derived from recycled ocean waste such as discarded fishing nets and industrial plastics. Each piece is crafted by hand in Bali, supporting fair work conditions and responsible production.</p><p>Ethical manufacturing with fair wages<br/></p><p>Small-batch production to reduce waste<br/></p><p>Durable construction that holds shape season after season</p>",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_color": "#000000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "jdgm_widget_code_7gaEfN": {
+      "type": "jdgm-widget-code",
+      "name": "UGC code",
+      "settings": {}
+    },
+    "rich_text_hUJEjy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_KrmaQj": {
+          "type": "text_block",
+          "settings": {
+            "title": "Shop the Collection",
+            "title_heading": true,
+            "accordion_enabled": false,
+            "text": "<h3></h3><p>Explore our range of:</p><p><a href=\"/collections/high-waisted-bikini\" target=\"_blank\" title=\"High Waisted Bikini\"><strong>High Waisted Bikini Bottoms</strong></a> — sculpting and supportive.<br/></p><p><a href=\"/collections/low-rise-bikini\" target=\"_blank\" title=\"Low Rise Bikini\"><strong>Low Rise Bikini Bottom</strong></a><strong>s</strong> — minimal and modern.<br/></p><p><a href=\"https://oceansoulbali.com/collections/seamless-bikinis\" target=\"_blank\" title=\"https://oceansoulbali.com/collections/seamless-bikinis\"><strong>Seamless Bikini Bottoms</strong></a> — soft and smoothing.<br/></p><p><a href=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\" title=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\"><strong>String Bikini Bottoms</strong></a> — adjustable and timeless.<br/></p><p>Every style is crafted with precision and purpose — because the perfect fit should never cost the planet.</p><p>Ocean Soul Swimwear — Luxury Swimwear That Lasts Beyond the Season.</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_KrmaQj"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "padding": 60,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "f26cc161-299a-4e72-b685-5f171aefa332": {
+      "type": "collection-list",
+      "blocks": {
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "high-waisted-bikini"
+          }
+        },
+        "0f2747bb-2657-4f85-bf78-ad91229e7931": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "seamless-bikinis"
+          }
+        },
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "low-rise-bikini"
+          }
+        },
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "string-bikini"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1",
+        "0f2747bb-2657-4f85-bf78-ad91229e7931",
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2",
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0"
+      ],
+      "settings": {
+        "title": "",
+        "grid": 4,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "newsletter_zqettP": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Join us",
+        "newsletter_subheading": "<p>Be the first to hear about all our news and VIP offers</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
+      }
+    },
+    "featured_blog_fjgiz7": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "custom_liquid_bhWrPF",
+    "rich_text_q4ed7V",
+    "slideshow_z6HQEX",
+    "main",
+    "rich_text_dzx9YL",
+    "website_logos_Fdgq3w",
+    "1711706852d17457ff",
+    "9326baf0-7c60-406b-a886-d60675c97f4f",
+    "text_with_icons_DVrqRk",
+    "image_with_text_overlay_gtkAzN",
+    "image_with_text_4MJHr7",
+    "image_with_text_XmjLmY",
+    "image_with_text_qmMtBN",
+    "image_with_text_zATp6G",
+    "image_with_text_9UUUgf",
+    "image_with_text_overlay_7KAEbV",
+    "jdgm_widget_code_7gaEfN",
+    "rich_text_hUJEjy",
+    "f26cc161-299a-4e72-b685-5f171aefa332",
+    "newsletter_zqettP",
+    "featured_blog_fjgiz7",
+    "breadcrumbs"
+  ]
+}
