@@ -2097,14 +2097,14 @@ variantContainers.forEach(function(container) {
 });
 
   window.addEventListener('load', function() {
-    var popupContent = document.querySelector('.template-product-new-custom-one-piece .popup_content_link');
+    var popupContent = document.querySelector('.popup_content_link');
     popupContent.style.display = 'flex';
   }); 
 
 
 (function () {
   const interval = setInterval(() => {
-    const host = document.querySelector('.see-it-on-you');
+    const host = document.querySelector('.template-product-new-custom-one-piece .see-it-on-you');
 
     if (!host || !host.shadowRoot) return;
 
