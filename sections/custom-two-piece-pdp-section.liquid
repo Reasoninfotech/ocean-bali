@@ -1879,37 +1879,5 @@ variantContainers.forEach(function(container) {
     // window.addEventListener('load', setSliderTopWidth);
   setSliderTopWidth()
     window.addEventListener('resize', setSliderTopWidth);
-(function () {
-  const interval = setInterval(() => {
-    const host = document.querySelector('.template-product-cust-sleeveless-one-piec .see-it-on-you');
 
-    if (!host || !host.shadowRoot) return;
-
-    const shadowRoot = host.shadowRoot;
-
-    if (shadowRoot.querySelector('#mobile-style')) {
-      clearInterval(interval);
-      return;
-    }
-
-    const style = document.createElement('style');
-    style.id = 'mobile-style';
-
-    style.textContent = `
-      button {
-        font-size: 12px!important;
-        font-weight: 700!important;
-      } 
-      @media (max-width: 450px) {
-        button {
-          font-size: 12px !important;
-        }
-      }
-    `;
-
-    shadowRoot.appendChild(style);
-    clearInterval(interval);
-
-  }, 100);
-})();
 </script>
