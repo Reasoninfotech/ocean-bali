@@ -631,7 +631,7 @@
     "featured_collection_7YBYfH": {
       "type": "featured-collection",
       "settings": {
-        "title": "Related Products",
+        "title": "Shop our collections",
         "collection": "eco-friendly-swimwear",
         "limit": 3,
         "grid": 3,
@@ -645,7 +645,7 @@
     "featured_blog_VQ4kXx": {
       "type": "featured-blog",
       "settings": {
-        "title": "Blog posts",
+        "title": "From The Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
