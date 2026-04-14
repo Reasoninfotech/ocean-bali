@@ -48,7 +48,7 @@
           }
         },
         "tolstoy_shoppable_video_quiz_see_it_on_you_3hyDRm": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {}
         },
         "5a0481c6-7b6b-45dc-99cf-3aca7980daa4": {
@@ -73,7 +73,7 @@
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "l35reajum8gvz"
           }
@@ -687,7 +687,7 @@
         "featured_collection_B83Dc4": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "seamless-bikinis"
           }
         }
       },
@@ -698,7 +698,7 @@
       ],
       "name": "Collection list",
       "settings": {
-        "title": "Explore our sleeveless one Pieces",
+        "title": "Explore our Collections",
         "grid": 3,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
