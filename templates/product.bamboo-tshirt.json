@@ -576,6 +576,21 @@
         "show_view_all_label": "",
         "section_space": "top_and_bottom"
       }
+    },
+    "featured_blog_JWDNez": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": true,
+        "show_author": true,
+        "show_tags": true,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
     }
   },
   "order": [
@@ -588,6 +603,7 @@
     "product-recommendations",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "accordion_K3YKGe",
-    "featured_collection_hiyBgK"
+    "featured_collection_hiyBgK",
+    "featured_blog_JWDNez"
   ]
 }
