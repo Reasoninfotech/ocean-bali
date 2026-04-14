@@ -423,10 +423,30 @@
             "text": "<p>Add text with images to give and content and editorial feel. Drive traffic to key areas of your store</p>",
             "button_text": "Button"
           }
+        },
+        "text_block_bp6YkC": {
+          "type": "text_block",
+          "settings": {
+            "link": "",
+            "title_text": "Our collections",
+            "text": "<p>Add text with images to give and content and editorial feel. Drive traffic to key areas of your store</p>",
+            "button_text": "Button"
+          }
+        },
+        "text_block_hyMAe8": {
+          "type": "text_block",
+          "settings": {
+            "link": "",
+            "title_text": "Our collections",
+            "text": "<p>Add text with images to give and content and editorial feel. Drive traffic to key areas of your store</p>",
+            "button_text": "Button"
+          }
         }
       },
       "block_order": [
-        "text_block_fGyGAX"
+        "text_block_fGyGAX",
+        "text_block_bp6YkC",
+        "text_block_hyMAe8"
       ],
       "custom_css": [
         "h3 {padding-top: 20px;}"
