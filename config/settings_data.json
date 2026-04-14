@@ -938,7 +938,7 @@
     "collection_image_size": "square",
     "title_position": "below",
     "bold_collection_title": false,
-    "product_image_size": "portrait",
+    "product_image_size": "square",
     "vendor": false,
     "show_rating": true,
     "product_border": false,

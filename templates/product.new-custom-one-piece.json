@@ -439,7 +439,6 @@
       "block_order": [
         "judge_me_reviews_ugc_media_grid_c8H4jL"
       ],
-      "disabled": true,
       "settings": {
         "display_wide": false
       }
@@ -511,7 +510,6 @@
       "block_order": [
         "judge_me_reviews_review_widget_gDtmRL"
       ],
-      "disabled": true,
       "settings": {
         "display_wide": false
       }
@@ -530,6 +528,7 @@
     },
     "featured_collection_zg3BAr": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Explore our sleeveless one pieces",
         "collection": "sleeveless-one-piece-swimsuits",
@@ -669,6 +668,41 @@
         "show_button": true,
         "section_space": "top_and_bottom"
       }
+    },
+    "collection_list_LMqQtm": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_VLzaEP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sleeveless-one-piece-swimsuits"
+          }
+        },
+        "featured_collection_BW9NYb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "long-sleeve-swimsuits-sale"
+          }
+        },
+        "featured_collection_B83Dc4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_VLzaEP",
+        "featured_collection_BW9NYb",
+        "featured_collection_B83Dc4"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Explore our sleeveless one Pieces",
+        "grid": 3,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
     }
   },
   "order": [
@@ -684,6 +718,7 @@
     "accordion_jHgV7B",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "product-content",
-    "featured_blog_N3J3zA"
+    "featured_blog_N3J3zA",
+    "collection_list_LMqQtm"
   ]
 }
