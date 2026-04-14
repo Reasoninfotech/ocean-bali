@@ -106,7 +106,7 @@
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_EGfenY": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "l35reajum8gvz"
           }
@@ -632,7 +632,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Shop our collections",
-        "collection": "eco-friendly-swimwear",
+        "collection": "beach-resort-wear",
         "limit": 3,
         "grid": 3,
         "carousel": false,
@@ -645,7 +645,7 @@
     "featured_blog_VQ4kXx": {
       "type": "featured-blog",
       "settings": {
-        "title": "From The Journal",
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
