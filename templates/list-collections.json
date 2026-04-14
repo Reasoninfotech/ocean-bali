@@ -906,7 +906,7 @@
       "name": "Collection list",
       "settings": {
         "title": "shop sustainable swimwear",
-        "grid": 3,
+        "grid": 2,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
