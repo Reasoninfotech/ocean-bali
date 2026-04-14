@@ -138,7 +138,7 @@
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_wRHytm": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "l35reajum8gvz"
           }
@@ -443,12 +443,14 @@
       "blocks": {
         "28dd0a33-d199-4642-860b-b3860292a2ba": {
           "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {}
         }
       },
       "block_order": [
         "28dd0a33-d199-4642-860b-b3860292a2ba"
       ],
+      "disabled": true,
       "settings": {
         "background": "#f9f9f9",
         "allow_multiple": false
@@ -524,8 +526,8 @@
     "featured_collection_LagmMi": {
       "type": "featured-collection",
       "settings": {
-        "title": "Related Products",
-        "collection": "apparel-accessories-on-sale",
+        "title": "Shop our collections",
+        "collection": "beach-resort-wear",
         "limit": 3,
         "grid": 3,
         "carousel": false,
@@ -538,7 +540,7 @@
     "featured_blog_jQjgk3": {
       "type": "featured-blog",
       "settings": {
-        "title": "Blog posts",
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
