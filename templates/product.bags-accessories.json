@@ -1,1 +1,702 @@
-{"sections":{"breadcrumbs":{"type":"breadcrumbs","disabled":true,"settings":{}},"main":{"type":"main-product","blocks":{"judge_me_reviews_preview_badge_AJ6DVy":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}},"product_variants":{"type":"product_variants","settings":{}},"product_quantity":{"type":"product_quantity","settings":{}},"ca4e9763-b9ba-4a39-bcf4-88e3f1b229e1":{"type":"popup","settings":{"section_class":"size-guide-trigger","title":"Size Guide","page":"{{ product.metafields.custom.size_guide.value }}","text":"","text_2":"","show_footer_text":false}},"product_sku_7aGErP":{"type":"product_sku","disabled":true,"settings":{}},"7083fa5a-a988-498e-ac51-81c70cca09d2":{"type":"rating","settings":{}},"onyou_onyou_popup_EfNk7A":{"type":"shopify:\/\/apps\/onyou-by-tolstoy\/blocks\/onyou-popup\/3379e12f-b2ef-4ba9-a9e9-5ea9425840ef","disabled":true,"settings":{}},"5a0481c6-7b6b-45dc-99cf-3aca7980daa4":{"type":"stock_levels","settings":{"threshold":100}},"product_buttons":{"type":"product_buttons","settings":{}},"af181730-ba8b-440a-8bae-8ef024ae7a72":{"type":"liquid_content","settings":{"liquid":"<div id=\"payment\" class=\"credit desktop-12 tablet-6 mobile-3\">\n            {% for type in shop.enabled_payment_types %}\n              {{ type | payment_type_svg_tag: class:'payment-icon' }}\n            {% endfor %}\n          <\/div>"}},"bundler_bundler_target_element_gGtaAC":{"type":"shopify:\/\/apps\/bundler\/blocks\/bundler-target-element\/7a6ae1b8-3b16-449b-8429-8bb89a62c664","settings":{}},"5925ad72-9bd4-457a-aae1-c18d5108805e":{"type":"text_with_icon","settings":{"icon":"globe","image":"shopify:\/\/shop_images\/Screenshot_7_a36afe1b-da13-4986-8d49-edfe90c97776.jpg","text":"Easy return & exchange","link":""}},"876a735f-f0bb-4624-b8cc-8d60db6ba807":{"type":"text_with_icon","settings":{"icon":"returns","image":"shopify:\/\/shop_images\/B_Frame.png","text":"Free Express Worldwide Shipping Over $250+ AUD","link":""}},"ac9f6f7c-33c1-4256-932e-3bd4272452e2":{"type":"text_with_icon","disabled":true,"settings":{"icon":"star_outline","image":"shopify:\/\/shop_images\/Screenshot_9_e9f9b846-2ba1-426e-8d76-76c665140ecf.jpg","text":"12 month Warranty","link":""}},"supportive_paragraph_QdWyim":{"type":"supportive_paragraph","settings":{"text":"{{ product.metafields.custom.supportive_paragraph | metafield_tag }}"}},"custom_point_list_T94Taz":{"type":"custom_point_list","settings":{"custom_point_list_text":"{{ product.metafields.custom.point_list | metafield_tag }}"}},"tolstoy_shoppable_video_quiz_stories_block_FgekyY":{"type":"shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11","disabled":true,"settings":{"publishId":"publishId"}},"tabs_name_dKYkri":{"type":"tabs_name","settings":{"tabs_title":""}},"product_description":{"type":"product_description","settings":{"show_as_accordion":true,"default_open_accordion":false}},"536f622f-212e-4a9c-a60c-c76fe14abb58":{"type":"accordion_content","settings":{"section_class":"section_class","page":"","title":"Features","text":"{{ product.metafields.custom.product_key_features | metafield_tag }}","default_open_accordion":false}},"7ee2622b-242b-4502-8b12-c152b516c8bb":{"type":"accordion_content","settings":{"section_class":"section_class","page":"","title":"SIZE","text":"<p>{{ product.metafields.custom.additonal_sizing_details | metafield_tag }}<\/p>","default_open_accordion":false}},"da5688b2-ac81-441f-ad20-d8c5bf5c3484":{"type":"accordion_content","disabled":true,"settings":{"section_class":"section_class","page":"","title":"Product Care","text":"<p>To keep your swimwear happy and healthy, please follow our general care guidelines:<br\/><br\/>Our suits are happiest when hand-washed separately in cool water so the colours do not bleed. Please avoid traditional washers and abrasive materials like velcro and bleach.  Do not leave wet swimsuit in a bag. Air dry in a shady spot.<\/p>","default_open_accordion":false}},"a34f6081-2778-463c-8074-6403bf19be80":{"type":"accordion_content","settings":{"section_class":"section_class","page":"","title":"Shipping & Returns","text":"<p><strong>SHIPPING<\/strong><\/p><p>Worldwide<strong> <\/strong>shipping from Bali & Australia. Free EXPRESS Shipping for orders $250+ AUD.<\/p><p>International Express Shipping will be sent via DHL and will arrive in 2 - 4 days once dispatched.<\/p><p>Domestic Indonesian & Australian orders will be sent express and arrive in 1 - 3 days.<\/p><p>Please read more of our Shipping Policy <a href=\"\/policies\/shipping-policy\" title=\"Shipping Policy\">here.<\/a><\/p><p><strong>RETURNS\/EXCHANGES<\/strong><\/p><p>We accept exchanges or returns for change of mind for a credit note, on full price items only, and as long as it is processed within within 30 days from the date the item was dispatched.<\/p><p><strong>Sale items cannot be exchanged or refunded.<\/strong><\/p><p>See our Returns policy <a href=\"https:\/\/oceansoulbali.com\/policies\/refund-policy\" target=\"_blank\" title=\"https:\/\/oceansoulbali.com\/policies\/refund-policy\">here.<\/a><\/p><p>Please follow instructions on our  <a href=\"https:\/\/www.oceansoulbali.com\/policies\/refund-policy\" title=\"https:\/\/www.oceansoulbali.com\/policies\/refund-policy\">Returns <\/a>page.<\/p>","default_open_accordion":false}},"0c52e621-4467-4df7-9a79-186536b36b30":{"type":"accordion_content","settings":{"section_class":"section_class","page":"","title":"Contact Us","text":"<p>Have a question? You can reach us below or on live chat.<\/p><p><a href=\"mailto:customercare@oceansoulbali.com\" target=\"_blank\" title=\"mailto:customercare@oceansoulbali.com\">Email<\/a><\/p><p><a href=\"http:\/\/wa.me\/61407215854\" target=\"_blank\" title=\"http:\/\/wa.me\/61407215854\">Whats App<\/a><\/p><p><\/p>","default_open_accordion":false}},"49935d06-a61f-4be4-865c-9762a9f134a3":{"type":"complementary_products","disabled":true,"settings":{"heading":"Pair it with","limit":10}},"f2eafac5-3430-412d-9c1c-43775c7b293a":{"type":"social_sharing","disabled":true,"settings":{"show_twitter":true,"show_facebook":true,"show_pinterest":true}},"b8dc24fb-6234-45f2-af01-2d35830b3da9":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}}},"block_order":["judge_me_reviews_preview_badge_AJ6DVy","product_variants","product_quantity","ca4e9763-b9ba-4a39-bcf4-88e3f1b229e1","product_sku_7aGErP","7083fa5a-a988-498e-ac51-81c70cca09d2","onyou_onyou_popup_EfNk7A","5a0481c6-7b6b-45dc-99cf-3aca7980daa4","product_buttons","af181730-ba8b-440a-8bae-8ef024ae7a72","bundler_bundler_target_element_gGtaAC","5925ad72-9bd4-457a-aae1-c18d5108805e","876a735f-f0bb-4624-b8cc-8d60db6ba807","ac9f6f7c-33c1-4256-932e-3bd4272452e2","supportive_paragraph_QdWyim","custom_point_list_T94Taz","tolstoy_shoppable_video_quiz_stories_block_FgekyY","tabs_name_dKYkri","product_description","536f622f-212e-4a9c-a60c-c76fe14abb58","7ee2622b-242b-4502-8b12-c152b516c8bb","da5688b2-ac81-441f-ad20-d8c5bf5c3484","a34f6081-2778-463c-8074-6403bf19be80","0c52e621-4467-4df7-9a79-186536b36b30","49935d06-a61f-4be4-865c-9762a9f134a3","f2eafac5-3430-412d-9c1c-43775c7b293a","b8dc24fb-6234-45f2-af01-2d35830b3da9"],"custom_css":["h3,h4 {padding-top: 15px; line-height: 1.5;}","p {padding-top: 10px; padding-bottom: 10px;}","h3 {font-size: 17px;}",".product_top_description_meta p {padding-top: 5px; padding-bottom: 5px; margin-bottom: 5px;}","div.fera-productReviewsSummary-content {padding-bottom: 10px;}","span.js-variant-stock-levels__message {color: #7c031e;}","svg.icon--testament-info {fill: #7c031e;}","button.product__contact-trigger {color: #8eb6d1; font-weight: 500;}"],"settings":{"pay_img":"shopify:\/\/shop_images\/Screenshot_4.jpg","product_form_background":"#ffffff","product_page_border":"rgba(0,0,0,0)","form_left":true,"show_tax_notice":false,"media_size":"medium","thumbnail_position":"left","click_to_enlarge":true,"sticky_images":true,"enable_video_looping":true,"allow_multiple":true}},"210a4ae5-eb6f-4c98-bd15-1c238eaeb22c":{"type":"text-with-icons","blocks":{"template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-0":{"type":"block","settings":{"icon":"world","text":"Recycled Materials","link":""}},"template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-1":{"type":"block","settings":{"icon":"shield","text":"UPF 50+ Protection","link":""}},"template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-2":{"type":"block","settings":{"icon":"star","text":"Luxuriously Soft Fabric","link":""}},"bfe8916b-3530-46d0-8ff7-defc132b0815":{"type":"block","settings":{"icon":"heart","text":"Made With Love","link":""}}},"block_order":["template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-0","template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-1","template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-2","bfe8916b-3530-46d0-8ff7-defc132b0815"],"custom_css":["div {padding-top: 15px; padding-bottom: 15px;}"],"settings":{"color":"#ffffff","background":"#2e6688","section_space":"top_and_bottom"}},"website_logos_g6DHgW":{"type":"website-logos","blocks":{"text_block_KCmPGi":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/british_vogue.png","link":"","text":"","button_text":"Button"}},"text_block_NUmW7y":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/PngItem_171373.png","link":"","text":"","button_text":"Button"}},"text_block_hTnKJm":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Herald_Sun_logo_logotype.png","link":"","text":"","button_text":"Button"}},"text_block_MMpQFj":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png","link":"","text":"","button_text":"Button"}},"text_block_mAmEnA":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/The_Daily_Telegraph_Australien_logo.png","link":"","text":"","button_text":"Button"}},"text_block_dmtfJ4":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/honeycombers.png","link":"","text":"","button_text":"Button"}},"text_block_6inC8g":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/georgina_monti.png","link":"","text":"","button_text":"Button"}},"text_block_pRy6FF":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/A_conscious_collection_copy_3.jpg","link":"","text":"","button_text":"Button"}}},"block_order":["text_block_KCmPGi","text_block_NUmW7y","text_block_hTnKJm","text_block_MMpQFj","text_block_mAmEnA","text_block_dmtfJ4","text_block_6inC8g","text_block_pRy6FF"],"settings":{"title":"As seen in","center_align":false,"show_description":true,"image_height":"none","desktop_fixed_height":500,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"17065983415fc757f9":{"type":"apps","blocks":{"judge_me_reviews_ugc_media_grid_c8H4jL":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/ugc_media_grid\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}}},"block_order":["judge_me_reviews_ugc_media_grid_c8H4jL"],"settings":{"display_wide":false}},"1706838326df053765":{"type":"apps","blocks":{"judge_me_reviews_review_widget_gDtmRL":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"review_data":"sample_data","max_width":1200,"show_shop_reviews":false,"empty_state":"empty_widget"}}},"block_order":["judge_me_reviews_review_widget_gDtmRL"],"settings":{"display_wide":false}},"product-recommendations":{"type":"product-recommendations","disabled":true,"custom_css":["div {padding-bottom: 10px;}"],"settings":{"product_recommendations_heading":"You may also like","per_row":4,"limit":8}},"accordion_jHgV7B":{"type":"accordion","blocks":{"accordion_pane_Jcm8A8":{"type":"accordion_pane","settings":{"title":"Where do you ship from?","content":"<p>We ship all our orders from Australia and Bali.  Regular post can take up to 3 weeks, and express 7-10 days.<\/p>"}},"accordion_pane_HKirLy":{"type":"accordion_pane","settings":{"title":"How do I care for sustainable fabric?","content":"<p>We recommend to handwash your items with bio degradable soap and with cold water.<\/p>"}},"accordion_pane_HGjiWh":{"type":"accordion_pane","disabled":true,"settings":{"title":"Will my swimsuit last?","content":"<p>Yes! Econyl fabric is extremely durable and will last twice as long as a regular swimsuit.<\/p>"}},"accordion_pane_EEqFkq":{"type":"accordion_pane","settings":{"title":"Do you sell masks and fins?","content":"<p>Yes! We sell masks, fins and more in our retail shop in Bali.<\/p>"}},"accordion_pane_tzdBHg":{"type":"accordion_pane","disabled":true,"settings":{"title":"Heading","content":"<p>Accordion pane content<\/p>"}}},"block_order":["accordion_pane_Jcm8A8","accordion_pane_HKirLy","accordion_pane_HGjiWh","accordion_pane_EEqFkq","accordion_pane_tzdBHg"],"settings":{"title":"FAQS","max_width":100,"allow_multiple":false}},"5a8ae58c-582e-47f6-b743-c942aae4345c":{"type":"editorial-columns","blocks":{"template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/nomadbythesea-bikini1_Product_Page_-_Shopify_Size-17.jpg","link":"","title_text":"Perfect two piece cut","text":"<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br\/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering and a tailored feminine design that is suitable for leisure or athletic activities.<\/p>","button_text":"Button"}},"template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/aq222493_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-244.jpg","link":"","title_text":"Designed for comfort","text":"<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.<\/p>","button_text":"Button"}},"template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/aq222287_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-241.jpg","link":"","title_text":"Sustainable Swim","text":"<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. <\/p>","button_text":"Button"}}},"block_order":["template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0","template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1","template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"],"disabled":true,"custom_css":["h3 {padding-top: 15px;}"],"settings":{"title":"","center_align":true,"image_height":"fixed","desktop_fixed_height":350,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"ffd7507a-dce2-40e6-af87-0e8a295f7ef6":{"type":"editorial-columns","blocks":{"8743bf57-6b1a-4f8c-8988-5e42ae277901":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Untitled_f9ddb395-843c-4ce9-8df6-f4d27f3560a4.jpg","link":"","title_text":"The Perfect one piece","text":"<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br\/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering paired with a tailored feminine design that is suitable for leisure or athletic activities.<\/p>","button_text":"Button"}},"a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Square_naut.png","link":"","title_text":"Designed for comfort","text":"<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.<\/p>","button_text":"Button"}},"167e640a-03e8-48de-b93f-07bbc26e1244":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Ocean_Soul_Bali_Sustainable_Swimwear_Sustainable_Fabric.jpg","link":"","title_text":"Sustainable Swim","text":"<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. <\/p>","button_text":"Button"}}},"block_order":["8743bf57-6b1a-4f8c-8988-5e42ae277901","a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf","167e640a-03e8-48de-b93f-07bbc26e1244"],"disabled":true,"settings":{"title":"","center_align":true,"image_height":"fixed","desktop_fixed_height":350,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"product-content":{"type":"main-product-content","blocks":{"f8c611f2-6295-4e9d-8b7b-4becd3547203":{"type":"featured_products","settings":{"title":"Featured products","featured_product_1":"","show_product_1":true,"featured_product_2":"","show_product_2":true}}},"block_order":["f8c611f2-6295-4e9d-8b7b-4becd3547203"],"disabled":true,"settings":{"background":"#f9f9f9","allow_multiple":false}},"featured_collection_fkaDrA":{"type":"featured-collection","settings":{"title":"Featured collection","collection":"beach-resort-wear","limit":3,"grid":3,"carousel":false,"mobile_1pr":false,"show_view_all":false,"show_view_all_label":"","section_space":"top_and_bottom"}},"featured_blog_aGbVMp":{"type":"featured-blog","settings":{"title":"Blog posts","blog":"news","grid":3,"post_limit":3,"show_date":false,"show_author":false,"show_tags":false,"show_button":true,"section_space":"top_and_bottom"}}},"order":["breadcrumbs","main","210a4ae5-eb6f-4c98-bd15-1c238eaeb22c","website_logos_g6DHgW","17065983415fc757f9","1706838326df053765","product-recommendations","accordion_jHgV7B","5a8ae58c-582e-47f6-b743-c942aae4345c","ffd7507a-dce2-40e6-af87-0e8a295f7ef6","product-content","featured_collection_fkaDrA","featured_blog_aGbVMp"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "judge_me_reviews_preview_badge_AJ6DVy": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_variants": {
+          "type": "product_variants",
+          "settings": {}
+        },
+        "product_quantity": {
+          "type": "product_quantity",
+          "settings": {}
+        },
+        "ca4e9763-b9ba-4a39-bcf4-88e3f1b229e1": {
+          "type": "popup",
+          "settings": {
+            "section_class": "size-guide-trigger",
+            "title": "Size Guide",
+            "page": "{{ product.metafields.custom.size_guide.value }}",
+            "text": "",
+            "text_2": "",
+            "show_footer_text": false
+          }
+        },
+        "product_sku_7aGErP": {
+          "type": "product_sku",
+          "disabled": true,
+          "settings": {}
+        },
+        "7083fa5a-a988-498e-ac51-81c70cca09d2": {
+          "type": "rating",
+          "settings": {}
+        },
+        "onyou_onyou_popup_EfNk7A": {
+          "type": "shopify://apps/onyou-by-tolstoy/blocks/onyou-popup/3379e12f-b2ef-4ba9-a9e9-5ea9425840ef",
+          "disabled": true,
+          "settings": {}
+        },
+        "5a0481c6-7b6b-45dc-99cf-3aca7980daa4": {
+          "type": "stock_levels",
+          "settings": {
+            "threshold": 100
+          }
+        },
+        "product_buttons": {
+          "type": "product_buttons",
+          "settings": {}
+        },
+        "af181730-ba8b-440a-8bae-8ef024ae7a72": {
+          "type": "liquid_content",
+          "settings": {
+            "liquid": "<div id=\"payment\" class=\"credit desktop-12 tablet-6 mobile-3\">\n            {% for type in shop.enabled_payment_types %}\n              {{ type | payment_type_svg_tag: class:'payment-icon' }}\n            {% endfor %}\n          </div>"
+          }
+        },
+        "bundler_bundler_target_element_gGtaAC": {
+          "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {}
+        },
+        "5925ad72-9bd4-457a-aae1-c18d5108805e": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "globe",
+            "image": "shopify://shop_images/Screenshot_7_a36afe1b-da13-4986-8d49-edfe90c97776.jpg",
+            "text": "Easy return & exchange",
+            "link": ""
+          }
+        },
+        "876a735f-f0bb-4624-b8cc-8d60db6ba807": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "returns",
+            "image": "shopify://shop_images/B_Frame.png",
+            "text": "Free Express Worldwide Shipping Over $250+ AUD",
+            "link": ""
+          }
+        },
+        "ac9f6f7c-33c1-4256-932e-3bd4272452e2": {
+          "type": "text_with_icon",
+          "disabled": true,
+          "settings": {
+            "icon": "star_outline",
+            "image": "shopify://shop_images/Screenshot_9_e9f9b846-2ba1-426e-8d76-76c665140ecf.jpg",
+            "text": "12 month Warranty",
+            "link": ""
+          }
+        },
+        "supportive_paragraph_QdWyim": {
+          "type": "supportive_paragraph",
+          "settings": {
+            "text": "{{ product.metafields.custom.supportive_paragraph | metafield_tag }}"
+          }
+        },
+        "custom_point_list_T94Taz": {
+          "type": "custom_point_list",
+          "settings": {
+            "custom_point_list_text": "{{ product.metafields.custom.point_list | metafield_tag }}"
+          }
+        },
+        "tolstoy_shoppable_video_quiz_stories_block_FgekyY": {
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "disabled": true,
+          "settings": {
+            "publishId": "publishId"
+          }
+        },
+        "tabs_name_dKYkri": {
+          "type": "tabs_name",
+          "settings": {
+            "tabs_title": ""
+          }
+        },
+        "product_description": {
+          "type": "product_description",
+          "settings": {
+            "show_as_accordion": true,
+            "default_open_accordion": false
+          }
+        },
+        "536f622f-212e-4a9c-a60c-c76fe14abb58": {
+          "type": "accordion_content",
+          "settings": {
+            "section_class": "section_class",
+            "page": "",
+            "title": "Features",
+            "text": "{{ product.metafields.custom.product_key_features | metafield_tag }}",
+            "default_open_accordion": false
+          }
+        },
+        "7ee2622b-242b-4502-8b12-c152b516c8bb": {
+          "type": "accordion_content",
+          "settings": {
+            "section_class": "section_class",
+            "page": "",
+            "title": "SIZE",
+            "text": "<p>{{ product.metafields.custom.additonal_sizing_details | metafield_tag }}</p>",
+            "default_open_accordion": false
+          }
+        },
+        "da5688b2-ac81-441f-ad20-d8c5bf5c3484": {
+          "type": "accordion_content",
+          "disabled": true,
+          "settings": {
+            "section_class": "section_class",
+            "page": "",
+            "title": "Product Care",
+            "text": "<p>To keep your swimwear happy and healthy, please follow our general care guidelines:<br/><br/>Our suits are happiest when hand-washed separately in cool water so the colours do not bleed. Please avoid traditional washers and abrasive materials like velcro and bleach.  Do not leave wet swimsuit in a bag. Air dry in a shady spot.</p>",
+            "default_open_accordion": false
+          }
+        },
+        "a34f6081-2778-463c-8074-6403bf19be80": {
+          "type": "accordion_content",
+          "settings": {
+            "section_class": "section_class",
+            "page": "",
+            "title": "Shipping & Returns",
+            "text": "<p><strong>SHIPPING</strong></p><p>Worldwide<strong> </strong>shipping from Bali & Australia. Free EXPRESS Shipping for orders $250+ AUD.</p><p>International Express Shipping will be sent via DHL and will arrive in 2 - 4 days once dispatched.</p><p>Domestic Indonesian & Australian orders will be sent express and arrive in 1 - 3 days.</p><p>Please read more of our Shipping Policy <a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">here.</a></p><p><strong>RETURNS/EXCHANGES</strong></p><p>We accept exchanges or returns for change of mind for a credit note, on full price items only, and as long as it is processed within within 30 days from the date the item was dispatched.</p><p><strong>Sale items cannot be exchanged or refunded.</strong></p><p>See our Returns policy <a href=\"https://oceansoulbali.com/policies/refund-policy\" target=\"_blank\" title=\"https://oceansoulbali.com/policies/refund-policy\">here.</a></p><p>Please follow instructions on our  <a href=\"https://www.oceansoulbali.com/policies/refund-policy\" title=\"https://www.oceansoulbali.com/policies/refund-policy\">Returns </a>page.</p>",
+            "default_open_accordion": false
+          }
+        },
+        "0c52e621-4467-4df7-9a79-186536b36b30": {
+          "type": "accordion_content",
+          "settings": {
+            "section_class": "section_class",
+            "page": "",
+            "title": "Contact Us",
+            "text": "<p>Have a question? You can reach us below or on live chat.</p><p><a href=\"mailto:customercare@oceansoulbali.com\" target=\"_blank\" title=\"mailto:customercare@oceansoulbali.com\">Email</a></p><p><a href=\"http://wa.me/61407215854\" target=\"_blank\" title=\"http://wa.me/61407215854\">Whats App</a></p><p></p>",
+            "default_open_accordion": false
+          }
+        },
+        "49935d06-a61f-4be4-865c-9762a9f134a3": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "heading": "Pair it with",
+            "limit": 10
+          }
+        },
+        "f2eafac5-3430-412d-9c1c-43775c7b293a": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {
+            "show_twitter": true,
+            "show_facebook": true,
+            "show_pinterest": true
+          }
+        },
+        "b8dc24fb-6234-45f2-af01-2d35830b3da9": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_AJ6DVy",
+        "product_variants",
+        "product_quantity",
+        "ca4e9763-b9ba-4a39-bcf4-88e3f1b229e1",
+        "product_sku_7aGErP",
+        "7083fa5a-a988-498e-ac51-81c70cca09d2",
+        "onyou_onyou_popup_EfNk7A",
+        "5a0481c6-7b6b-45dc-99cf-3aca7980daa4",
+        "product_buttons",
+        "af181730-ba8b-440a-8bae-8ef024ae7a72",
+        "bundler_bundler_target_element_gGtaAC",
+        "5925ad72-9bd4-457a-aae1-c18d5108805e",
+        "876a735f-f0bb-4624-b8cc-8d60db6ba807",
+        "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
+        "supportive_paragraph_QdWyim",
+        "custom_point_list_T94Taz",
+        "tolstoy_shoppable_video_quiz_stories_block_FgekyY",
+        "tabs_name_dKYkri",
+        "product_description",
+        "536f622f-212e-4a9c-a60c-c76fe14abb58",
+        "7ee2622b-242b-4502-8b12-c152b516c8bb",
+        "da5688b2-ac81-441f-ad20-d8c5bf5c3484",
+        "a34f6081-2778-463c-8074-6403bf19be80",
+        "0c52e621-4467-4df7-9a79-186536b36b30",
+        "49935d06-a61f-4be4-865c-9762a9f134a3",
+        "f2eafac5-3430-412d-9c1c-43775c7b293a",
+        "b8dc24fb-6234-45f2-af01-2d35830b3da9"
+      ],
+      "custom_css": [
+        "h3,h4 {padding-top: 15px; line-height: 1.5;}",
+        "p {padding-top: 10px; padding-bottom: 10px;}",
+        "h3 {font-size: 17px;}",
+        ".product_top_description_meta p {padding-top: 5px; padding-bottom: 5px; margin-bottom: 5px;}",
+        "div.fera-productReviewsSummary-content {padding-bottom: 10px;}",
+        "span.js-variant-stock-levels__message {color: #7c031e;}",
+        "svg.icon--testament-info {fill: #7c031e;}",
+        "button.product__contact-trigger {color: #8eb6d1; font-weight: 500;}"
+      ],
+      "settings": {
+        "pay_img": "shopify://shop_images/Screenshot_4.jpg",
+        "product_form_background": "#ffffff",
+        "product_page_border": "rgba(0,0,0,0)",
+        "form_left": true,
+        "show_tax_notice": false,
+        "media_size": "medium",
+        "thumbnail_position": "left",
+        "click_to_enlarge": true,
+        "sticky_images": true,
+        "enable_video_looping": true,
+        "allow_multiple": true
+      }
+    },
+    "210a4ae5-eb6f-4c98-bd15-1c238eaeb22c": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-0": {
+          "type": "block",
+          "settings": {
+            "icon": "world",
+            "text": "Recycled Materials",
+            "link": ""
+          }
+        },
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-1": {
+          "type": "block",
+          "settings": {
+            "icon": "shield",
+            "text": "UPF 50+ Protection",
+            "link": ""
+          }
+        },
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-2": {
+          "type": "block",
+          "settings": {
+            "icon": "star",
+            "text": "Luxuriously Soft Fabric",
+            "link": ""
+          }
+        },
+        "bfe8916b-3530-46d0-8ff7-defc132b0815": {
+          "type": "block",
+          "settings": {
+            "icon": "heart",
+            "text": "Made With Love",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-0",
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-1",
+        "template--14915046834265__210a4ae5-eb6f-4c98-bd15-1c238eaeb22c-167790057508cb6e15-2",
+        "bfe8916b-3530-46d0-8ff7-defc132b0815"
+      ],
+      "custom_css": [
+        "div {padding-top: 15px; padding-bottom: 15px;}"
+      ],
+      "settings": {
+        "color": "#ffffff",
+        "background": "#2e6688",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "website_logos_g6DHgW": {
+      "type": "website-logos",
+      "blocks": {
+        "text_block_KCmPGi": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/british_vogue.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_NUmW7y": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/PngItem_171373.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_hTnKJm": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Herald_Sun_logo_logotype.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_MMpQFj": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_mAmEnA": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/The_Daily_Telegraph_Australien_logo.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_dmtfJ4": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/honeycombers.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_6inC8g": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/georgina_monti.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_pRy6FF": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/A_conscious_collection_copy_3.jpg",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_KCmPGi",
+        "text_block_NUmW7y",
+        "text_block_hTnKJm",
+        "text_block_MMpQFj",
+        "text_block_mAmEnA",
+        "text_block_dmtfJ4",
+        "text_block_6inC8g",
+        "text_block_pRy6FF"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "center_align": false,
+        "show_description": true,
+        "image_height": "none",
+        "desktop_fixed_height": 500,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "17065983415fc757f9": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_ugc_media_grid_c8H4jL": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_ugc_media_grid_c8H4jL"
+      ],
+      "settings": {
+        "display_wide": false
+      }
+    },
+    "1706838326df053765": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_gDtmRL": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_gDtmRL"
+      ],
+      "settings": {
+        "display_wide": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "custom_css": [
+        "div {padding-bottom: 10px;}"
+      ],
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "per_row": 4,
+        "limit": 8
+      }
+    },
+    "accordion_jHgV7B": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Jcm8A8": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Where do you ship from?",
+            "content": "<p>We ship all our orders from Australia and Bali.  Regular post can take up to 3 weeks, and express 7-10 days.</p>"
+          }
+        },
+        "accordion_pane_HKirLy": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How do I care for sustainable fabric?",
+            "content": "<p>We recommend to handwash your items with bio degradable soap and with cold water.</p>"
+          }
+        },
+        "accordion_pane_HGjiWh": {
+          "type": "accordion_pane",
+          "disabled": true,
+          "settings": {
+            "title": "Will my swimsuit last?",
+            "content": "<p>Yes! Econyl fabric is extremely durable and will last twice as long as a regular swimsuit.</p>"
+          }
+        },
+        "accordion_pane_EEqFkq": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you sell masks and fins?",
+            "content": "<p>Yes! We sell masks, fins and more in our retail shop in Bali.</p>"
+          }
+        },
+        "accordion_pane_tzdBHg": {
+          "type": "accordion_pane",
+          "disabled": true,
+          "settings": {
+            "title": "Heading",
+            "content": "<p>Accordion pane content</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Jcm8A8",
+        "accordion_pane_HKirLy",
+        "accordion_pane_HGjiWh",
+        "accordion_pane_EEqFkq",
+        "accordion_pane_tzdBHg"
+      ],
+      "settings": {
+        "title": "FAQS",
+        "max_width": 100,
+        "allow_multiple": false
+      }
+    },
+    "5a8ae58c-582e-47f6-b743-c942aae4345c": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/nomadbythesea-bikini1_Product_Page_-_Shopify_Size-17.jpg",
+            "link": "",
+            "title_text": "Perfect two piece cut",
+            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering and a tailored feminine design that is suitable for leisure or athletic activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/aq222493_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-244.jpg",
+            "link": "",
+            "title_text": "Designed for comfort",
+            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/aq222287_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-241.jpg",
+            "link": "",
+            "title_text": "Sustainable Swim",
+            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 {padding-top: 15px;}"
+      ],
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "fixed",
+        "desktop_fixed_height": 350,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
+      "type": "editorial-columns",
+      "blocks": {
+        "8743bf57-6b1a-4f8c-8988-5e42ae277901": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_f9ddb395-843c-4ce9-8df6-f4d27f3560a4.jpg",
+            "link": "",
+            "title_text": "The Perfect one piece",
+            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering paired with a tailored feminine design that is suitable for leisure or athletic activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Square_naut.png",
+            "link": "",
+            "title_text": "Designed for comfort",
+            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "167e640a-03e8-48de-b93f-07bbc26e1244": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Ocean_Soul_Bali_Sustainable_Swimwear_Sustainable_Fabric.jpg",
+            "link": "",
+            "title_text": "Sustainable Swim",
+            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "8743bf57-6b1a-4f8c-8988-5e42ae277901",
+        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf",
+        "167e640a-03e8-48de-b93f-07bbc26e1244"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "fixed",
+        "desktop_fixed_height": 350,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "product-content": {
+      "type": "main-product-content",
+      "blocks": {
+        "f8c611f2-6295-4e9d-8b7b-4becd3547203": {
+          "type": "featured_products",
+          "settings": {
+            "title": "Featured products",
+            "featured_product_1": "",
+            "show_product_1": true,
+            "featured_product_2": "",
+            "show_product_2": true
+          }
+        }
+      },
+      "block_order": [
+        "f8c611f2-6295-4e9d-8b7b-4becd3547203"
+      ],
+      "disabled": true,
+      "settings": {
+        "background": "#f9f9f9",
+        "allow_multiple": false
+      }
+    },
+    "featured_blog_aGbVMp": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "collection_list_aAxAzU": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_mRtY64": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-resort-wear"
+          }
+        },
+        "featured_collection_nxB9me": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "best-seller"
+          }
+        },
+        "featured_collection_ffY6KT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "seamless-bikinis"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_mRtY64",
+        "featured_collection_nxB9me",
+        "featured_collection_ffY6KT"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "shop our Collections",
+        "grid": 3,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "210a4ae5-eb6f-4c98-bd15-1c238eaeb22c",
+    "website_logos_g6DHgW",
+    "17065983415fc757f9",
+    "1706838326df053765",
+    "product-recommendations",
+    "accordion_jHgV7B",
+    "5a8ae58c-582e-47f6-b743-c942aae4345c",
+    "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
+    "product-content",
+    "featured_blog_aGbVMp",
+    "collection_list_aAxAzU"
+  ]
+}
