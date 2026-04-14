@@ -450,6 +450,57 @@
         "limit": 8
       }
     },
+    "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
+      "type": "editorial-columns",
+      "blocks": {
+        "8743bf57-6b1a-4f8c-8988-5e42ae277901": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_f9ddb395-843c-4ce9-8df6-f4d27f3560a4.jpg",
+            "link": "",
+            "title_text": "The Perfect one piece",
+            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering paired with a tailored feminine design that is suitable for leisure or athletic activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Square_naut.png",
+            "link": "",
+            "title_text": "Designed for comfort",
+            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "167e640a-03e8-48de-b93f-07bbc26e1244": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Ocean_Soul_Bali_Sustainable_Swimwear_Sustainable_Fabric.jpg",
+            "link": "",
+            "title_text": "Sustainable Swim",
+            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "8743bf57-6b1a-4f8c-8988-5e42ae277901",
+        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf",
+        "167e640a-03e8-48de-b93f-07bbc26e1244"
+      ],
+      "custom_css": [
+        "h3 {padding-top: 20px;}"
+      ],
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "fixed",
+        "desktop_fixed_height": 350,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
     "accordion_K3YKGe": {
       "type": "accordion",
       "blocks": {
@@ -527,57 +578,6 @@
         "allow_multiple": false
       }
     },
-    "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
-      "type": "editorial-columns",
-      "blocks": {
-        "8743bf57-6b1a-4f8c-8988-5e42ae277901": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_f9ddb395-843c-4ce9-8df6-f4d27f3560a4.jpg",
-            "link": "",
-            "title_text": "The Perfect one piece",
-            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering paired with a tailored feminine design that is suitable for leisure or athletic activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/Square_naut.png",
-            "link": "",
-            "title_text": "Designed for comfort",
-            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "167e640a-03e8-48de-b93f-07bbc26e1244": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/Ocean_Soul_Bali_Sustainable_Swimwear_Sustainable_Fabric.jpg",
-            "link": "",
-            "title_text": "Sustainable Swim",
-            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
-            "button_text": "Button"
-          }
-        }
-      },
-      "block_order": [
-        "8743bf57-6b1a-4f8c-8988-5e42ae277901",
-        "a5eb81f9-4c92-4ecc-bf0a-6c9cf53eb6cf",
-        "167e640a-03e8-48de-b93f-07bbc26e1244"
-      ],
-      "custom_css": [
-        "h3 {padding-top: 20px;}"
-      ],
-      "settings": {
-        "title": "",
-        "center_align": true,
-        "image_height": "fixed",
-        "desktop_fixed_height": 350,
-        "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
-      }
-    },
     "featured_blog_JTm7Xj": {
       "type": "featured-blog",
       "name": "Blog posts",
@@ -602,8 +602,8 @@
     "1706838275a57a97e2",
     "product-content",
     "product-recommendations",
-    "accordion_K3YKGe",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
+    "accordion_K3YKGe",
     "featured_blog_JTm7Xj"
   ]
 }
