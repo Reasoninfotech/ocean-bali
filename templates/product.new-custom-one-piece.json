@@ -547,6 +547,7 @@
       "blocks": {
         "accordion_pane_tzdBHg": {
           "type": "accordion_pane",
+          "disabled": true,
           "settings": {
             "title": "Are all your bikinis seamless?",
             "content": "<p>Yes, all of our bikinis are seamless, designed for a smooth, flattering fit that won’t dig in or leave marks. They’re crafted to feel like a second skin—perfect for comfort, confidence, and no awkward lines whether you're lounging, surfing, or layering under a wetsuit.</p>"
@@ -554,6 +555,7 @@
         },
         "accordion_pane_HGjiWh": {
           "type": "accordion_pane",
+          "disabled": true,
           "settings": {
             "title": "Will my swimsuit last?",
             "content": "<p>Yes! Econyl fabric is extremely durable and will last twice as long as a regular swimsuit.</p>"
@@ -561,6 +563,7 @@
         },
         "accordion_pane_HKirLy": {
           "type": "accordion_pane",
+          "disabled": true,
           "settings": {
             "title": "How do I care for sustainable fabric?",
             "content": "<p>We recommend to handwash your items with bio degradable soap and with cold water.</p>"
@@ -568,6 +571,7 @@
         },
         "accordion_pane_Jcm8A8": {
           "type": "accordion_pane",
+          "disabled": true,
           "settings": {
             "title": "Where do you ship from?",
             "content": "<p>We ship all our orders from Australia and Bali.  Regular post can take up to 2 weeks, and express is up to 5 days.</p>"
@@ -575,6 +579,7 @@
         },
         "accordion_pane_EEqFkq": {
           "type": "accordion_pane",
+          "disabled": true,
           "settings": {
             "title": "Do you sell masks and fins?",
             "content": "<p>Yes! We sell masks, fins and more in our retail shop in Bali.</p>"
