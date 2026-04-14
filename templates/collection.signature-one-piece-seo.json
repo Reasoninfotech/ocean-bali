@@ -1,1 +1,641 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"display_wide":true,"image":"shopify:\/\/shop_images\/One_piece_-_desktop_4.jpg","image_mobile":"shopify:\/\/shop_images\/One_pieces_-_mobile_3.jpg"}},"custom_liquid_iti4dC":{"type":"custom-liquid","settings":{"liquid":"<style>\n  \/* Import Montserrat Font *\/\n  @import url('https:\/\/fonts.googleapis.com\/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; \/* Optional border *\/\n    overflow-x: auto; \/* Enables horizontal scrolling *\/\n    white-space: nowrap; \/* Prevents wrapping of text *\/\n    scrollbar-width: none; \/* Hides scrollbar for Firefox *\/\n    font-family: 'Montserrat', sans-serif; \/* Apply Montserrat Regular *\/\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; \/* Hides scrollbar for Webkit browsers *\/\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; \/* Updated text color *\/\n    font-size: 16px;\n    font-weight: 400; \/* Regular weight *\/\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; \/* Prevents text wrapping *\/\n    flex-shrink: 0; \/* Ensures links don’t shrink *\/\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; \/* Hover effect with consistent color scheme *\/\n    border-radius: 5px;\n  }\n\n  \/* Desktop styles (optional, ensures links stay centered) *\/\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; \/* Removes horizontal scrolling on desktop *\/\n      margin-bottom: 0; \/* No extra margin below on desktop *\/\n    }\n  }\n\n  \/* Mobile-specific styles *\/\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; \/* Adds extra margin below for mobile screens *\/\n    }\n  }\n<\/style>\n\n<div class=\"link-bar\">\n  <a href=\"\/collections\/one-piece-swimsuit\">One Piece Swimsuits<\/a>\n  <a href=\"\/collections\/long-sleeve-one-piece-swimsuits\">Long Sleeve One Piece<\/a>\n  <a href=\"\/collections\/sleeveless-one-piece-swimsuits\">Sleeveless One Piece<\/a>\n<\/div>","display_wide":true}},"rich_text_86HTwt":{"type":"rich-text","blocks":{"text_block_hBNnei":{"type":"text_block","settings":{"title":"One Piece Swimsuits That Flatter, Support & Stay On","title_heading":true,"accordion_enabled":true,"text":"<p>Our one piece swimsuit collection is designed for women who want more than just a beautiful suit - they want performance, support, and timeless style that moves with them. Whether you’re surfing, swimming, paddling, or lounging between sessions, these one pieces sculpt your shape while keeping you confident and comfortable.<\/p><p>From sleek sleeveless one piece swimsuits to long sleeve one piece styles that offer extra coverage and sun protection, every design is created with real movement in mind. Each suit is made from luxurious recycled Italian fabric, double-lined for opacity and support, and crafted with clever panel placement that defines your waist and smooths your silhouette - without the need for padding.<\/p>","page":"","center":true,"block_width":100,"accordion_icon_color":"#000000","accordion_icon_size":20}}},"block_order":["text_block_hBNnei"],"custom_css":[".global__section {padding-bottom: 0;}"],"settings":{"padding":30,"text_color":"#606060","background_color":"#ffffff","comman_data_id":""}},"slideshow_TD3pz7":{"type":"slideshow","blocks":{"image_nifY93":{"type":"image","settings":{"overlay":false,"text_align":"left","caption_horizontal":50,"caption_vertical":50,"hide_caption_background":false,"caption_below":false,"heading":"","subheading":"","link":"","button_text":"Button","second_link":"","second_button_text":"Button 2","slide_text_color":"#000000","cta_color":"#ffffff","cta_background":"#000000","caption_background":"rgba(0,0,0,0)","caption_background_opacity":20}}},"block_order":["image_nifY93"],"disabled":true,"name":"Slideshow","settings":{"display_wide":true,"no_autoplay":false,"slider_speed":5,"pager":"arrows","slideshow_size":"natural","desktop_height":200,"mobile_height":200,"slide_heading_size":22,"subheading_size":14,"cta_size":14,"section_space":"bottom"}},"main":{"type":"main-collection","custom_css":["h1,h2,h3,h4,p {text-align: center;}","a:hover {color: #8eb6d1;}","p.mb0 {display: none;}","span.count {display: none;}"],"settings":{"products_per_page":50,"products_per_row":4,"mobile_1pr":false,"sort_by":false,"show_image":false,"description_position":"top"}},"image_with_text_overlay_NixBMJ":{"type":"image-with-text-overlay","name":"Image with text overlay","settings":{"full_width":true,"image":"shopify:\/\/shop_images\/long-sleeve-swimsuit-the-sulawesi-midnight-long-sleeve-swimsuit-ocean-soul-bali-8.webp","overlay":true,"background_attachment":"fixed","height":400,"mobile_height":400,"text_align":"center","caption_vertical":50,"caption_horizontal":50,"heading":"","subheading_text":"<p>Our UPF 50+ one piece swimwear protects your skin from harmful UV rays while resisting salt, sun, and chlorine damage. And because we believe style should last, our one pieces are built to outlast regular swimwear, maintaining their shape and colour season after season.<\/p>","button_text":"Button","link":"","heading_font_size":30,"subheading_font_size":16,"text_color":"#ffffff","button_text_color":"#ffffff","button_color":"#000000","section_space":"top_and_bottom"}},"website_logos_jtJYqE":{"type":"website-logos","blocks":{"text_block_GkCBNU":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/british_vogue.png","link":"","text":"","button_text":"Button"}},"text_block_y9fHDy":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/PngItem_171373.png","link":"","text":"","button_text":"Button"}},"text_block_cifpfG":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Herald_Sun_logo_logotype.png","link":"","text":"","button_text":"Button"}},"text_block_YdXjd4":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png","link":"","text":"","button_text":"Button"}},"text_block_rVPPw3":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/The_Daily_Telegraph_Australien_logo.png","link":"","text":"","button_text":"Button"}},"text_block_Lzxc9R":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/georgina_monti.png","link":"","text":"","button_text":"Button"}},"text_block_r8rG74":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/honeycombers.svg","link":"","text":"","button_text":"Button"}},"text_block_R9GfR6":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/acc.png","link":"","text":"","button_text":"Button"}}},"block_order":["text_block_GkCBNU","text_block_y9fHDy","text_block_cifpfG","text_block_YdXjd4","text_block_rVPPw3","text_block_Lzxc9R","text_block_r8rG74","text_block_R9GfR6"],"settings":{"title":"As seen in","center_align":false,"show_description":true,"image_height":"none","desktop_fixed_height":500,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"c636cacc-d27f-4c88-a6e3-a80b97b03583":{"type":"testimonials","blocks":{"template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-product-1":{"type":"product","settings":{"product":"long-sleeve-swimsuit-sulawesi-midnight-black","show_second_image":true,"rating":5,"title":"Obsessed!!","text":"<p>I think this may be the best fitting swimsuit I’ve ever owned\/put on my skin. It looks and feels incredible. It’s somehow modest yet sexy - I’ve literally never felt so confident!!<\/p>","author":"MadDY (Rockville, US)","show_product_title":false,"button_text":"View product"}},"template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-image_with_text-1":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/black_one_piece_swimsuit_The_Mentawai.jpg","rating":5,"title":"Mentawai one piece swimsuit","text":"<p>Love this swimsuit it’s a very flattering design so looks amazing on, and I love that my back also has great coverage from the sun. I always get comments when I wear this.<\/p>","author":"Diana Catoi (Perth, AU)","button_text":"View product","link":"shopify:\/\/products\/one-piece-swimsuits-the-mentawai"}}},"block_order":["template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-product-1","template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-image_with_text-1"],"settings":{"image_position":"left","text_color":"#606060","star_color":"#dbaf59","background_color":"#f7f7f7"}},"text_with_icons_rtPMiY":{"type":"text-with-icons","blocks":{"block_zDVd9k":{"type":"block","settings":{"icon":"bag","image":"shopify:\/\/shop_images\/warranty.jpg","text":"12 MONTH WARRANTY","link":""}},"block_dTcG3E":{"type":"block","settings":{"icon":"messages","image":"shopify:\/\/shop_images\/Sustainable.jpg","text":"SUSTAINABLE","link":""}},"block_rCiYMJ":{"type":"block","settings":{"icon":"secure","image":"shopify:\/\/shop_images\/Asset_7_4x_c57ef1a0-8e0a-4bc8-831f-8df380350473.jpg","text":"UPF PROTECTION","link":""}},"block_mnkpPp":{"type":"block","settings":{"icon":"shipping_outline","image":"shopify:\/\/shop_images\/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg","text":"DURABLE","link":""}}},"block_order":["block_zDVd9k","block_dTcG3E","block_rCiYMJ","block_mnkpPp"],"name":"Text with icons","settings":{"color":"","background":"","section_space":"top_and_bottom"}},"image_with_text_Yer8pT":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/laotratuvera_by_michaelxscn_High_Res__Sulawesi_Onyx4_1_edited.jpg","image_position":"right","image_size":"medium","image_height":"natural","desktop_image_height":550,"mobile_image_height":450,"title":"Why Women Love Ocean Soul One Piece Swimsuits","text":"<h4>A Style for Every Water Woman<\/h4><p>We know one piece swimwear isn’t one-size-fits-all, which is why our collection includes:<\/p><p> Ideal for surfing, SUP, and all-day sun protection.<br\/><\/p><p>Streamlined and versatile, perfect for swimming laps or styling as a bodysuit.<br\/><\/p><p>Timeless, flattering silhouettes for all occasions.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_G8XPYd":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/amphibiansoul_by_ocean_lembongan14_bfd6913e-83f0-40e8-af63-63a7b525a826.jpg","image_position":"left","image_size":"medium","image_height":"natural","desktop_image_height":550,"mobile_image_height":450,"title":"Sustainable, Ethical & Built to Last","text":"<p>Every Ocean Soul one piece is made from Econyl® regenerated fabric, created from rescued fishing nets and ocean waste. We produce in small batches in Bali, ensuring fair wages and minimising waste. The result? A swimsuit that’s as kind to the planet as it is to your skin.<\/p><p>Our one pieces last twice as long as standard swimwear, resisting fading, stretching, and sagging.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_gLA8HN":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/DSC04997__lorrainek8_photog_beavegashoots.jpg","image_position":"right","image_size":"medium","image_height":"natural","desktop_image_height":550,"mobile_image_height":450,"title":"UPF 50+ Sun Protection","text":"<p>Our UPF 50+ swimsuits give you built-in sun protection without chemical treatments. Especially in long sleeve designs, they provide coverage that’s essential for long hours in the water.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_TmNY6f":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/merry_amber4.jpg","image_position":"left","image_size":"medium","image_height":"natural","desktop_image_height":550,"mobile_image_height":450,"title":"Sculpting Fit Without Padding","text":"<p>No bulky inserts here - our supportive one piece swimsuits use strategic paneling, a cinched waist, and double lining to smooth, lift, and hold you in all the right places. The high-cut leg subtly elongates your silhouette while providing secure coverage.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_q4FULh":{"type":"image-with-text","name":"Image with text","settings":{"image":"shopify:\/\/shop_images\/MG_7759_Last_Resort_Federico_Vanno_Liquid_Barrel_copy.jpg","image_position":"right","image_size":"medium","image_height":"natural","desktop_image_height":550,"mobile_image_height":450,"title":"Surf-Tested Swimwear","text":"<p>Our one pieces aren’t just for sunbathing - they’re made to move. Surf-tested and active-ready, they stay on through duck dives, wipeouts, and long paddles. Whether you’re catching waves, exploring reefs, or chasing your kids on the beach, you can rely on your suit to stay in place.<\/p>","button_text":"Button","link":"","center_align":true,"text_color":"#606060","background_color":"#f7f7f7"}},"image_with_text_overlay_K887Ki":{"type":"image-with-text-overlay","name":"Image with text overlay","settings":{"full_width":true,"image":"shopify:\/\/shop_images\/black-one-piece-swimsuit-the-mentawai-in-midnight-surf-suit-ocean-soul-bali-2.webp","overlay":true,"background_attachment":"fixed","height":400,"mobile_height":400,"text_align":"center","caption_vertical":30,"caption_horizontal":50,"heading":"More Than a Swimsuit - A Lifestyle Choice","subheading_text":"<p>An Ocean Soul one piece is more than a purchase - it’s an investment in style, performance, and sustainability. It’s a suit that lets you move freely, feel supported, and look incredible, all while protecting the ocean you love.<\/p><p>Explore the <a href=\"\/collections\/one-piece-swimsuit\" title=\"One Piece Swimsuits\">collection<\/a> today and find your forever one piece swimsuit.<\/p>","button_text":"Button","link":"","heading_font_size":30,"subheading_font_size":16,"text_color":"#ffffff","button_text_color":"#ffffff","button_color":"#000000","section_space":"top_and_bottom"}},"1706602385e22ffe65":{"type":"apps","blocks":{"judge_me_reviews_all_reviews_text_BYqCCb":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}}},"block_order":["judge_me_reviews_all_reviews_text_BYqCCb"],"settings":{"display_wide":false}},"instafeed_mqrNUU":{"type":"instafeed","disabled":true,"settings":{"heading_size":20,"feed_width":100,"html_area":""}},"rich_text_xtwcWg":{"type":"rich-text","blocks":{"text_block_7xNqFN":{"type":"text_block","settings":{"title":"Why Ocean Soul One Piece Swimsuits Are Made for Real Life in the Water","title_heading":true,"accordion_enabled":false,"text":"<h4>Sun-Safe and Sea-Ready: UPF 50+ Swimwear<\/h4><p>Ocean Soul Swimwear one pieces are made with UPF 50+ sun protection, built directly into the fabric — no chemical finishes required. Whether you’re out on the surfboard, paddling with your SUP crew, or spending hours at the beach with your kids, you can rely on your suit to protect you from harmful UV rays without reapplying sunscreen every 20 minutes.<\/p><h4><\/h4><h4>Long Sleeve, Sleeveless & Classic One Pieces<\/h4><h4><\/h4><h4><\/h4><p><\/p><p><\/p><p>We’ve created multiple silhouettes to suit every body and every adventure:<\/p><p><\/p><p>Perfect for surfing, paddling, or full sun protection. Our long sleeve styles offer coverage, security, and a chic surf aesthetic.<\/p><p> Ideal for freediving, lap swimming, or minimalist sun-lovers. These are cut for performance with clean lines and open-back options.<br\/><\/p><p> Flattering, timeless, and versatile enough to wear as a bodysuit under a skirt or pants. Perfect for holidays, beach days, and beyond.<\/p><p><\/p><p><\/p><p>Whichever style you choose, you’ll get the same Ocean Soul signature fit: sculpting, supportive, and smoothing — without compromise.<\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><h4><\/h4><h4><\/h4><h4>Made from Sustainable Recycled Fabric<\/h4><p>Our entire one piece collection is made from <strong>regenerated ECONYL® yarn<\/strong>, a performance fabric made from rescued fishing nets and ocean plastics. This sustainable material is not only eco-conscious, but also:<\/p><p>Soft and breathable<br\/>Durable and resistant to chlorine and salt<br\/>Long-lasting with minimal fade or sag<br\/><br\/><\/p><p>Because we double-line our suits and use no foam or padding, you get natural support that lasts — and never loses shape.<\/p><p><\/p><h4><\/h4><h4>Thoughtfully Designed to Flatter<\/h4><p>From the moment you step into an Ocean Soul swimsuit, you’ll notice the difference. Our designs are:<\/p><p>cleverly designed to contour your waist<\/p><p>Double-lined for smoothing support<\/p><p>Minimalist in colour for a clean, slimming look<\/p><p>Finished with premium YKK zips for long-lasting performance<\/p><p><\/p><p><\/p><p><\/p><p>- Unlike fast fashion swimwear, our suits are made to empower — not distract. You won’t need to constantly adjust, tug, or worry about coverage. Just put it on, and go live your day.<\/p><h4><\/h4><h4>Built for Water Women<\/h4><p>Our one pieces are performance-tested in the water, staying on through duck dives, dives, and wipeouts. Whether you’re surfing reef breaks, gliding through a freedive, or teaching your kids to swim, you can count on your Ocean Soul suit to stay secure and comfortable.<\/p><p>It’s why our one piece swimsuits are trusted by freedivers, surfers, athletes, and mums alike.<\/p><h4><\/h4><h4><\/h4><h4>The One Piece That Changes Everything<\/h4><p>If you’ve been searching for a flattering one piece swimsuit that:<\/p><p>Sculpts your shape without uncomfortable padding<\/p><p>Protects your skin from sun damage<\/p><p>Stays on during real activity<\/p><p>Feels beautiful on the body<\/p><p><\/p><p><\/p><p><\/p><p><\/p><p>Aligns with your values for sustainability and ethical fashion<\/p>","page":"","center":true,"block_width":100,"accordion_icon_color":"#000000","accordion_icon_size":20}}},"block_order":["text_block_7xNqFN"],"disabled":true,"name":"Rich text","settings":{"padding":60,"text_color":"#606060","background_color":"#ffffff","comman_data_id":""}},"jdgm_widget_code_CiG3EP":{"type":"jdgm-widget-code","name":"UGC code","settings":{}},"74491a38-bf7d-402f-8827-106da416d8cb":{"type":"collection-list","blocks":{"featured_collection_Ten8yf":{"type":"featured_collection","settings":{"collection":"womens-wetsuit-springsuit"}},"template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-1":{"type":"featured_collection","disabled":true,"settings":{"collection":"eco-friendly-swimwear"}},"template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-2":{"type":"featured_collection","settings":{"collection":"beach-accessories"}},"featured_collection_KDTfPz":{"type":"featured_collection","settings":{"collection":"beach-resort-wear"}},"featured_collection_eL8EWN":{"type":"featured_collection","settings":{"collection":"womens-bikinis"}}},"block_order":["featured_collection_Ten8yf","template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-1","template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-2","featured_collection_KDTfPz","featured_collection_eL8EWN"],"settings":{"title":"Shop our collections","grid":4,"mobile_1pr":false,"section_space":"top_and_bottom"}},"newsletter_mVH9nL":{"type":"newsletter","name":"Newsletter","settings":{"heading":"Join the Ocean Soul VIP List","newsletter_subheading":"<p>Be first to discover new collections, early access offers, and exclusive member rewards.<\/p>","newsletter_gdpr_text":"*By completing this form you're signing up to receive our emails and can unsubscribe at any time","color":"#606060","background_color":"#f7f7f7","section_space":"top_and_bottom","show_name_fields":false}},"featured_blog_FAGEBx":{"type":"featured-blog","name":"Blog posts","settings":{"title":"Blog posts","blog":"news","grid":3,"post_limit":3,"show_date":false,"show_author":false,"show_tags":false,"show_button":true,"section_space":"top_and_bottom"}},"custom_liquid_4yLj8n":{"type":"custom-liquid","settings":{"liquid":"<style>\n  .section-title h2 {\n    padding-bottom: 10px;\n    font-size: 24px; \/* Adjusted size *\/\n    font-weight: normal; \/* Not bold *\/\n    color: #606060; \/* Heading color *\/\n  }\n<\/style>\n\n<div class=\"grid__wrapper row rg0\">\n  <div class=\"section-title lines span-12 auto\">\n    <h2>More Styles<\/h2>\n  <\/div><!-- \/.section-title -->\n<\/div>","display_wide":false}},"quick_links_dD4Knz":{"type":"quick-links","settings":{"quick_links_list":"one-piece-menu","grid":3,"link_color":"","link_background":"","item_border":false,"section_space":"top_and_bottom"}},"breadcrumbs":{"type":"breadcrumbs","settings":{}}},"order":["banner","custom_liquid_iti4dC","rich_text_86HTwt","slideshow_TD3pz7","main","image_with_text_overlay_NixBMJ","website_logos_jtJYqE","c636cacc-d27f-4c88-a6e3-a80b97b03583","text_with_icons_rtPMiY","image_with_text_Yer8pT","image_with_text_G8XPYd","image_with_text_gLA8HN","image_with_text_TmNY6f","image_with_text_q4FULh","image_with_text_overlay_K887Ki","1706602385e22ffe65","instafeed_mqrNUU","rich_text_xtwcWg","jdgm_widget_code_CiG3EP","74491a38-bf7d-402f-8827-106da416d8cb","newsletter_mVH9nL","featured_blog_FAGEBx","custom_liquid_4yLj8n","quick_links_dD4Knz","breadcrumbs"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "display_wide": true,
+        "image": "shopify://shop_images/One_piece_-_desktop_4.jpg",
+        "image_mobile": "shopify://shop_images/One_pieces_-_mobile_3.jpg"
+      }
+    },
+    "custom_liquid_iti4dC": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<style>\n  /* Import Montserrat Font */\n  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; /* Optional border */\n    overflow-x: auto; /* Enables horizontal scrolling */\n    white-space: nowrap; /* Prevents wrapping of text */\n    scrollbar-width: none; /* Hides scrollbar for Firefox */\n    font-family: 'Montserrat', sans-serif; /* Apply Montserrat Regular */\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; /* Hides scrollbar for Webkit browsers */\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; /* Updated text color */\n    font-size: 16px;\n    font-weight: 400; /* Regular weight */\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; /* Prevents text wrapping */\n    flex-shrink: 0; /* Ensures links don’t shrink */\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; /* Hover effect with consistent color scheme */\n    border-radius: 5px;\n  }\n\n  /* Desktop styles (optional, ensures links stay centered) */\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; /* Removes horizontal scrolling on desktop */\n      margin-bottom: 0; /* No extra margin below on desktop */\n    }\n  }\n\n  /* Mobile-specific styles */\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; /* Adds extra margin below for mobile screens */\n    }\n  }\n</style>\n\n<div class=\"link-bar\">\n  <a href=\"/collections/one-piece-swimsuit\">One Piece Swimsuits</a>\n  <a href=\"/collections/long-sleeve-one-piece-swimsuits\">Long Sleeve One Piece</a>\n  <a href=\"/collections/sleeveless-one-piece-swimsuits\">Sleeveless One Piece</a>\n</div>",
+        "display_wide": true
+      }
+    },
+    "rich_text_86HTwt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_hBNnei": {
+          "type": "text_block",
+          "settings": {
+            "title": "One Piece Swimsuits That Flatter, Support & Stay On",
+            "title_heading": true,
+            "accordion_enabled": true,
+            "text": "<p>Our one piece swimsuit collection is designed for women who want more than just a beautiful suit - they want performance, support, and timeless style that moves with them. Whether you’re surfing, swimming, paddling, or lounging between sessions, these one pieces sculpt your shape while keeping you confident and comfortable.</p><p>From sleek sleeveless one piece swimsuits to long sleeve one piece styles that offer extra coverage and sun protection, every design is created with real movement in mind. Each suit is made from luxurious recycled Italian fabric, double-lined for opacity and support, and crafted with clever panel placement that defines your waist and smooths your silhouette - without the need for padding.</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_hBNnei"
+      ],
+      "custom_css": [
+        ".global__section {padding-bottom: 0;}"
+      ],
+      "settings": {
+        "padding": 30,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "slideshow_TD3pz7": {
+      "type": "slideshow",
+      "blocks": {
+        "image_nifY93": {
+          "type": "image",
+          "settings": {
+            "overlay": false,
+            "text_align": "left",
+            "caption_horizontal": 50,
+            "caption_vertical": 50,
+            "hide_caption_background": false,
+            "caption_below": false,
+            "heading": "",
+            "subheading": "",
+            "link": "",
+            "button_text": "Button",
+            "second_link": "",
+            "second_button_text": "Button 2",
+            "slide_text_color": "#000000",
+            "cta_color": "#ffffff",
+            "cta_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)",
+            "caption_background_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "image_nifY93"
+      ],
+      "disabled": true,
+      "name": "Slideshow",
+      "settings": {
+        "display_wide": true,
+        "no_autoplay": false,
+        "slider_speed": 5,
+        "pager": "arrows",
+        "slideshow_size": "natural",
+        "desktop_height": 200,
+        "mobile_height": 200,
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "cta_size": 14,
+        "section_space": "bottom"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        "h1,h2,h3,h4,p {text-align: center;}",
+        "a:hover {color: #8eb6d1;}",
+        "p.mb0 {display: none;}",
+        "span.count {display: none;}"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row": 4,
+        "mobile_1pr": false,
+        "sort_by": false,
+        "show_image": false,
+        "description_position": "top"
+      }
+    },
+    "image_with_text_overlay_NixBMJ": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/long-sleeve-swimsuit-the-sulawesi-midnight-long-sleeve-swimsuit-ocean-soul-bali-8.webp",
+        "overlay": true,
+        "background_attachment": "fixed",
+        "height": 400,
+        "mobile_height": 400,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "<p>Our UPF 50+ one piece swimwear protects your skin from harmful UV rays while resisting salt, sun, and chlorine damage. And because we believe style should last, our one pieces are built to outlast regular swimwear, maintaining their shape and colour season after season.</p>",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_color": "#000000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "website_logos_jtJYqE": {
+      "type": "website-logos",
+      "blocks": {
+        "text_block_GkCBNU": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/british_vogue.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_y9fHDy": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/PngItem_171373.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_cifpfG": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Herald_Sun_logo_logotype.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_YdXjd4": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_rVPPw3": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/The_Daily_Telegraph_Australien_logo.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_Lzxc9R": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/georgina_monti.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_r8rG74": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/honeycombers.svg",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_R9GfR6": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/acc.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_GkCBNU",
+        "text_block_y9fHDy",
+        "text_block_cifpfG",
+        "text_block_YdXjd4",
+        "text_block_rVPPw3",
+        "text_block_Lzxc9R",
+        "text_block_r8rG74",
+        "text_block_R9GfR6"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "center_align": false,
+        "show_description": true,
+        "image_height": "none",
+        "desktop_fixed_height": 500,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "c636cacc-d27f-4c88-a6e3-a80b97b03583": {
+      "type": "testimonials",
+      "blocks": {
+        "template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-product-1": {
+          "type": "product",
+          "settings": {
+            "product": "long-sleeve-swimsuit-sulawesi-midnight-black",
+            "show_second_image": true,
+            "rating": 5,
+            "title": "Obsessed!!",
+            "text": "<p>I think this may be the best fitting swimsuit I’ve ever owned/put on my skin. It looks and feels incredible. It’s somehow modest yet sexy - I’ve literally never felt so confident!!</p>",
+            "author": "MadDY (Rockville, US)",
+            "show_product_title": false,
+            "button_text": "View product"
+          }
+        },
+        "template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-image_with_text-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/black_one_piece_swimsuit_The_Mentawai.jpg",
+            "rating": 5,
+            "title": "Mentawai one piece swimsuit",
+            "text": "<p>Love this swimsuit it’s a very flattering design so looks amazing on, and I love that my back also has great coverage from the sun. I always get comments when I wear this.</p>",
+            "author": "Diana Catoi (Perth, AU)",
+            "button_text": "View product",
+            "link": "shopify://products/one-piece-swimsuits-the-mentawai"
+          }
+        }
+      },
+      "block_order": [
+        "template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-product-1",
+        "template--15072542785625__c636cacc-d27f-4c88-a6e3-a80b97b03583-image_with_text-1"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_color": "#606060",
+        "star_color": "#dbaf59",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "text_with_icons_rtPMiY": {
+      "type": "text-with-icons",
+      "blocks": {
+        "block_zDVd9k": {
+          "type": "block",
+          "settings": {
+            "icon": "bag",
+            "image": "shopify://shop_images/warranty.jpg",
+            "text": "12 MONTH WARRANTY",
+            "link": ""
+          }
+        },
+        "block_dTcG3E": {
+          "type": "block",
+          "settings": {
+            "icon": "messages",
+            "image": "shopify://shop_images/Sustainable.jpg",
+            "text": "SUSTAINABLE",
+            "link": ""
+          }
+        },
+        "block_rCiYMJ": {
+          "type": "block",
+          "settings": {
+            "icon": "secure",
+            "image": "shopify://shop_images/UPF_UV_Asset.jpg",
+            "text": "UPF PROTECTION",
+            "link": ""
+          }
+        },
+        "block_mnkpPp": {
+          "type": "block",
+          "settings": {
+            "icon": "shipping_outline",
+            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
+            "text": "DURABLE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_zDVd9k",
+        "block_dTcG3E",
+        "block_rCiYMJ",
+        "block_mnkpPp"
+      ],
+      "name": "Text with icons",
+      "settings": {
+        "color": "",
+        "background": "",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "image_with_text_Yer8pT": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/laotratuvera_by_michaelxscn_High_Res__Sulawesi_Onyx4_1_edited.jpg",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "natural",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Why Women Love Ocean Soul One Piece Swimsuits",
+        "text": "<h4>A Style for Every Water Woman</h4><p>We know one piece swimwear isn’t one-size-fits-all, which is why our collection includes:</p><p> Ideal for surfing, SUP, and all-day sun protection.<br/></p><p>Streamlined and versatile, perfect for swimming laps or styling as a bodysuit.<br/></p><p>Timeless, flattering silhouettes for all occasions.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_G8XPYd": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/amphibiansoul_by_ocean_lembongan14_bfd6913e-83f0-40e8-af63-63a7b525a826.jpg",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "natural",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Sustainable, Ethical & Built to Last",
+        "text": "<p>Every Ocean Soul one piece is made from Econyl® regenerated fabric, created from rescued fishing nets and ocean waste. We produce in small batches in Bali, ensuring fair wages and minimising waste. The result? A swimsuit that’s as kind to the planet as it is to your skin.</p><p>Our one pieces last twice as long as standard swimwear, resisting fading, stretching, and sagging.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_gLA8HN": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/DSC04997__lorrainek8_photog_beavegashoots.jpg",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "natural",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "UPF 50+ Sun Protection",
+        "text": "<p>Our UPF 50+ swimsuits give you built-in sun protection without chemical treatments. Especially in long sleeve designs, they provide coverage that’s essential for long hours in the water.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_TmNY6f": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/merry_amber4.jpg",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "natural",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Sculpting Fit Without Padding",
+        "text": "<p>No bulky inserts here - our supportive one piece swimsuits use strategic paneling, a cinched waist, and double lining to smooth, lift, and hold you in all the right places. The high-cut leg subtly elongates your silhouette while providing secure coverage.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_q4FULh": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/MG_7759_Last_Resort_Federico_Vanno_Liquid_Barrel_copy.jpg",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "natural",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Surf-Tested Swimwear",
+        "text": "<p>Our one pieces aren’t just for sunbathing - they’re made to move. Surf-tested and active-ready, they stay on through duck dives, wipeouts, and long paddles. Whether you’re catching waves, exploring reefs, or chasing your kids on the beach, you can rely on your suit to stay in place.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_overlay_K887Ki": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/black-one-piece-swimsuit-the-mentawai-in-midnight-surf-suit-ocean-soul-bali-2.webp",
+        "overlay": true,
+        "background_attachment": "fixed",
+        "height": 400,
+        "mobile_height": 400,
+        "text_align": "center",
+        "caption_vertical": 30,
+        "caption_horizontal": 50,
+        "heading": "More Than a Swimsuit - A Lifestyle Choice",
+        "subheading_text": "<p>An Ocean Soul one piece is more than a purchase - it’s an investment in style, performance, and sustainability. It’s a suit that lets you move freely, feel supported, and look incredible, all while protecting the ocean you love.</p><p>Explore the <a href=\"/collections/one-piece-swimsuit\" title=\"One Piece Swimsuits\">collection</a> today and find your forever one piece swimsuit.</p>",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_color": "#000000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "1706602385e22ffe65": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_BYqCCb": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_BYqCCb"
+      ],
+      "settings": {
+        "display_wide": false
+      }
+    },
+    "instafeed_mqrNUU": {
+      "type": "instafeed",
+      "disabled": true,
+      "settings": {
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": ""
+      }
+    },
+    "rich_text_xtwcWg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_7xNqFN": {
+          "type": "text_block",
+          "settings": {
+            "title": "Why Ocean Soul One Piece Swimsuits Are Made for Real Life in the Water",
+            "title_heading": true,
+            "accordion_enabled": false,
+            "text": "<h4>Sun-Safe and Sea-Ready: UPF 50+ Swimwear</h4><p>Ocean Soul Swimwear one pieces are made with UPF 50+ sun protection, built directly into the fabric — no chemical finishes required. Whether you’re out on the surfboard, paddling with your SUP crew, or spending hours at the beach with your kids, you can rely on your suit to protect you from harmful UV rays without reapplying sunscreen every 20 minutes.</p><h4></h4><h4>Long Sleeve, Sleeveless & Classic One Pieces</h4><h4></h4><h4></h4><p></p><p></p><p>We’ve created multiple silhouettes to suit every body and every adventure:</p><p></p><p>Perfect for surfing, paddling, or full sun protection. Our long sleeve styles offer coverage, security, and a chic surf aesthetic.</p><p> Ideal for freediving, lap swimming, or minimalist sun-lovers. These are cut for performance with clean lines and open-back options.<br/></p><p> Flattering, timeless, and versatile enough to wear as a bodysuit under a skirt or pants. Perfect for holidays, beach days, and beyond.</p><p></p><p></p><p>Whichever style you choose, you’ll get the same Ocean Soul signature fit: sculpting, supportive, and smoothing — without compromise.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><h4></h4><h4></h4><h4>Made from Sustainable Recycled Fabric</h4><p>Our entire one piece collection is made from <strong>regenerated ECONYL® yarn</strong>, a performance fabric made from rescued fishing nets and ocean plastics. This sustainable material is not only eco-conscious, but also:</p><p>Soft and breathable<br/>Durable and resistant to chlorine and salt<br/>Long-lasting with minimal fade or sag<br/><br/></p><p>Because we double-line our suits and use no foam or padding, you get natural support that lasts — and never loses shape.</p><p></p><h4></h4><h4>Thoughtfully Designed to Flatter</h4><p>From the moment you step into an Ocean Soul swimsuit, you’ll notice the difference. Our designs are:</p><p>cleverly designed to contour your waist</p><p>Double-lined for smoothing support</p><p>Minimalist in colour for a clean, slimming look</p><p>Finished with premium YKK zips for long-lasting performance</p><p></p><p></p><p></p><p>- Unlike fast fashion swimwear, our suits are made to empower — not distract. You won’t need to constantly adjust, tug, or worry about coverage. Just put it on, and go live your day.</p><h4></h4><h4>Built for Water Women</h4><p>Our one pieces are performance-tested in the water, staying on through duck dives, dives, and wipeouts. Whether you’re surfing reef breaks, gliding through a freedive, or teaching your kids to swim, you can count on your Ocean Soul suit to stay secure and comfortable.</p><p>It’s why our one piece swimsuits are trusted by freedivers, surfers, athletes, and mums alike.</p><h4></h4><h4></h4><h4>The One Piece That Changes Everything</h4><p>If you’ve been searching for a flattering one piece swimsuit that:</p><p>Sculpts your shape without uncomfortable padding</p><p>Protects your skin from sun damage</p><p>Stays on during real activity</p><p>Feels beautiful on the body</p><p></p><p></p><p></p><p></p><p>Aligns with your values for sustainability and ethical fashion</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_7xNqFN"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "padding": 60,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "jdgm_widget_code_CiG3EP": {
+      "type": "jdgm-widget-code",
+      "name": "UGC code",
+      "settings": {}
+    },
+    "74491a38-bf7d-402f-8827-106da416d8cb": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_Ten8yf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-wetsuit-springsuit"
+          }
+        },
+        "template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-1": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "eco-friendly-swimwear"
+          }
+        },
+        "template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-accessories"
+          }
+        },
+        "featured_collection_KDTfPz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-resort-wear"
+          }
+        },
+        "featured_collection_eL8EWN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-bikinis"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_Ten8yf",
+        "template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-1",
+        "template--15072542785625__74491a38-bf7d-402f-8827-106da416d8cb-featured_collection-2",
+        "featured_collection_KDTfPz",
+        "featured_collection_eL8EWN"
+      ],
+      "settings": {
+        "title": "Shop our collections",
+        "grid": 4,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "newsletter_mVH9nL": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Join the Ocean Soul VIP List",
+        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": false
+      }
+    },
+    "featured_blog_FAGEBx": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Blog posts",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "custom_liquid_4yLj8n": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<style>\n  .section-title h2 {\n    padding-bottom: 10px;\n    font-size: 24px; /* Adjusted size */\n    font-weight: normal; /* Not bold */\n    color: #606060; /* Heading color */\n  }\n</style>\n\n<div class=\"grid__wrapper row rg0\">\n  <div class=\"section-title lines span-12 auto\">\n    <h2>More Styles</h2>\n  </div><!-- /.section-title -->\n</div>",
+        "display_wide": false
+      }
+    },
+    "quick_links_dD4Knz": {
+      "type": "quick-links",
+      "settings": {
+        "quick_links_list": "one-piece-menu",
+        "grid": 3,
+        "link_color": "",
+        "link_background": "",
+        "item_border": false,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "custom_liquid_iti4dC",
+    "rich_text_86HTwt",
+    "slideshow_TD3pz7",
+    "main",
+    "image_with_text_overlay_NixBMJ",
+    "website_logos_jtJYqE",
+    "c636cacc-d27f-4c88-a6e3-a80b97b03583",
+    "text_with_icons_rtPMiY",
+    "image_with_text_Yer8pT",
+    "image_with_text_G8XPYd",
+    "image_with_text_gLA8HN",
+    "image_with_text_TmNY6f",
+    "image_with_text_q4FULh",
+    "image_with_text_overlay_K887Ki",
+    "1706602385e22ffe65",
+    "instafeed_mqrNUU",
+    "rich_text_xtwcWg",
+    "jdgm_widget_code_CiG3EP",
+    "74491a38-bf7d-402f-8827-106da416d8cb",
+    "newsletter_mVH9nL",
+    "featured_blog_FAGEBx",
+    "custom_liquid_4yLj8n",
+    "quick_links_dD4Knz",
+    "breadcrumbs"
+  ]
+}
