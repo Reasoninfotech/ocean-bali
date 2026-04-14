@@ -1,1 +1,375 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"display_wide":true,"image":"shopify:\/\/shop_images\/womens-rashguard-mentawai-crop-top-crop-rash-vest-ocean-soul-bali-4.webp"}},"custom_liquid_bhWrPF":{"type":"custom-liquid","settings":{"liquid":"<style>\n  \/* Import Montserrat Font *\/\n  @import url('https:\/\/fonts.googleapis.com\/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; \/* Optional border *\/\n    overflow-x: auto; \/* Enables horizontal scrolling *\/\n    white-space: nowrap; \/* Prevents wrapping of text *\/\n    scrollbar-width: none; \/* Hides scrollbar for Firefox *\/\n    font-family: 'Montserrat', sans-serif; \/* Apply Montserrat Regular *\/\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; \/* Hides scrollbar for Webkit browsers *\/\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; \/* Updated text color *\/\n    font-size: 16px;\n    font-weight: 400; \/* Regular weight *\/\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; \/* Prevents text wrapping *\/\n    flex-shrink: 0; \/* Ensures links don’t shrink *\/\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; \/* Hover effect with consistent color scheme *\/\n    border-radius: 5px;\n  }\n\n  \/* Desktop styles (optional, ensures links stay centered) *\/\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; \/* Removes horizontal scrolling on desktop *\/\n      margin-bottom: 0; \/* No extra margin below on desktop *\/\n    }\n  }\n\n  \/* Mobile-specific styles *\/\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; \/* Adds extra margin below for mobile screens *\/\n    }\n  }\n<\/style>\n\n<div class=\"link-bar\">\n  <a href=\"\/collections\/womens-bikinis\">Women's Bikinis<\/a>\n  <a href=\"\/collections\/bikini-tops\">Bikini Tops<\/a>\n  <a href=\"\/collections\/bikini-bottoms\">Bikini Bottoms<\/a>\n  <a href=\"\/collections\/seamless-bikinis\">Seamless Bikinis<\/a>\n<\/div>","display_wide":true}},"main":{"type":"main-collection","custom_css":["h1,h2,h3,h4,p {text-align: center;}","a:hover {color: #8eb6d1;}","p.mb0 {display: none;}","span.count {display: none;}"],"settings":{"products_per_page":50,"products_per_row":4,"mobile_1pr":false,"sort_by":false,"show_image":false,"description_position":"top"}},"website_logos_Fdgq3w":{"type":"website-logos","blocks":{"text_block_rgYDwn":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/british_vogue.png","link":"","text":"","button_text":"Button"}},"text_block_zEzYRq":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/PngItem_171373.png","link":"","text":"","button_text":"Button"}},"text_block_7M4D6a":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/Herald_Sun_logo_logotype.png","link":"","text":"","button_text":"Button"}},"text_block_FbREtW":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png","link":"","text":"","button_text":"Button"}},"text_block_69KCeK":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/The_Daily_Telegraph_Australien_logo.png","link":"","text":"","button_text":"Button"}},"text_block_LJJwcM":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/georgina_monti.png","link":"","text":"","button_text":"Button"}},"text_block_ymMRPp":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/honeycombers.svg","link":"","text":"","button_text":"Button"}},"text_block_r4jTA4":{"type":"text_block","settings":{"image":"shopify:\/\/shop_images\/acc.png","link":"","text":"","button_text":"Button"}}},"block_order":["text_block_rgYDwn","text_block_zEzYRq","text_block_7M4D6a","text_block_FbREtW","text_block_69KCeK","text_block_LJJwcM","text_block_ymMRPp","text_block_r4jTA4"],"settings":{"title":"As seen in","center_align":false,"show_description":true,"image_height":"none","desktop_fixed_height":500,"mobile_fixed_height":250,"section_space":"top_and_bottom"}},"1711706852d17457ff":{"type":"apps","blocks":{"judge_me_reviews_all_reviews_text_3pLhrc":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}}},"block_order":["judge_me_reviews_all_reviews_text_3pLhrc"],"settings":{"display_wide":false}},"9326baf0-7c60-406b-a886-d60675c97f4f":{"type":"testimonials","blocks":{"template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1":{"type":"product","settings":{"product":"high-waisted-bikini-bottoms-the-sumba","show_second_image":true,"rating":5,"title":"Great for surfing","text":"<p>'Love that they actually stay on when I’m surfing and I can wear them when I’m on the beach as a normal bikini.'<\/p>","author":"Naia","show_product_title":true,"button_text":"View product"}},"template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-image_with_text-1":{"type":"image_with_text","disabled":true,"settings":{"rating":5,"title":"Helpful support team","text":"<p>Add a few sentences of text from a customer testimonial to your store.<\/p>","author":"A. Customer","button_text":"Button","link":""}}},"block_order":["template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1","template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-image_with_text-1"],"settings":{"image_position":"left","text_color":"#606060","star_color":"#dbaf59","background_color":"#f7f7f7"}},"text_with_icons_rJLhar":{"type":"text-with-icons","blocks":{"block_fCVGKk":{"type":"block","settings":{"icon":"bag","image":"shopify:\/\/shop_images\/warranty.jpg","text":"12 MONTH WARRANTY","link":""}},"block_cwVRi8":{"type":"block","settings":{"icon":"messages","image":"shopify:\/\/shop_images\/Sustainable.jpg","text":"SUSTAINABLE","link":""}},"block_CtYxKk":{"type":"block","settings":{"icon":"secure","image":"shopify:\/\/shop_images\/Asset_7_4x_c57ef1a0-8e0a-4bc8-831f-8df380350473.jpg","text":"UV PROTECTIOM","link":""}},"block_VEUTrH":{"type":"block","settings":{"icon":"shipping_outline","image":"shopify:\/\/shop_images\/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg","text":"DURABLE","link":""}}},"block_order":["block_fCVGKk","block_cwVRi8","block_CtYxKk","block_VEUTrH"],"name":"Text with icons","settings":{"color":"","background":"","section_space":"top_and_bottom"}},"rich_text_q4ed7V":{"type":"rich-text","blocks":{"text_block_YrcCYz":{"type":"text_block","settings":{"title":"","title_heading":false,"text":"","page":"","center":false,"block_width":100}}},"block_order":["text_block_YrcCYz"],"disabled":true,"settings":{"padding":60,"text_color":"#000000","background_color":"#ffffff","comman_data_id":""}},"instafeed_pz7EeE":{"type":"instafeed","disabled":true,"settings":{"heading_size":20,"feed_width":100,"html_area":""}},"f26cc161-299a-4e72-b685-5f171aefa332":{"type":"collection-list","blocks":{"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1":{"type":"featured_collection","settings":{"collection":"high-waisted-bikini"}},"0f2747bb-2657-4f85-bf78-ad91229e7931":{"type":"featured_collection","settings":{"collection":"low-rise-bikini"}},"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0":{"type":"featured_collection","settings":{"collection":"seamless-bikinis"}},"template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2":{"type":"featured_collection","settings":{"collection":"string-bikini"}}},"block_order":["template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1","0f2747bb-2657-4f85-bf78-ad91229e7931","template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0","template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2"],"settings":{"title":"SHOP OUR SUSTAINABLE SWIM & ACCESSORIES","grid":4,"mobile_1pr":false,"section_space":"top_and_bottom"}},"newsletter_PxzaJ4":{"type":"newsletter","name":"Newsletter","settings":{"heading":"Join the Ocean Soul VIP List","newsletter_subheading":"<p>Be first to discover new collections, early access offers, and exclusive member rewards.<\/p>","newsletter_gdpr_text":"*By completing this form you're signing up to receive our emails and can unsubscribe at any time","color":"#606060","background_color":"#f7f7f7","section_space":"top_and_bottom","show_name_fields":false}},"featured_blog_hDbfkW":{"type":"featured-blog","name":"Blog posts","settings":{"title":"Swimwear, Ocean Lifestyle & Bali Journal","blog":"news","grid":3,"post_limit":3,"show_date":false,"show_author":false,"show_tags":false,"show_button":true,"section_space":"top_and_bottom"}},"breadcrumbs":{"type":"breadcrumbs","settings":{}}},"order":["banner","custom_liquid_bhWrPF","main","website_logos_Fdgq3w","1711706852d17457ff","9326baf0-7c60-406b-a886-d60675c97f4f","text_with_icons_rJLhar","rich_text_q4ed7V","instafeed_pz7EeE","f26cc161-299a-4e72-b685-5f171aefa332","newsletter_PxzaJ4","featured_blog_hDbfkW","breadcrumbs"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "display_wide": true,
+        "image": "shopify://shop_images/womens-rashguard-mentawai-crop-top-crop-rash-vest-ocean-soul-bali-4.webp"
+      }
+    },
+    "custom_liquid_bhWrPF": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<style>\n  /* Import Montserrat Font */\n  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');\n\n  .link-bar {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #f9f9f9;\n    padding: 10px 0;\n    border: 1px solid #ddd; /* Optional border */\n    overflow-x: auto; /* Enables horizontal scrolling */\n    white-space: nowrap; /* Prevents wrapping of text */\n    scrollbar-width: none; /* Hides scrollbar for Firefox */\n    font-family: 'Montserrat', sans-serif; /* Apply Montserrat Regular */\n  }\n\n  .link-bar::-webkit-scrollbar {\n    display: none; /* Hides scrollbar for Webkit browsers */\n  }\n\n  .link-bar a {\n    text-decoration: none;\n    color: #606060; /* Updated text color */\n    font-size: 16px;\n    font-weight: 400; /* Regular weight */\n    padding: 10px 15px;\n    margin: 0 5px;\n    transition: color 0.3s ease, background-color 0.3s ease;\n    white-space: nowrap; /* Prevents text wrapping */\n    flex-shrink: 0; /* Ensures links don’t shrink */\n  }\n\n  .link-bar a:hover {\n    color: #fff;\n    background-color: #606060; /* Hover effect with consistent color scheme */\n    border-radius: 5px;\n  }\n\n  /* Desktop styles (optional, ensures links stay centered) */\n  @media (min-width: 768px) {\n    .link-bar {\n      justify-content: center;\n      overflow-x: visible; /* Removes horizontal scrolling on desktop */\n      margin-bottom: 0; /* No extra margin below on desktop */\n    }\n  }\n\n  /* Mobile-specific styles */\n  @media (max-width: 767px) {\n    .link-bar {\n      margin-bottom: 10px; /* Adds extra margin below for mobile screens */\n    }\n  }\n</style>\n\n<div class=\"link-bar\">\n  <a href=\"/collections/womens-bikinis\">Women's Bikinis</a>\n  <a href=\"/collections/bikini-tops\">Bikini Tops</a>\n  <a href=\"/collections/bikini-bottoms\">Bikini Bottoms</a>\n  <a href=\"/collections/seamless-bikinis\">Seamless Bikinis</a>\n</div>",
+        "display_wide": true
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        "h1,h2,h3,h4,p {text-align: center;}",
+        "a:hover {color: #8eb6d1;}",
+        "p.mb0 {display: none;}",
+        "span.count {display: none;}"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row": 4,
+        "mobile_1pr": false,
+        "sort_by": false,
+        "show_image": false,
+        "description_position": "top"
+      }
+    },
+    "website_logos_Fdgq3w": {
+      "type": "website-logos",
+      "blocks": {
+        "text_block_rgYDwn": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/british_vogue.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_zEzYRq": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/PngItem_171373.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_7M4D6a": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/Herald_Sun_logo_logotype.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_FbREtW": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_69KCeK": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/The_Daily_Telegraph_Australien_logo.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_LJJwcM": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/georgina_monti.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_ymMRPp": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/honeycombers.svg",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        },
+        "text_block_r4jTA4": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/acc.png",
+            "link": "",
+            "text": "",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_rgYDwn",
+        "text_block_zEzYRq",
+        "text_block_7M4D6a",
+        "text_block_FbREtW",
+        "text_block_69KCeK",
+        "text_block_LJJwcM",
+        "text_block_ymMRPp",
+        "text_block_r4jTA4"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "center_align": false,
+        "show_description": true,
+        "image_height": "none",
+        "desktop_fixed_height": 500,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "1711706852d17457ff": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_3pLhrc": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_3pLhrc"
+      ],
+      "settings": {
+        "display_wide": false
+      }
+    },
+    "9326baf0-7c60-406b-a886-d60675c97f4f": {
+      "type": "testimonials",
+      "blocks": {
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1": {
+          "type": "product",
+          "settings": {
+            "product": "high-waisted-bikini-bottoms-the-sumba",
+            "show_second_image": true,
+            "rating": 5,
+            "title": "Great for surfing",
+            "text": "<p>'Love that they actually stay on when I’m surfing and I can wear them when I’m on the beach as a normal bikini.'</p>",
+            "author": "Naia",
+            "show_product_title": true,
+            "button_text": "View product"
+          }
+        },
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-image_with_text-1": {
+          "type": "image_with_text",
+          "disabled": true,
+          "settings": {
+            "rating": 5,
+            "title": "Helpful support team",
+            "text": "<p>Add a few sentences of text from a customer testimonial to your store.</p>",
+            "author": "A. Customer",
+            "button_text": "Button",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1",
+        "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-image_with_text-1"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_color": "#606060",
+        "star_color": "#dbaf59",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "text_with_icons_rJLhar": {
+      "type": "text-with-icons",
+      "blocks": {
+        "block_fCVGKk": {
+          "type": "block",
+          "settings": {
+            "icon": "bag",
+            "image": "shopify://shop_images/warranty.jpg",
+            "text": "12 MONTH WARRANTY",
+            "link": ""
+          }
+        },
+        "block_cwVRi8": {
+          "type": "block",
+          "settings": {
+            "icon": "messages",
+            "image": "shopify://shop_images/Sustainable.jpg",
+            "text": "SUSTAINABLE",
+            "link": ""
+          }
+        },
+        "block_CtYxKk": {
+          "type": "block",
+          "settings": {
+            "icon": "secure",
+            "image": "shopify://shop_images/UPF_UV_Asset.jpg",
+            "text": "UV PROTECTIOM",
+            "link": ""
+          }
+        },
+        "block_VEUTrH": {
+          "type": "block",
+          "settings": {
+            "icon": "shipping_outline",
+            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
+            "text": "DURABLE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_fCVGKk",
+        "block_cwVRi8",
+        "block_CtYxKk",
+        "block_VEUTrH"
+      ],
+      "name": "Text with icons",
+      "settings": {
+        "color": "",
+        "background": "",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "rich_text_q4ed7V": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_YrcCYz": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "title_heading": false,
+            "accordion_enabled": false,
+            "text": "",
+            "page": "",
+            "center": false,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_YrcCYz"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding": 60,
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
+    "instafeed_pz7EeE": {
+      "type": "instafeed",
+      "disabled": true,
+      "settings": {
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": ""
+      }
+    },
+    "f26cc161-299a-4e72-b685-5f171aefa332": {
+      "type": "collection-list",
+      "blocks": {
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "high-waisted-bikini"
+          }
+        },
+        "0f2747bb-2657-4f85-bf78-ad91229e7931": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "low-rise-bikini"
+          }
+        },
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "seamless-bikinis"
+          }
+        },
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "string-bikini"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1",
+        "0f2747bb-2657-4f85-bf78-ad91229e7931",
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0",
+        "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-2"
+      ],
+      "settings": {
+        "title": "SHOP OUR SUSTAINABLE SWIM & ACCESSORIES",
+        "grid": 4,
+        "mobile_1pr": false,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "newsletter_PxzaJ4": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Join the Ocean Soul VIP List",
+        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": false
+      }
+    },
+    "featured_blog_hDbfkW": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "custom_liquid_bhWrPF",
+    "main",
+    "website_logos_Fdgq3w",
+    "1711706852d17457ff",
+    "9326baf0-7c60-406b-a886-d60675c97f4f",
+    "text_with_icons_rJLhar",
+    "rich_text_q4ed7V",
+    "instafeed_pz7EeE",
+    "f26cc161-299a-4e72-b685-5f171aefa332",
+    "newsletter_PxzaJ4",
+    "featured_blog_hDbfkW",
+    "breadcrumbs"
+  ]
+}
