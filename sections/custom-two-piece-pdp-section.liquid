@@ -369,12 +369,14 @@ assign size_popup = false
                        {% endfor %}
                     </ul>
                      <div class="product__section-stockLevels" {{ block.shopify_attributes }}>
+                      <div class="stocke_lavel_aftre_pay">
                     <div class="product_btn_cart">
                       <div class="items_left_main ">
                         <span></span>
                         <h4 class="items_left_text"></h4>
                         <span> - {{ 'cout_text.text' | t }}</span>
                     </div>
+                        </div>
                   {% if block.settings.threshold > 0 %}
                     {%- liquid
                       assign show_hidden_class = false
