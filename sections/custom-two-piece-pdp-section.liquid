@@ -408,7 +408,7 @@ assign size_popup = false
                       <div class="items_left_main ">
                         <span></span>
                         <h4 class="items_left_text"></h4>
-                        <span> - {{ 'cout_text.text' | t }}</span>
+                        <span> - {% if block.settings.threshold_text != blank %}{{ block.settings.threshold_text }}{% else %}{{ 'cout_text.text' | t }}{% endif %}</span>
                     </div>
                         </div>
                   {% if block.settings.threshold > 0 %}
@@ -1306,6 +1306,11 @@ const checkCondition = setInterval(() => {
           "label": "Threshold",
           "info": "Increase buyer urgency if inventory below selected number, set to 0 to disable.",
           "default": 100
+        },
+                {
+            "type": "text",
+            "id": "threshold_text",
+            "label": "Count Text"
         }
       ]
     },
