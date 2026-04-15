@@ -573,7 +573,7 @@
       "settings": {
         "full_width": true,
         "image": "shopify://shop_images/long_sleeve_surf_suit_Sulawesi_ocean_soul_swimwear.jpg",
-        "overlay": false,
+        "overlay": true,
         "background_attachment": "fixed",
         "height": 400,
         "mobile_height": 400,
