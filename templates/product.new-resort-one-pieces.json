@@ -445,6 +445,20 @@
         "limit": 8
       }
     },
+    "featured_collection_x8Nzng": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop our collection",
+        "collection": "beach-resort-wear",
+        "limit": 4,
+        "grid": 4,
+        "carousel": false,
+        "mobile_1pr": false,
+        "show_view_all": false,
+        "show_view_all_label": "",
+        "section_space": "none"
+      }
+    },
     "accordion_K3YKGe": {
       "type": "accordion",
       "blocks": {
@@ -497,20 +511,6 @@
         "allow_multiple": false
       }
     },
-    "featured_collection_x8Nzng": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Shop our collection",
-        "collection": "beach-resort-wear",
-        "limit": 4,
-        "grid": 4,
-        "carousel": false,
-        "mobile_1pr": false,
-        "show_view_all": false,
-        "show_view_all_label": "",
-        "section_space": "top"
-      }
-    },
     "featured_blog_LiE9ak": {
       "type": "featured-blog",
       "settings": {
@@ -534,7 +534,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     }
@@ -547,8 +547,8 @@
     "1706838275a57a97e2",
     "product-content",
     "product-recommendations",
-    "accordion_K3YKGe",
     "featured_collection_x8Nzng",
+    "accordion_K3YKGe",
     "featured_blog_LiE9ak",
     "newsletter_fbjCer"
   ]
