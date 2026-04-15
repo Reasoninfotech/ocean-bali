@@ -570,14 +570,14 @@
         "color": "#606060",
         "background_color": "#f7f7f7",
         "section_space": "top_and_bottom",
-        "show_name_fields": false
+        "show_name_fields": true
       }
     },
     "featured_blog_FAGEBx": {
       "type": "featured-blog",
       "name": "Blog posts",
       "settings": {
-        "title": "Blog posts",
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
         "blog": "news",
         "grid": 3,
         "post_limit": 3,
