@@ -561,7 +561,7 @@
       "type": "newsletter",
       "name": "Newsletter",
       "settings": {
-        "heading": "Join us",
+        "heading": "More than swimwear.",
         "newsletter_subheading": "<p>Be the first to hear about all our news and VIP offers</p>",
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
