@@ -126,7 +126,7 @@
             "title": "",
             "title_heading": false,
             "accordion_enabled": false,
-            "text": "<p>At Ocean Soul Swimwear, we believe sustainability and style should go hand in hand. Every eco-friendly bikini top in this collection is ethically handmade in Bali, produced in small batches using Econyl® regenerated nylon — a fabric made from discarded fishing nets and ocean waste.</p><p>Each design has been refined over years to ensure it performs as beautifully as it looks. Adjustable straps, sculpting panels, and seamless finishes create a second-skin feel that flatters every curve and never digs in.</p><p>Whether you love the sporty energy of a surf bikini top, the feminine minimalism of a triangle bikini top, or the modern asymmetry of a one shoulder top, you’ll find your perfect match in this consciously crafted collection.</p><p>Luxury meets longevity — built to last, designed to move, and made for women who live in the ocean.</p>",
+            "text": "<p>At Ocean Soul Swimwear, we believe sustainability and style should go hand in hand. Every eco-friendly bikini top in this collection is ethically handmade in Bali, produced in small batches using Econyl® regenerated nylon - a fabric made from discarded fishing nets and ocean waste.</p><p>Each design has been refined over years to ensure it performs as beautifully as it looks. Adjustable straps, sculpting panels, and seamless finishes create a second-skin feel that flatters every curve and never digs in.</p><p>Whether you love the sporty energy of a surf bikini top, the feminine minimalism of a triangle bikini top, or the modern asymmetry of a one shoulder top, you’ll find your perfect match in this consciously crafted collection.</p><p>Luxury meets longevity - built to last, designed to move, and made for women who live in the ocean.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -239,7 +239,7 @@
         "image_height": "none",
         "desktop_fixed_height": 500,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "1711706852d17457ff": {
@@ -406,7 +406,7 @@
         "desktop_image_height": 450,
         "mobile_image_height": 450,
         "title": "Women’s Rashguard Tops",
-        "text": "<p>When you want more coverage without sacrificing style, our women’s rashguard tops are the perfect fit. Designed for long days in and around the water, they provide UPF 50+ protection, are breathable, and feel buttery-soft against the skin.</p><p>Each women rash guard in our collection is cut to flatter — fitted through the body with just enough stretch to move with you through every session.</p><p>High-performance Italian recycled fabric<br/></p><p>Flat seams to prevent irritation<br/></p><p>Tailored cut that flatters the female shape<br/></p><p>Ethically handmade in Bali<br/></p><p>Pair your womens rashguard top with a seamless bikini bottom or surf short for the perfect combination of coverage and confidence.</p>",
+        "text": "<p>When you want more coverage without sacrificing style, our women’s rashguard tops are the perfect fit. Designed for long days in and around the water, they provide UPF 50+ protection, are breathable, and feel buttery-soft against the skin.</p><p>Each women rash guard in our collection is cut to flatter - fitted through the body with just enough stretch to move with you through every session.</p><p>High-performance Italian recycled fabric<br/></p><p>Flat seams to prevent irritation<br/></p><p>Tailored cut that flatters the female shape<br/></p><p>Ethically handmade in Bali<br/></p><p>Pair your womens rashguard top with a seamless bikini bottom or surf short for the perfect combination of coverage and confidence.</p>",
         "button_text": "Button",
         "link": "",
         "center_align": true,
@@ -472,7 +472,7 @@
             "title": "Shop the Collection",
             "title_heading": true,
             "accordion_enabled": false,
-            "text": "<p>Discover your perfect bikini top — whether you prefer sporty, feminine, or minimalist designs. Choose from:</p><p>Triangle Bikini Tops – adjustable and timeless.<br/></p><p>Surf Bikini Tops – supportive and surf-tested.<br/></p><p>One Shoulder Tops – elegant and sculpting.<br/></p><p>Women’s Rashguard Tops – protective and performance-ready.<br/></p><p>Every style is made with purpose — luxury fabrics, ethical craftsmanship, and designs that last.</p><p>Ocean Soul Swimwear — Sustainable Luxury for Women Who Live for the Water.</p>",
+            "text": "<p>Discover your perfect bikini top - whether you prefer sporty, feminine, or minimalist designs. Choose from:</p><p>Triangle Bikini Tops – adjustable and timeless.<br/></p><p>Surf Bikini Tops – supportive and surf-tested.<br/></p><p>One Shoulder Tops – elegant and sculpting.<br/></p><p>Women’s Rashguard Tops – protective and performance-ready.<br/></p><p>Every style is made with purpose - luxury fabrics, ethical craftsmanship, and designs that last.</p><p>Ocean Soul Swimwear - Sustainable Luxury for Women Who Live for the Water.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -530,7 +530,7 @@
         "title": "",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_tHNTzH": {
@@ -542,7 +542,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     },
@@ -558,7 +558,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "breadcrumbs": {
