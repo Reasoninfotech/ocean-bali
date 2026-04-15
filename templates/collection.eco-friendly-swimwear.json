@@ -273,6 +273,21 @@
     "breadcrumbs": {
       "type": "breadcrumbs",
       "settings": {}
+    },
+    "featured_blog_amzmHn": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
     }
   },
   "order": [
@@ -285,6 +300,7 @@
     "instafeed_3cFbhA",
     "f26cc161-299a-4e72-b685-5f171aefa332",
     "accordion_T8U4ew",
-    "breadcrumbs"
+    "breadcrumbs",
+    "featured_blog_amzmHn"
   ]
 }
