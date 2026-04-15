@@ -393,7 +393,7 @@
       "settings": {
         "full_width": true,
         "image": "shopify://shop_images/green_upf_long_sleeveswimsuit_sulawesi_ocean_soul_swimwear.jpg",
-        "overlay": false,
+        "overlay": true,
         "background_attachment": "fixed",
         "height": 400,
         "mobile_height": 400,
