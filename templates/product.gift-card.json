@@ -515,7 +515,7 @@
         "image_height": "fixed",
         "desktop_fixed_height": 350,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
@@ -672,7 +672,7 @@
         "title": "Shop our collections",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "featured_blog_UXAnGY": {
@@ -687,7 +687,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_zGAWPf": {
