@@ -671,6 +671,12 @@
     "collection_list_LMqQtm": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_WTjzk9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-resort-wear"
+          }
+        },
         "featured_collection_VLzaEP": {
           "type": "featured_collection",
           "settings": {
@@ -691,14 +697,15 @@
         }
       },
       "block_order": [
+        "featured_collection_WTjzk9",
         "featured_collection_VLzaEP",
         "featured_collection_BW9NYb",
         "featured_collection_B83Dc4"
       ],
       "name": "Collection list",
       "settings": {
-        "title": "Explore our Collections",
-        "grid": 3,
+        "title": "Shop our Collections",
+        "grid": 4,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
