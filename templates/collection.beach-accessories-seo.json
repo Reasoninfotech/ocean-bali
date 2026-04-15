@@ -312,7 +312,7 @@
         "text": "<p></p><p>Designed to pair seamlessly with swimwear</p><p>Lightweight, functional, and easy to wear</p><p>Sun-safe pieces with added protection where it matters</p><p>Versatile essentials for beach, travel, and everyday use</p>",
         "button_text": "Button",
         "link": "",
-        "center_align": false,
+        "center_align": true,
         "text_color": "#606060",
         "background_color": "#f7f7f7"
       }
