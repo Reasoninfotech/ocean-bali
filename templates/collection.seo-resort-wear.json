@@ -389,7 +389,7 @@
       "settings": {
         "full_width": true,
         "image": "shopify://shop_images/The_meno_black_and_white.jpg",
-        "overlay": false,
+        "overlay": true,
         "background_attachment": "fixed",
         "height": 400,
         "mobile_height": 400,
@@ -397,7 +397,7 @@
         "caption_vertical": 50,
         "caption_horizontal": 50,
         "heading": "The Ocean Soul Way",
-        "subheading_text": "<p>We don’t believe in throwaway fashion - we believe in pieces that travel with you, season after season. Every design in our beach resort wear collection is made to pair effortlessly with your sustainable swimwear, creating a capsule wardrobe that works anywhere, anytime.</p><p>From the sculpting lines of a one piece swimsuit to the relaxed drape of a women’s jogger pant, every garment embodies what Ocean Soul stands for: performance, purpose, and effortless style.</p><p>Because true resort wear isn’t just about how you look — it’s about how you feel.</p>",
+        "subheading_text": "<p>We don’t believe in throwaway fashion - we believe in pieces that travel with you, season after season. Every design in our beach resort wear collection is made to pair effortlessly with your sustainable swimwear, creating a capsule wardrobe that works anywhere, anytime.</p><p>From the sculpting lines of a one piece swimsuit to the relaxed drape of a women’s jogger pant, every garment embodies what Ocean Soul stands for: performance, purpose, and effortless style.</p><p>Because true resort wear isn’t just about how you look - it’s about how you feel.</p>",
         "button_text": "Button",
         "link": "",
         "heading_font_size": 30,
