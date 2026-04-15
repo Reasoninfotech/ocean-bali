@@ -655,6 +655,19 @@
         "show_button": true,
         "section_space": "none"
       }
+    },
+    "newsletter_P9YnRK": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Feel confident in what you wear.",
+        "newsletter_subheading": "<p>Get early access to new styles, exclusive offers, and swimwear that actually performs.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
+      }
     }
   },
   "order": [
@@ -669,6 +682,7 @@
     "accordion_bzwcyC",
     "5a8ae58c-582e-47f6-b743-c942aae4345c",
     "featured_collection_7YBYfH",
-    "featured_blog_VQ4kXx"
+    "featured_blog_VQ4kXx",
+    "newsletter_P9YnRK"
   ]
 }
