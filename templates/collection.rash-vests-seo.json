@@ -580,7 +580,7 @@
         "title": "",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_XazdTr": {
@@ -592,7 +592,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     },
@@ -608,7 +608,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "breadcrumbs": {
