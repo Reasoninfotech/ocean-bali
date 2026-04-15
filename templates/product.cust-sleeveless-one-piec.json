@@ -659,9 +659,9 @@
     "featured_collection_7YBYfH": {
       "type": "featured-collection",
       "settings": {
-        "title": "Explore our Long Sleeve Swimsuits",
-        "collection": "long-sleeve-one-piece-swimsuits",
-        "limit": 3,
+        "title": "Explore our Sleeveless One Piece Swimsuits",
+        "collection": "sleeveless-one-piece-swimsuits",
+        "limit": 8,
         "grid": 3,
         "carousel": false,
         "mobile_1pr": false,
@@ -683,6 +683,19 @@
         "show_button": true,
         "section_space": "top_and_bottom"
       }
+    },
+    "newsletter_xteH8N": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Finally - swimwear that stays on.",
+        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": false
+      }
     }
   },
   "order": [
@@ -698,6 +711,7 @@
     "product-recommendations",
     "accordion_bzwcyC",
     "featured_collection_7YBYfH",
-    "featured_blog_VQ4kXx"
+    "featured_blog_VQ4kXx",
+    "newsletter_xteH8N"
   ]
 }
