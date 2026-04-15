@@ -633,13 +633,13 @@
       "settings": {
         "title": "Shop our collections",
         "collection": "beach-resort-wear",
-        "limit": 3,
-        "grid": 3,
+        "limit": 4,
+        "grid": 4,
         "carousel": false,
         "mobile_1pr": false,
         "show_view_all": false,
         "show_view_all_label": "",
-        "section_space": "top_and_bottom"
+        "section_space": "top"
       }
     },
     "featured_blog_VQ4kXx": {
@@ -653,7 +653,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     }
   },
