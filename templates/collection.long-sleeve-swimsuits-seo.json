@@ -661,13 +661,13 @@
       "type": "newsletter",
       "name": "Newsletter",
       "settings": {
-        "heading": "Join the Ocean Soul VIP List",
-        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "heading": "Finally - swimwear that stays on.",
+        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
         "section_space": "top_and_bottom",
-        "show_name_fields": false
+        "show_name_fields": true
       }
     },
     "featured_blog_FhMqkW": {
