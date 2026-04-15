@@ -500,6 +500,12 @@
     "collection_list_tqQBhY": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_mLtQ3k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-accessories"
+          }
+        },
         "featured_collection_CpwFtQ": {
           "type": "featured_collection",
           "settings": {
@@ -509,7 +515,7 @@
         "featured_collection_pYMWHP": {
           "type": "featured_collection",
           "settings": {
-            "collection": "best-seller"
+            "collection": "one-piece-swimsuit"
           }
         },
         "featured_collection_pNWE9M": {
@@ -520,6 +526,7 @@
         }
       },
       "block_order": [
+        "featured_collection_mLtQ3k",
         "featured_collection_CpwFtQ",
         "featured_collection_pYMWHP",
         "featured_collection_pNWE9M"
@@ -527,9 +534,9 @@
       "name": "Collection list",
       "settings": {
         "title": "Shop our Collections",
-        "grid": 3,
+        "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "top"
       }
     },
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
@@ -613,7 +620,20 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
+      }
+    },
+    "newsletter_HxQjQn": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
       }
     }
   },
@@ -629,6 +649,7 @@
     "collection_list_tqQBhY",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "featured_collection_RnQVbE",
-    "featured_blog_fNeUJe"
+    "featured_blog_fNeUJe",
+    "newsletter_HxQjQn"
   ]
 }
