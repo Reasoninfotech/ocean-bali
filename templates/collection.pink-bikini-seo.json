@@ -157,7 +157,7 @@
         "template--14915046801497__9326baf0-7c60-406b-a886-d60675c97f4f-product-1": {
           "type": "product",
           "settings": {
-            "product": "high-waisted-bikini-bottoms-the-sumba",
+            "product": "one-shoulder-bikini-top",
             "show_second_image": true,
             "rating": 5,
             "title": "Great for surfing",
@@ -267,7 +267,7 @@
         "title": "SHOP OUR SUSTAINABLE SWIM & ACCESSORIES",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "top"
       }
     },
     "featured_blog_DFxzf8": {
@@ -282,7 +282,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "breadcrumbs": {
