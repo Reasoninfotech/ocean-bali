@@ -439,6 +439,7 @@
       "block_order": [
         "judge_me_reviews_ugc_media_grid_c8H4jL"
       ],
+      "disabled": true,
       "settings": {
         "display_wide": false
       }
@@ -491,7 +492,7 @@
         "image_height": "fixed",
         "desktop_fixed_height": 350,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "1706838326df053765": {
@@ -537,7 +538,7 @@
         "mobile_1pr": false,
         "show_view_all": false,
         "show_view_all_label": "",
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "accordion_jHgV7B": {
@@ -668,6 +669,19 @@
         "section_space": "top_and_bottom"
       }
     },
+    "newsletter_aG8HH8": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Finally - swimwear that stays on.",
+        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "none",
+        "show_name_fields": true
+      }
+    },
     "collection_list_LMqQtm": {
       "type": "collection-list",
       "blocks": {
@@ -708,19 +722,6 @@
         "grid": 4,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
-      }
-    },
-    "newsletter_aG8HH8": {
-      "type": "newsletter",
-      "name": "Newsletter",
-      "settings": {
-        "heading": "Finally - swimwear that stays on.",
-        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
-        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
-        "color": "#606060",
-        "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
-        "show_name_fields": true
       }
     }
   },
