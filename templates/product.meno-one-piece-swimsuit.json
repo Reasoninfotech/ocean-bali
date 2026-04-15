@@ -526,10 +526,10 @@
     "featured_collection_LagmMi": {
       "type": "featured-collection",
       "settings": {
-        "title": "Shop our collections",
+        "title": "Shop our Collections",
         "collection": "beach-resort-wear",
-        "limit": 3,
-        "grid": 3,
+        "limit": 8,
+        "grid": 4,
         "carousel": false,
         "mobile_1pr": false,
         "show_view_all": false,
@@ -550,6 +550,19 @@
         "show_button": true,
         "section_space": "top_and_bottom"
       }
+    },
+    "newsletter_naCTbH": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
+      }
     }
   },
   "order": [
@@ -562,6 +575,7 @@
     "product-recommendations",
     "accordion_K3YKGe",
     "featured_collection_LagmMi",
-    "featured_blog_jQjgk3"
+    "featured_blog_jQjgk3",
+    "newsletter_naCTbH"
   ]
 }
