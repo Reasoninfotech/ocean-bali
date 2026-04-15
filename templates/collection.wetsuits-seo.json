@@ -125,7 +125,7 @@
             "title": "Designed for Ocean Women",
             "title_heading": true,
             "accordion_enabled": false,
-            "text": "<p>This collection was inspired by the women in our Ocean Soul community - surfers, divers, water lovers, and sun-conscious adventurers who wanted more from their wetsuits. You asked for a wetsuit that sculpts and performs, feels good on your skin, looks beautiful, and aligns with your values. We listened.</p><p>Whether you're just starting your surf journey or spend every weekend in the sea, these suits give you support, warmth, and freedom — without compromise.</p><p><strong>All suits feature:</strong></p><p>Premium YKK zips<br/></p><p>High necklines for warmth and protection<br/></p><p>Secure leg openings that stay put through movement<br/></p><p>Streamlined, functional silhouettes with surf performance in mind</p><p>Whether you're just starting your surf journey or spend every weekend in the sea, these suits give you support, warmth, and freedom - without compromise.</p>",
+            "text": "<p>This collection was inspired by the women in our Ocean Soul community - surfers, divers, water lovers, and sun-conscious adventurers who wanted more from their wetsuits. You asked for a wetsuit that sculpts and performs, feels good on your skin, looks beautiful, and aligns with your values. We listened.</p><p>Whether you're just starting your surf journey or spend every weekend in the sea, these suits give you support, warmth, and freedom - without compromise.</p><p><strong>All suits feature:</strong></p><p>Premium YKK zips<br/></p><p>High necklines for warmth and protection<br/></p><p>Secure leg openings that stay put through movement<br/></p><p>Streamlined, functional silhouettes with surf performance in mind</p><p>Whether you're just starting your surf journey or spend every weekend in the sea, these suits give you support, warmth, and freedom - without compromise.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -208,7 +208,7 @@
             "hide_caption_background": false,
             "caption_below": false,
             "heading": "",
-            "subheading": "<p>Ocean Soul spring suit for women is designed with a woman’s body in mind — featuring clever panelling, a cinched waist, and smooth seams that shape and support without restricting movement. You’ll feel confident in the surf and look elegant out of the water.</p>",
+            "subheading": "<p>Ocean Soul spring suit for women is designed with a woman’s body in mind - featuring clever panelling, a cinched waist, and smooth seams that shape and support without restricting movement. You’ll feel confident in the surf and look elegant out of the water.</p>",
             "link": "",
             "button_text": "Button",
             "second_link": "",
@@ -256,9 +256,9 @@
         "no_autoplay": false,
         "slider_speed": 5,
         "pager": "dots",
-        "slideshow_size": "natural",
-        "desktop_height": 200,
-        "mobile_height": 600,
+        "slideshow_size": "fixed_height",
+        "desktop_height": 500,
+        "mobile_height": 500,
         "slide_heading_size": 22,
         "subheading_size": 14,
         "cta_size": 14,
@@ -386,7 +386,7 @@
         "image_height": "none",
         "desktop_fixed_height": 500,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "1ed4ee22-f4e4-4956-9271-75427ba6965c": {
@@ -491,7 +491,7 @@
             "title": "",
             "title_heading": false,
             "accordion_enabled": false,
-            "text": "<h2>Why Choose an Ocean Soul Women’s Wetsuit or Spring Suit?</h2><p>SUSTAINABLE LIMESTONE NEOPRENE</p><p>Our wetsuits are crafted from Eco-prene, a limestone-based neoprene alternative that’s more sustainable than petroleum-based rubber. Paired with GT3 recycled lining made from post-consumer plastic bottles, our suits are warmer, lighter, and better for the planet — without compromising performance.</p><p></p>",
+            "text": "<h2>Why Choose an Ocean Soul Women’s Wetsuit or Spring Suit?</h2><p>SUSTAINABLE LIMESTONE NEOPRENE</p><p>Our wetsuits are crafted from Eco-prene, a limestone-based neoprene alternative that’s more sustainable than petroleum-based rubber. Paired with GT3 recycled lining made from post-consumer plastic bottles, our suits are warmer, lighter, and better for the planet  - without compromising performance.</p><p></p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -519,7 +519,7 @@
         "image_position": "left",
         "image_size": "medium",
         "image_height": "fixed",
-        "desktop_image_height": 350,
+        "desktop_image_height": 450,
         "mobile_image_height": 450,
         "title": "",
         "text": "<h2>Versatile and Stylish</h2><p>From surf wetsuits for women to minimalist spring suits built for movement, every style is double-lined with GT3 recycled lining, has a sculpted panel design that shapes and supports your body, and features UPF 50+ sun protection. The fabric is soft against your skin yet strong enough to handle salt, sun, and session after session in the water.</p>",
@@ -733,7 +733,7 @@
         "title": "Swimwear Collection",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "featured_blog_Amw3nL": {
@@ -748,7 +748,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_HNGzBU": {
