@@ -370,7 +370,7 @@
         "image_position": "left",
         "image_size": "medium",
         "image_height": "natural",
-        "desktop_image_height": 550,
+        "desktop_image_height": 350,
         "mobile_image_height": 450,
         "title": "",
         "text": "<h4>All-Day Comfort, Endless Confidence</h4><p>Sleeveless one pieces are the perfect blend of freedom and function. Our designs give you the movement of a bikini with the coverage and sculpting support of a one piece. </p><p>Ocean Soul's sleeveless one pieces are a favourite for:</p><p>Freedivers, surfers and swimmers who need full range of motion.<br/></p><p>Active women who want a no-fuss fit that moves with them.<br/></p><p>Mums and sun-seekers looking for sleek coverage without sleeves.</p>",
@@ -389,7 +389,7 @@
         "image_position": "right",
         "image_size": "medium",
         "image_height": "natural",
-        "desktop_image_height": 400,
+        "desktop_image_height": 350,
         "mobile_image_height": 450,
         "title": "",
         "text": "<h4>Sustainable Swimwear That Performs</h4><p>Made from regenerated ECONYL® yarn, our swimsuits are crafted using ocean waste like fishing nets and fabric scraps, helping to reduce plastic pollution and support circular fashion. This eco-friendly swimwear feels incredibly soft while resisting chlorine, salt, and UV wear.</p><p>We double-line all our suits for durability and comfort, using no padding or foam. The support comes from expert tailoring and strong internal structure, not filler. The result? A swimsuit that lasts twice as long as standard swimwear and never loses its shape.</p><p></p>",
@@ -691,7 +691,7 @@
         "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0"
       ],
       "settings": {
-        "title": "FEATURED COLLECTIONS",
+        "title": "SHOP OUR COLLECTIONS",
         "grid": 4,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
