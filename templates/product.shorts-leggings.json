@@ -526,7 +526,7 @@
         "image_height": "fixed",
         "desktop_fixed_height": 350,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "featured_collection_zg3BAr": {
