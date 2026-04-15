@@ -510,6 +510,72 @@
         "limit": 8
       }
     },
+    "5a8ae58c-582e-47f6-b743-c942aae4345c": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/nomadbythesea-bikini1_Product_Page_-_Shopify_Size-17.jpg",
+            "link": "",
+            "title_text": "Perfect two piece cut",
+            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering and a tailored feminine design that is suitable for leisure or athletic activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/aq222493_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-244.jpg",
+            "link": "",
+            "title_text": "Designed for comfort",
+            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/aq222287_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-241.jpg",
+            "link": "",
+            "title_text": "Sustainable Swim",
+            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 {padding-top: 20px;}"
+      ],
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "fixed",
+        "desktop_fixed_height": 350,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "featured_collection_7YBYfH": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop our collections",
+        "collection": "beach-resort-wear",
+        "limit": 4,
+        "grid": 4,
+        "carousel": false,
+        "mobile_1pr": false,
+        "show_view_all": false,
+        "show_view_all_label": "",
+        "section_space": "none"
+      }
+    },
     "accordion_bzwcyC": {
       "type": "accordion",
       "blocks": {
@@ -576,72 +642,6 @@
         "allow_multiple": false
       }
     },
-    "5a8ae58c-582e-47f6-b743-c942aae4345c": {
-      "type": "editorial-columns",
-      "blocks": {
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/nomadbythesea-bikini1_Product_Page_-_Shopify_Size-17.jpg",
-            "link": "",
-            "title_text": "Perfect two piece cut",
-            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering and a tailored feminine design that is suitable for leisure or athletic activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/aq222493_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-244.jpg",
-            "link": "",
-            "title_text": "Designed for comfort",
-            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/aq222287_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-241.jpg",
-            "link": "",
-            "title_text": "Sustainable Swim",
-            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
-            "button_text": "Button"
-          }
-        }
-      },
-      "block_order": [
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0",
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1",
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "h3 {padding-top: 20px;}"
-      ],
-      "settings": {
-        "title": "",
-        "center_align": true,
-        "image_height": "fixed",
-        "desktop_fixed_height": 350,
-        "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
-      }
-    },
-    "featured_collection_7YBYfH": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Shop our collections",
-        "collection": "beach-resort-wear",
-        "limit": 4,
-        "grid": 4,
-        "carousel": false,
-        "mobile_1pr": false,
-        "show_view_all": false,
-        "show_view_all_label": "",
-        "section_space": "top"
-      }
-    },
     "featured_blog_VQ4kXx": {
       "type": "featured-blog",
       "settings": {
@@ -665,7 +665,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     }
@@ -679,9 +679,9 @@
     "168017849967509d34",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "product-recommendations",
-    "accordion_bzwcyC",
     "5a8ae58c-582e-47f6-b743-c942aae4345c",
     "featured_collection_7YBYfH",
+    "accordion_bzwcyC",
     "featured_blog_VQ4kXx",
     "newsletter_P9YnRK"
   ]
