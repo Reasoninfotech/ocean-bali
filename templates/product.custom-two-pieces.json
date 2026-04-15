@@ -668,6 +668,19 @@
         "show_button": true,
         "section_space": "top_and_bottom"
       }
+    },
+    "newsletter_JgaW7y": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": false
+      }
     }
   },
   "order": [
@@ -683,6 +696,7 @@
     "product-recommendations",
     "accordion_bzwcyC",
     "featured_collection_7YBYfH",
-    "featured_blog_VQ4kXx"
+    "featured_blog_VQ4kXx",
+    "newsletter_JgaW7y"
   ]
 }
