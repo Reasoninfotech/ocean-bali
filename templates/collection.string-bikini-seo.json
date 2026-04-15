@@ -57,7 +57,7 @@
         "span.count {display: none;}"
       ],
       "settings": {
-        "products_per_page": 50,
+        "products_per_page": 5,
         "products_per_row": 2,
         "mobile_1pr": true,
         "sort_by": false,
@@ -326,7 +326,7 @@
         "image": "shopify://shop_images/georgina_monti-5.jpg",
         "image_position": "left",
         "image_size": "medium",
-        "image_height": "natural",
+        "image_height": "fixed",
         "desktop_image_height": 550,
         "mobile_image_height": 450,
         "title": "Performance Meets Style",
