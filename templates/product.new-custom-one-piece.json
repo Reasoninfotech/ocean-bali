@@ -528,11 +528,10 @@
     },
     "featured_collection_zg3BAr": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
-        "title": "Explore our sleeveless one pieces",
+        "title": "Shop our Long Sleeve one pieces",
         "collection": "long-sleeve-swimsuits-sale",
-        "limit": 3,
+        "limit": 8,
         "grid": 3,
         "carousel": false,
         "mobile_1pr": false,
