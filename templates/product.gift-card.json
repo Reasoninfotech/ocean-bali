@@ -633,24 +633,15 @@
         "allow_multiple": false
       }
     },
-    "featured_blog_UXAnGY": {
-      "type": "featured-blog",
-      "name": "Blog posts",
-      "settings": {
-        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
-        "blog": "news",
-        "grid": 3,
-        "post_limit": 3,
-        "show_date": false,
-        "show_author": false,
-        "show_tags": false,
-        "show_button": true,
-        "section_space": "top_and_bottom"
-      }
-    },
     "collection_list_g944FX": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_6JaFnG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "best-seller"
+          }
+        },
         "featured_collection_AWgWbB": {
           "type": "featured_collection",
           "settings": {
@@ -671,6 +662,7 @@
         }
       },
       "block_order": [
+        "featured_collection_6JaFnG",
         "featured_collection_AWgWbB",
         "featured_collection_4xjtij",
         "featured_collection_R7wrkj"
@@ -678,9 +670,37 @@
       "name": "Collection list",
       "settings": {
         "title": "Shop our collections",
-        "grid": 3,
+        "grid": 4,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
+      }
+    },
+    "featured_blog_UXAnGY": {
+      "type": "featured-blog",
+      "name": "Blog posts",
+      "settings": {
+        "title": "Swimwear, Ocean Lifestyle & Bali Journal",
+        "blog": "news",
+        "grid": 3,
+        "post_limit": 3,
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_button": true,
+        "section_space": "top_and_bottom"
+      }
+    },
+    "newsletter_zGAWPf": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
       }
     }
   },
@@ -696,7 +716,8 @@
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "accordion_jHgV7B",
     "product-content",
+    "collection_list_g944FX",
     "featured_blog_UXAnGY",
-    "collection_list_g944FX"
+    "newsletter_zGAWPf"
   ]
 }
