@@ -257,7 +257,7 @@
         "slider_speed": 5,
         "pager": "dots",
         "slideshow_size": "natural",
-        "desktop_height": 900,
+        "desktop_height": 200,
         "mobile_height": 600,
         "slide_heading_size": 22,
         "subheading_size": 14,
@@ -458,12 +458,22 @@
             "text": "UPF PROTECTION",
             "link": ""
           }
+        },
+        "block_3gRC4q": {
+          "type": "block",
+          "settings": {
+            "icon": "bag",
+            "image": "shopify://shop_images/Express_shipping.jpg",
+            "text": "Express Shipping",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "block_GFEt3p",
         "block_AjccmV",
-        "block_eFVLpq"
+        "block_eFVLpq",
+        "block_3gRC4q"
       ],
       "name": "Text with icons",
       "settings": {
@@ -495,7 +505,7 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
+        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -544,7 +554,7 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
+        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -704,32 +714,26 @@
           "settings": {
             "collection": "sleeveless-one-piece-swimsuits"
           }
+        },
+        "featured_collection_zebDMe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beach-accessories"
+          }
         }
       },
       "block_order": [
         "featured_collection_AHQQpE",
         "featured_collection_rpgKKx",
-        "featured_collection_CbWWip"
+        "featured_collection_CbWWip",
+        "featured_collection_zebDMe"
       ],
       "name": "Collection list",
       "settings": {
         "title": "Swimwear Collection",
-        "grid": 3,
+        "grid": 4,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
-      }
-    },
-    "newsletter_HNGzBU": {
-      "type": "newsletter",
-      "name": "Newsletter",
-      "settings": {
-        "heading": "Join the Ocean Soul VIP List",
-        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
-        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
-        "color": "#606060",
-        "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
-        "show_name_fields": true
       }
     },
     "featured_blog_Amw3nL": {
@@ -745,6 +749,19 @@
         "show_tags": false,
         "show_button": true,
         "section_space": "top_and_bottom"
+      }
+    },
+    "newsletter_HNGzBU": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Join the Ocean Soul VIP List",
+        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
       }
     },
     "breadcrumbs_UdGkHw": {
@@ -773,8 +790,8 @@
     "jdgm_widget_code_9PfRqK",
     "17066010874acb3c2b",
     "collection_list_hpprwC",
-    "newsletter_HNGzBU",
     "featured_blog_Amw3nL",
+    "newsletter_HNGzBU",
     "breadcrumbs_UdGkHw"
   ]
 }
