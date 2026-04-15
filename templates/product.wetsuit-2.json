@@ -498,7 +498,7 @@
         "image_height": "fixed",
         "desktop_fixed_height": 350,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "accordion_K3YKGe": {
@@ -590,7 +590,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "collection_list_g66xDB": {
@@ -658,9 +658,9 @@
     "product-content",
     "product-recommendations",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
-    "accordion_K3YKGe",
     "featured_blog_JTm7Xj",
     "collection_list_g66xDB",
+    "accordion_K3YKGe",
     "newsletter_LJCGCc"
   ]
 }
