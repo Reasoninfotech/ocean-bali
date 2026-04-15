@@ -332,7 +332,7 @@
         "desktop_image_height": 450,
         "mobile_image_height": 450,
         "title": "Ocean Soul Swimwear’s Signature Seamless Design",
-        "text": "<p>Our seamless bikinis are more than just stitch-free — they’re carefully engineered for fit, function, and longevity.</p><p><strong>Premium Italian Recycled Fabric:</strong> Soft, breathable, and highly durable against salt, chlorine, and sun exposure.<br/></p><p><strong>UPF 50+ Sun Protection:</strong> Built-in skin protection for peace of mind during long days outdoors.<br/></p><p><strong>Double-Lined Support:</strong> Ensures your bikini stays opaque, even when wet, while offering a gentle, secure hold.<br/></p><p><strong>Ethical Production:</strong> Handmade in Bali in small batches to minimise waste and overproduction.<br/></p><p><strong>Mix & Match Options:</strong> Pair tops and bottoms your way for a bikini set that’s uniquely yours.</p>",
+        "text": "<p>Our seamless bikinis are more than just stitch-free - they’re carefully engineered for fit, function, and longevity.</p><p><strong>Premium Italian Recycled Fabric:</strong> Soft, breathable, and highly durable against salt, chlorine, and sun exposure.<br/></p><p><strong>UPF 50+ Sun Protection:</strong> Built-in skin protection for peace of mind during long days outdoors.<br/></p><p><strong>Double-Lined Support:</strong> Ensures your bikini stays opaque, even when wet, while offering a gentle, secure hold.<br/></p><p><strong>Ethical Production:</strong> Handmade in Bali in small batches to minimise waste and overproduction.<br/></p><p><strong>Mix & Match Options:</strong> Pair tops and bottoms your way for a bikini set that’s uniquely yours.</p>",
         "button_text": "Button",
         "link": "",
         "center_align": true,
@@ -351,7 +351,7 @@
         "desktop_image_height": 400,
         "mobile_image_height": 450,
         "title": "Why Choose a Seamless Bikini?",
-        "text": "<h3></h3><p>Once you try a seamless bikini, it’s hard to go back to anything else. The absence of bulky seams means:</p><p>No Digging or Pinching – Smooth edges prevent discomfort and red marks.<br/></p><p>Flattering, Sleek Look – Seamless construction sits flush against the skin for a sculpted shape.<br/></p><p>Lightweight Comfort – Feels barely there, even after hours in or out of the water.<br/></p><p>This makes them ideal for active water sports like surfing, paddle boarding, and swimming — as well as long, lazy beach days.</p>",
+        "text": "<h3></h3><p>Once you try a seamless bikini, it’s hard to go back to anything else. The absence of bulky seams means:</p><p>No Digging or Pinching – Smooth edges prevent discomfort and red marks.<br/></p><p>Flattering, Sleek Look – Seamless construction sits flush against the skin for a sculpted shape.<br/></p><p>Lightweight Comfort – Feels barely there, even after hours in or out of the water.<br/></p><p>This makes them ideal for active water sports like surfing, paddle boarding, and swimming - as well as long, lazy beach days.</p>",
         "button_text": "Button",
         "link": "",
         "center_align": true,
@@ -415,7 +415,7 @@
             "title": "Fit for Every Body",
             "title_heading": true,
             "accordion_enabled": false,
-            "text": "<p>Our seamless bikinis are designed to move with you — no matter your body shape. With adjustable ties, stretchy fabric, and carefully considered cuts, they adapt to your curves without restriction.</p><p>From sleek black seamless bikinis to vibrant seasonal shades, our range has something for every style. Whichever you choose, you’ll enjoy:</p><p>- A flattering, comfortable fit you’ll want to wear all day<br/>- Premium, eco-friendly materials that last<br/>- Ethical craftsmanship you can be proud of<br/></p><p>Ocean Soul Swimwear’s seamless bikinis are where style, comfort, and sustainability meet. Explore the collection today and find your new favourite bikini.</p>",
+            "text": "<p>Our seamless bikinis are designed to move with you - no matter your body shape. With adjustable ties, stretchy fabric, and carefully considered cuts, they adapt to your curves without restriction.</p><p>From sleek black seamless bikinis to vibrant seasonal shades, our range has something for every style. Whichever you choose, you’ll enjoy:</p><p>- A flattering, comfortable fit you’ll want to wear all day<br/>- Premium, eco-friendly materials that last<br/>- Ethical craftsmanship you can be proud of<br/></p><p>Ocean Soul Swimwear’s seamless bikinis are where style, comfort, and sustainability meet. Explore the collection today and find your new favourite bikini.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -441,7 +441,7 @@
       "settings": {
         "full_width": true,
         "image": "shopify://shop_images/The_Aceh_Midnight_Rash_vest_and_bikini.jpg",
-        "overlay": false,
+        "overlay": true,
         "background_attachment": "fixed",
         "height": 400,
         "mobile_height": 400,
@@ -449,7 +449,7 @@
         "caption_vertical": 50,
         "caption_horizontal": 50,
         "heading": "",
-        "subheading_text": "<h3>A Sustainable Choice for the Planet</h3><p>Every eco-friendly seamless bikini in this collection is made from ECONYL® regenerated nylon, crafted from ocean waste like discarded fishing nets and fabric scraps. By choosing one, you’re helping to reduce marine pollution and support the shift towards circular fashion.</p><p>We produce in small batches to ensure quality and avoid unnecessary waste, and every piece is sewn by skilled artisans who are paid fairly for their work. This is swimwear you can feel good about wearing — in every sense.</p>",
+        "subheading_text": "<h3>A Sustainable Choice for the Planet</h3><p>Every eco-friendly seamless bikini in this collection is made from ECONYL® regenerated nylon, crafted from ocean waste like discarded fishing nets and fabric scraps. By choosing one, you’re helping to reduce marine pollution and support the shift towards circular fashion.</p><p>We produce in small batches to ensure quality and avoid unnecessary waste, and every piece is sewn by skilled artisans who are paid fairly for their work. This is swimwear you can feel good about wearing - in every sense.</p>",
         "button_text": "Button",
         "link": "",
         "heading_font_size": 30,
@@ -457,7 +457,7 @@
         "text_color": "#ffffff",
         "button_text_color": "#ffffff",
         "button_color": "#000000",
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "jdgm_widget_code_Nkacip": {
