@@ -125,7 +125,7 @@
             "title": "",
             "title_heading": false,
             "accordion_enabled": false,
-            "text": "<p>Each piece is ethically handmade in Bali, crafted in small batches to support local artisans and minimise waste. Because true sustainability isn’t a trend — it’s a commitment to quality and longevity.</p><p>Pair your favourite bottoms with our triangle bikini tops, surf bikini tops, or one shoulder styles for a look that moves with you from the ocean to everyday life.</p>",
+            "text": "<p>Each piece is ethically handmade in Bali, crafted in small batches to support local artisans and minimise waste. Because true sustainability isn’t a trend - it’s a commitment to quality and longevity.</p><p>Pair your favourite bottoms with our triangle bikini tops, surf bikini tops, or one shoulder styles for a look that moves with you from the ocean to everyday life.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -238,7 +238,7 @@
         "image_height": "none",
         "desktop_fixed_height": 500,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "1711706852d17457ff": {
@@ -411,7 +411,7 @@
         "desktop_image_height": 450,
         "mobile_image_height": 450,
         "title": "Seamless Bikini Bottoms",
-        "text": "<p>If comfort is key, our <a href=\"/collections/seamless-bikinis\" target=\"_blank\" title=\"Seamless Bikinis & Two Pieces\">seamless bikini bottoms</a> are a dream. No stitching, no pinching — just a smooth, second-skin feel that sculpts beautifully. Ideal for long beach days or layering under a wetsuit, they embody our commitment to luxury you can feel.</p><p>Seamless construction for all-day comfort<br/></p><p>Soft, recycled Italian fabric that lasts<br/></p><p>UPF 50+ protection and fade resistance</p>",
+        "text": "<p>If comfort is key, our <a href=\"/collections/seamless-bikinis\" target=\"_blank\" title=\"Seamless Bikinis & Two Pieces\">seamless bikini bottoms</a> are a dream. No stitching, no pinching - just a smooth, second-skin feel that sculpts beautifully. Ideal for long beach days or layering under a wetsuit, they embody our commitment to luxury you can feel.</p><p>Seamless construction for all-day comfort<br/></p><p>Soft, recycled Italian fabric that lasts<br/></p><p>UPF 50+ protection and fade resistance</p>",
         "button_text": "Button",
         "link": "",
         "center_align": true,
@@ -463,7 +463,7 @@
       "settings": {
         "full_width": true,
         "image": "shopify://shop_images/DSC00574_agnesnicolee_1.jpg",
-        "overlay": false,
+        "overlay": true,
         "background_attachment": "fixed",
         "height": 400,
         "mobile_height": 400,
@@ -496,7 +496,7 @@
             "title": "Shop the Collection",
             "title_heading": true,
             "accordion_enabled": false,
-            "text": "<h3></h3><p>Explore our range of:</p><p><a href=\"/collections/high-waisted-bikini\" target=\"_blank\" title=\"High Waisted Bikini\"><strong>High Waisted Bikini Bottoms</strong></a> — sculpting and supportive.<br/></p><p><a href=\"/collections/low-rise-bikini\" target=\"_blank\" title=\"Low Rise Bikini\"><strong>Low Rise Bikini Bottom</strong></a><strong>s</strong> — minimal and modern.<br/></p><p><a href=\"https://oceansoulbali.com/collections/seamless-bikinis\" target=\"_blank\" title=\"https://oceansoulbali.com/collections/seamless-bikinis\"><strong>Seamless Bikini Bottoms</strong></a> — soft and smoothing.<br/></p><p><a href=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\" title=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\"><strong>String Bikini Bottoms</strong></a> — adjustable and timeless.<br/></p><p>Every style is crafted with precision and purpose — because the perfect fit should never cost the planet.</p><p>Ocean Soul Swimwear — Luxury Swimwear That Lasts Beyond the Season.</p>",
+            "text": "<h3></h3><p>Explore our range of:</p><p><a href=\"/collections/high-waisted-bikini\" target=\"_blank\" title=\"High Waisted Bikini\"><strong>High Waisted Bikini Bottoms</strong></a> - sculpting and supportive.<br/></p><p><a href=\"/collections/bikini-bottoms\" title=\"Bikini Bottoms\"><strong>Low Rise Bikini Bottoms</strong></a> - minimal and modern.<br/></p><p><a href=\"https://oceansoulbali.com/collections/seamless-bikinis\" target=\"_blank\" title=\"https://oceansoulbali.com/collections/seamless-bikinis\"><strong>Seamless Bikini Bottoms</strong></a> - soft and smoothing.<br/></p><p><a href=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\" title=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\"><strong>String Bikini Bottoms</strong></a> - adjustable and timeless.<br/></p><p>Every style is crafted with precision and purpose - because the perfect fit should never cost the planet.</p><p>Ocean Soul Swimwear - Luxury Swimwear That Lasts Beyond the Season.</p>",
             "page": "",
             "center": true,
             "block_width": 100,
@@ -554,7 +554,7 @@
         "title": "",
         "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_zqettP": {
@@ -566,7 +566,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     },
@@ -582,7 +582,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "breadcrumbs": {
