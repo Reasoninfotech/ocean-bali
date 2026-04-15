@@ -709,6 +709,19 @@
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
+    },
+    "newsletter_aG8HH8": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Finally - swimwear that stays on.",
+        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": false
+      }
     }
   },
   "order": [
@@ -725,6 +738,7 @@
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "product-content",
     "featured_blog_N3J3zA",
-    "collection_list_LMqQtm"
+    "collection_list_LMqQtm",
+    "newsletter_aG8HH8"
   ]
 }
