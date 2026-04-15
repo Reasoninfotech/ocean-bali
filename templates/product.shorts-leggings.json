@@ -478,18 +478,69 @@
         "limit": 8
       }
     },
+    "5a8ae58c-582e-47f6-b743-c942aae4345c": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surf-shorts-the-sabu-surf-short-ocean-soul-bali-celestial-blue-s.webp",
+            "link": "",
+            "title_text": "Performance Fit",
+            "text": "<p>Built to stay on.<strong>  </strong>Designed for real movement - from surf to swim to long beach days.  Our shorts and surf leggings are made to move with you, not against you. No riding up, no shifting, no adjusting - just a secure, sculpting fit you can rely on in and out of the water.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surf-leggings-flores-fusion-legging-surf-leggings-ocean-soul-bali-7_854e0886.webp",
+            "link": "",
+            "title_text": "Sculpt & Support",
+            "text": "<p>Sculpts and flatters.  A high-waisted, panelled design that smooths and supports in all the right places.  The double-lined, luxuriously soft fabric feels incredible against your skin while holding you in - giving you confidence and coverage without compromising on style.</p>",
+            "button_text": "Button"
+          }
+        },
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surf-leggings-flores-fusion-legging-surf-leggings-ocean-soul-bali-snowsnow-rib-xs-11.webp",
+            "link": "",
+            "title_text": "Made to Last",
+            "text": "<p>Crafted from premium regenerated nylon that’s designed to last.  Our pieces are resistant to chlorine, sun, and wear - so they hold their shape and colour, season after season. Designed in Bali with intention, for women who live in and around the ocean.</p>",
+            "button_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1",
+        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"
+      ],
+      "custom_css": [
+        "h3 {padding-top: 15px;}"
+      ],
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "fixed",
+        "desktop_fixed_height": 350,
+        "mobile_fixed_height": 250,
+        "section_space": "top_and_bottom"
+      }
+    },
     "featured_collection_zg3BAr": {
       "type": "featured-collection",
       "settings": {
         "title": "Shop our swimwear",
-        "collection": "seamless-bikinis",
-        "limit": 3,
-        "grid": 3,
+        "collection": "beach-accessories",
+        "limit": 4,
+        "grid": 4,
         "carousel": false,
         "mobile_1pr": false,
         "show_view_all": false,
         "show_view_all_label": "",
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "accordion_jHgV7B": {
@@ -511,57 +562,6 @@
         "title": "FAQS",
         "max_width": 100,
         "allow_multiple": false
-      }
-    },
-    "5a8ae58c-582e-47f6-b743-c942aae4345c": {
-      "type": "editorial-columns",
-      "blocks": {
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/nomadbythesea-bikini1_Product_Page_-_Shopify_Size-17.jpg",
-            "link": "",
-            "title_text": "Perfect two piece cut",
-            "text": "<p>Our two piece bikinis are made with  a luxurious sustainable buttery soft fabric. <br/>They are the perfect intersection of sporty and fashionable.  With a comfortable seamless design, both functional and flattering and a tailored feminine design that is suitable for leisure or athletic activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/aq222493_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-244.jpg",
-            "link": "",
-            "title_text": "Designed for comfort",
-            "text": "<p>We’ve designed our swimsuits for comfort right down to the smallest detail.  The luxuriously soft fabric, double lined, with innovative cupless support and smooth seams will hold you in and support you, with all your water activities.</p>",
-            "button_text": "Button"
-          }
-        },
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2": {
-          "type": "text_block",
-          "settings": {
-            "image": "shopify://shop_images/aq222287_tahliabourke_by_clementinebourke_Product_Page_-_Shopify_Size-241.jpg",
-            "link": "",
-            "title_text": "Sustainable Swim",
-            "text": "<p>We value slow fashion over fast with a focus on sustainable fabrics and ethical production. Crafted from regenerated nylon that is designed to last twice as long as your regular swimsuit. Our swimwear is designed & made in Bali with love, with 10% of each sale donated to those in need through our Giving Back initiative. </p>",
-            "button_text": "Button"
-          }
-        }
-      },
-      "block_order": [
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-0",
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-1",
-        "template--14915046834265__5a8ae58c-582e-47f6-b743-c942aae4345c-16779008892c1eca16-2"
-      ],
-      "custom_css": [
-        "h3 {padding-top: 15px;}"
-      ],
-      "settings": {
-        "title": "",
-        "center_align": true,
-        "image_height": "fixed",
-        "desktop_fixed_height": 350,
-        "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
       }
     },
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6": {
@@ -644,9 +644,9 @@
     "17065983415fc757f9",
     "1706838326df053765",
     "product-recommendations",
+    "5a8ae58c-582e-47f6-b743-c942aae4345c",
     "featured_collection_zg3BAr",
     "accordion_jHgV7B",
-    "5a8ae58c-582e-47f6-b743-c942aae4345c",
     "ffd7507a-dce2-40e6-af87-0e8a295f7ef6",
     "product-content",
     "featured_blog_N3J3zA"
