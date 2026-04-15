@@ -13,8 +13,7 @@
       "type": "main-collection-banner",
       "settings": {
         "display_wide": true,
-        "image": "shopify://shop_images/Mentawai_crop_-_crop_rash_guard.jpg",
-        "image_mobile": "shopify://shop_images/Hero_-_no_text.jpg"
+        "image": "shopify://shop_images/Mentawai_crop_-_crop_rash_guard.jpg"
       }
     },
     "custom_liquid_x4YMDB": {
@@ -69,6 +68,34 @@
         "section_space": "bottom"
       }
     },
+    "rich_text_qfVp86": {
+      "type": "rich-text",
+      "blocks": {
+        "text_block_BMpRhe": {
+          "type": "text_block",
+          "settings": {
+            "title": "Beach Accessories for Women",
+            "title_heading": true,
+            "accordion_enabled": false,
+            "text": "<p>Everything you need beyond the swim. Discover resort wear, beach accessories, and sun protection essentials designed to take you from ocean to anywhere else your day leads.</p><p>From lightweight layers to functional accessories, each piece is designed to pair seamlessly with your swimwear and move with you - in and out of the water.</p>",
+            "page": "",
+            "center": true,
+            "block_width": 100,
+            "accordion_icon_color": "#000000",
+            "accordion_icon_size": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_block_BMpRhe"
+      ],
+      "settings": {
+        "padding": 30,
+        "text_color": "#606060",
+        "background_color": "#ffffff",
+        "comman_data_id": ""
+      }
+    },
     "main": {
       "type": "main-collection",
       "custom_css": [
@@ -84,48 +111,6 @@
         "sort_by": false,
         "show_image": false,
         "description_position": "top"
-      }
-    },
-    "collection_list_kRMzPG": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_JJpWHr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bikini-bottoms"
-          }
-        },
-        "featured_collection_bTwtmJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bikini-tops"
-          }
-        },
-        "featured_collection_KtXL6n": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "sleeveless-one-piece-swimsuits"
-          }
-        },
-        "featured_collection_9piizj": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "long-sleeve-one-piece-swimsuits"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_JJpWHr",
-        "featured_collection_bTwtmJ",
-        "featured_collection_KtXL6n",
-        "featured_collection_9piizj"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "title": "Swimwear",
-        "grid": 2,
-        "mobile_1pr": false,
-        "section_space": "top_and_bottom"
       }
     },
     "website_logos_E9qXB8": {
@@ -221,23 +206,7 @@
         "image_height": "none",
         "desktop_fixed_height": 500,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
-      }
-    },
-    "17117067475460922d": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_all_reviews_text_9UgX3B": {
-          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_all_reviews_text_9UgX3B"
-      ],
-      "settings": {
-        "display_wide": false
+        "section_space": "none"
       }
     },
     "1ed4ee22-f4e4-4956-9271-75427ba6965c": {
@@ -280,33 +249,194 @@
         "background_color": "#f7f7f7"
       }
     },
-    "rich_text_qfVp86": {
-      "type": "rich-text",
+    "editorial_columns_tyytjw": {
+      "type": "editorial-columns",
       "blocks": {
-        "text_block_BMpRhe": {
+        "text_block_AHHRL8": {
           "type": "text_block",
           "settings": {
-            "title": "",
-            "title_heading": false,
-            "accordion_enabled": false,
-            "text": "",
-            "page": "",
-            "center": false,
-            "block_width": 100,
-            "accordion_icon_color": "#000000",
-            "accordion_icon_size": 20
+            "image": "shopify://shop_images/surf-leggings-flores-fusion-legging-surf-leggings-ocean-soul-bali-midnightsnow-rib-xs-9.webp",
+            "link": "",
+            "title_text": "Sun Protection Essentials",
+            "text": "<p>UPF coverage and sun-safe accessories designed for long days outdoors. Stay protected without compromising on style.</p>",
+            "button_text": "Button"
+          }
+        },
+        "text_block_6kxQ77": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/resort-sarong-ocean-soul-sarong-resort-sarong-skirt-ocean-soul-bali-7.webp",
+            "link": "",
+            "title_text": "Beach Essentials",
+            "text": "<p>Your go-to pieces for every ocean day. Lightweight, functional, and designed to be worn on repeat.</p>",
+            "button_text": "Button"
+          }
+        },
+        "text_block_46rgx9": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify://shop_images/surf-shorts-the-sabu-surf-short-ocean-soul-bali-olive-s-4.webp",
+            "link": "",
+            "title_text": "Made for Movement",
+            "text": "<p>Accessories designed to move with you. Practical, comfortable, and built for an active lifestyle in and around the water.</p>",
+            "button_text": "Button"
           }
         }
       },
       "block_order": [
-        "text_block_BMpRhe"
+        "text_block_AHHRL8",
+        "text_block_6kxQ77",
+        "text_block_46rgx9"
+      ],
+      "name": "Editorial columns",
+      "settings": {
+        "title": "",
+        "center_align": true,
+        "image_height": "none",
+        "desktop_fixed_height": 200,
+        "mobile_fixed_height": 250,
+        "section_space": "none"
+      }
+    },
+    "image_with_text_cnGXRr": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/boyfriend-tee-the-banda-bamboo-t-shirt-ocean-soul-bali-snow-white-s-6.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 400,
+        "mobile_image_height": 400,
+        "title": "Why Women Love It",
+        "text": "<p></p><p>Designed to pair seamlessly with swimwear</p><p>Lightweight, functional, and easy to wear</p><p>Sun-safe pieces with added protection where it matters</p><p>Versatile essentials for beach, travel, and everyday use</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": false,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_aMTyXi": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/surf-leggings-flores-fusion-legging-ocean-soul-bali-sustainable-swimwear-901313.webp",
+        "image_position": "right",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "Designed for Performance & Comfort",
+        "text": "<p>Every piece is created with the same intention as our swimwear - to feel good, function effortlessly, and support your lifestyle. Thoughtful details and practical design make these accessories easy to wear all day.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_zzejMw": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/white-skirt-sarong-ocean-soul-bali_1e0a05a7-a82a-4012-8693-cafe9cba4a02.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 450,
+        "mobile_image_height": 450,
+        "title": "Sustainable. Made to Last.",
+        "text": "<p>We focus on quality over quantity. From consciously sourced materials to small-batch production, every piece is designed to last longer and reduce waste.</p><p>Because your beach accessories should be worn on repeat - not replaced every season.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "image_with_text_overlay_HXxXQX": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/black_sarong_meno_ocean_soul_bali.jpg",
+        "overlay": true,
+        "background_attachment": "scroll",
+        "height": 400,
+        "mobile_height": 400,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "Complete Your Swim Setup",
+        "subheading_text": "<p>Pair your swimwear with beach accessories designed to support every part of your day - in and out of the water.</p>",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#ffffff",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "collection_list_kRMzPG": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_JJpWHr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bikini-bottoms"
+          }
+        },
+        "featured_collection_bTwtmJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bikini-tops"
+          }
+        },
+        "featured_collection_KtXL6n": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sleeveless-one-piece-swimsuits"
+          }
+        },
+        "featured_collection_9piizj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "long-sleeve-one-piece-swimsuits"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_JJpWHr",
+        "featured_collection_bTwtmJ",
+        "featured_collection_KtXL6n",
+        "featured_collection_9piizj"
       ],
       "disabled": true,
+      "name": "Collection list",
       "settings": {
-        "padding": 60,
-        "text_color": "#000000",
-        "background_color": "#ffffff",
-        "comman_data_id": ""
+        "title": "Swimwear",
+        "grid": 4,
+        "mobile_1pr": false,
+        "section_space": "none"
+      }
+    },
+    "17117067475460922d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_9UgX3B": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_9UgX3B"
+      ],
+      "settings": {
+        "display_wide": false
       }
     },
     "instafeed_QAbEF6": {
@@ -336,7 +466,7 @@
         "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "surfing-swimsuits"
+            "collection": "one-piece-swimsuit"
           }
         },
         "template--14915046801497__f26cc161-299a-4e72-b685-5f171aefa332-1686291657b52ade79-0": {
@@ -363,8 +493,8 @@
       "type": "newsletter",
       "name": "Newsletter",
       "settings": {
-        "heading": "Join the Ocean Soul VIP List",
-        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
@@ -472,12 +602,17 @@
     "banner",
     "custom_liquid_x4YMDB",
     "slideshow_MGfREj",
-    "main",
-    "collection_list_kRMzPG",
-    "website_logos_E9qXB8",
-    "17117067475460922d",
-    "1ed4ee22-f4e4-4956-9271-75427ba6965c",
     "rich_text_qfVp86",
+    "main",
+    "website_logos_E9qXB8",
+    "1ed4ee22-f4e4-4956-9271-75427ba6965c",
+    "editorial_columns_tyytjw",
+    "image_with_text_cnGXRr",
+    "image_with_text_aMTyXi",
+    "image_with_text_zzejMw",
+    "image_with_text_overlay_HXxXQX",
+    "collection_list_kRMzPG",
+    "17117067475460922d",
     "instafeed_QAbEF6",
     "f26cc161-299a-4e72-b685-5f171aefa332",
     "newsletter_aFxYcg",
