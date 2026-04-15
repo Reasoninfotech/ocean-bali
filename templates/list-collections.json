@@ -372,7 +372,7 @@
       ],
       "settings": {
         "title": "Shop sustainable swimwear",
-        "grid": 2,
+        "grid": 3,
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
@@ -915,13 +915,13 @@
       "type": "newsletter",
       "name": "Newsletter",
       "settings": {
-        "heading": "Join the OSB fam",
-        "newsletter_subheading": "<p>Become a VIP for special offers and early access to all our releases.</p>",
+        "heading": "More than swimwear.",
+        "newsletter_subheading": "<p>Join for new releases, ocean lifestyle inspiration, and styles made for movement.</p>",
         "newsletter_gdpr_text": "",
         "color": "#606060",
         "background_color": "#f7f7f7",
         "section_space": "top_and_bottom",
-        "show_name_fields": false
+        "show_name_fields": true
       }
     },
     "featured_blog_AaxxkR": {
