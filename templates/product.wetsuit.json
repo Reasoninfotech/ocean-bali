@@ -537,6 +537,12 @@
     "collection_list_eEGjBM": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_xPYg8d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "long-sleeve-one-piece-swimsuits"
+          }
+        },
         "featured_collection_4LaNmx": {
           "type": "featured_collection",
           "settings": {
@@ -557,6 +563,7 @@
         }
       },
       "block_order": [
+        "featured_collection_xPYg8d",
         "featured_collection_4LaNmx",
         "featured_collection_cymfDQ",
         "featured_collection_fgEnem"
@@ -564,9 +571,9 @@
       "name": "Collection list",
       "settings": {
         "title": "Shop our Collections",
-        "grid": 3,
+        "grid": 4,
         "mobile_1pr": false,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "product-recommendations": {
@@ -592,7 +599,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "featured_collection_UhimpR": {
@@ -609,6 +616,19 @@
         "show_view_all_label": "",
         "section_space": "top_and_bottom"
       }
+    },
+    "newsletter_DYerpq": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "heading": "Finally - swimwear that stays on.",
+        "newsletter_subheading": "<p>Join for early access to new drops, exclusive offers, and pieces designed for real movement.</p>",
+        "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "section_space": "top_and_bottom",
+        "show_name_fields": true
+      }
     }
   },
   "order": [
@@ -623,6 +643,7 @@
     "collection_list_eEGjBM",
     "product-recommendations",
     "featured_blog_iXeeCJ",
-    "featured_collection_UhimpR"
+    "featured_collection_UhimpR",
+    "newsletter_DYerpq"
   ]
 }
