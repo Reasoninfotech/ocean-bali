@@ -141,160 +141,157 @@
           </div>
         </div>
 
-     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      // Dynamic parameters from Theme Customizer
-      let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
-      let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
-      let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Dynamic parameters from Theme Customizer
+              let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
+              let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
+              let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
 
-      const baseTarget1Amount = (isNaN(target1Set) || target1Set <= 0 ? 100 : target1Set) * 100;
-      const baseTarget2Amount = (isNaN(target2Set) || target2Set <= 0 ? 150 : target2Set) * 100;
-      const baseTarget3Amount = (isNaN(target3Set) || target3Set <= 0 ? 250 : target3Set) * 100;
+              const baseTarget1Amount = (isNaN(target1Set) || target1Set <= 0 ? 100 : target1Set) * 100;
+              const baseTarget2Amount = (isNaN(target2Set) || target2Set <= 0 ? 150 : target2Set) * 100;
+              const baseTarget3Amount = (isNaN(target3Set) || target3Set <= 0 ? 250 : target3Set) * 100;
 
-      let activeTarget1Amount = baseTarget1Amount;
-      let activeTarget2Amount = baseTarget2Amount;
-      let activeTarget3Amount = baseTarget3Amount;
+              let activeTarget1Amount = baseTarget1Amount;
+              let activeTarget2Amount = baseTarget2Amount;
+              let activeTarget3Amount = baseTarget3Amount;
 
-      const textTier1 = {{ section.settings.tier_1_text | default: "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!" | json }};
-      const textTier2 = {{ section.settings.tier_2_text | default: "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!" | json }};
-      const textTier3 = {{ section.settings.tier_3_text | default: "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!" | json }};
-      const textTier4 = {{ section.settings.tier_4_text | default: "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!" | json }};
-      const textTier5 = {{ section.settings.tier_5_text | default: "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!" | json }};
+              const textTier1 = {{ section.settings.tier_1_text | default: "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!" | json }};
+              const textTier2 = {{ section.settings.tier_2_text | default: "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!" | json }};
+              const textTier3 = {{ section.settings.tier_3_text | default: "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!" | json }};
+              const textTier4 = {{ section.settings.tier_4_text | default: "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!" | json }};
+              const textTier5 = {{ section.settings.tier_5_text | default: "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!" | json }};
 
-      let activeCurrency = 'AUD';
-      if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) {
-          activeCurrency = window.Shopify.currency.active;
-      }
+              let activeCurrency = 'AUD';
+              if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) {
+                  activeCurrency = window.Shopify.currency.active;
+              }
 
-      function formatMoneyElements() {
-          const elements = document.querySelectorAll(".format-money");
-          elements.forEach(function (el) {
-              let amountInCents = parseInt(el.dataset.amount);
-              if (!isNaN(amountInCents)) {
-                  try {
-                      const formatter = new Intl.NumberFormat(undefined, {
-                          style: 'currency',
-                          currency: activeCurrency,
-                          currencyDisplay: 'narrowSymbol',
-                          minimumFractionDigits: 2
-                      });
-                      el.innerText = formatter.format(amountInCents / 100);
-                  } catch (e) {
-                      if (window.Shopify && window.Shopify.formatMoney) {
-                          el.innerText = window.Shopify.formatMoney(amountInCents);
-                      } else {
-                          el.innerText = '$' + (amountInCents / 100).toFixed(2);
+              function formatMoneyElements() {
+                  const elements = document.querySelectorAll(".format-money");
+                  elements.forEach(function (el) {
+                      let amountInCents = parseInt(el.dataset.amount);
+                      if (!isNaN(amountInCents)) {
+                          try {
+                              const formatter = new Intl.NumberFormat(undefined, {
+                                  style: 'currency',
+                                  currency: activeCurrency,
+                                  currencyDisplay: 'narrowSymbol',
+                                  minimumFractionDigits: 2
+                              });
+                              el.innerText = formatter.format(amountInCents / 100);
+                          } catch (e) {
+                              if (window.Shopify && window.Shopify.formatMoney) {
+                                  el.innerText = window.Shopify.formatMoney(amountInCents);
+                              } else {
+                                  el.innerText = '$' + (amountInCents / 100).toFixed(2);
+                              }
+                          }
                       }
+                  });
+              }
+
+              function updateAnnouncementBar(cartTotalCents) {
+                  const containers = document.querySelectorAll(".js-dynamic-announcement");
+                  const fillBar = document.getElementById("announcement-progress-fill");
+                  if (!containers.length || !fillBar) return;
+
+                  let progress = (cartTotalCents / activeTarget3Amount) * 100;
+                  if (progress > 100) progress = 100;
+                  fillBar.style.width = progress + '%';
+
+                  let html = '';
+                  let fTarget1 = '<span class="format-money" data-amount="' + activeTarget1Amount + '"></span>';
+                  let fTarget2 = '<span class="format-money" data-amount="' + activeTarget2Amount + '"></span>';
+                  let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>';
+
+                  if (cartTotalCents === 0) {
+                      html = textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1);
+                  } else if (cartTotalCents < activeTarget1Amount) {
+                      let remaining = activeTarget1Amount - cartTotalCents;
+                      let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                      html = textTier2.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1).replace(/\[remaining_1\]/gi, fRemaining).replace(/\[remaining\]/gi, fRemaining);
+                  } else if (cartTotalCents < activeTarget2Amount) {
+                      let remaining = activeTarget2Amount - cartTotalCents;
+                      let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                      html = textTier3.replace(/\[target_2\]/gi, fTarget2).replace(/\[remaining_2\]/gi, fRemaining);
+                  } else if (cartTotalCents < activeTarget3Amount) {
+                      let remaining = activeTarget3Amount - cartTotalCents;
+                      let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
+                      html = textTier4.replace(/\[target_3\]/gi, fTarget3).replace(/\[remaining_3\]/gi, fRemaining);
+                  } else {
+                      html = textTier5;
+                  }
+
+                  containers.forEach(container => {
+                    container.innerHTML = html;
+                  });
+                  formatMoneyElements();
+              }
+
+              function loadCartAndUpdate() {
+                  fetch('/cart.js', { cache: 'no-store' })
+                      .then(response => response.json())
+                      .then(cart => {
+                          updateAnnouncementBar(cart.total_price);
+                      })
+                      .catch(e => console.error("Error fetching cart data:", e));
+              }
+
+              function initialize() {
+                  if (activeCurrency === 'AUD') {
+                      loadCartAndUpdate();
+                  } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
+                      activeTarget1Amount = Math.round(baseTarget1Amount * window.Shopify.currency.rate);
+                      activeTarget2Amount = Math.round(baseTarget2Amount * window.Shopify.currency.rate);
+                      activeTarget3Amount = Math.round(baseTarget3Amount * window.Shopify.currency.rate);
+                      loadCartAndUpdate();
+                  } else {
+                      fetch('https://open.er-api.com/v6/latest/AUD')
+                          .then(res => res.json())
+                          .then(data => {
+                              if (data && data.rates && data.rates[activeCurrency]) {
+                                  activeTarget1Amount = Math.round(baseTarget1Amount * data.rates[activeCurrency]);
+                                  activeTarget2Amount = Math.round(baseTarget2Amount * data.rates[activeCurrency]);
+                                  activeTarget3Amount = Math.round(baseTarget3Amount * data.rates[activeCurrency]);
+                              }
+                              loadCartAndUpdate();
+                          })
+                          .catch(e => {
+                              loadCartAndUpdate();
+                          });
                   }
               }
-          });
-      }
 
-      function updateAnnouncementBar(cartTotalCents) {
-          const containers = document.querySelectorAll(".js-dynamic-announcement");
-          const fillBar = document.getElementById("announcement-progress-fill");
-          if (!containers.length || !fillBar) return;
+              initialize();
 
-          let progress = (cartTotalCents / activeTarget3Amount) * 100;
-          if (progress > 100) progress = 100;
-          fillBar.style.width = progress + '%';
-
-          let html = '';
-          let fTarget1 = '<span class="format-money" data-amount="' + activeTarget1Amount + '"></span>';
-          let fTarget2 = '<span class="format-money" data-amount="' + activeTarget2Amount + '"></span>';
-          let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>';
-
-          if (cartTotalCents === 0) {
-              html = textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1);
-          } else if (cartTotalCents < activeTarget1Amount) {
-              let remaining = activeTarget1Amount - cartTotalCents;
-              let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-              html = textTier2.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1).replace(/\[remaining_1\]/gi, fRemaining).replace(/\[remaining\]/gi, fRemaining);
-          } else if (cartTotalCents < activeTarget2Amount) {
-              let remaining = activeTarget2Amount - cartTotalCents;
-              let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-              html = textTier3.replace(/\[target_2\]/gi, fTarget2).replace(/\[remaining_2\]/gi, fRemaining);
-          } else if (cartTotalCents < activeTarget3Amount) {
-              let remaining = activeTarget3Amount - cartTotalCents;
-              let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-              html = textTier4.replace(/\[target_3\]/gi, fTarget3).replace(/\[remaining_3\]/gi, fRemaining);
-          } else {
-              html = textTier5;
-          }
-
-          containers.forEach(container => {
-              container.innerHTML = html;
-          });
-          formatMoneyElements();
-      }
-
-      function loadCartAndUpdate() {
-          fetch('/cart.js', { cache: 'no-store' })
-              .then(response => response.json())
-              .then(cart => {
-                  updateAnnouncementBar(cart.total_price);
-              })
-              .catch(e => console.error("Error fetching cart data:", e));
-      }
-
-      // ⚡ KEY FIX: Instantly show default text before cart loads
-      function initialize() {
-          updateAnnouncementBar(0); // Show message instantly — no blank/flicker
-
-          if (activeCurrency === 'AUD') {
-              loadCartAndUpdate();
-          } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
-              activeTarget1Amount = Math.round(baseTarget1Amount * window.Shopify.currency.rate);
-              activeTarget2Amount = Math.round(baseTarget2Amount * window.Shopify.currency.rate);
-              activeTarget3Amount = Math.round(baseTarget3Amount * window.Shopify.currency.rate);
-              loadCartAndUpdate();
-          } else {
-              fetch('https://open.er-api.com/v6/latest/AUD')
-                  .then(res => res.json())
-                  .then(data => {
-                      if (data && data.rates && data.rates[activeCurrency]) {
-                          activeTarget1Amount = Math.round(baseTarget1Amount * data.rates[activeCurrency]);
-                          activeTarget2Amount = Math.round(baseTarget2Amount * data.rates[activeCurrency]);
-                          activeTarget3Amount = Math.round(baseTarget3Amount * data.rates[activeCurrency]);
+              // System Interceptors for AJAX Carts
+              const originalFetch = window.fetch;
+              window.fetch = function () {
+                  return originalFetch.apply(this, arguments).then(function (res) {
+                      const url = res.url || "";
+                      if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
+                          setTimeout(loadCartAndUpdate, 400);
                       }
-                      loadCartAndUpdate();
-                  })
-                  .catch(e => {
-                      loadCartAndUpdate();
+                      return res;
                   });
-          }
-      }
+              };
 
-      initialize();
+              const originalXHR = window.XMLHttpRequest.prototype.open;
+              window.XMLHttpRequest.prototype.open = function () {
+                  this.addEventListener('load', function () {
+                      const url = this.responseURL || "";
+                      if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
+                          setTimeout(loadCartAndUpdate, 400);
+                      }
+                  });
+                  originalXHR.apply(this, arguments);
+              };
 
-      // System Interceptors for AJAX Carts
-      const originalFetch = window.fetch;
-      window.fetch = function () {
-          return originalFetch.apply(this, arguments).then(function (res) {
-              const url = res.url || "";
-              if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
-                  setTimeout(loadCartAndUpdate, 400);
-              }
-              return res;
+              document.addEventListener('cart:updated', loadCartAndUpdate);
+              document.addEventListener('cart:refresh', loadCartAndUpdate);
           });
-      };
-
-      const originalXHR = window.XMLHttpRequest.prototype.open;
-      window.XMLHttpRequest.prototype.open = function () {
-          this.addEventListener('load', function () {
-              const url = this.responseURL || "";
-              if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
-                  setTimeout(loadCartAndUpdate, 400);
-              }
-          });
-          originalXHR.apply(this, arguments);
-      };
-
-      document.addEventListener('cart:updated', loadCartAndUpdate);
-      document.addEventListener('cart:refresh', loadCartAndUpdate);
-  });
-</script>
+        </script>
       </div>
     {% endif %}
 
