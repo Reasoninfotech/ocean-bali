@@ -70,7 +70,7 @@
               {% capture dynamic_message %}
                 <span class="js-dynamic-announcement" style="white-space: nowrap; color: rgb(46, 102, 136);">
                   {% if cart.item_count > 0 or current_currency != 'AUD' %}
-                    {% comment %} <span class="wave-loader"><span></span><span></span><span></span></span> {% endcomment %}
+                    <span class="wave-loader"><span></span><span></span><span></span></span>
                   {% else %}
                     {% capture formatted_target_1 %}
                       <span class="format-money" data-amount="{{ target_1_amount }}">{{ target_1_amount | money }}</span>
