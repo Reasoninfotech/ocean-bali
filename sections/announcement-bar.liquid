@@ -144,6 +144,13 @@
        <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ✅ FIX: Remove dots/loader instantly
+    const announcementEls = document.querySelectorAll('.js-dynamic-announcement');
+    announcementEls.forEach(el => {
+        el.innerHTML = '';
+        el.style.visibility = 'hidden';
+    });
+
     // Dynamic parameters from Theme Customizer
     let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
     let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
@@ -227,65 +234,26 @@ document.addEventListener("DOMContentLoaded", function () {
             html = textTier5;
         }
 
+        // ✅ FIX: show only after content ready
         containers.forEach(container => {
             container.innerHTML = html;
+            container.style.visibility = 'visible';
         });
 
         formatMoneyElements();
-    }
-
-    // ✅ NEW: Instant render (no loader delay)
-    function instantRenderFallback() {
-        try {
-            const cachedTotal = sessionStorage.getItem('cart_total_cents');
-            if (cachedTotal !== null) {
-                updateAnnouncementBar(parseInt(cachedTotal));
-            } else {
-                updateAnnouncementBar(0);
-            }
-        } catch (e) {
-            updateAnnouncementBar(0);
-        }
     }
 
     function loadCartAndUpdate() {
         fetch('/cart.js', { cache: 'no-store' })
             .then(response => response.json())
             .then(cart => {
-                // ✅ cache for next load
-                sessionStorage.setItem('cart_total_cents', cart.total_price);
                 updateAnnouncementBar(cart.total_price);
             })
             .catch(e => console.error("Error fetching cart data:", e));
     }
 
     function initialize() {
-
-        // ✅ INSTANT UI (fix loader delay)
-        instantRenderFallback();
-
-        if (activeCurrency === 'AUD') {
-            loadCartAndUpdate();
-        } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
-            activeTarget1Amount = Math.round(baseTarget1Amount * window.Shopify.currency.rate);
-            activeTarget2Amount = Math.round(baseTarget2Amount * window.Shopify.currency.rate);
-            activeTarget3Amount = Math.round(baseTarget3Amount * window.Shopify.currency.rate);
-            loadCartAndUpdate();
-        } else {
-            fetch('https://open.er-api.com/v6/latest/AUD')
-                .then(res => res.json())
-                .then(data => {
-                    if (data && data.rates && data.rates[activeCurrency]) {
-                        activeTarget1Amount = Math.round(baseTarget1Amount * data.rates[activeCurrency]);
-                        activeTarget2Amount = Math.round(baseTarget2Amount * data.rates[activeCurrency]);
-                        activeTarget3Amount = Math.round(baseTarget3Amount * data.rates[activeCurrency]);
-                    }
-                    loadCartAndUpdate();
-                })
-                .catch(e => {
-                    loadCartAndUpdate();
-                });
-        }
+        loadCartAndUpdate();
     }
 
     initialize();
