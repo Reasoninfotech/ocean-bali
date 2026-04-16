@@ -70,7 +70,7 @@
               {% capture dynamic_message %}
                 <span class="js-dynamic-announcement" style="white-space: nowrap; color: rgb(46, 102, 136);">
                   {% if cart.item_count > 0 or current_currency != 'AUD' %}
-                    <span class="skeleton-loader"></span>
+                    <span class="wave-loader"><span></span><span></span><span></span></span>
                   {% else %}
                     {% capture formatted_target_1 %}
                       <span class="format-money" data-amount="{{ target_1_amount }}">{{ target_1_amount | money }}</span>
@@ -143,6 +143,7 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function () {
+              // Dynamic parameters from Theme Customizer
               let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
               let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
               let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
@@ -228,37 +229,16 @@
                   formatMoneyElements();
               }
 
-              function setScrolling(enabled) {
-                  const marquee = document.querySelector('.announcement-marquee__inner');
-                  const container = document.getElementById('announcement-text-container');
-                  if (marquee) {
-                    marquee.style.animationPlayState = enabled ? 'running' : 'paused';
-                  }
-                  if (container) {
-                    if (!enabled) {
-                      container.classList.add('is-loading');
-                    } else {
-                      container.classList.remove('is-loading');
-                    }
-                  }
-              }
-
               function loadCartAndUpdate() {
-                  setScrolling(false);
                   fetch('/cart.js', { cache: 'no-store' })
                       .then(response => response.json())
                       .then(cart => {
                           updateAnnouncementBar(cart.total_price);
-                          setScrolling(true);
                       })
-                      .catch(e => {
-                        console.error("Error fetching cart data:", e);
-                        setScrolling(true);
-                      });
+                      .catch(e => console.error("Error fetching cart data:", e));
               }
 
               function initialize() {
-                  setScrolling(false);
                   if (activeCurrency === 'AUD') {
                       loadCartAndUpdate();
                   } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
@@ -284,6 +264,8 @@
               }
 
               initialize();
+
+              // System Interceptors for AJAX Carts
               const originalFetch = window.fetch;
               window.fetch = function () {
                   return originalFetch.apply(this, arguments).then(function (res) {
@@ -461,33 +443,17 @@
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
-    .skeleton-loader {
-      display: inline-block;
-      width: 180px;
-      height: 12px;
-      background: linear-gradient(90deg, #d0e4ef 25%, #b0cfe0 50%, #d0e4ef 75%);
-      background-size: 200% 100%;
-      border-radius: 6px;
-      animation: skeleton-shimmer 1.5s infinite;
-      vertical-align: middle;
+    .wave-loader { display: inline-flex; align-items: center; gap: 3px; }
+    .wave-loader span {
+      display: inline-block; width: 5px; height: 5px;
+      background-color: rgb(46, 102, 136);
+      border-radius: 50%; animation: wave-bounce 1.4s infinite ease-in-out both;
     }
-    @keyframes skeleton-shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    #announcement-text-container.is-loading .announcement-marquee__inner,
-    #announcement-text-container.is-loading .announcement-static__wrapper > div {
-      animation: none !important;
-      transform: none !important;
-      justify-content: center !important;
-      width: 100% !important;
-    }
-    #announcement-text-container.is-loading .announcement-marquee__inner > *:not(:first-child),
-    #announcement-text-container.is-loading .announcement-static__wrapper > div > *:not(p:first-child) {
-      display: none !important;
-    }
-    #announcement-text-container.is-loading .js-dynamic-announcement {
-      padding: 0 !important;
+    .wave-loader span:nth-child(1) { animation-delay: -0.32s; }
+    .wave-loader span:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes wave-bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
     }
     .announcement__bar-section .gridlock-fluid .grid__wrapper { max-width: 100%; }
     .announcement__bar-section button, 
