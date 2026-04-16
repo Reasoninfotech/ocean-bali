@@ -142,11 +142,29 @@
         </div>
 
        <script>
+// ✅ STEP 1: PREVENT LOADER BEFORE RENDER (VERY IMPORTANT)
+(function() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .js-dynamic-announcement {
+            visibility: hidden !important;
+        }
+        .js-dynamic-announcement::before,
+        .js-dynamic-announcement::after {
+            display: none !important;
+            content: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+</script>
+
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const containers = document.querySelectorAll('.js-dynamic-announcement');
 
-    // ✅ STEP 1: SHOW INSTANT DEFAULT TEXT (no loader, no blank)
+    // ✅ STEP 2: SHOW INSTANT DEFAULT TEXT (no blank, no loader)
     const defaultText = "FREE EXPRESS SHIPPING ON ORDERS OVER $100!";
     containers.forEach(el => {
         el.innerText = defaultText;
@@ -227,8 +245,10 @@ document.addEventListener("DOMContentLoaded", function () {
             html = textTier5;
         }
 
+        // ✅ FINAL SHOW (no loader, direct text)
         containers.forEach(container => {
             container.innerHTML = html;
+            container.style.visibility = 'visible';
         });
 
         formatMoneyElements();
@@ -239,6 +259,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(cart => {
                 updateAnnouncementBar(cart.total_price);
+            })
+            .catch(() => {
+                // fallback show default
+                containers.forEach(el => el.style.visibility = 'visible');
             });
     }
 
