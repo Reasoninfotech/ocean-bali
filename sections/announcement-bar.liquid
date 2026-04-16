@@ -144,14 +144,15 @@
        <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ✅ FIX: Remove dots/loader instantly
-    const announcementEls = document.querySelectorAll('.js-dynamic-announcement');
-    announcementEls.forEach(el => {
-        el.innerHTML = '';
-        el.style.visibility = 'hidden';
+    const containers = document.querySelectorAll('.js-dynamic-announcement');
+
+    // ✅ STEP 1: SHOW INSTANT DEFAULT TEXT (no loader, no blank)
+    const defaultText = "FREE EXPRESS SHIPPING ON ORDERS OVER $100!";
+    containers.forEach(el => {
+        el.innerText = defaultText;
     });
 
-    // Dynamic parameters from Theme Customizer
+    // Dynamic parameters
     let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
     let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
     let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
@@ -189,18 +190,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                     el.innerText = formatter.format(amountInCents / 100);
                 } catch (e) {
-                    if (window.Shopify && window.Shopify.formatMoney) {
-                        el.innerText = window.Shopify.formatMoney(amountInCents);
-                    } else {
-                        el.innerText = '$' + (amountInCents / 100).toFixed(2);
-                    }
+                    el.innerText = '$' + (amountInCents / 100).toFixed(2);
                 }
             }
         });
     }
 
     function updateAnnouncementBar(cartTotalCents) {
-        const containers = document.querySelectorAll(".js-dynamic-announcement");
         const fillBar = document.getElementById("announcement-progress-fill");
         if (!containers.length || !fillBar) return;
 
@@ -214,30 +210,25 @@ document.addEventListener("DOMContentLoaded", function () {
         let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>';
 
         if (cartTotalCents === 0) {
-            html = textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1);
+            html = textTier1.replace(/\[target_1\]/gi, fTarget1);
         } else if (cartTotalCents < activeTarget1Amount) {
             let remaining = activeTarget1Amount - cartTotalCents;
             let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-            html = textTier2.replace(/\[target_1\]/gi, fTarget1)
-                .replace(/\[amount\]/gi, fTarget1)
-                .replace(/\[remaining_1\]/gi, fRemaining)
-                .replace(/\[remaining\]/gi, fRemaining);
+            html = textTier2.replace(/\[remaining_1\]/gi, fRemaining);
         } else if (cartTotalCents < activeTarget2Amount) {
             let remaining = activeTarget2Amount - cartTotalCents;
             let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-            html = textTier3.replace(/\[target_2\]/gi, fTarget2).replace(/\[remaining_2\]/gi, fRemaining);
+            html = textTier3.replace(/\[remaining_2\]/gi, fRemaining);
         } else if (cartTotalCents < activeTarget3Amount) {
             let remaining = activeTarget3Amount - cartTotalCents;
             let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
-            html = textTier4.replace(/\[target_3\]/gi, fTarget3).replace(/\[remaining_3\]/gi, fRemaining);
+            html = textTier4.replace(/\[remaining_3\]/gi, fRemaining);
         } else {
             html = textTier5;
         }
 
-        // ✅ FIX: show only after content ready
         containers.forEach(container => {
             container.innerHTML = html;
-            container.style.visibility = 'visible';
         });
 
         formatMoneyElements();
@@ -248,41 +239,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(cart => {
                 updateAnnouncementBar(cart.total_price);
-            })
-            .catch(e => console.error("Error fetching cart data:", e));
+            });
     }
 
-    function initialize() {
-        loadCartAndUpdate();
-    }
-
-    initialize();
-
-    // AJAX Interceptors
-    const originalFetch = window.fetch;
-    window.fetch = function () {
-        return originalFetch.apply(this, arguments).then(function (res) {
-            const url = res.url || "";
-            if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
-                setTimeout(loadCartAndUpdate, 400);
-            }
-            return res;
-        });
-    };
-
-    const originalXHR = window.XMLHttpRequest.prototype.open;
-    window.XMLHttpRequest.prototype.open = function () {
-        this.addEventListener('load', function () {
-            const url = this.responseURL || "";
-            if (url.includes('/cart/add') || url.includes('/cart/change') || url.includes('/cart/update') || url.includes('/cart/clear')) {
-                setTimeout(loadCartAndUpdate, 400);
-            }
-        });
-        originalXHR.apply(this, arguments);
-    };
-
-    document.addEventListener('cart:updated', loadCartAndUpdate);
-    document.addEventListener('cart:refresh', loadCartAndUpdate);
+    loadCartAndUpdate();
 
 });
 </script>
