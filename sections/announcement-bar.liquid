@@ -61,7 +61,6 @@
             assign target_1_amount = base_target_1 | times: 100
             assign tier_1_default = 'FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!'
             assign tier_1_text = section.settings.tier_1_text | default: tier_1_default
-            assign current_currency = localization.country.currency.iso_code | default: 'AUD'
           -%}
 
           <div id="announcement-text-container" style="overflow: hidden; width: 100%;">
@@ -69,14 +68,10 @@
               
               {% capture dynamic_message %}
                 <span class="js-dynamic-announcement" style="white-space: nowrap; color: rgb(46, 102, 136);">
-                  {% if cart.item_count > 0 or current_currency != 'AUD' %}
-                    <span class="wave-loader"><span></span><span></span><span></span></span>
-                  {% else %}
-                    {% capture formatted_target_1 %}
-                      <span class="format-money" data-amount="{{ target_1_amount }}">{{ target_1_amount | money }}</span>
-                    {% endcapture %}
-                    {{ tier_1_text | replace: '[target_1]', formatted_target_1 | replace: '[TARGET_1]', formatted_target_1 | replace: '[amount]', formatted_target_1 | replace: '[AMOUNT]', formatted_target_1 }}
-                  {% endif %}
+                  {% capture formatted_target_1 %}
+                    <span class="format-money" data-amount="{{ target_1_amount }}">{{ target_1_amount | money }}</span>
+                  {% endcapture %}
+                  {{ tier_1_text | replace: '[target_1]', formatted_target_1 | replace: '[TARGET_1]', formatted_target_1 | replace: '[amount]', formatted_target_1 | replace: '[AMOUNT]', formatted_target_1 }}
                 </span>
               {% endcapture %}
 
@@ -143,7 +138,6 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function () {
-              // Dynamic parameters from Theme Customizer
               let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
               let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
               let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
@@ -224,7 +218,7 @@
                   }
 
                   containers.forEach(container => {
-                    container.innerHTML = html;
+                      container.innerHTML = html;
                   });
                   formatMoneyElements();
               }
@@ -238,7 +232,10 @@
                       .catch(e => console.error("Error fetching cart data:", e));
               }
 
+              // ⚡ KEY FIX: Instant render - no wave loader, no blank screen
               function initialize() {
+                  updateAnnouncementBar(0); // Instantly show Tier 1 text
+
                   if (activeCurrency === 'AUD') {
                       loadCartAndUpdate();
                   } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
@@ -295,9 +292,7 @@
       </div>
     {% endif %}
 
-    <ul
-      class="cart-links__wrapper {{ side_grid }} auto sm-hide v-center a-right"
-    >
+    <ul class="cart-links__wrapper {{ side_grid }} auto sm-hide v-center a-right">
       {%- if hd_locale_selector -%}
         <li class="lang-selector">
           <div class="selectors-form__item">
@@ -442,18 +437,6 @@
     @keyframes scroll-announcement {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
-    }
-    .wave-loader { display: inline-flex; align-items: center; gap: 3px; }
-    .wave-loader span {
-      display: inline-block; width: 5px; height: 5px;
-      background-color: rgb(46, 102, 136);
-      border-radius: 50%; animation: wave-bounce 1.4s infinite ease-in-out both;
-    }
-    .wave-loader span:nth-child(1) { animation-delay: -0.32s; }
-    .wave-loader span:nth-child(2) { animation-delay: -0.16s; }
-    @keyframes wave-bounce {
-      0%, 80%, 100% { transform: scale(0); }
-      40% { transform: scale(1); }
     }
     .announcement__bar-section .gridlock-fluid .grid__wrapper { max-width: 100%; }
     .announcement__bar-section button, 
