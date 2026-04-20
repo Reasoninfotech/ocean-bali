@@ -102,17 +102,26 @@
   {% if section.settings.show_circles %}
   <div class="osb-circles">
     {% if section.settings.circle_1 != blank %}
-    <div class="osb-circle">{{ section.settings.circle_1 | image_url: width: 200 | image_tag: loading: 'lazy' }}</div>
+    {%- capture circle_1_src -%}
+      {% render 'imagekit', src: section.settings.circle_1 | image_url: width: 200 %}
+    {%- endcapture -%}
+    <div class="osb-circle"><img src="{{ circle_1_src | strip }}" loading="lazy" alt=""></div>
     {% else %}
     <div class="osb-circle" style="background:#eaf2f8;"></div>
     {% endif %}
     {% if section.settings.circle_2 != blank %}
-    <div class="osb-circle">{{ section.settings.circle_2 | image_url: width: 200 | image_tag: loading: 'lazy' }}</div>
+    {%- capture circle_2_src -%}
+      {% render 'imagekit', src: section.settings.circle_2 | image_url: width: 200 %}
+    {%- endcapture -%}
+    <div class="osb-circle"><img src="{{ circle_2_src | strip }}" loading="lazy" alt=""></div>
     {% else %}
     <div class="osb-circle" style="background:#c5dcea;"></div>
     {% endif %}
     {% if section.settings.circle_3 != blank %}
-    <div class="osb-circle">{{ section.settings.circle_3 | image_url: width: 200 | image_tag: loading: 'lazy' }}</div>
+    {%- capture circle_3_src -%}
+      {% render 'imagekit', src: section.settings.circle_3 | image_url: width: 200 %}
+    {%- endcapture -%}
+    <div class="osb-circle"><img src="{{ circle_3_src | strip }}" loading="lazy" alt=""></div>
     {% else %}
     <div class="osb-circle" style="background:#f4f8fb;"></div>
     {% endif %}

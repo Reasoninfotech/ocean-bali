@@ -225,13 +225,15 @@
 
     {%- comment -%} Thumbnail — z-index 3, covers video until play {%- endcomment -%}
     {% if section.settings.video_thumbnail != blank %}
-      {{- section.settings.video_thumbnail
-          | image_url: width: 1200
-          | image_tag:
-              class: 'osb-vid-thumb',
-              loading: 'lazy',
-              alt: 'Video thumbnail',
-              id: 'osb-thumb-' | append: section.id -}}
+      {%- capture video_thumbnail_src -%}
+        {% render 'imagekit', src: section.settings.video_thumbnail | image_url: width: 1200 %}
+      {%- endcapture -%}
+      <img
+        src="{{ video_thumbnail_src | strip }}"
+        class="osb-vid-thumb"
+        loading="lazy"
+        alt="Video thumbnail"
+        id="osb-thumb-{{ section.id }}">
     {% endif %}
 
     {%- comment -%} Play / Pause overlay — z-index 10 {%- endcomment -%}
@@ -363,7 +365,10 @@
       <div class="osb-step" {{ block.shopify_attributes }}>
         <div class="osb-step-img">
           {% if block.settings.step_image != blank %}
-            {{ block.settings.step_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.step_title }}
+            {%- capture step_image_src -%}
+              {% render 'imagekit', src: block.settings.step_image | image_url: width: 600 %}
+            {%- endcapture -%}
+            <img src="{{ step_image_src | strip }}" loading="lazy" alt="{{ block.settings.step_title | escape }}">
           {% endif %}
         </div>
         <div class="osb-step-body">

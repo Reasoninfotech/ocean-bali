@@ -169,7 +169,10 @@
 
     <div class="osb-why-img">
       {% if section.settings.section_image != blank %}
-        {{ section.settings.section_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.section_image.alt }}
+        {%- capture why_us_image_src -%}
+          {% render 'imagekit', src: section.settings.section_image | image_url: width: 800 %}
+        {%- endcapture -%}
+        <img src="{{ why_us_image_src | strip }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
       {% else %}
         <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload product lifestyle image</p>
       {% endif %}
