@@ -162,40 +162,40 @@
         "comman_data_id": ""
       }
     },
-    "collection_list_HA6yWa": {
+    "collection_list_8zDcrF": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_RwHPFm": {
+        "featured_collection_W6qQJc": {
           "type": "featured_collection",
           "settings": {
             "collection": "best-seller"
           }
         },
-        "featured_collection_7AjPHQ": {
+        "featured_collection_8i38dg": {
           "type": "featured_collection",
           "settings": {
             "collection": "surfing-swimsuits"
           }
         },
-        "featured_collection_8MA7iQ": {
+        "featured_collection_8PDHLG": {
           "type": "featured_collection",
           "settings": {
             "collection": "upf-swimwear"
           }
         },
-        "featured_collection_VpA9FK": {
+        "featured_collection_QW4ywG": {
           "type": "featured_collection",
           "settings": {
             "collection": "one-piece-swimsuit"
           }
         },
-        "featured_collection_GkyhCN": {
+        "featured_collection_PJaqkw": {
           "type": "featured_collection",
           "settings": {
             "collection": "seamless-bikinis"
           }
         },
-        "featured_collection_N7Fwth": {
+        "featured_collection_jzCKWe": {
           "type": "featured_collection",
           "settings": {
             "collection": "beach-resort-wear"
@@ -203,12 +203,12 @@
         }
       },
       "block_order": [
-        "featured_collection_RwHPFm",
-        "featured_collection_7AjPHQ",
-        "featured_collection_8MA7iQ",
-        "featured_collection_VpA9FK",
-        "featured_collection_GkyhCN",
-        "featured_collection_N7Fwth"
+        "featured_collection_W6qQJc",
+        "featured_collection_8i38dg",
+        "featured_collection_8PDHLG",
+        "featured_collection_QW4ywG",
+        "featured_collection_PJaqkw",
+        "featured_collection_jzCKWe"
       ],
       "name": "Collection list",
       "settings": {
@@ -689,7 +689,7 @@
   "order": [
     "re_hero_banner_kgcNyf",
     "b3b87d13-30ab-4118-ad40-e3ad445f1eab",
-    "collection_list_HA6yWa",
+    "collection_list_8zDcrF",
     "text_with_icons_f69zUB",
     "image_with_text_w86UPn",
     "website_logos_A7LRzy",
