@@ -21,46 +21,57 @@
           {% for media in product.media %}
             <div class="{{ media.media_type }}-thumbnail product-single__thumbnails-item carousel-cell {% if forloop.first %}is-nav-selected{% endif %} js-thumb-item thumb__{% if forloop.first %}first{% elsif forloop.last %}last{% endif %}" data-slide-index="{{ forloop.index0 }}"
             data-image-id="{{ media.id }}" tabindex="0">
-              <div class="product-single__thumbnail lazyload  product-single__thumbnail--{{ section.id }} js-thumb-item-img-wrap" data-thumbnail-id="product-template-{{ media.id }}">
-                {%- capture thumbnail_src -%}
-                  {% render 'imagekit', src: media | image_url: width: 200 %}
-                {%- endcapture -%}
+              {% assign thumb_raw = media | image_url: width: 200 %}
+            {% capture thumb_ik %}{% render 'imagekit', src: thumb_raw %}{% endcapture %}
+            {% assign thumb_ik = thumb_ik | strip %}
+            
+            {% assign thumb_ns_raw = media | image_url: width: 100 %}
+{% capture thumb_ns_ik %}{% render 'imagekit', src: thumb_ns_raw %}{% endcapture %}
+            {% assign thumb_ns_ik = thumb_ns_ik | strip %}
+            
+            <div class="product-single__thumbnail lazyload product-single__thumbnail--{{ section.id }} js-thumb-item-img-wrap" data-thumbnail-id="product-template-{{ media.id }}">
+              <img
+                src="{{ thumb_ik }}"
+                class="js-thumb-item-img"
+                data-image-id="{{ media.id }}"
+                width="{{ media.preview_image.width }}"
+                height="{{ media.preview_image.height }}"
+                alt="{{ media.alt | escape }}"
+                loading="lazy"
+              >
+              <noscript>
                 <img
-                  src="{{ thumbnail_src | strip }}"
-                  class="js-thumb-item-img"
-                  data-image-id="{{ media.id }}"
-                  alt="{{ media.alt | escape }}">
-                <noscript>
-                  {%- capture thumbnail_noscript_src -%}
-                    {% render 'imagekit', src: media | image_url: width: 100 %}
-                  {%- endcapture -%}
-                  <img src="{{ thumbnail_noscript_src | strip }}" alt="{{ media.alt | escape }}">
-                </noscript>
-                {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
-                  <div class="thumbnail-icon ">
-                    {% render 'snip-icons',
-                       wrapper: '.thumbnail-icon',
-                       type: 'media-icons',
-                       icon: 'play',
-                       classes: 'thumbnail-icon-video--icon vib-center',
-                       size: '25px',
-                       fill: 'var(--text-color)',
-                       hover: 'var(--text-color)' %}
-                  </div>
-                {%- endif -%}
-                {%- if media.media_type == 'model' -%}
-                  <div class="thumbnail-icon">
-                    {% render 'snip-icons',
-                       wrapper: '.thumbnail-icon',
-                       type: 'media-icons',
-                       icon: '3d-icon',
-                       classes: 'thumbnail-icon-model--icon vib-center',
-                       size: '25px',
-                       fill: 'var(--text-color)',
-                       hover: 'var(--text-color)' %}
-                  </div>
-                {%- endif -%}
-              </div>
+                  src="{{ thumb_ns_ik }}"
+                  alt="{{ media.alt | escape }}"
+                >
+              </noscript>
+            
+              {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                <div class="thumbnail-icon">
+                  {% render 'snip-icons',
+                     wrapper: '.thumbnail-icon',
+                     type: 'media-icons',
+                     icon: 'play',
+                     classes: 'thumbnail-icon-video--icon vib-center',
+                     size: '25px',
+                     fill: 'var(--text-color)',
+                     hover: 'var(--text-color)' %}
+                </div>
+              {%- endif -%}
+            
+              {%- if media.media_type == 'model' -%}
+                <div class="thumbnail-icon">
+                  {% render 'snip-icons',
+                     wrapper: '.thumbnail-icon',
+                     type: 'media-icons',
+                     icon: '3d-icon',
+                     classes: 'thumbnail-icon-model--icon vib-center',
+                     size: '25px',
+                     fill: 'var(--text-color)',
+                     hover: 'var(--text-color)' %}
+                </div>
+              {%- endif -%}
+            </div>
             </div>
           {% endfor %}
         </div>
@@ -98,21 +109,29 @@
           data-media-id="product-template-{{ media.id }}">
             {% case media.media_type %}
               {% when 'image' %}
-                {%- capture zoom_src -%}
-                  {% render 'imagekit', src: media | image_url: width: 2400 %}
-                {%- endcapture -%}
+                {% assign zoom_raw = media | image_url: width: 2400 %}
+                {% capture zoom_ik %}{% render 'imagekit', src: zoom_raw %}{% endcapture %}
+                {% assign zoom_ik = zoom_ik | strip %}
+
+                {% assign img_raw = media | image_url: width: 2400 %}
+                {% capture img_ik %}{% render 'imagekit', src: img_raw %}{% endcapture %}
+                {% assign img_ik = img_ik | strip %}
+
                 {% assign alt_value = media.alt | escape %}
-                {%- capture main_image_src -%}
-                  {% render 'imagekit', src: media | image_url: width: 2400 %}
-                {%- endcapture -%}
+
                 <img
-                  src="{{ main_image_src | strip }}"
+                  src="{{ img_ik }}"
                   class="product__image"
-                  data-zoom-src="{{ zoom_src | strip }}"
+                  data-zoom-src="{{ zoom_ik }}"
                   data-aspectratio="{{ media.preview_image.aspect_ratio }}"
                   data-width="{{ media.preview_image.width }}"
                   data-height="{{ media.preview_image.height }}"
-                  alt="{{ alt_value }}">
+                  alt="{{ alt_value }}"
+                  width="{{ media.preview_image.width }}"
+                  height="{{ media.preview_image.height }}"
+                  loading="lazy"
+                >
+
                 {% if click_to_enlarge and template != 'product.quick' %}
                   <a class="zoom_btn"
                      href=""
@@ -137,37 +156,25 @@
                   {{ media | external_video_tag }}
                 </div>
               {% when 'video' %}
-                {%- capture poster_360 -%}
-                  {% render 'imagekit', src: media.preview_image | image_url: width: 360 %}
-                {%- endcapture -%}
-                {%- capture poster_900 -%}
-                  {% render 'imagekit', src: media.preview_image | image_url: width: 900 %}
-                {%- endcapture -%}
-                {%- capture poster_1080 -%}
-                  {% render 'imagekit', src: media.preview_image | image_url: width: 1080 %}
-                {%- endcapture -%}
-                {%- capture poster_2048 -%}
-                  {% render 'imagekit', src: media.preview_image | image_url: width: 2048 %}
-                {%- endcapture -%}
                 {% style %}
                   @media screen and (max-width: 320px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ poster_360 | strip }}) !important;
+                      background-image: url({{ media.preview_image | image_url: width: 360}}) !important;
                     }
                   }
                   @media screen and (min-width: 320px) and (max-width: 780px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ poster_900 | strip }}) !important;
+                      background-image: url({{ media.preview_image | image_url: width: 900}}) !important;
                     }
                   }
                   @media screen and (min-width: 780px) and (max-width: 1080px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ poster_1080 | strip }}) !important;
+                      background-image: url({{ media.preview_image | image_url: width: 1080}}) !important;
                     }
                   }
                   @media screen and (min-width: 1080px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ poster_2048 | strip }}) !important;
+                      background-image: url({{ media.preview_image | image_url: width: 2048}}) !important;
                     }
                   }
                 {% endstyle %}
@@ -182,14 +189,11 @@
           </div>
           <noscript>
             {% assign alt_value = media.alt | escape %}
-            {%- capture noscript_main_src -%}
-              {% render 'imagekit', src: media | image_url: width: 800 %}
-            {%- endcapture -%}
-            <img
-              src="{{ noscript_main_src | strip }}"
-              id="{{ media.id }}"
-              class="product-main-image"
-              alt="{{ alt_value }}">
+            {{ media | image_url: width: 800 | image_tag:
+               id: media.id,
+               class: 'product-main-image',
+               alt: alt_value
+            }}
           </noscript>
         </div>
       {% endfor %}
