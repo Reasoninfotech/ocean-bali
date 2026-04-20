@@ -34,15 +34,26 @@
       {%- liquid
 
         assign has_link = false
+        assign use_custom_image = false
 
         if block.settings.link != blank
           assign has_link = true
         endif
 
+        if block.settings.image != blank
+          capture block_image_url
+            echo block.settings.image | image_url: width: 160
+          endcapture
+
+          unless block_image_url contains 'UPF_UV_Asset.jpg' or block_image_url contains 'Sustainable.jpg' or block_image_url contains 'Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg'
+            assign use_custom_image = true
+          endunless
+        endif
+
       -%}
 
         <div class="text__block center {{ grid }} sm-span-6 auto" {{ block.shopify_attributes }}>
-          {% if block.settings.image == blank %}
+          {% if use_custom_image == false %}
             <div class="text__block-icon">
               {% if has_link %}<a href="{{ block.settings.link }}" title="{{ block.settings.text | escape }}">{% endif %}
               {% render 'snip-icons',

@@ -6,19 +6,19 @@
   {% capture collection_title %}{{ collection.title }}{% endcapture %}
 {% endif %}
 
+{% assign collection_image_source = blank %}
+{% if collection.products.first and collection.products.first.media != empty %}
+  {% assign collection_image_source = collection.products.first.featured_media.preview_image %}
+{% elsif collection.image %}
+  {% assign collection_image_source = collection.image %}
+{% endif %}
+
 <div class="collection__item-image collection--image_{{ aspect_ratio }}">
   <a href="{{ collection.url }}" title="{{ collection_title }}">
-    {% if collection.image %}
+    {% if collection_image_source %}
       {%
         render 'basic-responsive-image',
-        type: collection.image,
-        width: 1200,
-        
-      %}
-    {% elsif collection.products.first and collection.products.first.media != empty %}
-      {%
-        render 'basic-responsive-image',
-        type: collection.products.first.featured_media.preview_image,
+        type: collection_image_source,
         width: 1200,
         
       %}

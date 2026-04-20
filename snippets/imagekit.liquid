@@ -1,6 +1,7 @@
 {% assign raw_src = src | default: '' | strip %}
 {% assign final_src = raw_src %}
-{% assign imagekit_url = settings.imagekitUrl | default: '' | strip %}
+{% assign default_imagekit_url = 'https://ik.imagekit.io/wtqxrwpxd' %}
+{% assign imagekit_url = settings.imagekitUrl | default: default_imagekit_url | strip %}
 {% assign imagekit_toggle_is_off = false %}
 
 {% if settings.enableImageKit == false and settings.enableImageKit != blank %}
@@ -30,7 +31,14 @@
       {% if src_prefix_10 == '/cdn/shop/' or src_prefix_7 == '/files/' or src_prefix_9 == '/s/files/' %}
         {% assign final_src = imagekit_url | append: normalized_src %}
       {% else %}
-        {% assign cdn_urls = settings.imagekitShopifyCdnUrl | default: '//cdn2.shopify.com,//cdn.shopify.com,//cdn.shopifycloud.com,//oceansoulbali.com' | split: ',' %}
+        {% assign configured_cdn_urls = settings.imagekitShopifyCdnUrl | default: '' | strip %}
+        {% assign fallback_cdn_urls = '//cdn2.shopify.com,//cdn.shopify.com,//cdn.shopifycloud.com,//oceansoulbali.com,oceansoulbali.com' %}
+        {% if configured_cdn_urls != blank %}
+          {% assign merged_cdn_urls = configured_cdn_urls | append: ',' | append: fallback_cdn_urls %}
+        {% else %}
+          {% assign merged_cdn_urls = fallback_cdn_urls %}
+        {% endif %}
+        {% assign cdn_urls = merged_cdn_urls | split: ',' %}
         {% for temp in cdn_urls %}
           {% assign cdn_url = temp | strip %}
           {% if cdn_url != blank and normalized_src contains cdn_url %}
