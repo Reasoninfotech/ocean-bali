@@ -12,9 +12,10 @@
     <div
       class="hero_banner_img"
       {% if section.settings.desktop_img != blank %}
-        {% capture desktop_bg_src %}{% render 'imagekit', src: section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}{% endcapture %}
-        style="background-image:url({{ desktop_bg_src | strip }})"        
-      {% endif %}
+  {% assign desktop_raw = section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}
+  {% capture desktop_ik %}{% render 'imagekit', src: desktop_raw %}{% endcapture %}
+  style="background-image:url({{ desktop_ik | strip }})"
+{% endif %}
     >
       {%- if section.settings.Mobile_img -%}
 {% capture mobile_preload_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
@@ -28,8 +29,9 @@
       <div
         class="hero_banner_mob_img"
         {% if section.settings.Mobile_img != blank %}
-          {% capture mobile_bg_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
-          style="background-image:url({{ mobile_bg_src | strip }})"         
+          {% assign mobile_raw = section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}
+          {% capture mobile_ik %}{% render 'imagekit', src: mobile_raw %}{% endcapture %}
+          style="background-image:url({{ mobile_ik | strip }})"         
         {% endif %}
       >
         <div class="container">

@@ -1,10 +1,9 @@
 {% comment %}
 snippets/basic-responsive-image.liquid
 
-Renders a responsive image with featured.
+Renders a responsive image with ImageKit CDN support.
 
 Accepts:
-
 - type:      {Object} Image object. (required)
 - width:     {Number} Explicit image width. (optional)
 - sm_render: {String} Width of image for small viewports. (optional)
@@ -22,36 +21,73 @@ Usage:
   sm_render: sm_render,
   lg_render: lg_render,
   md_render: md_render,
-  img_class: class,
+  img_class: img_class,
   class: class,
   loading: 'eager'
 %}
 {% endcomment %}
+
+{% assign img_width = width | default: 1200 %}
 {% assign image_box_ratio = type.height | append: ".0" | times: 1 | divided_by: type.width | times: 100 | append: "%" %}
-{% assign target_width = width | default: 1200 %}
-{% assign image_alt = type.alt | escape %}
-{%- capture sizes -%}
-  (min-width: 1601px) {{ lg_render | default: '2000px' }},
-  (min-width: 768px) and (max-width: 1600px) {{ md_render | default: '1200px' }},
-  (max-width: 767px) {{ sm_render | default: '100vw' }}, 900px
+
+{%- capture sizes -%}(min-width: 1601px) {{ lg_render | default: '2000px' }}, (min-width: 768px) and (max-width: 1600px) {{ md_render | default: '1200px' }}, (max-width: 767px) {{ sm_render | default: '100vw' }}, 900px{%- endcapture -%}
+
+{% comment %} --- Base src via ImageKit --- {% endcomment %}
+{% assign raw_src = type | image_url: width: img_width %}
+{% capture ik_src %}{% render 'imagekit', src: raw_src %}{% endcapture %}
+{% assign ik_src = ik_src | strip %}
+
+{% comment %} --- Build srcset via ImageKit for each width --- {% endcomment %}
+{% assign w_194  = type | image_url: width: 194  %}{% capture s_194  %}{% render 'imagekit', src: w_194  %}{% endcapture %}
+{% assign w_300  = type | image_url: width: 300  %}{% capture s_300  %}{% render 'imagekit', src: w_300  %}{% endcapture %}
+{% assign w_400  = type | image_url: width: 400  %}{% capture s_400  %}{% render 'imagekit', src: w_400  %}{% endcapture %}
+{% assign w_500  = type | image_url: width: 500  %}{% capture s_500  %}{% render 'imagekit', src: w_500  %}{% endcapture %}
+{% assign w_600  = type | image_url: width: 600  %}{% capture s_600  %}{% render 'imagekit', src: w_600  %}{% endcapture %}
+{% assign w_700  = type | image_url: width: 700  %}{% capture s_700  %}{% render 'imagekit', src: w_700  %}{% endcapture %}
+{% assign w_800  = type | image_url: width: 800  %}{% capture s_800  %}{% render 'imagekit', src: w_800  %}{% endcapture %}
+{% assign w_1000 = type | image_url: width: 1000 %}{% capture s_1000 %}{% render 'imagekit', src: w_1000 %}{% endcapture %}
+{% assign w_1200 = type | image_url: width: 1200 %}{% capture s_1200 %}{% render 'imagekit', src: w_1200 %}{% endcapture %}
+{% assign w_1400 = type | image_url: width: 1400 %}{% capture s_1400 %}{% render 'imagekit', src: w_1400 %}{% endcapture %}
+{% assign w_1600 = type | image_url: width: 1600 %}{% capture s_1600 %}{% render 'imagekit', src: w_1600 %}{% endcapture %}
+{% assign w_1800 = type | image_url: width: 1800 %}{% capture s_1800 %}{% render 'imagekit', src: w_1800 %}{% endcapture %}
+{% assign w_2000 = type | image_url: width: 2000 %}{% capture s_2000 %}{% render 'imagekit', src: w_2000 %}{% endcapture %}
+
+{%- capture ik_srcset -%}
+  {{ s_194 | strip }} 194w,
+  {{ s_300 | strip }} 300w,
+  {{ s_400 | strip }} 400w,
+  {{ s_500 | strip }} 500w,
+  {{ s_600 | strip }} 600w,
+  {{ s_700 | strip }} 700w,
+  {{ s_800 | strip }} 800w,
+  {{ s_1000 | strip }} 1000w,
+  {{ s_1200 | strip }} 1200w,
+  {{ s_1400 | strip }} 1400w,
+  {{ s_1600 | strip }} 1600w,
+  {{ s_1800 | strip }} 1800w,
+  {{ s_2000 | strip }} 2000w
 {%- endcapture -%}
-{%- capture image_src -%}
-  {% render 'imagekit', src: type | image_url: width: target_width %}
-{%- endcapture -%}
-{% assign image_src = image_src | strip %}
 
 <div class="box-ratio lazyload {{ class }}" style="padding-bottom: {{ image_box_ratio }};">
   <img
-    src="{{ image_src }}"
+    src="{{ ik_src }}"
+    srcset="{{ ik_srcset | strip }}"
     sizes="{{ sizes | strip }}"
-    srcset="{{ image_src }}"
+    width="{{ type.width }}"
+    height="{{ type.height }}"
+    alt="{{ type.alt | escape }}"
     class="{{ img_class }}"
     loading="{{ loading | default: 'lazy' }}"
-    alt="{{ image_alt }}">
+  >
 </div>
+
 <noscript>
-  {%- capture noscript_src -%}
-    {% render 'imagekit', src: type | image_url: width: target_width %}
-  {%- endcapture -%}
-  <img src="{{ noscript_src | strip }}" alt="{{ image_alt }}">
+  {% assign ns_src = type | image_url: width: img_width %}
+  {% capture ik_ns %}{% render 'imagekit', src: ns_src %}{% endcapture %}
+  <img
+    src="{{ ik_ns | strip }}"
+    width="{{ type.width }}"
+    height="{{ type.height }}"
+    alt="{{ type.alt | escape }}"
+  >
 </noscript>
