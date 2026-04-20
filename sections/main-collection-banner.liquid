@@ -30,7 +30,8 @@
     {% if section.settings.image_mobile != blank %}
     <div class="collection__banner-image mobile-image {% unless full_width %}desktop-12 tablet-6 mobile-3{% endunless %}">
           <div class=" lazyload " >
-           <img src="{{ section.settings.image_mobile | image_url }}" height="" width="">
+          {% assign old_img_url = section.settings.image_mobile %}
+           <img src="{% include 'imagekit' src:old_img_url %}" height="" width="">
           </div>
           <noscript>{{ section.settings.image_mobile | image_url: width: width | image_tag: alt: type.alt }}</noscript>
     </div>

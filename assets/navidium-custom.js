@@ -72,7 +72,9 @@ async function removeNavidium() {
     })
 }
 
-const nvdLocationFinder = location.pathname
+if (typeof nvdLocationFinder === 'undefined') {
+  var nvdLocationFinder = location.pathname;
+}
 
 if (
   nvdLocationFinder === '/account/login' ||

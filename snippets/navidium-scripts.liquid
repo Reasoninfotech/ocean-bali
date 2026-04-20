@@ -5,9 +5,9 @@
 }
 </style>
  <script>
-    const nvdShop = 'ocean-soul-bali.myshopify.com';
-    const nvdShopCurrency = '{{ shop.money_format | strip_html }}';
-    const nvdControls = {
+    var nvdShop = 'ocean-soul-bali.myshopify.com';
+    var nvdShopCurrency = '{{ shop.money_format | strip_html }}';
+    var nvdControls = typeof nvdControls !== 'undefined' ? nvdControls : {
       subtotal_item: '.js-cart-subtotal,.cart-original-total,.rebuy-cart__flyout-subtotal-amount span:last-child',
       CheckoutBtns: '[name="checkout"],.rebuy-cart__checkout-button',
       clickTriggers: '[name="button"],[name="button"] *,.ajax-cart__item-quantity button,.ajax-cart__item-quantity button *,.ajax-cart__item-remove,.ajax-cart__item-remove *,.rebuy-cart__flyout-item-quantity-widget-button,.rebuy-cart__flyout-item-quantity-widget-button *,.rebuy-cart__flyout-item-remove,.rebuy-cart__flyout-item-remove *,[href="/cart"],[href="/cart"] *',
@@ -41,8 +41,6 @@ history.pushState({ page: 1 }, "");
 history.pushState({ page: 2 }, "");
 history.replaceState({ page: 3 }, "");
 history.back();
-history.back();
-history.go(2);
 </script>
 {% comment %}
 <!-- Navidium script start -->
@@ -52,9 +50,9 @@ history.go(2);
 }
 </style>
     <script>
-      const nvdShop = 'ocean-soul-bali.myshopify.com';
-      const nvdShopCurrency = '{{ shop.money_format | strip_html }}';
-      const nvdControls = {
+      if (typeof nvdShop === 'undefined') { var nvdShop = 'ocean-soul-bali.myshopify.com'; }
+      if (typeof nvdShopCurrency === 'undefined') { var nvdShopCurrency = '{{ shop.money_format | strip_html }}'; }
+      if (typeof nvdControls === 'undefined') { var nvdControls = {
         cartCounter: '.js-cart-count', //cart item count
         subtotal: '.js-cart-subtotal', // cart subtotal amount
         lineAttribute: 'data-index', // cart item line

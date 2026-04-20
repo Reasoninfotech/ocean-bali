@@ -278,7 +278,8 @@ assign size_popup = false
           
                 <div class="after_pay_img" style="display: none;">
                   <div class="after_pay_img_inner">
-                    <img src="{{ section.settings.pay_img | img_url:'master' }}" alt="" >
+                       {% assign pay_img_url = section.settings.pay_img | img_url:'master' %}
+                       <img src="{% render 'imagekit', src: pay_img_url %}" alt="" >
                     <span class="after_pay_close_icon">
                       <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g id="Menu / Close_MD">
@@ -549,7 +550,8 @@ assign size_popup = false
             
                   <div class="after_pay_img" style="display: none;">
                     <div class="after_pay_img_inner">
-                      <img src="{{ section.settings.pay_img | img_url:'master' }}" alt="" >
+                      {% assign pay_img_url = section.settings.pay_img | img_url:'master' %}
+                     <img src="{% render 'imagekit', src: pay_img_url %}" alt="" >
                       <span class="after_pay_close_icon">
                         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Menu / Close_MD">
