@@ -162,62 +162,6 @@
         "comman_data_id": ""
       }
     },
-    "collection_list_HA6yWa": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_RwHPFm": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "best-seller"
-          }
-        },
-        "featured_collection_7AjPHQ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "surfing-swimsuits"
-          }
-        },
-        "featured_collection_8MA7iQ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "upf-swimwear"
-          }
-        },
-        "featured_collection_VpA9FK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "one-piece-swimsuit"
-          }
-        },
-        "featured_collection_GkyhCN": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "seamless-bikinis"
-          }
-        },
-        "featured_collection_N7Fwth": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beach-resort-wear"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_RwHPFm",
-        "featured_collection_7AjPHQ",
-        "featured_collection_8MA7iQ",
-        "featured_collection_VpA9FK",
-        "featured_collection_GkyhCN",
-        "featured_collection_N7Fwth"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "title": "",
-        "grid": 3,
-        "mobile_1pr": false,
-        "section_space": "none"
-      }
-    },
     "text_with_icons_f69zUB": {
       "type": "text-with-icons",
       "blocks": {
@@ -689,7 +633,6 @@
   "order": [
     "re_hero_banner_kgcNyf",
     "b3b87d13-30ab-4118-ad40-e3ad445f1eab",
-    "collection_list_HA6yWa",
     "text_with_icons_f69zUB",
     "image_with_text_w86UPn",
     "website_logos_A7LRzy",
