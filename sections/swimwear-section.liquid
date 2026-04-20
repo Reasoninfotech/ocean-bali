@@ -78,7 +78,8 @@
      {% if block.settings.image_link != blank %}
      <div class="image-link-block">
        <a href="{{ block.settings.image_link }}" class="image-link">
-         <img src="{{ block.settings.image | img_url : 'master' }}" alt="{{ block.settings.image.alt | escape }}" width="" height="" class="image-link__image" loading="lazy" >
+         {% assign old_img_url = block.settings.image | img_url : 'master' %}
+         <img src="{% render 'imagekit', src: old_img_url %}" alt="{{ block.settings.image.alt | escape }}" width="" height="" class="image-link__image" loading="lazy" >
         <div class="image-overlay">
           <p class="image-link__title">{{ block.settings.image_text }}</p>
         </div>

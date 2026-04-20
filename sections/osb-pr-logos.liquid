@@ -103,7 +103,10 @@
       {% if block.type == 'logo' %}
       <div class="osb-pr-logo" {{ block.shopify_attributes }}>
         {% if block.settings.logo_image != blank %}
-          {{ block.settings.logo_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: block.settings.logo_name }}
+          {%- capture logo_src -%}
+            {% render 'imagekit', src: block.settings.logo_image | image_url: width: 260 %}
+          {%- endcapture -%}
+          <img src="{{ logo_src | strip }}" loading="lazy" alt="{{ block.settings.logo_name | escape }}">
         {% else %}
           <span class="osb-pr-logo-text">{{ block.settings.logo_name }}</span>
         {% endif %}

@@ -28,18 +28,30 @@ Usage:
 %}
 {% endcomment %}
 {% assign image_box_ratio = type.height | append: ".0" | times: 1 | divided_by: type.width | times: 100 | append: "%" %}
+{% assign target_width = width | default: 1200 %}
+{% assign image_alt = type.alt | escape %}
 {%- capture sizes -%}
   (min-width: 1601px) {{ lg_render | default: '2000px' }},
   (min-width: 768px) and (max-width: 1600px) {{ md_render | default: '1200px' }},
   (max-width: 767px) {{ sm_render | default: '100vw' }}, 900px
 {%- endcapture -%}
+{%- capture image_src -%}
+  {% render 'imagekit', src: type | image_url: width: target_width %}
+{%- endcapture -%}
+{% assign image_src = image_src | strip %}
 
 <div class="box-ratio lazyload {{ class }}" style="padding-bottom: {{ image_box_ratio }};">
-  {{ type | image_url: width: width | default: 1200 | image_tag:
-   
-    sizes: sizes,
-    widths: '194, 200, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000',
-    class: img_class }}
+  <img
+    src="{{ image_src }}"
+    sizes="{{ sizes | strip }}"
+    srcset="{{ image_src }}"
+    class="{{ img_class }}"
+    loading="{{ loading | default: 'lazy' }}"
+    alt="{{ image_alt }}">
 </div>
-<noscript>{{ type | image_url: width: width | image_tag: alt: type.alt }}</noscript>
-
+<noscript>
+  {%- capture noscript_src -%}
+    {% render 'imagekit', src: type | image_url: width: target_width %}
+  {%- endcapture -%}
+  <img src="{{ noscript_src | strip }}" alt="{{ image_alt }}">
+</noscript>

@@ -76,7 +76,8 @@
             {% for i in (1..10) %}
              <div class="image_bar__link_svg">
                  <div class="img_block">
-                     <img decoding="async" src="{{ block.settings.logos | img_url }}"  alt="{{ block.settings.logos.alt }}" loading="lazy" >
+                     {% assign old_logo_url = block.settings.logos | img_url %}
+                     <img decoding="async" src="{% render 'imagekit', src: old_logo_url %}"  alt="{{ block.settings.logos.alt }}" loading="lazy" >
                     </div>
                     <span class="announcement_text" style="color: {{ section.settings.body_text }}">{{ block.settings.title }}</span>
                 </div>

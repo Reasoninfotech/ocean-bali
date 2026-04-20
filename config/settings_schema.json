@@ -1035,5 +1035,32 @@
       "label": "Etsy",
       "info": "https:\/\/www.etsy.com\/shop\/shopify"
     }]
+  },
+  {
+    "name": "ImageKit",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "Check out ImageKit's [ImageKit.io and Shopify integration](https://imagekit.io/docs/integration/shopify) to learn more about this."
+        },
+        {
+            "type": "checkbox",
+            "id": "enableImageKit",
+            "label": "Enable Imagekit"
+        },
+        {
+            "type": "text",
+            "id": "imagekitUrl",
+            "label": "ImageKit url endpoint",
+            "info":"The URL endpoint you set within ImageKit. Example: `https://ik.imagekit.io/your_imagekit_id/`."
+        },
+        {
+            "type": "text",
+            "id": "imagekitShopifyCdnUrl",
+            "label": "Shopify CDN domain",
+            "default":"//cdn.shopify.com",
+            "info":"Do not change this unless you have a proxy in place. Not sure? Leave it as is."
+        }
+    ]
   }
 ]

@@ -200,7 +200,10 @@
 
     <div class="osb-media">
       {% if section.settings.section_image != blank %}
-        {{ section.settings.section_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.section_image.alt }}
+        {%- capture section_image_src -%}
+          {% render 'imagekit', src: section.settings.section_image | image_url: width: 900 %}
+        {%- endcapture -%}
+        <img src="{{ section_image_src | strip }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
       {% else %}
         <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload section image or video</p>
       {% endif %}

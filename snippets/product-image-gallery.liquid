@@ -22,12 +22,19 @@
             <div class="{{ media.media_type }}-thumbnail product-single__thumbnails-item carousel-cell {% if forloop.first %}is-nav-selected{% endif %} js-thumb-item thumb__{% if forloop.first %}first{% elsif forloop.last %}last{% endif %}" data-slide-index="{{ forloop.index0 }}"
             data-image-id="{{ media.id }}" tabindex="0">
               <div class="product-single__thumbnail lazyload  product-single__thumbnail--{{ section.id }} js-thumb-item-img-wrap" data-thumbnail-id="product-template-{{ media.id }}">
-                {{ media | image_url: width: 200 | image_tag:
-                  class: "js-thumb-item-img",
-                  data-image-id: media.id
-                }}
+                {%- capture thumbnail_src -%}
+                  {% render 'imagekit', src: media | image_url: width: 200 %}
+                {%- endcapture -%}
+                <img
+                  src="{{ thumbnail_src | strip }}"
+                  class="js-thumb-item-img"
+                  data-image-id="{{ media.id }}"
+                  alt="{{ media.alt | escape }}">
                 <noscript>
-                  {{ media | image_url: width: 100 | image_tag: alt: media.alt | escape }}
+                  {%- capture thumbnail_noscript_src -%}
+                    {% render 'imagekit', src: media | image_url: width: 100 %}
+                  {%- endcapture -%}
+                  <img src="{{ thumbnail_noscript_src | strip }}" alt="{{ media.alt | escape }}">
                 </noscript>
                 {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
                   <div class="thumbnail-icon ">
@@ -91,16 +98,21 @@
           data-media-id="product-template-{{ media.id }}">
             {% case media.media_type %}
               {% when 'image' %}
-                {% assign zoom_src = media | image_url: width: 2400 %}
+                {%- capture zoom_src -%}
+                  {% render 'imagekit', src: media | image_url: width: 2400 %}
+                {%- endcapture -%}
                 {% assign alt_value = media.alt | escape %}
-                {{ media | image_url: width: 2400 | image_tag:
-                  class: 'product__image',
-                  data-zoom-src: zoom_src,
-                  data-aspectratio: media.preview_image.aspect_ratio,
-                  data-width: media.preview_image.width,
-                  data-height: media.preview_image.height,
-                  alt: alt_value
-                }}
+                {%- capture main_image_src -%}
+                  {% render 'imagekit', src: media | image_url: width: 2400 %}
+                {%- endcapture -%}
+                <img
+                  src="{{ main_image_src | strip }}"
+                  class="product__image"
+                  data-zoom-src="{{ zoom_src | strip }}"
+                  data-aspectratio="{{ media.preview_image.aspect_ratio }}"
+                  data-width="{{ media.preview_image.width }}"
+                  data-height="{{ media.preview_image.height }}"
+                  alt="{{ alt_value }}">
                 {% if click_to_enlarge and template != 'product.quick' %}
                   <a class="zoom_btn"
                      href=""
@@ -125,25 +137,37 @@
                   {{ media | external_video_tag }}
                 </div>
               {% when 'video' %}
+                {%- capture poster_360 -%}
+                  {% render 'imagekit', src: media.preview_image | image_url: width: 360 %}
+                {%- endcapture -%}
+                {%- capture poster_900 -%}
+                  {% render 'imagekit', src: media.preview_image | image_url: width: 900 %}
+                {%- endcapture -%}
+                {%- capture poster_1080 -%}
+                  {% render 'imagekit', src: media.preview_image | image_url: width: 1080 %}
+                {%- endcapture -%}
+                {%- capture poster_2048 -%}
+                  {% render 'imagekit', src: media.preview_image | image_url: width: 2048 %}
+                {%- endcapture -%}
                 {% style %}
                   @media screen and (max-width: 320px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ media.preview_image | image_url: width: 360}}) !important;
+                      background-image: url({{ poster_360 | strip }}) !important;
                     }
                   }
                   @media screen and (min-width: 320px) and (max-width: 780px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ media.preview_image | image_url: width: 900}}) !important;
+                      background-image: url({{ poster_900 | strip }}) !important;
                     }
                   }
                   @media screen and (min-width: 780px) and (max-width: 1080px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ media.preview_image | image_url: width: 1080}}) !important;
+                      background-image: url({{ poster_1080 | strip }}) !important;
                     }
                   }
                   @media screen and (min-width: 1080px) {
                     .product-media--{{ media.id }} .plyr__poster {
-                      background-image: url({{ media.preview_image | image_url: width: 2048}}) !important;
+                      background-image: url({{ poster_2048 | strip }}) !important;
                     }
                   }
                 {% endstyle %}
@@ -158,11 +182,14 @@
           </div>
           <noscript>
             {% assign alt_value = media.alt | escape %}
-            {{ media | image_url: width: 800 | image_tag:
-               id: media.id,
-               class: 'product-main-image',
-               alt: alt_value
-            }}
+            {%- capture noscript_main_src -%}
+              {% render 'imagekit', src: media | image_url: width: 800 %}
+            {%- endcapture -%}
+            <img
+              src="{{ noscript_main_src | strip }}"
+              id="{{ media.id }}"
+              class="product-main-image"
+              alt="{{ alt_value }}">
           </noscript>
         </div>
       {% endfor %}

@@ -1,0 +1,42 @@
+{% assign raw_src = src | default: '' | strip %}
+{% assign final_src = raw_src %}
+
+{% if settings.enableImageKit and raw_src != blank %}
+  {% assign imagekit_url = settings.imagekitUrl | default: '' | strip %}
+
+  {% if imagekit_url != blank %}
+    {% assign last_char = imagekit_url | slice: -1 %}
+    {% if last_char == '/' %}
+      {% assign imagekit_url = imagekit_url | slice: 0, imagekit_url.size | minus: 1 %}
+    {% endif %}
+
+    {% unless raw_src contains imagekit_url %}
+      {% assign normalized_src = raw_src %}
+      {% if normalized_src contains 'https://' %}
+        {% assign normalized_src = normalized_src | replace: 'https://', '//' %}
+      {% endif %}
+      {% if normalized_src contains 'http://' %}
+        {% assign normalized_src = normalized_src | replace: 'http://', '//' %}
+      {% endif %}
+
+      {% assign src_prefix_10 = normalized_src | slice: 0, 10 %}
+      {% assign src_prefix_7 = normalized_src | slice: 0, 7 %}
+      {% assign src_prefix_9 = normalized_src | slice: 0, 9 %}
+
+      {% if src_prefix_10 == '/cdn/shop/' or src_prefix_7 == '/files/' or src_prefix_9 == '/s/files/' %}
+        {% assign final_src = imagekit_url | append: normalized_src %}
+      {% else %}
+        {% assign cdn_urls = settings.imagekitShopifyCdnUrl | default: '' | split: ',' %}
+        {% for temp in cdn_urls %}
+          {% assign cdn_url = temp | strip %}
+          {% if cdn_url != blank and normalized_src contains cdn_url %}
+            {% assign final_src = normalized_src | replace: cdn_url, imagekit_url %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endunless %}
+  {% endif %}
+{% endif %}
+
+{{ final_src }}
