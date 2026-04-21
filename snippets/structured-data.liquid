@@ -29,7 +29,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": {{ shop.url }},
+  "url": {{ shop.url | json }},
   "name": {{ shop.name | json }},
   "potentialAction": {
     "@type": "SearchAction",
@@ -38,7 +38,6 @@
   }
 }
 </script>
-
 {% elsif request.page_type == 'product' %}
 <script type="application/ld+json">
 {
