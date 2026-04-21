@@ -6,19 +6,15 @@
   "name": "{{ shop.name }}",
   "description": "{{ page_description | default: shop.name | escape }}",
   "url": "{{ shop.url }}",
-
   "logo": "https:{{ page_image | image_url: width: 600 }}",
   "image": "https:{{ page_image | image_url: width: 600 }}",
-
   "email": "{{ shop.email }}",
   "telephone": "{{ shop.phone }}",
-
   "sameAs": [
     {% if settings.facebook_url != blank %}"{{ settings.facebook_url }}"{% endif %}
     {% if settings.instagram_url != blank %}, "{{ settings.instagram_url }}"{% endif %}
     {% if settings.pinterest_url != blank %}, "{{ settings.pinterest_url }}"{% endif %}
   ],
-
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "{{ shop.address.street }}",
@@ -37,12 +33,12 @@
   "name": {{ shop.name | json }},
   "potentialAction": {
     "@type": "SearchAction",
-    "target": {{ shop.url | append: "/search?q={search_term_string}" | json }},
+    "target": "{{ shop.url }}/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
 </script>
-{% endif %}
+
 {% elsif request.page_type == 'product' %}
 <script type="application/ld+json">
 {
@@ -89,3 +85,4 @@
   }
 }
 </script>
+{% endif %}
