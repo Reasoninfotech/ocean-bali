@@ -2,34 +2,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ClothingStore",
-  "name": {{ shop.name | json }},
-  "description": {{ page_description | default: shop.name | json }},
-  "url": {{ shop.url | json }},
-  {% if page_image %}
-  "logo": {{ page_image | image_url: width: 600 | prepend: "https:" | json }},
-  "image": {{ page_image | image_url: width: 600 | prepend: "https:" | json }},
-  {% endif %}
-  "email": {{ shop.email | json }},
-  "telephone": {{ shop.phone | json }},
+  "@type": "Organization",
+  "name": "{{ shop.name }}",
+  "description": "{{ page_description | default: shop.name | escape }}",
+  "url": "{{ shop.url }}",
+
+  "logo": "https:{{ page_image | image_url: width: 600 }}",
+  "image": "https:{{ page_image | image_url: width: 600 }}",
+
+  "email": "{{ shop.email }}",
+  "telephone": "{{ shop.phone }}",
+
   "sameAs": [
-    {%- if settings.facebook_url != blank -%}{{ settings.facebook_url | json }}{% endif %}
-    {%- if settings.instagram_url != blank -%}, {{ settings.instagram_url | json }}{% endif %}
-    {%- if settings.pinterest_url != blank -%}, {{ settings.pinterest_url | json }}{% endif %}
-    {%- if settings.youtube_url != blank -%}, {{ settings.youtube_url | json }}{% endif %}
-    {%- if settings.tiktok != blank -%}, {{ settings.tiktok | json }}{% endif %}
+    {% if settings.facebook_url != blank %}"{{ settings.facebook_url }}"{% endif %}
+    {% if settings.instagram_url != blank %}, "{{ settings.instagram_url }}"{% endif %}
+    {% if settings.pinterest_url != blank %}, "{{ settings.pinterest_url }}"{% endif %}
   ],
+
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": {{ shop.address.street | json }},
-    "addressLocality": {{ shop.address.city | json }},
-    "addressRegion": {{ shop.address.province | json }},
-    "postalCode": {{ shop.address.zip | json }},
-    "addressCountry": {{ shop.address.country | json }}
+    "streetAddress": "{{ shop.address.street }}",
+    "addressLocality": "{{ shop.address.city }}",
+    "addressRegion": "{{ shop.address.province }}",
+    "postalCode": "{{ shop.address.zip }}",
+    "addressCountry": "{{ shop.address.country }}"
   }
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
