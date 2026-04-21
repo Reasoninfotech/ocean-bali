@@ -154,6 +154,9 @@
 
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
     <script>
+    {% render 'structured-data' %}
+    </script>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Function to smoothly scroll to an element by its ID
         function smoothScrollTo(elementId) {
