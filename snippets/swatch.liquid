@@ -16,11 +16,7 @@
   {% for value in option.values %}
     {%- liquid
 
-      assign image_url_raw = value | handle | append: '.png' | file_url
-    -%}
-    {%- capture image_url -%}{%- render 'imagekit', src: image_url_raw -%}{%- endcapture -%}
-    {%- liquid
-      assign image_url = image_url | strip
+      assign image_url = value | handle | append: '.png' | file_url
       assign css_color = value | split: ' ' | last | handle
       assign available = false
 
@@ -72,11 +68,7 @@
           assign variantID =  variant.id
           assign variantQTY =  variant.inventory_quantity
         if variant.image
-          assign variant_image_url_raw = variant.image | image_url: width: 100
-        -%}
-        {%- capture variant_image_url -%}{%- render 'imagekit', src: variant_image_url_raw -%}{%- endcapture -%}
-        {%- liquid
-          assign variant_image_url = variant_image_url | strip
+          assign variant_image_url =  variant.image | image_url: width: 100
         endif
       endfor
 
