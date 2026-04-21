@@ -154,9 +154,6 @@
 
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
     <script>
-    {% render 'structured-data' %}
-    </script>
-    <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Function to smoothly scroll to an element by its ID
         function smoothScrollTo(elementId) {
@@ -181,6 +178,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/bgset/ls.bgset.min.js" async></script> {% endcomment %}
 
 
+    {% render 'structured-data' %}
   </head>
   
 {% assign handlname = template | handleize %}
