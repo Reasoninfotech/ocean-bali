@@ -55,7 +55,7 @@
         class="{{ grid_class }} auto sm-span-12 v-center"
         style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
       >
-        <div id="announcement-bar" style="text-align: center; width: 100%; padding-bottom: 5px; overflow: hidden; min-height: 40px; display: flex; flex-direction: column; justify-content: center;">
+        <div id="announcement-bar" style="text-align: center; width: 100%; padding-bottom: 5px; overflow: hidden;">
           {%- liquid
             assign base_target_1 = section.settings.target_1_amount | default: 100
             assign target_1_amount = base_target_1 | times: 100
