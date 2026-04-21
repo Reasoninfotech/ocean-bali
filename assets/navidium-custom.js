@@ -71,11 +71,9 @@ async function removeNavidium() {
       })
     })
 }
-
 if (typeof nvdLocationFinder === 'undefined') {
   var nvdLocationFinder = location.pathname;
 }
-
 if (
   nvdLocationFinder === '/account/login' ||
   nvdLocationFinder === '/account/register'
@@ -84,7 +82,6 @@ if (
 } else {
   removeNavidium()
 }
-
 function formatMoney(cents, format = nvdShopCurrency) {
   if (typeof cents === 'string') {
     cents = cents.replace('.', '')
@@ -92,16 +89,13 @@ function formatMoney(cents, format = nvdShopCurrency) {
   let value = ''
   const placeholderRegex = /\{\{\s*(\w+)\s*\}\}/
   const formatString = format || this.money_format
-
   function defaultOption(opt, def) {
     return typeof opt === 'undefined' ? def : opt
   }
-
   function formatWithDelimiters(number, precision, thousands, decimal) {
     precision = defaultOption(precision, 2)
     thousands = defaultOption(thousands, ',')
     decimal = defaultOption(decimal, '.')
-
     if (isNaN(number) || number == null) {
       return 0
     }
@@ -115,7 +109,6 @@ function formatMoney(cents, format = nvdShopCurrency) {
 
     return dollars + cents
   }
-
   switch (formatString.match(placeholderRegex)[1]) {
     case 'amount':
       value = formatWithDelimiters(cents, 2)
@@ -133,7 +126,6 @@ function formatMoney(cents, format = nvdShopCurrency) {
       value = formatWithDelimiters(cents, 2)
       break
   }
-
   return formatString.replace(placeholderRegex, value)
 }
 const getNvdConfig = async () => {
@@ -166,25 +158,17 @@ const getNvdVisitorCountry = async () => {
   }
 }
 const prefetch = async (callback) => {
-  // Save visitor country
-
-  // TODO: check nvd_config in localStorage
   let isNvdConfig = localStorage.getItem('nvdconfig')
     ? JSON.parse(localStorage.getItem('nvdconfig'))
     : null
-  // verify with the shop name
   if (isNvdConfig) {
-    // check expiration
     const today = new Date()
     const expiration = new Date(isNvdConfig.expiration)
     if (today > expiration) {
-      // expired
       localStorage.removeItem('nvdconfig')
       isNvdConfig = null
       prefetch()
     }
-    // var tomorrow = new Date();
-    // tomorrow.setDate(today.getDate()+3);
     useConsole('Navidium config avaialable in storage')
   } else {
     useConsole('Navidium config not available in storage')
@@ -230,7 +214,6 @@ const prefetch = async (callback) => {
           ? JSON.parse(nvdConfig.nvd_nations)
           : []
       }
-
       localStorage.setItem('nvdconfig', JSON.stringify(shopConfig))
       if (callback) return callback()
     } catch (error) {
@@ -242,7 +225,6 @@ const prefetch = async (callback) => {
     }
   }
 }
-
 const calculateProtection = async (cartTotal, nvdConfig) => {
   let conversionRate = parseFloat(Shopify.currency.rate)
   let convertedTotal = cartTotal / conversionRate
@@ -259,11 +241,8 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
   const nvdInternationalFeeActive = nvdConfig?.nvd_international_fee_active
   const nvdInternationalFee = nvdConfig?.nvd_international_fee
   protection_type = parseInt(protection_type)
-  console.log('113 protection_type', protection_type)
-
   const nvdVisitorCountry = localStorage.getItem('nvdVisitorCountry')
   const nvd_nations = nvdConfig.nvd_nations?.map((country) => country.name)
-  console.log(nvd_nations)
   if (!nvd_nations?.includes(nvdVisitorCountry)) {
     if (nvdInternationalFeeActive == 1) {
       protection_percentage = nvdInternationalFee
@@ -273,14 +252,9 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
       )
     }
   }
-
-  // TODO: check protection type
   if (protection_type == 1) {
-    // protection is dynamic
     let ourProtectionPrice = (convertedTotal * protection_percentage) / 100
     ourProtectionPrice = ourProtectionPrice.toFixed(2)
-
-    // calculate the protection
     if (ourProtectionPrice < minPrice) {
       console.log('Our protection price is less than minimum')
       protectionPrice = minPrice
@@ -299,7 +273,6 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
       }
     } else {
       console.log('calculating protection')
-
       const priceArray = Object.keys(protectionVariants)
       priceArray.sort((a, b) => a - b)
       protectionPrice = findClosest(
@@ -324,7 +297,6 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
       }
     }
   } else {
-    // protection is static.so hit the api
     console.log('protection is static')
     let apiURL = await fetch(
       `https://app.navidiumapp.com/api/variant-id-checker-api-march6.php?shop_url=${nvdShop}&price=` +
@@ -334,7 +306,6 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
     return data
   }
 }
-
 const nvd_init = async () => {
   console.time('nvd_init')
   localStorage.setItem('nvd_running', true)
@@ -351,18 +322,14 @@ const nvd_init = async () => {
   const cartProtectionVariant = localStorage.getItem('cart_protection')
     ? localStorage.getItem('cart_protection')
     : null
-
   const optedOut = JSON.parse(localStorage.getItem('nvd_opted_out'))
   let showWidget = true
-
   const exclusionAction = shopConfig?.exclusion_action
-
   if (exclusionAction == '0') {
     const excluded = isValidJSON(shopConfig.product_exclusion)
       ? JSON.parse(shopConfig.product_exclusion)
       : {}
     const cart = await getCartCallback()
-
     cart?.items?.forEach((item) => {
       excluded?.sku?.forEach((sku) => {
         if (item.sku === sku) {
@@ -378,7 +345,6 @@ const nvd_init = async () => {
       })
     })
   }
-
   const nvdVisitorCountry = localStorage.getItem('nvdVisitorCountry')
   const nvd_nations = shopConfig.nvd_nations?.map((country) => country.name)
   const nvdInternationalActive = shopConfig.nvd_international
@@ -388,19 +354,12 @@ const nvd_init = async () => {
       useConsole('Widget is disabled for international')
     }
   }
-
   if (shopConfig.show_on_cart === '0') showWidget = false
-
   useConsole('showWidget', showWidget)
-
   const { success } = shopConfig
-
   let checked
-
   let nvdVariant
-
   useConsole('in cart protection variant', cartProtectionVariant)
-  // check if widget should be shown and limit did not exceeded
   if (showWidget && success) {
     const cart = await getCartCallback(checkCart)
     const cartTotal = (await cart.total) / 100
@@ -410,17 +369,13 @@ const nvd_init = async () => {
     const variantFromApi = await getProtection.variant_id
     const priceFromApi = await getProtection.price
     const auto_insurance = shopConfig.auto_insurance
-    // Max threshold
     let maxThresholdPrice = parseFloat(shopConfig.maxThreshold)
     maxThresholdPrice = (
       maxThresholdPrice * parseFloat(Shopify.currency.rate)
     ).toFixed(2)
-    //console.log('%cNVD Max threshold','background:red;color:#fff;padding:0 3px;',maxThresholdPrice);
-    // End of max threshold
     const cartEmpty = cartTotal <= 0
     const widgetPlaceHolders = document.querySelectorAll('.nvd-mini')
     const haveWidgetPlaceHolders = widgetPlaceHolders.length > 0
-    // now we get the cart total price and time to hit the second api
     localStorage.setItem('nvdProtectionPrice', priceFromApi)
     localStorage.setItem('nvdVariant', variantFromApi)
     if (cartEmpty) {
@@ -435,30 +390,24 @@ const nvd_init = async () => {
       )
       return
     }
-    //Do not touch this logic
     var auto_insurance_checker = parseInt(shopConfig.auto_insurance)
     if (auto_insurance_checker != 1) {
       checked = false
     }
-
     if (optedOut == true || optedOut == null) {
       checked = false
     } else {
       checked = true
     }
-
     if (auto_insurance_checker == 1 && optedOut == null) {
       checked = true
     }
-
     if (auto_insurance_checker == 1 && optedOut == false) {
       checked = true
     }
     const widgetTemplate = shopConfig.nvd_widget_template
-
     useConsole('widget check status: ', checked)
     nvdVariant = variantFromApi
-    // build widget theme
     let widgetContent
     if (widgetTemplate === 'widget-1') {
       widgetContent = buildCustomizeWidgetThemeYellow(
@@ -517,7 +466,6 @@ const nvd_init = async () => {
         checked ? 'checked' : ''
       )
     }
-    // now check the variant in cart is equal to the variant in api return
     if (cartProtectionVariant) {
       if (cartProtectionVariant === variantFromApi) {
         useConsole(
@@ -535,13 +483,9 @@ const nvd_init = async () => {
       } else {
         useConsole('cart variant and api variant is not same.swapping them now')
         nvdVariant = variantFromApi
-        // now remove the previous navidium variant from cart
         if (cartProtectionVariant) {
-          // now add the new protection to the cart
           if (checked) useConsole('removing old and adding new protection')
         }
-
-        // now append the snippet
         if (document.querySelector('.nvd-mini')) {
           document.querySelectorAll('.nvd-mini').forEach((item) => {
             item.innerHTML = widgetContent
@@ -573,10 +517,7 @@ const nvd_init = async () => {
       }
       checkWidgetView()
     }
-
-    // now
   } else {
-    // when navidium widget is shut off
     if (document.querySelectorAll('.nvd-mini').length) {
       document
         .querySelectorAll('.nvd-mini')
@@ -592,8 +533,6 @@ const nvd_init = async () => {
   updateLiveCart()
   setTimeout(nvdCursorEvent('enabled'), 1500)
 }
-
-// function to get cart data and pass the data to another callback for processing.
 const getCartCallback = async (callback) => {
   const cart = await fetch('/cart.js')
   const cartData = await cart.json()
@@ -610,8 +549,6 @@ const isValidJSON = (data) => {
     return false
   }
 }
-
-// function to check cart items
 const checkCart = async (cartData, callback = null) => {
   const currency = await cartData.currency
   useConsole('cart in check cart', cartData)
@@ -624,33 +561,22 @@ const checkCart = async (cartData, callback = null) => {
     const shopConfig = localStorage.getItem('nvdconfig')
       ? JSON.parse(localStorage.getItem('nvdconfig'))
       : null
-
     const excluded = isValidJSON(shopConfig.product_exclusion)
       ? JSON.parse(shopConfig.product_exclusion)
       : {}
-
-    // if no shop config is found wait and call prefetch
     if (!shopConfig) {
       await prefetch()
     }
-
     useConsole('product exclusion', excluded)
     const promises = await items.forEach((item) => {
-      // check for duplicate navidium
       if (item.handle.includes('navidium-shipping-protection')) {
         nvdCounterArray.push(item.variant_id)
-
         useConsole('protection available in cart')
-
         localStorage.setItem('cart_protection', item.variant_id)
-
         total -= item.final_line_price
-
         useConsole('nvd1', total)
         if (item.quantity > 1) {
           useConsole('Found duplicate protection in cart,decreasing now')
-
-          // as cart total is update. we need to call the checkCart function recursively
           recheck = true
           dupeVariant = item.variant_id
         } else {
@@ -669,7 +595,6 @@ const checkCart = async (cartData, callback = null) => {
                   item.sku,
                   item.final_price
                 )
-                // substract the item price from total
                 total -= item.final_line_price
                 useConsole('ex1', total)
               }
@@ -684,7 +609,6 @@ const checkCart = async (cartData, callback = null) => {
                 item.sku,
                 item.final_price
               )
-              // substract the item price from total
               total -= item.final_line_price
               useConsole('ex1', total)
             }
@@ -697,7 +621,6 @@ const checkCart = async (cartData, callback = null) => {
                 item.sku,
                 item.final_price
               )
-              // substract the item price from total
               total -= item.final_line_price
               useConsole('ex1', total)
             }
@@ -744,8 +667,6 @@ const checkCart = async (cartData, callback = null) => {
     currency
   }
 }
-
-// function to add protection to cart
 const addProtection = async (variantId, quantity = 1, reload = false) => {
   if (typeof xck != 'undefined' && typeof xck == 'function') {
     let rsv = await xck()
@@ -764,7 +685,6 @@ const addProtection = async (variantId, quantity = 1, reload = false) => {
       quantity
     })
   }
-
   const cartData = await fetch('/cart/add.js', request)
   const cartJson = await cartData.json()
   if (cartJson.id) {
@@ -781,8 +701,6 @@ const addProtection = async (variantId, quantity = 1, reload = false) => {
     }
   }
 }
-
-// function to update protection variant from cart
 const adjustProtectionQuantity = async (
   variantId,
   quantity,
@@ -799,11 +717,8 @@ const adjustProtectionQuantity = async (
       quantity: String(quantity)
     })
   }
-
   const cartData = await fetch('/cart/change.js', request)
-
   const cartJson = await cartData.json()
-
   useConsole(
     '%cnew cart instance after duplicate protection quantity decrease',
     'color:yellow',
@@ -817,12 +732,9 @@ const adjustProtectionQuantity = async (
     return cartJson
   }
 }
-
-// widget switch on/off listener function
 const getShippingProtection = async (variantId, price, e) => {
   nvdCursorEvent('disabled')
   const { checked } = e
-
   if (!checked) {
     useConsole('unchecking and removing protection')
     localStorage.setItem('nvd_opted_out', true)
@@ -835,13 +747,10 @@ const getShippingProtection = async (variantId, price, e) => {
     updateLiveCart()
   }
 }
-
-// function to update subtotal and dom cart item's line id
 const updateLiveCart = async (cartData = null) => {
   let cart = cartData
   if (cart == null) cart = await getCartCallback()
   let curRate = Shopify.currency.rate
-
   let cartTotal = cart.total_price
   const protectionPrice = Number(localStorage.getItem('nvdProtectionPrice'))
   useConsole('protection price-->>', protectionPrice)
@@ -851,8 +760,6 @@ const updateLiveCart = async (cartData = null) => {
   const optedOut = localStorage.getItem('nvd_opted_out')
     ? Boolean(JSON.parse(localStorage.getItem('nvd_opted_out')))
     : null
-
-  // change the cart item class name here.
   const lineAttribute = 'data-line'
   const quantityPlus = '[data-action="increase-quantity"]'
   const quantityMinus = '[data-action="decrease-quantity"]'
@@ -862,7 +769,6 @@ const updateLiveCart = async (cartData = null) => {
   const cartItemsList = Array.from(cartItemNodes)
   let currentCount
   let XtotalPrice
-  //  if not opted out show one less in count
   if (optedOut == false) {
     currentCount = totalCount
     XtotalPrice = cartTotal + protectionPrice * parseFloat(curRate) * 100
@@ -879,7 +785,6 @@ const updateLiveCart = async (cartData = null) => {
   useConsole('current and cart count', currentCount, totalCount)
   if (totalElem && document.querySelector('.nvd-mini')?.innerHTML)
     totalElem.forEach((elem) => (elem.innerHTML = totalPrice))
-
   await updateCartLine(
     lineAttribute,
     cartItemsList,
@@ -889,8 +794,6 @@ const updateLiveCart = async (cartData = null) => {
     removeItem
   )
 }
-
-// function to update the line index in dom cart line items
 let updateCartLine = async (
   lineAttribute,
   cartItemsList,
@@ -900,7 +803,6 @@ let updateCartLine = async (
   rmvItem
 ) => {
   useConsole(cartItemsList, lineAttribute)
-  // for every line item in cart dom check with the cart items.
   await cartItemsList.forEach((item) => {
     useConsole(
       item.innerHTML
@@ -956,14 +858,12 @@ let updateCartLine = async (
     })
   })
 }
-// opt in message toggle function
 const checkWidgetView = () => {
   const shopConfig = localStorage.getItem('nvdconfig')
     ? JSON.parse(localStorage.getItem('nvdconfig'))
     : {}
   const optOutImg = shopConfig.opt_out_icon
   const optinIcon = shopConfig.widget_icon
-
   const optedOut = localStorage.getItem('nvd_opted_out')
   const selected = document.querySelector('.nvd-selected')
   const deselected = document.querySelector('.nvd-dis-selected')
@@ -978,7 +878,6 @@ const checkWidgetView = () => {
       imgx.src = optinIcon
     }
   }
-
   if (optedOut == 'true') {
     if (selected) selected.style.display = 'none'
     if (deselected) deselected.style.display = 'block'
@@ -987,17 +886,12 @@ const checkWidgetView = () => {
     if (deselected) deselected.style.display = 'none'
   }
 }
-
-// function that will track the widget real time
-
 const trackWidget = () => {
   const nvd_running = localStorage.getItem('nvd_running')
-
   const startTracking = setInterval(() => {
     const nvdContainer = document.querySelector('.nvd-mini')
     let hasWidget
     if (nvdContainer) hasWidget = nvdContainer.innerHTML.length
-
     if (hasWidget < 1) {
       if (nvd_running == 'false') {
         useConsole('widget not available, initiating widget')
@@ -1009,18 +903,16 @@ const trackWidget = () => {
 if (nvdControls?.trackWidget) trackWidget()
 const isValidUrl = (urlString) => {
   const urlPattern = new RegExp(
-    '^(https?:\\/\\/)?' + // validate protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+    '^(https?:\\/\\/)?' + 
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + 
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + 
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+      '(\\?[;&a-z\\d%_.~+=-]*)?' +
       '(\\#[-a-z\\d_]*)?$',
     'i'
-  ) // validate fragment locator
+  )
   return !!urlPattern.test(urlString)
 }
-
-// function to build the widget
 const buildOldWidget = (shopConfig, priceFromApi, nvdVariant, checked) => {
   const {
     nvd_name,
@@ -1360,7 +1252,6 @@ const buildCustomizeWidgetThemeBlue = (
       <a style="color:${learnMoreColor}" href="${learnMore}" target="_blank">Learn more</a>
    `
   }
-
   const snippet = `
   <div class="appearance-right-previw nvd-wid-style2 nvd-dark">
   <div class="d-flexCstm" style="background:${topBgColor}; border-top-left-radius:${cornerRadius}; border-top-right-radius:${cornerRadius};">
@@ -1533,7 +1424,6 @@ const buildCustomizeWidgetLarge = (
     
     `
   }
-
   const snippet = `
  <div class="appearance-right-previw-nvd">
       <div class="protection-title-nvd">
@@ -1634,7 +1524,6 @@ function buildNewCheckoutWidget(shopConfig, priceFromApi, nvdVariant, checked) {
       <a style="color:${learnMoreColor}" href="${learnMore}" target="_blank">Learn more</a>
    `
   }
-
   const snippet = ` <div class="appearance-right-previw-ld-new" id="nvd-widget-cart">
   <div class="d-flexCstm-ld" style="background-color:${topBgColor}; border-radius:${cornerRadius};">
     <div class="flex-shrink-0Cstm-ld">
@@ -1709,14 +1598,12 @@ function buildWidgetTemplateEight(
   const diselectedStyle = protectionCheckbox
     ? "'display: none'"
     : "'display: block'"
-
   let learnMoreMarkup = ''
   if (isValidUrl(learnMore) && !learnMore?.includes('navidiumapp.com')) {
     learnMoreMarkup = ` 
       <a style="color:${learnMoreColor}" href="${learnMore}" target="_blank">Learn more</a>
    `
   }
-
   const snippet = `   <div
       class="preview appearance-right-previw-ld-new mini"
       id="nvd-widget-cart"
@@ -1809,14 +1696,10 @@ function buildWidgetTemplateEight(
     </div>`
   return snippet
 }
-// For Protection add/remove button
 const addShippingProtection = () => {
   const nvdBtn = document.getElementById('shippingProtectionCheckBox')
-
   const classes = nvdBtn?.classList
-
   const checked = classes.toggle('checked')
-
   if (!checked) {
     useConsole('unchecking and removing protection')
     localStorage.setItem('nvd_opted_out', true)
@@ -1829,7 +1712,6 @@ const addShippingProtection = () => {
     updateLiveCart()
   }
 }
-
 function nvdCursorEvent(event) {
   if (event === 'enabled') {
     Array.from(document.querySelectorAll(nvdControls?.cursorControl)).forEach(
@@ -1845,7 +1727,6 @@ function nvdCursorEvent(event) {
     )
   }
 }
-
 function nvdDebounce(func, wait = 500, immediate) {
   var timeout
   return function () {
@@ -1861,7 +1742,6 @@ function nvdDebounce(func, wait = 500, immediate) {
     if (callNow) func.apply(context, args)
   }
 }
-
 let isDOMLoaded = false
 window.addEventListener('DOMContentLoaded', () => {
   isDOMLoaded = true
@@ -1873,7 +1753,6 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log('Wrapped setTimeout after 2000ms')
   })
 })
-
 window.onload = () => {
   if (document.querySelector('.nvd-mini')?.innerHTML.length === 0) {
     setTimeout(() => {
@@ -1881,7 +1760,6 @@ window.onload = () => {
     }, 1000)
   }
 }
-
 async function xNvd() {
   const cart = await fetch('/cart.js')
   const data = cart.json()
@@ -1915,8 +1793,6 @@ window.onload = () => {
   setTimeout(nvd_init, 2000)
   setTimeout(xNvd, 2000)
 }
-// Main trigger area
-
 window.addEventListener(
   'click',
   (ev) => {
@@ -1942,8 +1818,6 @@ window.addEventListener(
   },
   nvdControls?.forceClick ?? true
 )
-
-//on select option change quantity
 window.addEventListener(
   'change',
   (ev) => {
@@ -1982,8 +1856,6 @@ const nvdUpdateProtection = (currentVariant, newVariant) =>{
     body: JSON.stringify(updates)
   })
     .then((res) => res.json()).catch(err=>useConsole(err))
-    
-
 }
 $(document).one(
   `${nvdControls?.iosDeviceListener}`,
@@ -1994,9 +1866,7 @@ $(document).one(
     let checked = document
       .querySelector('#shippingProtectionCheckBox')
       ?.hasAttribute('checked')
-
     let forceClick = nvdControls.forceCheckout ?? true
-
     if (localStorage.getItem('nvdVariant') != null) {
       let variantId = localStorage.getItem('nvdVariant')
       if (!checked) {
@@ -2011,7 +1881,6 @@ $(document).one(
           }
         }
       } else {
-        
         const addedVariant = localStorage.getItem('cart_protection')
         if(addedVariant === variantId) return
         else if(addedVariant && (addedVariant !== variantId)){
@@ -2031,7 +1900,6 @@ $(document).one(
             }
           })
         }
-        
       }
     } else {
       if (forceClick) {
@@ -2042,7 +1910,6 @@ $(document).one(
     }
   }
 )
-
 const injectNvdToCart = () => {
   if (nvdControls?.nvdInject?.status) {
     const parent = document?.querySelector(nvdControls?.nvdInject?.parent)
@@ -2051,7 +1918,6 @@ const injectNvdToCart = () => {
     )
     const nvdDiv = document.createElement('div')
     nvdDiv.setAttribute('class', 'nvd-mini w-nvd-100')
-
     if (nvdContainer) {
       if (!parent?.innerHTML.includes('nvd-mini')) {
         nvdContainer?.parentNode?.insertBefore(nvdDiv, nvdContainer)
