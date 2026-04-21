@@ -73,7 +73,7 @@
 
   "offers": {
     "@type": "Offer",
-    "url": "{{ shop.url }}/search?q={search_term_string}",
+    "url": {{ shop.url | append: product.url | json }},
     "priceCurrency": {{ cart.currency.iso_code | json }},
     "price": {{ product.selected_or_first_available_variant.price | money_without_currency | remove: "," | json }},
     "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
