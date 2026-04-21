@@ -271,12 +271,21 @@
       <h1 class="osb-h1">{{ section.settings.heading }}</h1>
       <p class="osb-sub">{{ section.settings.subheading }}</p>
 
-      <div class="osb_image_mobile">
+      <div class="osb_image_mobile" style="aspect-ratio: {{ section.settings.image_ratio }}; background: #eaf2f8; border-radius: 4px; overflow: hidden;">
         {% if section.settings.hero_image != blank %}
           {%- capture hero_mobile_src -%}
             {% render 'imagekit', src: section.settings.hero_image | image_url: width: 900 %}
           {%- endcapture -%}
-          <img src="{{ hero_mobile_src | strip }}" loading="eager" alt="{{ section.settings.hero_image.alt | escape }}">
+          {%- assign img_width = 900 -%}
+          {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
+          <link rel="preload" as="image" href="{{ hero_mobile_src | strip }}" fetchpriority="high">
+          <img src="{{ hero_mobile_src | strip }}" 
+               width="{{ img_width }}" 
+               height="{{ img_height }}" 
+               fetchpriority="high"
+               style="width: 100%; height: auto; object-fit: cover; display: block;"
+               loading="eager" 
+               alt="{{ section.settings.hero_image.alt | escape }}">
         {% else %}
           <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
         {% endif %}
@@ -380,12 +389,21 @@
 
 
 
-    <div class="osb-media">
+    <div class="osb-media" style="aspect-ratio: {{ section.settings.image_ratio }};">
       {% if section.settings.hero_image != blank %}
         {%- capture hero_desktop_src -%}
           {% render 'imagekit', src: section.settings.hero_image | image_url: width: 900 %}
         {%- endcapture -%}
-        <img src="{{ hero_desktop_src | strip }}" loading="eager" alt="{{ section.settings.hero_image.alt | escape }}">
+        {%- assign img_width = 900 -%}
+        {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
+        <link rel="preload" as="image" href="{{ hero_desktop_src | strip }}" fetchpriority="high">
+        <img src="{{ hero_desktop_src | strip }}" 
+             width="{{ img_width }}" 
+             height="{{ img_height }}" 
+             fetchpriority="high"
+             loading="eager" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;"
+             alt="{{ section.settings.hero_image.alt | escape }}">
       {% else %}
         <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
       {% endif %}

@@ -20,7 +20,7 @@
   {% if section.settings.logo != blank %}
     <a href="{{ routes.root_url }}">
       {% assign alt_value = section.settings.logo.alt | default: shop.name %}
-      {{ section.settings.logo | image_url: width: 1200 | image_tag: itemprop: "logo", alt: alt_value }}
+      {{ section.settings.logo | image_url: width: 600 | image_tag: itemprop: "logo", alt: alt_value, fetchpriority: 'high', loading: 'eager', class: 'header__logo-image' }}
     </a>
   {% else %}
     <a href="{{ routes.root_url }}">{{ shop.name }}</a>

@@ -78,11 +78,27 @@
 {% comment %} <link rel="preload" href="{{ 'stylesheet.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}"></noscript> {% endcomment %}
 
-<link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}"  as="style">
+    <link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}">
+    {{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
 
-    <link rel="preload" as="font" href="{{ main_font | font_url }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="{{ nav_font | font_url }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="{{ heading_font | font_url }}" type="font/woff2" crossorigin>
+    {%- if main_font -%}
+      <link rel="preload" as="font" href="{{ main_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endif -%}
+    {%- if heading_font -%}
+      <link rel="preload" as="font" href="{{ heading_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endif -%}
+    {%- if nav_font -%}
+      <link rel="preload" as="font" href="{{ nav_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endif -%}
+
+    <style>
+      {{ main_font | font_face: font_display: 'swap' }}
+      {{ heading_font | font_face: font_display: 'swap' }}
+      {{ nav_font | font_face: font_display: 'swap' }}
+      {{ main_font_bold | font_face: font_display: 'swap' }}
+      {{ main_font_italic | font_face: font_display: 'swap' }}
+      {{ main_font_bold_italic | font_face: font_display: 'swap' }}
+    </style>
 
     {% if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
@@ -105,28 +121,16 @@
     {% render 'css-variables' %}
 
     {% comment %} <link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}" type="text/css"> {% endcomment %}
-    <link rel="preload" href="{{ 'style.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ 'style.css' | asset_url }}"></noscript>
-
     <style>
-      {{ main_font | font_face: font_display: 'swap' }}
-      {{ nav_font | font_face: font_display: 'swap' }}
-      {{ heading_font | font_face: font_display: 'swap' }}
-      {{ main_font_bold | font_face: font_display: 'swap' }}
-      {{ main_font_italic | font_face: font_display: 'swap' }}
-      {{ main_font_bold_italic | font_face: font_display: 'swap' }}
       .yt-wrapper{max-width:100%;margin:0;padding:0 0 15px 0;}.youtube{background-color:#000;margin-bottom:30px;position:relative;padding-top:56.25%;overflow:hidden;cursor:pointer}.youtube img{width:100%;top:0;left:0;opacity:0.7}.youtube .play-button{width:90px;height:60px;background-color:#333;box-shadow:0 0 30px rgba( 0,0,0,0.6 );z-index:1;opacity:0.8;border-radius:6px}.youtube .play-button:before{content:"";border-style:solid;border-width:15px 0 15px 26.0px;border-color:transparent transparent transparent #fff}.youtube .play-button,.youtube img{cursor:pointer}.youtube .play-button,.youtube .play-button:before,.youtube iframe,.youtube img{position:absolute}.youtube .play-button,.youtube .play-button:before{top:50%;left:50%;transform:translate3d( -50%, -50%, 0 )}.youtube iframe{height:100%;width:100%;top:0;left:0}
       .yt-wrapper .youtube {
         background-image: url(https://cdn.shopify.com/s/files/1/0079/2274/5433/files/Screen_Shot_2019-06-25_at_9.50.59_PM_copy_2.jpg?v=1700722850);
         background-size: cover;
         background-position: center;
       }
-
       .jdgm-revs-tab{
             z-index: 104100000000!important;
       }
-
-
     </style>
     {{ content_for_header }}
     <script>
