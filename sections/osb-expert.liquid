@@ -98,42 +98,44 @@
 </style>
 
 {% if section.settings.show_section %}
-<section class="osb-expert-{{ section.id }}">
-  {% if section.settings.show_circles %}
-  <div class="osb-circles">
-    {% if section.settings.circle_1 != blank %}
-    {%- capture circle_1_src -%}
-      {% render 'imagekit', src: section.settings.circle_1 | image_url: width: 200 %}
-    {%- endcapture -%}
-    <div class="osb-circle"><img src="{{ circle_1_src | strip }}" loading="lazy" alt=""></div>
-    {% else %}
-    <div class="osb-circle" style="background:#eaf2f8;"></div>
-    {% endif %}
-    {% if section.settings.circle_2 != blank %}
-    {%- capture circle_2_src -%}
-      {% render 'imagekit', src: section.settings.circle_2 | image_url: width: 200 %}
-    {%- endcapture -%}
-    <div class="osb-circle"><img src="{{ circle_2_src | strip }}" loading="lazy" alt=""></div>
-    {% else %}
-    <div class="osb-circle" style="background:#c5dcea;"></div>
-    {% endif %}
-    {% if section.settings.circle_3 != blank %}
-    {%- capture circle_3_src -%}
-      {% render 'imagekit', src: section.settings.circle_3 | image_url: width: 200 %}
-    {%- endcapture -%}
-    <div class="osb-circle"><img src="{{ circle_3_src | strip }}" loading="lazy" alt=""></div>
-    {% else %}
-    <div class="osb-circle" style="background:#f4f8fb;"></div>
-    {% endif %}
-  </div>
-  {% endif %}
+  <section class="osb-expert-{{ section.id }}">
+    {% if section.settings.show_circles %}
+      <div class="osb-circles">
+        {% if section.settings.circle_1 != blank %}
+          {% assign circle_1_raw = section.settings.circle_1 | image_url: width: 200 %}
+          {% capture circle_1_src %}{% render 'imagekit', src: circle_1_raw %}{% endcapture %}
+          {% assign circle_1_src = circle_1_src | strip %}
+          <div class="osb-circle"><img src="{{ circle_1_src }}" loading="lazy" alt=""></div>
+        {% else %}
+          <div class="osb-circle" style="background:#eaf2f8;"></div>
+        {% endif %}
 
-  <h2 class="osb-exp-h">{{ section.settings.heading }}</h2>
-  <p class="osb-exp-p">{{ section.settings.body_text }}</p>
-  {% if section.settings.btn_text != blank %}
-  <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
-  {% endif %}
-</section>
+        {% if section.settings.circle_2 != blank %}
+          {% assign circle_2_raw = section.settings.circle_2 | image_url: width: 200 %}
+          {% capture circle_2_src %}{% render 'imagekit', src: circle_2_raw %}{% endcapture %}
+          {% assign circle_2_src = circle_2_src | strip %}
+          <div class="osb-circle"><img src="{{ circle_2_src }}" loading="lazy" alt=""></div>
+        {% else %}
+          <div class="osb-circle" style="background:#c5dcea;"></div>
+        {% endif %}
+
+        {% if section.settings.circle_3 != blank %}
+          {% assign circle_3_raw = section.settings.circle_3 | image_url: width: 200 %}
+          {% capture circle_3_src %}{% render 'imagekit', src: circle_3_raw %}{% endcapture %}
+          {% assign circle_3_src = circle_3_src | strip %}
+          <div class="osb-circle"><img src="{{ circle_3_src }}" loading="lazy" alt=""></div>
+        {% else %}
+          <div class="osb-circle" style="background:#f4f8fb;"></div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <h2 class="osb-exp-h">{{ section.settings.heading }}</h2>
+    <p class="osb-exp-p">{{ section.settings.body_text }}</p>
+    {% if section.settings.btn_text != blank %}
+      <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
+    {% endif %}
+  </section>
 {% endif %}
 
 {% schema %}
