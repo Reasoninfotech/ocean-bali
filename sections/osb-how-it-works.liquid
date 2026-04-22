@@ -191,197 +191,226 @@
 </style>
 
 {% if section.settings.show_section %}
-<section class="osb-how-{{ section.id }}">
-  <h2 class="osb-sec-title">{{ section.settings.heading }}</h2>
+  <section class="osb-how-{{ section.id }}">
+    <h2 class="osb-sec-title">{{ section.settings.heading }}</h2>
 
-  {% if section.settings.show_video %}
-  {%- assign vtype = section.settings.video_type -%}
+    {% if section.settings.show_video %}
+      {%- assign vtype = section.settings.video_type -%}
 
-  <div class="osb-vid"
-       id="osb-vid-{{ section.id }}"
-       data-vtype="{{ vtype }}"
-       data-cdn-url="{{ section.settings.cdn_video_url | escape }}"
-       data-yt-url="{{ section.settings.youtube_url | escape }}"
-       data-vm-url="{{ section.settings.vimeo_url | escape }}">
+      <div
+        class="osb-vid"
+        id="osb-vid-{{ section.id }}"
+        data-vtype="{{ vtype }}"
+        data-cdn-url="{{ section.settings.cdn_video_url | escape }}"
+        data-yt-url="{{ section.settings.youtube_url | escape }}"
+        data-vm-url="{{ section.settings.vimeo_url | escape }}"
+      >
+        {%- comment -%} 1. Shopify CDN — plain <video> no controls {%- endcomment -%}
+        {% if vtype == 'cdn' and section.settings.cdn_video_url != blank %}
+          <video id="osb-native-{{ section.id }}" preload="metadata" playsinline webkit-playsinline>
+            <source src="{{ section.settings.cdn_video_url }}" type="video/mp4">
+          </video>
+        {% endif %}
 
-    {%- comment -%} 1. Shopify CDN — plain <video> no controls {%- endcomment -%}
-    {% if vtype == 'cdn' and section.settings.cdn_video_url != blank %}
-      <video id="osb-native-{{ section.id }}" preload="metadata" playsinline webkit-playsinline>
-        <source src="{{ section.settings.cdn_video_url }}" type="video/mp4">
-      </video>
-    {% endif %}
+        {%- comment -%} 2. Shopify Hosted — video_tag, controls:false {%- endcomment -%}
+        {% if vtype == 'shopify' and section.settings.shopify_video != blank %}
+          {{-
+            section.settings.shopify_video
+            | video_tag: id: 'osb-native-'
+            | append: section.id,
+              autoplay: false,
+              loop: false,
+              muted: false,
+              controls: false,
+              preload: 'metadata',
+              playsinline: true
+          -}}
+        {% endif %}
 
-    {%- comment -%} 2. Shopify Hosted — video_tag, controls:false {%- endcomment -%}
-    {% if vtype == 'shopify' and section.settings.shopify_video != blank %}
-      {{- section.settings.shopify_video | video_tag:
-          id: 'osb-native-' | append: section.id,
-          autoplay: false,
-          loop: false,
-          muted: false,
-          controls: false,
-          preload: 'metadata',
-          playsinline: true -}}
-    {% endif %}
+        {%- comment -%} Thumbnail — z-index 3, covers video until play {%- endcomment -%}
+        {% if section.settings.video_thumbnail != blank %}
+          {% assign video_thumbnail_raw = section.settings.video_thumbnail | image_url: width: 1200 %}
+          {% capture video_thumbnail_src %}{% render 'imagekit', src: video_thumbnail_raw %}{% endcapture %}
+          {% assign video_thumbnail_src = video_thumbnail_src | strip %}
+          <img
+            src="{{ video_thumbnail_src }}"
+            class="osb-vid-thumb"
+            loading="lazy"
+            alt="Video thumbnail"
+            id="osb-thumb-{{ section.id }}"
+          >
+        {% endif %}
 
-    {%- comment -%} Thumbnail — z-index 3, covers video until play {%- endcomment -%}
-    {% if section.settings.video_thumbnail != blank %}
-      {%- capture video_thumbnail_src -%}
-        {% render 'imagekit', src: section.settings.video_thumbnail | image_url: width: 1200 %}
-      {%- endcapture -%}
-      <img
-        src="{{ video_thumbnail_src | strip }}"
-        class="osb-vid-thumb"
-        loading="lazy"
-        alt="Video thumbnail"
-        id="osb-thumb-{{ section.id }}">
-    {% endif %}
-
-    {%- comment -%} Play / Pause overlay — z-index 10 {%- endcomment -%}
-    <div class="osb-play-overlay">
-      <button class="osb-play-btn" id="osb-btn-{{ section.id }}" aria-label="Play video" type="button">
-        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
-      </button>
-    </div>
-
-  </div>
-
-  <script>
-  (function () {
-    var ID     = '{{ section.id }}';
-    var wrap   = document.getElementById('osb-vid-'    + ID);
-    var btn    = document.getElementById('osb-btn-'    + ID);
-    var thumb  = document.getElementById('osb-thumb-'  + ID);
-    var native = document.getElementById('osb-native-' + ID);
-    if (!wrap || !btn) return;
-
-    var vtype  = wrap.dataset.vtype;
-    var cdnUrl = wrap.dataset.cdnUrl;
-    var ytUrl  = wrap.dataset.ytUrl;
-    var vmUrl  = wrap.dataset.vmUrl;
-
-    var playing = false;
-    var iframe  = null;
-
-    /* ── Helpers ── */
-    function setPlaying(s) {
-      playing = s;
-      wrap.classList.toggle('is-playing', s);
-      btn.setAttribute('aria-label', s ? 'Pause video' : 'Play video');
-    }
-    function hideThumb() { if (thumb) thumb.style.opacity = '0'; }
-    function showThumb() { if (thumb) thumb.style.opacity = '1'; }
-
-    /* ── YouTube ── */
-    function ytSrc(url, ap) {
-      var id = '', m;
-      if ((m = url.match(/[?&]v=([^&]+)/)))       id = m[1];
-      else if ((m = url.match(/youtu\.be\/([^?]+)/))) id = m[1];
-      else if ((m = url.match(/embed\/([^?]+)/)))  id = m[1];
-      else id = url;
-      return 'https://www.youtube.com/embed/' + id + '?autoplay=' + (ap?1:0) + '&rel=0&enablejsapi=1';
-    }
-    function ytMsg(cmd) {
-      if (iframe) iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:cmd,args:[]}), '*');
-    }
-
-    /* ── Vimeo ── */
-    function vmSrc(url, ap) {
-      var id = '', m;
-      if ((m = url.match(/vimeo\.com\/(\d+)/))) id = m[1]; else id = url;
-      return 'https://player.vimeo.com/video/' + id + '?autoplay=' + (ap?1:0);
-    }
-    function vmMsg(method) {
-      if (iframe) iframe.contentWindow.postMessage(JSON.stringify({method:method}), '*');
-    }
-
-    /* ── Create iframe ── */
-    function makeIframe(src) {
-      iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.allowFullscreen = true;
-      wrap.insertBefore(iframe, wrap.firstChild);
-    }
-
-    /* ── Toggle functions ── */
-    function toggleNative() {
-      if (!native) return;
-      if (!playing) {
-        hideThumb();
-        native.play();
-        setPlaying(true);
-        native.addEventListener('ended', function() { setPlaying(false); showThumb(); }, {once:true});
-      } else {
-        native.pause();
-        setPlaying(false);
-      }
-    }
-
-    function toggleYT() {
-      if (!playing) {
-        hideThumb();
-        if (!iframe) makeIframe(ytSrc(ytUrl, true));
-        else ytMsg('playVideo');
-        setPlaying(true);
-      } else {
-        ytMsg('pauseVideo');
-        setPlaying(false);
-      }
-    }
-
-    function toggleVM() {
-      if (!playing) {
-        hideThumb();
-        if (!iframe) makeIframe(vmSrc(vmUrl, true));
-        else vmMsg('play');
-        setPlaying(true);
-      } else {
-        vmMsg('pause');
-        setPlaying(false);
-      }
-    }
-
-    function toggle() {
-      if      (vtype === 'cdn' || vtype === 'shopify') toggleNative();
-      else if (vtype === 'youtube') toggleYT();
-      else if (vtype === 'vimeo')   toggleVM();
-    }
-
-    /* ── Event listeners ── */
-    btn.addEventListener('click', function(e) { e.stopPropagation(); toggle(); });
-    wrap.addEventListener('click', function(e) { if (!btn.contains(e.target)) toggle(); });
-
-    /* ── Strip browser controls from native video (safety net) ── */
-    if (native) { native.removeAttribute('controls'); native.controls = false; }
-
-  })();
-  </script>
-  {% endif %}
-
-  <div class="osb-steps">
-    {% for block in section.blocks %}
-      {% if block.type == 'step' %}
-      <div class="osb-step" {{ block.shopify_attributes }}>
-        <div class="osb-step-img">
-          {% if block.settings.step_image != blank %}
-            {%- capture step_image_src -%}
-              {% render 'imagekit', src: block.settings.step_image | image_url: width: 600 %}
-            {%- endcapture -%}
-            <img src="{{ step_image_src | strip }}" loading="lazy" alt="{{ block.settings.step_title | escape }}">
-          {% endif %}
-        </div>
-        <div class="osb-step-body">
-          <p class="osb-step-n">{{ block.settings.step_number }}</p>
-          <h3 class="osb-step-t">{{ block.settings.step_title }}</h3>
-          <p class="osb-step-d">{{ block.settings.step_desc }}</p>
+        {%- comment -%} Play / Pause overlay — z-index 10 {%- endcomment -%}
+        <div class="osb-play-overlay">
+          <button class="osb-play-btn" id="osb-btn-{{ section.id }}" aria-label="Play video" type="button">
+            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>
+            </svg>
+          </button>
         </div>
       </div>
-      {% endif %}
-    {% endfor %}
-  </div>
 
-</section>
+      <script>
+        (function () {
+          var ID = '{{ section.id }}';
+          var wrap = document.getElementById('osb-vid-' + ID);
+          var btn = document.getElementById('osb-btn-' + ID);
+          var thumb = document.getElementById('osb-thumb-' + ID);
+          var native = document.getElementById('osb-native-' + ID);
+          if (!wrap || !btn) return;
+
+          var vtype = wrap.dataset.vtype;
+          var cdnUrl = wrap.dataset.cdnUrl;
+          var ytUrl = wrap.dataset.ytUrl;
+          var vmUrl = wrap.dataset.vmUrl;
+
+          var playing = false;
+          var iframe = null;
+
+          /* ── Helpers ── */
+          function setPlaying(s) {
+            playing = s;
+            wrap.classList.toggle('is-playing', s);
+            btn.setAttribute('aria-label', s ? 'Pause video' : 'Play video');
+          }
+          function hideThumb() {
+            if (thumb) thumb.style.opacity = '0';
+          }
+          function showThumb() {
+            if (thumb) thumb.style.opacity = '1';
+          }
+
+          /* ── YouTube ── */
+          function ytSrc(url, ap) {
+            var id = '',
+              m;
+            if ((m = url.match(/[?&]v=([^&]+)/))) id = m[1];
+            else if ((m = url.match(/youtu\.be\/([^?]+)/))) id = m[1];
+            else if ((m = url.match(/embed\/([^?]+)/))) id = m[1];
+            else id = url;
+            return 'https://www.youtube.com/embed/' + id + '?autoplay=' + (ap ? 1 : 0) + '&rel=0&enablejsapi=1';
+          }
+          function ytMsg(cmd) {
+            if (iframe)
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*');
+          }
+
+          /* ── Vimeo ── */
+          function vmSrc(url, ap) {
+            var id = '',
+              m;
+            if ((m = url.match(/vimeo\.com\/(\d+)/))) id = m[1];
+            else id = url;
+            return 'https://player.vimeo.com/video/' + id + '?autoplay=' + (ap ? 1 : 0);
+          }
+          function vmMsg(method) {
+            if (iframe) iframe.contentWindow.postMessage(JSON.stringify({ method: method }), '*');
+          }
+
+          /* ── Create iframe ── */
+          function makeIframe(src) {
+            iframe = document.createElement('iframe');
+            iframe.src = src;
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+            iframe.allowFullscreen = true;
+            wrap.insertBefore(iframe, wrap.firstChild);
+          }
+
+          /* ── Toggle functions ── */
+          function toggleNative() {
+            if (!native) return;
+            if (!playing) {
+              hideThumb();
+              native.play();
+              setPlaying(true);
+              native.addEventListener(
+                'ended',
+                function () {
+                  setPlaying(false);
+                  showThumb();
+                },
+                { once: true }
+              );
+            } else {
+              native.pause();
+              setPlaying(false);
+            }
+          }
+
+          function toggleYT() {
+            if (!playing) {
+              hideThumb();
+              if (!iframe) makeIframe(ytSrc(ytUrl, true));
+              else ytMsg('playVideo');
+              setPlaying(true);
+            } else {
+              ytMsg('pauseVideo');
+              setPlaying(false);
+            }
+          }
+
+          function toggleVM() {
+            if (!playing) {
+              hideThumb();
+              if (!iframe) makeIframe(vmSrc(vmUrl, true));
+              else vmMsg('play');
+              setPlaying(true);
+            } else {
+              vmMsg('pause');
+              setPlaying(false);
+            }
+          }
+
+          function toggle() {
+            if (vtype === 'cdn' || vtype === 'shopify') toggleNative();
+            else if (vtype === 'youtube') toggleYT();
+            else if (vtype === 'vimeo') toggleVM();
+          }
+
+          /* ── Event listeners ── */
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggle();
+          });
+          wrap.addEventListener('click', function (e) {
+            if (!btn.contains(e.target)) toggle();
+          });
+
+          /* ── Strip browser controls from native video (safety net) ── */
+          if (native) {
+            native.removeAttribute('controls');
+            native.controls = false;
+          }
+        })();
+      </script>
+    {% endif %}
+
+    <div class="osb-steps">
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          <div class="osb-step" {{ block.shopify_attributes }}>
+            <div class="osb-step-img">
+              {% if block.settings.step_image != blank %}
+                {%- capture step_image_src -%}
+              {% render 'imagekit', src: block.settings.step_image | image_url: width: 600 %}
+            {%- endcapture -%}
+                <img src="{{ step_image_src | strip }}" loading="lazy" alt="{{ block.settings.step_title | escape }}">
+              {% endif %}
+            </div>
+            <div class="osb-step-body">
+              <p class="osb-step-n">{{ block.settings.step_number }}</p>
+              <h3 class="osb-step-t">{{ block.settings.step_title }}</h3>
+              <p class="osb-step-d">{{ block.settings.step_desc }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
 {% endif %}
 
 {% schema %}
@@ -424,9 +453,9 @@
       "id": "video_type",
       "label": "Video Source",
       "options": [
-        { "value": "cdn",     "label": "🔗 Shopify CDN (.mp4 URL)" },
+        { "value": "cdn", "label": "🔗 Shopify CDN (.mp4 URL)" },
         { "value": "youtube", "label": "▶️  YouTube" },
-        { "value": "vimeo",   "label": "🎬 Vimeo" },
+        { "value": "vimeo", "label": "🎬 Vimeo" },
         { "value": "shopify", "label": "☁️  Shopify Hosted (File Upload)" }
       ],
       "default": "cdn",
