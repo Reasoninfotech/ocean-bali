@@ -395,10 +395,10 @@
           <div class="osb-step" {{ block.shopify_attributes }}>
             <div class="osb-step-img">
               {% if block.settings.step_image != blank %}
-                {%- capture step_image_src -%}
-              {% render 'imagekit', src: block.settings.step_image | image_url: width: 600 %}
-            {%- endcapture -%}
-                <img src="{{ step_image_src | strip }}" loading="lazy" alt="{{ block.settings.step_title | escape }}">
+                {% assign step_image_raw = block.settings.step_image | image_url: width: 600 %}
+                {% capture step_image_src %}{% render 'imagekit', src: step_image_raw %}{% endcapture %}
+                {% assign step_image_src = step_image_src | strip %}
+                <img src="{{ step_image_src }}" loading="lazy" alt="{{ block.settings.step_title | escape }}">
               {% endif %}
             </div>
             <div class="osb-step-body">
