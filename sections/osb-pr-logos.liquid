@@ -96,25 +96,26 @@
 </style>
 
 {% if section.settings.show_section %}
-<section class="osb-pr-{{ section.id }}">
-  <p class="osb-pr-lbl">{{ section.settings.label_text }}</p>
-  <div class="osb-pr-grid">
-    {% for block in section.blocks %}
-      {% if block.type == 'logo' %}
-      <div class="osb-pr-logo" {{ block.shopify_attributes }}>
-        {% if block.settings.logo_image != blank %}
-          {%- capture logo_src -%}
-            {% render 'imagekit', src: block.settings.logo_image | image_url: width: 260 %}
-          {%- endcapture -%}
-          <img src="{{ logo_src | strip }}" loading="lazy" alt="{{ block.settings.logo_name | escape }}">
-        {% else %}
-          <span class="osb-pr-logo-text">{{ block.settings.logo_name }}</span>
+  <section class="osb-pr-{{ section.id }}">
+    <p class="osb-pr-lbl">{{ section.settings.label_text }}</p>
+    <div class="osb-pr-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'logo' %}
+          <div class="osb-pr-logo" {{ block.shopify_attributes }}>
+            {% if block.settings.logo_image != blank %}
+              {% assign logo_raw = block.settings.logo_image | image_url: width: 260 %}
+              {% capture logo_src %}{% render 'imagekit', src: logo_raw %}{% endcapture %}
+              {% assign logo_src = logo_src | strip %}
+              <img src="{{ logo_src }}" loading="lazy" alt="{{ block.settings.logo_name | escape }}">
+
+            {% else %}
+              <span class="osb-pr-logo-text">{{ block.settings.logo_name }}</span>
+            {% endif %}
+          </div>
         {% endif %}
-      </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
+      {% endfor %}
+    </div>
+  </section>
 {% endif %}
 
 {% schema %}
