@@ -374,12 +374,13 @@
                 <div class="osb-usp-icon">
                   {% if section.settings.usp_2_svg != blank %}
                     {{ section.settings.usp_2_svg }}
+
                   {% elsif section.settings.usp_2_image != blank %}
-                    {% assign usp_2_image = section.settings.usp_2_image | image_url: width: 48 %}
-                    {%- capture usp_2_src -%}
-                {% render 'imagekit', src: usp_2_image | image_url: width: 48 %}
-              {%- endcapture -%}
+                    {% assign usp_2_raw = section.settings.usp_2_image | image_url: width: 48 %}
+                    {% capture usp_2_src %}{% render 'imagekit', src: usp_2_raw %}{% endcapture %}
+                    {% assign usp_2_src = usp_2_src | strip %}
                     <img src="{{ usp_2_src }}" loading="lazy" alt="{{ section.settings.usp_2_label | escape }}">
+
                   {% else %}
                     <svg viewBox="0 0 24 24">
                       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
