@@ -139,60 +139,67 @@
 </style>
 
 {% if section.settings.show_section %}
-<section class="osb-why-{{ section.id }}">
-  <div class="osb-why-inner">
-    <div>
-      <h2 class="osb-why-h">{{ section.settings.heading }}</h2>
-      {% if section.settings.body_1 != blank %}
-      <p class="osb-why-p">{{ section.settings.body_1 }}</p>
-      {% endif %}
-      {% if section.settings.body_2 != blank %}
-      <p class="osb-why-p" style="font-weight:600;color:#2a2a2a;">{{ section.settings.body_2 }}</p>
-      {% endif %}
+  <section class="osb-why-{{ section.id }}">
+    <div class="osb-why-inner">
+      <div>
+        <h2 class="osb-why-h">{{ section.settings.heading }}</h2>
+        {% if section.settings.body_1 != blank %}
+          <p class="osb-why-p">{{ section.settings.body_1 }}</p>
+        {% endif %}
+        {% if section.settings.body_2 != blank %}
+          <p class="osb-why-p" style="font-weight:600;color:#2a2a2a;">{{ section.settings.body_2 }}</p>
+        {% endif %}
 
-      <div class="osb-acc">
-        {% for block in section.blocks %}
-          {% if block.type == 'accordion' %}
-          <div class="osb-acc-item{% if forloop.first %} open{% endif %}" {{ block.shopify_attributes }}>
-            <button class="osb-acc-btn">
-              <span class="osb-acc-txt">{{ block.settings.question }}</span>
-              <span class="osb-acc-arr">
-                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </button>
-            <div class="osb-acc-body">{{ block.settings.answer }}</div>
-          </div>
-          {% endif %}
-        {% endfor %}
+        <div class="osb-acc">
+          {% for block in section.blocks %}
+            {% if block.type == 'accordion' %}
+              <div class="osb-acc-item{% if forloop.first %} open{% endif %}" {{ block.shopify_attributes }}>
+                <button class="osb-acc-btn">
+                  <span class="osb-acc-txt">{{ block.settings.question }}</span>
+                  <span class="osb-acc-arr">
+                    <svg viewBox="0 0 24 24">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="osb-acc-body">{{ block.settings.answer }}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="osb-why-img">
+        {% if section.settings.section_image != blank %}
+          {% assign why_us_image_raw = section.settings.section_image | image_url: width: 800 %}
+          {% capture why_us_image_src %}{% render 'imagekit', src: why_us_image_raw %}{% endcapture %}
+          {% assign why_us_image_src = why_us_image_src | strip %}
+          <img src="{{ why_us_image_src }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
+
+        {% else %}
+          <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">
+            Upload product lifestyle image
+          </p>
+        {% endif %}
       </div>
     </div>
+  </section>
 
-    <div class="osb-why-img">
-      {% if section.settings.section_image != blank %}
-        {%- capture why_us_image_src -%}
-          {% render 'imagekit', src: section.settings.section_image | image_url: width: 800 %}
-        {%- endcapture -%}
-        <img src="{{ why_us_image_src | strip }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
-      {% else %}
-        <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload product lifestyle image</p>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  var accs = document.querySelectorAll('.osb-why-{{ section.id }} .osb-acc-btn');
-  accs.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.osb-acc-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.osb-why-{{ section.id }} .osb-acc-item').forEach(function(x){ x.classList.remove('open'); });
-      if(!isOpen) item.classList.add('open');
-    });
-  });
-})();
-</script>
+  <script>
+    (function () {
+      var accs = document.querySelectorAll('.osb-why-{{ section.id }} .osb-acc-btn');
+      accs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.osb-acc-item');
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.osb-why-{{ section.id }} .osb-acc-item').forEach(function (x) {
+            x.classList.remove('open');
+          });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    })();
+  </script>
 {% endif %}
 
 {% schema %}
