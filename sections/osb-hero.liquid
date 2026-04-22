@@ -253,165 +253,192 @@
   }
 </style>
 
-{% comment %} ─── USP Icon Render Snippet (inline) ───
+{% comment %}
+  ─── USP Icon Render Snippet (inline) ───
   Logic: SVG textarea first priority → Image picker fallback → Default SVG
 {% endcomment %}
 
 {% if section.settings.show_section %}
-<div class="osb-hero-wrap-{{ section.id }}">
-  <div class="osb-hero-{{ section.id }}">
-    <div>
-      {% if section.settings.show_stars %}
-      <div class="osb-stars-row">
-        <span class="osb-stars">★★★★★</span>
-        <span class="osb-rc">{{ section.settings.review_count }}</span>
-      </div>
-      {% endif %}
+  <div class="osb-hero-wrap-{{ section.id }}">
+    <div class="osb-hero-{{ section.id }}">
+      <div>
+        {% if section.settings.show_stars %}
+          <div class="osb-stars-row">
+            <span class="osb-stars">★★★★★</span>
+            <span class="osb-rc">{{ section.settings.review_count }}</span>
+          </div>
+        {% endif %}
 
-      <h1 class="osb-h1">{{ section.settings.heading }}</h1>
-      <p class="osb-sub">{{ section.settings.subheading }}</p>
+        <h1 class="osb-h1">{{ section.settings.heading }}</h1>
+        <p class="osb-sub">{{ section.settings.subheading }}</p>
 
-      <div class="osb_image_mobile" style="aspect-ratio: {{ section.settings.image_ratio }}; background: #eaf2f8; border-radius: 4px; overflow: hidden;">
-        {% if section.settings.hero_image != blank %}
-          {%- capture hero_mobile_src -%}
+        <div
+          class="osb_image_mobile"
+          style="aspect-ratio: {{ section.settings.image_ratio }}; background: #eaf2f8; border-radius: 4px; overflow: hidden;"
+        >
+          {% if section.settings.hero_image != blank %}
+            {%- capture hero_mobile_src -%}
             {% render 'imagekit', src: section.settings.hero_image | image_url: width: 900 %}
           {%- endcapture -%}
-          {%- assign img_width = 900 -%}
-          {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
-          <link rel="preload" as="image" href="{{ hero_mobile_src | strip }}" fetchpriority="high">
-          <img src="{{ hero_mobile_src | strip }}" 
-               width="{{ img_width }}" 
-               height="{{ img_height }}" 
-               fetchpriority="high"
-               style="width: 100%; height: auto; object-fit: cover; display: block;"
-               loading="eager" 
-               alt="{{ section.settings.hero_image.alt | escape }}">
-        {% else %}
-          <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
+            {%- assign img_width = 900 -%}
+            {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
+            <link rel="preload" as="image" href="{{ hero_mobile_src | strip }}" fetchpriority="high">
+            <img
+              src="{{ hero_mobile_src | strip }}"
+              width="{{ img_width }}"
+              height="{{ img_height }}"
+              fetchpriority="high"
+              style="width: 100%; height: auto; object-fit: cover; display: block;"
+              loading="eager"
+              alt="{{ section.settings.hero_image.alt | escape }}"
+            >
+          {% else %}
+            <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">
+              Upload your hero image or video
+            </p>
+          {% endif %}
+        </div>
+
+        {% if section.settings.bullet_1 != blank
+          or section.settings.bullet_2 != blank
+          or section.settings.bullet_3 != blank
+        %}
+          <ul class="osb-list">
+            {% if section.settings.bullet_1 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{ section.settings.bullet_1 }}
+              </li>
+            {% endif %}
+            {% if section.settings.bullet_2 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{ section.settings.bullet_2 }}
+              </li>
+            {% endif %}
+            {% if section.settings.bullet_3 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{ section.settings.bullet_3 }}
+              </li>
+            {% endif %}
+          </ul>
         {% endif %}
-      </div>
 
+        <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
 
-
-
-      {% if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank %}
-      <ul class="osb-list">
-        {% if section.settings.bullet_1 != blank %}
-        <li>
-          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
-          {{ section.settings.bullet_1 }}
-        </li>
+        {% if section.settings.show_discount_code %}
+          <p class="osb-code">{{ section.settings.discount_text }}</p>
         {% endif %}
-        {% if section.settings.bullet_2 != blank %}
-        <li>
-          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
-          {{ section.settings.bullet_2 }}
-        </li>
-        {% endif %}
-        {% if section.settings.bullet_3 != blank %}
-        <li>
-          <span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>
-          {{ section.settings.bullet_3 }}
-        </li>
-        {% endif %}
-      </ul>
-      {% endif %}
 
-      <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
-
-      {% if section.settings.show_discount_code %}
-      <p class="osb-code">{{ section.settings.discount_text }}</p>
-      {% endif %}
-
-      {% if section.settings.show_usps %}
-      <div class="osb-usps">
-
-        {% comment %} ── USP 1 ── {% endcomment %}
-        {% if section.settings.usp_1_label != blank %}
-        <div class="osb-usp">
-          <div class="osb-usp-icon">
-            {% if section.settings.usp_1_svg != blank %}
-              {{ section.settings.usp_1_svg }}
-            {% elsif section.settings.usp_1_image != blank %}
-              {%- capture usp_1_src -%}
+        {% if section.settings.show_usps %}
+          <div class="osb-usps">
+            {% comment %} ── USP 1 ── {% endcomment %}
+            {% if section.settings.usp_1_label != blank %}
+              <div class="osb-usp">
+                <div class="osb-usp-icon">
+                  {% if section.settings.usp_1_svg != blank %}
+                    {{ section.settings.usp_1_svg }}
+                  {% elsif section.settings.usp_1_image != blank %}
+                    {%- capture usp_1_src -%}
                 {% render 'imagekit', src: section.settings.usp_1_image | image_url: width: 48 %}
               {%- endcapture -%}
-              <img src="{{ usp_1_src | strip }}" loading="lazy" alt="{{ section.settings.usp_1_label | escape }}">
-            {% else %}
-              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <img src="{{ usp_1_src | strip }}" loading="lazy" alt="{{ section.settings.usp_1_label | escape }}">
+                  {% else %}
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  {% endif %}
+                </div>
+                <span class="osb-usp-lbl">{{ section.settings.usp_1_label }}</span>
+              </div>
             {% endif %}
-          </div>
-          <span class="osb-usp-lbl">{{ section.settings.usp_1_label }}</span>
-        </div>
-        {% endif %}
 
-        {% comment %} ── USP 2 ── {% endcomment %}
-        {% if section.settings.usp_2_label != blank %}
-        <div class="osb-usp">
-          <div class="osb-usp-icon">
-            {% if section.settings.usp_2_svg != blank %}
-              {{ section.settings.usp_2_svg }}
-            {% elsif section.settings.usp_2_image != blank %}
-              {%- capture usp_2_src -%}
+            {% comment %} ── USP 2 ── {% endcomment %}
+            {% if section.settings.usp_2_label != blank %}
+              <div class="osb-usp">
+                <div class="osb-usp-icon">
+                  {% if section.settings.usp_2_svg != blank %}
+                    {{ section.settings.usp_2_svg }}
+                  {% elsif section.settings.usp_2_image != blank %}
+                    {%- capture usp_2_src -%}
                 {% render 'imagekit', src: section.settings.usp_2_image | image_url: width: 48 %}
               {%- endcapture -%}
-              <img src="{{ usp_2_src | strip }}" loading="lazy" alt="{{ section.settings.usp_2_label | escape }}">
-            {% else %}
-              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    <img src="{{ usp_2_src | strip }}" loading="lazy" alt="{{ section.settings.usp_2_label | escape }}">
+                  {% else %}
+                    <svg viewBox="0 0 24 24">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                  {% endif %}
+                </div>
+                <span class="osb-usp-lbl">{{ section.settings.usp_2_label }}</span>
+              </div>
             {% endif %}
-          </div>
-          <span class="osb-usp-lbl">{{ section.settings.usp_2_label }}</span>
-        </div>
-        {% endif %}
 
-        {% comment %} ── USP 3 ── {% endcomment %}
-        {% if section.settings.usp_3_label != blank %}
-        <div class="osb-usp">
-          <div class="osb-usp-icon">
-            {% if section.settings.usp_3_svg != blank %}
-              {{ section.settings.usp_3_svg }}
-            {% elsif section.settings.usp_3_image != blank %}
-              {%- capture usp_3_src -%}
+            {% comment %} ── USP 3 ── {% endcomment %}
+            {% if section.settings.usp_3_label != blank %}
+              <div class="osb-usp">
+                <div class="osb-usp-icon">
+                  {% if section.settings.usp_3_svg != blank %}
+                    {{ section.settings.usp_3_svg }}
+                  {% elsif section.settings.usp_3_image != blank %}
+                    {%- capture usp_3_src -%}
                 {% render 'imagekit', src: section.settings.usp_3_image | image_url: width: 48 %}
               {%- endcapture -%}
-              <img src="{{ usp_3_src | strip }}" loading="lazy" alt="{{ section.settings.usp_3_label | escape }}">
-            {% else %}
-              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    <img src="{{ usp_3_src | strip }}" loading="lazy" alt="{{ section.settings.usp_3_label | escape }}">
+                  {% else %}
+                    <svg viewBox="0 0 24 24">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                  {% endif %}
+                </div>
+                <span class="osb-usp-lbl">{{ section.settings.usp_3_label }}</span>
+              </div>
             {% endif %}
           </div>
-          <span class="osb-usp-lbl">{{ section.settings.usp_3_label }}</span>
-        </div>
         {% endif %}
-
       </div>
-      {% endif %}
+
+      <div class="osb-media" style="aspect-ratio: {{ section.settings.image_ratio }};">
+        {% if section.settings.hero_image != blank %}
+          {% assign hero_raw = section.settings.hero_image | image_url: width: 900 %}
+          {% capture hero_ik %}{% render 'imagekit', src: hero_raw %}{% endcapture %}
+          {% assign hero_ik = hero_ik | strip %}
+
+          {%- assign img_width = 900 -%}
+          {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
+
+          <link rel="preload" as="image" href="{{ hero_ik }}" fetchpriority="high">
+          <img
+            src="{{ hero_ik }}"
+            width="{{ img_width }}"
+            height="{{ img_height }}"
+            fetchpriority="high"
+            loading="eager"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+            alt="{{ section.settings.hero_image.alt | escape }}"
+          >
+
+        {% else %}
+          <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">
+            Upload your hero image or video
+          </p>
+        {% endif %}
+      </div>
     </div>
-
-
-
-    <div class="osb-media" style="aspect-ratio: {{ section.settings.image_ratio }};">
-      {% if section.settings.hero_image != blank %}
-        {%- capture hero_desktop_src -%}
-          {% render 'imagekit', src: section.settings.hero_image | image_url: width: 900 %}
-        {%- endcapture -%}
-        {%- assign img_width = 900 -%}
-        {%- assign img_height = 900 | divided_by: section.settings.hero_image.aspect_ratio | round -%}
-        <link rel="preload" as="image" href="{{ hero_desktop_src | strip }}" fetchpriority="high">
-        <img src="{{ hero_desktop_src | strip }}" 
-             width="{{ img_width }}" 
-             height="{{ img_height }}" 
-             fetchpriority="high"
-             loading="eager" 
-             style="width: 100%; height: 100%; object-fit: cover; display: block;"
-             alt="{{ section.settings.hero_image.alt | escape }}">
-      {% else %}
-        <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload your hero image or video</p>
-      {% endif %}
-    </div>
-
-
   </div>
-</div>
 {% endif %}
 
 {% schema %}
@@ -530,7 +557,7 @@
       "type": "textarea",
       "id": "usp_1_svg",
       "label": "USP 1 — Custom SVG Code (Priority 1)",
-      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon.",
+      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon."
     },
     {
       "type": "image_picker",
@@ -552,7 +579,7 @@
       "type": "textarea",
       "id": "usp_2_svg",
       "label": "USP 2 — Custom SVG Code (Priority 1)",
-      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon.",
+      "info": "Paste your full <svg>...</svg> code here. Leave blank to use image or default icon."
     },
     {
       "type": "image_picker",
