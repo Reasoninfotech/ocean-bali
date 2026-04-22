@@ -159,57 +159,91 @@
 </style>
 
 {% if section.settings.show_section %}
-<div class="osb-2col-wrap-{{ section.id }}">
-  <div class="osb-2col-{{ section.id }}">
-    <div>
-      <h2 class="osb-sec-h">{{ section.settings.heading }}</h2>
+  <div class="osb-2col-wrap-{{ section.id }}">
+    <div class="osb-2col-{{ section.id }}">
+      <div>
+        <h2 class="osb-sec-h">{{ section.settings.heading }}</h2>
 
-      {% if section.settings.body_1 != blank %}
-       <div class="osb-sec-p"> 
-        {{ section.settings.body_1 }}
-       </div>
-      {% endif %}
-
-
-      {% if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank or section.settings.bullet_4 != blank %}
-      <ul class="osb-list">
-        {% if section.settings.bullet_1 != blank %}
-        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_1 }}</li>
+        {% if section.settings.body_1 != blank %}
+          <div class="osb-sec-p">
+            {{ section.settings.body_1 }}
+          </div>
         {% endif %}
-        {% if section.settings.bullet_2 != blank %}
-        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_2 }}</li>
-        {% endif %}
-        {% if section.settings.bullet_3 != blank %}
-        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_3 }}</li>
-        {% endif %}
-        {% if section.settings.bullet_4 != blank %}
-        <li><span class="osb-check"><svg viewBox="0 0 12 9"><polyline points="1,4.5 4,8 11,1"/></svg></span>{{ section.settings.bullet_4 }}</li>
-        {% endif %}
-      </ul>
-      {% endif %}
 
-      {% if section.settings.italic_note != blank %}
-      <p class="osb-italic-note">{{ section.settings.italic_note }}</p>
-      {% endif %}
+        {% if section.settings.bullet_1 != blank
+          or section.settings.bullet_2 != blank
+          or section.settings.bullet_3 != blank
+          or section.settings.bullet_4 != blank
+        %}
+          <ul class="osb-list">
+            {% if section.settings.bullet_1 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{- section.settings.bullet_1 }}
+              </li>
+            {% endif %}
+            {% if section.settings.bullet_2 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{- section.settings.bullet_2 }}
+              </li>
+            {% endif %}
+            {% if section.settings.bullet_3 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{- section.settings.bullet_3 }}
+              </li>
+            {% endif %}
+            {% if section.settings.bullet_4 != blank %}
+              <li>
+                <span class="osb-check">
+                  <svg viewBox="0 0 12 9">
+                    <polyline points="1,4.5 4,8 11,1"/>
+                  </svg>
+                </span>
+                {{- section.settings.bullet_4 }}
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
 
-      {% if section.settings.show_button and section.settings.btn_text != blank %}
-      <br>
-      <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
-      {% endif %}
-    </div>
+        {% if section.settings.italic_note != blank %}
+          <p class="osb-italic-note">{{ section.settings.italic_note }}</p>
+        {% endif %}
 
-    <div class="osb-media">
-      {% if section.settings.section_image != blank %}
-        {%- capture section_image_src -%}
-          {% render 'imagekit', src: section.settings.section_image | image_url: width: 900 %}
-        {%- endcapture -%}
-        <img src="{{ section_image_src | strip }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
-      {% else %}
-        <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">Upload section image or video</p>
-      {% endif %}
+        {% if section.settings.show_button and section.settings.btn_text != blank %}
+          <br>
+          <a href="{{ section.settings.btn_url }}" class="osb-btn">{{ section.settings.btn_text }}</a>
+        {% endif %}
+      </div>
+
+      <div class="osb-media">
+        {% if section.settings.section_image != blank %}
+          {% assign section_image_raw = section.settings.section_image | image_url: width: 900 %}
+          {% capture section_image_src %}{% render 'imagekit', src: section_image_raw %}{% endcapture %}
+          {% assign section_image_src = section_image_src | strip %}
+          <img src="{{ section_image_src }}" loading="lazy" alt="{{ section.settings.section_image.alt | escape }}">
+
+        {% else %}
+          <p style="font-size:13px;font-style:italic;color:#c5dcea;text-align:center;padding:2rem;line-height:1.8;">
+            Upload section image or video
+          </p>
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
 {% endif %}
 
 {% schema %}
