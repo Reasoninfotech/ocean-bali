@@ -47,7 +47,7 @@
     transform: scale(1.04);
   }
 
-  
+
 
   @media (min-width: 768px) {
     .osb-ugc-{{ section.id }} {
@@ -77,35 +77,36 @@
 </style>
 
 {% if section.settings.show_section %}
-<section class="osb-ugc-{{ section.id }}">
-  {% if section.settings.heading != blank %}
-  <h2 class="osb-ugc-h">{{ section.settings.heading }}</h2>
-  {% endif %}
+  <section class="osb-ugc-{{ section.id }}">
+    {% if section.settings.heading != blank %}
+      <h2 class="osb-ugc-h">{{ section.settings.heading }}</h2>
+    {% endif %}
 
-  <div class="osb-ugc-grid">
-    {% for block in section.blocks %}
-      {% if block.type == 'photo' %}
-      <div class="osb-ugc-item" {{ block.shopify_attributes }}>
-        {% if block.settings.photo != blank %}
-          {%- capture photo_src -%}
-            {% render 'imagekit', src: block.settings.photo | image_url: width: 600 %}
-          {%- endcapture -%}
-          {% if block.settings.link_url != blank %}
-          <a href="{{ block.settings.link_url }}" target="_blank" rel="noopener">
-            <img src="{{ photo_src | strip }}" loading="lazy" alt="{{ block.settings.photo.alt | escape }}">
-          </a>
-          {% else %}
-            <img src="{{ photo_src | strip }}" loading="lazy" alt="{{ block.settings.photo.alt | escape }}">
-          {% endif %}
-        {% else %}
-          <div style="width:100%;height:100%;background:{{ block.settings.placeholder_color }};"></div>
+    <div class="osb-ugc-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'photo' %}
+          <div class="osb-ugc-item" {{ block.shopify_attributes }}>
+            {% if block.settings.photo != blank %}
+              {% assign photo_raw = block.settings.photo | image_url: width: 600 %}
+              {% capture photo_src %}{% render 'imagekit', src: photo_raw %}{% endcapture %}
+              {% assign photo_src = photo_src | strip %}
+
+              {% if block.settings.link_url != blank %}
+                <a href="{{ block.settings.link_url }}" target="_blank" rel="noopener">
+                  <img src="{{ photo_src }}" loading="lazy" alt="{{ block.settings.photo.alt | escape }}">
+                </a>
+              {% else %}
+                <img src="{{ photo_src }}" loading="lazy" alt="{{ block.settings.photo.alt | escape }}">
+              {% endif %}
+
+            {% else %}
+              <div style="width:100%;height:100%;background:{{ block.settings.placeholder_color }};"></div>
+            {% endif %}
+          </div>
         {% endif %}
-      </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-  
-</section>
+      {% endfor %}
+    </div>
+  </section>
 {% endif %}
 
 {% schema %}
