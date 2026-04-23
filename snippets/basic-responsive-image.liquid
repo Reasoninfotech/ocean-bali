@@ -1,43 +1,9 @@
-{% comment %}
-snippets/basic-responsive-image.liquid
-
-Renders a responsive image with ImageKit CDN support.
-
-Accepts:
-- type:      {Object} Image object. (required)
-- width:     {Number} Explicit image width. (optional)
-- sm_render: {String} Width of image for small viewports. (optional)
-- lg_render: {String} Width of image for large viewports. (optional)
-- md_render: {String} Width of image for medium viewports. (optional)
-- img_class: {String} CSS Classes added to the img element. (optional)
-- class:     {String} CSS Classes added to the parent '.box-ratio' element. (optional)
-- loading:   {String} Set the loading attribute. By default is 'lazy'. (optional)
-
-Usage:
-{%
-  render 'basic-responsive-image',
-  type: product.image,
-  width: 1200,
-  sm_render: sm_render,
-  lg_render: lg_render,
-  md_render: md_render,
-  img_class: img_class,
-  class: class,
-  loading: 'eager'
-%}
-{% endcomment %}
-
 {% assign img_width = width | default: 1200 %}
 {% assign image_box_ratio = type.height | append: ".0" | times: 1 | divided_by: type.width | times: 100 | append: "%" %}
-
 {%- capture sizes -%}(min-width: 1601px) {{ lg_render | default: '2000px' }}, (min-width: 768px) and (max-width: 1600px) {{ md_render | default: '1200px' }}, (max-width: 767px) {{ sm_render | default: '100vw' }}, 900px{%- endcapture -%}
-
-{% comment %} --- Base src via ImageKit --- {% endcomment %}
 {% assign raw_src = type | image_url: width: img_width %}
 {% capture ik_src %}{% render 'imagekit', src: raw_src %}{% endcapture %}
 {% assign ik_src = ik_src | strip %}
-
-{% comment %} --- Build srcset via ImageKit for each width --- {% endcomment %}
 {% assign w_194  = type | image_url: width: 194  %}{% capture s_194  %}{% render 'imagekit', src: w_194  %}{% endcapture %}
 {% assign w_300  = type | image_url: width: 300  %}{% capture s_300  %}{% render 'imagekit', src: w_300  %}{% endcapture %}
 {% assign w_400  = type | image_url: width: 400  %}{% capture s_400  %}{% render 'imagekit', src: w_400  %}{% endcapture %}
@@ -51,7 +17,6 @@ Usage:
 {% assign w_1600 = type | image_url: width: 1600 %}{% capture s_1600 %}{% render 'imagekit', src: w_1600 %}{% endcapture %}
 {% assign w_1800 = type | image_url: width: 1800 %}{% capture s_1800 %}{% render 'imagekit', src: w_1800 %}{% endcapture %}
 {% assign w_2000 = type | image_url: width: 2000 %}{% capture s_2000 %}{% render 'imagekit', src: w_2000 %}{% endcapture %}
-
 {%- capture ik_srcset -%}
   {{ s_194 | strip }} 194w,
   {{ s_300 | strip }} 300w,
@@ -67,7 +32,6 @@ Usage:
   {{ s_1800 | strip }} 1800w,
   {{ s_2000 | strip }} 2000w
 {%- endcapture -%}
-
 <div class="box-ratio lazyload {{ class }}" style="padding-bottom: {{ image_box_ratio }};">
   <img
     src="{{ ik_src }}"
@@ -80,7 +44,6 @@ Usage:
     loading="{{ loading | default: 'lazy' }}"
   >
 </div>
-
 <noscript>
   {% assign ns_src = type | image_url: width: img_width %}
   {% capture ik_ns %}{% render 'imagekit', src: ns_src %}{% endcapture %}

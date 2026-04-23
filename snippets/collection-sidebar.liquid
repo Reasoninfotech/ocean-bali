@@ -10,7 +10,6 @@
   <span class="vib-center">{{ 'collections.filters.refine' | t }}</span>
 </a>
 <div class="collection__page-sidebar" id="sidebar">
-
   {% for block in section.blocks %}
       {% if block.type == 'menu' %}
         <h4>{{ block.settings.title | escape }}</h4>
@@ -55,11 +54,9 @@
             {% case filter.type %}
               {% when 'list' %}
                 {%- liquid
-
                   assign is_size_filter = false
                   assign is_color_filter = false
                   assign filter_label_to_lowercase = filter.label | downcase
-
                   if filter_label_to_lowercase contains "color"
                     assign is_color_filter = true
                   elsif filter_label_to_lowercase contains "colour"
@@ -67,7 +64,6 @@
                   elsif filter_label_to_lowercase contains "size"
                     assign is_size_filter = true
                   endif
-
                   if is_color_filter
                     assign filter_type = 'color'
                   elsif is_size_filter
@@ -75,26 +71,21 @@
                   else
                     assign filter_type = 'regular'
                   endif
-
                 -%}
                 <div class="clearfix filter filter--{{ filter_type }}">
                   <h4>{{ filter.label | escape }}</h4>
                   <ul>
                     {% for value in filter.values %}
-
                       {%- liquid
-
                         assign swatch_color_name = value.label | handleize | downcase | append: '.png'
                         assign swatch_image_url = swatch_color_name | file_url
                         assign css_color = value.label | split: ' ' | last | downcase
- 
                         if images[swatch_color_name] != blank
                           assign bg_img = 'background-image:url(' | append:  swatch_image_url | append: ');'
                         else
                           assign bg_img = ''
                         endif
                         assign bg_color = 'background-color:' | append:  css_color | append: ';'
-
                         if value.active
                           assign status = 'current'
                           assign url = value.url_to_remove
@@ -106,7 +97,6 @@
                           assign url = value.url_to_add
                         endif
                       -%}
-
                       <li class="{{ status }}">
                         {% if is_color_filter %}
                           <a class="js-collection-side-filter {{ status }} checkbox-wrapper" href="{{ url }}" title="{{ value.label }}">
@@ -147,7 +137,6 @@
                     assign uses_comma_decimals = true
                   endif
                 -%}
-
                 <div class="sidebar-filter filter--price-range" data-collection-filters-price-range>
                   <h4>{{ filter.label | escape }}</h4>
                   <div class="filter-range__boxes js-price-range">
@@ -201,7 +190,6 @@
                         >
                       </input>
                     </div>
-
                     <div class="filter-range__slider--wrapper span-2 auto">
                       <input class="filter-range__slider--input"
                         {%- if filter.min_value.value -%}

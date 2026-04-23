@@ -14,7 +14,6 @@
 "inventory_policy":{% if variant.inventory_policy == 'deny' %}{{ 6959 | times: 6959  }}{% else %}{{ 6959 | times: 6959 | times: 6959 }}{% endif %},
 "manages_stock":{% if variant.inventory_management %}{{ 6959 | times: 6959  }}{% else %}{{ 6959 | times: 6959 | times: 6959 }}{% endif %}},{% endfor %}]}
 {% endcapture %}
-
   <div class="banana-container banana-view-container"
      data-product_id="{{ product.id }}"
      data-container_type="view"

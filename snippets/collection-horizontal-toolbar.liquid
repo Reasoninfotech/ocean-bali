@@ -1,15 +1,11 @@
 {%- liquid
     assign grid_width = 'desktop-12 tablet-6 mobile-3'
 -%}
-
 <div class="collection__filter-toggleWrapper">
-
   <div class="filtering__pagination">
     <p class="mb0">{{ paginate.items }} {{ 'collections.filters.products' | t }}</p>
   </div>
-
   <div class="sort__filter--triggers">
-
     {% if horizontal_filtering_enabled %}
     <button class="filter-price__trigger js-show-filters">
       <span class="vib-center">{{ 'collections.filters.filter' | t }}</span>
@@ -23,7 +19,6 @@
         hover: 'var(--text-color)' %}
     </button>
     {% endif %}
-
     {% if sort_by_enabled %}
       <div class="collection__horizontal-toolbar sort-by__wrapper" data-collection-sort-by>
         <div class="collection__filtering js-hz-filter">
@@ -70,11 +65,8 @@
         </div>
       </div>
     {% endif %}
-
   </div>
 </div>
-
-
 {% if horizontal_filtering_enabled %}
   <div class="collection__filter-wrapper" id="collection__filter-wrapper">
     <div class="collection__page-filter {{ grid_width }} contained js-filter-wrapper" data-collection-filters-hz>
@@ -86,11 +78,9 @@
             {% case filter.type %}
             {% when 'list' %}
               {%- liquid
-
                 assign is_size_filter = false
                 assign is_color_filter = false
                 assign filter_label_to_lowercase = filter.label | downcase
-
                 if filter_label_to_lowercase contains "color"
                   assign is_color_filter = true
                 elsif filter_label_to_lowercase contains "colour"
@@ -98,7 +88,6 @@
                 elsif filter_label_to_lowercase contains "size"
                   assign is_size_filter = true
                 endif
-
                 if is_color_filter
                   assign filter_type = 'color'
                 elsif is_size_filter
@@ -106,9 +95,7 @@
                 else
                   assign filter_type = 'regular'
                 endif
-
               -%}
-
               <li class="clearfix filter filter--{{ filter_type }}" data-index="{{ forloop.index }}">
                 <div class="collection__filtering js-hz-filter">
                   {% render 'snip-icons',
@@ -122,36 +109,28 @@
                   <input class="chosen-value js-hz-filter-input" type="text" value="" data-filter-type="filter" data-placeholder="{{ filter.label }}" data-generic-placeholder="{{ 'collections.filters.type_to_filter' | t }}" placeholder="{{ filter.label }}">
                   <ul class="value-list js-hz-filter-list">
                     {% for value in filter.values %}
-
                       {%- liquid
-
                         for product in collection.products
                           unless is_color_filter
                             continue
                           endunless
-
                           for option in product.options_with_values
                             assign option_name = option.name | downcase
-
                             unless option_name contains "color" or option_name contains "colour"
                               continue
                             endunless
-
                             assign variant_img_url = null
                             assign swatch_color_name = value.label | handleize | downcase | append: '.png'
                             assign swatch_image_url = swatch_color_name | file_url
                             assign css_color = value.label | split: ' ' | last | downcase
-
                             if images[swatch_color_name] != blank
                               assign bg_img = 'background-image:url(' | append:  swatch_image_url | append: ');'
                             else
                               assign bg_img = ''
                             endif
                             assign bg_color = 'background-color:' | append:  css_color | append: ';'
-
                           endfor
                         endfor
-
                         if value.active
                           assign status = 'current'
                         elsif value.count == 0 and value.active == false
@@ -160,7 +139,6 @@
                           assign status = ''
                         endif
                       -%}
-
                       {% if is_color_filter %}
                         <li id="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="checkbox-wrapper {{ status }}" data-remove="{{ value.url_to_remove }}" data-add="{{ value.url_to_add }}">
                           <input type="checkbox"
@@ -188,9 +166,7 @@
                     {% endfor %}
                   </ul>
                 </div>
-
                 <noscript>
-                  <!-- No js filters submits with button -->
                   <select class="styled-select coll-filter">
                     <option value="">{{ 'collections.filters.filters_selected' | t: count: filter.active_values.size }}</option>
                     {% for value in filter.values %}
@@ -214,7 +190,6 @@
                   assign uses_comma_decimals = true
                 endif
               -%}
-
               <li class="clearfix filter filter--price-range js-hz-filter-price" data-collection-filters-price-range data-index="{{ forloop.index }}">
                 {% render 'snip-icons',
                    wrapper: '.filter--price-range',
@@ -279,7 +254,6 @@
                         >
                       </input>
                     </div>
-
                     <div class="filter-range__slider--wrapper span-2 auto">
                       <input class="filter-range__slider--input"
                         {%- if filter.min_value.value -%}
@@ -329,7 +303,6 @@
           {%- endfor -%}
         </ul>
         <noscript>
-          <!-- No js filters button to submit select filters -->
           <button type="submit" class="facets__button button">{{ 'collections.filters.filter_button' | t }}</button>
         </noscript>
       </div>
