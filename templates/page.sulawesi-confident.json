@@ -64,7 +64,7 @@
         "usp_3_label": "Durable - lasts 2x Longer than regular swimwear",
         "usp_3_svg": "",
         "usp_3_image": "shopify://shop_images/Asset_5_4x_5022a477-72f5-44a4-bc3a-93a1e4c7950e.jpg",
-        "hero_image": "shopify://shop_images/Long_Sleeve_swimsuit-navy-and-white-the-sulawesi-in-nautical-ocean-soul-bali-3_c69009dc-cf84-4af4-a9ed-6747ac255ebf.webp",
+        "hero_image": "shopify://shop_images/izzyisup_by_chanxler_-_Sulawesi_Nautical_-_2023-1.jpg",
         "image_ratio": "1/1",
         "bg_color": "#ffffff",
         "heading_color": "#77a5c8",
@@ -180,7 +180,7 @@
         "show_button": false,
         "btn_text": "Shop The Sulawesi →",
         "btn_url": "",
-        "section_image": "shopify://shop_images/long-sleeve-swimsuit-women-the-_sulawesi-in-_nautical_-_ocean-soul-swimwear-2.webp",
+        "section_image": "shopify://shop_images/izzyisup_by_chanxler_-_Sulawesi_Nautical_-_2023-11.jpg",
         "image_ratio": "4/5",
         "flip_on_desktop": false,
         "bg_color": "#ffffff",
@@ -218,7 +218,7 @@
         "show_button": true,
         "btn_text": "Shop The Sulawesi →",
         "btn_url": "shopify://products/long-sleeve-swimsuit-navy-white",
-        "section_image": "shopify://shop_images/caraghcreated_-_Sulawesi_Nautical_-_January_2026-9.webp",
+        "section_image": "shopify://shop_images/izzyisup_by_chanxler_-_Sulawesi_Nautical_-_2023-19.jpg",
         "image_ratio": "4/5",
         "flip_on_desktop": true,
         "bg_color": "#f4f8fb",
@@ -428,7 +428,7 @@
       "name": "OSB How It Works",
       "settings": {
         "show_section": true,
-        "heading": "How It Works",
+        "heading": "See it on.",
         "show_video": true,
         "video_type": "cdn",
         "cdn_video_url": "https://cdn.shopify.com/videos/c/o/v/03b2fbbcedda4191958a411b7b72f13d.mp4",
@@ -489,7 +489,7 @@
           "type": "chip",
           "settings": {
             "icon": "trending",
-            "label": "ECONYL®Recycled"
+            "label": "ECONYL® Recycled"
           }
         },
         "chip_yGgAED": {
@@ -503,7 +503,7 @@
           "type": "chip",
           "settings": {
             "icon": "heart",
-            "label": "Made in\nBali"
+            "label": "Made in Bali"
           }
         },
         "chip_DGLUU7": {
@@ -517,7 +517,7 @@
           "type": "chip",
           "settings": {
             "icon": "lock",
-            "label": "Secure\nCheckout"
+            "label": "SecureCheckout"
           }
         }
       },
@@ -561,36 +561,36 @@
         "accordion_EzHqwU": {
           "type": "accordion",
           "settings": {
-            "question": "It actually stays on - even in big surf",
-            "answer": "The Sulawesi uses structured panelling and a secure, snug cut that grips your body without digging in. Engineered to move with you through waves, dives, and bodysurf sessions."
+            "question": "How does it actually flatter my shape?",
+            "answer": "The Sulawesi is designed with strategic panelling and a cinched waistband to create a more defined silhouette.\n\nInstead of sitting flat on your body like most swimwear, it works to:\n\nShape and define your waist\nSmooth your midsection\nCreate a more balanced, elongated look\n\nIt’s subtle - but you feel the difference the moment you put it on."
           }
         },
         "accordion_FWAYfN": {
           "type": "accordion",
           "settings": {
-            "question": "UPF 50+ sun protection all day long",
-            "answer": "The long-sleeve design and darker colourways offer maximum UPF 50+ block-out. Spend all day in the water without worrying about UV damage to your arms, shoulders, and chest."
+            "question": "Will it feel tight or restrictive?",
+            "answer": "It’s designed to feel supportive, not restrictive.\n\nThe fabric has a sculpting, compression-like feel that gently holds you in - without digging in or cutting into your skin.\n\nYou should feel secure, smooth, and comfortable enough to wear it all day.\n\nIf you prefer a more relaxed feel, we recommend sizing up."
           }
         },
         "accordion_MdU9VH": {
           "type": "accordion",
           "settings": {
-            "question": "Recycled Italian ECONYL® - luxury with a conscience",
-            "answer": "ECONYL® is regenerated nylon made from ocean waste like discarded fishing nets. Buttery-soft, lasts twice as long as regular swimwear, and fully recyclable at end of life."
+            "question": "Do I need padding or extra support?",
+            "answer": "No - the Sulawesi is designed to support you naturally without padding.\n\nThe double-lined fabric and structured fit provide coverage and support, while still allowing your natural shape to come through.\n\nNo bulky inserts. No awkward lines. Just a clean, flattering fit."
           }
         },
         "accordion_fhaaJt": {
           "type": "accordion",
           "settings": {
-            "question": "Ethically made in Bali - fair wages, small batches",
-            "answer": "Every Sulawesi is handmade in our Canggu studio by skilled local makers with fair pay and safe conditions. Small-batch production means higher quality on every single piece."
+            "question": "Will it still look good after I swim?",
+            "answer": "Yes - this is where most swimwear falls short.\n\nThe Sulawesi is made from high-quality Italian fabric that holds its shape in and out of the water, so it won’t sag, stretch, or lose its structure once wet.\n\nYou’ll feel just as confident walking out of the ocean as you did putting it on."
           }
         },
         "accordion_xMcmWc": {
           "type": "accordion",
           "settings": {
-            "question": "12-month warranty and easy returns",
-            "answer": "We stand behind every suit. If the fabric, make, or hardware fails within 12 months, we'll replace it - no questions asked. Returns and exchanges on full-price items are simple."
+            "question": "What makes it different from other swimwear?",
+            "answer": "Most swimwear is designed to look good on a hanger.\n\nThe Sulawesi is designed to flatter your body in real life.\n\nIt combines:\n\nSculpting panelled construction\nA cinched, waist-defining fit\nSupportive, double-lined fabric\n\nSo instead of adjusting, second-guessing, or feeling uncomfortable - you just feel confident."
           }
         }
       },
@@ -605,7 +605,7 @@
       "settings": {
         "show_section": true,
         "heading": "What makes it different?",
-        "body_1": "Most swimwear is designed to look good standing still. The Sulawesi is designed for what actually happens in the water.",
+        "body_1": "Most swimwear makes you second-guess your body.\nThe Sulawesi is designed to make you feel confident in it.",
         "body_2": "That's the difference.",
         "section_image": "shopify://shop_images/nautical_long_sleeve_surf_swimsuit_ocean_soul_swimwear.jpg",
         "image_ratio": "3/4",
