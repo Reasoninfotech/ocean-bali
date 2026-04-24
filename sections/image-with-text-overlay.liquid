@@ -1,8 +1,6 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -10,9 +8,7 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
 -%}
-
 <section class="image__overlay-section {% if section.settings.background_attachment == 'fixed' %}is-fixed_height{% endif %} section-{{ section.id }} global__section{{ section_space_class }}" data-section-id="{{ section.id }}" data-section-type="image-section">
   <div class="desktop-12 tablet-6 mobile-3">
     <div class="image__overlay-container {% unless section.settings.full_width %} row{% endunless %}">
@@ -42,22 +38,7 @@
       </div>
     </div>
   </div>
-  <style>
-    .image__overlay-section.section-{{ section.id }} {
-      --text-align: {{ section.settings.text_align }};
-      --height: {{ section.settings.height }}px;
-      --mobile-height: {{ section.settings.mobile_height }}px;
-      --caption-vertical: {{ section.settings.caption_vertical }}%;
-      --caption-horizontal: {{ section.settings.caption_vertical }}%;
-      --section-height: {{ section.settings.height }}px;
-      --heading-font-size: {{ section.settings.heading_font_size }}px;
-      --subheading-font-size: {{ section.settings.subheading_font_size }}px;
-      --text-color: {{ section.settings.text_color }};
-      --button-color: {{ section.settings.button_color }};
-      --button-text-color: {{ section.settings.button_text_color }};
-      --background-image: url({{ section.settings.image | image_url: width: 2400 | json }});
-    }
-  </style>
+  <style>.image__overlay-section.section-{{ section.id }} {--text-align: {{ section.settings.text_align }};--height: {{ section.settings.height }}px;--mobile-height: {{ section.settings.mobile_height }}px;--caption-vertical: {{ section.settings.caption_vertical }}%;--caption-horizontal: {{ section.settings.caption_vertical }}%;--section-height: {{ section.settings.height }}px;--heading-font-size: {{ section.settings.heading_font_size }}px;--subheading-font-size: {{ section.settings.subheading_font_size }}px;--text-color: {{ section.settings.text_color }};--button-color: {{ section.settings.button_color }};--button-text-color: {{ section.settings.button_text_color }};--background-image: url({{ section.settings.image | image_url: width: 2400 | json }});}</style>
 </section>
 {% schema %}
 {
