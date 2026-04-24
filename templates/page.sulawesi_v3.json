@@ -1,1 +1,875 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"page_width":100}},"osb_announcement_bar_NjFBcm":{"type":"osb-announcement-bar","name":"OSB Announcement Bar","settings":{"show_section":true,"message":"Offer ends soon - $20 off your first order with code <strong>FB20<\/strong>","show_countdown":true,"default_hours":4,"default_mins":59,"bg_color":"#2e6688","text_color":"#ffffff","font_size_mobile":11,"timer_font_size_mobile":16,"padding_mobile":10,"font_size_tablet":12,"timer_font_size_tablet":16,"padding_tablet":12,"font_size_desktop":12,"timer_font_size_desktop":16,"padding_desktop":12}},"osb_hero_RFQgXC":{"type":"osb-hero","name":"OSB Hero Section","settings":{"show_section":true,"heading":"Finally - a swimsuit that actually stays on in the ocean.","subheading":"No adjusting. No pulling. No second-guessing. The Sulawesi is built for movement - from duck dives to long swims - so you can focus on the water, not your suit.","show_stars":true,"review_count":"800+ Five-Star Reviews","bullet_1":"Stays secure through surf, dives, and waves","bullet_2":"Sculpting fit that holds you in (without digging in)","bullet_3":"Designed for real movement - not just how it looks","btn_text":"Shop The Sulawesi →","btn_url":"shopify:\/\/products\/long-sleeve-swimsuit-navy-white","show_discount_code":true,"discount_text":"Get <b>$20 off<\/b> your first order with code <b>FB20<\/b>","show_usps":true,"usp_1_label":"UPF 50+ Protection Built In","usp_1_svg":"","usp_1_image":"shopify:\/\/shop_images\/UPF_UV_Asset.jpg","usp_2_label":"12 Month Warranty. Quality Guaranteed","usp_2_svg":"","usp_2_image":"shopify:\/\/shop_images\/warranty.jpg","usp_3_label":"Durable - lasts 2x Longer than regular swimwear","usp_3_svg":"","usp_3_image":"shopify:\/\/shop_images\/Asset_5_4x_5022a477-72f5-44a4-bc3a-93a1e4c7950e.jpg","hero_image":"shopify:\/\/shop_images\/Long_Sleeve_swimsuit-navy-and-white-the-sulawesi-in-nautical-ocean-soul-bali-3.webp","image_ratio":"1\/1","bg_color":"#ffffff","heading_color":"#77a5c8","accent_color":"#77a5c8","btn_color":"#2e6688","max_width":1200,"btn_padding_v":16,"btn_padding_h":36,"h1_size_mobile":26,"stars_size_mobile":16,"body_font_size_mobile":14,"padding_top_mobile":40,"padding_bottom_mobile":40,"h1_size_tablet":34,"stars_size_tablet":16,"body_font_size_tablet":14,"padding_top_tablet":48,"padding_bottom_tablet":48,"h1_size_desktop":42,"stars_size_desktop":16,"body_font_size_desktop":14,"padding_top_desktop":64,"padding_bottom_desktop":64}},"osb_pr_logos_jWbaj8":{"type":"osb-pr-logos","blocks":{"logo_3RwKtp":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/british_vogue.svg","logo_name":"Vogue Australia"}},"logo_Pj33TJ":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/PngItem_171373.png","logo_name":"Broadsheet"}},"logo_LUa3qt":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/Herald_Sun_logo_logotype.png","logo_name":"Who Magazine"}},"logo_3ETchp":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png","logo_name":"Body + Soul"}},"logo_jm9z7d":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/The_Daily_Telegraph_Australien_logo_1_0fe2f81a-800d-4341-9e86-81b53cadc747.png","logo_name":"Surf Life"}},"logo_FRgnbw":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/honeycombers.svg","logo_name":"Eco Warrior"}}},"block_order":["logo_3RwKtp","logo_Pj33TJ","logo_LUa3qt","logo_3ETchp","logo_jm9z7d","logo_FRgnbw"],"name":"OSB PR Logos Strip","settings":{"show_section":true,"label_text":"As Seen In","bg_color":"#f4f8fb","logo_bg":"#ffffff","logo_opacity":60,"padding_mobile":28,"label_size_mobile":10,"logo_width_mobile":100,"logo_height_mobile":46,"padding_tablet":32,"label_size_tablet":10,"logo_width_tablet":120,"logo_height_tablet":52,"padding_desktop":32,"label_size_desktop":10,"logo_width_desktop":130,"logo_height_desktop":54}},"osb_two_col_zJcN74":{"type":"osb-two-col","name":"OSB Two Column Section","settings":{"show_section":true,"heading":"\"Why does every swimsuit fail the moment you get in the water?\"","body_1":"<p>You finally find one that looks good... Then you hit the ocean - and everything changes.<\/p><p>It shifts. It rides up. It loses shape. And suddenly, you're not enjoying the water - you're adjusting your swimsuit.<\/p>","bullet_1":"Constant pulling and readjusting mid-swim","bullet_2":"Bottoms riding up or fabric loosening in waves","bullet_3":"Support disappearing the moment you dive under","bullet_4":"Feeling exposed instead of confident","italic_note":"You stop being present - and start being self-conscious.","show_button":false,"btn_text":"Shop The Sulawesi →","btn_url":"","section_image":"shopify:\/\/shop_images\/long-sleeve-swimsuit-women-the-_sulawesi-in-_nautical_-_ocean-soul-swimwear-2.webp","image_ratio":"4\/5","flip_on_desktop":false,"bg_color":"#ffffff","heading_color":"#77a5c8","accent_color":"#77a5c8","btn_color":"#2e6688","italic_color":"#2e6688","italic_bold":false,"h2_size_mobile":22,"body_size_mobile":13,"padding_top_mobile":40,"padding_bottom_mobile":40,"h2_size_tablet":26,"body_size_tablet":13,"padding_top_tablet":48,"padding_bottom_tablet":48,"h2_size_desktop":32,"body_size_desktop":13,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_two_col_kKgwee":{"type":"osb-two-col","name":"OSB Two Column Section","settings":{"show_section":true,"heading":"Designed to stay on - no matter how you move","body_1":"<p>The Sulawesi was engineered to solve the one thing most swimwear gets wrong: it doesn't stay put.<\/p>","bullet_1":"Structured panelled design that holds your shape","bullet_2":"Cinched waist that keeps everything anchored","bullet_3":"Compression-like fit that moves with your body","bullet_4":"No slipping, no sagging, no adjusting","italic_note":"From your first paddle to your last swim - it stays exactly where it should.","show_button":true,"btn_text":"Shop The Sulawesi →","btn_url":"shopify:\/\/products\/long-sleeve-swimsuit-navy-white","section_image":"shopify:\/\/shop_images\/caraghcreated_-_Sulawesi_Nautical_-_January_2026-9.webp","image_ratio":"4\/5","flip_on_desktop":true,"bg_color":"#f4f8fb","heading_color":"#77a5c8","accent_color":"#77a5c8","btn_color":"#2e6688","italic_color":"#2e6688","italic_bold":false,"h2_size_mobile":22,"body_size_mobile":13,"padding_top_mobile":40,"padding_bottom_mobile":40,"h2_size_tablet":26,"body_size_tablet":13,"padding_top_tablet":48,"padding_bottom_tablet":48,"h2_size_desktop":32,"body_size_desktop":13,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_ugc_grid_kFwXBD":{"type":"osb-ugc-grid","blocks":{"photo_HWXgqi":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/a..jpg","link_url":"","placeholder_color":"#ccd8e4"}},"photo_ghzqQn":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/charlenedickson.jpg","link_url":"","placeholder_color":"#ccd8e4"}},"photo_EkhaYr":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/adventuresof_ju.jpg","link_url":"","placeholder_color":"#ccd8e4"}},"photo_6xBLX3":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/helenfarmer_-2_6fac6b99-fb35-486d-9ad5-584594f7f535.jpg","link_url":"","placeholder_color":"#ccd8e4"}},"photo_RPLeeP":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/hannahg_bythesea1.jpg","link_url":"","placeholder_color":"#ccd8e4"}},"photo_xjQkpU":{"type":"photo","settings":{"photo":"shopify:\/\/shop_images\/oznurddemir4.jpg","link_url":"","placeholder_color":"#ccd8e4"}}},"block_order":["photo_HWXgqi","photo_ghzqQn","photo_EkhaYr","photo_6xBLX3","photo_RPLeeP","photo_xjQkpU"],"name":"OSB UGC Photo Grid","settings":{"show_section":true,"heading":"The Ocean Soul Community","border_radius":3,"bg_color":"#f4f8fb","heading_color":"#77a5c8","cols_mobile":3,"gap_mobile":6,"heading_size_mobile":20,"padding_top_mobile":40,"padding_bottom_mobile":40,"cols_tablet":4,"gap_tablet":8,"heading_size_tablet":22,"padding_top_tablet":40,"padding_bottom_tablet":40,"cols_desktop":6,"gap_desktop":8,"heading_size_desktop":22,"padding_top_desktop":48,"padding_bottom_desktop":48}},"osb_reviews_HydLhV":{"type":"osb-reviews","blocks":{"review_aNQW9E":{"type":"review","settings":{"stars":5,"review_text":"I've never worn a swimsuit that actually stays in place like this. I surf, dive, swim - and I never have to adjust it.","author_name":"Sarah M.","verified_label":"Verified Buyer"}},"review_R3A6ck":{"type":"review","settings":{"stars":5,"review_text":"No slipping, no riding up - just confidence. I can finally focus on the water instead of my body.","author_name":"Jessica L.","verified_label":"Verified Buyer"}},"review_3Wpwww":{"type":"review","settings":{"stars":5,"review_text":"I feel like a Bond girl when I wear it. Best swimsuit I've ever owned - I want one in every colour.","author_name":"Ekaterina V.","verified_label":"Verified Buyer"}}},"block_order":["review_aNQW9E","review_R3A6ck","review_3Wpwww"],"name":"OSB Reviews Grid","settings":{"show_section":true,"heading":"What Our Customers Are Saying","show_review_count":true,"review_count_text":"800+ five-star reviews","review_font_size":13,"star_size":14,"card_radius":6,"bg_color":"#ffffff","card_bg":"#ffffff","heading_color":"#77a5c8","star_color":"#77a5c8","heading_size_mobile":22,"card_padding_mobile":20,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":26,"card_padding_tablet":24,"padding_top_tablet":56,"padding_bottom_tablet":56,"cols_desktop":3,"heading_size_desktop":32,"card_padding_desktop":32,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_how_it_works_CjNwCM":{"type":"osb-how-it-works","blocks":{"step_yj3Hix":{"type":"step","settings":{"step_number":"Step 01","step_title":"Choose your colourway","step_desc":"From deep Midnight to breezy Celestial Blue - each shade is finished to resist fading through salt, sun, and chlorine.","step_image":"shopify:\/\/shop_images\/black_upf_lomg_sleeve_swimsuit_sulawesi_ocean_soul_swimwear.jpg"}},"step_QAABYM":{"type":"step","settings":{"step_number":"Step 02","step_title":"Get your perfect fit","step_desc":"Use our size guide - the Sulawesi is a firm, sculpting fit. Prefer more relaxed coverage? Size up one.","step_image":"shopify:\/\/shop_images\/long-sleeve-swimsuit-the-sulawesi-in-snow-ocean-soul-swimwear-4.webp"}},"step_VgCr8Q":{"type":"step","settings":{"step_number":"Step 03","step_title":"Wear it everywhere","step_desc":"Surf, swim, paddle, lounge - the Sulawesi transitions from the break to the beach bar. No adjusting, ever.","step_image":"shopify:\/\/shop_images\/long-sleeve-one-piece-the-sulawesi-in-celestial-blue-ocean-soul-swimwear-3.webp"}}},"block_order":["step_yj3Hix","step_QAABYM","step_VgCr8Q"],"name":"OSB How It Works","settings":{"show_section":true,"heading":"How It Works","show_video":true,"video_type":"cdn","cdn_video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/03b2fbbcedda4191958a411b7b72f13d.mp4","youtube_url":"","vimeo_url":"","video_thumbnail":"shopify:\/\/shop_images\/quiz-_lolaschemmer18_cca2439f-cce3-4ab9-98b9-ea9cdef83421.jpg","video_max_width":800,"step_title_size":15,"card_radius":6,"bg_color":"#f4f8fb","card_bg":"#ffffff","heading_color":"#77a5c8","accent_color":"#2e6688","heading_size_mobile":22,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":26,"padding_top_tablet":56,"padding_bottom_tablet":56,"cols_desktop":3,"heading_size_desktop":32,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_icon_strip_iBUiRA":{"type":"osb-icon-strip","blocks":{"chip_8aFNNf":{"type":"chip","settings":{"icon":"shield","label":"12-MonthWarranty"}},"chip_UFMeQK":{"type":"chip","settings":{"icon":"clock","label":"Lasts 2×\nLonger"}},"chip_7xQhxi":{"type":"chip","settings":{"icon":"shield","label":"UPF 50+\nProtection"}},"chip_m3GCJ9":{"type":"chip","settings":{"icon":"activity","label":"Chlorine\nResistant"}},"chip_YFQfU8":{"type":"chip","settings":{"icon":"trending","label":"ECONYL®Recycled"}},"chip_yGgAED":{"type":"chip","settings":{"icon":"return","label":"Easy Returns"}},"chip_XXanYb":{"type":"chip","settings":{"icon":"heart","label":"Made in\nBali"}},"chip_DGLUU7":{"type":"chip","settings":{"icon":"home","label":"Ethical\nFactory"}},"chip_FzRBKX":{"type":"chip","settings":{"icon":"lock","label":"Secure\nCheckout"}}},"block_order":["chip_8aFNNf","chip_UFMeQK","chip_7xQhxi","chip_m3GCJ9","chip_YFQfU8","chip_yGgAED","chip_XXanYb","chip_DGLUU7","chip_FzRBKX"],"name":"OSB Icon Trust Strip","settings":{"show_section":true,"label_text":"Why You Can Trust Us","chip_padding":12,"chip_padding_h":16,"chip_radius":4,"icon_size":20,"label_size":10,"chip_label_size":10,"bg_color":"#ffffff","chip_bg":"#f4f8fb","icon_color":"#2e6688","gap_mobile":10,"chip_width_mobile":92,"padding_mobile":24,"gap_tablet":10,"chip_width_tablet":96,"padding_tablet":28,"chip_width_desktop":96,"padding_desktop":28}},"osb_why_us_NpwMYn":{"type":"osb-why-us","blocks":{"accordion_EzHqwU":{"type":"accordion","settings":{"question":"It actually stays on - even in big surf","answer":"The Sulawesi uses structured panelling and a secure, snug cut that grips your body without digging in. Engineered to move with you through waves, dives, and bodysurf sessions."}},"accordion_FWAYfN":{"type":"accordion","settings":{"question":"UPF 50+ sun protection all day long","answer":"The long-sleeve design and darker colourways offer maximum UPF 50+ block-out. Spend all day in the water without worrying about UV damage to your arms, shoulders, and chest."}},"accordion_MdU9VH":{"type":"accordion","settings":{"question":"Recycled Italian ECONYL® - luxury with a conscience","answer":"ECONYL® is regenerated nylon made from ocean waste like discarded fishing nets. Buttery-soft, lasts twice as long as regular swimwear, and fully recyclable at end of life."}},"accordion_fhaaJt":{"type":"accordion","settings":{"question":"Ethically made in Bali - fair wages, small batches","answer":"Every Sulawesi is handmade in our Canggu studio by skilled local makers with fair pay and safe conditions. Small-batch production means higher quality on every single piece."}},"accordion_xMcmWc":{"type":"accordion","settings":{"question":"12-month warranty and easy returns","answer":"We stand behind every suit. If the fabric, make, or hardware fails within 12 months, we'll replace it - no questions asked. Returns and exchanges on full-price items are simple."}}},"block_order":["accordion_EzHqwU","accordion_FWAYfN","accordion_MdU9VH","accordion_fhaaJt","accordion_xMcmWc"],"name":"OSB Why Us Accordion","settings":{"show_section":true,"heading":"What makes it different?","body_1":"Most swimwear is designed to look good standing still. The Sulawesi is designed for what actually happens in the water.","body_2":"That's the difference.","section_image":"shopify:\/\/shop_images\/nautical_long_sleeve_surf_swimsuit_ocean_soul_swimwear.jpg","image_ratio":"3\/4","image_radius":4,"bg_color":"#ffffff","heading_color":"#77a5c8","accent_color":"#2e6688","heading_size_mobile":24,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":28,"padding_top_tablet":56,"padding_bottom_tablet":56,"heading_size_desktop":34,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_compare_LD9V4U":{"type":"osb-compare","blocks":{"row_h4FBkD":{"type":"row","settings":{"feature":"UPF 50+ long-sleeve sun protection","we_have":true,"they_have":false}},"row_U4fdRm":{"type":"row","settings":{"feature":"Stays on through surf and ocean swimming","we_have":true,"they_have":false}},"row_6ep3eg":{"type":"row","settings":{"feature":"Sculpting cinched-waist panelled design","we_have":true,"they_have":false}},"row_arzw8w":{"type":"row","settings":{"feature":"Recycled ECONYL® Italian fabric","we_have":true,"they_have":false}},"row_JnWi3w":{"type":"row","settings":{"feature":"Ethically made with fair wages","we_have":true,"they_have":false}},"row_8CGLz7":{"type":"row","settings":{"feature":"Chlorine & fade resistant - lasts 2× longer","we_have":true,"they_have":false}},"row_wmbzW3":{"type":"row","settings":{"feature":"12-month manufacturer warranty","we_have":true,"they_have":false}}},"block_order":["row_h4FBkD","row_U4fdRm","row_6ep3eg","row_arzw8w","row_JnWi3w","row_8CGLz7","row_wmbzW3"],"name":"OSB Compare Table","settings":{"show_section":true,"heading":"The Sulawesi vs Other Brands","brand_name":"Ocean Soul Swimwear","col_us_label":"Us ✓","col_them_label":"Others ✗","row_font_size":13,"tick_size":16,"bg_color":"#f4f8fb","row_alt_bg":"#ffffff","heading_color":"#77a5c8","accent_color":"#2e6688","heading_size_mobile":22,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":26,"padding_top_tablet":56,"padding_bottom_tablet":56,"heading_size_desktop":32,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_expert_ykPC7y":{"type":"osb-expert","name":"OSB Expert Validation","settings":{"show_section":true,"heading":"Built by ocean women, for ocean women.","body_text":"Ocean Soul was founded in Canggu, Bali - where we live in the ocean. We spent years frustrated with swimwear that looked good in the shop but failed the moment we paddled out. The Sulawesi is the swimsuit we couldn't find, so we made it ourselves.","btn_text":"Shop The Sulawesi →","btn_url":"shopify:\/\/collections\/long-sleeve-one-piece-swimsuits","show_circles":true,"circle_1":"shopify:\/\/shop_images\/black-long-sleeve-surf_swimsuit-the-sulawesi-midnight.webp","circle_2":"shopify:\/\/shop_images\/green_upf_long_sleeveswimsuit_sulawesi_ocean_soul_swimwear.jpg","circle_3":"shopify:\/\/shop_images\/white-navy-long-sleeve-one-piece-swimsuit-the-sulawesi-ocean-soul-swimwear-4.webp","circle_size_mobile":80,"circle_size_desktop":90,"bg_color":"#ffffff","heading_color":"#77a5c8","btn_color":"#2e6688","text_max_width":580,"heading_size_mobile":22,"body_size_mobile":13,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":26,"padding_top_tablet":56,"padding_bottom_tablet":56,"heading_size_desktop":32,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_faq_nmicfn":{"type":"osb-faq","blocks":{"faq_iMmaaF":{"type":"faq","settings":{"question":"What is the fit like on the Sulawesi?","answer":"Designed as a firm, sculpting fit - like shapewear for the ocean. If you prefer a more relaxed feel, size up one. Buying Midnight? Size up two as the dark dye makes the fabric slightly less stretchy."}},"faq_8jDKW4":{"type":"faq","settings":{"question":"Which colourway gives the most UV protection?","answer":"Midnight (black) provides the most UPF block-out. All colourways are UPF 50+ rated. Apply SPF to the side mesh panels for complete coverage."}},"faq_Jqepmf":{"type":"faq","settings":{"question":"How do I care for my Sulawesi?","answer":"Hand wash separately in cool water after each wear. Rinse thoroughly after chlorine or salt water. Lay flat to dry in the shade. Avoid direct sunlight, tumble drying, and wringing."}},"faq_RTWFGi":{"type":"faq","settings":{"question":"What is your returns policy?","answer":"Exchanges or returns for store credit on full-price items within 30 days of dispatch. Sale items cannot be refunded. 12-month warranty on manufacturing defects."}},"faq_Aq8n3y":{"type":"faq","settings":{"question":"How long does shipping take?","answer":"International Express via DHL - 2 to 4 business days from dispatch. Australian and Indonesian orders arrive in 1 to 3 days. Free express shipping on Australian orders over $270 AUD."}},"faq_MpwbrD":{"type":"faq","settings":{"question":"Is the Snow colourway see-through when wet?","answer":"No - the Snow Sulawesi is double-lined with a nude beige ECONYL® layer to prevent transparency when wet. Wear it with complete confidence."}}},"block_order":["faq_iMmaaF","faq_8jDKW4","faq_Jqepmf","faq_RTWFGi","faq_Aq8n3y","faq_MpwbrD"],"name":"OSB FAQ","settings":{"show_section":true,"heading":"Frequently Asked Questions","max_width":760,"question_size":13,"answer_size":13,"bg_color":"#f4f8fb","heading_color":"#2a2a2a","accent_color":"#2e6688","heading_size_mobile":22,"padding_top_mobile":48,"padding_bottom_mobile":48,"heading_size_tablet":26,"padding_top_tablet":56,"padding_bottom_tablet":56,"heading_size_desktop":32,"padding_top_desktop":80,"padding_bottom_desktop":80}},"osb_cta_strip_pLB7c3":{"type":"osb-cta-strip","name":"OSB Final CTA Strip","settings":{"show_section":true,"heading":"Stop adjusting your swimsuit. Start enjoying the ocean.","sub_text":"Shop The Sulawesi - $20 off your first order, limited time.","btn_text":"Shop The Sulawesi →","btn_url":"","footnote":"Free express shipping on orders $270+ AUD - 12-month warranty - Easy returns","btn_padding_v":16,"btn_padding_h":48,"sub_size":14,"footnote_size":11,"bg_color":"#2e6688","heading_color":"#ffffff","sub_color":"#b3ccdd","btn_bg":"#ffffff","btn_text_color":"#2e6688","footnote_color":"#6699bb","heading_size_mobile":26,"padding_top_mobile":56,"padding_bottom_mobile":56,"heading_size_tablet":34,"padding_top_tablet":64,"padding_bottom_tablet":64,"heading_size_desktop":42,"padding_top_desktop":72,"padding_bottom_desktop":72}}},"order":["main","osb_announcement_bar_NjFBcm","osb_hero_RFQgXC","osb_pr_logos_jWbaj8","osb_two_col_zJcN74","osb_two_col_kKgwee","osb_ugc_grid_kFwXBD","osb_reviews_HydLhV","osb_how_it_works_CjNwCM","osb_icon_strip_iBUiRA","osb_why_us_NpwMYn","osb_compare_LD9V4U","osb_expert_ykPC7y","osb_faq_nmicfn","osb_cta_strip_pLB7c3"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "page_width": 100
+      }
+    },
+    "osb_announcement_bar_NjFBcm": {
+      "type": "osb-announcement-bar",
+      "name": "OSB Announcement Bar",
+      "settings": {
+        "show_section": true,
+        "message": "Offer ends soon - $20 off your first order with code <strong>FB20</strong>",
+        "show_countdown": true,
+        "default_hours": 4,
+        "default_mins": 59,
+        "bg_color": "#2e6688",
+        "text_color": "#ffffff",
+        "font_size_mobile": 11,
+        "timer_font_size_mobile": 16,
+        "padding_mobile": 10,
+        "font_size_tablet": 12,
+        "timer_font_size_tablet": 16,
+        "padding_tablet": 12,
+        "font_size_desktop": 12,
+        "timer_font_size_desktop": 16,
+        "padding_desktop": 12
+      }
+    },
+    "osb_hero_RFQgXC": {
+      "type": "osb-hero",
+      "name": "OSB Hero Section",
+      "settings": {
+        "show_section": true,
+        "heading": "Finally - a swimsuit that actually stays on in the ocean.",
+        "subheading": "No adjusting. No pulling. No second-guessing.\n\nThe Sulawesi is built for movement - from duck dives to long swims - so you can focus on the water, not your suit.",
+        "show_stars": true,
+        "review_count": "800+ Five-Star Reviews",
+        "bullet_1": "Stays secure through surf, dives, and waves",
+        "bullet_2": "Sculpting fit that holds you in (without digging in)",
+        "bullet_3": "Designed for real movement - not just how it looks",
+        "btn_text": "Shop The Sulawesi →",
+        "btn_url": "shopify://products/long-sleeve-swimsuit-navy-white",
+        "show_discount_code": true,
+        "discount_text": "Get <b>$20 off</b> your first order with code <b>FB20</b>",
+        "show_usps": true,
+        "usp_1_label": "UPF 50+ Protection Built In",
+        "usp_1_svg": "",
+        "usp_1_image": "shopify://shop_images/UPF_UV_Asset.jpg",
+        "usp_2_label": "12 Month Warranty. Quality Guaranteed",
+        "usp_2_svg": "",
+        "usp_2_image": "shopify://shop_images/warranty.jpg",
+        "usp_3_label": "Durable - lasts 2x Longer than regular swimwear",
+        "usp_3_svg": "",
+        "usp_3_image": "shopify://shop_images/Asset_5_4x_5022a477-72f5-44a4-bc3a-93a1e4c7950e.jpg",
+        "hero_image": "shopify://shop_images/Long_Sleeve_swimsuit-navy-and-white-the-sulawesi-in-nautical-ocean-soul-bali-3_c69009dc-cf84-4af4-a9ed-6747ac255ebf.webp",
+        "image_ratio": "1/1",
+        "bg_color": "#ffffff",
+        "heading_color": "#77a5c8",
+        "accent_color": "#77a5c8",
+        "btn_color": "#2e6688",
+        "max_width": 1200,
+        "btn_padding_v": 16,
+        "btn_padding_h": 36,
+        "h1_size_mobile": 26,
+        "stars_size_mobile": 16,
+        "body_font_size_mobile": 14,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "h1_size_tablet": 34,
+        "stars_size_tablet": 16,
+        "body_font_size_tablet": 14,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "h1_size_desktop": 42,
+        "stars_size_desktop": 16,
+        "body_font_size_desktop": 14,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64
+      }
+    },
+    "osb_pr_logos_jWbaj8": {
+      "type": "osb-pr-logos",
+      "blocks": {
+        "logo_3RwKtp": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/british_vogue.svg",
+            "logo_name": "Vogue Australia"
+          }
+        },
+        "logo_Pj33TJ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/PngItem_171373.png",
+            "logo_name": "Broadsheet"
+          }
+        },
+        "logo_LUa3qt": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Herald_Sun_logo_logotype.png",
+            "logo_name": "Who Magazine"
+          }
+        },
+        "logo_3ETchp": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/surfgirl_2fd2b878-a25c-4248-afde-faa68bc8d31f.png",
+            "logo_name": "Body + Soul"
+          }
+        },
+        "logo_jm9z7d": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/The_Daily_Telegraph_Australien_logo_1_0fe2f81a-800d-4341-9e86-81b53cadc747.png",
+            "logo_name": "Surf Life"
+          }
+        },
+        "logo_FRgnbw": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/honeycombers.svg",
+            "logo_name": "Eco Warrior"
+          }
+        }
+      },
+      "block_order": [
+        "logo_3RwKtp",
+        "logo_Pj33TJ",
+        "logo_LUa3qt",
+        "logo_3ETchp",
+        "logo_jm9z7d",
+        "logo_FRgnbw"
+      ],
+      "name": "OSB PR Logos Strip",
+      "settings": {
+        "show_section": true,
+        "label_text": "As Seen In",
+        "bg_color": "#f4f8fb",
+        "logo_bg": "#ffffff",
+        "logo_opacity": 60,
+        "padding_mobile": 28,
+        "label_size_mobile": 10,
+        "logo_width_mobile": 100,
+        "logo_height_mobile": 46,
+        "padding_tablet": 32,
+        "label_size_tablet": 10,
+        "logo_width_tablet": 120,
+        "logo_height_tablet": 52,
+        "padding_desktop": 32,
+        "label_size_desktop": 10,
+        "logo_width_desktop": 130,
+        "logo_height_desktop": 54
+      }
+    },
+    "osb_two_col_zJcN74": {
+      "type": "osb-two-col",
+      "name": "OSB Two Column Section",
+      "settings": {
+        "show_section": true,
+        "heading": "Why does every swimsuit fail the moment you get in the water?",
+        "body_1": "<p>You finally find one that looks good…<br/>Then you hit the ocean - and everything changes.</p><p>It shifts. It rides up. It loses shape.<br/>And suddenly, you’re not enjoying the water - you’re adjusting your swimsuit.<br/></p>",
+        "bullet_1": "Constant pulling and readjusting mid-swim",
+        "bullet_2": "Bottoms riding up or fabric loosening in waves",
+        "bullet_3": "Support disappearing the moment you dive under",
+        "bullet_4": "Feeling exposed instead of confident",
+        "italic_note": "You stop being present - and start being self-conscious.",
+        "show_button": false,
+        "btn_text": "Shop The Sulawesi →",
+        "btn_url": "",
+        "section_image": "shopify://shop_images/long-sleeve-swimsuit-women-the-_sulawesi-in-_nautical_-_ocean-soul-swimwear-2.webp",
+        "image_ratio": "4/5",
+        "flip_on_desktop": false,
+        "bg_color": "#ffffff",
+        "heading_color": "#77a5c8",
+        "accent_color": "#77a5c8",
+        "btn_color": "#2e6688",
+        "italic_color": "#2e6688",
+        "italic_bold": false,
+        "h2_size_mobile": 22,
+        "body_size_mobile": 13,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "h2_size_tablet": 26,
+        "body_size_tablet": 13,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "h2_size_desktop": 32,
+        "body_size_desktop": 13,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_two_col_kKgwee": {
+      "type": "osb-two-col",
+      "name": "OSB Two Column Section",
+      "settings": {
+        "show_section": true,
+        "heading": "Designed to stay on - no matter how you move",
+        "body_1": "<p>The Sulawesi was designed to solve the one thing most swimwear gets wrong: it doesn't stay put.</p>",
+        "bullet_1": "Structured panelled design that holds your shape",
+        "bullet_2": "Cinched waist that keeps everything anchored",
+        "bullet_3": "Compression-like fit that moves with your body",
+        "bullet_4": "No slipping, no sagging, no adjusting",
+        "italic_note": "From your first paddle to your last swim - it stays exactly where it should.",
+        "show_button": true,
+        "btn_text": "Shop The Sulawesi →",
+        "btn_url": "shopify://products/long-sleeve-swimsuit-navy-white",
+        "section_image": "shopify://shop_images/caraghcreated_-_Sulawesi_Nautical_-_January_2026-9.webp",
+        "image_ratio": "4/5",
+        "flip_on_desktop": true,
+        "bg_color": "#f4f8fb",
+        "heading_color": "#77a5c8",
+        "accent_color": "#77a5c8",
+        "btn_color": "#2e6688",
+        "italic_color": "#2e6688",
+        "italic_bold": false,
+        "h2_size_mobile": 22,
+        "body_size_mobile": 13,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "h2_size_tablet": 26,
+        "body_size_tablet": 13,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "h2_size_desktop": 32,
+        "body_size_desktop": 13,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_ugc_grid_kFwXBD": {
+      "type": "osb-ugc-grid",
+      "blocks": {
+        "photo_HWXgqi": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/a..jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        },
+        "photo_ghzqQn": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/charlenedickson.jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        },
+        "photo_EkhaYr": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/adventuresof_ju.jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        },
+        "photo_6xBLX3": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/helenfarmer_-2_6fac6b99-fb35-486d-9ad5-584594f7f535.jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        },
+        "photo_RPLeeP": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/hannahg_bythesea1.jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        },
+        "photo_xjQkpU": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify://shop_images/oznurddemir4.jpg",
+            "link_url": "",
+            "placeholder_color": "#ccd8e4"
+          }
+        }
+      },
+      "block_order": [
+        "photo_HWXgqi",
+        "photo_ghzqQn",
+        "photo_EkhaYr",
+        "photo_6xBLX3",
+        "photo_RPLeeP",
+        "photo_xjQkpU"
+      ],
+      "name": "OSB UGC Photo Grid",
+      "settings": {
+        "show_section": true,
+        "heading": "The Ocean Soul Community",
+        "border_radius": 3,
+        "bg_color": "#f4f8fb",
+        "heading_color": "#77a5c8",
+        "cols_mobile": 3,
+        "gap_mobile": 6,
+        "heading_size_mobile": 20,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "cols_tablet": 4,
+        "gap_tablet": 8,
+        "heading_size_tablet": 22,
+        "padding_top_tablet": 40,
+        "padding_bottom_tablet": 40,
+        "cols_desktop": 6,
+        "gap_desktop": 8,
+        "heading_size_desktop": 22,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 48
+      }
+    },
+    "osb_reviews_HydLhV": {
+      "type": "osb-reviews",
+      "blocks": {
+        "review_aNQW9E": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "I've never worn a swimsuit that actually stays in place like this. I surf, dive, swim - and I never have to adjust it.",
+            "author_name": "Sarah M.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "review_R3A6ck": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "No slipping, no riding up - just confidence. I can finally focus on the water instead of my body.",
+            "author_name": "Jessica L.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "review_3Wpwww": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "I feel like a Bond girl when I wear it. Best swimsuit I've ever owned - I want one in every colour.",
+            "author_name": "Ekaterina V.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "review_aNQW9E",
+        "review_R3A6ck",
+        "review_3Wpwww"
+      ],
+      "name": "OSB Reviews Grid",
+      "settings": {
+        "show_section": true,
+        "heading": "What Our Customers Are Saying",
+        "show_review_count": true,
+        "review_count_text": "800+ five-star reviews",
+        "review_font_size": 13,
+        "star_size": 14,
+        "card_radius": 6,
+        "bg_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "heading_color": "#77a5c8",
+        "star_color": "#77a5c8",
+        "heading_size_mobile": 22,
+        "card_padding_mobile": 20,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 26,
+        "card_padding_tablet": 24,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "cols_desktop": 3,
+        "heading_size_desktop": 32,
+        "card_padding_desktop": 32,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_how_it_works_CjNwCM": {
+      "type": "osb-how-it-works",
+      "blocks": {
+        "step_yj3Hix": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 01",
+            "step_title": "Choose your colourway",
+            "step_desc": "From deep Midnight to breezy Celestial Blue - each shade is finished to resist fading through salt, sun, and chlorine.",
+            "step_image": "shopify://shop_images/black_upf_lomg_sleeve_swimsuit_sulawesi_ocean_soul_swimwear.jpg"
+          }
+        },
+        "step_QAABYM": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 02",
+            "step_title": "Get your perfect fit",
+            "step_desc": "Use our size guide - the Sulawesi is a firm, sculpting fit. Prefer more relaxed coverage? Size up one.",
+            "step_image": "shopify://shop_images/long-sleeve-swimsuit-the-sulawesi-in-snow-ocean-soul-swimwear-4.webp"
+          }
+        },
+        "step_VgCr8Q": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 03",
+            "step_title": "Wear it everywhere",
+            "step_desc": "Surf, swim, paddle, lounge - the Sulawesi transitions from the break to the beach bar. No adjusting, ever.",
+            "step_image": "shopify://shop_images/long-sleeve-one-piece-the-sulawesi-in-celestial-blue-ocean-soul-swimwear-3.webp"
+          }
+        }
+      },
+      "block_order": [
+        "step_yj3Hix",
+        "step_QAABYM",
+        "step_VgCr8Q"
+      ],
+      "name": "OSB How It Works",
+      "settings": {
+        "show_section": true,
+        "heading": "See it on.",
+        "show_video": true,
+        "video_type": "cdn",
+        "cdn_video_url": "https://cdn.shopify.com/videos/c/o/v/03b2fbbcedda4191958a411b7b72f13d.mp4",
+        "youtube_url": "",
+        "vimeo_url": "",
+        "video_thumbnail": "shopify://shop_images/quiz-_lolaschemmer18_cca2439f-cce3-4ab9-98b9-ea9cdef83421.jpg",
+        "video_max_width": 800,
+        "step_title_size": 15,
+        "card_radius": 6,
+        "bg_color": "#f4f8fb",
+        "card_bg": "#ffffff",
+        "heading_color": "#77a5c8",
+        "accent_color": "#2e6688",
+        "heading_size_mobile": 22,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 26,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "cols_desktop": 3,
+        "heading_size_desktop": 32,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_icon_strip_iBUiRA": {
+      "type": "osb-icon-strip",
+      "blocks": {
+        "chip_8aFNNf": {
+          "type": "chip",
+          "settings": {
+            "icon": "shield",
+            "label": "12-MonthWarranty"
+          }
+        },
+        "chip_UFMeQK": {
+          "type": "chip",
+          "settings": {
+            "icon": "clock",
+            "label": "Lasts 2×\nLonger"
+          }
+        },
+        "chip_7xQhxi": {
+          "type": "chip",
+          "settings": {
+            "icon": "shield",
+            "label": "UPF 50+\nProtection"
+          }
+        },
+        "chip_m3GCJ9": {
+          "type": "chip",
+          "settings": {
+            "icon": "activity",
+            "label": "Chlorine\nResistant"
+          }
+        },
+        "chip_YFQfU8": {
+          "type": "chip",
+          "settings": {
+            "icon": "trending",
+            "label": "ECONYL®Recycled"
+          }
+        },
+        "chip_yGgAED": {
+          "type": "chip",
+          "settings": {
+            "icon": "return",
+            "label": "Easy Returns"
+          }
+        },
+        "chip_XXanYb": {
+          "type": "chip",
+          "settings": {
+            "icon": "heart",
+            "label": "Made in\nBali"
+          }
+        },
+        "chip_DGLUU7": {
+          "type": "chip",
+          "settings": {
+            "icon": "home",
+            "label": "Ethical\nFactory"
+          }
+        },
+        "chip_FzRBKX": {
+          "type": "chip",
+          "settings": {
+            "icon": "lock",
+            "label": "Secure\nCheckout"
+          }
+        }
+      },
+      "block_order": [
+        "chip_8aFNNf",
+        "chip_UFMeQK",
+        "chip_7xQhxi",
+        "chip_m3GCJ9",
+        "chip_YFQfU8",
+        "chip_yGgAED",
+        "chip_XXanYb",
+        "chip_DGLUU7",
+        "chip_FzRBKX"
+      ],
+      "name": "OSB Icon Trust Strip",
+      "settings": {
+        "show_section": true,
+        "label_text": "Why You Can Trust Us",
+        "chip_padding": 12,
+        "chip_padding_h": 16,
+        "chip_radius": 4,
+        "icon_size": 20,
+        "label_size": 10,
+        "chip_label_size": 10,
+        "bg_color": "#ffffff",
+        "chip_bg": "#f4f8fb",
+        "icon_color": "#2e6688",
+        "gap_mobile": 10,
+        "chip_width_mobile": 92,
+        "padding_mobile": 24,
+        "gap_tablet": 10,
+        "chip_width_tablet": 96,
+        "padding_tablet": 28,
+        "chip_width_desktop": 96,
+        "padding_desktop": 28
+      }
+    },
+    "osb_why_us_NpwMYn": {
+      "type": "osb-why-us",
+      "blocks": {
+        "accordion_EzHqwU": {
+          "type": "accordion",
+          "settings": {
+            "question": "It actually stays on - even in big surf",
+            "answer": "The Sulawesi uses structured panelling and a secure, snug cut that grips your body without digging in. Engineered to move with you through waves, dives, and bodysurf sessions."
+          }
+        },
+        "accordion_FWAYfN": {
+          "type": "accordion",
+          "settings": {
+            "question": "UPF 50+ sun protection all day long",
+            "answer": "The long-sleeve design and darker colourways offer maximum UPF 50+ block-out. Spend all day in the water without worrying about UV damage to your arms, shoulders, and chest."
+          }
+        },
+        "accordion_MdU9VH": {
+          "type": "accordion",
+          "settings": {
+            "question": "Recycled Italian ECONYL® - luxury with a conscience",
+            "answer": "ECONYL® is regenerated nylon made from ocean waste like discarded fishing nets. Buttery-soft, lasts twice as long as regular swimwear, and fully recyclable at end of life."
+          }
+        },
+        "accordion_fhaaJt": {
+          "type": "accordion",
+          "settings": {
+            "question": "Ethically made in Bali - fair wages, small batches",
+            "answer": "Every Sulawesi is handmade in our Canggu studio by skilled local makers with fair pay and safe conditions. Small-batch production means higher quality on every single piece."
+          }
+        },
+        "accordion_xMcmWc": {
+          "type": "accordion",
+          "settings": {
+            "question": "12-month warranty and easy returns",
+            "answer": "We stand behind every suit. If the fabric, make, or hardware fails within 12 months, we'll replace it - no questions asked. Returns and exchanges on full-price items are simple."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_EzHqwU",
+        "accordion_FWAYfN",
+        "accordion_MdU9VH",
+        "accordion_fhaaJt",
+        "accordion_xMcmWc"
+      ],
+      "name": "OSB Why Us Accordion",
+      "settings": {
+        "show_section": true,
+        "heading": "What makes it different?",
+        "body_1": "Most swimwear is designed to look good standing still. The Sulawesi is designed for what actually happens in the water.",
+        "body_2": "That's the difference.",
+        "section_image": "shopify://shop_images/nautical_long_sleeve_surf_swimsuit_ocean_soul_swimwear.jpg",
+        "image_ratio": "3/4",
+        "image_radius": 4,
+        "bg_color": "#ffffff",
+        "heading_color": "#77a5c8",
+        "accent_color": "#2e6688",
+        "heading_size_mobile": 24,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 28,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "heading_size_desktop": 34,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_compare_LD9V4U": {
+      "type": "osb-compare",
+      "blocks": {
+        "row_h4FBkD": {
+          "type": "row",
+          "settings": {
+            "feature": "UPF 50+ long-sleeve sun protection",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_U4fdRm": {
+          "type": "row",
+          "settings": {
+            "feature": "Stays on through surf and ocean swimming",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_6ep3eg": {
+          "type": "row",
+          "settings": {
+            "feature": "Sculpting cinched-waist panelled design",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_arzw8w": {
+          "type": "row",
+          "settings": {
+            "feature": "Recycled ECONYL® Italian fabric",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_JnWi3w": {
+          "type": "row",
+          "settings": {
+            "feature": "Ethically made with fair wages",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_8CGLz7": {
+          "type": "row",
+          "settings": {
+            "feature": "Chlorine & fade resistant - lasts 2× longer",
+            "we_have": true,
+            "they_have": false
+          }
+        },
+        "row_wmbzW3": {
+          "type": "row",
+          "settings": {
+            "feature": "12-month manufacturer warranty",
+            "we_have": true,
+            "they_have": false
+          }
+        }
+      },
+      "block_order": [
+        "row_h4FBkD",
+        "row_U4fdRm",
+        "row_6ep3eg",
+        "row_arzw8w",
+        "row_JnWi3w",
+        "row_8CGLz7",
+        "row_wmbzW3"
+      ],
+      "name": "OSB Compare Table",
+      "settings": {
+        "show_section": true,
+        "heading": "The Sulawesi vs Other Brands",
+        "brand_name": "Ocean Soul Swimwear",
+        "col_us_label": "Us ✓",
+        "col_them_label": "Others ✗",
+        "row_font_size": 13,
+        "tick_size": 16,
+        "bg_color": "#f4f8fb",
+        "row_alt_bg": "#ffffff",
+        "heading_color": "#77a5c8",
+        "accent_color": "#2e6688",
+        "heading_size_mobile": 22,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 26,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "heading_size_desktop": 32,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_expert_ykPC7y": {
+      "type": "osb-expert",
+      "name": "OSB Expert Validation",
+      "settings": {
+        "show_section": true,
+        "heading": "Built by ocean women, for ocean women.",
+        "body_text": "Ocean Soul was founded in Canggu, Bali - where we live in the ocean. We spent years frustrated with swimwear that looked good in the shop but failed the moment we paddled out. The Sulawesi is the swimsuit we couldn't find, so we made it ourselves.",
+        "btn_text": "Shop The Sulawesi →",
+        "btn_url": "shopify://collections/long-sleeve-one-piece-swimsuits",
+        "show_circles": true,
+        "circle_1": "shopify://shop_images/black-long-sleeve-surf_swimsuit-the-sulawesi-midnight.webp",
+        "circle_2": "shopify://shop_images/green_upf_long_sleeveswimsuit_sulawesi_ocean_soul_swimwear.jpg",
+        "circle_3": "shopify://shop_images/white-navy-long-sleeve-one-piece-swimsuit-the-sulawesi-ocean-soul-swimwear-4.webp",
+        "circle_size_mobile": 80,
+        "circle_size_desktop": 90,
+        "bg_color": "#ffffff",
+        "heading_color": "#77a5c8",
+        "btn_color": "#2e6688",
+        "text_max_width": 580,
+        "heading_size_mobile": 22,
+        "body_size_mobile": 13,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 26,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "heading_size_desktop": 32,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_faq_nmicfn": {
+      "type": "osb-faq",
+      "blocks": {
+        "faq_iMmaaF": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the fit like on the Sulawesi?",
+            "answer": "Designed as a firm, sculpting fit - like shapewear for the ocean. If you prefer a more relaxed feel, size up one. Buying Midnight? Size up two as the dark dye makes the fabric slightly less stretchy."
+          }
+        },
+        "faq_8jDKW4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which colourway gives the most UV protection?",
+            "answer": "Midnight (black) provides the most UPF block-out. All colourways are UPF 50+ rated. Apply SPF to the side mesh panels for complete coverage."
+          }
+        },
+        "faq_Jqepmf": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my Sulawesi?",
+            "answer": "Hand wash separately in cool water after each wear. Rinse thoroughly after chlorine or salt water. Lay flat to dry in the shade. Avoid direct sunlight, tumble drying, and wringing."
+          }
+        },
+        "faq_RTWFGi": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your returns policy?",
+            "answer": "Exchanges or returns for store credit on full-price items within 30 days of dispatch. Sale items cannot be refunded. 12-month warranty on manufacturing defects."
+          }
+        },
+        "faq_Aq8n3y": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "International Express via DHL - 2 to 4 business days from dispatch. Australian and Indonesian orders arrive in 1 to 3 days. Free express shipping on Australian orders over $270 AUD."
+          }
+        },
+        "faq_MpwbrD": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Snow colourway see-through when wet?",
+            "answer": "No - the Snow Sulawesi is double-lined with a nude beige ECONYL® layer to prevent transparency when wet. Wear it with complete confidence."
+          }
+        }
+      },
+      "block_order": [
+        "faq_iMmaaF",
+        "faq_8jDKW4",
+        "faq_Jqepmf",
+        "faq_RTWFGi",
+        "faq_Aq8n3y",
+        "faq_MpwbrD"
+      ],
+      "name": "OSB FAQ",
+      "settings": {
+        "show_section": true,
+        "heading": "Frequently Asked Questions",
+        "max_width": 760,
+        "question_size": 13,
+        "answer_size": 13,
+        "bg_color": "#f4f8fb",
+        "heading_color": "#2a2a2a",
+        "accent_color": "#2e6688",
+        "heading_size_mobile": 22,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "heading_size_tablet": 26,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "heading_size_desktop": 32,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "osb_cta_strip_pLB7c3": {
+      "type": "osb-cta-strip",
+      "name": "OSB Final CTA Strip",
+      "settings": {
+        "show_section": true,
+        "heading": "Stop adjusting your swimsuit. Start enjoying the ocean.",
+        "sub_text": "Shop The Sulawesi - $20 off your first order, limited time.",
+        "btn_text": "Shop The Sulawesi →",
+        "btn_url": "",
+        "footnote": "Free express shipping on orders $270+ AUD - 12-month warranty - Easy returns",
+        "btn_padding_v": 16,
+        "btn_padding_h": 48,
+        "sub_size": 14,
+        "footnote_size": 11,
+        "bg_color": "#2e6688",
+        "heading_color": "#ffffff",
+        "sub_color": "#b3ccdd",
+        "btn_bg": "#ffffff",
+        "btn_text_color": "#2e6688",
+        "footnote_color": "#6699bb",
+        "heading_size_mobile": 26,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "heading_size_tablet": 34,
+        "padding_top_tablet": 64,
+        "padding_bottom_tablet": 64,
+        "heading_size_desktop": 42,
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "osb_announcement_bar_NjFBcm",
+    "osb_hero_RFQgXC",
+    "osb_pr_logos_jWbaj8",
+    "osb_two_col_zJcN74",
+    "osb_two_col_kKgwee",
+    "osb_ugc_grid_kFwXBD",
+    "osb_reviews_HydLhV",
+    "osb_how_it_works_CjNwCM",
+    "osb_icon_strip_iBUiRA",
+    "osb_why_us_NpwMYn",
+    "osb_compare_LD9V4U",
+    "osb_expert_ykPC7y",
+    "osb_faq_nmicfn",
+    "osb_cta_strip_pLB7c3"
+  ]
+}
