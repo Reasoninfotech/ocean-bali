@@ -64,7 +64,7 @@
         "usp_3_label": "Durable - lasts 2x Longer than regular swimwear",
         "usp_3_svg": "",
         "usp_3_image": "shopify://shop_images/Asset_5_4x_5022a477-72f5-44a4-bc3a-93a1e4c7950e.jpg",
-        "hero_image": "shopify://shop_images/Long_Sleeve_swimsuit-navy-and-white-the-sulawesi-in-nautical-ocean-soul-bali-3_c69009dc-cf84-4af4-a9ed-6747ac255ebf.webp",
+        "hero_image": "shopify://shop_images/izzyisup_by_chanxler_-_Sulawesi_Nautical_-_2023-1.jpg",
         "image_ratio": "1/1",
         "bg_color": "#ffffff",
         "heading_color": "#77a5c8",
@@ -180,7 +180,7 @@
         "show_button": false,
         "btn_text": "Shop The Sulawesi →",
         "btn_url": "",
-        "section_image": "shopify://shop_images/long-sleeve-swimsuit-women-the-_sulawesi-in-_nautical_-_ocean-soul-swimwear-2.webp",
+        "section_image": "shopify://shop_images/Sustainable-Swimwear-The-Sulawesi-in-Nautical-long-sleeve-swimsuit-Ocean-Soul-Bali-8.webp",
         "image_ratio": "4/5",
         "flip_on_desktop": false,
         "bg_color": "#ffffff",
@@ -332,8 +332,8 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "review_text": "I've never worn a swimsuit that actually stays in place like this. I surf, dive, swim - and I never have to adjust it.",
-            "author_name": "Sarah M.",
+            "review_text": "The long sleeves kept me sun-safe, and the cinched waist gave such a sleek, confident fit.",
+            "author_name": "Jade W.",
             "verified_label": "Verified Buyer"
           }
         },
@@ -341,8 +341,8 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "review_text": "No slipping, no riding up - just confidence. I can finally focus on the water instead of my body.",
-            "author_name": "Jessica L.",
+            "review_text": "I was looking for strong UPF protection and a pretty design which would look good above and underwater. And this is the best choice I ever made!",
+            "author_name": "Anne M",
             "verified_label": "Verified Buyer"
           }
         },
@@ -428,7 +428,7 @@
       "name": "OSB How It Works",
       "settings": {
         "show_section": true,
-        "heading": "How It Works",
+        "heading": "See it on",
         "show_video": true,
         "video_type": "cdn",
         "cdn_video_url": "https://cdn.shopify.com/videos/c/o/v/03b2fbbcedda4191958a411b7b72f13d.mp4",
