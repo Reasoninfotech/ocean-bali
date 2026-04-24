@@ -1,31 +1,24 @@
 {%- liquid
-
   assign ntm = false
   assign has_image = false
   assign has title = false
   assign has_text = false
   assign has_link = false
-
   if section.settings.no_top_margin
     assign ntm = true
   endif
-
   if section.settings.image != blank
     assign has_image = true
   endif
-
   if section.settings.title != blank
     assign has_title = true
   endif
-
   if section.settings.text != blank
     assign has_text = true
   endif
-
   if section.settings.link != blank and section.settings.button_text != blank
     assign has_link = true
   endif
-
   case section.settings.image_size
     when 'medium'
       assign grid = '6'
@@ -36,72 +29,22 @@
       assign md_render = 'calc(100vw * 0.6667)'
       assign lg_render = 'calc(1600px * 0.6667)'
   endcase
-
   assign offset = 12 | minus: grid
-
   assign fixed_height = false
-
   if section.settings.image_height == fixed
     assign fixed_height = true
   endif
-
   assign desktop_height = section.settings.desktop_image_height
   assign mobile_height = section.settings.mobile_image_height
   assign text_color = section.settings.text_color
   assign background_color = section.settings.background_color
-
 -%}
-
-{% style %}
-#shopify-section-{{ section.id }} {
-  --text-color: {{ text_color }};
-  --section-background: {{ background_color }};
-  --desktop-section-height: {{ desktop_height }}px;
-  --mobile-section-height: {{ mobile_height }}px;
-
-}
-
-{%- if section.settings.image_position == 'right' -%}
-  @media screen and (min-width: 741px) {
-    .image__with-textSection.section-{{ section.id }} .image__with-textImage {
-      order: 2;
-      grid-column-start: {{ offset | plus: 1 }};
-    }
-    .image__with-textSection.section-{{ section.id }} .image__with-textCaption {
-      order: 1;
-      grid-column-start: 1;
-    }
-  }
-{%- endif -%}
-
-.image__with-textImage {
-  {%- if section.settings.image_position == 'left' -%}
-  margin-left: -15px;
-  {%- else -%}
-  margin-right: -15px;
-  {%- endif -%}
-}
-{% endstyle %}
-
+{% style %}#shopify-section-{{ section.id }} {--text-color: {{ text_color }};--section-background: {{ background_color }};--desktop-section-height: {{ desktop_height }}px;--mobile-section-height: {{ mobile_height }}px;}{%- if section.settings.image_position == 'right' -%}@media screen and (min-width: 741px) {.image__with-textSection.section-{{ section.id }} .image__with-textImage {order: 2;grid-column-start: {{ offset | plus: 1 }};}.image__with-textSection.section-{{ section.id }} .image__with-textCaption {order: 1;grid-column-start: 1;}}{%- endif -%}.image__with-textImage {{%- if section.settings.image_position == 'left' -%}margin-left: -15px;{%- else -%}margin-right: -15px;{%- endif -%}}{% endstyle %}
 <section class="image__with-textSection section-{{ section.id }} global__section pb0" data-section-id="{{ section.id }}">
-
     <div class="row grid__wrapper image__withText-wrapper">
       <div class="image__with-textImage span-{{ grid }} image--{{ section.settings.image_height }} sm-span-12 auto">
-        {%- if has_image -%}
-          {%
-            render 'basic-responsive-image',
-            type: section.settings.image,
-            lg_render: lg_render,
-            md_render: md_render,
-            width: 1200
-          %}
-        {%- else -%}
-          <div class="onboard">
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-        {%- endif -%}
+        {%- if has_image -%}{% render 'basic-responsive-image',type: section.settings.image,lg_render: lg_render,md_render: md_render,width: 1200 %}{%- else -%}<div class="onboard">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>{%- endif -%}
       </div>
-
       <div class="image__with-textCaption {% if section.settings.center_align %} center{% endif %} span-{{ offset }} sm-span-12 auto">
         {%- if has_title -%}
           <h2>{{ section.settings.title | escape }}</h2>
@@ -119,10 +62,7 @@
       </div>
   </div>
 </section>
-
 <div class="clear"></div>
-
-
 {% schema %}
 {
   "name": "Image with text",

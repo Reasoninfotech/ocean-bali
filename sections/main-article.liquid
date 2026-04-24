@@ -1,27 +1,19 @@
 {%- liquid
-
   assign number_of_comments = article.comments_count
   if comment and comment.created_at
     assign number_of_comments = article.comments_count | plus: 1
   endif
-
   assign published_at = article.published_at | date: format: 'month_date_year'
-
 -%}
-
 <section class="article__section main__section" data-section-id="{{ section.id }}" data-section-type="article-section">
 <div class="row">
   {% paginate article.comments by 20 %}
-
   <div class="article__section-container">
     <div class="article__section-body">
-
       {% for block in section.blocks %}
       {%- case block.type -%}
-
         {%- when 'article_header' -%}
           <h1 class="page-title article__section-title">{{ article.title }}</h1>
-
         {%- when 'article_image' -%}
           {% if article.image %}
             <div class="article__section-image">
@@ -32,28 +24,21 @@
               %}
             </div>
           {% endif %}
-
         {%- when 'article_content' -%}
           <div class="article__section-details rte">
             {{ article.content }}
           </div>
-
         {%- when 'article_info' -%}
-
         {%- liquid
-
             if block.settings.show_author
               assign show_author = true
             endif
-
             if block.settings.show_date
               assign show_date = true
             endif
-
             if block.settings.center_align
               assign center_align = true
             endif
-
         -%}
           <div class="article__page-info{% if center_align %} center{% endif %}">
             {% if show_author %}
@@ -66,10 +51,8 @@
               <span class="posted article__section-date">{{ 'blogs.article.posted_on_date_html' | t: date: published_at }}</span>
             {% endif %}
           </div>
-
         {%- when 'social_sharing' -%}
           {%- liquid
-
             if block.settings.show_twitter
               assign show_twitter = true
             endif
@@ -79,11 +62,9 @@
             if block.settings.show_pinterest
               assign show_pinterest = true
             endif
-
             if block.settings.center_align
               assign center_align = true
             endif
-
           -%}
           <div class="{% if center_align %}center{% endif %}">
             {% render 'social' with article,
@@ -94,31 +75,18 @@
           </div>
       {% endcase %}
       {% endfor %}
-
     </div>
-
     <div id="product-navigation" class="more__articles desktop-12 tablet-6 mobile-3">
       <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %}"><h3>{{ 'blogs.article.more_posts' | t }}</h3></div>
-      <div
-        id="back-forth"
-        data-blog-url="{{ blog.url }}"
-        data-article-url="{{ article.url }}"
-        data-shop-url="{{ shop.url }}"
-        data-older-post-text="{{ 'blogs.article.older_post' | t }}"
-        data-newer-post-text="{{ 'blogs.article.newer_post' | t }}">
+      <div id="back-forth" data-blog-url="{{ blog.url }}" data-article-url="{{ article.url }}" data-shop-url="{{ shop.url }}" data-older-post-text="{{ 'blogs.article.older_post' | t }}" data-newer-post-text="{{ 'blogs.article.newer_post' | t }}"> 
         {% if blog.previous_article %}
-          <span class="prev-prod">
-            &larr; {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
-          </span>
+          <span class="prev-prod"> &larr; {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }} </span>
         {% endif %}
         {% if blog.next_article %}
-          <span class="next-prod">
-            {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }} &rarr;
-          </span>
+          <span class="next-prod"> {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }} &rarr; </span>
         {% endif %}
       </div>
     </div>
-
     {% if blog.comments_enabled? %}
       <div id="article__section-comments">
         <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %}">
@@ -160,11 +128,9 @@
               {% endif %}
             </div>
           </ul>
-
           <div id="article__section-commentForm">
             {% form article %}
               <h5>{{ 'blogs.comments.title' | t }}</h5>
-              <!-- Check if a comment has been submitted in the last request, and if yes display an appropriate message -->
               {% if form.posted_successfully? %}
                 {% if blog.moderated? %}
                   <div class="notice">
@@ -174,7 +140,6 @@
                   <div class="notice">{{ 'blogs.comments.success' | t }}</div>
                 {% endif %}
               {% endif %}
-
               {% if form.errors %}
                 <div class="notice error">{{ 'general.forms.post_error' | t }}</div>
               {% endif %}
@@ -198,17 +163,8 @@
   </div>
   {% endpaginate %}
 </div>
-  <style>
-    @media screen and (min-width:741px) {
-      .article__section-container {
-        max-width: {{ section.settings.page_width }}%;
-        margin: 0 auto;
-      }
-    }
-  </style>
+<style>@media screen and (min-width:741px) {.article__section-container {max-width: {{ section.settings.page_width }}%;margin: 0 auto;}}</style>
 </section>
-
-
 {% schema %}
 {
   "name": "Blog post",

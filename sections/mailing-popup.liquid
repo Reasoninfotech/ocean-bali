@@ -1,28 +1,11 @@
 <section data-section-id="{{ section.id }}" data-section-type="mailing-popup">
-<div class="js-popup newsletter__popup-container"
-     style="display:none"
-     data-popup-enabled={{ section.settings.popup | json }}
-     data-popup-delay={{ section.settings.popup_delay | json }}
-     data-popup-frequency={{ section.settings.popup_frequency | json }}>
+<div class="js-popup newsletter__popup-container" style="display:none" data-popup-enabled={{ section.settings.popup | json }} data-popup-delay={{ section.settings.popup_delay | json }} data-popup-frequency={{ section.settings.popup_frequency | json }}>
   <a class="js-popup-close newsletter__popup-container-close" href="">
-   {% render 'snip-icons',
-      wrapper: '.newsletter__popup-container-close',
-      type: 'apollo',
-      icon: 'close',
-      classes: 'popup-container-close--icon',
-      size: '14px',
-      fill: section.settings.popup_text_color,
-      hover: section.settings.popup_text_color %}
+   {% render 'snip-icons', wrapper: '.newsletter__popup-container-close',type: 'apollo',icon: 'close',classes: 'popup-container-close--icon',size: '14px',fill: section.settings.popup_text_color,hover: section.settings.popup_text_color %}
   </a>
   <div id="newsletter__popup-content">
     {% if section.settings.email_image != blank %}
-    <div class="newsletter__popup-image">
-      {%
-        render 'basic-responsive-image',
-        type: section.settings.email_image,
-        width: 1200
-      %}
-    </div>
+    <div class="newsletter__popup-image">{% render 'basic-responsive-image',type: section.settings.email_image,width: 1200 %}</div>
     {% endif %}
     <div class="newsletter__popup-text">
       <h3>{{ section.settings.email_popup_title }}</h3>

@@ -1,30 +1,9 @@
 {%- liquid
-
   assign text_color = section.settings.text_color
   assign background_color = section.settings.background_color
   assign heading_size = section.settings.heading_size
-
 -%}
-
-{% style %}
-#shopify-section-{{ section.id }} {
-  --text-color: {{ text_color }};
-  --section-background: {{ background_color }};
-  --h2-size: {{ section.settings.heading_size }}px;
-}
-.introduction__text-section.section-{{ section.id }} {
-  background-image: url({{ section.settings.image | image_url: width: 2400 }});
-  opacity: 1;
-}
-.no-js .introduction__text-section.section-{{ section.id }} {
-  background-image: url({{ section.settings.image | image_url: width: 2400 }});
-  opacity: 1;
-}
-.introduction__text-section.section-{{ section.id }} {
-  padding: {{ section.settings.padding }}px 0;
-}
-{% endstyle %}
-
+{% style %}#shopify-section-{{ section.id }} {--text-color: {{ text_color }};--section-background: {{ background_color }};--h2-size: {{ section.settings.heading_size }}px;}.introduction__text-section.section-{{ section.id }} {background-image: url({{ section.settings.image | image_url: width: 2400 }});opacity: 1;}.no-js .introduction__text-section.section-{{ section.id }} {background-image: url({{ section.settings.image | image_url: width: 2400 }});opacity: 1;}.introduction__text-section.section-{{ section.id }} {padding: {{ section.settings.padding }}px 0;}{% endstyle %}
 <section class="global__section mt0 mb0 introduction__text-section section-{{ section.id }}">
   <div class="row grid__wrapper rg0">
     <div class="introduction__text-container span-12 auto">
@@ -46,9 +25,7 @@
     </div>
   </div>
 </section>
-
-
-{% schema %}
+ schema %}
 {
   "name": "Introduction",
   "settings": [

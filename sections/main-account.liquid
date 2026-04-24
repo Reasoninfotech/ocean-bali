@@ -3,26 +3,15 @@
     <h1 class="page-title">{{ 'customer.account.title' | t }}</h1>
     <div class="sidebar desktop-3 tablet-2 mobile-3">
       <ul class="sidebar-nav">
-        <li>
-          <a class="account-details selected" data-link-item onClick="Toggle('account-details')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.details' | t }}</a>
-        </li>
-        <li>
-          <a class="order-history" data-link-item onClick="Toggle('order-history')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.orders.title' | t }}</a>
-        </li>
-        <li>
-          <a class="account-addresses" data-link-item onClick="Toggle('account-addresses')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
-        </li>
+        <li><a class="account-details selected" data-link-item onClick="Toggle('account-details')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.details' | t }}</a></li>
+        <li><a class="order-history" data-link-item onClick="Toggle('order-history')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.orders.title' | t }}</a></li>
+        <li><a class="account-addresses" data-link-item onClick="Toggle('account-addresses')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></li>
         {% if settings.show_ca_returns and settings.ca_returns_page != blank %}
-          <li>
-            <a class="return-exchanges" data-link-item onClick="Toggle('returns-exchanges')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.returns_content' | t }}</a>
-          </li>
+          <li><a class="return-exchanges" data-link-item onClick="Toggle('returns-exchanges')" href="" title="{{ 'customer.account.details' | t }}">{{ 'customer.account.returns_content' | t }}</a></li>
         {% endif %}
-        <li>
-          <a href="{{ routes.account_logout_url }}">{{ 'general.header.logout' | t }}</a>
-        </li>
+        <li><a href="{{ routes.account_logout_url }}">{{ 'general.header.logout' | t }}</a></li>
       </ul>
     </div>
-
     <div class="content desktop-9 tablet-4 mobile-3">
       <div id="account-details" class="content-item">
         <h5 class="name">{{ customer.name }}</h5>
@@ -69,17 +58,13 @@
                 <h4 class="address_title">
                   {% if address == customer.default_address %}{{ 'customer.addresses.default' | t }}{% endif %}
                 </h4>
-
                 <div class="view_address">
                   {{ address | format_address }}
                 </div>
-
                 <p class="address_actions">
                   <button class="button-as-link accounts__edit-address js-modal-open" type="button" name="button" data-wau-modal-target="edit-address-{{ address.id }}">{{ 'customer.addresses.edit' | t }}</button>
                   <span class="action_link action_delete">{{ 'customer.addresses.delete' | t | delete_customer_address_link: address.id }}</span>
                 </p>
-
-                {% comment %} Edit an Address Popup {% endcomment %}
                 <div data-wau-modal-content="edit-address-{{ address.id }}" class="customer_address edit_address desktop-8 desktop-push-2 tablet-6 mobile-3" data-wau-modal-remove-original="true">
                   <h4 id="add_address_title">{{ 'customer.addresses.edit_address' | t }}</h4>
                   {% form 'customer_address', address %}
@@ -138,17 +123,11 @@
                 </div>
               </div>
             {% endfor %}
-
             <div class="desktop-12 tablet-6 mobile-3">
               <button class="inline-block-auto accounts__new-address js-modal-open" type="button" name="button" data-wau-modal-target="new-address">{{ 'customer.addresses.add_new' | t }}</button>
-
-              {% comment %}Add an Address Popup {% endcomment %}
               <div data-wau-modal-content="new-address" class="customer_address edit_address desktop-8 mobile-3" data-wau-modal-remove-original="true">
-
                 {% form 'customer_address', customer.new_address %}
-
                 <h4 id="add_address_title">{{ 'customer.addresses.add_new' | t }}</h4>
-
                 <table class="customer_address_table">
                   <tr>
                     <td class="label"><label for="address_first_name_new">{{ 'customer.addresses.first_name' | t }}</label></td>
@@ -204,63 +183,17 @@
                 </div>
                 {% endform %}
               </div>
-
               <div id="address_pagination">{{ paginate | default_pagination }}</div>
             </div>
-            <script type="text/javascript" charset="utf-8">
-
-              document.addEventListener("DOMContentLoaded", function() {
-
-                // initialize observers on address selectors
-                new Shopify.CountryProvinceSelector(
-                  'address_country_new',
-                  'address_province_new', {
-                    hideElement: 'address_province_container_new'
-                  }
-                );
-
-              {% for address in customer.addresses %}
-              new Shopify.CountryProvinceSelector(
-                'address_country_{{address.id}}',
-                'address_province_{{address.id}}',
-                {
-                  hideElement: 'address_province_container_{{address.id}}'
-                }
-              );
-              {% endfor %}
-              });
-            </script>
+            <script type="text/javascript" charset="utf-8">document.addEventListener("DOMContentLoaded", function() {new Shopify.CountryProvinceSelector('address_country_new','address_province_new', {hideElement: 'address_province_container_new'});{% for address in customer.addresses %}new Shopify.CountryProvinceSelector('address_country_{{address.id}}','address_province_{{address.id}}',{hideElement: 'address_province_container_{{address.id}}'});{% endfor %}});</script>
           </div>
         {% endpaginate %}
       </div>
       {% if settings.show_ca_returns and settings.ca_returns_page != blank %}
-        <div id="returns-exchanges" class="content-item" style="display:none;">
-          {{ settings.ca_returns_page.content }}
-        </div>
+        <div id="returns-exchanges" class="content-item" style="display:none;">{{ settings.ca_returns_page.content }}</div>
       {% endif %}
     </div>
   </div>
-  <script type="text/javascript">
-
-    var list = document.querySelectorAll('.sidebar-nav li [data-link-item]');
-    list.forEach((item, i) => {
-      item.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.querySelector('.sidebar-nav .selected').classList.remove('selected');
-        this.classList.add('selected');
-      }, false);
-    });
-
-
-    // Show Hide Function
-    function Toggle(show) {
-      var allDivs = document.querySelectorAll('.content-item');
-      allDivs.forEach((item, i) => {
-        item.style.display = "none";
-      });
-
-      var show = document.getElementById(show);
-      show.style.display = 'block';
-    }
-  </script>
+  <script type="text/javascript">var list = document.querySelectorAll('.sidebar-nav li [data-link-item]');list.forEach((item, i) => {item.addEventListener('click', function(event) {event.preventDefault();document.querySelector('.sidebar-nav .selected').classList.remove('selected');this.classList.add('selected');}, false);});function Toggle(show) {
+var allDivs = document.querySelectorAll('.content-item');allDivs.forEach((item, i) => {item.style.display = "none";});var show = document.getElementById(show);show.style.display = 'block';}</script>
 </section>

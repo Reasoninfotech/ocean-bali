@@ -1,12 +1,8 @@
 {%- liquid
-
   assign count = section.settings.count
   assign grid = section.settings.grid
-
 -%}
-
 <section class="blog__section main__section{% if banner_image %} mt0{% endif %}" data-section-id="{{ section.id }}" data-section-type="blog-section">
-
   <div class="row">
     <h1 class="page-title blog__section-title">
       {% if current_tags %}
@@ -15,14 +11,12 @@
         {{ blog.title }}
       {% endif %}
     </h1>
-
     {% if section.settings.text != blank %}
     <div class="blog__section-description desktop-12 tablet-6 mobile-3{% if section.settings.center_align %} center{% endif %}">
       {{ section.settings.text }}
     </div>
     <div class="clear"></div>
     {% endif %}
-
     {% paginate blog.articles by count %}
     <div class="blog__wrapper">
       <div class="blog__article-container{% if grid == 1 %} list-layout{% endif %}">
@@ -34,26 +28,8 @@
     {% render 'pagination', paginate: paginate %}
     {% endpaginate %}
   </div>
-  <style>
-    .collection-banner {
-      height: {{ section.settings.banner_height }}px;
-      overflow: hidden;
-    }
-    .collection-banner .box-ratio {
-      padding-bottom: {{ section.settings.banner_height }}px !important;
-    }
-    .collection-banner img {
-      object-fit: cover;
-      object-position: center center;
-      height: {{ section.settings.banner_height }}px;
-    }
-    .blog__article-container {
-      grid-template-columns: repeat({{ grid }}, 1fr);
-    }
-  </style>
+  <style>.collection-banner {height: {{ section.settings.banner_height }}px;overflow: hidden;.collection-banner .box-ratio {padding-bottom: {{ section.settings.banner_height }}px !important;}.collection-banner img {object-fit: cover;object-position: center center;height: {{ section.settings.banner_height }}px;.blog__article-container {grid-template-columns: repeat({{ grid }}, 1fr);}</style>
 </section>
-
-
 {% schema %}
 {
   "name": "Blog page",

@@ -1,12 +1,8 @@
 {% if template.name contains 'collection' or template.name == 'index' or template.name == 'product' %}
-  <!-- Start of Judge.me UGC code -->
-  <div class='jdgm-widget jdgm-ugc-media-wrapper'
-       data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false{% endif %}'>
+  <div class='jdgm-widget jdgm-ugc-media-wrapper' data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false{% endif %}'>
     {{ shop.metafields.judgeme.ugc_media_grid }}
   </div>
-  <!-- End of Judge.me UGC code -->
 {% endif %}
-
 {% schema %}
   {
     "name": "UGC code",
