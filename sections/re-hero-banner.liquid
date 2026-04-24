@@ -1,56 +1,64 @@
-{%- if section.settings.desktop_img -%}
-  {% capture desktop_preload_src %}{% render 'imagekit', src: section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}{% endcapture %}
-  <link rel="preload" as="image" href="{{ desktop_preload_src | strip }}" media="(min-width: 768px)" fetchpriority="high" />
-{%- endif -%}
-{%- if section.settings.Mobile_img -%}
-  {% capture mobile_preload_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
-  <link rel="preload" as="image" href="{{ mobile_preload_src | strip }}" media="(max-width: 767px)" fetchpriority="high" />
-{%- endif -%}
-
 <div class="hero_banner">
   <div class="hero_banner_row">
-    <div class="hero_banner_img_wrapper">
-      <picture>
+    {%- if section.settings.desktop_img -%}
+{% capture desktop_preload_src %}{% render 'imagekit', src: section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}{% endcapture %}
+<link 
+  rel="preload" 
+  as="image" 
+  href="{{ desktop_preload_src | strip }}"
+  fetchpriority="high"
+/>
+{%- endif -%}
+    <div
+      class="hero_banner_img"
+      {% if section.settings.desktop_img != blank %}
+  {% assign desktop_raw = section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}
+  {% capture desktop_ik %}{% render 'imagekit', src: desktop_raw %}{% endcapture %}
+  style="background-image:url({{ desktop_ik | strip }})"
+{% endif %}
+    >
+      {%- if section.settings.Mobile_img -%}
+{% capture mobile_preload_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
+<link 
+  rel="preload" 
+  as="image" 
+  href="{{ mobile_preload_src | strip }}"
+  fetchpriority="high"
+/>
+{%- endif -%}
+      <div
+        class="hero_banner_mob_img"
         {% if section.settings.Mobile_img != blank %}
           {% assign mobile_raw = section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}
           {% capture mobile_ik %}{% render 'imagekit', src: mobile_raw %}{% endcapture %}
-          <source media="(max-width: 767px)" srcset="{{ mobile_ik | strip }}">
+          style="background-image:url({{ mobile_ik | strip }})"         
         {% endif %}
-        {% if section.settings.desktop_img != blank %}
-          {% assign desktop_raw = section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}
-          {% capture desktop_ik %}{% render 'imagekit', src: desktop_raw %}{% endcapture %}
-          <img src="{{ desktop_ik | strip }}" 
-               alt="{{ section.settings.desktop_img.alt | default: section.settings.title | escape }}" 
-               fetchpriority="high" 
-               loading="eager"
-               class="hero_banner_main_img">
-        {% endif %}
-      </picture>
-      
-      <div class="container">
-        <div class="hero_banner_col">
-          {% if section.settings.title != blank %}
-            <h2>{{ section.settings.title }}</h2>
-          {% endif %}
-          {% if section.settings.dis != blank %}
-            <div class="hero_banner_dis">{{ section.settings.dis }}</div>
-          {% endif %}
-          {% if section.settings.btn_url != blank %}
-            <a style="background-color: {{ section.settings.bg-color-name }};color: {{ section.settings.text-color-name }};" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
-          {% endif %}
-          <div class="hero_banner_icon">
-            {% for block in section.blocks %}
-              <div class="hero_banner_icon_row">
-                <div class="hero_banner_svg">
-                  {% if block.settings.icon != blank %}
-                    <span>{{ block.settings.icon }}</span>
+      >
+        <div class="container">
+          <div class="hero_banner_col">
+            {% if section.settings.title != blank %}
+              <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.dis != blank %}
+              <div class="hero_banner_dis">{{ section.settings.dis }}</div>
+            {% endif %}
+            {% if section.settings.btn_url != blank %}
+              <a style="background-color: {{ section.settings.bg-color-name }};color: {{ section.settings.text-color-name }};" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+            {% endif %}
+            <div class="hero_banner_icon">
+              {% for block in section.blocks %}
+                <div class="hero_banner_icon_row">
+                  <div class="hero_banner_svg">
+                    {% if block.settings.icon != blank %}
+                      <span>{{ block.settings.icon }}</span>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.text != blank %}
+                    <p>{{ block.settings.text }}</p>
                   {% endif %}
                 </div>
-                {% if block.settings.text != blank %}
-                  <p>{{ block.settings.text }}</p>
-                {% endif %}
-              </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -404,19 +412,10 @@
       line-height: 1.2;
       text-transform: uppercase;
   }
-  .hero_banner_main_img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-  }
-  .hero_banner_img_wrapper {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
+  .hero_banner_img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
   }
   .hero_banner_col .hero_banner_dis p {
       font-size: 28px;
@@ -485,11 +484,16 @@
       align-items: center;
   }
   /* ── Desktop Content Position + Padding ── */
-  .hero_banner_img_wrapper .container {
+  .hero_banner_mob_img .container {
       align-items: {{ d_valign }};
       justify-content: {{ d_halign }};
       padding-top: {{ section.settings.desktop_padding_top }}px;
       padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+  }
+  @media(min-width:768px) {
+    .hero_banner_mob_img {
+      background-image: none !important;
+    }
   }
   @media (max-width:1600px) {
     .container {
@@ -557,12 +561,17 @@
   }
   /* ── Mobile ── */
   @media (max-width:767px) {
+    .hero_banner_mob_img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
     .container {
       min-height: 700px;
       align-items: flex-start;
     }
     /* Mobile Content Position + Padding */
-    .hero_banner_img_wrapper .container {
+    .hero_banner_mob_img .container {
       align-items: {{ m_valign }};
       justify-content: {{ m_halign }};
       padding-top: {{ section.settings.mobile_padding_top }}px;
@@ -592,6 +601,9 @@
     .hero_banner_col a:hover {
       background: #fff;
       color: #000;
+    }
+    .hero_banner_img {
+      background-image: none !important;
     }
     .hero_banner_img svg {
       height: 55px;

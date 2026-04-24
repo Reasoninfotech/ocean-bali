@@ -21,7 +21,7 @@
         window.location.href = "/";
       </script>
     {% endif %}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     {%- liquid
       assign main_font = settings.main_font
       assign heading_font = settings.heading_font
@@ -564,30 +564,36 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var checkJQuery = setInterval(function() {
-        if (window.jQuery) {
-          clearInterval(checkJQuery);
-          $(document).ready(function () {
-            function setEqualHeight(selector) {
-              var maxHeight = 0;
-              $(selector).css('height', 'auto');
-              $(selector).each(function () {
-                var thisHeight = $(this).outerHeight();
-                if (thisHeight > maxHeight) { maxHeight = thisHeight; }
-              });
-              $(selector).height(maxHeight);
-            }
-            setEqualHeight('.floating__title .collection__item-details .collection--title');
-            $(window).resize(function () {
-              setEqualHeight('.floating__title .collection__item-details .collection--title');
-            });
-          });
-        }
-      }, 100);
+ <script>
+   $(document).ready(function () {
+  function setEqualHeight(selector) {
+    var maxHeight = 0;
+
+    // Reset any previously set height
+    $(selector).css('height', 'auto');
+
+    // Find the tallest height
+    $(selector).each(function () {
+      var thisHeight = $(this).outerHeight();
+      if (thisHeight > maxHeight) {
+        maxHeight = thisHeight;
+      }
     });
-  </script>
+
+    // Apply tallest height to all
+    $(selector).height(maxHeight);
+  }
+
+  // Run it initially
+  setEqualHeight('.floating__title .collection__item-details .collection--title');
+
+  // Run again after window resize
+  $(window).resize(function () {
+    setEqualHeight('.floating__title .collection__item-details .collection--title');
+  });
+});
+
+ </script>
   <style>
       .jdgm-paginate, .jdgm-review-widget .jdgm-write-rev-link, .jdgm-review-widget .jdgm-rev-widg__actions, .jdgm-review-widget .jdgm-rev-widg__body {
         display: none !important;
