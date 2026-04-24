@@ -1,13 +1,12 @@
 <div class="hero_banner">
   <div class="hero_banner_row">
-    {%- if section.settings.desktop_img -%}
-{% capture desktop_preload_src %}{% render 'imagekit', src: section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}{% endcapture %}
-<link 
-  rel="preload" 
-  as="image" 
-  href="{{ desktop_preload_src | strip }}"
-  fetchpriority="high"
-/>
+{%- if section.settings.desktop_img -%}
+  {% capture desktop_preload_src %}{% render 'imagekit', src: section.settings.desktop_img | image_url: width: 1920, format: 'webp' %}{% endcapture %}
+  <link rel="preload" as="image" href="{{ desktop_preload_src | strip }}" media="(min-width: 768px)" fetchpriority="high" />
+{%- endif -%}
+{%- if section.settings.Mobile_img -%}
+  {% capture mobile_preload_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
+  <link rel="preload" as="image" href="{{ mobile_preload_src | strip }}" media="(max-width: 767px)" fetchpriority="high" />
 {%- endif -%}
     <div
       class="hero_banner_img"
@@ -17,15 +16,7 @@
   style="background-image:url({{ desktop_ik | strip }})"
 {% endif %}
     >
-      {%- if section.settings.Mobile_img -%}
-{% capture mobile_preload_src %}{% render 'imagekit', src: section.settings.Mobile_img | image_url: width: 768, format: 'webp' %}{% endcapture %}
-<link 
-  rel="preload" 
-  as="image" 
-  href="{{ mobile_preload_src | strip }}"
-  fetchpriority="high"
-/>
-{%- endif -%}
+
       <div
         class="hero_banner_mob_img"
         {% if section.settings.Mobile_img != blank %}
