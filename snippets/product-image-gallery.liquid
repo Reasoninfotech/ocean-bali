@@ -1,7 +1,6 @@
 {% capture thumbnails %}
   {% if product.media.size > 1 %}
     {%- liquid
-
       if thumbnail_position == 'bottom'
         assign style = 'horizontal-carousel'
         assign width = 'span-12'
@@ -11,9 +10,7 @@
         assign width = ''
         assign js_class = 'js-thumb-vertical-wrapper'
       endif
-
     -%}
-
     <div id="thumbnails" class="thumb-slider thumbnail-slider custom {{ style }} {{ width }} auto"
       data-thumbnail-position="{{ thumbnail_position }}">
       <div class="thumb-slider-wrapper {{ js_class }} js-thumb-wrapper" id="thumb-slider-wrapper">
@@ -23,29 +20,13 @@
             data-image-id="{{ media.id }}" tabindex="0">
               {% assign thumb_raw = media | image_url: width: 200 %}
             {% capture thumb_ik %}{% render 'imagekit', src: thumb_raw %}{% endcapture %}
-            {% assign thumb_ik = thumb_ik | strip %}
-            
+            {% assign thumb_ik = thumb_ik | strip %}          
             {% assign thumb_ns_raw = media | image_url: width: 100 %}
 {% capture thumb_ns_ik %}{% render 'imagekit', src: thumb_ns_raw %}{% endcapture %}
-            {% assign thumb_ns_ik = thumb_ns_ik | strip %}
-            
+            {% assign thumb_ns_ik = thumb_ns_ik | strip %}            
             <div class="product-single__thumbnail lazyload product-single__thumbnail--{{ section.id }} js-thumb-item-img-wrap" data-thumbnail-id="product-template-{{ media.id }}">
-              <img
-                src="{{ thumb_ik }}"
-                class="js-thumb-item-img"
-                data-image-id="{{ media.id }}"
-                width="{{ media.preview_image.width }}"
-                height="{{ media.preview_image.height }}"
-                alt="{{ media.alt | escape }}"
-                loading="lazy"
-              >
-              <noscript>
-                <img
-                  src="{{ thumb_ns_ik }}"
-                  alt="{{ media.alt | escape }}"
-                >
-              </noscript>
-            
+              <img src="{{ thumb_ik }}" class="js-thumb-item-img" data-image-id="{{ media.id }}" width="{{ media.preview_image.width }}" height="{{ media.preview_image.height }}" alt="{{ media.alt | escape }}" loading="lazy">
+              <noscript><img src="{{ thumb_ns_ik }}" alt="{{ media.alt | escape }}"></noscript>
               {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
                 <div class="thumbnail-icon">
                   {% render 'snip-icons',
@@ -57,8 +38,7 @@
                      fill: 'var(--text-color)',
                      hover: 'var(--text-color)' %}
                 </div>
-              {%- endif -%}
-            
+              {%- endif -%}            
               {%- if media.media_type == 'model' -%}
                 <div class="thumbnail-icon">
                   {% render 'snip-icons',
@@ -79,22 +59,17 @@
     </div>
   {% endif %}
 {% endcapture %}
-
 {% capture slider %}
   {%- liquid
-
     assign grid_width = ""
-
     if product.media.size > 1 and thumbnail_position != 'bottom'
       assign grid_width = "reduced-size"
     else
       assign grid_width = "span-12"
     endif
-
     if product.media.size <= 1
       assign no_slider = 'single-media'
     endif
-
   -%}
   <div id="slider" class=" {{ grid_width }} thumbs_{{ thumbnail_position }} auto {{ no_slider }}">
     <div class="slides product-image-container carousel carousel-main js-carousel-main" data-product-id="{{ product.id }}">
@@ -112,26 +87,11 @@
                 {% assign zoom_raw = media | image_url: width: 2400 %}
                 {% capture zoom_ik %}{% render 'imagekit', src: zoom_raw %}{% endcapture %}
                 {% assign zoom_ik = zoom_ik | strip %}
-
                 {% assign img_raw = media | image_url: width: 2400 %}
                 {% capture img_ik %}{% render 'imagekit', src: img_raw %}{% endcapture %}
                 {% assign img_ik = img_ik | strip %}
-
                 {% assign alt_value = media.alt | escape %}
-
-                <img
-                  src="{{ img_ik }}"
-                  class="product__image"
-                  data-zoom-src="{{ zoom_ik }}"
-                  data-aspectratio="{{ media.preview_image.aspect_ratio }}"
-                  data-width="{{ media.preview_image.width }}"
-                  data-height="{{ media.preview_image.height }}"
-                  alt="{{ alt_value }}"
-                  width="{{ media.preview_image.width }}"
-                  height="{{ media.preview_image.height }}"
-                  loading="lazy"
-                >
-
+                <img src="{{ img_ik }}" class="product__image" data-zoom-src="{{ zoom_ik }}" data-aspectratio="{{ media.preview_image.aspect_ratio }}" data-width="{{ media.preview_image.width }}" data-height="{{ media.preview_image.height }}" alt="{{ alt_value }}" width="{{ media.preview_image.width }}" height="{{ media.preview_image.height }}" loading="lazy" >
                 {% if click_to_enlarge and template != 'product.quick' %}
                   <a class="zoom_btn"
                      href=""
@@ -220,7 +180,6 @@
     {%- endif -%}
   </div>
 {% endcapture %}
-
 {%- if thumbnail_position == 'left' -%}
 <div class="product__gallery--container">
   {{ thumbnails }}
@@ -237,8 +196,6 @@
 {%- elsif thumbnail_position == 'hidden' -%}
   {{ slider }}
 {%- endif -%}
-
-
 <div class="media_bottom_text">
   {% if product.metafields.custom.mobile_product_sub_title != blnak %}
   <div class="media_bottom_text_col">

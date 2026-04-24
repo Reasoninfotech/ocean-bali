@@ -1,10 +1,8 @@
 {% for i in (1..section.settings.post_limit) %}
-
 {% assign article_title = 'Sample Blog post' | append: '#' | append:  forloop.index %}
 {% assign article_author = shop.name %}
 {% assign article_content = 'Adding featured blog posts to your home page will show the most recent posts from your stores blog. Here is some Sample content for blog post ' | append: forloop.index | append: '.' %}
 {% assign sample_tags = 'Lorem ipsum dolor sit amet consectetur adipisicing elit' | downcase | split: " " %}
-
 <div class="article-index blog__post-container" id="article--onboarding-{{ forloop.index }}" data-alpha="article--onboarding-{{ forloop.index }}">
   <div class="blog__post-content">
     <div class="blog__post-image image_landscape onboard">

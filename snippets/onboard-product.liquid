@@ -1,5 +1,3 @@
-{% comment %}Used for home page sections only when featured products is chosen but no content has been selected{% endcomment %}
-
 {% for i in (1..prod_limit) %}
 {% capture current %}{% cycle 1, 2, 3, 4, 5 %}{% endcapture %}
   {%- assign placeholder = 'product-' | append: current -%}
@@ -8,7 +6,6 @@
         <div class="reveal">
           {{ placeholder | placeholder_svg_tag }}
         </div>
-      </a>
     </div>
     <div class="product-info">
       <div class="product-info-inner">

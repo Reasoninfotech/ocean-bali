@@ -5,8 +5,7 @@
     <div class="product-text__block-content display" style="display:inline-block;">
       {% assign days = "Fri,Sat,Sun" | split:"," %}
       {% assign day = "now" | date: '%a' %}
-      {% assign hr = "now" | date: '%H' | plus: 0 %}
-        
+      {% assign hr = "now" | date: '%H' | plus: 0 %}  
       {% if days contains day %}
         {% if day == 'Fri' and hr < 15 %}
           Ships in 24 hours.

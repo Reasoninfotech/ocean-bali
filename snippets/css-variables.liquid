@@ -6,9 +6,7 @@
   assign main_letter_space = settings.main_letter_spacing
   assign nav_letter_space = settings.nav_letter_spacing
   assign heading_letter_space = settings.heading_letter_spacing
-
 -%}
-
   :root {
     --main-family: {{ main_font.family }};
     --main-weight: {{ main_font.weight }};
@@ -82,20 +80,16 @@
     --color-body: var(--background);
     --color-bg: var(--background);
     --section-margins: {{ settings.section_margins }}px;
-
     --star-active: {{ settings.text_color | color_to_rgb }};
     --star-inactive: {{ settings.text_color | color_lighten: 80 | color_to_rgb }};
-
     {% if settings.button_corners == 'curved' %}
       --button-corners: 3px;
     {% else %}
       --button-corners: 0;
     {% endif %}
-
     --section-background: {{ settings.background }};
     --desktop-section-height: ;
     --mobile-section-height: ;
-
   }
   @media (max-width: 740px) {
     :root {

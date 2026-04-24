@@ -1,21 +1,5 @@
-{% comment %}
-snippets/slide.liquid
-
-Renders a slide in the slideshow section.
-
-Accepts:
-
-- block:     {Object} Section block object (required).
-
-Usage:
-
-{% render 'slide' for section.blocks as block, is_fixed: is_fixed %}
-
-{% endcomment %}
 <div id="slide--{{ block.id }}" data-block-id="{{ block.id }}" class="slide--{{ block.id }} slideshow__slide{% if block.settings.image == blank %} slideshow__slide-onboard{% endif %}" data-slider-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-
   {%- liquid
-
     assign image_is_link = false
     assign button_is_link = false
     assign has_image = false
@@ -24,54 +8,40 @@ Usage:
     assign has_button = false
     assign has_second_button = false
     assign loading = 'lazy'
-
     assign heading = block.settings.heading
     assign subheading = block.settings.subheading
     assign button_text = block.settings.button_text
     assign second_button_text = block.settings.second_button_text
     assign link = block.settings.link
     assign second_link = block.settings.second_link
-
     if block.settings.link != blank and block.settings.button_text == blank
       assign image_is_link = true
     endif
-
     if block.settings.link != blank and block.settings.button_text != blank
       assign button_is_link = true
     endif
-
     if block.settings.image != blank
       assign has_image = true
     endif
-
     if block.settings.overlay
       assign overlay = true
     endif
-
     if heading == blank and subheading == blank and button_text == blank and second_button_text == blank
       assign hide_caption = true
     endif
-
     if heading != blank
       assign has_heading = true
     endif
-
     if subheading != blank
       assign has_subheading = true
     endif
-
     if button_text != blank and link != blank
       assign has_button = true
     endif
-
     if second_button_text != blank and second_link != blank
       assign has_second_button = true
     endif
-
-   
-
   -%}
-
   {% if image_is_link %}<a href="{{ link }}">{% endif %}
   {% if has_image %}
     <div class="slideshow__slide-desktop{% if overlay %} overlay{% endif %}">
@@ -87,8 +57,7 @@ Usage:
           {%
             render 'basic-responsive-image',
             type: block.settings.mobile_image,
-            width: 3000,
-           
+            width: 3000,      
             class: 'mobile-image'
           %}
         {% else %}
@@ -96,7 +65,6 @@ Usage:
             render 'basic-responsive-image',
             type: block.settings.image,
             width: 3000,
-            
             class: 'desktop-image'
           %}
         {% endunless %}
@@ -137,7 +105,6 @@ Usage:
   {% endunless %}
   <style>
     {%- liquid
-
       assign bg_color = block.settings.caption_background
       assign number = block.settings.caption_background_opacity
       assign caption_background_opacity = number | divided_by: 100.0
@@ -149,8 +116,6 @@ Usage:
       else
         assign background = bg_color | color_modify: 'alpha', caption_background_opacity
       endif
-
-
     -%}
     .slideshow__caption.slide-{{ block.id }} {
       --caption-background: {{ background }};

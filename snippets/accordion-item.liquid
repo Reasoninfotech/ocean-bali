@@ -1,14 +1,3 @@
-{% comment %}
-snippets/new-accordion-item.liquid
-{%
-  render 'new-accordion-item',
-  accordion_heading_capture: accordion_heading_capture,
-  accordion_content_capture: accordion_content_capture,
-  default_open: block.settings.default_open_accordion,
-  unique_id: block.id,
-  forloop_index: forloop.index
-%}
-{% endcomment %}
 <div class="js-accordion c-accordion c-accordion--product c-accordion--{{ unique_id }}" id="c-accordion--{{ unique_id }}" {% if section.settings.allow_multiple %}data-accordion-allow-multiple{% endif %}>
  {%- liquid
    assign accordion_content_class = 'c-accordion__panel--'

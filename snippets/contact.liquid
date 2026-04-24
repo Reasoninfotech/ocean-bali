@@ -28,22 +28,16 @@
     </p>
   </div>
 </div>
-
 <div class="clear"></div>
-
-
 {% if form.posted_successfully? %}
 <div class="successForm feedback">
   <p>{{ 'sections.contact_form.post_success' | t }}</p>
 </div>
 {% endif %}
-
 {% if form.errors %}
 <div class="errorForm feedback">
   <p>{{ 'general.forms.post_error' | t }}</p>
 </div>
 {% endif %}
-
 {% endform %}
-
 <div class="clear"></div>

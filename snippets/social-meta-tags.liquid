@@ -1,6 +1,3 @@
-{% comment %}
-Open graph tags.
-{% endcomment %}
 {%- if page_image -%}
   <meta property="og:image" content="http:{{ page_image | image_url: width: 1024 }}">
   <meta property="og:image:secure_url" content="https:{{ page_image | image_url: width: 1024 }}">
@@ -53,10 +50,6 @@ Open graph tags.
 {% endif %}
 {% endif %}
 <meta property="og:site_name" content="{{ shop.name }}">
-
-{% comment %}
-This snippet renders meta data needed to create a Twitter card.
-{% endcomment %}
 {% if template contains 'article' and article.image %}
 <meta name="twitter:card" content="summary_large_image">
 {% elsif template == 'index' and hero_enabled %}

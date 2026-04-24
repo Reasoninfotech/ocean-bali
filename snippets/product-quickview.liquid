@@ -1,5 +1,4 @@
 {%- liquid
-
     if settings.quickview_type == 'modal'
       assign quickview_class = 'js-modal-close'
       assign  quickview_data = 'aria-controls="modal-quickview"'
@@ -7,10 +6,7 @@
       assign quickview_class = 'js-slideout-close'
       assign quickview_data = 'aria-controls="slideout-quickview" data-slideout-direction="right"'
     endif
-
 -%}
-
-
 <section class="product-quickview__container">
   <div class="slideout__trigger--close slideout__trigger-quickview__wrapper">
     <button class="slideout__trigger-quickview {{ quickview_class }}" {{ quickview_data }} aria-label="Close quickview" tabindex="0" type="button" name="button">
@@ -18,6 +14,5 @@
     </button>
   </div>
   <div id="quickview-form" class="product-quickview__form-wrapper js-quickview-content">
-
   </div>
 </section>

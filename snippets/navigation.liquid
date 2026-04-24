@@ -1,17 +1,13 @@
 {%- liquid
-
   assign meganav = false
   assign is_upcase = false
-
   if settings.uppercase_nav
     assign is_upcase = true
   endif
-
 -%}
 {% for block in section.blocks %}
   {% if block.settings.menu_item == link.title %}
     {% capture megalink %}
-
     <li class="navigation__menuitem navigation__menuitem--dropdown js-aria-expand js-doubletap-to-go" aria-haspopup="true" aria-expanded="false" role="none">
       <a class="navigation__menulink js-menu-link js-open-dropdown-on-key is_upcase-{{ is_upcase }}" href="{{ link.url }}">
         {{ link.title }}
@@ -41,7 +37,6 @@
         {% endif %}
         <span class="{% if block.settings.nav_image != blank %}span-9{% else %}span-12{% endif %} auto megamenu__list-container">
           <div class="megamenu__wrapper">
-
             {% for sub_link in link.links %}
               {% if sub_link.links != blank %}
                 <li class="megamenu__listcontainer span-3 auto">
@@ -74,7 +69,6 @@
                 </li>
               {% endif %}
             {% endfor %}
-
             <ul class="megamenu__ulcontainer span-3 auto">
               {% for sub_link in link.links %}
               {% if sub_link.links == blank %}
@@ -84,12 +78,10 @@
               {% endif %}
               {% endfor %}
             </ul>
-
           </div>
         </span>
       </ul>
     </li>
-
     {% endcapture %}
     {% assign meganav = true %}
   {% endif %}

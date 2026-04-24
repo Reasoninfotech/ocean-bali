@@ -1,9 +1,7 @@
 <div class="row grid__wrapper featured__product-heading" data-section-onboard>
   <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %} span-12 auto">
     <h2>
-      <a href="#" title="{{ section.settings.heading }}">
-        {{ section.settings.heading }}
-      </a>
+      <a href="#" title="{{ section.settings.heading }}">{{ section.settings.heading }}</a>
     </h2>
   </div>
 </div>
@@ -11,46 +9,32 @@
   <div class="product__section-images span-6 sm-span-12 auto grid__wrapper grid__wrapper-nest edge  js-product-gallery" data-product-gallery data-product-single-media-group data-gallery-config='{{ product_gallery_config }}'>
     <div class="onboard">
       {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-      <style>
-        .product__section-images .onboard {
-            width: 100%;
-            height: 100%;
-            grid-column: 1 / span 12;
-        }
-      </style>
+      <style>.product__section-images .onboard {width: 100%;height: 100%;grid-column: 1 / span 12;}</style>
     </div>
   </div>
-
   <div class="product__section-contentWrapper span-6 sm-span-12 auto">
     <div class="product__section-content">
       <div class="product__section-details">
-
         <div class="product__section--header">
           {% if settings.vendor %}
             <h3>Product vendor</h3>
           {% endif %}
-
           <h2 class="product__section-title product-title">
             <a href="#">
               Featured product title
             </a>
           </h2>
-
           <p id="product-price">
             <span class="product-price" itemprop="price">
               9.99</span>&nbsp;<span class="was">13.99
             </span>
           </p>
         </div>
-
         {%- for block in section.blocks -%}
           {%- case block.type -%}
-
             {%- when 'product_variants' -%}
-
                {%- if settings.product_variants == 'swatches' -%}
                  <div class="product__variants-swatches mt4 mb6 no-js-hidden" data-section="{{ section.id }}">
-
                    <div class="swatches__container js-variant-selector" data-option-index="{{ option.position }}" data-other-options='{{ other_options | json }}'>
                      <p class="swatches__option-name h5"><strong>Variants</strong></p>
                      {%- for n in (1..4) -%}
@@ -71,11 +55,9 @@
                            </label>
                          </div>
                        {% endcapture %}
-
                        {{ regular_swatch }}
                      {%- endfor -%}
                    </div>
-
                  </div>
                {%- else -%}
                  <div class="product__variants-select no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
@@ -97,12 +79,9 @@
                          </select>
                        </div>
                      </div>
-
                  </div>
                {%- endif -%}
-
             {%- when 'product_availability' -%}
-
               <div class="product-single__store-availability-container" style="min-height: 85px;" data-store-availability-container>
                 <div class="store-availability-container">
                   <div class="store-availability-information">
@@ -123,7 +102,6 @@
                   </div>
                 </div>
               </div>
-
             {%- when 'product_quantity' -%}
               <div class="product__section--qty qty-selection" data-product-qty {{ block.shopify_attributes }}>
                 {%
@@ -131,29 +109,23 @@
                   product: product
                 %}
               </div>
-
             {%- when 'product_sku' -%}
               <div class="product__section--sku sku" {{ block.shopify_attributes }}>
                 <label for="variantSku" style="line-height: 1.6em; display: inline-block;">{{ 'customer.order.details.sku' | t }}:</label>
                 <span id="variantSku" class="variant_sku">AB-001</span>
               </div>
               <div class="clear"></div>
-
             {%- when 'product_buttons' -%}
               <div class="product__section--buttons product-add" {{ block.shopify_attributes }}>
                 <input id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if show_payment_button %} secondary-button{% endif %}" value="{{ 'products.product.add_to_cart' | t }}" disabled />
               </div>
-
             {%- when 'product_description' -%}
-
               <div class="product__section--desc product__description-container rte {% if accordion_active %}hide{% endif %}" {{ block.shopify_attributes }}>
                 <p>
                   Sample product description for the featured product section
                 </p>
               </div>
-
             {%- when 'text_with_icon' -%}
-
                 <div class="product-text__block" {{ block.shopify_attributes }}>
                     <div class="product-text__block-icon">
                       {% render 'snip-icons',
@@ -163,20 +135,14 @@
                          size: '18px',
                          fill: settings.text-color %}
                     </div>
-
-
                     <div class="product-text__block-content">
                       <a href="#">
                         Secure checkout
                       </a>
                     </div>
-
                 </div>
-
             {%- when 'social_sharing' -%}
-
               {%- liquid
-
                 if block.settings.show_twitter
                   assign show_twitter = true
                 endif
@@ -186,24 +152,19 @@
                 if block.settings.show_pinterest
                   assign show_pinterest = true
                 endif
-
               -%}
-
               {% render 'social' with product,
                 show_facebook: show_facebook,
                 show_twitter: show_twitter,
                 show_pinterest: show_pinterest
                %}
-
                <div class="clear"></div>
-
             {% when '@app' %}
               <div class="product__section--app">
                 {% render block %}
               </div>
           {% endcase %}
         {%- endfor -%}
-
       </div>
     </div>
   </div>

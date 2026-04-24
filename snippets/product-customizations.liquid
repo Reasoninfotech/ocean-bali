@@ -1,20 +1,3 @@
-{% comment %}
-snippets/product-customizations.liquid
-
-Renders "product customizations" a.k.a. line item properties.
-
-Accepts:
-
-- block:                       {Object} Section block object. (required)
-- product_buttons_form_id:     {String} Block form ID. (required)
-
-Usage:
-{%
-  render 'product-customizations',
-  block: block,
-  product_buttons_form_id: product_buttons_form_id
-%}
-{% endcomment %}
 {% assign unique_id = block.settings.title | handleize %}
 <div class="product__line-item">
   <p class="line-item-property__field line-item-property__field--{{ block.settings.property_type }}">
@@ -49,4 +32,4 @@ Usage:
           form="{{ product_buttons_form_id }}">
     {% endcase %}
   </p>
-</div><!-- /.product__line-item -->
+</div>

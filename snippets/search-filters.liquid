@@ -8,7 +8,6 @@
           {% case filter.type %}
           {% when 'list' %}
             {%- liquid
-
               assign is_size_filter = false
               assign is_color_filter = false
               assign filter_label_to_lowercase = filter.label | downcase
@@ -28,9 +27,7 @@
               else
                 assign filter_type = 'regular'
               endif
-
             -%}
-
             <li class="clearfix filter filter--{{ filter_type }}" data-index="{{ forloop.index }}">
               <div class="search__filtering js-hz-filter">
                 {% render 'snip-icons',
@@ -44,7 +41,6 @@
                 <input class="chosen-value js-hz-filter-input" type="text" value="" data-filter-type="filter" data-placeholder="{{ filter.label }}" data-generic-placeholder="{{ 'sections.search.type_to_filter' | t }}" placeholder="{{ filter.label }}">
                 <ul class="value-list js-hz-filter-list">
                   {% for value in filter.values %}
-
                   {%- liquid
                     if value.active
                       assign status = 'current'
@@ -54,7 +50,6 @@
                       assign status = ''
                     endif
                   -%}
-
                     {% if is_color_filter %}
                       <li id="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="checkbox-wrapper {{ status }}" data-remove="{{ value.url_to_remove }}" data-add="{{ value.url_to_add }}">
                         <input type="checkbox"
@@ -93,9 +88,7 @@
                   {% endfor %}
                 </ul>
               </div>
-
               <noscript>
-                <!-- No js filters submits with button -->
                 <label for="Filter-{{ filter.label | escape }}">{{ filter.label | escape }}</label>
                 <select id="Filter-{{ filter.label | escape }}" class="styled-select m0 coll-filter">
                   <option value="">{{ 'sections.search.filters_selected' | t: count: filter.active_values.size }}</option>
@@ -120,7 +113,6 @@
                 assign uses_comma_decimals = true
               endif
             -%}
-
             <li class="clearfix filter filter--price-range js-hz-filter-price" data-search-filters-price-range data-index="{{ forloop.index }}">
               {% render 'snip-icons',
                  wrapper: '.search__filtering',
@@ -183,7 +175,6 @@
                       >
                     </input>
                   </div>
-
                   <div class="filter-range__slider--wrapper span-2 auto">
                     <input class="filter-range__slider--input"
                       {%- if filter.min_value.value -%}
@@ -229,7 +220,6 @@
         {%- endfor -%}
       </ul>
       <noscript>
-        <!-- No js filters button to submit select filters -->
         <button type="submit" class="button">{{ 'sections.search.filter_button' | t }}</button>
       </noscript>
     </div>
