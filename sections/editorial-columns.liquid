@@ -1,8 +1,6 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -10,7 +8,6 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   case section.blocks.size
     when 1
       assign image_size = '900x'
@@ -32,15 +29,12 @@
       assign md_render = 'calc(100vw / 3)'
       assign lg_render = 'calc(1600px / 3)'
   endcase
-
   assign is_fixed = false
   if section.settings.image_height == 'fixed'
     assign is_fixed = true
   endif
-
   assign desktop_fixed_height = section.settings.desktop_fixed_height
   assign mobile_fixed_height = section.settings.mobile_fixed_height
-
 -%}
 {% style %}
   .imageText__column-section.section-{{ section.id }} {
@@ -49,7 +43,6 @@
   }
 {% endstyle %}
 <section class="imageText__column-section section-{{ section.id }} global__section{{ section_space_class }} {% if is_fixed %}{% endif %}" data-section-id="{{ section.id }}">
-
   <div class="row grid__wrapper">
     {% if section.settings.title != blank %}
     <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %} span-12 auto"><h2>{{ section.settings.title | escape }}</h2></div>
@@ -122,16 +115,11 @@
     {% endfor %}
     {% endif %}
   </div>
-
   {% if section.blocks.size == 0 %}
     {% render 'no-blocks' %}
   {% endif %}
-
 </section>
-
 <div class="clear"></div>
-
-
 {% schema %}
 {
   "name": "Editorial columns",

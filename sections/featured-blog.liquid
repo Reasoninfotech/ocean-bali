@@ -1,8 +1,6 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -10,12 +8,10 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   assign grid = section.settings.grid
   assign blog = blogs[section.settings.blog]
   assign post_limit = section.settings.post_limit
 -%}
-
 <section class="global__section{{ section_space_class }}" data-section-id="{{ section.id }}" >
   <div class="row">
     {% if section.settings.title != blank %}
@@ -24,7 +20,6 @@
       </div>
       <div class="clear"></div>
     {% endif %}
-
     <div class="blog__wrapper">
       <div class="blog__article-container blog__article-container--{{ section.id }} {% if grid == 1 %}list-layout{% endif %}">
         {% if blog.articles.size == 0 or blog == '' %}
@@ -40,15 +35,9 @@
       </div>
     </div>
   </div>
-  <style>
-  .blog__article-container.blog__article-container--{{ section.id }} {
-    grid-template-columns: repeat({{ grid }}, 1fr);
-  }
-  </style>
+  <style>.blog__article-container.blog__article-container--{{ section.id }} {grid-template-columns: repeat({{ grid }}, 1fr);}</style>
 </section>
 <div class="clear"></div>
-
-
 {% schema %}
 {
   "name": "Blog posts",

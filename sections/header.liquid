@@ -1,9 +1,6 @@
-
 {%- liquid
-
   assign nav_full = false
   assign nav_inline = false
-
   case section.settings.nav_style
     when 'full'
       assign nav_full = true
@@ -12,9 +9,7 @@
     when 'inline-center'
       assign nav_inline_center = true
   endcase
-
 -%}
-
 {% capture logo %}
 <div id="logo" class="shop__logo{% if nav_full %} a-center{% elsif nav_inline %} a-left{% elsif nav_inline_center %} a-center{% endif %}">
   {% if section.settings.logo != blank %}
@@ -27,7 +22,6 @@
   {% endif %}
 </div>
 {% endcapture %}
-
 {% capture header_links %}
 <ul class="shopping__cart-links">
   <li class="seeks">
@@ -90,15 +84,12 @@
       </li>
     {% endif %}
   {% endif %}
-
   {%- liquid
-
     if section.settings.cart_icon == 'cart'
       assign cart_icon = 'cart'
     else
       assign cart_icon = 'bag'
     endif
-
   -%}
   <li class="cart-links__link-cart my-cart-link-container">
     {% if settings.cart_type == 'page_only' %}
@@ -140,7 +131,6 @@
   </li>
 </ul>
 {% endcapture %}
-
 {% capture mobile_nav_trigger %}
 <div class="mobile-menu__trigger v-center desktop-hide">
   <div class="slideout__trigger--open text-left">
@@ -157,7 +147,6 @@
   </div>
 </div>
 {% endcapture %}
-
 {% capture navigation %}
 <ul role="menubar" aria-label="Primary Navigation" id="main-nav" class="navigation__menu tablet-hide sm-hide">
   {% assign menu = linklists[section.settings.main_nav] %}
@@ -166,10 +155,8 @@
   {% endfor %}
 </ul>
 {% endcapture %}
-
 <div class="header-section js-header" data-section-id="{{ section.id }}" data-section-type="header-section">
   <div class="js-header-wrapper header-wrapper {% if nav_full %}nav__option-full{% else %}nav__option-inline{% endif %}">
-
     <nav aria-label="Primary Navigation" class="navigation js-navigation" data-sticky-class="navigation--sticky">
       {% if nav_full %}
         <div class="row grid__wrapper nav-container">
@@ -187,7 +174,6 @@
             {{ navigation }}
             {{ header_links }}
           {% endif %}
-
           {% if nav_inline_center %}
             {{ mobile_nav_trigger }}
             {{ navigation }}
@@ -197,92 +183,10 @@
         </div>
       {% endif %}
     </nav>
-
     <div class="clear header-spacer"></div>
   </div>
-
-  <style>
-    {% if nav_full %}
-    .nav-container {grid-template-columns: 3fr 6fr 3fr !important;}
-
-    @media screen and (min-width: 981px) {
-      .navigation--sticky.navigation {
-        transform: translateY(var(--nav-height));
-        transition: all .5s;
-      }
-      .navigation--sticky.navigation .nav-container {
-        display: none;
-      }
-    }
-
-    {% elsif nav_inline %}
-    .nav-container {grid-template-columns: 2fr 8fr 2fr !important;}
-    {% elsif nav_inline_center %}
-    .nav-container {grid-template-columns: 5fr 2fr 5fr !important;}
-    {% endif %}
-    @media screen and (max-width: 980px) {
-      .nav-container {grid-template-columns: 3fr 6fr 3fr !important;}
-      .shop__logo.a-left {text-align: center;}
-    }
-    .navigation--sticky.navigation + .header-spacer {
-      margin-top: var(--header-height);
-    }
-    {% unless nav_full %}
-      .header-section .nav__option-inline .navigation li a.navigation__menulink {
-        color: var(--header-link-color) !important;
-      }
-      .header-section .nav__option-inline .navigation li a.navigation__menulink:hover {
-        color: var(--nav-hover-link-color) !important;
-      }
-      .header-section .nav__option-inline .navigation li a.navigation__menulink svg g {
-        fill: var(--header-link-color) !important;
-      }
-      .header-section .nav__option-inline .navigation li a.navigation__menulink:hover svg g {
-        fill: var(--nav-hover-link-color) !important;
-      }
-    {% endunless %}
-    .navigation {
-      border-top: {{ section.settings.nav_top_border_height }}px solid var(--nav-border-color);
-      border-bottom: {{ section.settings.nav_bottom_border_height }}px solid var(--nav-border-color);
-    }
-    .navigation__menuitem {
-      line-height: {{ section.settings.nav_height }}px;
-    }
-
-    {% if section.settings.logo != blank %}
-      @media screen and ( min-width: 741px ) {
-        #logo img {
-          max-width: {{ section.settings.logo_max_width }}%;
-        }
-      }
-      @media screen and ( max-width: 740px ) {
-        #logo img {
-          max-width: {{ section.settings.mobile_logo_max_width }}%;
-        }
-      }
-    {% endif %}
-
-    {%- if section.settings.cart_icon == 'bag' -%}
-      .mobile-menu__cart-icon .cart--icon,
-      .mobile-menu__cart-link .cart--icon {
-        display: none;
-      }
-    {%- else -%}
-      .mobile-menu__cart-icon .bag--icon,
-      .mobile-menu__cart-link .bag--icon {
-        display: none;
-      }
-    {%- endif -%}
-
-    {% if nav_full %}
-      .navigation__menu {
-        background: var(--nav-background-color);
-      }
-    {% endif %}
-  </style>
-
+  <style>{% if nav_full %}.nav-container {grid-template-columns: 3fr 6fr 3fr !important;}@media screen and (min-width: 981px) {.navigation--sticky.navigation {transform: translateY(var(--nav-height));transition: all .5s;}.navigation--sticky.navigation .nav-container {display: none;}}{% elsif nav_inline %}.nav-container {grid-template-columns: 2fr 8fr 2fr !important;}{% elsif nav_inline_center %}.nav-container {grid-template-columns: 5fr 2fr 5fr !important;}{% endif %}@media screen and (max-width: 980px) {.nav-container {grid-template-columns: 3fr 6fr 3fr !important;}.shop__logo.a-left {text-align: center;}}.navigation--sticky.navigation + .header-spacer {margin-top: var(--header-height);}{% unless nav_full %}.header-section .nav__option-inline .navigation li a.navigation__menulink {color: var(--header-link-color) !important;}.header-section .nav__option-inline .navigation li a.navigation__menulink:hover {color: var(--nav-hover-link-color) !important;}.header-section .nav__option-inline .navigation li a.navigation__menulink svg g {fill: var(--header-link-color) !important;}.header-section .nav__option-inline .navigation li a.navigation__menulink:hover svg g {fill: var(--nav-hover-link-color) !important;}{% endunless %}.navigation {border-top: {{ section.settings.nav_top_border_height }}px solid var(--nav-border-color);border-bottom: {{ section.settings.nav_bottom_border_height }}px solid var(--nav-border-color);}.navigation__menuitem {line-height: {{ section.settings.nav_height }}px;}{% if section.settings.logo != blank %}@media screen and ( min-width: 741px ) {#logo img {max-width: {{ section.settings.logo_max_width }}%;}}@media screen and ( max-width: 740px ) {#logo img {max-width: {{ section.settings.mobile_logo_max_width }}%;}}{% endif %}{%- if section.settings.cart_icon == 'bag' -%}.mobile-menu__cart-icon .cart--icon,.mobile-menu__cart-link .cart--icon {display: none;}{%- else -%}.mobile-menu__cart-icon .bag--icon,.mobile-menu__cart-link .bag--icon {display: none;}{%- endif -%}{% if nav_full %}.navigation__menu {background: var(--nav-background-color);}{% endif %}</style>
 </div>
-
 {% schema %}
 {
   "name": "Header",

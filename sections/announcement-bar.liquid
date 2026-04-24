@@ -1,36 +1,24 @@
 {%- liquid
   assign hd_locale_selector = false
   assign hd_currency_selector = false
-
   if section.settings.show_country_selector and localization.available_countries.size > 1
     assign hd_currency_selector = true
   endif
-
   if section.settings.show_locale_selector and localization.available_languages.size > 1
     assign hd_locale_selector = true
   endif
-
   if section.settings.announcement_text != blank or section.blocks.size > 0
     assign announcement = true
   endif
-
   if section.settings.full_width_header
     assign is_full_width = true
   endif
 -%}
-
 {% if hd_locale_selector or hd_currency_selector %}
   {{ 'component-header-disclosures.css' | asset_url | stylesheet_tag }}
 {% endif %}
-
-<header
-  class="announcement__bar-section js-top-bar"
-  data-section-id="{{ section.id }}"
-  data-section-type="announcement-bar-section"
->
-  {% if is_full_width %}
-    <div class="gridlock-fluid">
-  {% endif %}
+<header class="announcement__bar-section js-top-bar" data-section-id="{{ section.id }}" data-section-type="announcement-bar-section">
+  {% if is_full_width %}<div class="gridlock-fluid">{% endif %}
   <div class="row grid__wrapper" id="upper-content">
     {%- liquid
       if announcement
@@ -41,20 +29,14 @@
         assign grid_class = 'span-12'
       endif
     -%}
-    
     {%- render 'social-icons',
       wrapper: '.announcement__bar-section',
       fill_color: 'var(--announcement-text)',
       hover_color: 'var(--announcement-text)',
       social_grid: side_grid | append: ' auto sm-hide v-center'
     -%}
-
     {% if announcement %}
-      <div
-        id="hello"
-        class="{{ grid_class }} auto sm-span-12 v-center"
-        style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
-      >
+      <div id="hello" class="{{ grid_class }} auto sm-span-12 v-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <div id="announcement-bar" style="text-align: center; width: 100%; padding-bottom: 5px; overflow: hidden;">
           {%- liquid
             assign base_target_1 = section.settings.target_1_amount | default: 100
@@ -62,10 +44,8 @@
             assign tier_1_default = 'FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!'
             assign tier_1_text = section.settings.tier_1_text | default: tier_1_default
           -%}
-
           <div id="announcement-text-container" style="overflow: hidden; width: 100%;">
             <div class="{% if section.settings.enable_scrolling %}announcement-marquee__inner{% else %}announcement-static__wrapper{% endif %}" style="display: flex; align-items: center; width: 100%;">
-              
               {% capture dynamic_message %}
                 <span class="js-dynamic-announcement" style="white-space: nowrap; color: rgb(46, 102, 136);">
                   {% capture formatted_target_1 %}
@@ -74,7 +54,6 @@
                   {{ tier_1_text | replace: '[target_1]', formatted_target_1 | replace: '[TARGET_1]', formatted_target_1 | replace: '[amount]', formatted_target_1 | replace: '[AMOUNT]', formatted_target_1 }}
                 </span>
               {% endcapture %}
-
               {% if section.settings.enable_scrolling %}
                 {% for i in (1..10) %}
                   {{ dynamic_message }}
@@ -85,11 +64,9 @@
                         {% assign img_url = block.settings.image_before | img_url: '100x' %}
                         <img src="{{ img_url }}" alt="{{ block.settings.image_before.alt }}" style="max-width: {{ block.settings.image_max_width_before }}px; height: auto; flex-shrink: 0;" loading="lazy">
                       {% endif %}
-                      
                       {% if block.settings.link != blank %}<a href="{{ block.settings.link }}" style="color: inherit; text-decoration: none;">{% endif %}
                       {{ block.settings.text }}
                       {% if block.settings.link != blank %}</a>{% endif %}
-
                       {% if block.settings.image_after != blank %}
                         {% assign img_url = block.settings.image_after | img_url: '100x' %}
                         <img src="{{ img_url }}" alt="{{ block.settings.image_after.alt }}" style="max-width: {{ block.settings.image_max_width_after }}px; height: auto; flex-shrink: 0;" loading="lazy">
@@ -109,11 +86,9 @@
                         {% assign img_url = block.settings.image_before | img_url: '100x' %}
                         <img src="{{ img_url }}" alt="{{ block.settings.image_before.alt }}" style="max-width: {{ block.settings.image_max_width_before }}px; height: auto; flex-shrink: 0;" loading="lazy">
                       {% endif %}
-                      
                       {% if block.settings.link != blank %}<a href="{{ block.settings.link }}" style="color: inherit; text-decoration: none;">{% endif %}
                       {{ block.settings.text }}
                       {% if block.settings.link != blank %}</a>{% endif %}
-
                       {% if block.settings.image_after != blank %}
                         {% assign img_url = block.settings.image_after | img_url: '100x' %}
                         <img src="{{ img_url }}" alt="{{ block.settings.image_after.alt }}" style="max-width: {{ block.settings.image_max_width_after }}px; height: auto; flex-shrink: 0;" loading="lazy">
@@ -124,83 +99,11 @@
               {% endif %}
             </div>
           </div>
-
-          <div
-            class="progress-bar-container"
-            style="background-color: #ededed; border-radius: 10px; height: 8px; max-width: 300px; margin: 8px auto 0; overflow: hidden;"
-          >
-            <div
-              id="announcement-progress-fill"
-              style="width: 0%; background-color: #2e6688; height: 100%; transition: width 0.3s ease;"
-            ></div>
+          <div class="progress-bar-container" style="background-color: #ededed; border-radius: 10px; height: 8px; max-width: 300px; margin: 8px auto 0; overflow: hidden;">
+            <div id="announcement-progress-fill" style="width: 0%; background-color: #2e6688; height: 100%; transition: width 0.3s ease;"></div>
           </div>
         </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-              let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};
-              let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};
-              let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};
-
-              const baseTarget1Amount = (isNaN(target1Set) || target1Set <= 0 ? 100 : target1Set) * 100;
-              const baseTarget2Amount = (isNaN(target2Set) || target2Set <= 0 ? 150 : target2Set) * 100;
-              const baseTarget3Amount = (isNaN(target3Set) || target3Set <= 0 ? 250 : target3Set) * 100;
-
-              let activeTarget1Amount = baseTarget1Amount;
-              let activeTarget2Amount = baseTarget2Amount;
-              let activeTarget3Amount = baseTarget3Amount;
-
-              const textTier1 = {{ section.settings.tier_1_text | default: "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!" | json }};
-              const textTier2 = {{ section.settings.tier_2_text | default: "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!" | json }};
-              const textTier3 = {{ section.settings.tier_3_text | default: "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!" | json }};
-              const textTier4 = {{ section.settings.tier_4_text | default: "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!" | json }};
-              const textTier5 = {{ section.settings.tier_5_text | default: "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!" | json }};
-
-              let activeCurrency = 'AUD';
-              if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) {
-                  activeCurrency = window.Shopify.currency.active;
-              }
-
-              function formatMoneyElements() {
-                  const elements = document.querySelectorAll(".format-money");
-                  elements.forEach(function (el) {
-                      let amountInCents = parseInt(el.dataset.amount);
-                      if (!isNaN(amountInCents)) {
-                          try {
-                              const formatter = new Intl.NumberFormat(undefined, {
-                                  style: 'currency',
-                                  currency: activeCurrency,
-                                  currencyDisplay: 'narrowSymbol',
-                                  minimumFractionDigits: 2
-                              });
-                              el.innerText = formatter.format(amountInCents / 100);
-                          } catch (e) {
-                              if (window.Shopify && window.Shopify.formatMoney) {
-                                  el.innerText = window.Shopify.formatMoney(amountInCents);
-                              } else {
-                                  el.innerText = '$' + (amountInCents / 100).toFixed(2);
-                              }
-                          }
-                      }
-                  });
-              }
-
-              function updateAnnouncementBar(cartTotalCents) {
-                  const containers = document.querySelectorAll(".js-dynamic-announcement");
-                  const fillBar = document.getElementById("announcement-progress-fill");
-                  if (!containers.length || !fillBar) return;
-
-                  let progress = (cartTotalCents / activeTarget3Amount) * 100;
-                  if (progress > 100) progress = 100;
-                  fillBar.style.width = progress + '%';
-
-                  let html = '';
-                  let fTarget1 = '<span class="format-money" data-amount="' + activeTarget1Amount + '"></span>';
-                  let fTarget2 = '<span class="format-money" data-amount="' + activeTarget2Amount + '"></span>';
-                  let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>';
-
-                  if (cartTotalCents === 0) {
-                      html = textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1);
+        <script>document.addEventListener("DOMContentLoaded", function () {let target1Set = {{ section.settings.target_1_amount | default: 100 | json }};let target2Set = {{ section.settings.target_2_amount | default: 150 | json }};let target3Set = {{ section.settings.target_3_amount | default: 250 | json }};const baseTarget1Amount = (isNaN(target1Set) || target1Set <= 0 ? 100 : target1Set) * 100;const baseTarget2Amount = (isNaN(target2Set) || target2Set <= 0 ? 150 : target2Set) * 100;const baseTarget3Amount = (isNaN(target3Set) || target3Set <= 0 ? 250 : target3Set) * 100;let activeTarget1Amount = baseTarget1Amount;let activeTarget2Amount = baseTarget2Amount;let activeTarget3Amount = baseTarget3Amount;const textTier1 = {{ section.settings.tier_1_text | default: "FREE EXPRESS SHIPPING ON ORDERS OVER [target_1]!" | json }};const textTier2 = {{ section.settings.tier_2_text | default: "YOU ARE ONLY [remaining_1] AWAY FROM FREE EXPRESS SHIPPING!" | json }};const textTier3 = {{ section.settings.tier_3_text | default: "YOU GOT FREE SHIPPING! SPEND [remaining_2] MORE FOR A FREE VISOR!" | json }};const textTier4 = {{ section.settings.tier_4_text | default: "YOU GOT FREE SHIPPING & VISOR! SPEND [remaining_3] MORE FOR A FREE SARONG!" | json }};const textTier5 = {{ section.settings.tier_5_text | default: "YOUR ORDER QUALIFIES FOR FREE EXPRESS SHIPPING, FREE VISOR & FREE SARONG!" | json }};let activeCurrency = 'AUD';if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) {activeCurrency = window.Shopify.currency.active;}function formatMoneyElements() {const elements = document.querySelectorAll(".format-money");elements.forEach(function (el) {let amountInCents = parseInt(el.dataset.amount);if (!isNaN(amountInCents)) {try {const formatter = new Intl.NumberFormat(undefined, {style: 'currency',currency: activeCurrency,currencyDisplay: 'narrowSymbol',minimumFractionDigits: 2});el.innerText = formatter.format(amountInCents / 100);} catch (e) {if (window.Shopify && window.Shopify.formatMoney) {el.innerText = window.Shopify.formatMoney(amountInCents);} else {el.innerText = '$' + (amountInCents / 100).toFixed(2);}}}});}function updateAnnouncementBar(cartTotalCents) {const containers = document.querySelectorAll(".js-dynamic-announcement");const fillBar = document.getElementById("announcement-progress-fill");if (!containers.length || !fillBar) return;let progress = (cartTotalCents / activeTarget3Amount) * 100; if (progress > 100) progress = 100; fillBar.style.width = progress + '%';let html = '';let fTarget1 = '<span class="format-money" data-amount="' + activeTarget1Amount + '"></span>';let fTarget2 = '<span class="format-money" data-amount="' + activeTarget2Amount + '"></span>';let fTarget3 = '<span class="format-money" data-amount="' + activeTarget3Amount + '"></span>'; if (cartTotalCents === 0){html = textTier1.replace(/\[target_1\]/gi, fTarget1).replace(/\[amount\]/gi, fTarget1);
                   } else if (cartTotalCents < activeTarget1Amount) {
                       let remaining = activeTarget1Amount - cartTotalCents;
                       let fRemaining = '<span class="format-money" data-amount="' + remaining + '"></span>';
@@ -216,13 +119,11 @@
                   } else {
                       html = textTier5;
                   }
-
                   containers.forEach(container => {
                       container.innerHTML = html;
                   });
                   formatMoneyElements();
               }
-
               function loadCartAndUpdate() {
                   fetch('/cart.js', { cache: 'no-store' })
                       .then(response => response.json())
@@ -231,11 +132,8 @@
                       })
                       .catch(e => console.error("Error fetching cart data:", e));
               }
-
-              // ⚡ KEY FIX: Instant render - no wave loader, no blank screen
               function initialize() {
-                  updateAnnouncementBar(0); // Instantly show Tier 1 text
-
+                  updateAnnouncementBar(0);
                   if (activeCurrency === 'AUD') {
                       loadCartAndUpdate();
                   } else if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
@@ -259,10 +157,7 @@
                           });
                   }
               }
-
               initialize();
-
-              // System Interceptors for AJAX Carts
               const originalFetch = window.fetch;
               window.fetch = function () {
                   return originalFetch.apply(this, arguments).then(function (res) {
@@ -273,7 +168,6 @@
                       return res;
                   });
               };
-
               const originalXHR = window.XMLHttpRequest.prototype.open;
               window.XMLHttpRequest.prototype.open = function () {
                   this.addEventListener('load', function () {
@@ -284,14 +178,12 @@
                   });
                   originalXHR.apply(this, arguments);
               };
-
               document.addEventListener('cart:updated', loadCartAndUpdate);
               document.addEventListener('cart:refresh', loadCartAndUpdate);
           });
         </script>
       </div>
     {% endif %}
-
     <ul class="cart-links__wrapper {{ side_grid }} auto sm-hide v-center a-right">
       {%- if hd_locale_selector -%}
         <li class="lang-selector">
@@ -391,66 +283,11 @@
       {%- endif -%}
     </ul>
   </div>
-
   {% if is_full_width %}
     </div>
   {% endif %}
-
-  <style>
-    :root {
-      --announcement-text-size: {{ section.settings.announcement_text_size }}px;
-    }
-    #announcement-text-container p, 
-    #announcement-text-container .format-money,
-    .announcement-marquee__item {
-      color: rgb(46, 102, 136);
-    }
-    .announcement-marquee__inner {
-      display: flex;
-      white-space: nowrap;
-      width: max-content;
-      min-width: 100%;
-      animation: scroll-announcement {{ section.settings.scrolling_speed | default: 60 }}s linear infinite;
-    }
-    .announcement-marquee__inner:hover {
-      animation-play-state: paused;
-    }
-    .js-dynamic-announcement, .announcement-marquee__item {
-      padding: 0 40px;
-      font-size: var(--announcement-text-size);
-      flex-shrink: 0;
-      display: inline-block;
-    }
-    .announcement-item {
-      font-size: var(--announcement-text-size);
-      color: rgb(46, 102, 136);
-    }
-    .announcement-marquee__inner .separator {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: #2e6688;
-      border-radius: 50%;
-      flex-shrink: 0;
-      opacity: 0.5;
-    }
-    @keyframes scroll-announcement {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .announcement__bar-section .gridlock-fluid .grid__wrapper { max-width: 100%; }
-    .announcement__bar-section button, 
-    .announcement__bar-section .disclosure-list__option {
-      font-size: {{ section.settings.announcement_text_size }}px;
-    }
-    @media (max-width: 740px) {
-      :root {
-        --announcement-text-size: calc({{ section.settings.announcement_text_size }}px * 0.85);
-      }
-    }
-  </style>
+  <style>:root {--announcement-text-size: {{ section.settings.announcement_text_size }}px;}#announcement-text-container p, #announcement-text-container .format-money,.announcement-marquee__item {color: rgb(46, 102, 136);}.announcement-marquee__inner {display: flex;white-space: nowrap;width: max-content;min-width: 100%;animation: scroll-announcement {{ section.settings.scrolling_speed | default: 60 }}s linear infinite;}.announcement-marquee__inner:hover {animation-play-state: paused;}.js-dynamic-announcement, .announcement-marquee__item {padding: 0 40px;font-size: var(--announcement-text-size);flex-shrink: 0;display: inline-block;}.announcement-item {font-size: var(--announcement-text-size);color: rgb(46, 102, 136);}.announcement-marquee__inner .separator {display: inline-block;width: 6px;height: 6px;background: #2e6688;border-radius: 50%;flex-shrink: 0;opacity: 0.5;}@keyframes scroll-announcement { from { transform: translateX(0); } to { transform: translateX(-50%); }}    .announcement__bar-section .gridlock-fluid .grid__wrapper { max-width: 100%; }.announcement__bar-section button, .announcement__bar-section .disclosure-list__option { font-size: {{ section.settings.announcement_text_size }}px; }@media (max-width: 740px) {:root {--announcement-text-size: calc({{ section.settings.announcement_text_size }}px * 0.85);}}</style>
 </header>
-
 {% schema %}
 {
   "name": "Announcement bar",

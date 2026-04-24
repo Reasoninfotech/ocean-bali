@@ -1,12 +1,9 @@
 {%- liquid
-
   if section.settings.display_wide
     assign display_wide = true
   endif
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -14,10 +11,7 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
 -%}
-
-
 <section class="textWithImage__column-section section-{{ section.id }} global__section{{ section_space_class }}" data-section-id="{{ section.id }}">
   {% unless display_wide %}
   <div class="row">
@@ -25,9 +19,7 @@
   <div class="textWithImage__column-scroll">
     <div class="textWithImage__column-container section-{{ section.id }}{% if section.settings.no_space %} no-space{% endif %}{% unless section.settings.display_wide %} with-padding{% endunless %}">
     {% for block in section.blocks %}
-
     {%- liquid
-
       case block.settings.image_size
         when 'small'
           assign image_height = '250px'
@@ -36,47 +28,37 @@
         when 'large'
           assign image_height = '800px'
       endcase
-
       assign link = block.settings.link
       assign image = block.settings.image
       assign title = block.settings.title_text
       assign text = block.settings.text
       assign button = block.settings.button_text
       assign frac = block.settings.column_size
-
       assign has_link = false
       assign has_image = false
       assign has_title = false
       assign has_text = false
       assign has_button = false
       assign is_centered = false
-
       if link != blank
         assign has_link = true
       endif
-
       if image != blank
         assign has_image = true
       endif
-
       if title != blank
         assign has_title = true
       endif
-
       if text != blank
         assign has_text = true
       endif
-
       if button != blank and link != blank
         assign has_button = true
       endif
-
       if block.settings.center_align
         assign is_centered = true
       endif
-
     -%}
-
       <div class="textWithImage__column {% if is_centered %}center {% endif %}block-{{ block.id }}" data-block-type="{{ block.type }}" {{ block.shopify_attributes }}>
         {% case block.type %}
           {% when 'image' %}
@@ -114,43 +96,7 @@
               {% if has_link %}</a>{% endif %}
             </div>
         {% endcase %}
-
-        <style>
-          .textWithImage__column.block-{{ block.id }} {
-              grid-column: auto / span {{ frac }};
-          }
-          {% unless block.settings.image_size == 'none' %}
-            .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image,
-            .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .onboard {
-              height: {{ image_height }};
-              overflow: hidden;
-            }
-            .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image .box-ratio {
-              padding-bottom: {{ image_height }} ! important;
-            }
-            .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image img {
-              height: {{ image_height }};
-              object-fit: cover;
-              object-position: center;
-            }
-            @media screen and (max-width: 740px) {
-                {% if block.settings.image_size == 'small' %}
-                {% assign image_height = '220px' %}
-                {% else %}
-                {% assign image_height = '300px' %}
-                {% endif %}
-              .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image {
-                height: {{ image_height }};
-              }
-              .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image .box-ratio {
-                padding-bottom: {{ image_height }} ! important;
-              }
-              .textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image img {
-                height: {{ image_height }};
-              }
-            }
-          {% endunless %}
-        </style>
+        <style>.textWithImage__column.block-{{ block.id }} {grid-column: auto / span {{ frac }};}{% unless block.settings.image_size == 'none' %}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image,.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .onboard {height: {{ image_height }};overflow: hidden;}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image .box-ratio {padding-bottom: {{ image_height }} ! important;}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image img {height: {{ image_height }};object-fit: cover;object-position: center;}@media screen and (max-width: 740px) {% if block.settings.image_size == 'small' %}{% assign image_height = '220px' %}{% else %}{% assign image_height = '300px' %}{% endif %}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image {height: {{ image_height }};}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image .box-ratio {padding-bottom: {{ image_height }} ! important;}.textWithImage__column-container.section-{{ section.id }} .textWithImage__column.block-{{ block.id }} .textWithImage__column-image img {height: {{ image_height }};}{% endunless %}</style>
       </div>
     {% endfor %}
     </div>
@@ -162,16 +108,8 @@
   {% unless display_wide %}
   </div>
   {% endunless %}
-
-
-
-
-
 </section>
-
 <div class="clear"></div>
-
-
 {% schema %}
 {
   "name": "Collage",

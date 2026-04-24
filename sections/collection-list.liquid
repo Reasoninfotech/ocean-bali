@@ -1,5 +1,4 @@
 {%- liquid
-
   case settings.collection_image_size
     when 'natural'
       assign aspect_ratio = 'natural'
@@ -10,14 +9,11 @@
     when 'portrait'
       assign aspect_ratio = 'portrait'
   endcase
-
   if settings.title_position == 'floating'
     assign is_floating = true
   endif
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -25,7 +21,6 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   case section.settings.grid
     when 2
       assign prod_grid = 'span-6'
@@ -38,22 +33,17 @@
     when 6
       assign prod_grid = 'span-2'
   endcase
-
   assign mobile_1pr = false
   if section.settings.mobile_1pr
     assign mobile_1pr = true
   endif
-
   assign bold_collection_title = false
   if settings.bold_collection_title
     assign bold_collection_title = true
   endif
-
 -%}
-
 <section class="global__section collection__list-section{{ section_space_class }}" data-section-id="{{ section.id }}" >
   <div class="collection__list-container" id="collection_list--{{ section.id }}">
-
     {% if section.settings.title != blank %}
       <div class="row grid__wrapper rg0">
         <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %} span-12 auto">
@@ -61,13 +51,10 @@
         </div>
       </div>
     {% endif %}
-
     <div class="collection__list-loop row grid__wrapper{% if section.settings.grid == 5 %} five--columns{% endif %}">
-
-      {% for block in section.blocks limit: section.blocks.size %}
+       {% for block in section.blocks limit: section.blocks.size %}
         {% assign collection = collections[block.settings.collection] %}
         <div class="collection__list-item{% if is_floating %} floating__title{% endif %} {{ prod_grid }}{% if mobile_1pr %} sm-span-12{% else %} sm-span-6{% endif %} auto" data-alpha="{{ collection.title }}" {{ block.shopify_attributes }}>
-
           {% if collection == blank %}
             {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
             {%- assign placeholder = 'collection-' | append: current -%}
@@ -84,7 +71,6 @@
                 {% endif %}
               </a>
             </div>
-
           {% else %}
             {% render 'collection-grid-item',
               collection: collection,
@@ -92,10 +78,8 @@
               bold_collection_title: bold_collection_title
             %}
           {% endif %}
-
         </div>
       {% endfor %}
-
     </div>
     {% if section.blocks.size == 0 %}
       {% render 'no-blocks' %}
@@ -103,9 +87,7 @@
   </div>
 </section>
 <div class="clear"></div>
-<style>
-  .template-list-collections .jdgm-widget-actions-wrapper{display:none !important}
-</style>
+<style>.template-list-collections .jdgm-widget-actions-wrapper{display:none !important}</style>
 {% schema %}
 {
   "name": "Collection list",

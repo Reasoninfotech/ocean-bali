@@ -1,16 +1,9 @@
-
 {%- liquid
-
   assign unique_id = section.id | slice: -7, 7
-
   if section.settings.allow_multiple
     assign allow_multiple = true
   endif
-
 -%}
-
-
-
 <section class="accordion__section global__section row section-{{ section.id }}">
   {% if section.settings.title != blank %}
   <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %}  desktop-12 tablet-6 mobile-3">
@@ -19,23 +12,17 @@
   {% endif %}
   <div class="accordion__section-content">
     <div class="js-accordion c-accordion c-accordion--{{ unique_id }} c-accordion--custom-page desktop-12 tablet-6 mobile-3" id="c-accordion--{{ unique_id }}" {% if allow_multiple %}data-accordion-allow-multiple{% endif %}>
-    
     {% for faqs in product.metafields.custom.faqs_content.value %}
       {%- liquid
-
        assign accordion_content_class = 'c-accordion__panel--'
        assign accordion_content_id = accordion_content_class | append: unique_id | append: '-' | append: forloop.index
-
        assign defaultOpen = section.settings.default_open_accordion
-
       if block.settings.title != blank
         assign accordion_title = block.settings.title
       endif
-
       if block.settings.content != blank
         assign accordion_content = block.settings.content
       endif
-
      -%}
         <button class="js-accordion-header c-accordion__header" aria-expanded="false" aria-controls="{{ accordion_content_id }}_{{ forloop.index }}_{{ forloop.index }}" data-toggle="accordion">
             {{ faqs.faqs_title }}
@@ -55,28 +42,19 @@
              {{ faqs.faqs_content | metafield_tag }}
             </div>
            </div>
-    {% endfor %}
-      
-      
+    {% endfor %}   
     {% for block in section.blocks %}
-
      {%- liquid
-
        assign accordion_content_class = 'c-accordion__panel--'
        assign accordion_content_id = accordion_content_class | append: unique_id | append: '-' | append: forloop.index
-
        assign defaultOpen = section.settings.default_open_accordion
-
       if block.settings.title != blank
         assign accordion_title = block.settings.title
       endif
-
       if block.settings.content != blank
         assign accordion_content = block.settings.content
       endif
-
      -%}
-
        {% if accordion_title %}
           <button class="js-accordion-header c-accordion__header" aria-expanded="false" aria-controls="{{ accordion_content_id }}" data-toggle="accordion">
             {{ accordion_title }}
@@ -109,7 +87,6 @@
     }
   </style>
 </section>
-
 {% schema %}
 {
   "name": "Accordion",

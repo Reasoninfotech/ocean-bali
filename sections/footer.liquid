@@ -22,13 +22,10 @@
     when 4
       assign column_width = 'desktop-3 tablet-3 mobile-3'
   endcase
-
 -%}
-
 {% if locale_selector or country_selector %}
   {{ 'component-footer-disclosures.css' | asset_url | stylesheet_tag }}
 {% endif %}
-
 <div class="footer-section" data-section-id="{{ section.id }}" data-section-type="footer-section">
 <footer>
   <div id="footer-wrapper">
@@ -44,21 +41,7 @@
                   <li>{{ link.title | link_to: link.url }}</li>
                 {% endfor %}
               </ul>
-              <style>
-                  @media (min-width: 980px) {
-                    .footer-block.block-{{ block.id }} {
-                      flex-grow: 1;
-                      flex-basis: 180px;
-                    }
-                  }
-                  @media (max-width: 740px) {
-                    .footer-block.block-{{ block.id }} {
-                      display: inline-block;
-                      width: 49%;
-                      margin-top: 40px;
-                    }
-                  }
-              </style>
+              <style>@media (min-width: 980px) {.footer-block.block-{{ block.id }} {flex-grow: 1;flex-basis: 180px;}}@media (max-width: 740px) {.footer-block.block-{{ block.id }} {display: inline-block;width: 49%;margin-top: 40px;}}</style>
             </div>
           {% when 'newsletter' %}
             <div class="footer-sect">
@@ -76,19 +59,7 @@
                   <input type="submit" id="footer-subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
                   {% endif %}
                   {% endform %}
-                  <style>
-                    @media (min-width: 980px) {
-                      .footer-block.block-{{ block.id }} {
-                        flex-grow: 2;
-                        flex-basis: 400px
-                      }
-                    }
-                    @media (max-width: 740px) {
-                      .footer-block.block-{{ block.id }} {
-                        margin-top: 40px;
-                      }
-                    }
-                  </style>
+                  <style>@media (min-width: 980px) {.footer-block.block-{{ block.id }} {flex-grow: 2;flex-basis: 400px}}@media (max-width: 740px) {.footer-block.block-{{ block.id }} {margin-top: 40px;}}</style>
               </div>
             </div>
           {% when 'text' %}
@@ -102,18 +73,7 @@
                   {{ block.settings.footer_text }}
                 </div>
               {%- endif -%}
-              <style>
-                @media (min-width: 980px) {
-                  .footer-block.block-{{ block.id }} {
-                    flex-grow: 2;
-                    flex-basis: 400px
-                  }
-                }
-                .footer-block.block-{{ block.id }} .logo-image {
-                  max-width: {{ block.settings.bottom_logo_max_width }}px;
-                  width: {{ block.settings.bottom_logo_max_width }}px;
-                }
-              </style>
+              <style>@media (min-width: 980px) {.footer-block.block-{{ block.id }} {flex-grow: 2;flex-basis: 400px}}@media (max-width: 740px) {.footer-block.block-{{ block.id }} {margin-top: 40px;}}.footer-block.block-{{ block.id }} .logo-image {max-width: {{ block.settings.bottom_logo_max_width }}px;width: {{ block.settings.bottom_logo_max_width }}px;}}</style>
             </div>
           {% endcase %}
         </section>
@@ -134,11 +94,9 @@
             {% if section.settings.show_copyright %}{{ 'general.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}. &nbsp;{% endif %}
           </p>
         </div>
-
       </div>
       <div class="footer-right">
         {% if locale_selector or country_selector %}
-
         <div class="disclosures desktop-12 tablet-6 mobile-3">
           <div class="selectors-form">
             {%- if locale_selector -%}
@@ -176,7 +134,7 @@
                          size: '8px',
                          fill: 'var(--footer-text)',
                          hover: 'var(--footer-background)' %}
-                    </div><!-- /.selectors-form__select -->
+                    </div>
                     <button class="localization-form__noscript-btn">
                       {% render 'snip-icons',
                          type: 'apollo',
@@ -198,51 +156,27 @@
                     <h2 class="visually-hidden" id="FooterLanguageLabel">
                       {{ 'general.language.dropdown_label' | t }}
                     </h2>
-                    <button
-                      type="button"
-                      class="disclosure__toggle"
-                      aria-expanded="false"
-                      aria-controls="FooterLanguageList"
-                      aria-describedby="FooterLanguageLabel"
-                      data-disclosure-toggle>
+                    <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel" data-disclosure-toggle>
                       {{ localization.language.endonym_name | capitalize }}
-                      {% render 'snip-icons',
-                         type: 'apollo',
-                         icon: 'down-carrot',
-                         size: '8px',
-                         fill: 'var(--footer-text)',
-                         hover: 'var(--footer-background)' %}
+                      {% render 'snip-icons', type: 'apollo', icon: 'down-carrot', size: '8px', fill: 'var(--footer-text)', hover: 'var(--footer-background)' %}
                     </button>
                     <ul id="FooterLanguageList" class="disclosure-list" data-disclosure-list>
                       {%- for language in localization.available_languages -%}
-                        <li
-                          class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
-                          <a
-                            class="disclosure-list__option"
-                            href="#"
-                            hreflang="{{ language.iso_code }}"
-                            title="{{ language.endonym_name | capitalize }}"
-                            lang="{{ language.iso_code }}"
-                            {% if language.iso_code == localization.language.iso_code %}
-                            aria-current="true"
-                            {% endif %}
-                            data-value="{{ language.iso_code | capitalize }}"
-                            data-disclosure-option>
+                        <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                          <a class="disclosure-list__option" href="#" hreflang="{{ language.iso_code }}" title="{{ language.endonym_name | capitalize }}" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code | capitalize }}" data-disclosure-option>
                             {{ language.endonym_name | capitalize }}
                           </a>
                         </li>
                       {%- endfor -%}
                     </ul>
                     <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}" data-disclosure-input/>
-                  </div><!-- /.no-js-hidden -->
-                </div><!-- /.disclosure -->
+                  </div>
+                </div>
               {%- endform -%}
-              </div><!-- /.selectors-form__item -->
+              </div>
             {%- endif -%}
-
             {%- if country_selector -%}
               <div class="selectors-form__item">
-
                 <noscript>
                   {%-
                     form 'localization',
@@ -275,7 +209,7 @@
                          size: '8px',
                          fill: 'var(--footer-text)',
                          hover: 'var(--footer-background)' %}
-                    </div><!-- /.selectors-form__select -->
+                    </div>
                     <button class="localization-form__noscript-btn">
                       {% render 'snip-icons',
                          type: 'apollo',
@@ -297,23 +231,6 @@
                       <h2 class="visually-hidden" id="FooterCountryLabel">
                         {{ 'general.currency.dropdown_label' | t }}
                       </h2>
-                    {% comment %}
-                      <button
-                        type="button"
-                        class="disclosure__toggle"
-                        aria-expanded="false"
-                        aria-controls="FooterCountryList"
-                        aria-describedby="FooterCountryLabel"
-                        data-disclosure-toggle>
-                        {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
-                        {% render 'snip-icons',
-                           type: 'apollo',
-                           icon: 'down-carrot',
-                           size: '8px',
-                           fill: 'var(--footer-text)',
-                           hover: 'var(--footer-background)' %}
-                      </button>
-                    {% endcomment %}
                     <button
                       type="button"
                       class="disclosure__toggle"
@@ -321,7 +238,7 @@
                       aria-controls="HeaderCountryList"
                       aria-describedby="HeaderCountryLabel"
                       data-disclosure-toggle>
-                      {% comment %}{{ localization.country.name }} {% endcomment %} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                      ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
                       {% render 'snip-icons',
                          type: 'apollo',
                          icon: 'down-carrot',
@@ -333,58 +250,28 @@
                         id="FooterCountryList"
                         class="disclosure-list"
                         data-disclosure-list>
-                        {% comment %}
-                        {% for country in localization.available_countries %}
-                          <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
-                            <a
-                              class="disclosure-list__option"
-                              href="#"
-                              title="{{ country.iso_code }}"
-                              {% if country.iso_code == localization.country.iso_code %}
-                              aria-current="true"
-                              {% endif %}
-                              data-value="{{ country.iso_code }}"
-                              data-disclosure-option>
-                              {{ country.name }} <span class="localization-form__currency">{{ country.currency.iso_code }} {{ country.currency.symbol }}</span>
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      {% endcomment %}
-
                         {% assign printed_currencies = "" %}
                         {% for country in localization.available_countries %}
                           {% assign currency_info = country.currency.iso_code | append: " " | append: country.currency.symbol %}
-                        
                           {% if printed_currencies contains currency_info %}
                             {% continue %}
                           {% endif %}
-                        
                           {% assign printed_currencies = printed_currencies | append: "," | append: currency_info %}
-                        
                           <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
-                            <a
-                              class="disclosure-list__option"
-                              href="#"
-                              title="{{ country.iso_code }}"
-                              {% if country.iso_code == localization.country.iso_code %}
-                              aria-current="true"
-                              {% endif %}
-                              data-value="{{ country.iso_code }}"
-                              data-disclosure-option>
+                            <a class="disclosure-list__option" href="#" title="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %} aria-current="true" {% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
                                <span class="localization-form__currency">{{ country.currency.iso_code }} {{ country.currency.symbol }}</span>
                             </a>
                           </li>
                         {% endfor %}
                       </ul>
                       <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" data-disclosure-input/>
-                  </div><!-- /.no-js-hidden -->
-                </div><!-- /.disclosure -->
+                  </div>
+                </div>
                 {% endform %}
-              </div><!-- /.selectors-form__item -->
+              </div>
             {%- endif -%}
-          </div><!-- /.selectors_form -->
-        </div><!-- /.disclosures -->
-
+          </div>
+        </div>
         {% endif %}
         {% if section.settings.show_credit_cards %}
           <div id="payment" class="credit desktop-12 tablet-6 mobile-3">
@@ -409,115 +296,7 @@
     </div>
   </div>
 </footer>
-
-<style>
-  #footer .footer-sect {
-    text-align: {{ section.settings.text_alignment }};
-    {% if section.settings.text_alignment == 'center' %}
-    margin-left: auto;
-    margin-right: auto;
-    {% endif %}
-  }
-  #footer-wrapper {
-    text-align: {{ section.settings.footer_text_align }};
-  }
-
-  @media (min-width: 980px) {
-    #footer {
-  	   display: flex;
-    }
-    .footer-block + .footer-block {
-      margin-left: 3%;
-    }
-  }
-
-  div#bottom-footer {
-    display: flex;
-    margin: 0 auto;
-    padding-top: 32px;
-    border-top: 1px solid {{ settings.footer_border }};
-    margin-top: 64px;
-    align-items: flex-end;
-  }
-
-  div#bottom-footer .footer-left {
-    width: 50%;
-    text-align: left;
-  }
-
-  div#bottom-footer .footer-right {
-    width: 50%;
-    text-align: right;
-  }
-
-  div#bottom-footer #copy p {
-    text-align: left;
-    margin: 0;
-  }
-  div#bottom-footer #payment {
-    text-align: right;
-    margin-top: 16px;
-  }
-  div#bottom-footer #footer-icons {
-    margin: 0;
-  }
-  div#bottom-footer #footer-icons i {
-    font-size: 19px;
-  }
-  div#bottom-footer div#copy {
-    margin-top: 21px;
-    text-transform: capitalize;
-  }
-
-  @media (min-width: 980px) {
-    #footer #payment {
-      text-align: {{ section.settings.footer_text_align }};
-    }
-    #footer ul#footer-icons {
-      text-align: {{ section.settings.footer_text_align }};
-    }
-    {% if section.settings.footer_text_align == 'left' %}
-      #footer ul#footer-icons li:first-child {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #footer .selectors-form {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-      }
-    {% endif %}
-  }
-  @media (max-width: 740px) {
-    div#bottom-footer {
-      flex-wrap: wrap;
-    }
-    div#bottom-footer .footer-left {
-      width: 100%;
-      text-align: left;
-      order:2;
-      margin-top: 31px;
-    }
-    div#bottom-footer .footer-right {
-      width: 100%;
-      text-align: left;
-      order: 1;
-    }
-    div#bottom-footer .selectors-form {
-      justify-content: flex-start;
-      margin: 0;
-    }
-    div#bottom-footer #payment {
-      text-align: left;
-    }
-    div#bottom-footer  .footer-section .disclosure__toggle {
-      height: 44px;
-      width: 80px;
-    }
-    section.footer-block {
-      vertical-align: top;
-    }
-  }
-</style>
+<style>#footer .footer-sect {text-align: {{ section.settings.text_alignment }};{% if section.settings.text_alignment == 'center' %}margin-left: auto;margin-right: auto;{% endif %}}#footer-wrapper {text-align: {{ section.settings.footer_text_align }};}@media (min-width: 980px) {#footer {display: flex;}.footer-block + .footer-block {margin-left: 3%;}}div#bottom-footer {display: flex;margin: 0 auto;padding-top: 32px;border-top: 1px solid {{ settings.footer_border }};margin-top: 64px;align-items: flex-end;}div#bottom-footer .footer-left {width: 50%;text-align: left;}div#bottom-footer .footer-right {width: 50%;text-align: right;}div#bottom-footer #copy p {text-align: left;margin: 0;}div#bottom-footer #payment {text-align: right;margin-top: 16px;}div#bottom-footer #footer-icons {margin: 0;}div#bottom-footer #footer-icons i {font-size: 19px;}div#bottom-footer div#copy {margin-top: 21px;text-transform: capitalize;}@media (min-width: 980px) {#footer #payment {text-align: {{ section.settings.footer_text_align }};}#footer ul#footer-icons {text-align: {{ section.settings.footer_text_align }};}{% if section.settings.footer_text_align == 'left' %} #footer ul#footer-icons li:first-child {margin-left: 0;padding-left: 0;}#footer .selectors-form {justify-content: flex-start;flex-wrap: nowrap;}{% endif %}}@media (max-width: 740px) {div#bottom-footer {flex-wrap: wrap;}div#bottom-footer .footer-left {width: 100%;text-align: left;order:2;margin-top: 31px;}div#bottom-footer .footer-right {width: 100%;text-align: left;order: 1;}div#bottom-footer .selectors-form {justify-content: flex-start;margin: 0;}div#bottom-footer #payment {text-align: left;}div#bottom-footer  .footer-section .disclosure__toggle {height: 44px;width: 80px;}section.footer-block {vertical-align: top;}}</style>
 </div>
 {% schema %}
 {

@@ -1,8 +1,6 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -10,11 +8,9 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   if section.settings.display_wide
     assign display_wide = true
   endif 
-
   case section.settings.height
     when 'small'
       assign mobile_height = 175
@@ -26,76 +22,43 @@
       assign mobile_height = 375
       assign desktop_height = 775
   endcase
-
 -%}
-
 <section class="global__section background_video__section section-{{ section.id }}{{ section_space_class }}" data-section-id="{{ section.id }}" data-section-type="background-video-section">
-
   {% if display_wide %}
   {% else %}
   <div class="row">
     <div class="desktop-12 tablet-6 mobile-3">
       {% endif %}
-
       <div class="background-video">
-
         {% if section.settings.overlay %}
           <div class="background-video__overlay"></div>
         {% endif %}
-
-        <!-- Video -->
         <div class="videoWrapper">
           {% if section.settings.video != blank %}
             {{ section.settings.video | video_tag: image_size: '2000x', controls: false, muted: true, autoplay: true, loop: true, playsinline: true, preload: 'metadata', class: 'section-video js-video', title: section.settings.description }}
           {% endif %}
         </div>
-
-        <!-- Caption -->
         <div class="background-video__caption">
-
-          <!-- Title -->
           {% if section.settings.heading != blank %}
             <h2 class="background-video__caption-title">{{ section.settings.heading | escape }}</h2>
           {% endif %}
-
-          <!-- Subheader -->
           {% if section.settings.subheading_text != blank %}
             <div class="background-video__caption-subheading rte">
               {{ section.settings.subheading_text }}
             </div>
           {% endif %}
-
-          <!-- Button -->
           {% if section.settings.link != blank and section.settings.button_text != blank %}
           <a class="background-video__caption-button button" href="{{ section.settings.link }}">{{ section.settings.button_text | escape }}</a>
           {% endif %}
-
-        </div><!-- /.video-caption -->
-      </div><!-- /.background-video -->
-
-      <style>
-
-        /* CSS Variables */
-        .background_video__section.section-{{ section.id }} {
-          --heading-font-size: {{ section.settings.heading_font_size | append: 'px' }};
-          --subheading-font-size: {{ section.settings.subheading_font_size | append: 'px' }};
-          --caption-color: {{ section.settings.text_color }};
-          --button-color: {{ section.settings.button_color }};
-          --button-text-color: {{ section.settings.button_text_color }};
-          --section-mobile-height: {{ mobile_height | append: 'px' }};
-          --section-desktop-height: {{ desktop_height | append: 'px' }};
-        }
-      </style>
-
+        </div>
+      </div>
+      <style>.background_video__section.section-{{ section.id }} {--heading-font-size: {{ section.settings.heading_font_size | append: 'px' }};--subheading-font-size: {{ section.settings.subheading_font_size | append: 'px' }};--caption-color: {{ section.settings.text_color }};--button-color: {{ section.settings.button_color }};--button-text-color: {{ section.settings.button_text_color }};--section-mobile-height: {{ mobile_height | append: 'px' }};--section-desktop-height: {{ desktop_height | append: 'px' }};}</style>
       {% if display_wide %}
       {% else %}
     </div>
   </div>
   {% endif %}
-
 </section>
-
-
 {% schema %}
 {
   "name": "Background video",

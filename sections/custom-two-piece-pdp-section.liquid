@@ -1,12 +1,9 @@
 {%- liquid
-
 assign current_variant = product.selected_or_first_available_variant
 assign thumbnail_position = section.settings.thumbnail_position
 assign click_to_enlarge = section.settings.click_to_enlarge
 assign enable_video_looping = section.settings.enable_video_looping
-
 assign form_grid = 'span-6'
-
 case section.settings.media_size
   when 'small'
     assign media_grid = 'span-4 push-1'
@@ -16,84 +13,20 @@ case section.settings.media_size
     assign media_grid = 'span-7'
     assign form_grid = 'span-5'
 endcase
-
 assign description_active = false
 for block in section.blocks
   if block.type == 'product_description'
     assign description_active = true
   endif
 endfor
-
 if product.template_suffix == 'pre-order'
   assign button_text = 'products.product.pre_order' | t
 else
   assign button_text = 'products.product.add_to_cart' | t
 endif
-
 assign size_popup = false
-
 -%}
-{% style %}
-.template-product-cust-sleeveless-one-piec  p.swatches__option-name.h5.Size strong{
-    display: block!important;
-}
-.template-product-cust-sleeveless-one-piec .product__variants-swatches .click_function_value .swatches__option-name .size-guide-trigger{
-  display: none!important;
-}
-
-.template-product-cust-sleeveless-one-piec .product_top_description_meta .metafield-rich_text_field ul li{font-size: var(--font-size);}
-
-.template-product-cust-sleeveless-one-piec .new_cus_size_guide_trigger{margin-top: 10px;}
-
-.template-product-cust-sleeveless-one-piec .price_after_main_block{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 10px;gap: 10px;}
-
-.template-product-cust-sleeveless-one-piec .price__pricing-group{margin-bottom: 0;}
-
-.template-product-cust-sleeveless-one-piec #product-price .price-item{font-size: 20px;display: block;}
-.template-product-cust-sleeveless-one-piec .product__section-stockLevels{margin-top: 0px;margin-bottom: 0px;}
-.template-product-cust-sleeveless-one-piec .after_pay_row{margin-bottom: 0;}
-
-.template-product-cust-sleeveless-one-piec .product_btn_cart .stocke_lavel_aftre_pay{justify-content: center;margin-bottom: 10px;}
-.template-product-cust-sleeveless-one-piec .product_btn_cart .stocke_lavel_aftre_pay .items_left_main {margin-bottom: 0!important;}
-
-
-.template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{margin-top: -32px!important;}
-@media (max-width: 767px){
-  
-  .custom-color-swatches .swatch-heading{
-    margin-bottom: 5px;
-    font-size: 12px;
-  }
-  .template-product-cust-sleeveless-one-piec .swatches__swatch--regular label{height: 42px !important;line-height: 42px!important;width: 42px;}
-  .template-product-cust-sleeveless-one-piec .items_left_main *,
-  .template-product-cust-sleeveless-one-piec span.after_pay_row_inner,
-  .template-product-new-custom-one-piece.product span.popup_content_link.size-guide-trigger.first-trigger button{font-size: 12px!important;}
-}
-
-@media (max-width: 575px){
-  .template-product-cust-sleeveless-one-piec .product__variants-swatches .click_function_value{display: block!important;}
-}
-
-@media (max-width: 475px){
-    .template-product-new-custom-one-piece.product span.popup_content_link.size-guide-trigger.first-trigger {
-        margin-bottom: 0!important;
-    }
-    .template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{
-          margin-top: -21px !important;
-    }
-}
-
-
-@media (max-width: 450px){
- .template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you .shop-assistant-container button{font-size: 10px!important;}
-}
-
-@media (max-width: 440px){
-  .template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{float: right !important;}
-}
-
-{% endstyle %}
-
+{% style %}.template-product-cust-sleeveless-one-piec  p.swatches__option-name.h5.Size strong{display: block!important;}.template-product-cust-sleeveless-one-piec .product__variants-swatches .click_function_value .swatches__option-name .size-guide-trigger{display: none!important;}.template-product-cust-sleeveless-one-piec .product_top_description_meta .metafield-rich_text_field ul li{font-size: var(--font-size);}.template-product-cust-sleeveless-one-piec .new_cus_size_guide_trigger{margin-top: 10px;}.template-product-cust-sleeveless-one-piec .price_after_main_block{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 10px;gap: 10px;}.template-product-cust-sleeveless-one-piec .price__pricing-group{margin-bottom: 0;}.template-product-cust-sleeveless-one-piec #product-price .price-item{font-size: 20px;display: block;}.template-product-cust-sleeveless-one-piec .product__section-stockLevels{margin-top: 0px;margin-bottom: 0px;}.template-product-cust-sleeveless-one-piec .after_pay_row{margin-bottom: 0;}.template-product-cust-sleeveless-one-piec .product_btn_cart .stocke_lavel_aftre_pay{justify-content: center;margin-bottom: 10px;}.template-product-cust-sleeveless-one-piec .product_btn_cart .stocke_lavel_aftre_pay .items_left_main {margin-bottom: 0!important;}.template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{margin-top: -32px!important;}@media (max-width: 767px){.custom-color-swatches .swatch-heading{margin-bottom: 5px;font-size: 12px;}.template-product-cust-sleeveless-one-piec .swatches__swatch--regular label{height: 42px !important;line-height: 42px!important;width: 42px;}.template-product-cust-sleeveless-one-piec .items_left_main *,.template-product-cust-sleeveless-one-piec span.after_pay_row_inner,.template-product-new-custom-one-piece.product span.popup_content_link.size-guide-trigger.first-trigger button{font-size: 12px!important;}}@media (max-width: 575px){.template-product-cust-sleeveless-one-piec .product__variants-swatches .click_function_value{display: block!important;}}@media (max-width: 475px){.template-product-new-custom-one-piece.product span.popup_content_link.size-guide-trigger.first-trigger {margin-bottom: 0!important;}.template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{margin-top: -21px !important;}}@media (max-width: 450px){.template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you .shop-assistant-container button{font-size: 10px!important;}}@media (max-width: 440px){.template-product-cust-sleeveless-one-piec see-it-on-you.see-it-on-you{float: right !important;}}{% endstyle %}
 <section
   id="product-{{ product.id }}"
   class="product__section section-{{ section.id }} product-{{ product.id }} main__section"
@@ -103,9 +36,7 @@ assign size_popup = false
   data-section-type="product__section"
   data-sale-format="{{ settings.sale_items }}"
   data-initial-variant="{{ current_variant.featured_media.id }}">
-
   {% render 'product-json', product: product %}
-
   {% capture product_gallery_config %}{
     "thumbPosition": {{ section.settings.thumbnail_position | json }},
     "enableVideoLooping": {{ section.settings.enable_video_looping | json }},
@@ -116,7 +47,6 @@ assign size_popup = false
     "clickToEnlarge": {{ click_to_enlarge | json }},
     "isQuick": false
  }{% endcapture %}
-
 {% capture product_form_config %}
  { "money_format": {{ shop.money_format | json }},
    "enable_history": true,
@@ -133,7 +63,6 @@ assign size_popup = false
    }
  }
 {% endcapture %}
-
   <div class="product__section-container row grid__wrapper">
     <div class="product__section-images ddd product__section-image--{{ thumbnail_position }} carousel-container {{ media_grid }} md-span-12 sm-span-12 auto js-product-gallery"
       data-product-gallery
@@ -160,24 +89,15 @@ assign size_popup = false
             {% endif %}
             <h1 class="product__section-title product-title">{{ product.title }}</h1>
             {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
-            
-            
-           {%comment %}
-              {% if product.metafields.custom.product_top_description != blank %}
-                <div class="product_top_description_meta" style="display: block;">{{ product.metafields.custom.product_top_description }}</div>
-              {% endif %}
-            {%endcomment %}
               {% if product.metafields.custom.product_top_description_with_bullets != blank %}
                 <div class="product_top_description_meta" style="display: block;">
                   {{ product.metafields.custom.product_top_description_with_bullets | metafield_tag }}
                 </div>
-
               {% elsif product.metafields.custom.product_top_description != blank %}
                 <div class="product_top_description_meta" style="display: block;">
                   {{ product.metafields.custom.product_top_description }}
                 </div>
               {% endif %}
-          
             {%- if section.settings.show_tax_notice -%}
               {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__policies rte" data-product-policies>
@@ -190,7 +110,6 @@ assign size_popup = false
                 </div>
               {%- endif -%}
             {%- endif -%}
-
             {%- form 'product', product, id: 'product-form-installment' -%}
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
               <select style="display:none;" name='id'>
@@ -200,13 +119,12 @@ assign size_popup = false
               </select>
               <div class="spi-banner">
                 {{ form | payment_terms }}
-              </div><!-- /#spi-banner -->
+              </div>
             {%- endform -%}
           </div>
           {%- assign product_buttons_form_id = 'product-form-buttons-' | append: section.id -%}
           {%- for block in section.blocks -%}
             {%- case block.type -%}
-
               {%- when 'product_variants' -%}
                 {%- assign product_form_id = 'product-form-' | append: section.id -%}
                 {% form 'product', product,
@@ -214,7 +132,6 @@ assign size_popup = false
                    class: "product__form-container product_form relative",
                    data-product-form: product_form_config,
                    data-product-id: product.id %}
-
                   {%- unless product.has_only_default_variant -%}
                    {%- if settings.product_variants == 'swatches' -%}
                      <div class="product__variants-swatches mt4 mb6 no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
@@ -253,7 +170,6 @@ assign size_popup = false
                      </div>
                    {%- endif -%}
                   {%- endunless -%}
-
                   <noscript class="product__variants-select product-form__noscript-wrapper-{{ section.id }}">
                     <div class="product-form__input product-form__input--dropdown{% if product.has_only_default_variant %} hidden{% endif %}">
                       <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.select_option' | t }}</label>
@@ -274,17 +190,14 @@ assign size_popup = false
                       </div>
                     </div>
                   </noscript>
-
                   <input class="formVariantId" name="" type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
                 {% endform %}
-
               {%- when 'product_availability' -%}
               <div class="product-single__store-availability-container"
                 data-variant-id="{{ current_variant.id }}"
                 data-product-title="{{ product.title | escape }}"
                 style="visibility:hidden; min-height: 120px;" data-store-availability-container>
               </div>
-
               {%- when 'product_quantity' -%}
                 <div class="product__section--qty qty-selection hide" data-product-qty {{ block.shopify_attributes }}>
                   {%
@@ -292,15 +205,12 @@ assign size_popup = false
                     product: product
                   %}
                 </div>
-
               {%- when 'product_sku' -%}
                 <div class="product__section--sku sku" {{ block.shopify_attributes }}>
                   <label for="variantSku" style="line-height: 1.6em; display: inline-block;">{{ 'customer.order.details.sku' | t }}:</label>
                   <span id="variantSku" class="variant_sku">{{ current_variant.sku }}</span>
                 </div>
-
                 <div class="clear"></div>
-
 	            {% when 'stock_levels' %}
                 <div class="price_after_main_block"> 
                      {% render 'product-price', variant: current_variant, product: product %}
@@ -337,10 +247,8 @@ assign size_popup = false
                   </span> 
                 </div>
                 <div class="after_pay_btn">
-                  {% comment %}<button>{{ 'cout_text.btn' | t }}</button>{% endcomment %}
                   <button id="logo-link" class="afterpay-link" tabindex="0" aria-label="Learn More about Afterpay - Opens a dialog" title="Learn More about Afterpay - Opens a dialog">ⓘ</button>
-                </div>
-          
+                </div>          
                 <div class="after_pay_img" style="display: none;">
                   <div class="after_pay_img_inner">
                     {% assign old_img_url = section.settings.pay_img %}
@@ -354,22 +262,17 @@ assign size_popup = false
                     </span>
                   </div>
                 </div>
-                    </div>
+                </div>
               </div>
             </div>
-             </div>
-                          
-
+             </div>                        
               {%- when 'product_buttons' -%}
                 <div class="product__section--buttons product-add" {{ block.shopify_attributes }}>
                   {% form 'product', product,
                      id: product_buttons_form_id,
                      class: "product__form-buttons js-prod-form-submit relative",
                      data-product-id: product.id %}
-
                     {%- liquid
-
-
                       if product.template_suffix == 'pre-order'
                         assign call_to_action = 'products.product.pre_order' | t
                         assign is_preorder = 'data-preorder'
@@ -381,23 +284,16 @@ assign size_popup = false
                         assign call_to_action = 'products.product.sold_out' | t
                         assign is_preorder = ''
                       endunless
-
                       assign product_form_id = 'product-form-' | append: section.id
-
                     -%}
-
                     <input class="formVariantId" name="id" type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
-                    <input class="formQty" type="hidden" name="quantity" value="1" />
-
-                    
+                    <input class="formQty" type="hidden" name="quantity" value="1" />                
                     <div class="note note-success js-added-msg" style="display: none">
                       <b>{{ 'products.product.added' | t }}</b>&nbsp;&nbsp;&nbsp;<a class="underline" href="{{ routes.cart_url }}">{{ 'products.product.view_cart' | t }}</a> {{ 'products.product.or' | t }} <a class="underline" href="{{ routes.all_products_collection_url }}">{{ 'products.product.continue' | t }}</a>.
                     </div>
                     <div class="note note-error js-error-msg" style="display: none">
                       <b>{{ 'cart.general.cart_error' | t }}</b>&nbsp;&nbsp;&nbsp;{{ 'cart.general.update_qty_error' | t }}
-
                     </div>
-
                     <ul class="variant_pre_order" style="display:none;">
                        {% for variant in product.variants %}
                           <li class="varint-loop" data-id="{{ variant.id }}" data-inventory="{{ variant.inventory_quantity }}" meta-tag="{{ variant.metafields.custom.pre_order_on }}" ></li>
@@ -429,57 +325,30 @@ assign size_popup = false
                       data-stock-level-threshold="{{ block.settings.threshold }}"
                     >
                       <div class="variant-stock-levels__inner product__section--element">
-
                         {% render 'snip-icons',
                           wrapper: '.stock-levels__block-icon',
                           type: 'testament-theme',
                           icon: 'info',
                           size: '18px',
                           fill: settings.text-color %}
-
                         <span class="js-variant-stock-levels__message items_left">
                           {{ 'products.product.only_left' | t: count: current_variant.inventory_quantity }}
                         </span>
-                      </div><!-- /.variant-stock-levels__inner -->
-
-                      
-                    </div><!-- /#variant-stock-levels -->
+                      </div>                      
+                    </div>
                   {% endif %}
                       <div class="items_left_pre_order" style="display:none">
                         <h4 class="items_left_pre">Ships as soon as delivery is received.</h4></div>
-                      </div>
-               
+                      </div>               
                 <div class="clear"></div>  
                       <button id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="" {% unless current_variant.available %}disabled{% endunless %}>
-
-                        {% comment %}
-                        <ul style="display:none;">
-                         {% for variant in product.variants %}
-                            <li class="varint-loop"></li>
-                          {% endfor %}
-                        </ul>
-                        {% endcomment %}
-                        <span class="add_to_cart_text">{{ call_to_action }} </span>
-                        
+                        <span class="add_to_cart_text">{{ call_to_action }} </span>                        
                         <span>- {{ product.price | money }}</span>
                     </button>
-                    </div>
-
-                    
+                    </div>                    
                     <div class="klaviyo-btn_wrp {% if product.handle == 'sulawesi-midnight-t' %}notshow_notify{% endif %}" style="margin-bottom:5px;">
                       <a class="klaviyo-bis-trigger" style="display:none;" href="#">Notify Me When Available</a>
-                    </div> 
-                    
-                    {% comment %}  
-                    <div class="raflin-widget-button"></div>
-                    <style>
-                          .raflin-btn {
-                              border-radius: 0px !important;
-                          }
-                    </style>
-                    {% endcomment %}
-                    
-                    
+                    </div>
                     {% if settings.show_payment_button %}
                       {{ form | payment_button }}
                     {% endif %}
@@ -512,7 +381,6 @@ assign size_popup = false
                     </div>
                   {%-  endform -%}
                 </div>
-
               {%- when 'product_description' -%}
                 <div class="product__section--desc product__description-container rte" {{ block.shopify_attributes }}>                  
                   {% if block.settings.show_as_accordion %}
@@ -534,15 +402,12 @@ assign size_popup = false
                     {{ product.description }}
                   {% endif %}
                 </div>
-
               {%- when 'accordion_content' -%}
-
                 <div class="product__section--accordion" {{ block.shopify_attributes }}>
                   {% capture accordion_heading_capture %}
                     {{ block.settings.title }}
                   {% endcapture %}
                   {% capture accordion_content_capture %}
-
                     {% if block.settings.title == 'SIZE Guide' %}
                       {%- if size_popup == true -%}
                         {{ block.settings.text }}
@@ -560,7 +425,6 @@ assign size_popup = false
                           {{ block.settings.text }}
                         {% endif %}
                     {% endif %}
-                    
                   {% endcapture %}
                   {%
                     render 'accordion-item',
@@ -571,7 +435,6 @@ assign size_popup = false
                     forloop_index: forloop.index
                   %}
                 </div>
-
               {%- when 'tabs_name' -%}
               <div class="product__section--desc product__description-container rte" {{ block.shopify_attributes }}> 
               {% assign shortDisParent = product.metafields.custom.short_description %}
@@ -715,9 +578,7 @@ assign size_popup = false
                 </div>
                 {% endif %}
               {%- when 'social_sharing' -%}
-
                 {%- liquid
-
                   if block.settings.show_twitter
                     assign show_twitter = true
                   endif
@@ -727,69 +588,31 @@ assign size_popup = false
                   if block.settings.show_pinterest
                     assign show_pinterest = true
                   endif
-
                 -%}
-
                 {% render 'social' with product,
                   show_facebook: show_facebook,
                   show_twitter: show_twitter,
                   show_pinterest: show_pinterest
                  %}
-
                  <div class="clear"></div>
-              {% comment %}
-              {%- when 'rating' -%}
-               {%- if product.metafields.reviews.rating.value != blank -%}
-                 <div class="product__section--rating-wrapper">
-                   {% liquid
-                    assign rating_decimal = 0
-                    assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
-                    if decimal >= 0.3 and decimal <= 0.7
-                     assign rating_decimal = 0.5
-                   elsif decimal > 0.7
-                     assign rating_decimal = 1
-                    endif
-                   %}
-                   <div class="product__section-rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
-                     <span aria-hidden="true" class="product__section-rating-star color-icon" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};">
-                     </span>
-                   </div>
-                   <p class="product__section-rating-text caption">
-                     <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
-                   </p>
-                   <p class="product__section-rating-count caption">
-                     <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                     <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
-                   </p>
-                 </div>
-               {%- endif -%}
-              {% endcomment %}
               {%- when 'contact_popup' -%}
-
                 <span class="popup_content_link">
                   <button class="product__contact-trigger button-as-link js-modal-open js-contact-trigger" type="button" name="button" data-wau-modal-target="contact-form" >{{ 'products.product.popup_question' | t }}</button>
                 </span>
                 <div data-wau-modal-content="contact-form" style="display: none">{% render 'question' %}</div>
-
               {%- when 'popup' -%}
-
                 {%- liquid
-
                   assign page = blank
                   if block.settings.page != blank
                     assign popup_content = block.settings.page.content
                   else
                     assign popup_content = block.settings.text
                   endif
-
                 -%}
-
                 {%- if block.settings.page != blank -%}
                   {%- liquid
                       assign size_popup = true
                   -%}
-                  {% comment %} <div class="see_it_on_you_btn">See it on you</div> {% endcomment %}
-                  {% comment %} {% render 'product-price', variant: current_variant, product: product %} {% endcomment %}
                   <span class="popup_content_link {{ block.settings.section_class }} first-trigger">
                     <span class="size_chat_icon"> <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 945.9 945.9" xml:space="preserve"> <g>
                   	<g>
@@ -806,24 +629,20 @@ assign size_popup = false
                   			C160.4,263.45,218,229.15,289.2,229.15z"></path>
                   	</g></g></svg></span>
                       <button class="product__contact-trigger button-as-link" type="button" name="button" data-wau-modal-target="popup-content" >Size Guide</button>
-                  </span>
-                
+                  </span>                
                   <div data-wau-modal-content="popup-content" id="size-guide-popup" style="display: none">
-                      {{ block.settings.page.content }}
-                  
+                      {{ block.settings.page.content }}                  
                       {%- if block.settings.text != blank -%}
                         <div class="coverage" style="margin: 40px 0;">
                         {{ block.settings.text }}
                         </div>
                       {%- endif -%}
-
                       {%- if block.settings.text_2 != blank -%}
                         <hr>
                         <div class="sizing" style="margin: 40px 0;">
                         {{ block.settings.text_2 }}
                         </div>
                       {%- endif -%}
-
                       {%- if block.settings.show_footer_text -%}
                         <div>
                           <hr>
@@ -833,52 +652,40 @@ assign size_popup = false
                       {%- endif -%}
                   </div>
                 {%- endif -%}
-
               {%- when 'line_item_property' -%}
                 {%
                   render 'product-customizations',
                   block: block,
                   product_buttons_form_id: product_buttons_form_id
                 %}
-
               {%- when 'liquid_content' -%}
-
                 {{ block.settings.liquid }}
-
               {%- when 'text_with_icon' -%}
                   {%- liquid
-
                     assign has_image = false
                     assign has_link = false
                     assign has_text = false
-
                     if block.settings.text != blank
                       assign text = block.settings.text
                       assign has_text = true
                     endif
-
                     if block.settings.image != blank
                       assign has_image = true
                     endif
-
                     if block.settings.link != blank
                       assign has_link = true
                       assign link = block.settings.link
                     endif
-
                   -%}
-
                   <div class="product-text__block" {{ block.shopify_attributes }}>
                     {% unless has_image %}
                       <div class="product-text__block-icon">
-
                         {% render 'snip-icons',
                            wrapper: '.product-text__block-icon',
                            type: 'testament-theme',
                            icon: block.settings.icon,
                            size: '18px',
                            fill: settings.text-color %}
-
                       </div>
                     {% endunless %}
                     {% if has_image %}
@@ -907,15 +714,12 @@ assign size_popup = false
                   {{block.settings.custom_point_list_text }}
                 </div>   
               {% when 'complementary_products' %}
-
                 {% render 'complementary-products',
                   block: block,
                   section: section,
                   product: product
                  %}
-
               {%- when 'upsell' -%}
-
                 {% unless block.settings.product.id == product.id %}
                   {% assign product_upsell = block.settings.product %}
                     {% if product_upsell != blank %}
@@ -940,7 +744,6 @@ assign size_popup = false
                      </style>
                     {% endif %}
                 {% endunless %}
-
               {%- when '@app' -%}
                 <div class="product__section--app">
                   {% render block %}
@@ -952,105 +755,10 @@ assign size_popup = false
     </div>
   </div>
   <div class="clear"></div>
-  <style>
-    
-    .product_btn_cart #addToCart{display: flex !important;align-items: center;justify-content: center;}
-    .items_left_pre_order .items_left_pre{color: #606060;font-weight: 500;padding:0!important;font-family: Montserrat, sans-serif;font-size: 14px;}
-    
-    {% unless section.settings.product_form_background contains 'rgba(0,0,0,0)' %}
-    :root {
-      --color-body: {{ section.settings.product_form_background }};
-    }
-    {% endunless %}
-    .section-{{ section.id }} .product__section-contentWrapper .product__section-content {
-      background: {{ section.settings.product_form_background }};
-      {% if section.settings.product_page_border contains 'rgba(0,0,0,0)' or section.settings.product_page_border contains 'transparent' %}
-      {% else %}
-      padding: 20px;
-      border: 7px double {{ section.settings.product_page_border }};
-      {% endif %}
-    }
-    section#product-{{ product.id }} .product__section-details button.js-accordion-header.c-accordion__header {
-      background: {{ section.settings.product_form_background }};
-    }
-    {% if section.settings.thumbnail_position == 'hidden' %}
-    .section-{{ section.id }} #thumbnails { display: none; }
-    {% endif %}
-    {% if section.settings.thumbnail_position == 'bottom' %}
-      .section-{{ section.id }} .thumb-slider-slides {
-        transition: left 0.5s ease-in-out;
-      }
-    {% else %}
-      .section-{{ section.id }} .thumb-slider-slides {
-        transition: top 0.5s ease-in-out;
-      }
-    {% endif %}
-    @media screen and (min-width: 981px) {
-      {% if section.settings.sticky_images %}
-      .product__section-images {
-        position: sticky;
-        top: 120px;
-      }
-      {% endif %}  
-    }    
-    @media screen and ( min-width: 741px ) {
-      {% if section.settings.form_left %}
-        .section-{{ section.id }} .product__section-details,
-        .section-{{ section.id }} .product__section-details .rte,
-        .section-{{ section.id }} .product__section-details h1 {
-          text-align: left;
-        }
-        .section-{{ section.id }} .add {
-          margin: 0;
-        }
-        .section-{{ section.id }} .price {
-          align-items: flex-start;
-        }  
-      {% endif %}
-    }
-    {%- if section.settings.form_left -%}
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: start !important;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: left !important;
-      }
-    {%- else -%}
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: center !important;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: center !important;
-      }
-    {%- endif -%}
-    @media screen and ( max-width: 740px ) {
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: center !important;
-      }
-      .section-{{ section.id }} .store-availability-information,
-      .store-availability-information-container {
-          margin-left: 0;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: center !important;
-      }
-    }
-  </style>
-      
+  <style>.product_btn_cart #addToCart{display: flex !important;align-items: center;justify-content: center;}.items_left_pre_order .items_left_pre{color: #606060;font-weight: 500;padding:0!important;font-family: Montserrat, sans-serif;font-size: 14px;}{% unless section.settings.product_form_background contains 'rgba(0,0,0,0)' %}:root {--color-body: {{ section.settings.product_form_background }};}{% endunless %}.section-{{ section.id }} .product__section-contentWrapper .product__section-content {background: {{ section.settings.product_form_background }};{% if section.settings.product_page_border contains 'rgba(0,0,0,0)' or section.settings.product_page_border contains 'transparent' %}{% else %}padding: 20px;border: 7px double {{ section.settings.product_page_border }};{% endif %}}section#product-{{ product.id }} .product__section-details button.js-accordion-header.c-accordion__header {background: {{ section.settings.product_form_background }};}{% if section.settings.thumbnail_position == 'hidden' %}.section-{{ section.id }} #thumbnails { display: none; }{% endif %}{% if section.settings.thumbnail_position == 'bottom' %}.section-{{ section.id }} .thumb-slider-slides {transition: left 0.5s ease-in-out;}{% else %}.section-{{ section.id }} .thumb-slider-slides {transition: top 0.5s ease-in-out;}{% endif %}@media screen and (min-width: 981px) {% if section.settings.sticky_images %}.product__section-images {position: sticky;top: 120px;}{% endif %} }@media screen and ( min-width: 741px ) {{% if section.settings.form_left %}.section-{{ section.id }} .product__section-details,.section-{{ section.id }} .product__section-details .rte,.section-{{ section.id }} .product__section-details h1 {text-align: left;}.section-{{ section.id }} .add {margin: 0;}.section-{{ section.id }} .price {align-items: flex-start;} {% endif %}}{%- if section.settings.form_left -%}.section-{{ section.id }} .store-availability-information {justify-content: start !important;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: left !important;}{%- else -%}.section-{{ section.id }} .store-availability-information {justify-content: center !important;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: center !important;}{%- endif -%}@media screen and ( max-width: 740px ) {.section-{{ section.id }} .store-availability-information {justify-content: center !important;}.section-{{ section.id }} .store-availability-information,.store-availability-information-container {margin-left: 0;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: center !important;}}</style>
 </section>
-
-<script type="application/json" id="ModelJson-{{ section.id }}">
-  {{ product.media | where: 'media_type', 'model' | json }}
-</script>
-
+<script type="application/json" id="ModelJson-{{ section.id }}">{{ product.media | where: 'media_type', 'model' | json }}</script>
 <script>
-
 const checkCondition = setInterval(() => {
     const variantId = document.querySelector('.formVariantId').value;
     const variantElements = document.querySelectorAll('.variant_pre_order .varint-loop');  
@@ -1071,11 +779,9 @@ const checkCondition = setInterval(() => {
         }
       }
     });
-
     var productform = document.querySelector('.product__form-buttons');
     var inputvalue = '<input id="pre_order" type="hidden" name="properties[Pre-order]" value="Pre Order">';
     var othertext = '<input id="ship_text" type="hidden" name="properties[Note]" value="Ships as soon as delivery is received">';
-  
     if(variantTrue){
        if (!document.querySelector('#pre_order')) {
         productform.insertAdjacentHTML('beforeend', inputvalue);
@@ -1085,8 +791,7 @@ const checkCondition = setInterval(() => {
       addToCartButton.setAttribute('data-property', 'Pre-Order'); 
       addToCartText.textContent = "Pre-Order ";
       itemsLeftPretextElement.style.display = "block";
-      itemsLeftTextElement.style.display = "none";
-      
+      itemsLeftTextElement.style.display = "none";      
     }else{
       const existingInput = document.querySelector('#pre_order');
       if (existingInput) {
@@ -1099,10 +804,8 @@ const checkCondition = setInterval(() => {
       }else{
         itemsLeftTextElement.style.display = "flex";
       }
-    }
-  
+    }  
 }, 10);
-
   var swatches = document.querySelectorAll('.swatch-element');  
   swatches.forEach(function(swatch) {
     swatch.addEventListener('click', function() {
@@ -1126,34 +829,27 @@ const checkCondition = setInterval(() => {
     }, 1000);      
   });
 });
-
   document.addEventListener("DOMContentLoaded", function() {
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
     const prevButton = document.querySelector(".prev-button");
     const nextButton = document.querySelector(".next-button");
     let slideIndex = 0;
-
-    const slideWidth = slides[0].clientWidth; // Adjust if slide width is different
-
+    const slideWidth = slides[0].clientWidth; 
     prevButton.addEventListener("click", function() {
         if (slideIndex > 0) {
             slideIndex--;
             slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
         }
     });
-
     nextButton.addEventListener("click", function() {
         if (slideIndex < slides.length - 1) {
             slideIndex++;
             slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
         }
     });
-});
-
-  
-</script>                        
-
+});  
+</script>
 {% schema %}
 {
   "name": "Product page",
@@ -1774,25 +1470,18 @@ const checkCondition = setInterval(() => {
   ]
 }
 {% endschema %}
-
-
 <script>
   (function () {
   const interval = setInterval(() => {
     const host = document.querySelector('.template-product-cust-sleeveless-one-piec .see-it-on-you');
-
     if (!host || !host.shadowRoot) return;
-
     const shadowRoot = host.shadowRoot;
-
     if (shadowRoot.querySelector('#mobile-style')) {
       clearInterval(interval);
       return;
     }
-
     const style = document.createElement('style');
     style.id = 'mobile-style';
-
     style.textContent = `
       button {
         font-size: 12px!important;
@@ -1804,10 +1493,8 @@ const checkCondition = setInterval(() => {
         }
       }
     `;
-
     shadowRoot.appendChild(style);
     clearInterval(interval);
-
   }, 100);
 })();
 function waitForTolstoyAndClick() {
@@ -1816,14 +1503,9 @@ function waitForTolstoyAndClick() {
     tolstoyBtn[0].click();
     console.log('Tolstoy button clicked.');
   } else {
-    setTimeout(waitForTolstoyAndClick, 500); // Check again in 0.5 sec
+    setTimeout(waitForTolstoyAndClick, 500); 
   }
 }
-
-{% comment %} $(document).on('click', '.see_it_on_you_btn', function() {
-  waitForTolstoyAndClick();
-}); {% endcomment %}
-
   $(document).ready(function(){
   $('.after_pay_btn button').click(function(){
     $('.after_pay_img').css("display","flex");
@@ -1867,16 +1549,11 @@ function waitForTolstoyAndClick() {
   }, 1000)
   })
 });
-
 var widgets = document.querySelectorAll('.jdgm-widget');
 widgets.forEach(function(widget) {
     if (widget.parentNode.classList.contains('product__section--header')) {
-        // widget.parentNode.style.paddingTop = '23px';
     }
 });
-
-
-
 function extractAndPrintNumber() {
     const itemsLeftDiv = document.querySelector('.items_left');  
     const itemsLeftText = itemsLeftDiv.textContent;
@@ -1898,11 +1575,8 @@ function extractAndPrintNumber() {
     const itemsLeftTextElement = document.querySelector('.items_left_text');
     itemsLeftTextElement.textContent = outputString;
 }
-
 extractAndPrintNumber();
-
 var variantContainers = document.querySelectorAll('.click_function_value');
-
 variantContainers.forEach(function(container) {
     var variantChild = container.querySelectorAll('.swatch-element');
     variantChild.forEach(function(child) {
@@ -1913,21 +1587,15 @@ variantContainers.forEach(function(container) {
         });
     });
 });
-
   window.addEventListener('load', function() {
     var popupContent = document.querySelector('.popup_content_link');
     popupContent.style.display = 'flex';
   }); 
-
-
-  // Function to set the width of sliderTop
     function setSliderTopWidth() {
         var productSliderWidth = document.querySelector('.thumbs_left').clientWidth;
         var sliderTop = document.querySelector('.media_bottom_text');
         sliderTop.style.width = productSliderWidth + 'px'; 
     }
-    // window.addEventListener('load', setSliderTopWidth);
   setSliderTopWidth()
     window.addEventListener('resize', setSliderTopWidth);
-
 </script>

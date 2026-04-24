@@ -1,15 +1,12 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   assign product = all_products[section.settings.featured_product]
   assign current_variant = product.selected_or_first_available_variant
   assign thumbnail_position = section.settings.thumbnail_position
   assign click_to_enlarge = section.settings.click_to_enlarge
   assign enable_video_looping = section.settings.enable_video_looping
   assign show_payment_button = section.settings.show_payment_button
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -17,26 +14,20 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   if product == empty
   assign section_onboarding = true
   endif
-
   assign background_color = settings.background
-
   assign detail_padding = true
   if section.settings.product_page_border == background_color or section.settings.product_page_border == 'rgba(0,0,0,0)'
     assign detail_padding = false
   endif
-
   if product.template_suffix == 'pre-order'
     assign button_text = 'products.product.pre_order' | t
   else
     assign button_text = 'products.product.add_to_cart' | t
   endif
-
 -%}
-
 <section
   id="product-{{ product.id }}"
   class="homepage-featured-product section-{{ section.id }} product-{{ product.id }} product-page product-template global__section{{ section_space_class }}"
@@ -47,12 +38,10 @@
   data-section-type="product__section"
   data-sale-format="{{ settings.sale_items }}"
   data-initial-variant="{{ current_variant.featured_media.id }}">
-
   {% if section_onboarding %}
     {% render 'onboard-single-product',
     show_payment_button: show_payment_button %}
   {% else %}
-
   <div class="row featured__product-heading">
     <div class="section-title {% if settings.section_titles == 'lines' %}lines {% elsif settings.section_titles == 'btm_border' %}btm_border {% endif %}">
       <h2>
@@ -62,9 +51,7 @@
       </h2>
     </div>
   </div>
-
   <div class="featured__product-container">
-
    {% render 'product-json', product: product %}
    {% capture product_gallery_config %}{
      "thumbPosition": {{ section.settings.thumbnail_position | json }},
@@ -76,7 +63,6 @@
      "clickToEnlarge": {{ click_to_enlarge | json }},
      "isQuick": false
    }{% endcapture %}
-
    {% capture product_form_config %}
     { "money_format": {{ shop.money_format | json }},
       "enable_history": false,
@@ -93,7 +79,6 @@
        }      
      }
    {% endcapture %}
-
     <div class="product__section-container row grid__wrapper">
       <div class="product__section-images product__section-image--{{ thumbnail_position }} span-6 sm-span-12 auto js-product-gallery" data-product-gallery data-product-single-media-group data-gallery-config='{{ product_gallery_config }}'>
        {%- if product.featured_media -%}
@@ -114,15 +99,12 @@
               {% if settings.vendor %}
                 <h3>{{ product.vendor }}</h3>
               {% endif %}
-
               <h2 class="product__section-title product-title">
                 <a href="{{ product.url }}">
                   {{ product.title }}
                 </a>
               </h2>
-
               {% render 'product-price', variant: current_variant, product: product %}
-
               {%- if section.settings.show_tax_notice -%}
                 {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
                   <div class="product__policies rte" data-product-policies>
@@ -135,7 +117,6 @@
                   </div>
                 {%- endif -%}
               {%- endif -%}
-
               {%- form 'product', product, id: 'product-form-installment' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <select style="display:none;" name='id'>
@@ -145,13 +126,11 @@
                 </select>
                 <div class="spi-banner">
                   {{ form | payment_terms }}
-                </div><!-- /#spi-banner -->
+                </div>
               {%- endform -%}
             </div>
-
             {%- for block in section.blocks -%}
               {%- case block.type -%}
-
                 {%- when 'product_variants' -%}
                   {%- assign product_form_id = 'product-form-' | append: section.id -%}
                   {% form 'product', product,
@@ -159,7 +138,6 @@
                      class: "product__form-container product_form relative",
                      data-product-form: product_form_config,
                      data-product-id: product.id %}
-
                     {%- unless product.has_only_default_variant -%}
                      {%- if settings.product_variants == 'swatches' -%}
                        <div class="product__variants-swatches mt4 mb6 no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
@@ -198,7 +176,6 @@
                        </div>
                      {%- endif -%}
                     {%- endunless -%}
-
                     <noscript class="product__variants-select product-form__noscript-wrapper-{{ section.id }}">
                       <div class="product-form__input product-form__input--dropdown{% if product.has_only_default_variant %} hidden{% endif %}">
                         <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.select_option' | t }}</label>
@@ -219,17 +196,14 @@
                         </div>
                       </div>
                     </noscript>
-
                     <input class="formVariantId" name="" type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
                   {% endform %}
-
                 {%- when 'product_availability' -%}
                 <div class="product-single__store-availability-container"
                   data-variant-id="{{ current_variant.id }}"
                   data-product-title="{{ product.title | escape }}"
                   style="visibility:hidden; min-height: 120px;" data-store-availability-container>
                 </div>
-
                 {%- when 'product_quantity' -%}
                   <div class="product__section--qty qty-selection" data-product-qty {{ block.shopify_attributes }}>
                     {%
@@ -237,13 +211,11 @@
                       product: product
                     %}
                   </div>
-
                 {%- when 'product_sku' -%}
                   <div class="product__section--sku sku" {{ block.shopify_attributes }}>
                       <label for="variantSku" style="line-height: 1.6em; display: inline-block;">{{ 'customer.order.details.sku' | t }}:</label>
                       <span id="variantSku" class="variant_sku">{{ current_variant.sku }}</span>
                     </div><div class="clear"></div>
-
                 {% when 'stock_levels' %}
                   <div class="product__section-stockLevels" {{ block.shopify_attributes }}>
                     {% if block.settings.threshold > 0 %}
@@ -256,7 +228,6 @@
                       {% capture variant_stock_levels_classes %}
                         variant-stock-levels js-variant-stock-levels variant-stock-levels--{{ section.id }} {% unless show_hidden_class %}visually-hidden{% endunless %}
                       {% endcapture %}
-  
                       <div
                         id="variant-stock-levels--{{ section.id }}"
                         class="{{ variant_stock_levels_classes | strip }}"
@@ -267,12 +238,11 @@
                           <span class="js-variant-stock-levels__message">
                             {{ 'products.product.only_left' | t: count: current_variant.inventory_quantity }}
                           </span>
-                        </div><!-- /.variant-stock-levels__inner -->
-                      </div><!-- /#variant-stock-levels -->
+                        </div>
+                      </div>
                     {% endif %}
                   </div>
                   <div class="clear"></div>
-
                 {%- when 'product_buttons' -%}
                   <div class="product__section--buttons product-add" {{ block.shopify_attributes }}>
                     {%- assign product_form_id = 'product-form-buttons-' | append: section.id -%}
@@ -280,9 +250,7 @@
                        id: product_form_id,
                        class: "product__form-buttons js-prod-form-submit relative",
                        data-product-id: product.id %}
-
                       {%- liquid
-
                         if product.template_suffix == 'pre-order'
                           assign call_to_action = 'products.product.pre_order' | t
                           assign is_preorder = 'data-preorder'
@@ -294,11 +262,8 @@
                           assign call_to_action = 'products.product.sold_out' | t
                           assign is_preorder = ''
                         endunless
-
                         assign product_form_id = 'product-form-' | append: section.id
-
                       -%}
-
                       <input class="formVariantId" name="id" type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
                       <input class="formQty" type="hidden" name="quantity" value="1" />
                       <div class="note note-success js-added-msg" style="display: none">
@@ -307,55 +272,43 @@
                       <div class="note note-error js-error-msg" style="display: none">
                         <b>{{ 'cart.general.cart_error' | t }}</b>&nbsp;&nbsp;&nbsp;{{ 'cart.general.update_qty_error' | t }}
                       </div>
-
                       <input id="addToCart" type="submit" name="button" class="add clearfix AddtoCart js-ajax-submit {% if show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" {{ is_preorder }} value="{{ call_to_action }}" {% unless current_variant.available %}disabled{% endunless %} />
-
                       {% if settings.show_payment_button %}
                        {{ form | payment_button }}
                       {% endif %}
                     {%-  endform -%}
                   </div>
-
                 {%- when 'product_description' -%}
-
                   <div class="product__section--desc product__description-container rte {% if accordion_active %}hide{% endif %}" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
-
                 {%- when 'text_with_icon' -%}
                     {%- liquid
-
                       assign has_image = false
                       assign has_link = false
                       assign has_text = false
-
                       if block.settings.text != blank
                         assign text = block.settings.text | escape
                         assign has_text = true
                       endif
-
                       if block.settings.image != blank
                         assign has_image = true
                       endif
-
                       if block.settings.link != blank
                         assign has_link = true
                         assign link = block.settings.link
                       endif
-
                     -%}
 
                     <div class="product-text__block" {{ block.shopify_attributes }}>
                       {% unless has_image %}
                         <div class="product-text__block-icon">
-
                           {% render 'snip-icons',
                              wrapper: '.product-text__block-icon',
                              type: 'testament-theme',
                              icon: block.settings.icon,
                              size: '18px',
                              fill: settings.text-color %}
-
                         </div>
                       {% endunless %}
                       {% if has_image %}
@@ -375,12 +328,8 @@
                         </div>
                       {% endif %}
                     </div>
-
-
                 {%- when 'social_sharing' -%}
-
                   {%- liquid
-
                     if block.settings.show_twitter
                       assign show_twitter = true
                     endif
@@ -390,128 +339,33 @@
                     if block.settings.show_pinterest
                       assign show_pinterest = true
                     endif
-
                   -%}
-
                   {% render 'social' with product,
                     show_facebook: show_facebook,
                     show_twitter: show_twitter,
                     show_pinterest: show_pinterest
                    %}
-
                    <div class="clear"></div>
-
                 {% when '@app' %}
                   <div class="product__section--app">
                     {% render block %}
                   </div>
               {% endcase %}
             {%- endfor -%}
-
           </div>
         </div>
       </div>
     </div>
   </div>
   {% endif %}
-
-  <style>
-    .featured__product-container,
-    .featured__product-heading {
-      grid-column-start: 1;
-      grid-column-end: 10;
-    }
-    .homepage-featured-product {
-      padding: 20px 0;
-    }
-    {% unless section.settings.product_form_background contains 'rgba(0,0,0,0)' %}
-    :root {
-      --color-body: {{ section.settings.product_form_background }};
-    }
-    {% endunless %}
-    .section-{{ section.id }} .product__section-contentWrapper .product__section-content {
-      background: {{ section.settings.product_form_background }};
-      {% if section.settings.product_page_border contains 'rgba(0,0,0,0)' or section.settings.product_page_border contains 'transparent' %}
-      {% else %}
-      padding: 20px;
-      border: 7px double {{ section.settings.product_page_border }};
-      {% endif %}
-    }
-    section#product-{{ product.id }} .product__section-details button.js-accordion-header.c-accordion__header {
-      background: {{ section.settings.product_form_background }};
-    }
-    {% if section.settings.thumbnail_position == 'hidden' %}
-    .section-{{ section.id }} #thumbnails { display: none; }
-    {% endif %}
-    {% if section.settings.thumbnail_position == 'bottom' %}
-      .section-{{ section.id }} .thumb-slider-slides {
-        transition: left 0.5s ease-in-out;
-      }
-    {% else %}
-      .section-{{ section.id }} .thumb-slider-slides {
-        transition: top 0.5s ease-in-out;
-      }
-    {% endif %}
-    @media screen and ( min-width: 741px ) {
-      {% if section.settings.form_left %}
-        .section-{{ section.id }} .product__section-details,
-        .section-{{ section.id }} .product__section-details .rte,
-        .section-{{ section.id }} .product__section-details h1 {
-          text-align: left;
-        }
-        .section-{{ section.id }} .add {
-          margin: 0;
-        }
-        .section-{{ section.id }} .price {
-          align-items: flex-start;
-        }
-      {% endif %}
-    }
-    {%- if section.settings.form_left -%}
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: start !important;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: left !important;
-      }
-    {%- else -%}
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: center !important;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: center !important;
-      }
-    {%- endif -%}
-    @media screen and ( max-width: 740px ) {
-      .section-{{ section.id }} .store-availability-information {
-        justify-content: center !important;
-      }
-      .section-{{ section.id }} .store-availability-information,
-      .store-availability-information-container {
-          margin-left: 0;
-      }
-      .section-{{ section.id }} .store-availability-information-container,
-      .section-{{ section.id }} .store-availability-information__stores,
-      .section-{{ section.id }} .slideout__trigger-store-availability {
-        text-align: center !important;
-      }
-    }
-  </style>
-
+  <style>.featured__product-container,.featured__product-heading {grid-column-start: 1;grid-column-end: 10;}.homepage-featured-product {padding: 20px 0;}{% unless section.settings.product_form_background contains 'rgba(0,0,0,0)' %}:root {--color-body: {{ section.settings.product_form_background }};}{% endunless %}.section-{{ section.id }} .product__section-contentWrapper .product__section-content {background: {{ section.settings.product_form_background }};{% if section.settings.product_page_border contains 'rgba(0,0,0,0)' or section.settings.product_page_border contains 'transparent' %} {% else %}padding: 20px;border: 7px double {{ section.settings.product_page_border }};{% endif %}}section#product-{{ product.id }} .product__section-details button.js-accordion-header.c-accordion__header {background: {{ section.settings.product_form_background }};}{% if section.settings.thumbnail_position == 'hidden' %}.section-{{ section.id }} #thumbnails { display: none; }{% endif %}{% if section.settings.thumbnail_position == 'bottom' %}.section-{{ section.id }} .thumb-slider-slides {transition: left 0.5s ease-in-out;}{% else %}.section-{{ section.id }} .thumb-slider-slides {transition: top 0.5s ease-in-out;}{% endif %}@media screen and ( min-width: 741px ) {{% if section.settings.form_left %}.section-{{ section.id }} .product__section-details,.section-{{ section.id }} .product__section-details .rte,.section-{{ section.id }} .product__section-details h1 {text-align: left;}.section-{{ section.id }} .add {margin: 0;}.section-{{ section.id }} .price {align-items: flex-start;}{% endif %}}{%- if section.settings.form_left -%}.section-{{ section.id }} .store-availability-information {justify-content: start !important;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: left !important;}{%- else -%}.section-{{ section.id }} .store-availability-information {justify-content: center !important;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: center !important;}{%- endif -%}@media screen and ( max-width: 740px ) {.section-{{ section.id }} .store-availability-information {justify-content: center !important;}section-{{ section.id }} .store-availability-information,.store-availability-information-container {margin-left: 0;}.section-{{ section.id }} .store-availability-information-container,.section-{{ section.id }} .store-availability-information__stores,.section-{{ section.id }} .slideout__trigger-store-availability {text-align: center !important;}}</style>
 </section>
 <div class="clear"></div>
-
-
 {% unless product == empty %}
   <script type="application/json" id="ModelJson-{{ section.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
 {% endunless %}
-
 {% schema %}
 {
   "name": "Featured product",

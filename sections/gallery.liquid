@@ -1,8 +1,6 @@
 {%- liquid
-
   assign section_space = section.settings.section_space
   assign section_space_class = ''
-
   if section_space == 'top'
     assign section_space_class = ' pb0'
   elsif section_space == 'bottom'
@@ -10,23 +8,17 @@
   elsif section_space == 'none'
     assign section_space_class = ' mt0 pb0'
   endif
-
   assign is_fixed = false
   if section.settings.image_height == 'fixed'
     assign is_fixed = true
   endif
-
   assign desktop_fixed_height = section.settings.desktop_fixed_height
   assign mobile_fixed_height = section.settings.mobile_fixed_height
-
 -%}
-
 <section class="global__section gallery__image-section{{ section_space_class }} {% if is_fixed %}is-fixed_height{% endif %}" data-section-id="{{ section.id }}" >
 {% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row">{% endif %}
   <div class="row grid__wrapper">
-
     {% for block in section.blocks %}
-
       {%- liquid
         case block.settings.image_width
           when '25%'
@@ -54,20 +46,15 @@
             assign md_render = '100vw'
             assign lg_render = '100vw'
         endcase
-
         assign has_image = false
         assign has_link = false
-
         if block.settings.image != blank
           assign has_image = true
         endif
-
         if block.settings.link != blank
           assign has_link = true
         endif
-
       -%}
-
       <div class="gallery__item{% if block.settings.text_position == 'on_image' %} floating__text{% endif %} {{ image_width }} sm-span-12 auto item-{{ block.id }}" {{ block.shopify_attributes }}>
         <div class="gallery__item-container">
             {% if has_link %}<a href="{{ block.settings.link }}">{% endif %}
@@ -96,72 +83,17 @@
               {% endif %}
             </div>
         </div>
-        <style>
-          .gallery__item.item-{{ block.id }} .gallery__item-caption {
-            text-align: {{ block.settings.text_align }};
-          }
-          .gallery__item.item-{{ block.id }} .gallery__item-container h3,
-          .gallery__item.item-{{ block.id }} .gallery__item-container p,
-          .gallery__item.item-{{ block.id }} .gallery__item-container a {
-            color: {{ block.settings.text_color }};
-          }
-          {% if block.settings.text_position == 'on_image' %}
-          .gallery__item.floating__text.item-{{ block.id }} .gallery__item-container .gallery__item-caption,
-          .gallery__item.floating__text.item-{{ block.id }} .gallery__item-container .gallery__item-caption > a {
-            position: absolute;
-            top: {{ block.settings.caption_vertical }}%;
-            left: {{ block.settings.caption_horizontal }}%;
-            -webkit-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);
-            -ms-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);
-            -moz-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);
-            -o-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);
-            transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);
-          }
-          {% endif %}
-        </style>
+        <style>.gallery__item.item-{{ block.id }} .gallery__item-caption {  text-align: {{ block.settings.text_align }};}.gallery__item.item-{{ block.id }} .gallery__item-container h3,.gallery__item.item-{{ block.id }} .gallery__item-container p,.gallery__item.item-{{ block.id }} .gallery__item-container a {  color: {{ block.settings.text_color }};}{% if block.settings.text_position == 'on_image' %}.gallery__item.floating__text.item-{{ block.id }} .gallery__item-container .gallery__item-caption,.gallery__item.floating__text.item-{{ block.id }} .gallery__item-container .gallery__item-caption > a {  position: absolute;  top: {{ block.settings.caption_vertical }}%;  left: {{ block.settings.caption_horizontal }}%;  -webkit-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);  -ms-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);  -moz-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);  -o-transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);  transform: translate(-{{ block.settings.caption_horizontal }}%, -{{ block.settings.caption_vertical }}%);}{% endif %}</style>
       </div>
-
       {% if section.blocks.size == 0 %}
         {% render 'no-blocks' %}
       {% endif %}
     {% endfor %}
-
   </div>
   {% if section.settings.full_width %}</div></div>{% endif %}
-  <style>
-    #shopify-section-{{ section.id }} .gallery__item .gallery__item-container h3 {
-      font-size: {{ section.settings.promo_size }}px;
-    }
-    #shopify-section-{{ section.id }} .gallery__item .gallery__item-container p {
-      font-size: {{ section.settings.hidden_size }}px;
-    }
-    #shopify-section-{{ section.id }} .gallery__item > a {
-      display: inline-block;
-      width: 100%;
-      padding: {{ settings.focus_border_weight }}px;
-    }
-    #shopify-section-{{ section.id }} .gridlock-fluid .row .row.grid__wrapper {
-      max-width: 102.08333333%;
-    }
-    @media screen and (max-width: 740px) {
-      #shopify-section-{{ section.id }} .gallery__item .gallery__item-container h3 {
-        font-size: calc({{ section.settings.promo_size }}px - ({{ section.settings.promo_size }}px * 0.15))
-      }
-      #shopify-section-{{ section.id }} .gallery__item .gallery__item-container p {
-        font-size: calc({{ section.settings.hidden_size }}px - ({{ section.settings.hidden_size }}px * 0.15))
-      }
-    }
-    {% if is_fixed %}
-      #shopify-section-{{ section.id }} {
-        --desktop-fixed-height: {{ desktop_fixed_height }}px;
-        --mobile-fixed-height: {{ mobile_fixed_height }}px;
-      }
-    {% endif %}
-  </style>
+  <style>#shopify-section-{{ section.id }} .gallery__item .gallery__item-container h3 {  font-size: {{ section.settings.promo_size }}px;}#shopify-section-{{ section.id }} .gallery__item .gallery__item-container p {  font-size: {{ section.settings.hidden_size }}px;}#shopify-section-{{ section.id }} .gallery__item > a {  display: inline-block;  width: 100%;  padding: {{ settings.focus_border_weight }}px;}#shopify-section-{{ section.id }} .gridlock-fluid .row .row.grid__wrapper {  max-width: 102.08333333%;}@media screen and (max-width: 740px) {  #shopify-section-{{ section.id }} .gallery__item .gallery__item-container h3 {    font-size: calc({{ section.settings.promo_size }}px - ({{ section.settings.promo_size }}px * 0.15))  }  #shopify-section-{{ section.id }} .gallery__item .gallery__item-container p {    font-size: calc({{ section.settings.hidden_size }}px - ({{ section.settings.hidden_size }}px * 0.15))  }}{% if is_fixed %}  #shopify-section-{{ section.id }} {    --desktop-fixed-height: {{ desktop_fixed_height }}px;    --mobile-fixed-height: {{ mobile_fixed_height }}px;  }{% endif %}</style>
 </section>
 <div class="clear"></div>
-
-
 {% schema %}
 {
   "name": "Image gallery",
