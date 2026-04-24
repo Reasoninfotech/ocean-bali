@@ -561,36 +561,36 @@
         "accordion_EzHqwU": {
           "type": "accordion",
           "settings": {
-            "question": "It actually stays on - even in big surf",
-            "answer": "The Sulawesi uses structured panelling and a secure, snug cut that grips your body without digging in. Engineered to move with you through waves, dives, and bodysurf sessions."
+            "question": "How does the UPF 50+ protection work?",
+            "answer": "The fabric is engineered to block over 98% of harmful UV rays - giving you consistent protection without relying on sunscreen alone."
           }
         },
         "accordion_FWAYfN": {
           "type": "accordion",
           "settings": {
-            "question": "UPF 50+ sun protection all day long",
-            "answer": "The long-sleeve design and darker colourways offer maximum UPF 50+ block-out. Spend all day in the water without worrying about UV damage to your arms, shoulders, and chest."
+            "question": "Do I still need sunscreen?",
+            "answer": "We recommend applying sunscreen to exposed areas like your face, hands, and legs - but the covered areas are protected by the fabric itself."
           }
         },
         "accordion_MdU9VH": {
           "type": "accordion",
           "settings": {
-            "question": "Recycled Italian ECONYL® - luxury with a conscience",
-            "answer": "ECONYL® is regenerated nylon made from ocean waste like discarded fishing nets. Buttery-soft, lasts twice as long as regular swimwear, and fully recyclable at end of life."
+            "question": "Will it feel too hot in the sun?",
+            "answer": "No - the fabric is lightweight, breathable, and designed for movement in warm conditions.\n\nIt keeps you covered without overheating."
           }
         },
         "accordion_fhaaJt": {
           "type": "accordion",
           "settings": {
-            "question": "Ethically made in Bali - fair wages, small batches",
-            "answer": "Every Sulawesi is handmade in our Canggu studio by skilled local makers with fair pay and safe conditions. Small-batch production means higher quality on every single piece."
+            "question": "Which areas does it protect most?",
+            "answer": "Arms, shoulders, chest, upper back - areas most prone to sun damage and often missed with sunscreen."
           }
         },
         "accordion_xMcmWc": {
           "type": "accordion",
           "settings": {
-            "question": "12-month warranty and easy returns",
-            "answer": "We stand behind every suit. If the fabric, make, or hardware fails within 12 months, we'll replace it - no questions asked. Returns and exchanges on full-price items are simple."
+            "question": "Is it better than just wearing sunscreen?",
+            "answer": "It’s more reliable.\nSunscreen can wear off, wash off, or be applied unevenly.\nThe Sulawesi provides consistent, all-day coverage you don’t have to think about."
           }
         }
       },
@@ -605,7 +605,7 @@
       "settings": {
         "show_section": true,
         "heading": "What makes it different?",
-        "body_1": "Most swimwear is designed to look good standing still. The Sulawesi is designed for what actually happens in the water.",
+        "body_1": "Most swimwear leaves your skin exposed.\nThe Sulawesi is designed to protect it.",
         "body_2": "That's the difference.",
         "section_image": "shopify://shop_images/nautical_long_sleeve_surf_swimsuit_ocean_soul_swimwear.jpg",
         "image_ratio": "3/4",
@@ -722,8 +722,8 @@
       "name": "OSB Expert Validation",
       "settings": {
         "show_section": true,
-        "heading": "Built by ocean women, for ocean women.",
-        "body_text": "Ocean Soul was founded in Canggu, Bali - where we live in the ocean. We spent years frustrated with swimwear that looked good in the shop but failed the moment we paddled out. The Sulawesi is the swimsuit we couldn't find, so we made it ourselves.",
+        "heading": "Built by ocean women, for long days in the sun",
+        "body_text": "Ocean Soul was founded in Canggu, Bali - where we spend hours in and around the ocean.\n\nAnd we saw it constantly -\nwomen relying on sunscreen alone, reapplying between swims, still ending the day burnt.\n\nSo we created the Sulawesi to offer something better.\n\nA swimsuit designed to protect your skin effortlessly - so you can stay longer, move freely, and feel confident under the sun.",
         "btn_text": "Shop The Sulawesi →",
         "btn_url": "shopify://collections/long-sleeve-one-piece-swimsuits",
         "show_circles": true,
