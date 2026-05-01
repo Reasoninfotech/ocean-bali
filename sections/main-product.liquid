@@ -411,12 +411,12 @@ assign size_popup = false
                     </style>
                     {% endcomment %}
                     
-                    {% comment %} {% if settings.show_payment_button %}
+                    {% if settings.show_payment_button %}
                      {{ form | payment_button }}
                     {% endif %}
                     
 
-                    <div class="payment_icon_pro">
+                    {% comment %} <div class="payment_icon_pro">
                       {% assign enabled_payment_types = 'visa,master,american_express,paypal,apple_pay,shopify_pay,google_pay,unionpay' | remove : ' ' | split : ',' %}
                       {% for type in enabled_payment_types %}
                         {{ type | payment_type_svg_tag: class:'payment-icon' }}
