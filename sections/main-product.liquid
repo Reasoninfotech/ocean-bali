@@ -411,7 +411,7 @@ assign size_popup = false
                     </style>
                     {% endcomment %}
                     
-                    {% if settings.show_payment_button %}
+                    {% comment %} {% if settings.show_payment_button %}
                      {{ form | payment_button }}
                     {% endif %}
                     
@@ -440,7 +440,7 @@ assign size_popup = false
                         </clipPath>
                         </defs>
                       </svg>
-                    </div>
+                    </div> {% endcomment %}
                     {% render 'estimated-delivery' %}
                   {%-  endform -%}
                 </div>
