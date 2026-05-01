@@ -687,7 +687,7 @@ assign size_popup = false
                     {% endif %}
                     
 
-                    <div class="payment_icon_pro">
+                    {% comment %} <div class="payment_icon_pro">
                       {% assign enabled_payment_types = 'visa,master,american_express,paypal,apple_pay,shopify_pay,google_pay,unionpay' | remove : ' ' | split : ',' %}
                       {% for type in enabled_payment_types %}
                         {{ type | payment_type_svg_tag: class:'payment-icon' }}
@@ -711,7 +711,7 @@ assign size_popup = false
                         </clipPath>
                         </defs>
                       </svg>
-                    </div>
+                    </div> {% endcomment %}
                     {% render 'estimated-delivery' %}
                   {%-  endform -%}
                 </div>
