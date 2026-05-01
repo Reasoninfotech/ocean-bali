@@ -2686,7 +2686,9 @@ button.shopify-payment-button__more-options, button.shopify-payment-button__more
   font-size: 12px;
   height: initial;
 }
-
+.shopify-payment-button__more-options{
+  display: none!important;
+}
 .rte-description {
   margin-bottom: 15px;
 }
