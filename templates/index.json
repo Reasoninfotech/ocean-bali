@@ -514,8 +514,8 @@
           "settings": {
             "image": "shopify://shop_images/surf_swimsuit_for_women.jpg",
             "link": "shopify://pages/our-story",
-            "title_text": "",
-            "text": "<h4>Designed For the water</h4><p>Ocean Soul Swimwear was created by Georgie, an ocean lover who couldn’t find swimwear that truly worked in the water. After years of searching for suits that stayed on, lasted longer, and felt flattering during real movement, Ocean Soul was born.</p><p>Every design is informed by time spent in the ocean, with a focus on comfort, performance, and confidence without compromising on sustainability or style.</p>",
+            "title_text": "Designed For the water",
+            "text": "<p>Ocean Soul Swimwear was created by Georgie, an ocean lover who couldn’t find swimwear that truly worked in the water. After years of searching for suits that stayed on, lasted longer, and felt flattering during real movement, Ocean Soul was born.</p><p>Every design is informed by time spent in the ocean, with a focus on comfort, performance, and confidence without compromising on sustainability or style.</p>",
             "button_text": "Our Story"
           }
         }
