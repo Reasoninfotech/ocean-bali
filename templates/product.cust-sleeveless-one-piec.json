@@ -73,7 +73,7 @@
           "settings": {
             "icon": "bag",
             "image": "shopify://shop_images/UPF_UV_Asset.jpg",
-            "text": "UPF 50+ Protection   Protect your skin",
+            "text": "UPF 50+ Protection",
             "link": ""
           }
         },
@@ -82,7 +82,7 @@
           "settings": {
             "icon": "bag",
             "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
-            "text": "Durable - lasts twice as long Premium fabric holds shape & colour",
+            "text": "Durable - Premium fabric lasts 2x longer",
             "link": ""
           }
         },
@@ -91,7 +91,7 @@
           "settings": {
             "icon": "bag",
             "image": "shopify://shop_images/Sustainable.jpg",
-            "text": "Sustainable.        Made from recycled Italian fabric",
+            "text": "Sustainable       luxurious Italian fabric",
             "link": ""
           }
         },
@@ -100,7 +100,7 @@
           "settings": {
             "icon": "globe",
             "image": "shopify://shop_images/Screenshot_7_aa643865-0884-40fa-9ed5-59da18c769d2.jpg",
-            "text": "Easy return & exchange. Simple, stress free returns",
+            "text": "Easy return & exchange",
             "link": "shopify://policies/shipping-policy"
           }
         },
@@ -109,7 +109,7 @@
           "settings": {
             "icon": "returns",
             "image": "shopify://shop_images/B_Frame.png",
-            "text": "Free Express Worldwide Shipping Over $250+ AUD",
+            "text": "Free Express Shipping Over $250+ AUD",
             "link": "shopify://policies/refund-policy"
           }
         },
@@ -118,7 +118,7 @@
           "settings": {
             "icon": "check",
             "image": "shopify://shop_images/Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg",
-            "text": "12 month Warranty. Quality guaranteed.",
+            "text": "12 month Warranty",
             "link": "shopify://policies/shipping-policy"
           }
         },
