@@ -11,7 +11,7 @@
               <div class="accordion-header" data-accordion-id="{{ block.id }}">
                 {% if block.settings.title != blank %}
                   {% if block.settings.title_heading %}
-                    <h1 class="accordion-trigger">
+                    <h2 class="accordion-trigger h1">
                       {{ block.settings.title | escape }}
                       <span class="accordion-icon">
                         {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
                         </svg> {% endcomment %}
                         <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
                       </span>
-                    </h1>
+                    </h2>
                   {% else %}
                     <h3 class="accordion-trigger">
                       {{ block.settings.title | escape }}
@@ -59,7 +59,7 @@
               <!-- Normal Content (No Accordion) -->
               {% if block.settings.title != blank %}
                 {% if block.settings.title_heading %}
-                  <h1>{{ block.settings.title | escape }}</h1>
+                  <h2 class="h1">{{ block.settings.title | escape }}</h2>
                 {% else %}
                   <h3>{{ block.settings.title | escape }}</h3>
                 {% endif %}

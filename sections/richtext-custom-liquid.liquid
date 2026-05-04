@@ -7,7 +7,7 @@
           <div class="rich__text-column{% if block.settings.center %} center{% endif %} block-{{ block.id }}">
             {% if block.settings.title != blank %}
               {% if block.settings.title_heading %}
-                <h1>{{ block.settings.title | escape }}</h1>
+                <h2 class="h1">{{ block.settings.title | escape }}</h2>
               {% else %}
                 <h3>{{ block.settings.title | escape }}</h3>
               {% endif %}
