@@ -492,7 +492,7 @@
         "button_text": "Button",
         "link": "",
         "heading_font_size": 24,
-        "subheading_font_size": 16,
+        "subheading_font_size": 14,
         "text_color": "#ffffff",
         "button_text_color": "#ffffff",
         "button_color": "#000000",
