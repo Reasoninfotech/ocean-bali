@@ -11,7 +11,7 @@
 
 
 <div class="click_function_value swatches__container js-variant-selector {{ option.name }}_wrap" data-option-index="{{ option.position }}" data-other-options='{{ other_options | json }}'>
-  {% comment %} <p class="swatches__option-name sss h5 {{ option.name }}"><strong>{{ option.name }}{% unless handlname == 'product-new-custom-one-piece' or handlname == 'product-cust-sleeveless-one-piec' %}:{% endunless %}</strong> {% for value in option.values %}{% if option.selected_value == value %}<span id="selected-option-{{ option.position }}" class="swatches__option-value">{{ value }}</span>{% endif %}{% endfor %}</p> {% endcomment %}
+  <p class="swatches__option-name sss h5 {{ option.name }}"><strong>{{ option.name }}{% unless handlname == 'product-new-custom-one-piece' or handlname == 'product-cust-sleeveless-one-piec' %}:{% endunless %}</strong> {% for value in option.values %}{% if option.selected_value == value %}<span id="selected-option-{{ option.position }}" class="swatches__option-value">{{ value }}</span>{% endif %}{% endfor %}</p>
 
   {% for value in option.values %}
     {%- liquid
