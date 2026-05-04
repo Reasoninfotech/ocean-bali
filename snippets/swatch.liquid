@@ -143,7 +143,7 @@
 
 {% if handlname == 'product-new-custom-one-piece' or handlname == 'product-cust-sleeveless-one-piec' %}
   <div class="new_cus_size_guide_trigger">  
-    <span class="popup_content_link size-guide-trigger first-trigger" style="display: flex;">
+    {% comment %} <span class="popup_content_link size-guide-trigger first-trigger" style="display: flex;">
       <span class="size_chat_icon"> <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 945.9 945.9" xml:space="preserve"> <g>
       <g>
         <path d="M458.1,477.75h120.2v-85.3c-25.5,34.6-65.899,63.6-117.1,84.1C460.2,476.95,459.1,477.35,458.1,477.75z"></path>
@@ -159,6 +159,6 @@
           C160.4,263.45,218,229.15,289.2,229.15z"></path>
       </g></g></svg></span>
         <button class="product__contact-trigger button-as-link" type="button" name="button" data-wau-modal-target="popup-content" aria-controls="modal-popup-content">Size&nbsp;Guide</button>
-    </span>
+    </span> {% endcomment %}
   </div>
 {% endif %}
