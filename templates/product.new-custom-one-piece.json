@@ -531,7 +531,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Shop our Long Sleeve one pieces",
-        "collection": "long-sleeve-swimsuits-sale",
+        "collection": "long-sleeve-swimsuits",
         "limit": 8,
         "grid": 4,
         "carousel": false,
@@ -700,7 +700,7 @@
         "featured_collection_BW9NYb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "long-sleeve-swimsuits-sale"
+            "collection": "long-sleeve-swimsuits"
           }
         },
         "featured_collection_B83Dc4": {
