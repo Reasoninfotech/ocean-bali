@@ -494,7 +494,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": flase,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<h3></h3><p>Explore our range of:</p><p><a href=\"/collections/high-waisted-bikini\" target=\"_blank\" title=\"High Waisted Bikini\"><strong>High Waisted Bikini Bottoms</strong></a> - sculpting and supportive.<br/></p><p><a href=\"/collections/bikini-bottoms\" title=\"Bikini Bottoms\"><strong>Low Rise Bikini Bottoms</strong></a> - minimal and modern.<br/></p><p><a href=\"https://oceansoulbali.com/collections/seamless-bikinis\" target=\"_blank\" title=\"https://oceansoulbali.com/collections/seamless-bikinis\"><strong>Seamless Bikini Bottoms</strong></a> - soft and smoothing.<br/></p><p><a href=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\" title=\"https://oceansoulbali.com/collections/bikini-bottoms/products/string-bikini-bottoms-the-gili\"><strong>String Bikini Bottoms</strong></a> - adjustable and timeless.<br/></p><p>Every style is crafted with precision and purpose - because the perfect fit should never cost the planet.</p><p>Ocean Soul Swimwear - Luxury Swimwear That Lasts Beyond the Season.</p>",
             "page": "",
