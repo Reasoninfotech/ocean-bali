@@ -509,7 +509,7 @@
         "slideshow_size": "fixed_height",
         "desktop_height": 400,
         "mobile_height": 300,
-        "slide_heading_size": 22,
+        "slide_heading_size": 24,
         "subheading_size": 14,
         "cta_size": 14,
         "section_space": "bottom"
