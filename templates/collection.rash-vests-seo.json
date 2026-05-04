@@ -452,7 +452,7 @@
           "type": "text_block",
           "settings": {
             "title": "Style It Your Way",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Our rash vests are versatile enough to wear on any adventure:</p><p>Surf-Ready: Layer over your surf bikini top or high-waisted bikini bottoms for total coverage.<br/></p><p>Beach to Brunch: Pair with women’s jogger pants or a resort sarong for a polished, sun-safe look.<br/></p><p>Travel-Friendly: Lightweight, packable, and quick-drying - perfect for coastal getaways.<br/></p><p></p>",
             "page": "",
@@ -520,7 +520,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Explore our full range of women’s rash vests and long sleeve rashguards, crafted for performance, sustainability, and style.</p><p>Pair them with:</p><p>One Piece Swimwear for streamlined surf protection<br/></p><p>High-Waisted Bikini Bottoms for sculpting comfort<br/></p><p>Surf Bikini Tops for total freedom and flexibility<br/></p><p>Resort Sarongs or Wide-Leg Lounge Pants for effortless après-surf style<br/></p><p>Each piece is sustainably made, ethically produced, and designed to move with you - from surf to shore.</p><p>Ocean Soul Swimwear - where protection meets performance, and style meets sustainability.</p>",
             "page": "",

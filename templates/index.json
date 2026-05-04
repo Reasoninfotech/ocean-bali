@@ -462,7 +462,7 @@
           "type": "text_block",
           "settings": {
             "title": "",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<h3>Designed for water women.  Made for movement. </h3><h3>Luxurious Italian recycled fabric.</h3><h3>UPF 50+ protection. </h3><h3>Sculpting fits. </h3><h3>Sustainable swimwear that feels as good as it looks.</h3>",
             "page": "",

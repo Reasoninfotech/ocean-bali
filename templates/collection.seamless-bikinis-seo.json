@@ -413,7 +413,7 @@
           "type": "text_block",
           "settings": {
             "title": "Fit for Every Body",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Our seamless bikinis are designed to move with you - no matter your body shape. With adjustable ties, stretchy fabric, and carefully considered cuts, they adapt to your curves without restriction.</p><p>From sleek black seamless bikinis to vibrant seasonal shades, our range has something for every style. Whichever you choose, you’ll enjoy:</p><p>- A flattering, comfortable fit you’ll want to wear all day<br/>- Premium, eco-friendly materials that last<br/>- Ethical craftsmanship you can be proud of<br/></p><p>Ocean Soul Swimwear’s seamless bikinis are where style, comfort, and sustainability meet. Explore the collection today and find your new favourite bikini.</p>",
             "page": "",

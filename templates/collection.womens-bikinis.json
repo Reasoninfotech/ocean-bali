@@ -439,7 +439,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Explore Ocean Soul Women’s Bikinis - a curated collection designed for modern women who love the water and live with intention.</p><p>High Waisted Bikinis - sculpting, flattering, and timeless.<br/></p><p>Triangle Bikinis - adjustable, classic, and endlessly wearable.<br/></p><p>One Shoulder Bikinis - elegant, asymmetrical style that stands out.<br/></p><p>Surf Bikinis - supportive, active, and surf-tested.<br/></p><p>Low Rise & Seamless Bikinis - minimalist design for ultimate comfort.<br/></p><p>Each bikini reflects what Ocean Soul stands for - sustainability, confidence, and effortless coastal luxury.</p>",
             "page": "",

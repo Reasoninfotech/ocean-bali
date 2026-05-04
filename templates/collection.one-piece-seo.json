@@ -340,7 +340,7 @@
           "type": "text_block",
           "settings": {
             "title": "Why choose a sleeveless one piece swimsuit",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "",
             "page": "",
@@ -566,7 +566,7 @@
           "type": "text_block",
           "settings": {
             "title": "Feel confident, move freely.",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Look effortlessly chic in a sleeveless swimsuit designed for real life in and out of the water.</p>",
             "page": "",

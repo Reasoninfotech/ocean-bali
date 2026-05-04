@@ -470,7 +470,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Discover your perfect bikini top - whether you prefer sporty, feminine, or minimalist designs. Choose from:</p><p>Triangle Bikini Tops – adjustable and timeless.<br/></p><p>Surf Bikini Tops – supportive and surf-tested.<br/></p><p>One Shoulder Tops – elegant and sculpting.<br/></p><p>Women’s Rashguard Tops – protective and performance-ready.<br/></p><p>Every style is made with purpose - luxury fabrics, ethical craftsmanship, and designs that last.</p><p>Ocean Soul Swimwear - Sustainable Luxury for Women Who Live for the Water.</p>",
             "page": "",

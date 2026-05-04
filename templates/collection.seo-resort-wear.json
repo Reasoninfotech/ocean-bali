@@ -415,7 +415,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<h3></h3><p>Discover resort-ready pieces that redefine sustainable luxury:</p><p>One Piece Swimwear & Surf Bikini Tops for active days in the water.<br/></p><p>High-Waisted Bikini Bottoms and Low-Rise Bikinis for mix-and-match versatility.<br/></p><p>Women’s Jogger Pants, Wide-Leg Lounge Pants, and Resort Sarongs for comfort and ease.<br/></p><p>Boyfriend Tees, Tote Wet Bags, and Bamboo Clutches for those finishing touches that make an outfit complete.<br/></p><p>Every piece is made to move with you - from ocean to everyday, effortlessly.</p>",
             "page": "",

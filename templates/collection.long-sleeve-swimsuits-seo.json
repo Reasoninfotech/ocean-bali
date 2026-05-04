@@ -421,7 +421,7 @@
           "type": "text_block",
           "settings": {
             "title": "Why Choose a Long Sleeve Swimsuit from Ocean Soul Swimwear?",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "",
             "page": "",
@@ -545,7 +545,7 @@
           "type": "text_block",
           "settings": {
             "title": "Your Forever Surf Suit Starts Here",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>If you’ve been searching for a long sleeve swimsuit that:</p><p>Flatters your figure<br/></p><p>Offers real support without uncomfortable padding<br/></p><p>Protects your skin from UV exposure<br/></p><p>Performs under pressure in the water<br/></p><p>And aligns with your values around sustainability and slow fashion<br/></p><p>Welcome to Ocean Soul Swimwear.</p><p>This is where elegance meets endurance – where every detail is considered, and every suit is made to move, last, and empower you to feel your best in the water and beyond.</p>",
             "page": "",

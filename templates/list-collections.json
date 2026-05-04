@@ -590,7 +590,7 @@
           "type": "text_block",
           "settings": {
             "title": "Versatile Styles for Every Ocean Soul",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<h4></h4><p>From sleek, long sleeve surf suits to seamless bikinis and timeless one pieces, our collection has something for every water-loving woman. We understand that confidence looks different for everyone, so we offer:</p><p></p><p>Supportive high-coverage designs</p><p>Cheekier cuts for tanning and flexibility</p>",
             "page": "",
@@ -782,7 +782,7 @@
           "type": "text_block",
           "settings": {
             "title": "Ethically Made. Designed for Movement. Built to Last.",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>We believe you should feel as good in your swimsuit as you do about how it’s made. </p>",
             "page": "",
