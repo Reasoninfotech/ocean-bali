@@ -81,9 +81,9 @@
       <div id="CollectionProductGrid">
         <div class="row grid__wrapper rg0">
           <div class="span-12 auto">
-            <h1 class="colleciton__page-title page-title">
+            <h2 class="colleciton__page-title page-title">
               {% if collection.handle == 'all' %}{{ 'collections.general.all_products' | t }}{% else %}{{ collection.title }}{% endif %}
-            </h1>
+            </h2>
           </div>
           {% if section.settings.description_position == 'top' %}
             <!-- <div class="collection__page-description span-12 auto">

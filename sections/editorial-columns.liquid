@@ -72,7 +72,7 @@
         {% endif %}
         <div class="imageText__column-caption section-title">
           {% if product.title != blank %}
-            <h2>{{ product.title | escape }}</h2>
+            <h4>{{ product.title | escape }}</h4>
           {% endif %}
           {% if product.content != blank %}
             <div class="rte">
@@ -105,7 +105,7 @@
         {% endif %}
         <div class="imageText__column-caption section-title">
           {% if block.settings.title_text != blank %}
-            <h2>{{ block.settings.title_text | escape }}</h2>
+            <h4>{{ block.settings.title_text | escape }}</h4>
           {% endif %}
           {% if block.settings.text != blank %}
             <div class="rte">
