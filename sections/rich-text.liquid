@@ -11,6 +11,21 @@
               <div class="accordion-header" data-accordion-id="{{ block.id }}">
                 {% if block.settings.title != blank %}
                   {% if block.settings.title_heading %}
+                    <h1 class="accordion-trigger">
+                      {{ block.settings.title | escape }}
+                      <span class="accordion-icon">
+                        {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 7.50828C23.0017 7.21043 22.9147 6.91881 22.75 6.67061C22.5854 6.4224 22.3506 6.22885 22.0755 6.11463C21.8004 6.00042 21.4975 5.97071 21.2055 6.0293C20.9134 6.08788 20.6455 6.23211 20.4357 6.44359L12.5031 14.3913L4.57038 6.44359C4.28801 6.16122 3.90503 6.00259 3.5057 6.00259C3.30797 6.00259 3.11217 6.04153 2.92949 6.1172C2.74681 6.19287 2.58082 6.30378 2.44101 6.44359C2.30119 6.58341 2.19028 6.7494 2.11461 6.93208C2.03895 7.11475 2 7.31055 2 7.50828C2 7.90762 2.15864 8.2906 2.44101 8.57297L11.4384 17.5703C11.7193 17.8496 12.0994 18.0064 12.4956 18.0064C12.8917 18.0064 13.2718 17.8496 13.5527 17.5703L22.5501 8.57297C22.6918 8.43409 22.8045 8.26847 22.8817 8.08571C22.959 7.90295 22.9992 7.70668 23 7.50828Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
+
+                        {% comment %} <svg class="minus-icon" style="display:none;" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 16.4986C23.0017 16.7964 22.9147 17.088 22.75 17.3362C22.5854 17.5844 22.3506 17.778 22.0755 17.8922C21.8004 18.0064 21.4975 18.0361 21.2055 17.9775C20.9134 17.919 20.6455 17.7747 20.4357 17.5632L12.5031 9.61558L4.57038 17.5632C4.28801 17.8456 3.90503 18.0043 3.5057 18.0043C3.30797 18.0043 3.11217 17.9653 2.92949 17.8896C2.74681 17.814 2.58082 17.7031 2.44101 17.5632C2.30119 17.4234 2.19028 17.2574 2.11461 17.0748C2.03895 16.8921 2 16.6963 2 16.4986C2 16.0992 2.15864 15.7162 2.44101 15.4339L11.4384 6.43651C11.7193 6.15721 12.0994 6.00045 12.4956 6.00045C12.8917 6.00045 13.2718 6.15721 13.5527 6.43651L22.5501 15.4339C22.6918 15.5727 22.8045 15.7384 22.8817 15.9211C22.959 16.1039 22.9992 16.3002 23 16.4986Z" fill="#606060"/>
+                        </svg> {% endcomment %}
+                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
+                      </span>
+                    </h1>
+                  {% else %}
                     <h2 class="accordion-trigger">
                       {{ block.settings.title | escape }}
                       <span class="accordion-icon">
@@ -25,21 +40,6 @@
                         <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
                       </span>
                     </h2>
-                  {% else %}
-                    <h3 class="accordion-trigger">
-                      {{ block.settings.title | escape }}
-                      <span class="accordion-icon">
-                        {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 7.50828C23.0017 7.21043 22.9147 6.91881 22.75 6.67061C22.5854 6.4224 22.3506 6.22885 22.0755 6.11463C21.8004 6.00042 21.4975 5.97071 21.2055 6.0293C20.9134 6.08788 20.6455 6.23211 20.4357 6.44359L12.5031 14.3913L4.57038 6.44359C4.28801 6.16122 3.90503 6.00259 3.5057 6.00259C3.30797 6.00259 3.11217 6.04153 2.92949 6.1172C2.74681 6.19287 2.58082 6.30378 2.44101 6.44359C2.30119 6.58341 2.19028 6.7494 2.11461 6.93208C2.03895 7.11475 2 7.31055 2 7.50828C2 7.90762 2.15864 8.2906 2.44101 8.57297L11.4384 17.5703C11.7193 17.8496 12.0994 18.0064 12.4956 18.0064C12.8917 18.0064 13.2718 17.8496 13.5527 17.5703L22.5501 8.57297C22.6918 8.43409 22.8045 8.26847 22.8817 8.08571C22.959 7.90295 22.9992 7.70668 23 7.50828Z" fill="#606060"/>
-                        </svg> {% endcomment %}
-                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
-
-                        {% comment %} <svg class="minus-icon" style="display:none;" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 16.4986C23.0017 16.7964 22.9147 17.088 22.75 17.3362C22.5854 17.5844 22.3506 17.778 22.0755 17.8922C21.8004 18.0064 21.4975 18.0361 21.2055 17.9775C20.9134 17.919 20.6455 17.7747 20.4357 17.5632L12.5031 9.61558L4.57038 17.5632C4.28801 17.8456 3.90503 18.0043 3.5057 18.0043C3.30797 18.0043 3.11217 17.9653 2.92949 17.8896C2.74681 17.814 2.58082 17.7031 2.44101 17.5632C2.30119 17.4234 2.19028 17.2574 2.11461 17.0748C2.03895 16.8921 2 16.6963 2 16.4986C2 16.0992 2.15864 15.7162 2.44101 15.4339L11.4384 6.43651C11.7193 6.15721 12.0994 6.00045 12.4956 6.00045C12.8917 6.00045 13.2718 6.15721 13.5527 6.43651L22.5501 15.4339C22.6918 15.5727 22.8045 15.7384 22.8817 15.9211C22.959 16.1039 22.9992 16.3002 23 16.4986Z" fill="#606060"/>
-                        </svg> {% endcomment %}
-                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
-                      </span>
-                    </h3>
                   {% endif %}
                 {% endif %}
                 <div class="clear"></div>
