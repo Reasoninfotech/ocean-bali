@@ -238,7 +238,7 @@
           "type": "text_block",
           "settings": {
             "title": "Made From Ocean Waste",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>ECONYL® is created by regenerating nylon waste that would otherwise pollute our oceans and landfill.<br/><br/>This includes:<br/>Discarded fishing nets<br/>Fabric scraps<br/>Industrial plastic<br/><br/>These materials are transformed into a high-quality yarn that performs like new - without the environmental impact.</p>",
             "page": "",
