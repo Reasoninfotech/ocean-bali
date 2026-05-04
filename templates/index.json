@@ -106,7 +106,7 @@
           "type": "text_block",
           "settings": {
             "title": "Sustainable.   Luxurious.   Made to Move.",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>CONSCIOUSLY MADE FOR COMFORT IN AND OUT OF THE WATER</p>",
             "page": "",
