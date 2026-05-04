@@ -73,7 +73,7 @@
           "type": "text_block",
           "settings": {
             "title": "Sustainable. Luxurious. Made to Move",
-            "title_heading": false,
+            "title_heading": true,
             "accordion_enabled": false,
             "text": "<p>Consciously designed for comfort in and out of the water.</p><p>Visit us in Bali to feel the difference of truly considered swimwear.</p><p>From long sleeve swimsuits made for the surf to sculpting one piece swimwear and seamless bikinis, every design is created to flatter your body and stay confidently in place - no adjusting, no distractions.</p><p>Made from premium recycled Italian fabric with UPF 50+ sun protection, our swimwear combines softness, support, and durability - designed for ocean days, travel, and everything in between.</p>",
             "page": "",
@@ -123,6 +123,34 @@
         "comman_data_id": ""
       }
     },
+    "custom_liquid_ChYjCe": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".google-map {margin-bottom: 60px; padding: 0 1.04166667%;}"
+      ],
+      "settings": {
+        "liquid": "<div class=\"google-map\">\n <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.33225098824!2d115.13762077484522!3d-8.65991718811739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23956d099b199%3A0x5037483907bf7036!2sOcean%20Soul%20Bali!5e0!3m2!1sen!2sph!4v1709533898651!5m2!1sen!2sph\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n</div>",
+        "display_wide": false
+      }
+    },
+    "map_hcqLEi": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "heading": "Visit Us",
+        "hours_heading": "Our Hours",
+        "hours": "<p>Mon - Sun 9am - 7pm<br/></p>",
+        "address_heading": "Our Location",
+        "map_address": "Jl. Pantai Berawa No.101a, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia",
+        "map_address2": "",
+        "button_text": "Get directions",
+        "text_position": "text_right",
+        "color": "#606060",
+        "background_color": "#f7f7f7",
+        "api_key": "",
+        "section_space": "top_and_bottom"
+      }
+    },
     "collection_list_pEHLGE": {
       "type": "collection-list",
       "blocks": {
@@ -163,24 +191,6 @@
         "grid": 4,
         "mobile_1pr": false,
         "section_space": "none"
-      }
-    },
-    "map_hcqLEi": {
-      "type": "map",
-      "disabled": true,
-      "settings": {
-        "heading": "Visit Us",
-        "hours_heading": "Our Hours",
-        "hours": "<p>Mon - Sun 9am - 7pm<br/></p>",
-        "address_heading": "Our Location",
-        "map_address": "Jl. Pantai Berawa No.101a, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia",
-        "map_address2": "",
-        "button_text": "Get directions",
-        "text_position": "text_right",
-        "color": "#606060",
-        "background_color": "#f7f7f7",
-        "api_key": "",
-        "section_space": "top_and_bottom"
       }
     },
     "276a20fc-7e69-4666-8ba4-4eed72b14db4": {
@@ -321,16 +331,6 @@
         "promo_size": 22,
         "hidden_size": 14,
         "section_space": "top_and_bottom"
-      }
-    },
-    "custom_liquid_ChYjCe": {
-      "type": "custom-liquid",
-      "custom_css": [
-        ".google-map {margin-bottom: 60px; padding: 0 1.04166667%;}"
-      ],
-      "settings": {
-        "liquid": "<div class=\"google-map\">\n <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.33225098824!2d115.13762077484522!3d-8.65991718811739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23956d099b199%3A0x5037483907bf7036!2sOcean%20Soul%20Bali!5e0!3m2!1sen!2sph!4v1709533898651!5m2!1sen!2sph\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n</div>",
-        "display_wide": false
       }
     },
     "featured_blog_HHCwhf": {
