@@ -748,7 +748,7 @@
         "revenuehunt_recommender_quiz_v2_automatic_popup_block_YmEhNT": {
           "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/v2-automatic-popup-block/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
           "settings": {
-            "popup_timeout": 20,
+            "popup_timeout": 10,
             "quiz_width": "50",
             "quiz_height": "50",
             "quiz_z_index": 100,
