@@ -1360,8 +1360,8 @@
         "disabled": false,
         "settings": {
           "popup_timeout": 20,
-          "quiz_width": "100",
-          "quiz_height": "100",
+          "quiz_width": "20",
+          "quiz_height": "20",
           "quiz_z_index": 100,
           "popup_close_color": "#777777",
           "quiz_exit_intent": false,
