@@ -207,38 +207,59 @@
   }
   </style>
 
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const headers = document.querySelectorAll('.accordion-header');
-      
-      headers.forEach(header => {
-        const accordionId = header.getAttribute('data-accordion-id');
-        const trigger = header.querySelector('.accordion-trigger');
-        const icon = header.querySelector('.accordion-icon');
-        const plusIcon = icon.querySelector('.plus-icon');
-        const minusIcon = icon.querySelector('.minus-icon');
-        const content = document.querySelector(`.accordion-content[data-accordion-id="${accordionId}"]`);
+  <script>
+  function initAccordion() {
+    const headers = document.querySelectorAll('.accordion-header');
 
-        if (trigger && content) {
-          trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Toggle active state
-            content.classList.toggle('active');
-            
-            // Toggle icons
-            if (content.classList.contains('active')) {
-              plusIcon.style.display = 'none';
-              minusIcon.style.display = 'block';
-            } else {
-              plusIcon.style.display = 'block';
-              minusIcon.style.display = 'none';
-            }
-          });
+    headers.forEach(header => {
+      const accordionId = header.getAttribute('data-accordion-id');
+
+      // Trigger fallback (if .accordion-trigger not present)
+      const trigger = header.querySelector('.accordion-trigger') || header;
+
+      // Find matching content
+      const content = document.querySelector(
+        `.accordion-content[data-accordion-id="${accordionId}"]`
+      );
+
+      // Safety check
+      if (!accordionId || !content) return;
+
+      // Icons (optional)
+      const icon = header.querySelector('.accordion-icon');
+      const plusIcon = icon ? icon.querySelector('.plus-icon') : null;
+      const minusIcon = icon ? icon.querySelector('.minus-icon') : null;
+
+      // Prevent duplicate event binding
+      if (trigger.classList.contains('accordion-initialized')) return;
+      trigger.classList.add('accordion-initialized');
+
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Toggle active class
+        content.classList.toggle('active');
+
+        // Toggle icons safely
+        if (plusIcon && minusIcon) {
+          if (content.classList.contains('active')) {
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'block';
+          } else {
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
+          }
         }
       });
     });
-  </script>
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', initAccordion);
+
+  // Run again for Shopify dynamic sections
+  document.addEventListener('shopify:section:load', initAccordion);
+</script>
 </section>
 
 
