@@ -268,29 +268,6 @@
         "allow_multiple": true
       }
     },
-    "1777976283cf327165": {
-      "type": "apps",
-      "blocks": {
-        "revenuehunt_recommender_quiz_v2_automatic_popup_block_pipFhL": {
-          "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/v2-automatic-popup-block/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
-          "settings": {
-            "popup_timeout": 10,
-            "quiz_width": "20",
-            "quiz_height": "20",
-            "quiz_z_index": 100,
-            "popup_close_color": "#777777",
-            "quiz_exit_intent": false,
-            "quiz_id": ""
-          }
-        }
-      },
-      "block_order": [
-        "revenuehunt_recommender_quiz_v2_automatic_popup_block_pipFhL"
-      ],
-      "settings": {
-        "display_wide": false
-      }
-    },
     "210a4ae5-eb6f-4c98-bd15-1c238eaeb22c": {
       "type": "text-with-icons",
       "blocks": {
@@ -719,34 +696,11 @@
         "section_space": "none",
         "show_name_fields": true
       }
-    },
-    "17779762734c14a3af": {
-      "type": "apps",
-      "blocks": {
-        "revenuehunt_recommender_quiz_v2_link_quiz_block_nxhCff": {
-          "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/v2-link-quiz-block/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
-          "settings": {
-            "quiz_width": "50",
-            "quiz_height": "100",
-            "quiz_z_index": 100,
-            "popup_close_color": "#777777",
-            "show_list": true,
-            "quiz_id": "zdYCu7"
-          }
-        }
-      },
-      "block_order": [
-        "revenuehunt_recommender_quiz_v2_link_quiz_block_nxhCff"
-      ],
-      "settings": {
-        "display_wide": false
-      }
     }
   },
   "order": [
     "breadcrumbs",
     "main",
-    "1777976283cf327165",
     "210a4ae5-eb6f-4c98-bd15-1c238eaeb22c",
     "website_logos_4tVU3T",
     "5a8ae58c-582e-47f6-b743-c942aae4345c",
@@ -758,7 +712,6 @@
     "accordion_bzwcyC",
     "featured_collection_7YBYfH",
     "featured_blog_VQ4kXx",
-    "newsletter_xteH8N",
-    "17779762734c14a3af"
+    "newsletter_xteH8N"
   ]
 }
