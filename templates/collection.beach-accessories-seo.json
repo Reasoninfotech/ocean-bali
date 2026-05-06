@@ -76,7 +76,7 @@
           "settings": {
             "title": "Beach Accessories for Women",
             "title_heading": true,
-            "accordion_enabled": false,
+            "accordion_enabled": true,
             "text": "<p>Everything you need beyond the swim. Discover resort wear, beach accessories, and sun protection essentials designed to take you from ocean to anywhere else your day leads.</p><p>From lightweight layers to functional accessories, each piece is designed to pair seamlessly with your swimwear and move with you - in and out of the water.</p>",
             "page": "",
             "center": true,
@@ -375,8 +375,8 @@
         "heading_font_size": 30,
         "subheading_font_size": 16,
         "text_color": "#ffffff",
-        "button_text_color": "#fff",
-        "button_color": "#000",
+        "button_text_color": "#ffffff",
+        "button_color": "#000000",
         "section_space": "top_and_bottom"
       }
     },
