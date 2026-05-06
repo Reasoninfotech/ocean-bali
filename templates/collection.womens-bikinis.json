@@ -500,7 +500,7 @@
       "name": "Newsletter",
       "settings": {
         "heading": "Join the Ocean Soul VIP List",
-        "newsletter_subheading": "<p><br/><br/>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
+        "newsletter_subheading": "<p>Be first to discover new collections, early access offers, and exclusive member rewards.</p>",
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
