@@ -217,7 +217,7 @@
         const icon = header.querySelector('.accordion-icon');
         const plusIcon = icon.querySelector('.plus-icon');
         const minusIcon = icon.querySelector('.minus-icon');
-        const content = document.querySelector(`.accordion-content`);
+        const content = document.querySelector(`.accordion-content[data-accordion-id="${accordionId}"]`);
 
         if (trigger && content) {
           trigger.addEventListener('click', function(e) {
