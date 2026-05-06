@@ -439,7 +439,7 @@
           "type": "text_block",
           "settings": {
             "title": "A Better Fabric - In Every Sense",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p><strong>Sustainable. Functional. Made to Last.</strong></p><p>Designed to move with you.<br/><br/>Created to flatter your shape.<br/><br/>Made with intention - and built to last.</p><p>Swimwear that supports your movement, stays in place, and feels as good as it looks.</p><p>So you can focus on the moment, not what you’re wearing.</p><p><strong>Buy Less. Choose Better. Wear It Longer.</strong></p>",
             "page": "",
