@@ -24,18 +24,18 @@
         "display_wide": true
       }
     },
-    "rich_text_3faUC9": {
+    "rich_text_BNxVJ7": {
       "type": "rich-text",
       "blocks": {
-        "text_block_C6MPmn": {
+        "text_block_Hjd7hN": {
           "type": "text_block",
           "settings": {
-            "title": "Surfing Swimsuits That Stay On, Flatter & Protect",
+            "title": "One Piece Swimsuits That Flatter, Support & Stay On",
             "title_heading": true,
             "accordion_enabled": true,
-            "text": "<p>Our surfing swimsuits are designed for women who want confidence in every wave - no slips, no constant adjustments, just sculpting swimwear that performs. Whether you’re chasing reef breaks, longboarding a mellow point, or paddling out for your first surf session, this collection offers pieces you can truly trust in the water.</p><p>From long sleeve surf swimsuits for all-day sun protection to sleek surf bikinis that stay put through duck dives, every style is made for movement. We use luxurious recycled Italian fabric with built-in UPF 50+ sun protection and double lining for comfort, coverage, and durability.</p>",
+            "text": "<p>Our surfing swimsuits are designed for women who want confidence in every wave - no slips, no constant adjustments, just sculpting swimwear that performs. Whether you’re chasing reef breaks, longboarding a mellow point, or paddling out for your first surf session, this collection offers pieces you can truly trust in the water.<br/><br/>From long sleeve surf swimsuits for all-day sun protection to sleek surf bikinis that stay put through duck dives, every style is made for movement. We use luxurious recycled Italian fabric with built-in UPF 50+ sun protection and double lining for comfort, coverage, and durability.<br/><br/></p>",
             "page": "",
-            "center": true,
+            "center": false,
             "block_width": 100,
             "accordion_icon_color": "#000000",
             "accordion_icon_size": 20
@@ -43,14 +43,12 @@
         }
       },
       "block_order": [
-        "text_block_C6MPmn"
+        "text_block_Hjd7hN"
       ],
-      "custom_css": [
-        ".global__section {padding-bottom: 0;}"
-      ],
+      "name": "Rich text",
       "settings": {
-        "padding": 30,
-        "text_color": "#504e4e",
+        "padding": 60,
+        "text_color": "#000000",
         "background_color": "#ffffff",
         "comman_data_id": ""
       }
@@ -660,7 +658,7 @@
   "order": [
     "banner",
     "custom_liquid_G4xgJg",
-    "rich_text_3faUC9",
+    "rich_text_BNxVJ7",
     "slideshow_cLNC9K",
     "main",
     "text_with_icons_6Ubfma",
