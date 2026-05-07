@@ -152,11 +152,15 @@
         "text_block_4DEBTw"
       ],
       "custom_css": [
-        "{margin-top: 10px;}",
         "h3 {padding-bottom: 0px; font-size: 20px;}"
       ],
       "settings": {
-        "padding": 30,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30,
+        "padding_top_tablet": 40,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -478,7 +482,12 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_tablet": 40,
+        "padding_bottom_tablet": 40,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
