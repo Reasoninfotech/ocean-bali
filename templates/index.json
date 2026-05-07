@@ -155,8 +155,8 @@
         "h3 {padding-bottom: 0px; font-size: 20px;}"
       ],
       "settings": {
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 30,
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
         "padding_top_tablet": 30,
         "padding_bottom_tablet": 30,
         "padding_top_mobile": 30,
