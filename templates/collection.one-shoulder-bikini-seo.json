@@ -474,7 +474,7 @@
           "type": "text_block",
           "settings": {
             "title": "Shop the Collection",
-            "title_heading": true,
+            "title_heading": false,
             "accordion_enabled": false,
             "text": "<p>Discover modern, sustainable swimwear that celebrates the female form. Whether you choose the sleek black one shoulder bikini for everyday elegance or the playful pink version for your next tropical escape, you’ll experience:</p><p>Sculpting support and seamless comfort<br/></p><p>Eco-friendly Italian recycled fabric<br/></p><p>Ethical craftsmanship made to last<br/></p><p>Timeless design that transitions from ocean to everyday<br/></p><p>Ocean Soul Swimwear — modern, conscious, and made for movement.</p>",
             "page": "",

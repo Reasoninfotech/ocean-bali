@@ -31,7 +31,7 @@
         <div class="container">
           <div class="hero_banner_col">
             {% if section.settings.title != blank %}
-              <h2>{{ section.settings.title }}</h2>
+              <h1>{{ section.settings.title }}</h1>
             {% endif %}
             {% if section.settings.dis != blank %}
               <div class="hero_banner_dis">{{ section.settings.dis }}</div>
@@ -397,7 +397,7 @@
       height: 70px;
       width: 70px;
   }
-  .hero_banner_col h2 {
+  .hero_banner_col h1 {
       font-size: 48px;
       color: {{ section.settings.desktop_title_color }};
       font-weight: 700;
@@ -496,7 +496,7 @@
     }
   }
   @media (max-width:1400px) {
-    .hero_banner_col h2 {
+    .hero_banner_col h1 {
       font-size: 44px;
     }
     .hero_banner_col .hero_banner_dis p {
@@ -519,7 +519,7 @@
       min-height: 100%;
       padding: 90px 15px 60px 15px;
     }
-    .hero_banner_col h2 {
+    .hero_banner_col h1 {
       font-size: 38px;
     }
     .hero_banner_col .hero_banner_dis p {
@@ -582,7 +582,7 @@
       font-size: 20px;
       color: {{ section.settings.dis_mobile_color }};
     }
-    .hero_banner_col h2 {
+    .hero_banner_col h1 {
       font-size: 36px;
       color: {{ section.settings.mobile_title_color }};
     }
@@ -611,7 +611,7 @@
     }
   }
   @media (max-width:575px) {
-    .hero_banner_col h2 {
+    .hero_banner_col h1 {
       font-size: 26px;
     }
     .hero_banner_col .hero_banner_dis p {

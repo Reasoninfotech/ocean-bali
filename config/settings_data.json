@@ -1039,11 +1039,20 @@
               "link": "",
               "show_images": true
             }
+          },
+          "mega_menu_Wzn67c": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "",
+              "link": "",
+              "show_images": true
+            }
           }
         },
         "block_order": [
           "3272587b-24ab-41e5-936d-c6a2ed376b73",
-          "mega_menu_VKPHNn"
+          "mega_menu_VKPHNn",
+          "mega_menu_Wzn67c"
         ],
         "custom_css": [
           "span.js-cart-count.device-hide {color: #fff;}"

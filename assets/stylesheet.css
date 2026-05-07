@@ -1755,7 +1755,8 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: calc(var(--font-size) + 2px);
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 h5, .h5 {
@@ -9504,7 +9505,7 @@ ul.megamenu__ulcontainer {
     height: var(--height);
     object-fit: cover;
   }
-  .image__overlay-section .image__overlay-caption h3 {
+  .image__overlay-section .image__overlay-caption h2 {
     font-size: var(--heading-font-size);
     color: var(--text-color);
   }
@@ -9531,7 +9532,7 @@ ul.megamenu__ulcontainer {
     .image__overlay-section .image__overlay-container {
       height: var(--mobile-height);
     }
-    .image__overlay-section .image__overlay-caption h3 {
+    .image__overlay-section .image__overlay-caption h2 {
       font-size: calc(var(--heading-font-size) - (var(--heading-font-size) * 0.15))
     }
     .image__overlay-section .image__overlay-caption p {

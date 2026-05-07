@@ -104,7 +104,7 @@
           "settings": {
             "link": "",
             "title_text": "",
-            "text": "<h2>Long Sleeve Swimsuit Guides</h2><p>Our long sleeve swimsuit guides are designed to help you find the perfect fit for surfing, swimming, and sun protection. Learn how to choose the right one piece for your body, lifestyle, and level of activity.</p>",
+            "text": "<h4>Long Sleeve Swimsuit Guides</h4><p>Our long sleeve swimsuit guides are designed to help you find the perfect fit for surfing, swimming, and sun protection. Learn how to choose the right one piece for your body, lifestyle, and level of activity.</p>",
             "button_text": "Button"
           }
         },
@@ -113,7 +113,7 @@
           "settings": {
             "link": "",
             "title_text": "",
-            "text": "<h2>Sun Protection & UPF 50+ Swimwear</h2><p>Discover how UPF 50+ swimwear protects your skin while you’re in and out of the water. From long sleeve one pieces to full coverage styles, explore smarter ways to stay protected in the sun.</p>",
+            "text": "<h4>Sun Protection & UPF 50+ Swimwear</h4><p>Discover how UPF 50+ swimwear protects your skin while you’re in and out of the water. From long sleeve one pieces to full coverage styles, explore smarter ways to stay protected in the sun.</p>",
             "button_text": "Button"
           }
         },
@@ -122,7 +122,7 @@
           "settings": {
             "link": "",
             "title_text": "",
-            "text": "<h2>Ocean Lifestyle & Travel</h2><p>From island travel guides to ocean-inspired rituals, explore stories designed for women who feel most at home in and around the water.</p>",
+            "text": "<h4>Ocean Lifestyle & Travel</h4><p>From island travel guides to ocean-inspired rituals, explore stories designed for women who feel most at home in and around the water.</p>",
             "button_text": "Button"
           }
         }
