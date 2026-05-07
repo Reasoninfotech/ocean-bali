@@ -723,6 +723,29 @@
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
+    },
+    "1778149185c5338bba": {
+      "type": "apps",
+      "blocks": {
+        "revenuehunt_recommender_quiz_v2_automatic_popup_block_ctJfDa": {
+          "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/v2-automatic-popup-block/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+          "settings": {
+            "popup_timeout": 20,
+            "quiz_width": "100",
+            "quiz_height": "100",
+            "quiz_z_index": 100,
+            "popup_close_color": "#777777",
+            "quiz_exit_intent": false,
+            "quiz_id": "zdYCu7"
+          }
+        }
+      },
+      "block_order": [
+        "revenuehunt_recommender_quiz_v2_automatic_popup_block_ctJfDa"
+      ],
+      "settings": {
+        "display_wide": false
+      }
     }
   },
   "order": [
@@ -740,6 +763,7 @@
     "product-content",
     "featured_blog_N3J3zA",
     "newsletter_aG8HH8",
-    "collection_list_LMqQtm"
+    "collection_list_LMqQtm",
+    "1778149185c5338bba"
   ]
 }
