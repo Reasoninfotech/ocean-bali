@@ -723,6 +723,12 @@
         "mobile_1pr": false,
         "section_space": "top_and_bottom"
       }
+    },
+    "1778149185c5338bba": {
+      "type": "apps",
+      "settings": {
+        "display_wide": false
+      }
     }
   },
   "order": [
@@ -740,6 +746,7 @@
     "product-content",
     "featured_blog_N3J3zA",
     "newsletter_aG8HH8",
-    "collection_list_LMqQtm"
+    "collection_list_LMqQtm",
+    "1778149185c5338bba"
   ]
 }
