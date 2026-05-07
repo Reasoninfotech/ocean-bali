@@ -352,9 +352,9 @@
         "padding_top_desktop": 35,
         "padding_bottom_desktop": 0,
         "padding_top_tablet": 30,
-        "padding_bottom_tablet": 30,
+        "padding_bottom_tablet": 0,
         "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
+        "padding_bottom_mobile": 0,
         "text_color": "#000000",
         "background_color": "#ffffff",
         "comman_data_id": ""
