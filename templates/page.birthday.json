@@ -193,6 +193,7 @@
       "block_order": [
         "revenuehunt_recommender_quiz_v2_inline_quiz_EBDH33"
       ],
+      "disabled": true,
       "settings": {
         "display_wide": false
       }
