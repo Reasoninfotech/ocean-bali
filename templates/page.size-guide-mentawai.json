@@ -118,7 +118,7 @@
           "settings": {
             "title": "",
             "title_heading": false,
-            "text": "<p><a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Shipping & Returns Policy </a></p>",
+            "text": "<p><a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Shipping & Returns Policy </a></p><p><a href=\"/pages/faqs\" title=\"Frequently Asked Questions\">Frequently Asked Questions</a></p>",
             "page": "",
             "center": true,
             "block_width": 100
