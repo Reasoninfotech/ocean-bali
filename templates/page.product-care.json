@@ -59,7 +59,7 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/Surfchickitas-28.jpg",
+        "image": "shopify://shop_images/quiz-OSB-5_traveljournal_0d58323f-e0e2-48ad-b084-b8a746c850ad.jpg",
         "image_position": "left",
         "image_size": "medium",
         "image_height": "fixed",
@@ -117,6 +117,31 @@
         "title": "GENERAL",
         "max_width": 50,
         "allow_multiple": true
+      }
+    },
+    "image_with_text_overlay_Up7MqW": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/White_High_Waisted_Bikini_The_Sumatra.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
       }
     },
     "accordion_Ywrngh": {
@@ -179,6 +204,175 @@
         "max_width": 50,
         "allow_multiple": true
       }
+    },
+    "image_with_text_overlay_UTXzXQ": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/one-piece-swimwear-the-misool-one-piece-swimwear-ocean-soul-bali-8.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_EEAheA": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Ltg9nq": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What zips do you use?",
+            "content": "<p>We use premium YKK zips chosen for their quality, durability, and reliability. </p>"
+          }
+        },
+        "accordion_pane_hwU99G": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What fabric do you use?",
+            "content": "<p>We use premium recycled Italian fabrics designed for durability, comfort, softness, and performance in the water.</p>"
+          }
+        },
+        "accordion_pane_zJpFXx": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Is your swimwear sustainable?",
+            "content": "<p>Yes. Sustainability is a core part of Ocean Soul Swimwear. Our fabrics are made from regenerated and recycled materials, helping reduce waste while creating high-quality swimwear designed to last longer.</p>"
+          }
+        },
+        "accordion_pane_87nLKg": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Does your swimwear provide sun protection?",
+            "content": "<p>Yes. All Ocean Soul swimwear is made with UPF 50+ fabric to help protect your skin from the sun during long days outdoors and in the water. </p>"
+          }
+        },
+        "accordion_pane_fcUEJT": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How long does your swimwear last?",
+            "content": "<p>Our swimwear is designed to last significantly longer than standard swimwear when cared for correctly. Customers regularly comment on the quality, support, and durability of the fabric. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Ltg9nq",
+        "accordion_pane_hwU99G",
+        "accordion_pane_zJpFXx",
+        "accordion_pane_87nLKg",
+        "accordion_pane_fcUEJT"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Fabric & Quality",
+        "max_width": 50,
+        "allow_multiple": true
+      }
+    },
+    "image_with_text_overlay_wxVggi": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/long-sleeve-surf_swimsuit-the-sulawesi-midnight-ocean-soul-swimwear-2.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_Et4H6Y": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Hnd6bw": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How should I care for my swimwear?",
+            "content": "<p>To maximise the lifespan of your swimwear, we recommend:</p><ul><li>Rinsing in cold water after each use<br/></li><li>Avoiding harsh detergents<br/></li><li>Air drying in the shade<br/></li><li>Avoiding rough surfaces where possible<br/></li><li>Not leaving swimwear wet for extended periods</li></ul>"
+          }
+        },
+        "accordion_pane_TKphWy": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Can I wear my swimsuit in chlorine?",
+            "content": "<p>Yes, our fabrics are chlorine resistant, however frequent chlorine exposure may still shorten the lifespan of any swimwear over time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Hnd6bw",
+        "accordion_pane_TKphWy"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Care Instructions",
+        "max_width": 50,
+        "allow_multiple": false
+      }
+    },
+    "accordion_JrH6Gd": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_DaQT8Y": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you offer a warranty?",
+            "content": "<p>Yes. If your garment experiences a genuine manufacturing fault, we may repair or replace the item at our discretion. </p>"
+          }
+        },
+        "accordion_pane_NNbgfw": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What is not covered under warranty?",
+            "content": "<p>General wear and tear, misuse, improper care, damage from rough surfaces, and damage caused by extreme activity are not covered under warranty</p>"
+          }
+        },
+        "accordion_pane_btyJk8": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How can I contact customer care?",
+            "content": "<p>You can contact our customer care team via <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">email</a> for sizing assistance, returns, exchanges, and product support.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_DaQT8Y",
+        "accordion_pane_NNbgfw",
+        "accordion_pane_btyJk8"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Warranty & Support",
+        "max_width": 50,
+        "allow_multiple": false
+      }
     }
   },
   "order": [
@@ -187,6 +381,12 @@
     "re_hero_banner_DfBapr",
     "image_with_text_aHz3BQ",
     "accordion_dCUPtx",
-    "accordion_Ywrngh"
+    "image_with_text_overlay_Up7MqW",
+    "accordion_Ywrngh",
+    "image_with_text_overlay_UTXzXQ",
+    "accordion_EEAheA",
+    "image_with_text_overlay_wxVggi",
+    "accordion_Et4H6Y",
+    "accordion_JrH6Gd"
   ]
 }
