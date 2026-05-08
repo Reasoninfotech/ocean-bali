@@ -373,6 +373,84 @@
         "max_width": 50,
         "allow_multiple": false
       }
+    },
+    "image_with_text_overlay_DeFJAL": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/Womens-Rashvest-The-Aceh-Crop-Rash-Vest-Ocean-Soul-Bali-11.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_LL6LYm": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Qed746": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Can I wear Ocean Soul Swimwear for travel as well as swimming?",
+            "content": "<p>Absolutely. Many customers choose Ocean Soul because the pieces transition easily from ocean activities to travel and beachwear styling.</p>"
+          }
+        },
+        "accordion_pane_zQkfd7": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you have supportive swimwear without underwire?",
+            "content": "<p>Yes. Many Ocean Soul styles are designed to feel supportive through compression, paneling, and fit rather than bulky padding or underwire.</p>"
+          }
+        },
+        "accordion_pane_tkMcbx": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Which styles are best for surfing?",
+            "content": "<p>For the most support and security in the surf, we recommend:</p><ul><li><a href=\"/collections/long-sleeve-one-piece-swimsuits\" title=\"Long Sleeve Swimsuits\">Sulawesi Long Sleeve One Piece</a><br/></li><li><a href=\"/collections/sleeveless-one-piece-swimsuits\" title=\"Sleeveless One Piece Swimsuits\">Mentawai one pieces</a><br/></li><li><a href=\"/collections/womens-rash-vest\" title=\"Womens Rash Vest\">Sumba rashguard, Aceh rashgaurd, Mentawai Crop</a><br/></li></ul><p>For lighter surf, swimming, and beach use, many customers also love our Mentawai and bikini ranges.</p>"
+          }
+        },
+        "accordion_pane_tp9wjX": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Which styles are best for sun protection?",
+            "content": "<p>Our<a href=\"/collections/upf-50-sun-protection-swimwear-for-women\" title=\"Best UPF Protection\"> long sleeve swimsuits and rash guards </a> in darker colours offer the highest level of sun protection and are ideal for:</p><ul><li>Surfing<br/></li><li>Swimming<br/></li><li>Paddleboarding<br/></li><li>Boating<br/></li><li>Long beach days<br/></li><li>Tropical travel</li></ul>"
+          }
+        },
+        "accordion_pane_aCkiqR": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Are your white swimsuits see-through?",
+            "content": "<p>Our lighter colourways are designed with extra lining and thoughtful construction to minimise transparency and improve confidence when wet.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Qed746",
+        "accordion_pane_zQkfd7",
+        "accordion_pane_tkMcbx",
+        "accordion_pane_tp9wjX",
+        "accordion_pane_aCkiqR"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Product-Specific Questions",
+        "max_width": 50,
+        "allow_multiple": true
+      }
     }
   },
   "order": [
@@ -387,6 +465,8 @@
     "accordion_EEAheA",
     "image_with_text_overlay_wxVggi",
     "accordion_Et4H6Y",
-    "accordion_JrH6Gd"
+    "accordion_JrH6Gd",
+    "image_with_text_overlay_DeFJAL",
+    "accordion_LL6LYm"
   ]
 }
