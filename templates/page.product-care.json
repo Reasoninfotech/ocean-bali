@@ -74,25 +74,6 @@
         "background_color": "#f7f7f7"
       }
     },
-    "image_with_text_aHz3BQ": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/one-piece-swimsuits-the-mentawai-in-nautical-surf-suit-ocean-soul-bali-4.webp",
-        "image_position": "left",
-        "image_size": "medium",
-        "image_height": "fixed",
-        "desktop_image_height": 550,
-        "mobile_image_height": 450,
-        "title": "Frequently Asked Questions",
-        "text": "<p>Ocean Soul Swimwear</p>",
-        "button_text": "Button",
-        "link": "",
-        "center_align": true,
-        "text_color": "#606060",
-        "background_color": "#f7f7f7"
-      }
-    },
     "accordion_dCUPtx": {
       "type": "accordion",
       "blocks": {
@@ -470,6 +451,25 @@
         "max_width": 50,
         "allow_multiple": true
       }
+    },
+    "image_with_text_aHz3BQ": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/one-piece-swimsuits-the-mentawai-in-nautical-surf-suit-ocean-soul-bali-4.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Still have further questions?",
+        "text": "<p>Whether you’re unsure on sizing, choosing the right style, or have questions about your order, our customer care team would love to assist.<br/><br/>Email us anytime at <a><strong>customercare@oceansoulbali.com</strong></a></p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
     }
   },
   "order": [
@@ -477,7 +477,6 @@
     "main",
     "re_hero_banner_DfBapr",
     "image_with_text_wFjQqr",
-    "image_with_text_aHz3BQ",
     "accordion_dCUPtx",
     "image_with_text_overlay_Up7MqW",
     "accordion_Ywrngh",
@@ -487,6 +486,7 @@
     "accordion_Et4H6Y",
     "accordion_JrH6Gd",
     "image_with_text_overlay_DeFJAL",
-    "accordion_LL6LYm"
+    "accordion_LL6LYm",
+    "image_with_text_aHz3BQ"
   ]
 }
