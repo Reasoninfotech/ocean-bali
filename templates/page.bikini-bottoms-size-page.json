@@ -409,7 +409,7 @@
         "text_block_LRJrz6"
       ],
       "settings": {
-        "padding_top_desktop": 35,
+        "padding_top_desktop": 0,
         "padding_bottom_desktop": 35,
         "padding_top_tablet": 30,
         "padding_bottom_tablet": 30,
