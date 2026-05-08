@@ -59,7 +59,7 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/quiz-OSB-5_traveljournal_0d58323f-e0e2-48ad-b084-b8a746c850ad.jpg",
+        "image": "shopify://shop_images/one-piece-swimsuits-the-mentawai-in-nautical-surf-suit-ocean-soul-bali-4.webp",
         "image_position": "left",
         "image_size": "medium",
         "image_height": "fixed",
@@ -205,12 +205,12 @@
         "allow_multiple": true
       }
     },
-    "image_with_text_overlay_UTXzXQ": {
+    "image_with_text_overlay_wxVggi": {
       "type": "image-with-text-overlay",
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/one-piece-swimwear-the-misool-one-piece-swimwear-ocean-soul-bali-8.webp",
+        "image": "shopify://shop_images/long-sleeve-surf_swimsuit-the-sulawesi-midnight-ocean-soul-swimwear-2.webp",
         "overlay": false,
         "background_attachment": "fixed",
         "height": 300,
@@ -283,12 +283,12 @@
         "allow_multiple": true
       }
     },
-    "image_with_text_overlay_wxVggi": {
+    "image_with_text_overlay_UTXzXQ": {
       "type": "image-with-text-overlay",
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/long-sleeve-surf_swimsuit-the-sulawesi-midnight-ocean-soul-swimwear-2.webp",
+        "image": "shopify://shop_images/one-piece-swimwear-the-misool-one-piece-swimwear-ocean-soul-bali-8.webp",
         "overlay": false,
         "background_attachment": "fixed",
         "height": 300,
@@ -379,7 +379,7 @@
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/Womens-Rashvest-The-Aceh-Crop-Rash-Vest-Ocean-Soul-Bali-11.webp",
+        "image": "shopify://shop_images/black-long-sleeve-surf-swimsuit-the-sulawesi-midnight-9.webp",
         "overlay": false,
         "background_attachment": "fixed",
         "height": 300,
@@ -456,7 +456,7 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/Long_Sleeve_swimsuit-navy-and-white-the-sulawesi-in-nautical-ocean-soul-bali-3_c69009dc-cf84-4af4-a9ed-6747ac255ebf.webp",
+        "image": "shopify://shop_images/Sustainable-Swimwear-The-Mentawai-in-Olive-Surf-Suit-Ocean-Soul-Bali-2.webp",
         "image_position": "left",
         "image_size": "medium",
         "image_height": "fixed",
@@ -480,9 +480,9 @@
     "accordion_dCUPtx",
     "image_with_text_overlay_Up7MqW",
     "accordion_Ywrngh",
-    "image_with_text_overlay_UTXzXQ",
-    "accordion_EEAheA",
     "image_with_text_overlay_wxVggi",
+    "accordion_EEAheA",
+    "image_with_text_overlay_UTXzXQ",
     "accordion_Et4H6Y",
     "accordion_JrH6Gd",
     "image_with_text_overlay_DeFJAL",
