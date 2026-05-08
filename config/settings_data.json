@@ -929,7 +929,7 @@
     "h1_size": 27,
     "h2_size": 22,
     "h3_size": 12,
-    "section_titles": "lines",
+    "section_titles": "none",
     "button_corners": "Sharp",
     "section_margins": 70,
     "keyboard_focus": "#f3f3f3",
