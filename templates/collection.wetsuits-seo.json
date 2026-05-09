@@ -48,7 +48,6 @@
         ".global__section {padding-bottom: 0;}"
       ],
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -139,7 +138,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -287,7 +285,6 @@
         "text_block_KQxwzx"
       ],
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -505,7 +502,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -554,7 +550,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -760,7 +755,7 @@
         "newsletter_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time",
         "color": "#606060",
         "background_color": "#f7f7f7",
-        "section_space": "top_and_bottom",
+        "section_space": "none",
         "show_name_fields": true
       }
     },
