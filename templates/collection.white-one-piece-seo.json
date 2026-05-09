@@ -50,7 +50,6 @@
         ".global__section {padding-bottom: 0;}"
       ],
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -81,7 +80,6 @@
       "disabled": true,
       "name": "Rich text",
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -111,7 +109,6 @@
       "disabled": true,
       "name": "Rich text",
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -145,7 +142,7 @@
         "height": 400,
         "mobile_height": 380,
         "text_align": "center",
-        "caption_vertical": 42,
+        "caption_vertical": 50,
         "caption_horizontal": 92,
         "heading": "",
         "subheading_text": "<p>Each style is made with luxurious recycled Italian fabric, double-lined for full coverage and support, zero transparency and constructed with a panelling design that defines your waist and smooths your shape. No padding. No distractions. Just elegant, supportive swimwear that works as hard as you do.</p><p>From surf-friendly long sleeves to minimalist sleeveless silhouettes, these white one pieces offer UPF 50+ sun protection, full confidence, and modern minimalism you can wear season after season.</p>",
