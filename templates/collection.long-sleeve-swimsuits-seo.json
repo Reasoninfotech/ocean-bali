@@ -97,6 +97,12 @@
         ".global__section {padding-bottom: 0;}"
       ],
       "settings": {
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -436,6 +442,12 @@
       ],
       "name": "Rich text",
       "settings": {
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -521,7 +533,7 @@
         "caption_horizontal": 0,
         "heading": "Built for water women",
         "subheading_text": "<p><strong>Whether you’re surfing, swimming laps or beach walking with your kids, our suits are designed to stay on and hold their shape. No riding up, no gaping, no fuss – just secure, all-day wear you<br/>don’t have to think twice about.  Trusted by active women around the world.</strong></p><p><strong>That’s why Ocean Soul Swimwear is trusted by active women around the world, from surfers in Australia to freedivers in Tahiti to eco-minded travellers looking for functional fashion they can count on.</strong></p>",
-        "button_text": "Button",
+        "button_text": "",
         "link": "",
         "heading_font_size": 30,
         "subheading_font_size": 15,
@@ -559,6 +571,12 @@
       ],
       "name": "Rich text",
       "settings": {
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
