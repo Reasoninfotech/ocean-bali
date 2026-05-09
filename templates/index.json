@@ -482,10 +482,10 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding_top_desktop": 60,
-        "padding_bottom_desktop": 60,
-        "padding_top_tablet": 40,
-        "padding_bottom_tablet": 40,
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "text_color": "#606060",
@@ -507,7 +507,7 @@
         "desktop_image_height": 300,
         "mobile_image_height": 300,
         "title": "About Us",
-        "text": "<p>At Ocean Soul Swimwear, the ocean inspires everything we create. Our swimwear is made using luxurious recycled Italian Econyl fabric, transforming plastic waste into premium, high performance swimwear.</p><p>Every piece reflects our commitment to protecting the ocean while creating swimwear that lasts. Thoughtfully designed, responsibly made, and built to be worn again and again.</p><p><br/></p><p></p>",
+        "text": "<p>At Ocean Soul Swimwear, the ocean inspires everything we create. Our swimwear is made using luxurious recycled Italian Econyl fabric, transforming plastic waste into premium, high performance swimwear.</p><p>Every piece reflects our commitment to protecting the ocean while creating swimwear that lasts. Thoughtfully designed, responsibly made, and built to be worn again and again.</p>",
         "button_text": "",
         "link": "",
         "center_align": true,
@@ -688,6 +688,9 @@
         "image_xYxpB4",
         "image_gCVtVa",
         "image_bkkJLC"
+      ],
+      "custom_css": [
+        "@media (max-width: 575px){{margin-top: 30px; }}"
       ],
       "name": "Swimwear Section",
       "settings": {

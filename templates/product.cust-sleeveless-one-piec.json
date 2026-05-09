@@ -311,7 +311,7 @@
         "bfe8916b-3530-46d0-8ff7-defc132b0815"
       ],
       "custom_css": [
-        "div {padding-top: 15px; padding-bottom: 15px;}"
+        ".text__icons-wrapper {padding-top: 15px; padding-bottom: 15px;}"
       ],
       "settings": {
         "color": "#ffffff",
@@ -460,7 +460,7 @@
         "image_height": "fixed",
         "desktop_fixed_height": 350,
         "mobile_fixed_height": 250,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "product-content": {
@@ -667,7 +667,7 @@
         "mobile_1pr": false,
         "show_view_all": false,
         "show_view_all_label": "",
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "featured_blog_VQ4kXx": {

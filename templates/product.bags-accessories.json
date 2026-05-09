@@ -305,7 +305,7 @@
         "bfe8916b-3530-46d0-8ff7-defc132b0815"
       ],
       "custom_css": [
-        "div {padding-top: 15px; padding-bottom: 15px;}"
+        ".text__icons-wrapper {padding-top: 15px; padding-bottom: 15px;}"
       ],
       "settings": {
         "color": "#ffffff",
@@ -687,7 +687,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_jP9yHG": {
