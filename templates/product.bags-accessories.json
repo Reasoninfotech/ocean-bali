@@ -687,7 +687,7 @@
         "show_author": false,
         "show_tags": false,
         "show_button": true,
-        "section_space": "top_and_bottom"
+        "section_space": "none"
       }
     },
     "newsletter_jP9yHG": {
