@@ -49,7 +49,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -94,7 +93,6 @@
         "text_block_QNjeR7"
       ],
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -293,7 +291,7 @@
         "height": 400,
         "mobile_height": 540,
         "text_align": "center",
-        "caption_vertical": 52,
+        "caption_vertical": 50,
         "caption_horizontal": 0,
         "heading": "Designed to Move With You.",
         "subheading_text": "<p>Our bikinis aren’t made for lounging only - they’re made for life. Sculpting Support: Each bikini is double-lined for durability and shape.<br/>Seamless Finish: No pinching or digging, just smooth comfort.<br/>Versatile Style: Mix and match tops and bottoms for endless looks.<br/>Long-Lasting Quality: Resistant to salt, sun, and chlorine for longevity.<br/>From your high waisted bikini bottom to your seamless surf top, every piece is refined through years of design evolution to ensure it fits beautifully and performs effortlessly.</p>",
@@ -413,7 +411,7 @@
         "height": 440,
         "mobile_height": 400,
         "text_align": "center",
-        "caption_vertical": 42,
+        "caption_vertical": 50,
         "caption_horizontal": 50,
         "heading": "Sustainability Meets Style",
         "subheading_text": "<p>Every Ocean Soul women’s bikini is made from Econyl® regenerated nylon - crafted from recycled ocean waste like fishing nets and industrial plastics. This luxury Italian fabric feels silky smooth, provides powerful shape retention, and resists fading from salt and sun exposure.</p><p>Each piece is ethically handmade in Bali, in small batches to minimise waste and empower local artisans. You’ll feel the difference - not just in the quality, but in the purpose behind every stitch.</p><p></p>",
@@ -455,7 +453,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""

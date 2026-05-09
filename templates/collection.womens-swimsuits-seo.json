@@ -29,7 +29,7 @@
         "height": 420,
         "mobile_height": 600,
         "text_align": "center",
-        "caption_vertical": 14,
+        "caption_vertical": 50,
         "caption_horizontal": 100,
         "heading": "",
         "subheading_text": "<h2>SWIMWEAR FOR WOMEN WHO WANT TO MOVE FREELY, LOOK AMAZING & PROTECT THE PLANET</h2><p></p>",
@@ -104,7 +104,6 @@
         "text_block_j3dUHJ"
       ],
       "settings": {
-        "padding": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
