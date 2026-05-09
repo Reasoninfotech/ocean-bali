@@ -49,6 +49,12 @@
         ".global__section {padding-bottom: 0;}"
       ],
       "settings": {
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -436,7 +442,7 @@
         "height": 400,
         "mobile_height": 400,
         "text_align": "center",
-        "caption_vertical": 30,
+        "caption_vertical": 50,
         "caption_horizontal": 50,
         "heading": "More Than a Swimsuit - A Lifestyle Choice",
         "subheading_text": "<p>An Ocean Soul one piece is more than a purchase - it’s an investment in style, performance, and sustainability. It’s a suit that lets you move freely, feel supported, and look incredible, all while protecting the ocean you love.</p><p>Explore the <a href=\"/collections/one-piece-swimsuit\" title=\"One Piece Swimsuits\">collection</a> today and find your forever one piece swimsuit.</p>",
@@ -499,6 +505,12 @@
       "disabled": true,
       "name": "Rich text",
       "settings": {
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 35,
+        "padding_top_tablet": 30,
+        "padding_bottom_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
