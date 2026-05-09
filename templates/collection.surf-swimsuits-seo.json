@@ -47,7 +47,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
         "text_color": "#000000",
         "background_color": "#ffffff",
         "comman_data_id": ""
@@ -179,7 +178,7 @@
         "height": 400,
         "mobile_height": 400,
         "text_align": "center",
-        "caption_vertical": 36,
+        "caption_vertical": 50,
         "caption_horizontal": 38,
         "heading": "",
         "subheading_text": "<p>Our surf swimwear is tested in real conditions to ensure it fits like a second skin while sculpting your shape with smart paneling and thoughtful design. This is active swimwear for women who value style as much as performance - and care about sustainability.</p><p>Ethically made in Bali in small batches, our womens surfwear is built to last twice as long as standard swimsuits, so you can ride longer, with gear that looks and feels amazing season after season.</p><p>From the lineup to the beach, this is surfing swimwear you’ll actually love wearing.</p>",
@@ -494,7 +493,6 @@
       ],
       "name": "Rich text",
       "settings": {
-        "padding": 60,
         "text_color": "#606060",
         "background_color": "#ffffff",
         "comman_data_id": ""
