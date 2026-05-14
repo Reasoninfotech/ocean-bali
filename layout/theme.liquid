@@ -107,6 +107,11 @@
     <noscript><link rel="stylesheet" href="{{ 'style.css' | asset_url }}"></noscript>
 
     <style>
+
+      .rebuy-cart__flyout [data-rebuy-cart-anchor=header]{
+        padding-bottom: 16px!important;
+      }
+
       {{ main_font | font_face: font_display: 'swap' }}
       {{ nav_font | font_face: font_display: 'swap' }}
       {{ heading_font | font_face: font_display: 'swap' }}
