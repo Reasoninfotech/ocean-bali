@@ -175,12 +175,11 @@
         },
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484": {
           "type": "accordion_content",
-          "disabled": true,
           "settings": {
             "section_class": "section_class",
             "page": "",
             "title": "Product Care",
-            "text": "<p>To keep your Sabu Surf Shorts happy and healthy, please follow our general care guidelines:<br/><br/>Our Sabu Surf Shorts  are happiest when hand-washed separately in cool water so the colours do not bleed. Please avoid traditional washers and abrasive materials like velcro and bleach.  Do not leave wet  in a bag. Air dry in a shady spot.</p>",
+            "text": "<p>To keep your long sleeve swimsuit looking its best:</p><p>Hand wash separately in cool water to maintain colour and shape.<br/><br/>Avoid machine washing, tumble drying, bleach and abrasive surfaces.</p><p>Do not leave wet in a bag.<br/><br/>Air dry in the shade</p>",
             "default_open_accordion": false
           }
         },
