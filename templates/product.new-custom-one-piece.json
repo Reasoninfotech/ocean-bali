@@ -134,7 +134,6 @@
         },
         "af181730-ba8b-440a-8bae-8ef024ae7a72": {
           "type": "liquid_content",
-          "disabled": true,
           "settings": {
             "liquid": "<div id=\"payment\" class=\"credit desktop-12 tablet-6 mobile-3\">\n            {% for type in shop.enabled_payment_types %}\n              {{ type | payment_type_svg_tag: class:'payment-icon' }}\n            {% endfor %}\n          </div>"
           }
