@@ -75,33 +75,6 @@
             "link": ""
           }
         },
-        "text_with_icon_fydijn": {
-          "type": "text_with_icon",
-          "settings": {
-            "icon": "star_outline",
-            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
-            "text": "Durable - lasts twice as long",
-            "link": ""
-          }
-        },
-        "text_with_icon_FFN4LM": {
-          "type": "text_with_icon",
-          "settings": {
-            "icon": "star_outline",
-            "image": "shopify://shop_images/Sustainable.jpg",
-            "text": "Sustainable, recycled Italian fabric",
-            "link": ""
-          }
-        },
-        "876a735f-f0bb-4624-b8cc-8d60db6ba807": {
-          "type": "text_with_icon",
-          "settings": {
-            "icon": "shipping",
-            "image": "shopify://shop_images/B_Frame.png",
-            "text": "Free Express Shipping Over $250+ AUD",
-            "link": "shopify://policies/refund-policy"
-          }
-        },
         "5925ad72-9bd4-457a-aae1-c18d5108805e": {
           "type": "text_with_icon",
           "settings": {
@@ -111,46 +84,13 @@
             "link": "shopify://policies/shipping-policy"
           }
         },
-        "ac9f6f7c-33c1-4256-932e-3bd4272452e2": {
+        "text_with_icon_FFN4LM": {
           "type": "text_with_icon",
           "settings": {
             "icon": "star_outline",
-            "image": "shopify://shop_images/Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg",
-            "text": "12 month Warranty.",
-            "link": "shopify://policies/shipping-policy"
-          }
-        },
-        "tabs_name_JjKzN9": {
-          "type": "tabs_name",
-          "settings": {
-            "tabs_title": ""
-          }
-        },
-        "tolstoy_shoppable_video_ugc_stories_block_hUR8d6": {
-          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "l35reajum8gvz"
-          }
-        },
-        "af181730-ba8b-440a-8bae-8ef024ae7a72": {
-          "type": "liquid_content",
-          "settings": {
-            "liquid": "<div id=\"payment\" class=\"credit desktop-12 tablet-6 mobile-3\">\n            {% for type in shop.enabled_payment_types %}\n              {{ type | payment_type_svg_tag: class:'payment-icon' }}\n            {% endfor %}\n          </div>"
-          }
-        },
-        "49935d06-a61f-4be4-865c-9762a9f134a3": {
-          "type": "complementary_products",
-          "disabled": true,
-          "settings": {
-            "heading": "Pair it with",
-            "limit": 10
-          }
-        },
-        "product_description": {
-          "type": "product_description",
-          "settings": {
-            "show_as_accordion": true,
-            "default_open_accordion": false
+            "image": "shopify://shop_images/Sustainable.jpg",
+            "text": "Sustainable, recycled Italian fabric",
+            "link": ""
           }
         },
         "7ee2622b-242b-4502-8b12-c152b516c8bb": {
@@ -173,8 +113,70 @@
             "default_open_accordion": false
           }
         },
+        "product_description": {
+          "type": "product_description",
+          "settings": {
+            "show_as_accordion": true,
+            "default_open_accordion": false
+          }
+        },
+        "tabs_name_JjKzN9": {
+          "type": "tabs_name",
+          "settings": {
+            "tabs_title": ""
+          }
+        },
+        "tolstoy_shoppable_video_ugc_stories_block_hUR8d6": {
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "l35reajum8gvz"
+          }
+        },
+        "af181730-ba8b-440a-8bae-8ef024ae7a72": {
+          "type": "liquid_content",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div id=\"payment\" class=\"credit desktop-12 tablet-6 mobile-3\">\n            {% for type in shop.enabled_payment_types %}\n              {{ type | payment_type_svg_tag: class:'payment-icon' }}\n            {% endfor %}\n          </div>"
+          }
+        },
+        "876a735f-f0bb-4624-b8cc-8d60db6ba807": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shipping",
+            "image": "shopify://shop_images/B_Frame.png",
+            "text": "Free Express Shipping Over $250+ AUD",
+            "link": "shopify://policies/refund-policy"
+          }
+        },
+        "text_with_icon_fydijn": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "star_outline",
+            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
+            "text": "Durable - lasts twice as long",
+            "link": ""
+          }
+        },
+        "ac9f6f7c-33c1-4256-932e-3bd4272452e2": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "star_outline",
+            "image": "shopify://shop_images/Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg",
+            "text": "12 month Warranty.",
+            "link": "shopify://policies/shipping-policy"
+          }
+        },
+        "49935d06-a61f-4be4-865c-9762a9f134a3": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "heading": "Pair it with",
+            "limit": 10
+          }
+        },
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484": {
           "type": "accordion_content",
+          "disabled": true,
           "settings": {
             "section_class": "section_class",
             "page": "",
@@ -238,18 +240,18 @@
         "7083fa5a-a988-498e-ac51-81c70cca09d2",
         "product_buttons",
         "text_with_icon_Ppep9y",
-        "text_with_icon_fydijn",
-        "text_with_icon_FFN4LM",
-        "876a735f-f0bb-4624-b8cc-8d60db6ba807",
         "5925ad72-9bd4-457a-aae1-c18d5108805e",
-        "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
+        "text_with_icon_FFN4LM",
+        "7ee2622b-242b-4502-8b12-c152b516c8bb",
+        "536f622f-212e-4a9c-a60c-c76fe14abb58",
+        "product_description",
         "tabs_name_JjKzN9",
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6",
         "af181730-ba8b-440a-8bae-8ef024ae7a72",
+        "876a735f-f0bb-4624-b8cc-8d60db6ba807",
+        "text_with_icon_fydijn",
+        "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
         "49935d06-a61f-4be4-865c-9762a9f134a3",
-        "product_description",
-        "7ee2622b-242b-4502-8b12-c152b516c8bb",
-        "536f622f-212e-4a9c-a60c-c76fe14abb58",
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484",
         "a34f6081-2778-463c-8074-6403bf19be80",
         "0c52e621-4467-4df7-9a79-186536b36b30",
