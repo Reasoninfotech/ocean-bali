@@ -49,6 +49,7 @@
         },
         "tolstoy_shoppable_video_quiz_see_it_on_you_3hyDRm": {
           "type": "shopify://apps/tolstoy-ads-image-video/blocks/see-it-on-you/06fa8282-42ff-403e-b67c-1936776aed11",
+          "name": "Virtual Try-On",
           "settings": {}
         },
         "5a0481c6-7b6b-45dc-99cf-3aca7980daa4": {
