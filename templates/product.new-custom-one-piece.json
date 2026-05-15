@@ -147,15 +147,6 @@
             "link": "shopify://policies/refund-policy"
           }
         },
-        "text_with_icon_fydijn": {
-          "type": "text_with_icon",
-          "settings": {
-            "icon": "star_outline",
-            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
-            "text": "Durable - lasts twice as long",
-            "link": ""
-          }
-        },
         "ac9f6f7c-33c1-4256-932e-3bd4272452e2": {
           "type": "text_with_icon",
           "settings": {
@@ -163,6 +154,15 @@
             "image": "shopify://shop_images/Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg",
             "text": "12 month Warranty.",
             "link": "shopify://policies/shipping-policy"
+          }
+        },
+        "text_with_icon_fydijn": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "star_outline",
+            "image": "shopify://shop_images/1.Asset_5_4x_335cf409-c9f6-4a69-872c-99aa4062888d.jpg",
+            "text": "Durable - lasts twice as long",
+            "link": ""
           }
         },
         "49935d06-a61f-4be4-865c-9762a9f134a3": {
@@ -247,8 +247,8 @@
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6",
         "af181730-ba8b-440a-8bae-8ef024ae7a72",
         "876a735f-f0bb-4624-b8cc-8d60db6ba807",
-        "text_with_icon_fydijn",
         "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
+        "text_with_icon_fydijn",
         "49935d06-a61f-4be4-865c-9762a9f134a3",
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484",
         "a34f6081-2778-463c-8074-6403bf19be80",
