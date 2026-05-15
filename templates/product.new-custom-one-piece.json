@@ -98,7 +98,7 @@
           "settings": {
             "section_class": "section_class",
             "page": "",
-            "title": "MODELS SIZE",
+            "title": "SIZING",
             "text": "<p>{{ product.metafields.custom.model_size.value }}</p><p>{{ product.metafields.custom.additonal_sizing_details | metafield_tag }}</p>",
             "default_open_accordion": false
           }
