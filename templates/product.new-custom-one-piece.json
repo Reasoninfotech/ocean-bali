@@ -205,6 +205,7 @@
         },
         "bundler_bundler_target_element_ktzQWL": {
           "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "disabled": true,
           "settings": {}
         },
         "f2eafac5-3430-412d-9c1c-43775c7b293a": {
