@@ -93,12 +93,6 @@
             "link": ""
           }
         },
-        "tabs_name_JjKzN9": {
-          "type": "tabs_name",
-          "settings": {
-            "tabs_title": ""
-          }
-        },
         "876a735f-f0bb-4624-b8cc-8d60db6ba807": {
           "type": "text_with_icon",
           "settings": {
@@ -124,6 +118,12 @@
             "image": "shopify://shop_images/Screenshot_9_cb43dcb6-e4ee-4699-8547-1a44b6b9cbf7.jpg",
             "text": "12 month Warranty.",
             "link": "shopify://policies/shipping-policy"
+          }
+        },
+        "tabs_name_JjKzN9": {
+          "type": "tabs_name",
+          "settings": {
+            "tabs_title": ""
           }
         },
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6": {
@@ -240,10 +240,10 @@
         "text_with_icon_Ppep9y",
         "text_with_icon_fydijn",
         "text_with_icon_FFN4LM",
-        "tabs_name_JjKzN9",
         "876a735f-f0bb-4624-b8cc-8d60db6ba807",
         "5925ad72-9bd4-457a-aae1-c18d5108805e",
         "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
+        "tabs_name_JjKzN9",
         "tolstoy_shoppable_video_ugc_stories_block_hUR8d6",
         "af181730-ba8b-440a-8bae-8ef024ae7a72",
         "49935d06-a61f-4be4-865c-9762a9f134a3",
