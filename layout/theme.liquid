@@ -712,6 +712,39 @@
     <!-- Widget : Free Tote with Gili -->
     <div data-rebuy-id="270431"></div>
     <!-- End Widget : Free Tote with Gili -->
+
+    <script>
+      (function() {
+        function isCSSLoaded(href) {
+          var sheets = document.styleSheets;
+          for (var i = 0; i < sheets.length; i++) {
+            try {
+              if (sheets[i].href && sheets[i].href.indexOf('cdn.rebuyengine.com/onsite/css/global.min.css') !== -1) {
+                return true;
+              }
+            } catch(e) {}
+          }
+          return false;
+        }
+
+        function loadCSS() {
+          if (!isCSSLoaded()) {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.rebuyengine.com/onsite/css/global.min.css';
+            document.head.appendChild(link);
+            console.log('[RebuyCSS] CSS not found — injected into head.');
+          } else {
+            console.log('[RebuyCSS] CSS already loaded — skipping.');
+          }
+        }
+
+        // 2 second delay pachhi check
+        setTimeout(loadCSS, 2000);
+      })();
+    </script>
+
   </body>
 </html>
 
