@@ -715,7 +715,7 @@
 
     <script>
       (function() {
-        function isCSSLoaded(href) {
+        function isCSSLoaded() {
           var sheets = document.styleSheets;
           for (var i = 0; i < sheets.length; i++) {
             try {
@@ -734,14 +734,14 @@
             link.rel = 'stylesheet';
             link.href = 'https://cdn.rebuyengine.com/onsite/css/global.min.css';
             document.head.appendChild(link);
-            console.log('[RebuyCSS] CSS not found — injected into head.');
-          } else {
-            console.log('[RebuyCSS] CSS already loaded — skipping.');
           }
         }
-
-        // 2 second delay pachhi check
         setTimeout(loadCSS, 2000);
+        window.addEventListener('pageshow', function(event) {
+          if (event.persisted) {
+            setTimeout(loadCSS, 2000);
+          }
+        });
       })();
     </script>
 
