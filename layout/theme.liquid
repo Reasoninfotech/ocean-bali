@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>
-    <link type="text/css" rel="stylesheet" href="https://cdn.rebuyengine.com/onsite/css/global.min.css">
+  <head>    
     {% if request.path contains 'products/long-sleeve-bathers-grey' or request.path contains 'a/returns' %}
       <meta name="robots" content="noindex, nofollow">
     {% endif %}
@@ -115,13 +114,14 @@
     <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
     <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
     <link rel="preconnect" href="//ajax.googleapis.com" crossorigin>
-
+    
     {% if product.handle == 'navidium-returns' or product.handle == 'navidium-shipping-protection' %}
       <script>
         window.location.href = '/';
       </script>
     {% endif %}
-
+    
+    <link rel="stylesheet" href="https://cdn.rebuyengine.com/onsite/css/global.min.css" as="style">
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
     ></script>
