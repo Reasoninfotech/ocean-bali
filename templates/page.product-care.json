@@ -1,1 +1,492 @@
-{"sections":{"breadcrumbs":{"type":"breadcrumbs","settings":{}},"main":{"type":"main-page","settings":{}}},"order":["breadcrumbs","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "page_width": 100
+      }
+    },
+    "re_hero_banner_DfBapr": {
+      "type": "re-hero-banner",
+      "disabled": true,
+      "name": "Hero Banner",
+      "settings": {
+        "desktop_img": "shopify://shop_images/one_piece_swimsuit_the_mentawai_in_snow_2.webp",
+        "Mobile_img": "shopify://shop_images/one_piece_swimsuit_the_mentawai_in_snow_1_1_1_1.webp",
+        "title": "",
+        "desktop_title_color": "#fff",
+        "mobile_title_color": "#fff",
+        "dis": "",
+        "dis_deskop_color": "#fff",
+        "dis_mobile_color": "#fff",
+        "bg-color-name": "#000000",
+        "text-color-name": "#ffffff",
+        "icon-svg-color": "#ffffff",
+        "icon-svg-mobile-color": "#ffffff",
+        "icon-text-color": "#ffffff",
+        "icon-text-mobile-color": "#ffffff",
+        "btn_text": "",
+        "btn_url": "",
+        "desktop_text_align": "center",
+        "mobile_text_align": "center",
+        "desktop_dis_margin_bottom": 45,
+        "tablet_dis_margin_bottom": 35,
+        "mobile_dis_margin_bottom": 20,
+        "desktop_content_position": "center_left",
+        "mobile_content_position": "top_center",
+        "desktop_padding_top": 150,
+        "desktop_padding_bottom": 100,
+        "tablet_padding_top": 90,
+        "tablet_padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "image_with_text_wFjQqr": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Sustainable-Swimwear-The-Mentawai-in-Olive-Surf-Suit-Ocean-Soul-Bali-2.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Customer Feedback Highlights",
+        "text": "<h3>What do customers love most?</h3><p>The most common customer feedback includes:</p><p>“Flattering fit”</p><p>“Feels supportive”</p><p>“Stays in place”</p><p>“Beautiful quality fabric”</p><p>“Comfortable but secure”</p><p>“Confidence-boosting fit”</p><h3>Why do some customers size up?</h3><p>Because our swimsuits are intentionally designed with a firm, sculpting fit, some customers prefer to size up for a softer feel - especially in black colourways.</p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "accordion_dCUPtx": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_RwQAXf": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do your swimsuits stay on in the surf?",
+            "content": "<p>Our one pieces and long sleeve styles are specifically designed to feel secure and supportive in the water. The firm fit, contouring panels, and sculpting cuts are intended to minimise movement while surfing and swimming. For larger surf conditions, we generally recommend our more supportive one-piece styles for maximum coverage and security.</p>"
+          }
+        },
+        "accordion_pane_QAHdEK": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What makes Ocean Soul Swimwear different?",
+            "content": "<p>Ocean Soul Swimwear is designed specifically for women who want swimwear that feels secure, flattering, and comfortable while actually moving in and around the water. Our pieces are designed to stay in place while surfing, swimming, freediving, travelling, and long beach days — without sacrificing style or comfort. We use premium recycled Italian fabrics, sculpting panelled cuts, and UPF 50+ protection across much of the range</p>"
+          }
+        },
+        "accordion_pane_keU3mH": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Is your swimwear designed for surfing and active use?",
+            "content": "<p>Yes. Our swimwear is created for active ocean lifestyles including surfing, swimming, freediving, paddleboarding, and travel. Many customers specifically choose Ocean Soul because they were frustrated with swimwear shifting, slipping, or needing constant adjusting in the water.</p>"
+          }
+        },
+        "accordion_pane_CYhaY8": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Are your swimsuits flattering?",
+            "content": "<p>Flattering fit is one of the most common pieces of customer feedback we receive. Our designs use strategic paneling, contour lines, cinched waistbands, and sculpting fabric to help define the waist and create a streamlined silhouette.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_RwQAXf",
+        "accordion_pane_QAHdEK",
+        "accordion_pane_keU3mH",
+        "accordion_pane_CYhaY8"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "GENERAL",
+        "max_width": 50,
+        "allow_multiple": true
+      }
+    },
+    "image_with_text_overlay_Up7MqW": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/White_High_Waisted_Bikini_The_Sumatra.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_Ywrngh": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_VWYJaE": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you cater to different body shapes?",
+            "content": "<p>Yes. Ocean Soul Swimwear is designed to suit a wide range of body shapes and sizes, with styles ranging from supportive long sleeve one pieces to seamless bikinis and adjustable fits. </p>"
+          }
+        },
+        "accordion_pane_fgbnEb": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What if my swimsuit feels tight when I first try it on?",
+            "content": "<p>This is very common, especially with the Sulawesi and other sculpting one-piece styles. The fabric is designed to hold and support the body. Many customers find the suit softens slightly once worn.</p>"
+          }
+        },
+        "accordion_pane_wk9pER": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Are your swimsuits compressive?",
+            "content": "<p>Yes - many styles are intentionally designed with a sculpting, supportive fit that feels more secure than traditional swimwear.</p>"
+          }
+        },
+        "accordion_pane_gyrVkm": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How does Ocean Soul sizing run?",
+            "content": "<p>Most Ocean Soul pieces are intentionally designed to fit firm and sculpt the body. A snug fit is normal and part of the design. If you prefer a softer or more relaxed fit, we recommend sizing up. </p>"
+          }
+        },
+        "accordion_pane_ydVbHU": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "I’m between sizes - what should I choose?",
+            "content": "<p>If you are between sizes, we generally recommend sizing up. For black styles specifically, we often recommend sizing up two sizes if between sizes, as darker fabrics can feel firmer due to the dyeing process.</p>"
+          }
+        },
+        "accordion_pane_PzrKHk": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Why does the black fabric feel firmer?",
+            "content": "<p>Black fabric undergoes additional dyeing which can make it feel slightly firmer and more compressive compared to lighter colours. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_VWYJaE",
+        "accordion_pane_fgbnEb",
+        "accordion_pane_wk9pER",
+        "accordion_pane_gyrVkm",
+        "accordion_pane_ydVbHU",
+        "accordion_pane_PzrKHk"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Sizing & Fit",
+        "max_width": 50,
+        "allow_multiple": true
+      }
+    },
+    "image_with_text_overlay_wxVggi": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/long-sleeve-surf_swimsuit-the-sulawesi-midnight-ocean-soul-swimwear-2.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_EEAheA": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Ltg9nq": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What zips do you use?",
+            "content": "<p>We use premium YKK zips chosen for their quality, durability, and reliability. </p>"
+          }
+        },
+        "accordion_pane_hwU99G": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What fabric do you use?",
+            "content": "<p>We use premium recycled Italian fabrics designed for durability, comfort, softness, and performance in the water.</p>"
+          }
+        },
+        "accordion_pane_zJpFXx": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Is your swimwear sustainable?",
+            "content": "<p>Yes. Sustainability is a core part of Ocean Soul Swimwear. Our fabrics are made from regenerated and recycled materials, helping reduce waste while creating high-quality swimwear designed to last longer.</p>"
+          }
+        },
+        "accordion_pane_87nLKg": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Does your swimwear provide sun protection?",
+            "content": "<p>Yes. All Ocean Soul swimwear is made with UPF 50+ fabric to help protect your skin from the sun during long days outdoors and in the water. </p>"
+          }
+        },
+        "accordion_pane_fcUEJT": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How long does your swimwear last?",
+            "content": "<p>Our swimwear is designed to last significantly longer than standard swimwear when cared for correctly. Customers regularly comment on the quality, support, and durability of the fabric. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Ltg9nq",
+        "accordion_pane_hwU99G",
+        "accordion_pane_zJpFXx",
+        "accordion_pane_87nLKg",
+        "accordion_pane_fcUEJT"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Fabric & Quality",
+        "max_width": 50,
+        "allow_multiple": true
+      }
+    },
+    "image_with_text_overlay_UTXzXQ": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/one-piece-swimwear-the-misool-one-piece-swimwear-ocean-soul-bali-8.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_Et4H6Y": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Hnd6bw": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How should I care for my swimwear?",
+            "content": "<p>To maximise the lifespan of your swimwear, we recommend:</p><ul><li>Rinsing in cold water after each use<br/></li><li>Avoiding harsh detergents<br/></li><li>Air drying in the shade<br/></li><li>Avoiding rough surfaces where possible<br/></li><li>Not leaving swimwear wet for extended periods</li></ul>"
+          }
+        },
+        "accordion_pane_TKphWy": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Can I wear my swimsuit in chlorine?",
+            "content": "<p>Yes, our fabrics are chlorine resistant, however frequent chlorine exposure may still shorten the lifespan of any swimwear over time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Hnd6bw",
+        "accordion_pane_TKphWy"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Care Instructions",
+        "max_width": 50,
+        "allow_multiple": false
+      }
+    },
+    "accordion_JrH6Gd": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_DaQT8Y": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you offer a warranty?",
+            "content": "<p>Yes. If your garment experiences a genuine manufacturing fault, we may repair or replace the item at our discretion. </p>"
+          }
+        },
+        "accordion_pane_NNbgfw": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "What is not covered under warranty?",
+            "content": "<p>General wear and tear, misuse, improper care, damage from rough surfaces, and damage caused by extreme activity are not covered under warranty</p>"
+          }
+        },
+        "accordion_pane_btyJk8": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "How can I contact customer care?",
+            "content": "<p>You can contact our customer care team via <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">email</a> for sizing assistance, returns, exchanges, and product support.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_DaQT8Y",
+        "accordion_pane_NNbgfw",
+        "accordion_pane_btyJk8"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Warranty & Support",
+        "max_width": 50,
+        "allow_multiple": false
+      }
+    },
+    "image_with_text_overlay_DeFJAL": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/black-long-sleeve-surf-swimsuit-the-sulawesi-midnight-9.webp",
+        "overlay": false,
+        "background_attachment": "fixed",
+        "height": 300,
+        "mobile_height": 200,
+        "text_align": "center",
+        "caption_vertical": 50,
+        "caption_horizontal": 50,
+        "heading": "",
+        "subheading_text": "",
+        "button_text": "Button",
+        "link": "",
+        "heading_font_size": 30,
+        "subheading_font_size": 16,
+        "text_color": "#000",
+        "button_text_color": "#fff",
+        "button_color": "#000",
+        "section_space": "top_and_bottom"
+      }
+    },
+    "accordion_LL6LYm": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_pane_Qed746": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Can I wear Ocean Soul Swimwear for travel as well as swimming?",
+            "content": "<p>Absolutely. Many customers choose Ocean Soul because the pieces transition easily from ocean activities to travel and beachwear styling.</p>"
+          }
+        },
+        "accordion_pane_zQkfd7": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Do you have supportive swimwear without underwire?",
+            "content": "<p>Yes. Many Ocean Soul styles are designed to feel supportive through compression, paneling, and fit rather than bulky padding or underwire.</p>"
+          }
+        },
+        "accordion_pane_tkMcbx": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Which styles are best for surfing?",
+            "content": "<p>For the most support and security in the surf, we recommend:</p><ul><li><a href=\"/collections/long-sleeve-one-piece-swimsuits\" title=\"Long Sleeve Swimsuits\">Sulawesi Long Sleeve One Piece</a><br/></li><li><a href=\"/collections/sleeveless-one-piece-swimsuits\" title=\"Sleeveless One Piece Swimsuits\">Mentawai one pieces</a><br/></li><li><a href=\"/collections/womens-rash-vest\" title=\"Womens Rash Vest\">Sumba rashguard, Aceh rashgaurd, Mentawai Crop</a><br/></li></ul><p>For lighter surf, swimming, and beach use, many customers also love our Mentawai and bikini ranges.</p>"
+          }
+        },
+        "accordion_pane_tp9wjX": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Which styles are best for sun protection?",
+            "content": "<p>Our<a href=\"/collections/upf-50-sun-protection-swimwear-for-women\" title=\"Best UPF Protection\"> long sleeve swimsuits and rash guards </a> in darker colours offer the highest level of sun protection and are ideal for:</p><ul><li>Surfing<br/></li><li>Swimming<br/></li><li>Paddleboarding<br/></li><li>Boating<br/></li><li>Long beach days<br/></li><li>Tropical travel</li></ul>"
+          }
+        },
+        "accordion_pane_aCkiqR": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Are your white swimsuits see-through?",
+            "content": "<p>Our lighter colourways are designed with extra lining and thoughtful construction to minimise transparency and improve confidence when wet.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_pane_Qed746",
+        "accordion_pane_zQkfd7",
+        "accordion_pane_tkMcbx",
+        "accordion_pane_tp9wjX",
+        "accordion_pane_aCkiqR"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "title": "Product-Specific Questions",
+        "max_width": 50,
+        "allow_multiple": true
+      }
+    },
+    "image_with_text_aHz3BQ": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/one-piece-swimsuits-the-mentawai-in-nautical-surf-suit-ocean-soul-bali-4.webp",
+        "image_position": "left",
+        "image_size": "medium",
+        "image_height": "fixed",
+        "desktop_image_height": 550,
+        "mobile_image_height": 450,
+        "title": "Still have further questions?",
+        "text": "<p>Whether you’re unsure on sizing, choosing the right style, or have questions about your order, our customer care team would love to assist.<br/><br/>Email us anytime at <a><strong>customercare@oceansoulbali.com</strong></a></p>",
+        "button_text": "Button",
+        "link": "",
+        "center_align": true,
+        "text_color": "#606060",
+        "background_color": "#f7f7f7"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "re_hero_banner_DfBapr",
+    "image_with_text_wFjQqr",
+    "accordion_dCUPtx",
+    "image_with_text_overlay_Up7MqW",
+    "accordion_Ywrngh",
+    "image_with_text_overlay_wxVggi",
+    "accordion_EEAheA",
+    "image_with_text_overlay_UTXzXQ",
+    "accordion_Et4H6Y",
+    "accordion_JrH6Gd",
+    "image_with_text_overlay_DeFJAL",
+    "accordion_LL6LYm",
+    "image_with_text_aHz3BQ"
+  ]
+}

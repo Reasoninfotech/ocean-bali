@@ -134,8 +134,8 @@ body.after_popup {
     margin-bottom: 10px;
 }
 .product__section--header .jdgm-widget.jdgm-preview-badge .jdgm-prev-badge__text {
-    font-weight: 600;
-    color: #525252;
+    font-weight: 400;
+    color: #606060;
 }
 div#product-price {
     border: none;
@@ -173,6 +173,7 @@ div#product-price {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
+        position: relative;
 }
 .items_left_main span:first-child {
     height: 12px;
@@ -292,6 +293,8 @@ body.product .product__section--header div#product-price .price-item {
 }
 .items_left_main.lowe_value span:first-child {
     background: rgb(247, 143, 89);
+        position: absolute;
+        top:5px;
 }
 .items_left_main.lowe_value span:first-child:after {
     background: rgb(247, 143, 89);

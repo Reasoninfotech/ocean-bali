@@ -10,7 +10,7 @@
     const nvdControls = {
       subtotal_item: '.js-cart-subtotal,.cart-original-total,.rebuy-cart__flyout-subtotal-amount span:last-child',
       CheckoutBtns: '[name="checkout"],.rebuy-cart__checkout-button',
-      clickTriggers: '[name="button"],[name="button"] *,.ajax-cart__item-quantity button,.ajax-cart__item-quantity button *,.ajax-cart__item-remove,.ajax-cart__item-remove *,.rebuy-cart__flyout-item-quantity-widget-button,.rebuy-cart__flyout-item-quantity-widget-button *,.rebuy-cart__flyout-item-remove,.rebuy-cart__flyout-item-remove *,[href="/cart"],[href="/cart"] *',
+      clickTriggers: '[name="button"],[name="button"] *,.ajax-cart__item-quantity button,.ajax-cart__item-quantity button *,.ajax-cart__item-remove,.ajax-cart__item-remove *,.rebuy-cart__flyout-item-quantity-widget-button,.rebuy-cart__flyout-item-quantity-widget-button *,.rebuy-cart__flyout-item-remove,.rebuy-cart__flyout-item-remove *,[href="/cart"],[href="/cart"] *,.rebuy-button,.rebuy-button *',
       changeTrigger: '.ajax-cart__qty-input ',
 	    cursorControl: '.nvd-mini',
       showConsoleMessage: false,
@@ -115,3 +115,11 @@ document.addEventListener('rebuy:smartcart.show', (event) => {
     position: relative;
 }
 </style>
+
+<script>
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    location.reload();
+  }
+});
+</script>

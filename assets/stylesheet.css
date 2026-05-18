@@ -1755,8 +1755,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: calc(var(--font-size) + 2px);
 }
 
 h5, .h5 {
@@ -2687,9 +2686,9 @@ button.shopify-payment-button__more-options, button.shopify-payment-button__more
   font-size: 12px;
   height: initial;
 }
-.shopify-payment-button__more-options{
+/* .shopify-payment-button__more-options{
   display: none!important;
-}
+} */
 .rte-description {
   margin-bottom: 15px;
 }
@@ -2880,7 +2879,7 @@ button.shopify-payment-button__more-options, button.shopify-payment-button__more
 /* = Newsletter Section = */
 /* ====================== */
 #newsletter {
-  padding: 30px 15px !important;
+  padding: 30px 15px 30px 15px;
 }
 .section-icons ul li a {
   font-size: 15px;
@@ -6764,8 +6763,9 @@ ol.flex-control-nav {
 /* = RTE Formatting = */
 /* =============== */
 
-.rte h2 {margin-bottom: 30px;}
-@media(max-width: 767px){.rte h2 {margin-bottom: 10px;}}
+.rte h2 {
+  margin-bottom: 30px;
+}
 
 /* RTE Button */
 .rte-button {
@@ -9504,7 +9504,7 @@ ul.megamenu__ulcontainer {
     height: var(--height);
     object-fit: cover;
   }
-  .image__overlay-section .image__overlay-caption h2 {
+  .image__overlay-section .image__overlay-caption h3 {
     font-size: var(--heading-font-size);
     color: var(--text-color);
   }
@@ -9531,7 +9531,7 @@ ul.megamenu__ulcontainer {
     .image__overlay-section .image__overlay-container {
       height: var(--mobile-height);
     }
-    .image__overlay-section .image__overlay-caption h2 {
+    .image__overlay-section .image__overlay-caption h3 {
       font-size: calc(var(--heading-font-size) - (var(--heading-font-size) * 0.15))
     }
     .image__overlay-section .image__overlay-caption p {
@@ -9731,7 +9731,7 @@ ul.megamenu__ulcontainer {
 }
 
 @media screen and (max-width: 767px) {
-  .section-title{margin:0px 0px 15px;}  
+  .section-title{margin:0px 0px 10px;}  
 }
 
 
@@ -10105,6 +10105,10 @@ ul.megamenu__ulcontainer {
 .swatches__swatch--color.soldout .swatches__sold-out--image,
 .swatches__swatch--regular.soldout .swatches__sold-out--image {
   display: block;
+}
+.swatches__swatch--regular.soldout {
+      cursor: none !important;
+    pointer-events: none !important ;
 }
 
 .swatches__swatch--regular.soldout label,
@@ -11321,7 +11325,7 @@ span.popup_content_link {
 }
 
 span.popup_content_link button {
-    margin: 0 10px 0 0;
+    margin: 0 0 0 0;
     padding: 0;
 }
 
@@ -13201,7 +13205,7 @@ a.view-full {
 
 /* Website Logos */
 
-section.website-logo-section{margin-bottom:0}.website-logo-section .imageText__column-container{margin:0!important;display:flex;align-items:center;justify-content:center;flex:20%;padding:0}.website-logo-section .logo-container{display:flex;flex-wrap:wrap}.website-logo-section .imageText__column-container .box-ratio{overflow:inherit}.website-logo-section .imageText__column-container .box-ratio{padding-bottom:0px!important;display:flex;height:100%;justify-content:center;align-items:center}.website-logo-section .imageText__column-container .box-ratio img{transform:scale(.8)}@media screen and (max-width:739px){.website-logo-section .imageText__column-container{flex:50%}.website-logo-section .imageText__column-container img{width:200px}}@media screen and (max-width:400px){.website-logo-section .logo-container{flex-direction:row}.website-logo-section .imageText__column-container img{width:150px}}
+section.website-logo-section{margin-bottom:0}.website-logo-section .imageText__column-container{margin:0!important;display:flex;align-items:center;justify-content:center;flex:20%;padding:0}.website-logo-section .logo-container{display:flex;flex-wrap:wrap}.website-logo-section .imageText__column-container .box-ratio{overflow:inherit}.website-logo-section .imageText__column-container .box-ratio{padding-bottom:0px!important;display:flex;height:100%;justify-content:center;align-items:center}.website-logo-section .imageText__column-container .box-ratio img{transform:scale(.8)}@media screen and (max-width:739px){.website-logo-section .imageText__column-container{flex:50%}.website-logo-section .imageText__column-container img{width:200px}}@media screen and (max-width:400px){.website-logo-section .logo-container{flex-direction:column}.website-logo-section .imageText__column-container img{width:150px}}
 
 /* Set JudgeMe badge behind the cart drawer */
 
@@ -13281,27 +13285,16 @@ div#shopify-section-template--15771516862553__rich_text_qzWNxe section:before,di
   .template-product-cust-sleeveless-one-piec.product span.popup_content_link.size-guide-trigger.first-trigger{margin-bottom:0;} 
 }
 
-/* Align blog posts to have equal height and bottom buttons */
-.blog__article-container:not(.list-layout) .blog__post-container {
-  height: 100%;
-}
-.blog__article-container:not(.list-layout) .blog__post-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.blog__article-container:not(.list-layout) .blog__post-details {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.blog__article-container:not(.list-layout) .blog__post-excerpt {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.blog__article-container:not(.list-layout) .blog__post-button {
-  margin-top: auto;
-}
-[data-rebuy-id="270431"]{display: none;}
+/* =============== S New Upadted 16/05/26 */
+
+.review_and_custom_text{display: flex;flex-wrap: wrap;gap: 5px;align-items: center;}
+.review_and_custom_text .jdgm-widget.jdgm-preview-badge{flex-shrink: 0;}
+
+.review_and_custom_text .review_custom_text{width: 100%;}
+.review_and_custom_text .review_custom_text p{margin: 0;padding:0 0px!important;color: #606060;font-weight: 400;line-height: normal;border-radius: 5px;letter-spacing: 0;position: relative;line-height: 18px;font-size: 13px;}
+.review_and_custom_text .review_custom_text p span {font-size: 11px;}
+.review_and_custom_text .review_custom_text .common_quote{width: 16px;height: 16px;}
+@media (max-width: 767px){.review_and_custom_text .review_custom_text p{padding: 10px 0!important;}}
+.custom_text_options p{padding-bottom: 0!important;}
+.review_and_custom_text .jdgm-widget.jdgm-preview-badge{margin-bottom: 0!important;}
+

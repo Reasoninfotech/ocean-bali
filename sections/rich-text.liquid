@@ -1,4 +1,4 @@
-{% comment %} <section class="global__section rich__text-section--{{ section.id }} mt0" data-section-id="{{ section.id }}" {% if section.settings.comman_data_id != blank %} data-section-scroll="{{ section.settings.comman_data_id }}" {% endif %} >
+<section class="global__section rich__text-section--{{ section.id }} mt0" data-section-id="{{ section.id }}" {% if section.settings.comman_data_id != blank %} data-section-scroll="{{ section.settings.comman_data_id }}" {% endif %} >
   <div class="row">
     <div class="rich__text-container desktop-12 tablet-6 mobile-3 padded">
       <div class="rich__text-content">
@@ -26,7 +26,7 @@
                       </span>
                     </h1>
                   {% else %}
-                    <h2 class="accordion-trigger">
+                    <h3 class="accordion-trigger">
                       {{ block.settings.title | escape }}
                       <span class="accordion-icon">
                         {% comment %} <svg class="plus-icon"  width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
                         </svg> {% endcomment %}
                         <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
                       </span>
-                    </h2>
+                    </h3>
                   {% endif %}
                 {% endif %}
                 <div class="clear"></div>
@@ -61,7 +61,7 @@
                 {% if block.settings.title_heading %}
                   <h1>{{ block.settings.title | escape }}</h1>
                 {% else %}
-                  <h2>{{ block.settings.title | escape }}</h2>
+                  <h3>{{ block.settings.title | escape }}</h3>
                 {% endif %}
                 <div class="clear"></div>
               {% endif %}
@@ -184,10 +184,16 @@
     }
 
     .accordion-content {
+      {% comment %} max-height: 0; {% endcomment %}
+      {% comment %} overflow: hidden; {% endcomment %}
+      {% comment %} transition: max-height 0.3s ease; {% endcomment %}
+      {% comment %} opacity: 0; {% endcomment %}
       display:none;
     }
 
     .accordion-content.active {
+      {% comment %} max-height: 2000px; {% endcomment %}
+      {% comment %} opacity: 1; {% endcomment %}
     display:block;
     }
 
@@ -201,59 +207,38 @@
   }
   </style>
 
-  <script>
-  function initAccordion() {
-    const headers = document.querySelectorAll('.accordion-header');
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const headers = document.querySelectorAll('.accordion-header');
+      
+      headers.forEach(header => {
+        const accordionId = header.getAttribute('data-accordion-id');
+        const trigger = header.querySelector('.accordion-trigger');
+        const icon = header.querySelector('.accordion-icon');
+        const plusIcon = icon.querySelector('.plus-icon');
+        const minusIcon = icon.querySelector('.minus-icon');
+        const content = document.querySelector(`.accordion-content[data-accordion-id="${accordionId}"]`);
 
-    headers.forEach(header => {
-      const accordionId = header.getAttribute('data-accordion-id');
-
-      // Trigger fallback (if .accordion-trigger not present)
-      const trigger = header.querySelector('.accordion-trigger') || header;
-
-      // Find matching content
-      const content = document.querySelector(
-        `.accordion-content[data-accordion-id="${accordionId}"]`
-      );
-
-      // Safety check
-      if (!accordionId || !content) return;
-
-      // Icons (optional)
-      const icon = header.querySelector('.accordion-icon');
-      const plusIcon = icon ? icon.querySelector('.plus-icon') : null;
-      const minusIcon = icon ? icon.querySelector('.minus-icon') : null;
-
-      // Prevent duplicate event binding
-      if (trigger.classList.contains('accordion-initialized')) return;
-      trigger.classList.add('accordion-initialized');
-
-      trigger.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // Toggle active class
-        content.classList.toggle('active');
-
-        // Toggle icons safely
-        if (plusIcon && minusIcon) {
-          if (content.classList.contains('active')) {
-            plusIcon.style.display = 'none';
-            minusIcon.style.display = 'block';
-          } else {
-            plusIcon.style.display = 'block';
-            minusIcon.style.display = 'none';
-          }
+        if (trigger && content) {
+          trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle active state
+            content.classList.toggle('active');
+            
+            // Toggle icons
+            if (content.classList.contains('active')) {
+              plusIcon.style.display = 'none';
+              minusIcon.style.display = 'block';
+            } else {
+              plusIcon.style.display = 'block';
+              minusIcon.style.display = 'none';
+            }
+          });
         }
       });
     });
-  }
-
-  // Run on page load
-  document.addEventListener('DOMContentLoaded', initAccordion);
-
-  // Run again for Shopify dynamic sections
-  document.addEventListener('shopify:section:load', initAccordion);
-</script>
+  </script>
 </section>
 
 
@@ -271,455 +256,6 @@
       "unit": "px",
       "label": "Section padding",
       "default": 60
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "text",
-      "id": "comman_data_id",
-      "label": "Comman Data Id",
-      "info": "Do not remove that"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text_block",
-      "name": "Column",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Welcome"
-        },
-        {
-          "type": "checkbox",
-          "id": "title_heading",
-          "label": "H1 Header"
-        },
-        {
-          "type": "checkbox",
-          "id": "accordion_enabled",
-          "label": "Enable Accordion",
-          "default": false,
-          "info": "Check this to show accordion with toggle icon"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Add some text blocks to your page with editable widths for a single or multi-column display</p>"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "Show content from a page",
-          "info": "Overrides any text entered"
-        },
-        {
-          "type": "checkbox",
-          "id": "center",
-          "label": "Center align"
-        },
-        {
-          "type": "range",
-          "id": "block_width",
-          "min": 25,
-          "max": 100,
-          "step": 25,
-          "unit": "%",
-          "label": "Block width",
-          "default": 100
-        },
-        {
-          "type": "color",
-          "id": "accordion_icon_color",
-          "label": "Accordion Icon Color",
-          "default": "#000000"
-        },
-        {
-          "type": "range",
-          "id": "accordion_icon_size",
-          "min": 10,
-          "max": 40,
-          "step": 5,
-          "unit": "px",
-          "label": "Accordion Icon Size",
-          "default": 20
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Rich text",
-      "blocks": [
-        {
-          "type": "text_block"
-        }
-      ]
-    }
-  ],
-  "templates": [
-    "404",
-    "article",
-    "blog",
-    "cart",
-    "collection",
-    "list-collections",
-    "index",
-    "page",
-    "product",
-    "search",
-    "customers/account"
-  ]
-}
-{% endschema %} {% endcomment %}
-
-
-<section class="global__section rich__text-section--{{ section.id }} mt0" data-section-id="{{ section.id }}" {% if section.settings.comman_data_id != blank %} data-section-scroll="{{ section.settings.comman_data_id }}" {% endif %} >
-  <div class="row">
-    <div class="rich__text-container desktop-12 tablet-6 mobile-3 padded">
-      <div class="rich__text-content">
-        {% for block in section.blocks %}
-          {% assign page = pages[block.settings.page] %}
-          <div class="rich__text-column{% if block.settings.center %} center{% endif %} block-{{ block.id }}">
-            
-            {% if block.settings.accordion_enabled %}
-              <!-- Accordion Toggle Header -->
-              <div class="accordion-header" data-accordion-id="{{ block.id }}">
-                {% if block.settings.title != blank %}
-                  {% if block.settings.title_heading %}
-                    <h1 class="accordion-trigger">
-                      {{ block.settings.title | escape }}
-                      <span class="accordion-icon">
-                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
-                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
-                      </span>
-                    </h1>
-                  {% else %}
-                    <h2 class="accordion-trigger">
-                      {{ block.settings.title | escape }}
-                      <span class="accordion-icon">
-                        <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#ABABAB" opacity="1" data-original="#000000" class=""></path></g></svg>
-                        <svg class="minus-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ABABAB" fill-rule="evenodd" d="M3.576 16.424a.6.6 0 0 0 .849 0L12 8.85l7.576 7.575a.6.6 0 0 0 .849-.848l-8-8a.6.6 0 0 0-.849 0l-8 8a.6.6 0 0 0 0 .848z" clip-rule="evenodd" opacity="1" data-original="#333333"></path></g></svg>
-                      </span>
-                    </h2>
-                  {% endif %}
-                {% endif %}
-                <div class="clear"></div>
-              </div>
-
-              <!-- Accordion Content -->
-              <div class="accordion-content" data-accordion-id="{{ block.id }}">
-                {% if page != blank %}
-                  {{ page.content }}
-                {% else %}
-                <div class="rte">
-                  {{ block.settings.text }}
-                </div>
-                {% endif %}
-              </div>
-            {% else %}
-              <!-- Normal Content (No Accordion) -->
-              {% if block.settings.title != blank %}
-                {% if block.settings.title_heading %}
-                  <h1>{{ block.settings.title | escape }}</h1>
-                {% else %}
-                  <h2>{{ block.settings.title | escape }}</h2>
-                {% endif %}
-                <div class="clear"></div>
-              {% endif %}
-              {% if page != blank %}
-                {{ page.content }}
-              {% else %}
-              <div class="rte">
-                {{ block.settings.text }}
-              </div>
-              {% endif %}
-            {% endif %}
-
-            {%- liquid
-
-              assign width = block.settings.block_width
-              case block.settings.block_width
-                when 25
-                  assign span = 'span_1'
-                when 50
-                  assign span = 'span_2'
-                when 75
-                  assign span = 'span_3'
-                when 100
-                  assign span = 'span_4'
-              endcase
-
-            -%}
-
-            <style>
-              .rich__text-column.block-{{ block.id }} {
-                {% if section.blocks.size == 1 %}
-                width: {{ width }}%;
-                justify-self: center;
-                {% else %}
-                grid-column: auto / {{ span | replace: '_', ' ' }};
-                {% endif %}
-              }
-            </style>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  
-  <style>
-    {% if section.blocks.size > 1 %}
-    .rich__text-section--{{ section.id }} .rich__text-content {
-      grid-template-columns:repeat(4, 1fr);
-      justify-content: center;
-    }
-    {% endif %}
-    
-    /* Desktop Padding */
-    .rich__text-section--{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_desktop }}px;
-      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
-    }
-
-    /* Tablet Padding */
-    @media screen and (max-width: 1024px) {
-      .rich__text-section--{{ section.id }} {
-        padding-top: {{ section.settings.padding_top_tablet }}px;
-        padding-bottom: {{ section.settings.padding_bottom_tablet }}px;
-      }
-    }
-
-    /* Mobile Padding */
-    @media screen and (max-width: 768px) {
-      .rich__text-section--{{ section.id }} {
-        padding-top: {{ section.settings.padding_top_mobile }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-      }
-    }
-    
-    .rich__text-section--{{ section.id }} {
-      background: {{ section.settings.background_color }};
-    }
-    
-    .rich__text-section--{{ section.id }} h3,
-    .rich__text-section--{{ section.id }} p,
-    .rich__text-section--{{ section.id }} a {
-      color: {{ section.settings.text_color }};
-    }
-
-    /* Accordion Styles */
-    .accordion-header {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .accordion-trigger {
-      display: flex;
-      align-items: flex-end;
-      gap: 0px;
-      cursor: pointer;
-      margin: 0 auto;
-      justify-content: center;
-      width: fit-content;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 25px;
-      position: relative;
-      width: fit-content;
-    }
-
-    .accordion-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      width: {{ block.settings.accordion_icon_size }}px;
-      height: {{ block.settings.accordion_icon_size }}px;
-      flex-shrink: 0;
-      color: {{ block.settings.accordion_icon_color }};  
-      position: absolute;
-      right: 0;
-      bottom: -13px;
-      background: #fff;
-      padding-left: 20px;
-    }
-
-    .accordion-icon svg {
-      width: 30px;
-      height: 30px;
-      color: {{ block.settings.accordion_icon_color }};
-    }
-
-    .accordion-icon svg line {
-      stroke: {{ block.settings.accordion_icon_color }};
-    }
-
-    .accordion-icon .plus-icon {
-      transition: opacity 0.3s ease;
-    }
-
-    .accordion-icon .minus-icon {
-      transition: opacity 0.3s ease;
-    }
-
-    .accordion-content {
-      display:none;
-    }
-
-    .accordion-content.active {
-      display:block;
-    }
-
-    .accordion-content.active .rte {
-      padding: 15px 0;
-    }
-
-    @media screen and (max-width: 768px) {
-      .accordion-trigger {
-        gap:10px;
-      }
-    }
-  </style>
-
-  <script>
-  function initAccordion() {
-    const headers = document.querySelectorAll('.accordion-header');
-
-    headers.forEach(header => {
-      const accordionId = header.getAttribute('data-accordion-id');
-
-      const trigger = header.querySelector('.accordion-trigger') || header;
-
-      const content = document.querySelector(
-        `.accordion-content[data-accordion-id="${accordionId}"]`
-      );
-
-      if (!accordionId || !content) return;
-
-      const icon = header.querySelector('.accordion-icon');
-      const plusIcon = icon ? icon.querySelector('.plus-icon') : null;
-      const minusIcon = icon ? icon.querySelector('.minus-icon') : null;
-
-      if (trigger.classList.contains('accordion-initialized')) return;
-      trigger.classList.add('accordion-initialized');
-
-      trigger.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        content.classList.toggle('active');
-
-        if (plusIcon && minusIcon) {
-          if (content.classList.contains('active')) {
-            plusIcon.style.display = 'none';
-            minusIcon.style.display = 'block';
-          } else {
-            plusIcon.style.display = 'block';
-            minusIcon.style.display = 'none';
-          }
-        }
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', initAccordion);
-  document.addEventListener('shopify:section:load', initAccordion);
-</script>
-</section>
-
-
-{% schema %}
-{
-  "name": "Rich text",
-  "max_blocks": 4,
-  "settings": [
-    {
-      "type": "header",
-      "content": "Desktop Padding"
-    },
-    {
-      "type": "range",
-      "id": "padding_top_desktop",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 35
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_desktop",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 35
-    },
-    {
-      "type": "header",
-      "content": "Tablet Padding"
-    },
-    {
-      "type": "range",
-      "id": "padding_top_tablet",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_tablet",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 30
-    },
-    {
-      "type": "header",
-      "content": "Mobile Padding"
-    },
-    {
-      "type": "range",
-      "id": "padding_top_mobile",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_mobile",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 30
-    },
-    {
-      "type": "header",
-      "content": "Colors"
     },
     {
       "type": "color",
