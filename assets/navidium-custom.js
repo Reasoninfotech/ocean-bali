@@ -549,12 +549,16 @@ const nvd_init = async () => {
       }
     } else if (checked) {
         useConsole(
-          'Protection Not available. Adding now.',
+          'Protection Not available. Adding to cart now.',
           cartProtectionVariant,
           variantFromApi
         )
         nvdVariant = variantFromApi
         localStorage.setItem('nvd_opted_out', false)
+
+        // FIX: actually Shopify cart માં add કરો
+        await addProtection(variantFromApi, 1, false)
+
         if (document.querySelector('.nvd-mini')) {
           document.querySelectorAll('.nvd-mini').forEach((item) => {
             item.innerHTML = widgetContent
