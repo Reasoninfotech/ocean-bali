@@ -7333,6 +7333,12 @@ https://flickity.metafizzy.co
     width: 100%;
 }
 
+.carousel-main:not(.flickity-enabled) .carousel-cell:not(:first-child) {
+    display: none;
+}
+
+
+
 .thumb-slider.vertical-carousel {
     order: -1;
     flex: 0 0 100px;
