@@ -548,24 +548,20 @@ const nvd_init = async () => {
         checkWidgetView()
       }
     } else if (checked) {
-        useConsole(
-          'Protection Not available. Adding to cart now.',
-          cartProtectionVariant,
-          variantFromApi
-        )
-        nvdVariant = variantFromApi
-        localStorage.setItem('nvd_opted_out', false)
-
-        // FIX: actually Shopify cart માં add કરો
-        await addProtection(variantFromApi, 1, false)
-
-        if (document.querySelector('.nvd-mini')) {
-          document.querySelectorAll('.nvd-mini').forEach((item) => {
-            item.innerHTML = widgetContent
-          })
-        }
-        checkWidgetView()
-      } else {
+      useConsole(
+        'Protection Not available. Adding now.',
+        cartProtectionVariant,
+        variantFromApi
+      )
+      nvdVariant = variantFromApi
+      localStorage.setItem('nvd_opted_out', false)
+      if (document.querySelector('.nvd-mini')) {
+        document.querySelectorAll('.nvd-mini').forEach((item) => {
+          item.innerHTML = widgetContent
+        })
+      }
+      checkWidgetView()
+    } else {
       nvdVariant = variantFromApi
       useConsole('no protection available, just append snippet')
       if (document.querySelector('.nvd-mini')) {
@@ -772,11 +768,12 @@ const addProtection = async (variantId, quantity = 1, reload = false) => {
   if (cartJson.id) {
     localStorage.setItem('nvd_opted_out', false)
     localStorage.setItem('cart_protection', variantId)
-    useConsole('%c Protection added successfully', 'color: white; background-color: green')
+    useConsole(
+      '%c Protection added successfully',
+      'color: white; background-color: green'
+    )
     localStorage.removeItem('nvdconfig')
-
-    // FIX: reload=true હોય ત્યારે જ redirect
-    const isRedirect = (nvdControls?.redirectCheckout?.upsaleOff ?? true) && reload
+    const isRedirect = nvdControls?.redirectCheckout?.upsaleOff ?? true
     if (isRedirect) {
       location.href = '/checkout'
     }
@@ -866,8 +863,9 @@ const updateLiveCart = async (cartData = null) => {
   //  if not opted out show one less in count
   if (optedOut == false) {
     currentCount = totalCount
-    totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
-    useConsole('total price (real)', totalPrice)
+    XtotalPrice = cartTotal + protectionPrice * parseFloat(curRate) * 100
+    totalPrice = formatMoney(XtotalPrice, nvdShopCurrency)
+    useConsole('x total price', XtotalPrice)
   }
   if (optedOut == true || optedOut == null) {
     totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
