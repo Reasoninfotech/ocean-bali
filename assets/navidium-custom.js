@@ -164,25 +164,17 @@ const getNvdVisitorCountry = async () => {
   }
 }
 const prefetch = async (callback) => {
-  // Save visitor country
-
-  // TODO: check nvd_config in localStorage
   let isNvdConfig = localStorage.getItem('nvdconfig')
     ? JSON.parse(localStorage.getItem('nvdconfig'))
     : null
-  // verify with the shop name
   if (isNvdConfig) {
-    // check expiration
     const today = new Date()
     const expiration = new Date(isNvdConfig.expiration)
     if (today > expiration) {
-      // expired
       localStorage.removeItem('nvdconfig')
       isNvdConfig = null
       prefetch()
     }
-    // var tomorrow = new Date();
-    // tomorrow.setDate(today.getDate()+3);
     useConsole('Navidium config avaialable in storage')
   } else {
     useConsole('Navidium config not available in storage')
@@ -272,13 +264,10 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
     }
   }
 
-  // TODO: check protection type
   if (protection_type == 1) {
-    // protection is dynamic
     let ourProtectionPrice = (convertedTotal * protection_percentage) / 100
     ourProtectionPrice = ourProtectionPrice.toFixed(2)
 
-    // calculate the protection
     if (ourProtectionPrice < minPrice) {
       console.log('Our protection price is less than minimum')
       protectionPrice = minPrice
@@ -322,7 +311,6 @@ const calculateProtection = async (cartTotal, nvdConfig) => {
       }
     }
   } else {
-    // protection is static.so hit the api
     console.log('protection is static')
     let apiURL = await fetch(
       `https://app.navidiumapp.com/api/variant-id-checker-api-march6.php?shop_url=${nvdShop}&price=` +
@@ -398,7 +386,7 @@ const nvd_init = async () => {
   let nvdVariant
 
   useConsole('in cart protection variant', cartProtectionVariant)
-  // check if widget should be shown and limit did not exceeded
+
   if (showWidget && success) {
     const cart = await getCartCallback(checkCart)
     const cartTotal = (await cart.total) / 100
@@ -408,19 +396,19 @@ const nvd_init = async () => {
     const variantFromApi = await getProtection.variant_id
     const priceFromApi = await getProtection.price
     const auto_insurance = shopConfig.auto_insurance
-    // Max threshold
+
     let maxThresholdPrice = parseFloat(shopConfig.maxThreshold)
     maxThresholdPrice = (
       maxThresholdPrice * parseFloat(Shopify.currency.rate)
     ).toFixed(2)
-    //console.log('%cNVD Max threshold','background:red;color:#fff;padding:0 3px;',maxThresholdPrice);
-    // End of max threshold
+
     const cartEmpty = cartTotal <= 0
     const widgetPlaceHolders = document.querySelectorAll('.nvd-mini')
     const haveWidgetPlaceHolders = widgetPlaceHolders.length > 0
-    // now we get the cart total price and time to hit the second api
+
     localStorage.setItem('nvdProtectionPrice', priceFromApi)
     localStorage.setItem('nvdVariant', variantFromApi)
+
     if (cartEmpty) {
       document
         .querySelectorAll('.nvd-mini')
@@ -433,7 +421,7 @@ const nvd_init = async () => {
       )
       return
     }
-    //Do not touch this logic
+
     var auto_insurance_checker = parseInt(shopConfig.auto_insurance)
     if (auto_insurance_checker != 1) {
       checked = false
@@ -456,7 +444,7 @@ const nvd_init = async () => {
 
     useConsole('widget check status: ', checked)
     nvdVariant = variantFromApi
-    // build widget theme
+
     let widgetContent
     if (widgetTemplate === 'widget-1') {
       widgetContent = buildCustomizeWidgetThemeYellow(
@@ -515,7 +503,7 @@ const nvd_init = async () => {
         checked ? 'checked' : ''
       )
     }
-    // now check the variant in cart is equal to the variant in api return
+
     if (cartProtectionVariant) {
       if (cartProtectionVariant === variantFromApi) {
         useConsole(
@@ -533,13 +521,10 @@ const nvd_init = async () => {
       } else {
         useConsole('cart variant and api variant is not same.swapping them now')
         nvdVariant = variantFromApi
-        // now remove the previous navidium variant from cart
         if (cartProtectionVariant) {
-          // now add the new protection to the cart
           if (checked) useConsole('removing old and adding new protection')
         }
 
-        // now append the snippet
         if (document.querySelector('.nvd-mini')) {
           document.querySelectorAll('.nvd-mini').forEach((item) => {
             item.innerHTML = widgetContent
@@ -547,20 +532,33 @@ const nvd_init = async () => {
         }
         checkWidgetView()
       }
+
+    // ─────────────────────────────────────────────────────────────
+    // FIX 1: checked=true but no protection in cart yet
+    // Previously this block only built the widget (DOM only) and
+    // never called addProtection(), so the Shopify cart stayed
+    // empty while the side-cart showed a fake inflated subtotal.
+    // Now we actually add the item to the Shopify cart first.
+    // ─────────────────────────────────────────────────────────────
     } else if (checked) {
       useConsole(
-        'Protection Not available. Adding now.',
+        'Protection Not available. Adding to Shopify cart now.',
         cartProtectionVariant,
         variantFromApi
       )
       nvdVariant = variantFromApi
       localStorage.setItem('nvd_opted_out', false)
+
+      // Add to actual Shopify cart (reload=false so no redirect here)
+      await addProtection(variantFromApi, 1, false)
+
       if (document.querySelector('.nvd-mini')) {
         document.querySelectorAll('.nvd-mini').forEach((item) => {
           item.innerHTML = widgetContent
         })
       }
       checkWidgetView()
+
     } else {
       nvdVariant = variantFromApi
       useConsole('no protection available, just append snippet')
@@ -572,9 +570,7 @@ const nvd_init = async () => {
       checkWidgetView()
     }
 
-    // now
   } else {
-    // when navidium widget is shut off
     if (document.querySelectorAll('.nvd-mini').length) {
       document
         .querySelectorAll('.nvd-mini')
@@ -591,7 +587,6 @@ const nvd_init = async () => {
   setTimeout(nvdCursorEvent('enabled'), 1500)
 }
 
-// function to get cart data and pass the data to another callback for processing.
 const getCartCallback = async (callback) => {
   const cart = await fetch('/cart.js')
   const cartData = await cart.json()
@@ -609,7 +604,6 @@ const isValidJSON = (data) => {
   }
 }
 
-// function to check cart items
 const checkCart = async (cartData, callback = null) => {
   const currency = await cartData.currency
   useConsole('cart in check cart', cartData)
@@ -627,14 +621,12 @@ const checkCart = async (cartData, callback = null) => {
       ? JSON.parse(shopConfig.product_exclusion)
       : {}
 
-    // if no shop config is found wait and call prefetch
     if (!shopConfig) {
       await prefetch()
     }
 
     useConsole('product exclusion', excluded)
     const promises = await items.forEach((item) => {
-      // check for duplicate navidium
       if (item.handle.includes('navidium-shipping-protection')) {
         nvdCounterArray.push(item.variant_id)
 
@@ -648,7 +640,6 @@ const checkCart = async (cartData, callback = null) => {
         if (item.quantity > 1) {
           useConsole('Found duplicate protection in cart,decreasing now')
 
-          // as cart total is update. we need to call the checkCart function recursively
           recheck = true
           dupeVariant = item.variant_id
         } else {
@@ -667,7 +658,6 @@ const checkCart = async (cartData, callback = null) => {
                   item.sku,
                   item.final_price
                 )
-                // substract the item price from total
                 total -= item.final_line_price
                 useConsole('ex1', total)
               }
@@ -682,7 +672,6 @@ const checkCart = async (cartData, callback = null) => {
                 item.sku,
                 item.final_price
               )
-              // substract the item price from total
               total -= item.final_line_price
               useConsole('ex1', total)
             }
@@ -695,7 +684,6 @@ const checkCart = async (cartData, callback = null) => {
                 item.sku,
                 item.final_price
               )
-              // substract the item price from total
               total -= item.final_line_price
               useConsole('ex1', total)
             }
@@ -743,7 +731,12 @@ const checkCart = async (cartData, callback = null) => {
   }
 }
 
-// function to add protection to cart
+// ─────────────────────────────────────────────────────────────────────────────
+// FIX 2: addProtection() — redirect ફક્ત ત્યારે જ થાય જ્યારે
+// caller explicitly reload=true pass કરે.
+// પહેલા nvdControls.redirectCheckout.upsaleOff હંમેશા redirect
+// trigger કરતું હતું, auto-add (reload=false) વખતે પણ.
+// ─────────────────────────────────────────────────────────────────────────────
 const addProtection = async (variantId, quantity = 1, reload = false) => {
   if (typeof xck != 'undefined' && typeof xck == 'function') {
     let rsv = await xck()
@@ -773,14 +766,16 @@ const addProtection = async (variantId, quantity = 1, reload = false) => {
       'color: white; background-color: green'
     )
     localStorage.removeItem('nvdconfig')
-    const isRedirect = nvdControls?.redirectCheckout?.upsaleOff ?? true
+
+    // FIX: reload=true હોય ત્યારે જ redirect કરો
+    // auto-add (nvd_init માંથી) વખતે reload=false હોય, redirect ન થાય
+    const isRedirect = (nvdControls?.redirectCheckout?.upsaleOff ?? true) && reload
     if (isRedirect) {
       location.href = '/checkout'
     }
   }
 }
 
-// function to update protection variant from cart
 const adjustProtectionQuantity = async (
   variantId,
   quantity,
@@ -816,7 +811,6 @@ const adjustProtectionQuantity = async (
   }
 }
 
-// widget switch on/off listener function
 const getShippingProtection = async (variantId, price, e) => {
   nvdCursorEvent('disabled')
   const { checked } = e
@@ -834,7 +828,6 @@ const getShippingProtection = async (variantId, price, e) => {
   }
 }
 
-// function to update subtotal and dom cart item's line id
 const updateLiveCart = async (cartData = null) => {
   let cart = cartData
   if (cart == null) cart = await getCartCallback()
@@ -850,7 +843,6 @@ const updateLiveCart = async (cartData = null) => {
     ? Boolean(JSON.parse(localStorage.getItem('nvd_opted_out')))
     : null
 
-  // change the cart item class name here.
   const lineAttribute = 'data-line'
   const quantityPlus = '[data-action="increase-quantity"]'
   const quantityMinus = '[data-action="decrease-quantity"]'
@@ -860,18 +852,25 @@ const updateLiveCart = async (cartData = null) => {
   const cartItemsList = Array.from(cartItemNodes)
   let currentCount
   let XtotalPrice
-  //  if not opted out show one less in count
+
+  // ─────────────────────────────────────────────────────────────
+  // FIX 3: updateLiveCart subtotal calculation
+  // હવે protection Shopify cart માં actually add થાય છે (Fix 1),
+  // તેથી cart.total_price માં protection price already include છે.
+  // DOM માં extra add ન કરીએ — real cart total જ show કરો.
+  // ─────────────────────────────────────────────────────────────
   if (optedOut == false) {
     currentCount = totalCount
-    XtotalPrice = cartTotal + protectionPrice * parseFloat(curRate) * 100
-    totalPrice = formatMoney(XtotalPrice, nvdShopCurrency)
-    useConsole('x total price', XtotalPrice)
+    // Protection already in cart, use real total (no manual addition)
+    totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
+    useConsole('total price (protection in cart)', totalPrice)
   }
   if (optedOut == true || optedOut == null) {
     totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
     currentCount = totalCount
     useConsole(' total price', totalPrice)
   }
+
   useConsole('updating subtotal', totalPrice)
   if (cart.item_count == 0) currentCount = 0
   useConsole('current and cart count', currentCount, totalCount)
@@ -888,7 +887,6 @@ const updateLiveCart = async (cartData = null) => {
   )
 }
 
-// function to update the line index in dom cart line items
 let updateCartLine = async (
   lineAttribute,
   cartItemsList,
@@ -898,7 +896,6 @@ let updateCartLine = async (
   rmvItem
 ) => {
   useConsole(cartItemsList, lineAttribute)
-  // for every line item in cart dom check with the cart items.
   await cartItemsList.forEach((item) => {
     useConsole(
       item.innerHTML
@@ -954,7 +951,7 @@ let updateCartLine = async (
     })
   })
 }
-// opt in message toggle function
+
 const checkWidgetView = () => {
   const shopConfig = localStorage.getItem('nvdconfig')
     ? JSON.parse(localStorage.getItem('nvdconfig'))
@@ -986,8 +983,6 @@ const checkWidgetView = () => {
   }
 }
 
-// function that will track the widget real time
-
 const trackWidget = () => {
   const nvd_running = localStorage.getItem('nvd_running')
 
@@ -1007,18 +1002,17 @@ const trackWidget = () => {
 if (nvdControls?.trackWidget) trackWidget()
 const isValidUrl = (urlString) => {
   const urlPattern = new RegExp(
-    '^(https?:\\/\\/)?' + // validate protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+    '^(https?:\\/\\/)?' +
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+      '((\\d{1,3}\\.){3}\\d{1,3}))' +
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+      '(\\?[;&a-z\\d%_.~+=-]*)?' +
       '(\\#[-a-z\\d_]*)?$',
     'i'
-  ) // validate fragment locator
+  )
   return !!urlPattern.test(urlString)
 }
 
-// function to build the widget
 const buildOldWidget = (shopConfig, priceFromApi, nvdVariant, checked) => {
   const {
     nvd_name,
@@ -1807,7 +1801,7 @@ function buildWidgetTemplateEight(
     </div>`
   return snippet
 }
-// For Protection add/remove button
+
 const addShippingProtection = () => {
   const nvdBtn = document.getElementById('shippingProtectionCheckBox')
 
@@ -1913,7 +1907,6 @@ window.onload = () => {
   setTimeout(nvd_init, 2000)
   setTimeout(xNvd, 2000)
 }
-// Main trigger area
 
 window.addEventListener(
   'click',
@@ -1941,7 +1934,6 @@ window.addEventListener(
   nvdControls?.forceClick ?? true
 )
 
-//on select option change quantity
 window.addEventListener(
   'change',
   (ev) => {
@@ -2021,7 +2013,8 @@ $(document).one(
             }
           })
         }else if(!addedVariant){
-          addProtection(variantId).then(() => {
+          // reload=true so redirect happens after add
+          addProtection(variantId, 1, true).then(() => {
             if (forceClick) {
               window.location.href = window.location.origin + '/checkout'
             } else {
