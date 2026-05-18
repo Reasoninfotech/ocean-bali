@@ -68,7 +68,7 @@ assign size_popup = false
       margin-left: 20px;
 }
 
-.template-product-new-custom-one-piece see-it-on-you.see-it-on-you{margin-top: -160px!important;}
+.template-product-new-custom-one-piece see-it-on-you.see-it-on-you{margin-top: -185px!important;}
 
 /* ===== Color Swatches ===== */
 .custom-color-swatches {
@@ -144,7 +144,7 @@ assign size_popup = false
 
 @media (max-width: 980px){
   .template-product-new-custom-one-piece see-it-on-you.see-it-on-you {
-        margin-top: -145px !important;
+        margin-top: -160px !important;
   }
 }
 @media (max-width: 767px){
@@ -171,7 +171,7 @@ assign size_popup = false
 }
 @media (max-width: 455px){
 .template-product-new-custom-one-piece see-it-on-you.see-it-on-you{
-          margin-top: -205px !important;
+          margin-top: -175px !important;
     }
     .template-product-new-custom-one-piece .product__variants-swatches {
       align-items: flex-start !important;
@@ -206,7 +206,15 @@ assign size_popup = false
 .template-product-new-custom-one-piece .new_cus_size_guide_trigger {
       display: none !important;
 }
-
+.swatch-items-wrapper-size-guide {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.swatch-items-wrapper-size-guide span.popup_content_link {
+      gap: 5px;
+      display: flex !important;
+}
 {% endstyle %}
 
 <section
@@ -467,65 +475,7 @@ assign size_popup = false
                            color_swatch_style: settings.color_swatch_style %}
                        {% endfor %}
                        
-                {%- liquid
-
-                  assign page = blank
-                  if block.settings.page != blank
-                    assign popup_content = block.settings.page.content
-                  else
-                    assign popup_content = block.settings.text
-                  endif
-
-                -%}
-
-                {%- if block.settings.page != blank -%}
-                  {%- liquid
-                      assign size_popup = true
-                  -%}
-                  {% comment %} <div class="see_it_on_you_btn">See it on you</div> {% endcomment %}
-                  <span class="popup_content_link sssss {{ block.settings.section_class }} first-trigger">
-                    <span class="size_chat_icon"> <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 945.9 945.9" xml:space="preserve"> <g>
-                  	<g>
-                  		<path d="M458.1,477.75h120.2v-85.3c-25.5,34.6-65.899,63.6-117.1,84.1C460.2,476.95,459.1,477.35,458.1,477.75z"></path>
-                  		<path d="M289.2,811.95h53.3v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h51.7h7.3v-126c0-15.2,12.3-27.5,27.5-27.5
-                  			s27.5,12.3,27.5,27.5v126H545h25.5v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h59v-126
-                  			c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v126h59v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h52.4
-                  			c22.1,0,40-17.9,40-40v-221.8c0-22.101-17.9-40-40-40H309.2h-20h-20c-74.5-2.9-144.2-21.7-198.1-53.7
-                  			c-29.8-17.7-53.4-38.7-70.1-62.2c-0.3-0.4-0.6-0.8-0.9-1.2v175.8v71.2C0.1,734.95,129.5,811.95,289.2,811.95z"></path>
-                  		<path d="M276.8,477.55c4.101,0.101,8.2,0.2,12.4,0.2l0,0l0,0c119.1,0,221.399-42.8,265.6-104c15.101-20.8,23.4-43.8,23.4-67.9
-                  			c0-95-129.4-171.9-289.101-171.9c-159.7,0-289.1,77-289.1,171.9c0,24.1,8.4,47.1,23.4,67.9C66.3,432.75,163,474.65,276.8,477.55z
-                  			 M289.2,229.15c71.1,0,128.8,34.3,128.8,76.6c0,6.9-1.5,13.6-4.4,19.9c-1.6,3.6-3.6,7-6,10.3
-                  			C387.9,363.25,342.3,382.35,289.2,382.35c-4.2,0-8.3-0.1-12.4-0.399c-47.7-2.7-87.8-20.9-105.9-46c-6.7-9.3-10.4-19.5-10.4-30.3
-                  			C160.4,263.45,218,229.15,289.2,229.15z"></path>
-                  	</g></g></svg></span>
-                      <button class="product__contact-trigger button-as-link" type="button" name="button" data-wau-modal-target="popup-content" >Size Guide</button>
-                  </span>
-                
-                  <div data-wau-modal-content="popup-content" id="size-guide-popup" style="display: none">
-                      {{ block.settings.page.content }}
-                  
-                      {%- if block.settings.text != blank -%}
-                        <div class="coverage" style="margin: 40px 0;">
-                        {{ block.settings.text }}
-                        </div>
-                      {%- endif -%}
-
-                      {%- if block.settings.text_2 != blank -%}
-                        <hr>
-                        <div class="sizing" style="margin: 40px 0;">
-                        {{ block.settings.text_2 }}
-                        </div>
-                      {%- endif -%}
-
-                      {%- if block.settings.show_footer_text -%}
-                        <div>
-                          <hr>
-                          <p style="margin: 20px 0;">If you are unsure about your size or if you are in between two sizes we recommend sizing up.  All our midnight colours come up smaller, due to the dying process, we recommend to size up.</p>
-                          <hr>
-                        </div>
-                      {%- endif -%}
-                  </div>
-                {%- endif -%}
+               
                      </div>
                    {%- else -%}
                      <div class="product__variants-select no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
@@ -592,9 +542,11 @@ assign size_popup = false
                     {% if swatches != blank and swatches.size > 0 %}
 
                     <div class="custom-color-swatches">
+
                     <div class="swatch-heading">
                         <span class="swatch-label-text">Color</span>
                     </div>
+                   <div class="swatch-items-wrapper-size-guide">
 
                     <div class="swatch-items-wrapper">
 
@@ -641,6 +593,66 @@ assign size_popup = false
                         {% endfor %}
 
                     </div>
+                     {%- liquid
+
+                  assign page = blank
+                  if block.settings.page != blank
+                    assign popup_content = block.settings.page.content
+                  else
+                    assign popup_content = block.settings.text
+                  endif
+
+                -%}
+
+                {%- if block.settings.page != blank -%}
+                  {%- liquid
+                      assign size_popup = true
+                  -%}
+                  {% comment %} <div class="see_it_on_you_btn">See it on you</div> {% endcomment %}
+                  <span class="popup_content_link sssss {{ block.settings.section_class }} first-trigger">
+                    <span class="size_chat_icon"> <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 945.9 945.9" xml:space="preserve"> <g>
+                  	<g>
+                  		<path d="M458.1,477.75h120.2v-85.3c-25.5,34.6-65.899,63.6-117.1,84.1C460.2,476.95,459.1,477.35,458.1,477.75z"></path>
+                  		<path d="M289.2,811.95h53.3v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h51.7h7.3v-126c0-15.2,12.3-27.5,27.5-27.5
+                  			s27.5,12.3,27.5,27.5v126H545h25.5v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h59v-126
+                  			c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v126h59v-61.5c0-15.2,12.3-27.5,27.5-27.5s27.5,12.3,27.5,27.5v61.5h52.4
+                  			c22.1,0,40-17.9,40-40v-221.8c0-22.101-17.9-40-40-40H309.2h-20h-20c-74.5-2.9-144.2-21.7-198.1-53.7
+                  			c-29.8-17.7-53.4-38.7-70.1-62.2c-0.3-0.4-0.6-0.8-0.9-1.2v175.8v71.2C0.1,734.95,129.5,811.95,289.2,811.95z"></path>
+                  		<path d="M276.8,477.55c4.101,0.101,8.2,0.2,12.4,0.2l0,0l0,0c119.1,0,221.399-42.8,265.6-104c15.101-20.8,23.4-43.8,23.4-67.9
+                  			c0-95-129.4-171.9-289.101-171.9c-159.7,0-289.1,77-289.1,171.9c0,24.1,8.4,47.1,23.4,67.9C66.3,432.75,163,474.65,276.8,477.55z
+                  			 M289.2,229.15c71.1,0,128.8,34.3,128.8,76.6c0,6.9-1.5,13.6-4.4,19.9c-1.6,3.6-3.6,7-6,10.3
+                  			C387.9,363.25,342.3,382.35,289.2,382.35c-4.2,0-8.3-0.1-12.4-0.399c-47.7-2.7-87.8-20.9-105.9-46c-6.7-9.3-10.4-19.5-10.4-30.3
+                  			C160.4,263.45,218,229.15,289.2,229.15z"></path>
+                  	</g></g></svg></span>
+                      <button class="product__contact-trigger button-as-link" type="button" name="button" data-wau-modal-target="popup-content" >Size Guide</button>
+                  </span>
+                
+                  <div data-wau-modal-content="popup-content" id="size-guide-popup" style="display: none">
+                      {{ block.settings.page.content }}
+                  
+                      {%- if block.settings.text != blank -%}
+                        <div class="coverage" style="margin: 40px 0;">
+                        {{ block.settings.text }}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.text_2 != blank -%}
+                        <hr>
+                        <div class="sizing" style="margin: 40px 0;">
+                        {{ block.settings.text_2 }}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.show_footer_text -%}
+                        <div>
+                          <hr>
+                          <p style="margin: 20px 0;">If you are unsure about your size or if you are in between two sizes we recommend sizing up.  All our midnight colours come up smaller, due to the dying process, we recommend to size up.</p>
+                          <hr>
+                        </div>
+                      {%- endif -%}
+                  </div>
+                {%- endif -%}
+      </div>
                     </div>
 
                     {% endif %}
@@ -1844,6 +1856,38 @@ const checkCondition = setInterval(() => {
             "id": "section_class",
             "default": "section_class",
             "label": "Section Class"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Popup link title",
+          "default": "Popup link"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page content",
+          "info": "Choose content from an existing page"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Coverage Details",
+          "default": "<p></p>",
+          "info": "Or enter your own content which will be shown on all product pages"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Additional Sizing Details",
+          "default": "<p></p>",
+          "info": "Or enter your own content which will be shown on all product pages"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_footer_text",
+          "label": "Show footer text",
+          "default": false
         }
       ]
     },
