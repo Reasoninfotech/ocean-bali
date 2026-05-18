@@ -548,20 +548,20 @@ const nvd_init = async () => {
         checkWidgetView()
       }
     } else if (checked) {
-      useConsole(
-        'Protection Not available. Adding now.',
-        cartProtectionVariant,
-        variantFromApi
-      )
-      nvdVariant = variantFromApi
-      localStorage.setItem('nvd_opted_out', false)
-      if (document.querySelector('.nvd-mini')) {
-        document.querySelectorAll('.nvd-mini').forEach((item) => {
-          item.innerHTML = widgetContent
-        })
-      }
-      checkWidgetView()
-    } else {
+        useConsole(
+          'Protection Not available. Adding now.',
+          cartProtectionVariant,
+          variantFromApi
+        )
+        nvdVariant = variantFromApi
+        localStorage.setItem('nvd_opted_out', false)
+        if (document.querySelector('.nvd-mini')) {
+          document.querySelectorAll('.nvd-mini').forEach((item) => {
+            item.innerHTML = widgetContent
+          })
+        }
+        checkWidgetView()
+      } else {
       nvdVariant = variantFromApi
       useConsole('no protection available, just append snippet')
       if (document.querySelector('.nvd-mini')) {
@@ -768,12 +768,11 @@ const addProtection = async (variantId, quantity = 1, reload = false) => {
   if (cartJson.id) {
     localStorage.setItem('nvd_opted_out', false)
     localStorage.setItem('cart_protection', variantId)
-    useConsole(
-      '%c Protection added successfully',
-      'color: white; background-color: green'
-    )
+    useConsole('%c Protection added successfully', 'color: white; background-color: green')
     localStorage.removeItem('nvdconfig')
-    const isRedirect = nvdControls?.redirectCheckout?.upsaleOff ?? true
+
+    // FIX: reload=true હોય ત્યારે જ redirect
+    const isRedirect = (nvdControls?.redirectCheckout?.upsaleOff ?? true) && reload
     if (isRedirect) {
       location.href = '/checkout'
     }
