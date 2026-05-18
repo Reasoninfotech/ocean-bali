@@ -866,9 +866,8 @@ const updateLiveCart = async (cartData = null) => {
   //  if not opted out show one less in count
   if (optedOut == false) {
     currentCount = totalCount
-    XtotalPrice = cartTotal + protectionPrice * parseFloat(curRate) * 100
-    totalPrice = formatMoney(XtotalPrice, nvdShopCurrency)
-    useConsole('x total price', XtotalPrice)
+    totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
+    useConsole('total price (real)', totalPrice)
   }
   if (optedOut == true || optedOut == null) {
     totalPrice = formatMoney(cart.total_price, nvdShopCurrency)
