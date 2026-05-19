@@ -17,6 +17,13 @@
     "main": {
       "type": "new-custom-one-piece",
       "blocks": {
+        "supportive_paragraph_MdBpKA": {
+          "type": "supportive_paragraph",
+          "disabled": true,
+          "settings": {
+            "text": "<p>iu</p>"
+          }
+        },
         "judge_me_reviews_preview_badge_wzcXU8": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": true,
@@ -77,10 +84,6 @@
             "threshold_text": ""
           }
         },
-        "7083fa5a-a988-498e-ac51-81c70cca09d2": {
-          "type": "rating",
-          "settings": {}
-        },
         "text_with_icon_Ppep9y": {
           "type": "text_with_icon",
           "settings": {
@@ -89,6 +92,10 @@
             "text": "UPF 50+ Protection",
             "link": ""
           }
+        },
+        "7083fa5a-a988-498e-ac51-81c70cca09d2": {
+          "type": "rating",
+          "settings": {}
         },
         "5925ad72-9bd4-457a-aae1-c18d5108805e": {
           "type": "text_with_icon",
@@ -180,14 +187,6 @@
             "link": ""
           }
         },
-        "49935d06-a61f-4be4-865c-9762a9f134a3": {
-          "type": "complementary_products",
-          "disabled": true,
-          "settings": {
-            "heading": "Pair it with",
-            "limit": 10
-          }
-        },
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484": {
           "type": "accordion_content",
           "settings": {
@@ -222,28 +221,10 @@
           "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
           "disabled": true,
           "settings": {}
-        },
-        "f2eafac5-3430-412d-9c1c-43775c7b293a": {
-          "type": "social_sharing",
-          "disabled": true,
-          "settings": {
-            "show_twitter": true,
-            "show_facebook": true,
-            "show_pinterest": true
-          }
-        },
-        "b8dc24fb-6234-45f2-af01-2d35830b3da9": {
-          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {}
-        },
-        "product_availability_xKMJ9d": {
-          "type": "product_availability",
-          "disabled": true,
-          "settings": {}
         }
       },
       "block_order": [
+        "supportive_paragraph_MdBpKA",
         "judge_me_reviews_preview_badge_wzcXU8",
         "color_swatches_RVBEcE",
         "product_variants",
@@ -253,8 +234,8 @@
         "stock_level_invetory_wFNTpX",
         "5a0481c6-7b6b-45dc-99cf-3aca7980daa4",
         "product_buttons",
-        "7083fa5a-a988-498e-ac51-81c70cca09d2",
         "text_with_icon_Ppep9y",
+        "7083fa5a-a988-498e-ac51-81c70cca09d2",
         "5925ad72-9bd4-457a-aae1-c18d5108805e",
         "text_with_icon_FFN4LM",
         "7ee2622b-242b-4502-8b12-c152b516c8bb",
@@ -266,14 +247,10 @@
         "876a735f-f0bb-4624-b8cc-8d60db6ba807",
         "ac9f6f7c-33c1-4256-932e-3bd4272452e2",
         "text_with_icon_fydijn",
-        "49935d06-a61f-4be4-865c-9762a9f134a3",
         "da5688b2-ac81-441f-ad20-d8c5bf5c3484",
         "a34f6081-2778-463c-8074-6403bf19be80",
         "0c52e621-4467-4df7-9a79-186536b36b30",
-        "bundler_bundler_target_element_ktzQWL",
-        "f2eafac5-3430-412d-9c1c-43775c7b293a",
-        "b8dc24fb-6234-45f2-af01-2d35830b3da9",
-        "product_availability_xKMJ9d"
+        "bundler_bundler_target_element_ktzQWL"
       ],
       "custom_css": [
         "h3,h4 {padding-top: 15px; line-height: 1.5;}",
